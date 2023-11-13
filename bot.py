@@ -43,11 +43,11 @@ body_list = [f"""Hey Peter,\n\n
              f"""Hey, what's up? friend!\n\n
                  I hope you have been well!\n\n
                  Cheers,\n
-                 {random.choice(name_list)}"""],
+                 {random.choice(name_list)}""",
              f"""Hi {random.choice(name_list)},\n\n
 Long time, no talk! How about a quick coffee catch-up or a virtual chat? I've got some updates to share and would love to hear what's new with you. Let me know when you're free!\n\n
 Yours,\n
-{random.choice(name_list)}"""
+{random.choice(name_list)}"""]
 
 sent_from = gmail_user
 sent_to = ['ephishsense@gmail.com', 'ephishsense@gmail.com']  	    # palitan na lang 'to if san gusto i-send
