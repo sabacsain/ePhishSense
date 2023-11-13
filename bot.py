@@ -4,6 +4,8 @@
 # Created By  : Jeromie Kirchoff
 # Created Date: Mon Aug 02 17:46:00 PDT 2018
 # =============================================================================
+
+
 # Imports
 # =============================================================================
 import smtplib
@@ -48,7 +50,7 @@ Cheers,
                 
 I hope you have been well!
 
-Cheers,\n
+Cheers,
 {random.choice(name_list)}""",
 
             f"""Hi {random.choice(name_list)},
@@ -56,7 +58,52 @@ Cheers,\n
 Long time, no talk! How about a quick coffee catch-up or a virtual chat? I've got some updates to share and would love to hear what's new with you. Let me know when you're free!
 
 Yours,
-{random.choice(name_list)}"""]
+{random.choice(name_list)}""",
+
+            f"""Hi {random.choice(name_list)},
+
+How are you doing? I haven't talked to you in a while, so I wanted to reach out and see how you're doing.
+
+I've been keeping busy with my acads. I'm also really excited about seeing you soon.
+
+I hope to hear from you soon!""",
+
+            f"""Hey {random.choice(name_list)},
+
+Got some good news to share. Let's celebrate over dinner tonight!
+
+Best,
+{random.choice(name_list)}""",
+
+            f"""Hey {random.choice(name_list)},
+
+I just saw you and thought of you.
+
+Let me know what you've been up to lately. I'd love to catch up sometime soon.
+
+Talk to you soon,
+{random.choice(name_list)}""",
+
+            f"""Hey {random.choice(name_list)},
+
+Happy Holidays!
+
+I hope you're having a great day.
+
+I'm sending you my best wishes.
+
+Talk to you soon,
+{random.choice(name_list)}""",
+
+            f"""Hi {random.choice(name_list)},
+
+I just wanted to say that I'm thinking of you today.
+
+I hope you're doing well.
+
+Take care,
+{random.choice(name_list)}""",
+]
 
 sent_from = gmail_user
 sent_to = ['ephishsense@gmail.com', 'ephishsense@gmail.com']  	    # palitan na lang 'to if san gusto i-send
