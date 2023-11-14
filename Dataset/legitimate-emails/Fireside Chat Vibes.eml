@@ -1,0 +1,83 @@
+Delivered-To: killuadummy2000@gmail.com
+Received: by 2002:a05:7108:4b8f:b0:355:1285:56da with SMTP id hn15csp1718825gdb;
+        Mon, 13 Nov 2023 20:10:17 -0800 (PST)
+X-Received: by 2002:a05:6a00:8d82:b0:6c3:468c:6caa with SMTP id im2-20020a056a008d8200b006c3468c6caamr2365867pfb.6.1699935017096;
+        Mon, 13 Nov 2023 20:10:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699935017; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0xJ60M/gFrVNG3vjlcxKoaHATD1IXika3IE0glHy3jaINBFVzlzMauLNiib2DTaDoj
+         63dNyypIFy3GepLRm/LmkdZ8h1FoZzQ5EXmY1xVkkCUHRHROk4jxMrfMPKCbWmDgkEWP
+         aVyYAfkwKsQT580STIs+xuRlttmOE86Xbzl+C1D9+TZ6/rhkhwisxu3bySNtZYB3lu6o
+         bXn4wLujIB7SodfYdmcEPKlfV7Dq8fSFhKeBnlZzTTTIsH0ieZ4eNaRBrc62y4m5Xl1c
+         Y8c+RnDWus/Vidn1JkcylZfvFuP2ykTsrzsSL5GQravjAZnSyFqmOMCGL/VTwUNItOFs
+         sziQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:date:message-id:dkim-signature;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        fh=Accbmegde/o8ZMvS9cLBgumc95tk9U/6fLUSpYRltmI=;
+        b=T+U9PKBHM7MJfB1K+yMZpDvKsFyMHNWjTf56UyoAgGv4p24CO2IBBq+fw5IRRKjfGT
+         B2zwnJSSreEA46mDMsVMwXnQT4iq7zCrZEcxZcNz0zqqkr45u0ivrWCs0q4Rf/BNQaz+
+         42y6Uu1yEKs40P4c4aZfW1XuYPCK4P7wVXW3bin9gcHvwGUzb8Nmqaf8ffYaLrAnGiud
+         Wj2hcniZz5AF+CI60GCJwfVH8iZUy3qfAsfVA/AjYeR4ISGsy8xllf44GPSbM+whN8dz
+         V/3HuVYsDG3xSwRcC9sB9JKgZYo5Y+55ZoUml4mQ8TVekRJ4oqbhTTbW4cP/TWhG7NBI
+         wRkw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=C+zPWNXI;
+       spf=pass (google.com: domain of sachristopher925@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sachristopher925@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <sachristopher925@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id x13-20020aa79a4d000000b0069102c6b1easor5379731pfj.2.2023.11.13.20.10.17
+        for <killuadummy2000@gmail.com>
+        (Google Transport Security);
+        Mon, 13 Nov 2023 20:10:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of sachristopher925@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=C+zPWNXI;
+       spf=pass (google.com: domain of sachristopher925@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=sachristopher925@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1699935016; x=1700539816; dara=google.com;
+        h=subject:to:from:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        b=C+zPWNXIjV80yYVG+g1xHiFP2Dpjc4wVUg2MC2QD9Hvs8XLE+heONMprQ5JbtL3YXO
+         5dTEOB+fLxp6XNv45JFvBSCTW5VMyU3U34WCcTYn4neVquvZv3Dkxr1twl5vCTK1PPBR
+         wReQDFBCvb1/7DTnF7RXdFrlwTGEaRxiNWCwrCSf2NnGhJTyAHOHYLtwn3JjpV6eAyj0
+         hE9bUlUceEtV7rFryjcrbVTvEDjYSqRTNMRtISScbuBPWFbr9jMvJ/8Iv1vQgt+S8rKQ
+         bC9AOqylq9Jv1VrWFjGzwFKpg84JU/23l85uCj+EYcFwGTlGcXjUPM8r6O2+9ZeAATdp
+         OMVA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1699935016; x=1700539816;
+        h=subject:to:from:date:message-id:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        b=UhAw4dxjuUOlG1DanFBEGbO00lj/PhH4xPU0jSOdKSkSSZ0CI8cHYkaWvuYzXOANRm
+         rBV9gpWaCawVPc0yBDnK9mkaztO4VUnIxNKKB3V8fIXvs2tfJLb+mvf8GldC/whsN6MX
+         wCyr+VVmYYv5RZiNB9JL20YbZnQmwBGIRPGivqfgQIFxpp5dSqxyenbugbaRqK8WogU/
+         mMirjs3KVcIQMY1TfZlp9CPBf1k3pZ+56aKYNpDZOcC43Ypg5tUe8Vu/Vru67zYjcqLB
+         8cGfq4LPSff4qAGYz71UxN5HS9XphLIUiZB63zsjEOvtMVnbjV6ZSmVQUVQKwErWAxfJ
+         bWwA==
+X-Gm-Message-State: AOJu0YxNT/sqrN3MRxZvLVFnmZp+iNQWKdD4+jHNP+mgeyxD8qpdytzV
+	333fCY5DIEEGNR8SK143JRWmJ2Iq9Jp4tg==
+X-Google-Smtp-Source: AGHT+IHeDHB5A7eeFIQ3Ip5citJrw9ltqCF2k6Nu9QlFTfQHZdyHaws/sG6w1rEvEMeiX3j1DypMlg==
+X-Received: by 2002:a05:6a20:7da0:b0:185:9de4:fd31 with SMTP id v32-20020a056a207da000b001859de4fd31mr1900480pzj.18.1699935016447;
+        Mon, 13 Nov 2023 20:10:16 -0800 (PST)
+Return-Path: <sachristopher925@gmail.com>
+Received: from [192.168.1.106] ([136.158.33.159])
+        by smtp.gmail.com with ESMTPSA id v20-20020a63f214000000b005b82611378bsm4809902pgh.52.2023.11.13.20.10.15
+        for <killuadummy2000@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Nov 2023 20:10:16 -0800 (PST)
+Message-ID: <6552f328.630a0220.7bf7.b4ac@mx.google.com>
+Date: Mon, 13 Nov 2023 20:10:16 -0800 (PST)
+From: sachristopher925@gmail.com
+To: killuadummy2000@gmail.com, killuadummy2000@gmail.com
+Subject: Fireside Chat Vibes
+
+Hi Christopher,
+                
+Long time, no talk! How about a quick coffee catch-up or a virtual chat? I've got some updates to share and would love to hear what's new with you. Let me know when you're free!
+
+Yours,
+Christopher
