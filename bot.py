@@ -45,12 +45,12 @@ with open(current_path + slash + 'list_subjects.txt', 'r') as file:
 body_list = [
     f"""Hey {random.choice(name_list)},
                 
-# Hope this email finds you well! It's been a while since we caught up, and I was thinking it's high time we grab a coffee and chat about life. How about we meet up this week? I found this cozy new coffee spot downtown that I've been dying to try.
+Hope this email finds you well! It's been a while since we caught up, and I was thinking it's high time we grab a coffee and chat about life. How about we meet up this week? I found this cozy new coffee spot downtown that I've been dying to try.
 
-# Let me know what day works for you, and we can make it happen. Looking forward to some good laughs and catching up!
+Let me know what day works for you, and we can make it happen. Looking forward to some good laughs and catching up!
                 
-# Cheers,
-# {random.choice(name_list)}""",
+Cheers,
+{random.choice(name_list)}""",
 
     f"""Hey, what's up? friend!
                 
@@ -123,11 +123,6 @@ Subject: %s
 
 %s
 """ % (sent_from, ", ".join(sent_to), sent_subject, sent_body)
-
-# =============================================================================
-# SEND EMAIL OR DIE TRYING!!!
-# Details: http://www.samlogic.net/articles/smtp-commands-reference.htm
-# =============================================================================
 
 try:
     server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
