@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Imports
 # =============================================================================
 import smtplib, random, os, json, platform
