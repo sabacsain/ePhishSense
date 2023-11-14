@@ -1,15 +1,21 @@
-import os
+import os, platform
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import classification_report
 from sklearn.metrics import accuracy_score, precision_score, recall_score
 
+# Get the OS 
+which_os = platform.system()
+
+# Perform forward/backward slash depending on the OS
+slash = '\\' if which_os == 'Windows' else '/'
+
 # Get the current directory
-pwd = os.path.dirname(os.path.abspath(__file__))
+current_path = os.path.dirname(os.path.abspath(__file__))
 
 # Concatenate directory path and dataset location
-filepath = pwd + '/temp1.csv'
+filepath = current_path + slash + 'temp.csv'
 
 # Load the dataset
 df = pd.read_csv(filepath)
