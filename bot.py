@@ -1,9 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Imports
-# =============================================================================
 import smtplib, random, os, json, platform
-
 
 # =============================================================================
 # SET EMAIL LOGIN REQUIREMENTS
@@ -36,14 +31,14 @@ gmail_app_password = sender_dict[gmail_user]
 # =============================================================================
 
 # CONVERTS NAME FILE TXT INTO LIST
-with open(current_path + slash + 'list_names.txt', 'r', encoding='utf-8') as file:
+with open(current_path + slash + 'list_names.txt', 'r') as file:
     name_list = [line.strip() for line in file]
  
 # CONVERTS SUBJECT FILE TXT INTO LIST
-with open(current_path + slash + 'list_subjects.txt', 'r', encoding='utf-8') as file:
+with open(current_path + slash + 'list_subjects.txt', 'r') as file:
     subject_list = [line.strip() for line in file]
 
-# CONVERTS SUBJECT FILE TXT INTO LIST
+# CONVERTS SUBJECT FILE TXT INTO LIST 
 #with open(current_path + '/list_body.txt', 'r') as file:
 #    body_list = [line.split(',') for line in file]
 
