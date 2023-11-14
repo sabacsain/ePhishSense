@@ -1,0 +1,83 @@
+Delivered-To: sachristopher925@gmail.com
+Received: by 2002:a05:6840:21c6:b0:143e:f4a0:ff13 with SMTP id g6csp920304nlo;
+        Mon, 13 Nov 2023 20:33:13 -0800 (PST)
+X-Received: by 2002:a05:6e02:1ba3:b0:359:3dc6:4f4b with SMTP id n3-20020a056e021ba300b003593dc64f4bmr11858951ili.5.1699936392872;
+        Mon, 13 Nov 2023 20:33:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699936392; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Hga25vlv6+Ar6wMf3ONrNaM6PfVZrKFNnZw6UAafqiS7l7GJt3HqWnKa2kko1xiJxR
+         uDjMhGOTG2C7QPB8fxeRwnxhN+Mt9mVPpn1MVlWQmJijBL6YRJw9XkvpRO9gpLMf3kOH
+         xmtVLMhVCZDZY5sBm3Y+W+VvLBYzk1LqOKoDhbNuIItl7REmaPpDKUouEdBo81AaSwZs
+         Y2RHFlooIF69EBnxj4xknfFv6iPInA3l8rKZAaON/My5inPlZneEtScd8HhX7zkGm/Er
+         8qiPJZaeg31nolSZX9dGC1Q0hu5yElXigfFr66VaX3vma/xGT+ztoPtxCxCJzGCgLHnl
+         /q/g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:date:message-id:dkim-signature;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        fh=kHINFL2c2O3ymWPFUPcLO9JqUGgcTlU6hGgt5sWj9Q0=;
+        b=JKE/U3Q1oLj6dK1RckMIdjQRs3pMKFqOVq7yZD9Yn/hwfF8ESdl+ccPXdVJrgHZLkn
+         e2qIk5bpbLZ3RCs7mFthFMqeysq8Qen4tNe1kQhJvpWGJJSdBPYQg97IP+IYxUD+n/HH
+         TqbrPyGO300LHdE9e2Lhgz1q8YgZT2N7McXcM1N26+etJp1ZorqBo3BDff8HwUIofgL7
+         umBeQT6TmMTIYf0BGMpOdQMGR8glVzqTanjilbC+REXtAIfL+GdcQLZtN024hUc9LqwD
+         253FgnJeHEfx12ZoOHQ0M3dM9ySagFxaCOhPJpGrfX69ZH+dJgikKbyKOWGlLBw8GWwy
+         wh1Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=LN37dQ4Y;
+       spf=pass (google.com: domain of aeschyespiritu@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=aeschyespiritu@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <aeschyespiritu@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id z88-20020a0293e1000000b004399804e6e2sor1522730jah.10.2023.11.13.20.33.12
+        for <sachristopher925@gmail.com>
+        (Google Transport Security);
+        Mon, 13 Nov 2023 20:33:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of aeschyespiritu@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=LN37dQ4Y;
+       spf=pass (google.com: domain of aeschyespiritu@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=aeschyespiritu@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1699936392; x=1700541192; dara=google.com;
+        h=subject:to:from:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        b=LN37dQ4Y2xigxp9pxRmGXsElN8yhUvjbmLWqzj0n1oFXOnyeNUbkg0wEAKA4a5CDDH
+         vRkIjR8cFxPJhgtAEdcqkm3hlVhhqT7o8hCbUy4+c0s8J0szY8XdQ1V5hP/baQN8Ss1g
+         aAnHQQSlo30oI8wBcccEz1UwxKEiGgOHgidwAQ+DK5e2uK9LcjS8VTLL+GL73A50NbiF
+         GrPyqQseGQX10R8x8pjV3fpqunrmjj0Sk7S5HszRrcXmJlfRQsXwXc04FGL6FUUzrpxs
+         Noinr3BaTLymr7OLUVLe22OqHGcXk+D2ryqEw5yL7L5nEkTZW4EswD1jT9ROR3LxDYnU
+         DZww==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1699936392; x=1700541192;
+        h=subject:to:from:date:message-id:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=DmupSm5ZUkgtU76vHsWoPfcS5cBfDqAM9KpQs+6q0Lc=;
+        b=vfa2cj2SrcUJ6Vc9RmI6nSgAgDr0RYFWL63LgUXCR/zDBXk4y0aQnIysg3z5WOSzIy
+         Wx1KaiK+9mvCAUd3DTOyNsDfFKJnMIshzw0GfPaoqXxxQpaW2w7HLVxVmjpT7axcxRj9
+         yJU2VZOW/26KZAMGAbbxn0CCd3rFIARGKnq+WnOyNu+BDvBO07Ck/l0eyXnI6Ar0+ncM
+         SsSFtYEaaOQcnpiPMUF9ihXTkpeP2YuBqXcQGjugjcfwk1pR67u0g9hMD0rZftHGhKMd
+         azZQJPFrY1WZFJ90t1KnRxVFT7iXbPf1IwrhiJZrMPMckW9hD0vSc9FJam7gYIKfqilH
+         O25Q==
+X-Gm-Message-State: AOJu0YxZQI+HQpRdd3VN8rK07UVoh6kGKwCAr5GZYdMvXKSllhIq1TCz
+	xOS07tM7G7pZov+u+zU0WVx4G2L5vsc=
+X-Google-Smtp-Source: AGHT+IER8Yok3EjoXoDChKVyxvktweJgDy9j2aQRIg6oz6h8QrlhN9RMIy9Z3dj1cR5tm5IjlpjgIA==
+X-Received: by 2002:a05:6e02:12e2:b0:350:f352:4853 with SMTP id l2-20020a056e0212e200b00350f3524853mr11497175iln.25.1699936391912;
+        Mon, 13 Nov 2023 20:33:11 -0800 (PST)
+Return-Path: <aeschyespiritu@gmail.com>
+Received: from [192.168.1.106] ([136.158.33.159])
+        by smtp.gmail.com with ESMTPSA id ei48-20020a056a0080f000b006c4eacb1636sm369216pfb.203.2023.11.13.20.33.10
+        for <sachristopher925@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Nov 2023 20:33:11 -0800 (PST)
+Message-ID: <6552f887.050a0220.43b1c.1250@mx.google.com>
+Date: Mon, 13 Nov 2023 20:33:11 -0800 (PST)
+From: aeschyespiritu@gmail.com
+To: sachristopher925@gmail.com, sachristopher925@gmail.com
+Subject: Emoji Overload Alert
+
+Hi Christopher,
+                
+Long time, no talk! How about a quick coffee catch-up or a virtual chat? I've got some updates to share and would love to hear what's new with you. Let me know when you're free!
+
+Yours,
+Christopher
