@@ -8,18 +8,24 @@
 
 # Imports
 # =============================================================================
-import smtplib, random, os, json
+import smtplib, random, os, json, platform
 
 
 # =============================================================================
 # SET EMAIL LOGIN REQUIREMENTS
 # =============================================================================
 
+# GETTING WHICH OS IS CURRENTLY IN USED
+which_os = platform.system()
+
+# SET DIRECTORY PATH TO FORWARD/BACKWARD SLASH
+slash = '\\' if which_os == 'Windows' else '/'
+
 # GETTING THE PYTHON SCRIPT PATH
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # READ SENDER EMAIL LIST
-with open(current_path + '/list_sender.txt') as f: 
+with open(current_path + slash + 'list_sender.txt') as f: 
     sender_list = f.read() 
 
 # CONVERT STR INTO DICT
@@ -36,11 +42,11 @@ gmail_app_password = sender_dict[gmail_user]
 # =============================================================================
 
 # CONVERTS NAME FILE TXT INTO LIST
-with open(current_path + '/list_names.txt', 'r') as file:
+with open(current_path + slash + 'list_names.txt', 'r') as file:
     name_list = [line.strip() for line in file]
  
 # CONVERTS SUBJECT FILE TXT INTO LIST
-with open(current_path + '/list_subjects.txt', 'r') as file:
+with open(current_path + slash + 'list_subjects.txt', 'r') as file:
     subject_list = [line.strip() for line in file]
 
 # CONVERTS SUBJECT FILE TXT INTO LIST
