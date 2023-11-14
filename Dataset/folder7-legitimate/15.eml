@@ -1,0 +1,1339 @@
+Delivered-To: sabacsain@gmail.com
+Received: by 2002:a67:ea18:0:0:0:0:0 with SMTP id g24csp3510148vso;
+        Tue, 30 Apr 2019 16:00:16 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxku+47YSTmY+cMv+b/kEJgVeQ17+6tlx8Iz/flCLX6RUWUr+l4DM90XjxNB9qBOJG8/5Y3
+X-Received: by 2002:a25:f30c:: with SMTP id c12mr60979218ybs.46.1556665215924;
+        Tue, 30 Apr 2019 16:00:15 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1556665215; cv=none;
+        d=google.com; s=arc-20160816;
+        b=BLw/iOzXp5BbWY1PGNYn1C1S8WPZS8siaXoqrNZPSvWx9d8/WWW6BzUQqv7aJLxMXA
+         R1nCsN4NzpUUP73fgiCn+hLOoHsxm2aCnzZkrGuipv3dn1+xYjS/Pp9QGD7VV+moJrn8
+         I+nKNLgI+h8bwXhZyG2hbKBcWbUo6/avlq+PQrSJRD3psANmmtqanT+XUUU6v9As36lp
+         gZyJcPHj2eNqyllT0b1NvHck45j2ISQXpdbwnbDh3sNmW4/6HZhgT3jU1HHqjFT/otu/
+         RtQ5qY64LdIrAY3lg5XndavKHlX9ueLKtZHUpZq8H6OWisghEQwHkD83E8FF63XKfZQq
+         dDEg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:message-id:to:reply-to:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=prOG05tk+jvQfX5KRo8DmrJyZzwxKt7rebcpe3Hm5kk=;
+        b=cLtXafPYe90+eCIrkcsKQB+lVcmg947OT5y6JQdirUymIAgC/y4YJeLZodVm68NSbH
+         eK7SVC1c899jdn/h9GX8AhlELoo2an6XG9+9PwdioV8eTsAtMWvGO9DFI6YKgX+4W833
+         rUy1y1fKJDNorgGnZAUR0Zxb8vMXWTj25ONhQCQ0W5CczIcAdCP35gm2UwHK3AtDkpb1
+         9SKvaighmYUUgYr3W6UbKpam+FZjDmFCMUuLujQHtMpznrzrr9t0Owu+CPAqGiQKU8qn
+         qCmNZj9Q/MnPloOKjRYsSGuwAS7Hy1siT2w+oQ0vAsK1V2mVD5PWKv17hXbxPCg9gOZG
+         rrTA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@elevateapp.com header.s=smtpapi header.b="elA/1EUY";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zRFRv2rC;
+       spf=pass (google.com: domain of bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com designates 167.89.8.131 as permitted sender) smtp.mailfrom="bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=elevateapp.com
+Return-Path: <bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com>
+Received: from xtrwhvvp.outbound-mail.sendgrid.net (xtrwhvvp.outbound-mail.sendgrid.net. [167.89.8.131])
+        by mx.google.com with ESMTPS id i193si7870484ywe.348.2019.04.30.16.00.15
+        for <sabacsain@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 30 Apr 2019 16:00:15 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com designates 167.89.8.131 as permitted sender) client-ip=167.89.8.131;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@elevateapp.com header.s=smtpapi header.b="elA/1EUY";
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=zRFRv2rC;
+       spf=pass (google.com: domain of bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com designates 167.89.8.131 as permitted sender) smtp.mailfrom="bounces+1589016-e7e0-sabacsain=gmail.com@abmail.elevateapp.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=elevateapp.com
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=elevateapp.com; 
+	h=content-type:from:mime-version:reply-to:to:subject; s=smtpapi; 
+	bh=tyQhjix5dLmkod52ZNmQNYFpCpg=; b=elA/1EUY3ye+YFv9+7RDgQqsTUZ4o
+	qqjAJHY+/AR1bvs3TjkPcNLLAG4U7UKIib2UqlLIMlCBHdRu1zrEtj8jwOJLOZBq
+	265hMOOozZJlfwMqTlT1cg9Jv/ElU6US59xMLbA+oAHDJDKKeHLchiZTIYikUtSc
+	chguUAF6ye7Obc=
+DKIM-Signature: v=1; a=rsa-sha1; c=relaxed/relaxed; d=sendgrid.info; 
+	h=content-type:from:mime-version:reply-to:to:subject:x-feedback-id; 
+	s=smtpapi; bh=tyQhjix5dLmkod52ZNmQNYFpCpg=; b=zRFRv2rCyY/RBbE1Qp
+	vOiK7lkqJaG/1dJI1ezb1ICh/zsMESRUT9MFNCoGL+x/TMn+ueaiRvBLCs8SraaL
+	CEx22WIdsiIjgz2aK6SESD5oQ37QCmvstzLLlIarfXbJCJ2N88lkf/96LxTFNzvm
+	8LEVEv+YRxgK2nnlgps0HcPeU=
+Received: by filter1109p1las1.sendgrid.net with SMTP id filter1109p1las1-19043-5CC8D37D-5
+        2019-04-30 23:00:13.589691702 +0000 UTC m=+437154.093688640
+Received: from MTU4OTAxNg (ec2-23-21-118-191.compute-1.amazonaws.com [23.21.118.191])
+	by ismtpd0002p1iad1.sendgrid.net (SG) with HTTP id AiPQylVvTpG_OGXQYrfkrQ
+	Tue, 30 Apr 2019 23:00:13.358 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=3d4b480a25ccbf9ed5612a464647dad72cbada0651c2bbe1aa320ec27e64
+Date: Tue, 30 Apr 2019 23:00:14 +0000 (UTC)
+From: "Elevate" <hello@elevateapp.com>
+Mime-Version: 1.0
+Reply-to: hello@elevateapp.com
+To: sabacsain@gmail.com
+Message-ID: <AiPQylVvTpG_OGXQYrfkrQ@ismtpd0002p1iad1.sendgrid.net>
+Subject: Curiousity or curiosity, which one is it?
+X-SG-EID: Y6yZnDALdIY5Y2qcDepvVmllOKQ8OISTvf1Qe8Yke6m0EfDL+XQPGy068Q4a94Gsvre4GvOeM8cXC/
+ SHGokagRH5G6xAlmT+MCHopm71z1T5SLodxvb26gHQf2d2qlBdTB+opzOA/uZ42IqV4+bR/IdcxXGX
+ juGjmcg3yxFptQVqMTxVMoeK4VvWhKxIAD9aUPMBg1RB9r/pVx4H7TA0gsTtW2bAnG41rWo1Oiv6f0
+ Y=
+X-SG-ID: fF25nGnd2Tu5IEdhmw08ndOXTWQmO4S5+lMtM6jcxawz+vNn61ANECAw0LdTrHgDkzHpDT4eWtoQhy
+ UoydQXP8a+wRqPpY9BRwR5EDPL84UBFFrNRwkpdy8cjkZ6p7mNYCUdFSjNtUnpRuzNDF69nR806srg
+ OnuldOZ6FEzIPXNXEumf+AogyZgMKJS2mRkrZ6EQPPEYi+NNa9u4coBew/2W9zEYeCSVOB6YToiAWd
+ Rzdbr9lmx/Z01kULh7PEOfPdGwYgNqoYiDv4XUVdUOfL0Ryd3JCFILUuPb95uOBmRvFziXDqWgmk8T
+ UKHhF7i7QoYznmmzPH4534HOEhRyQA==
+X-Feedback-ID: 1589016:wowSUTK7TSTLLmqulVt3cCEFsCqAtFGJygW3mYrifXU=:vW7eEq+I95YRfKllJ+APNkAI0W8yZrXnMuK3wweZ0LzmzsHj46CESeRU2LDAs9iS:SG
+
+--3d4b480a25ccbf9ed5612a464647dad72cbada0651c2bbe1aa320ec27e64
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+Mime-Version: 1.0
+
+Perfect your spelling and other daily skills when you
+train with Elevate.     ELEVATE Elevate=20
+( https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_=
+Dq7-Rg/t10/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0Uyi8YEZ4-3D ) START TRAINING=
+=20
+( https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_=
+Dq7-Rg/t11/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0Uyi8YEZ4-3D )
+Curiosity, 'ou' or 'o'?   Curiosity, 'ou' or 'o'?
+Did you get it right? Perfect your spelling and other daily
+skills when you train with Elevate. A smarter, more confident you
+is waiting.       Start your trial ( https://u1589016.ct.sendgrid.net/mpss/=
+c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/t12/7X97woSUECEF-2Btk5utAG11xDN15=
+-2BqvC9TTARvCoz7lA-3D )
+Elevate ( https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZ=
+R8K6Cfg_Dq7-Rg/t13/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0Uyi8YEZ4-3D ) ELEVATE=
+. YOUR
+PERSONAL BRAIN TRAINER.
+
+=E2=80=8B                                             =E2=80=8B       Looki=
+ng
+for more ways to improve your mind? Check out our blog.=20
+( https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_=
+Dq7-Rg/t14/l1Zi6v6dowuCWcgxpJnptBWokk0e-2FpBKHIdbI7tc6Xo-3D )  =E2=80=8B =
+=E2=80=8B Want to be an iOS beta tester?
+Learn more ( https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1L=
+EgZR8K6Cfg_Dq7-Rg/t15/jOhbpaV-2B2DxP-2FA6dv-2B3XoCKHLKsp5AtMstB-2BUoIihPA-3=
+D ). =E2=80=8B  =E2=80=8B Copyright
+=C2=A92019 Elevate, All rights
+reserved. Don=E2=80=99t like our e-mails? Unsubscribe. (
+https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq=
+7-Rg/t16/5z-2F8vtcIo76fujjjgciSnJ47rlUPWvFLhkPjLfc-2BMhdOrPnE4CsgNRSzP2DUvu=
+-2FXhD1FMBwn4y-2BszoPxhhfKMTf9Af11jc2kO9oKdfbgx9C4PkXmDqLhRuAxVrxxH-2BKHAe6=
+nVWqs3fDL4HD3na50BqBZ5oQIj5GR4HhvCaPuLYHvKfZeNaN4UP7AzSG4k8-2BzYWwdi6g7EI97=
+fyyUEcqD2tT-2F6ZPMcGPJid504KygElT7ttXqiGh1Ws0D5cLb5HPtFmyZ2CCwQgVt9RNh5oEmj=
+OoO3UVBo45KeTXAQlMA9C1w2fFd7oRSP2hA2KQyOE-2F1EPUhnilaeN9n02jsuONSFU9zMAIkq0=
+nroXS9IfcCTPKTeDAsj8SUaXbVs5yflJCpxOgM4xhipwuIYKK24d5-2FIP4xTy4gyzmWdhU-2FA=
+XMmpgzQmeglQ0BJwv6G4tM1-2FQ2JAY4sQcz1QZXKVV8qgqG3ZO0BNPQD4Oifhnv8qcIAims8yA=
+MZ-2Fors9c7AMVWAHApEOWgtTiIxzfQIxFeLTbfs9w-3D-3D )  1479 Folsom St, San
+Francisco, CA 94103 https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r=
+7/iws1LEgZR8K6Cfg_Dq7-Rg/t17/JzkJSoebiWC-2FLm2oXr2Yzyosh2m74pSocmcazohTTrE-=
+3D=
+
+--3d4b480a25ccbf9ed5612a464647dad72cbada0651c2bbe1aa320ec27e64
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:sch=
+emas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; heigh=
+t: 100% !important; width: 100% !important; margin: 0; padding: 0;">
+<head style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta charset=3D"utf-8" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%;">=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" style=3D"-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">=20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" style=3D"-ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%;">=20
+=20=20
+  <title style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">Curiousity or curiosity, which one is it?</title> <!-- The title tag sh=
+ows in email notifications, like Android 4.4. -->
+  <!--[if gte mso 9]><xml>
+  <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+  </xml><![endif]-->
+<style>body {
+margin: 0; padding: 0; height: 100% !important; width: 100% !important;
+}
+.ExternalClass {
+width: 100%;
+}
+.ExternalClass {
+line-height: 100%;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+img {
+border: 0 !important; outline: none !important; text-decoration: none !impo=
+rtant;
+}
+img {
+-ms-interpolation-mode: bicubic; max-width: 100%;
+}
+body {
+font-family: "din-regular", "Helvetica Neue", Helvetica, Arial, "Lucida Gra=
+nde", sans-serif; font-size: 16px; height: 100% !important; line-height: 15=
+0%; margin: 0; padding: 0; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; width: 100% !important;
+}
+body {
+background-color: #ffffff; min-width: 100% !important; max-width: 100% !imp=
+ortant;
+}
+.top-bar-button a:hover {
+background-color: #05C3F9 !important; color: #FFFFFF !important; padding: 9=
+px 12px 9px 14px; border: 0 !important;
+}
+.top-bar-button a:focus {
+background-color: #05C3F9 !important; color: #FFFFFF !important; padding: 9=
+px 12px 9px 14px; border: 0 !important;
+}
+.top-bar-inverted a:hover {
+background-color: #FFFFFF !important; color: #000 !important; border: 0;
+}
+.top-bar-inverted a:focus {
+background-color: #FFFFFF !important; color: #000 !important; border: 0;
+}
+@media only screen and (max-width: 640px) {
+  .container {
+    width: auto !important; max-width: initial !important;
+  }
+  .top-section-container {
+    width: auto !important; max-width: initial !important;
+  }
+  .top-section-container {
+    padding-bottom: 0 !important;
+  }
+  .nps-item {
+    padding: 8px 9px !important; font-size: 13px;
+  }
+  .nps-item-10 {
+    padding: 8px 6px !important;
+  }
+  .nps-row-item {
+    padding: 0 2px !important;
+  }
+  .color-banner {
+    overflow: visible !important;
+  }
+  .top-section {
+    margin-bottom: 0 !important;
+  }
+  .top-section-title {
+    font-size: 24px !important; line-height: 36px !important;
+  }
+  .top-section-subtitle {
+    font-size: 14px !important;
+  }
+  .button {
+    width: 95% !important; cursor: pointer !important;
+  }
+  .button a {
+    width: 100% !important;
+  }
+  .top-section img {
+    max-width: 70% !important;
+  }
+  .color-banner-divider {
+    height: 150px !important;
+  }
+  .color-banner-left {
+    width: 25% !important;
+  }
+  .color-banner-right {
+    width: 70% !important;
+  }
+  .color-banner-title-top {
+    font-size: 12px !important; margin-top: 18px !important; margin-left: 0=
+ !important; text-align: right !important; padding-left: 5px !important;
+  }
+  .color-banner-title-bottom {
+    font-size: 54px !important; margin-left: 12px !important; margin-top: 1=
+px !important; line-height: 57px !important; margin-bottom: 0 !important; t=
+ext-align: right !important; width: 100% !important; white-space: nowrap !i=
+mportant;
+  }
+  .color-banner-text {
+    padding-left: 10px !important; padding-right: 10px !important; font-siz=
+e: 14px !important;
+  }
+  .button-small {
+    min-width: 0 !important; padding-bottom: 15px !important; padding-top: =
+12px !important;
+  }
+  .button-small a {
+    padding: 13px 18px;
+  }
+  .top-bar {
+    margin-top: 15px !important; margin-bottom: 10px !important;
+  }
+  table[class=3Dbody] *[class=3D"gmail-fix"] {
+    display: none !important;
+  }
+  table[class=3Dtop-section] *[class=3D"gmail-fix"] {
+    display: none !important;
+  }
+  table[class=3Dbody] .divider td {
+    border: 1px solid #ECECEC;
+  }
+  table[class=3Dtop-section] .divider td {
+    border: 1px solid #ECECEC;
+  }
+  table[class=3Dbody] .content {
+    padding: 5px !important;
+  }
+  table[class=3Dbody] .wrapper {
+    padding: 5px !important;
+  }
+  table[class=3Dtop-section] .content {
+    padding: 5px !important;
+  }
+  table[class=3Dtop-section] .wrapper {
+    padding: 5px !important;
+  }
+  table[class=3Dbody] .text-block {
+    padding: 0 18px;
+  }
+  table[class=3Dtop-section] .text-block {
+    padding: 0 18px;
+  }
+  table[class=3Dbody] .container {
+    padding: 10px 15px 0 !important; width: 100% !important;
+  }
+  table[class=3Dtop-section] .container {
+    padding: 10px 15px 0 !important; width: 100% !important;
+  }
+  table[class=3Dbody] .horizontal-item {
+    padding: 0 5px !important;
+  }
+  table[class=3Dtop-section] .horizontal-item {
+    padding: 0 5px !important;
+  }
+  table[class=3Dbody] .light-body .social .horizontal-item {
+    padding: 0 20px !important;
+  }
+  table[class=3Dtop-section] .light-body .social .horizontal-item {
+    padding: 0 20px !important;
+  }
+  table[class=3Dbody] .light-body .items-to-unlock .horizontal-item {
+    padding: 10px 15px !important;
+  }
+  table[class=3Dtop-section] .light-body .items-to-unlock .horizontal-item {
+    padding: 10px 15px !important;
+  }
+  table[class=3Dbody] .light-body .days_trained .horizontal-item {
+    padding: 10px 10px !important;
+  }
+  table[class=3Dtop-section] .light-body .days_trained .horizontal-item {
+    padding: 10px 10px !important;
+  }
+  table[class=3Dbody] .top-image {
+    max-height: 200px !important;
+  }
+  table[class=3Dtop-section] .top-image {
+    max-height: 200px !important;
+  }
+  table[class=3Dbody] .email-container {
+    width: 100% !important; max-width: 100% !important;
+  }
+  table[class=3Dtop-section] .email-container {
+    width: 100% !important; max-width: 100% !important;
+  }
+  table[class=3Dbody] img[class~=3D"fluid"] {
+    height: auto !important; margin: auto !important;
+  }
+  table[class=3Dbody] img[class~=3D"fluid-centered"] {
+    height: auto !important; margin: auto !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"fluid"] {
+    height: auto !important; margin: auto !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"fluid-centered"] {
+    height: auto !important; margin: auto !important;
+  }
+  table[class=3Dbody] img[class~=3D"fluid-centered"] {
+    width: auto !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"fluid-centered"] {
+    width: auto !important;
+  }
+  table[class=3Dbody] img[class~=3D"top-image"] {
+    max-height: 125px !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"top-image"] {
+    max-height: 125px !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-padding-btm"] {
+    padding-bottom: 30px !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-padding-btm"] {
+    padding-bottom: 30px !important;
+  }
+  table[class=3Dbody] td[class~=3D"stack-column"] {
+    display: block !important; width: 100% !important; direction: ltr !impo=
+rtant;
+  }
+  table[class=3Dbody] td[class~=3D"stack-column-center"] {
+    display: block !important; width: 100% !important; direction: ltr !impo=
+rtant;
+  }
+  table[class=3Dtop-section] td[class~=3D"stack-column"] {
+    display: block !important; width: 100% !important; direction: ltr !impo=
+rtant;
+  }
+  table[class=3Dtop-section] td[class~=3D"stack-column-center"] {
+    display: block !important; width: 100% !important; direction: ltr !impo=
+rtant;
+  }
+  table[class=3Dbody] td[class~=3D"stack-column-center"] {
+    text-align: center !important;
+  }
+  table[class=3Dtop-section] td[class~=3D"stack-column-center"] {
+    text-align: center !important;
+  }
+  table[class=3Dbody] td[class~=3D"no-resize-mobile"] {
+    display: block !important; text-align: center !important; margin: 0 aut=
+o !important;
+  }
+  table[class=3Dtop-section] td[class~=3D"no-resize-mobile"] {
+    display: block !important; text-align: center !important; margin: 0 aut=
+o !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-10"] {
+    width: 10% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-10"] {
+    width: 10% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-10"] {
+    width: 10% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-10"] {
+    width: 10% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-30"] {
+    width: 30% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-30"] {
+    width: 30% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-30"] {
+    width: 30% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-30"] {
+    width: 30% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-40"] {
+    width: 40% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-40"] {
+    width: 40% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-40"] {
+    width: 40% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-40"] {
+    width: 40% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-60"] {
+    width: 60% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-60"] {
+    width: 60% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-60"] {
+    width: 60% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-60"] {
+    width: 60% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-70"] {
+    width: 70% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-70"] {
+    width: 70% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-70"] {
+    width: 70% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-70"] {
+    width: 70% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-80"] {
+    width: 80% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-80"] {
+    width: 80% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-80"] {
+    width: 80% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-80"] {
+    width: 80% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-90"] {
+    width: 90% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-90"] {
+    width: 90% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-90"] {
+    width: 90% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-90"] {
+    width: 90% !important;
+  }
+  table[class=3Dbody] table[class~=3D"mobile-100"] {
+    width: 100% !important;
+  }
+  table[class=3Dbody] img[class~=3D"mobile-100"] {
+    width: 100% !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"mobile-100"] {
+    width: 100% !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"mobile-100"] {
+    width: 100% !important;
+  }
+  table[class=3Dbody] .hide-mobile {
+    display: none !important;
+  }
+  table[class=3Dbody] img[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dbody] table[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dbody] td[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dtop-section] .hide-mobile {
+    display: none !important;
+  }
+  table[class=3Dtop-section] img[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dtop-section] td[class~=3D"hide-mobile"] {
+    display: none !important;
+  }
+  table[class=3Dbody] td[class~=3D"show-mobile"] {
+    display: block !important; width: auto !important; height: auto !import=
+ant; overflow: visible !important; float: none !important;
+  }
+  table[class=3Dtop-section] td[class~=3D"show-mobile"] {
+    display: block !important; width: auto !important; height: auto !import=
+ant; overflow: visible !important; float: none !important;
+  }
+  table[class=3Dbody] tr[class~=3D"gmail-only"] {
+    display: none !important;
+  }
+  table[class=3Dtop-section] tr[class~=3D"gmail-only"] {
+    display: none !important;
+  }
+  table[class=3Dbody] tr[class~=3D"gmail-hide"] {
+    display: block !important;
+  }
+  table[class=3Dtop-section] tr[class~=3D"gmail-hide"] {
+    display: block !important;
+  }
+  table[class=3Dbody] .hide-desktop {
+    display: table !important;
+  }
+  table[class=3Dbody] table[class~=3D"hide-desktop"] {
+    display: table !important;
+  }
+  table[class=3Dtop-section] .hide-desktop {
+    display: table !important;
+  }
+  table[class=3Dtop-section] table[class~=3D"hide-desktop"] {
+    display: table !important;
+  }
+}
+@media screen {
+  @font-face {
+    font-family: 'din-light'; font-style: normal; src: local("Din"), url(ht=
+tp://elevate-marketing.s3.amazonaws.com/emails/fonts/dinot-light-webfont.eo=
+t) format("embedded-opentype"), url(http://elevate-marketing.s3.amazonaws.c=
+om/emails/fonts/DINNextLTPro-Light.WOFF) format("woff");
+  }
+  @font-face {
+    font-family: 'din-regular'; font-style: normal; src: local("din-regular=
+"), url(http://elevate-marketing.s3.amazonaws.com/emails/fonts/DINNextLTPro=
+-Regular.WOFF) format("woff");
+  }
+  @font-face {
+    font-family: 'din-bold'; src: url("http://elevate-marketing.s3.amazonaw=
+s.com/emails/fonts/dinot-bold-webfont.woff2") format("woff2"), url("/assets=
+/fonts/din-bold/dinot-bold-webfont.woff") format("woff"), url("http://eleva=
+te-marketing.s3.amazonaws.com/emails/fonts/dinot-bold-webfont.ttf") format(=
+"truetype");
+  }
+}
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 24px !important; margin-top: 0 !important;
+  }
+  h2 {
+    font-size: 20px !important;
+  }
+  h3 {
+    font-size: 18px !important;
+  }
+  h4 {
+    font-size: 16px !important;
+  }
+  .light-body h4 {
+    font-size: 12px !important;
+  }
+  td {
+    font-size: 16px !important;
+  }
+  li {
+    font-size: 16px !important;
+  }
+  .footer td {
+    font-size: 14px !important;
+  }
+  .small li {
+    font-size: 11px !important;
+  }
+  .data-table td {
+    font-size: 14px !important;
+  }
+  .data-table th {
+    font-size: 14px !important;
+  }
+  .smaller {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .nps-item {
+    padding: 6px 6px !important; font-size: 12px;
+  }
+  .nps-item-10 {
+    padding: 6px 4px !important;
+  }
+}
+@media (max-width: 640px) {
+  .center-mobile {
+    text-align: center !important; display: block;
+  }
+}
+</style>
+</head>
+
+<body style=3D"font-family: 'din-regular', 'Helvetica Neue', Helvetica, Ari=
+al, 'Lucida Grande', sans-serif; line-height: 150%; -ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; font-size: 16px; width: 100% !importan=
+t; height: 100% !important; min-width: 100% !important; max-width: 100% !im=
+portant; margin: 0; padding: 0;" bgcolor=3D"#ffffff">
+
+<table class=3D"top-section" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-si=
+zing: border-box; cellspacing: 0; cellpadding: 0; tablewidth: 100%; overflo=
+w: hidden; width: 100%; border-collapse: separate !important; min-width: 10=
+0% !important; max-width: 100% !important; border-spacing: 0 !important; ma=
+rgin: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+width=3D"100%" bgcolor=3D"#FFFFFF">
+  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <td class=3D"padded-container top-section-container light-body" style=
+=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; font-weight: 400=
+; color: #666666; line-height: 150%; font-size: 16px; font-family: 'din-reg=
+ular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; dis=
+play: block; width: 600px; max-width: 600px; margin: 0 auto; padding: 10px =
+0 0;" width=3D"600" valign=3D"top">
+      <!---->        <span class=3D"preheader" style=3D"-webkit-text-size-a=
+djust: 100%; -ms-text-size-adjust: 100%; max-width: 0; color: transparent; =
+height: 0; max-height: 0; width: 0; opacity: 0; overflow: hidden; mso-hide:=
+ all; visibility: hidden; display: none !important;">Perfect your spelling =
+and other daily skills when you train with Elevate.</span>
+      <!---->=20=20=20=20=20=20
+=20=20=20=20=20=20
+        <table class=3D"top-bar" style=3D"-ms-text-size-adjust: 100%; -webk=
+it-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; ta=
+blewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspacing: 0; max=
+-width: 600px; border-collapse: separate !important; border-spacing: 0 !imp=
+ortant; margin: 45px auto 0; border: 0;" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0" width=3D"100%">
+  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <td class=3D"hide-mobile top-bar-title " width=3D"40%" valign=3D"middle=
+" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; font-weig=
+ht: 400; font-size: 16px; font-family: 'din-light', HelveticaNeue-Light, 'H=
+elvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', =
+sans-serif; line-height: 21px; letter-spacing: 6.39px; text-transform: capi=
+talize; padding-left: 5px; color: #999999 !important; margin: 0 0 0 5px;" a=
+lign=3D"left">
+      ELEVATE
+    </td>
+    <td class=3D"hide-mobile" width=3D"20%" align=3D"center" valign=3D"midd=
+le" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; line-he=
+ight: 150%; font-weight: 400; font-family: 'din-regular', 'Helvetica Neue',=
+ Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px; color: #76=
+7676; margin: 0;">
+=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+        <table style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadding: 0; cell=
+spacing: 0; tablewidth: 100%; box-sizing: border-box; border-collapse: sepa=
+rate !important; border-spacing: 0 !important; margin: 0 auto; border: 0;" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+          <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <td align=3D"center" width=3D"30%" class=3D"stack-column-cent=
+er hide-mobile" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-=
+box; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helv=
+etica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px=
+; color: #767676; margin: 0;" valign=3D"middle">&nbsp;</td>=20=20=20=20=20=
+=20
+              <td align=3D"center" style=3D"-webkit-text-size-adjust: 100%;=
+ -ms-text-size-adjust: 100%; line-height: 150%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; box-sizing: border-box; font-weight: 400; font-size: 16p=
+x; font-family: 'din-regular', 'Helvetica Neue', Helvetica, Arial, 'Lucida =
+Grande', sans-serif; color: #767676; width: 40; margin: 0;" class=3D" image=
+-td  stack-column-center" dir=3D"ltr" valign=3D"middle">
+        <a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7=
+/iws1LEgZR8K6Cfg_Dq7-Rg/h0/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0Uyi8YEZ4-3D" =
+target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; box-sizing: border-box; color: inherit; text-decoration: none !=
+important;">    <img align=3D"center" class=3D"mobile-10 image-center fluid=
+-centered gmail-hack" alt=3D"Elevate" src=3D"https://s3.amazonaws.com/eleva=
+te-marketing/emails/images/common/footer_logo.png" title=3D"Elevate" style=
+=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpo=
+lation-mode: bicubic; display: inline !important; width: auto !important; h=
+eight: auto !important; max-width: 100% !important; outline: none !importan=
+t; text-decoration: none !important; margin: auto; border: 0;"></a>
+=20=20=20=20=20=20=20=20
+        </td>
+              <td align=3D"center" width=3D"30%" class=3D"stack-column-cent=
+er hide-mobile" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-=
+box; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helv=
+etica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px=
+; color: #767676; margin: 0;" valign=3D"middle">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+=20=20=20=20=20=20=20=20
+    </td>
+    <td class=3D"hide-mobile" width=3D"40%" align=3D"right" valign=3D"middl=
+e" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; box=
+-sizing: border-box; line-height: 150%; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; font-weight: 400; font-size: 16px; font-family: 'din-regular', '=
+Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #999=
+999; margin: 0; border: #cccccc;" bgcolor=3D"#FFFFFF">
+        <div align=3D"right" style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%; box-sizing: border-box;">
+          <table align=3D"right" class=3D"button top-bar-button" style=3D"-=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing:=
+ border-box; cellspacing: 0; width: 125px; min-width: 250px; height: 35px; =
+border-collapse: separate !important; border-spacing: 0 !important; margin:=
+ 0 auto; padding: 0; border: 0;" width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0">
+            <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                <td align=3D"center" valign=3D"middle" style=3D'-ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso=
+-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; font-weight:=
+ 400; font-size: 16px; color: #767676; border-radius: 3px; -webkit-border-r=
+adius: 5px; -moz-border-radius: 5px; font-family: "din-regular", "Helvetica=
+ Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important; margin: 0=
+;' bgcolor=3D"transparent">
+                  <div align=3D"right" style=3D"-ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; box-sizing: border-box;">
+                    <a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/=
+GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/h1/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0U=
+yi8YEZ4-3D" target=3D"_blank" title=3D"START TRAINING" style=3D"-ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; co=
+lor: #999999; mso-hide: all; background-color: transparent; border-radius: =
+3px; -webkit-border-radius: 5px; -moz-border-radius: 5px; text-transform: c=
+apitalize; cursor: pointer; display: inline-block; font-size: 12px; letter-=
+spacing: 0.5px; line-height: 1.5; min-width: 125px; text-align: center; tex=
+t-decoration: none !important; margin: 0; padding: 8px 12px 8px 14px; borde=
+r: 1px solid #cccccc;">START TRAINING</a>
+=20=20=20=20=20=20=20=20
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>        </td>
+      </tr>
+=20=20=20=20
+  </table>
+  <table class=3D"pb0 hide-mobile divider " style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspac=
+ing: 0; max-width: 636px; border-collapse: separate !important; border-spac=
+ing: 0 !important; margin: 0 auto; padding: 40px 0 0; border: 0;" border=3D=
+"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+    <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box;=
+ font-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica =
+Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 0%; colo=
+r: #767676; margin: 0 0 15px; border: 1px solid #ececec;" valign=3D"top" bo=
+rder=3D"1px solid #ECECEC">&nbsp;</td>
+      </tr>
+    </tbody>
+  </table>
+=20=20
+=20=20
+=20=20
+=20=20
+
+    </td>
+  </tr>
+</table>
+<table class=3D"body" style=3D"-ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; tablewidth: 1=
+00%; cellpadding: 0; box-sizing: border-box; cellspacing: 0; width: 100%; b=
+order-collapse: separate !important; border-spacing: 0 !important; min-widt=
+h: 100% !important; max-width: 100% !important; margin: 0 auto; border: 0;"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" bgcolor=3D=
+"#ffffff">
+  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+		<td class=3D"padded-container light-body " style=3D"-webkit-text-size-adj=
+ust: 100%; -ms-text-size-adjust: 100%; line-height: 150%; mso-table-lspace:=
+ 0pt; mso-table-rspace: 0pt; box-sizing: border-box; color: #666666; font-w=
+eight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neue', =
+Helvetica, Arial, 'Lucida Grande', sans-serif; margin: 0; padding: 0;" vali=
+gn=3D"top">
+      <table class=3D"gmail-fix" style=3D"-ms-text-size-adjust: 100%; -webk=
+it-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; ce=
+llpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: border-box; bor=
+der-collapse: separate !important; border-spacing: 0 !important; margin: 0 =
+auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D=
+"100%">
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-bo=
+x; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helvet=
+ica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px; =
+color: #767676; margin: 0;" valign=3D"top">
+            <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"center" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; cellpadd=
+ing: 0; cellspacing: 0; tablewidth: 100%; box-sizing: border-box; border-co=
+llapse: separate !important; border-spacing: 0 !important; margin: 0 auto; =
+border: 0;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                <td cellpadding=3D"0" cellspacing=3D"0" border=3D"0" height=
+=3D"1" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; font=
+-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neue'=
+, Helvetica, Arial, 'Lucida Grande', sans-serif; color: #767676; min-width:=
+ 600px; line-height: 1px; margin: 0;" valign=3D"top">
+                <img src=3D"https://s3.amazonaws.com/elevate-marketing/emai=
+ls/images/common/spacer.gif" width=3D"600" height=3D"1" alt=3D"" style=3D"-=
+webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-interpolatio=
+n-mode: bicubic; max-width: 100%; width: 600px; min-width: 600px; max-heigh=
+t: 1px; min-height: 1px; display: block; outline: none !important; text-dec=
+oration: none !important; border: 0;">
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>			<div class=3D"content" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; box-sizing: border-box; display: block; m=
+ax-width: 600px; margin: 0 auto; padding: 0 0 10px;">
+      <table align=3D"left" class=3D"" style=3D"-ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; cellpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: border-bo=
+x; border-collapse: separate !important; border-spacing: 0 !important; marg=
+in: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wi=
+dth=3D"100%">
+        <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+          <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-bo=
+x; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helvet=
+ica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px; =
+color: #767676; margin: 0;" valign=3D"top">
+            <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; box-sizing: border-box; display: none;"></div>
+<table align=3D"left" class=3D"text-block " style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspac=
+ing: 0; border-collapse: separate !important; border-spacing: 0 !important;=
+ margin: 0 auto; padding: 0 10px; border: 0;" border=3D"0" cellspacing=3D"0=
+" cellpadding=3D"0" width=3D"100%">
+        <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+          <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-bo=
+x; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helvet=
+ica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px; =
+color: #767676; margin: 0;" valign=3D"top">
+            <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; box-sizing: border-box; display: none;"></div>=20=20=20=20=20=20
+<br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<table class=3D"content-block" style=3D"-ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; tabl=
+ewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspacing: 0; borde=
+r-collapse: separate !important; border-spacing: 0 !important; margin: 0 au=
+to; padding: 0 0 30px; border: 0;" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" width=3D"100%">
+  <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <td align=3D"center" class=3D"show-mobile  image-td  stack-column-cen=
+ter" dir=3D"ltr" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border=
+-box; line-height: 150%; font-weight: 400; font-size: 16px; font-family: 'd=
+in-regular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-seri=
+f; display: none; width: 0; height: 0; overflow: hidden; float: left; color=
+: #767676; margin: 0;" valign=3D"top">
+    <img align=3D"center" class=3D" image-center" alt=3D"Curiosity, 'ou' or=
+ 'o'?" src=3D"https://s3.amazonaws.com/elevate-marketing/emails/images/trig=
+gered/mandatorytrialupsell/curiosity_mobile.png" title=3D"Curiosity, 'ou' o=
+r 'o'?" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+; -ms-interpolation-mode: bicubic; max-width: 100%; display: block; outline=
+: none !important; text-decoration: none !important; margin: 0 auto; border=
+: 0;">
+
+</td>
+      <td align=3D"center" class=3D"hide-mobile  image-td  stack-column-cen=
+ter" dir=3D"ltr" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border=
+-box; line-height: 150%; font-weight: 400; font-family: 'din-regular', 'Hel=
+vetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16p=
+x; color: #767676; margin: 0;" valign=3D"top">
+    <img align=3D"center" class=3D" image-center" alt=3D"Curiosity, 'ou' or=
+ 'o'?" src=3D"https://s3.amazonaws.com/elevate-marketing/emails/images/trig=
+gered/mandatorytrialupsell/curiosity.png" title=3D"Curiosity, 'ou' or 'o'?"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-i=
+nterpolation-mode: bicubic; max-width: 100%; display: block; outline: none =
+!important; text-decoration: none !important; margin: 0 auto; border: 0;">
+
+</td>
+
+    </tr>
+  </tbody>
+</table>
+
+
+  <table align=3D"left" class=3D"text-block " style=3D"-ms-text-size-adjust=
+: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellsp=
+acing: 0; border-collapse: separate !important; border-spacing: 0 !importan=
+t; margin: 0 auto; padding: 0 10px; border: 0;" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0" width=3D"100%">
+    <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+      <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; l=
+ine-height: 150%; font-weight: 400; font-family: 'din-regular', 'Helvetica =
+Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size: 16px; colo=
+r: #767676; margin: 0;" valign=3D"top">
+        <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust:=
+ 100%; box-sizing: border-box; display: none;"></div>
+Did you get it right? Perfect your spelling and other daily skills when you=
+ train with Elevate. A smarter, more confident you is waiting.
+
+<div align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%; box-sizing: border-box;">
+  <table align=3D"center" class=3D"button" style=3D"-ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspac=
+e: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspaci=
+ng: 0; width: auto; min-width: 250px; border-collapse: separate !important;=
+ border-spacing: 0 !important; margin: 0 auto; padding: 30px 0; border: 0;"=
+ border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+    <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td align=3D"center" valign=3D"top" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; box-sizing: border-box; line-height: 150%; font-weight: 400; font-=
+size: 16px; color: #767676; font-family: 'din-regular', Arial, 'Lucida Gran=
+de', sans-serif; border-radius: 5px; -webkit-border-radius: 5px; -moz-borde=
+r-radius: 5px; margin: 0;" bgcolor=3D"#05C3F9">
+          <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%; box-sizing: border-box;">
+            <a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t=
+.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/h2/7X97woSUECEF-2Btk5utAG11xDN15-2BqvC9TTARvCoz=
+7lA-3D" target=3D"_blank" title=3D"Start your trial" style=3D"-ms-text-size=
+-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; colo=
+r: #ffffff; text-decoration: none; background-color: #05C3F9; border-radius=
+: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; mso-hide: all; =
+cursor: pointer; display: inline-block; font-size: 16px; letter-spacing: 1p=
+x; line-height: 100%; min-width: 250px; text-align: center; margin: 0; padd=
+ing: 25px; border: 5px none #05c3f9;">Start your trial</a>
+
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table class=3D"footer-divider divider " style=3D"-ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cel=
+lspacing: 0; max-width: 636px; border-collapse: separate !important; border=
+-spacing: 0 !important; margin: 0 auto; padding: 40px 0; border: 0;" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+          <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: borde=
+r-box; font-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helv=
+etica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 0%=
+; color: #767676; margin: 0 0 15px; border: 1px solid #ececec;" valign=3D"t=
+op" border=3D"1px solid #ECECEC">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20
+        <div align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; box-sizing: border-box;">
+=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20
+=20=20=20=20=20=20=20=20=20=20
+          <table class=3D"content-block" style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspacing=
+: 0; border-collapse: separate !important; border-spacing: 0 !important; ma=
+rgin: 0 auto; padding: 0 0 30px; border: 0;" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" width=3D"100%">
+            <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                <td align=3D"center" width=3D"285 px" class=3D"stack-column=
+-center hide-mobile" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: bo=
+rder-box; line-height: 150%; font-weight: 400; font-family: 'din-regular', =
+'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:=
+ 16px; color: #767676; margin: 0;" valign=3D"top">&nbsp;</td>=20=20=20=20=
+=20=20
+                <td align=3D"center" style=3D"-webkit-text-size-adjust: 100=
+%; -ms-text-size-adjust: 100%; line-height: 150%; mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; box-sizing: border-box; font-weight: 400; font-family:=
+ 'din-regular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-s=
+erif; font-size: 16px; color: #767676; width: 30px; margin: 0;" class=3D" i=
+mage-td  stack-column-center" dir=3D"ltr" width=3D"30" valign=3D"top">
+          <a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2=
+r7/iws1LEgZR8K6Cfg_Dq7-Rg/h3/7pqacsd7hHHZ8yRzTVGpTKsrWi3OpoGYic0Uyi8YEZ4-3D=
+" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; box-sizing: border-box; color: #05C3F9; text-decoration: none=
+;">    <img align=3D"center" class=3D" image-center fluid-centered gmail-ha=
+ck" alt=3D"Elevate" src=3D"https://s3.amazonaws.com/elevate-marketing/email=
+s/images/common/footer_logo.png" title=3D"Elevate" style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubi=
+c; display: inline !important; width: auto !important; height: auto !import=
+ant; max-width: 100% !important; outline: none !important; text-decoration:=
+ none !important; margin: auto; border: 0;"></a>
+=20=20=20=20=20=20=20=20=20=20
+          </td>
+                <td align=3D"center" width=3D"285 px" class=3D"stack-column=
+-center hide-mobile" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; box-sizing: bo=
+rder-box; line-height: 150%; font-weight: 400; font-family: 'din-regular', =
+'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font-size:=
+ 16px; color: #767676; margin: 0;" valign=3D"top">&nbsp;</td>
+              </tr>
+            </tbody>
+          </table>
+=20=20=20=20=20=20=20=20=20=20
+        <p class=3D"center bottom-logo" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; font-family: 'din-regular', 'Helvetica Ne=
+ue', Helvetica, Arial, 'Lucida Grande', sans-serif; line-height: 150%; font=
+-weight: 400; font-size: 14px; padding-bottom: 20px; letter-spacing: 2.5px;=
+ display: block; color: #767676; margin: 0;" align=3D"center">
+            <span class=3D"el-blue" style=3D"-ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%; color: #05C3F9;">ELEVATE.</span> YOUR PERSONA=
+L BRAIN TRAINER.</p>
+        </div>
+        =E2=80=8B
+        <div align=3D"center" class=3D"full-width" style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; width:=
+ 100% !important;">
+          <table class=3D"content-block social" style=3D"-ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt; tablewidth: 100%; cellpadding: 0; box-sizing: border-box; cell=
+spacing: 0; width: auto; border-collapse: separate !important; border-spaci=
+ng: 0 !important; margin: 0 auto; padding: 0; border: 0;" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" width=3D"100%">
+            <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+=20=20=20=20=20=20=20=20
+                  <td align=3D"center" class=3D"horizontal-item" style=3D"-=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; fo=
+nt-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neu=
+e', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #767676; margin: =
+0; padding: 0 20px;" valign=3D"top">
+                    <table align=3D"center" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; cellpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: bord=
+er-box; border-collapse: separate !important; border-spacing: 0 !important;=
+ margin: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%">
+                      <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%;">
+                          <td align=3D"center" valign=3D"top" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; font-=
+weight: 400; font-family: 'din-regular', 'Helvetica Neue', Helvetica, Arial=
+, 'Lucida Grande', sans-serif; font-size: 16px; color: #767676; margin: 0;"=
+><a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LE=
+gZR8K6Cfg_Dq7-Rg/h4/9ZtgBbtsz-2BGzBX39C579VKl21WYD-2BA903CFz2CR3guKZ6hkuVGW=
+BGBDhkNi9fmGw" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webk=
+it-text-size-adjust: 100%; box-sizing: border-box; color: #05C3F9; text-dec=
+oration: none;"><img src=3D"https://s3.amazonaws.com/elevate-marketing/emai=
+ls/images/common/share/facebook.png" alt=3D"" title=3D"" class=3D"grid-row"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-i=
+nterpolation-mode: bicubic; max-width: 100%; overflow: hidden; display: blo=
+ck; outline: none !important; text-decoration: none !important; padding: 10=
+px 0; border: 0;" width=3D"32"></a></td>
+                        </tr>
+                      </tbody>
+                    </table>=20=20=20=20=20=20=20=20=20
+                  </td>
+                  <td align=3D"center" class=3D"horizontal-item" style=3D"-=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; fo=
+nt-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neu=
+e', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #767676; margin: =
+0; padding: 0 20px;" valign=3D"top">
+                    <table align=3D"center" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; cellpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: bord=
+er-box; border-collapse: separate !important; border-spacing: 0 !important;=
+ margin: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%">
+                      <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%;">
+                          <td align=3D"center" valign=3D"top" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; font-=
+weight: 400; font-family: 'din-regular', 'Helvetica Neue', Helvetica, Arial=
+, 'Lucida Grande', sans-serif; font-size: 16px; color: #767676; margin: 0;"=
+><a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LE=
+gZR8K6Cfg_Dq7-Rg/h5/2RVzWDSIG55zp08xQdQltatw9E9w3oCQBdkjmVC-2Fa9bpGMvZR9dAp=
+whCX68JqnI9" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; box-sizing: border-box; color: #05C3F9; text-decor=
+ation: none;"><img src=3D"https://s3.amazonaws.com/elevate-marketing/emails=
+/images/common/share/twitter.png" alt=3D"" title=3D"" class=3D"grid-row" st=
+yle=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-inte=
+rpolation-mode: bicubic; max-width: 100%; overflow: hidden; display: block;=
+ outline: none !important; text-decoration: none !important; padding: 10px =
+0; border: 0;" width=3D"32"></a></td>
+                        </tr>
+                      </tbody>
+                    </table>=20=20=20=20=20=20=20=20=20
+                  </td>
+                  <td align=3D"center" class=3D"horizontal-item" style=3D"-=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; fo=
+nt-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neu=
+e', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #767676; margin: =
+0; padding: 0 20px;" valign=3D"top">
+                    <table align=3D"center" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; cellpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: bord=
+er-box; border-collapse: separate !important; border-spacing: 0 !important;=
+ margin: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%">
+                      <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%;">
+                          <td align=3D"center" valign=3D"top" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; font-=
+weight: 400; font-family: 'din-regular', 'Helvetica Neue', Helvetica, Arial=
+, 'Lucida Grande', sans-serif; font-size: 16px; color: #767676; margin: 0;"=
+><a href=3D"https://u1589016.ct.sendgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LE=
+gZR8K6Cfg_Dq7-Rg/h6/HpF-2FgN2L-2BTd3XbGhi4PFtYis6tyQfcFy73GKqWyQ-2FJdTP5shF=
+BFA0095RYbfJ7rf" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; box-sizing: border-box; color: #05C3F9; text-d=
+ecoration: none;"><img src=3D"https://s3.amazonaws.com/elevate-marketing/em=
+ails/images/common/share/gplus.png" alt=3D"" title=3D"" class=3D"grid-row" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-in=
+terpolation-mode: bicubic; max-width: 100%; overflow: hidden; display: bloc=
+k; outline: none !important; text-decoration: none !important; padding: 10p=
+x 0; border: 0;" width=3D"32"></a></td>
+                        </tr>
+                      </tbody>
+                    </table>=20=20=20=20=20=20=20=20=20
+                  </td>
+                  <td align=3D"center" class=3D"horizontal-item" style=3D"-=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; fo=
+nt-weight: 400; font-size: 16px; font-family: 'din-regular', 'Helvetica Neu=
+e', Helvetica, Arial, 'Lucida Grande', sans-serif; color: #767676; margin: =
+0; padding: 0 20px;" valign=3D"top">
+                    <table align=3D"center" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; cellpadding: 0; cellspacing: 0; tablewidth: 100%; box-sizing: bord=
+er-box; border-collapse: separate !important; border-spacing: 0 !important;=
+ margin: 0 auto; border: 0;" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%">
+                      <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-t=
+ext-size-adjust: 100%;">
+=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20=20
+                        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%;">
+                          <td align=3D"center" valign=3D"top" style=3D"-ms-=
+text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; box-sizing: border-box; line-height: 150%; font-=
+weight: 400; font-family: 'din-regular', 'Helvetica Neue', Helvetica, Arial=
+, 'Lucida Grande', sans-serif; font-size: 16px; color: #767676; margin: 0;"=
+><a href=3D"mailto:hello@elevateapp.com" target=3D"_blank" style=3D"-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box=
+; color: #05C3F9; text-decoration: none;"><img src=3D"https://s3.amazonaws.=
+com/elevate-marketing/emails/images/common/share/mail.png" alt=3D"" title=
+=3D"" class=3D"grid-row" style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; -ms-interpolation-mode: bicubic; max-width: 100%; overfl=
+ow: hidden; display: block; outline: none !important; text-decoration: none=
+ !important; padding: 10px 0; border: 0;" width=3D"32"></a></td>
+                        </tr>
+                      </tbody>
+                    </table>=20=20=20=20=20=20=20=20=20
+                  </td>
+=20=20=20=20=20=20=20=20
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        =E2=80=8B
+        <div class=3D"footer" align=3D"center" style=3D"-ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%; box-sizing: border-box; clear: bot=
+h; width: 100%;">
+          <table class=3D"footer" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; t=
+ablewidth: 100%; cellpadding: 0; box-sizing: border-box; cellspacing: 0; cl=
+ear: both; width: 100%; font-size: 12px; border-collapse: separate !importa=
+nt; border-spacing: 0 !important; margin: 0 auto; border: 0;" border=3D"0" =
+cellspacing=3D"0" cellpadding=3D"0" width=3D"100%">
+            <tbody style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%; font-size: 12px;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; font-size: 12px;">
+                <td class=3D"content-block" style=3D"-ms-text-size-adjust: =
+100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; box-sizing: border-box; line-height: 150%; font-weight: 400; font-=
+family: 'din-regular', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande',=
+ sans-serif; color: #AAAAAA; font-size: 11px; margin: 0; padding: 20px 0;" =
+valign=3D"top">
+                    <p class=3D"center" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; line-height: 150%; font-family: 'din-regu=
+lar', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif; font=
+-weight: 400; display: block; color: #AAAAAA; font-size: 11px; margin: 0;" =
+align=3D"center">
+                    <span style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%; font-size: 12px; color: #5D5D5D;">Looking for more ways=
+ to improve your mind? &nbsp;<a href=3D"https://u1589016.ct.sendgrid.net/mp=
+ss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/h7/l1Zi6v6dowuCWcgxpJnptBWokk0=
+e-2FpBKHIdbI7tc6Xo-3D" class=3D" center" style=3D"-ms-text-size-adjust: 100=
+%; -webkit-text-size-adjust: 100%; box-sizing: border-box; font-size: 12px;=
+ text-align: center; display: block; text-decoration: none; color: #05C3F9;=
+">Check out our blog.</a></span>
+                    <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; font-size: 12px;"><br style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; font-size: 12px;">
+                    =E2=80=8B
+                    <!---->
+                    =E2=80=8B
+                    <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-s=
+ize-adjust: 100%; font-size: 12px;">
+                    =E2=80=8B
+                    Copyright =C2=A92019&nbsp;Elevate, All rights reserved.=
+&nbsp;Don=E2=80=99t like our e-mails? <a href=3D"https://u1589016.ct.sendgr=
+id.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/h8/5z-2F8vtcIo76fujjj=
+gciSnJ47rlUPWvFLhkPjLfc-2BMhdOrPnE4CsgNRSzP2DUvu-2FXhD1FMBwn4y-2BszoPxhhfKM=
+Tf9Af11jc2kO9oKdfbgx9C4PkXmDqLhRuAxVrxxH-2BKHAe6nVWqs3fDL4HD3na50BqBZ5oQIj5=
+GR4HhvCaPuLYHvKfZeNaN4UP7AzSG4k8-2BzYWwdi6g7EI97fyyUEcqD2tT-2F6ZPMcGPJid504=
+KygElT7ttXqiGh1Ws0D5cLb5HPtFmyZ2CCwQgVt9RNh5oEmjOoO3UVBo45KeTXAQlMA9C1w2fFd=
+7oRSP2hA2KQyOE-2F1EPUhnilaeN9n02jsuONSFU9zMAIkq0nroXS9IfcCTPKTeDAsj8SUaXbVs=
+5yflJCpxOgM4xhipwuIYKK24d5-2FIP4xTy4gyzmWdhU-2FAXMmpgzQmeglQ0BJwv6G4tM1-2FQ=
+2JAY4sQcz1QZXKVV8qgqG3ZO0BNPQD4Oifhnv8qcIAims8yAMZ-2Fors9c7AMVWAHApEOWgtTiI=
+xzfQIxFeLTbfs9w-3D-3D" style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; box-sizing: border-box; font-size: 12px; text-decoration: =
+none; color: #05C3F9;">Unsubscribe.</a>
+                          <br style=3D"-ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; font-size: 12px;">
+                           <br style=3D"-ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; font-size: 12px;">1479 Folsom St, San Francisco, C=
+A 94103=20
+                           <br style=3D"-ms-text-size-adjust: 100%; -webkit=
+-text-size-adjust: 100%; font-size: 12px;"><a href=3D"https://u1589016.ct.s=
+endgrid.net/mpss/c/-gA/GD8YAA/t.2r7/iws1LEgZR8K6Cfg_Dq7-Rg/h9/JzkJSoebiWC-2=
+FLm2oXr2Yzyosh2m74pSocmcazohTTrE-3D" style=3D"-ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; box-sizing: border-box; font-size: 12px; col=
+or: #CECECE; text-decoration: underline;">http://elevateapp.com</a></p>    =
+    </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>      </td>
+</tr>
+</tbody>
+</table>
+</div>
+		</td>
+	</tr>
+</table>
+
+
+<img src=3D"https://u1589016.ct.sendgrid.net/mpss/o/-gA/GD8YAA/t.2r7/iws1LE=
+gZR8K6Cfg_Dq7-Rg/o.gif" alt=3D"" width=3D"1" height=3D"1" border=3D"0" styl=
+e=3D"height:1px !important;width:1px !important;border-width:0 !important;m=
+argin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important=
+;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !import=
+ant;padding-right:0 !important;padding-left:0 !important;"/>
+</body>
+</html>
+
+
+--3d4b480a25ccbf9ed5612a464647dad72cbada0651c2bbe1aa320ec27e64--
