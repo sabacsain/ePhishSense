@@ -24,14 +24,14 @@ X = df.drop('Label', axis=1)    # removes Label column then save to X dataframe
 y = df['Label']                 # saves only the Label column then save to y dataframe
 
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
 # Train the decision tree classifier
 dt_model = DecisionTreeClassifier()
-dt_model.fit(X_train, y_train)
+dt_model.fit(X_train.values, y_train.values)
 
 # Make predictions on the test data
-predictions = dt_model.predict(X_test)
+predictions = dt_model.predict(X_test.values)
 
 # Calculate accuracy
 accuracy = accuracy_score(y_test, predictions)
@@ -50,5 +50,5 @@ with open('dt_model.pkl', 'wb') as model_file:
     pickle.dump(dt_model, model_file)
 
 # Print the model path
-print()
+print("Model: 'dt_model.pkl' has been saved.")
 
