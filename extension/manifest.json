@@ -1,0 +1,27 @@
+// manifest.json
+{
+  "manifest_version": 3,
+  "name": "Phishing Detection Extension",
+  "version": "1.0",
+  "description": "Detect phishing emails",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.jpeg"
+    }
+  },
+  "icons": {
+    "16": "images/icon16.jpeg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
+
