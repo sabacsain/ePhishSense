@@ -1,18 +1,19 @@
 // background.js
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request.action === "extractEmailDetails") {
-    var emailDetails = request.data;
-    detectPhishing(emailDetails);
-  } else if (request.action === "scanEmailDetails") {
-    // Add logic to initiate the scanning process
-    // This could involve accessing Gmail elements and extracting details
-    // For simplicity, let's log a message for now
-    console.log("Scanning email details initiated");
-  }
-});
 
-function detectPhishing(emailDetails) {
-  console.log("Phishing detection for:", emailDetails);
-  // Implement your phishing detection logic here
+// Function to check if the sender's email address exists
+function checkSenderEmailExistence(senderEmailAddress) {
+  // Replace this with your logic to check if the email address exists
+  // For demonstration purposes, it always returns true
+  return true;
 }
 
+// Listen for messages from content script
+chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+  if (message.checkSender) {
+    // Check if the sender's email address exists
+    const isSenderExisting = checkSenderEmailExistence(message.senderEmailAddress);
+
+    // Broadcast the result to all extension components
+    chrome.runtime.sendMessage({ senderExists: isSenderExisting });
+  }
+});
