@@ -1,17 +1,14 @@
 import imaplib
-import os, platform
+import os
 import email
 import sys
-import json
-import re, requests
+import re
 from extension_dt_model import DT_MODEL
 
 # ISSUE/S:
 # - CAN'T HANDLE MULTIPLE SIMILAR SUBJECTS
 
 class GMAIL_EXTRACTOR():
-    def helloWorld(self):
-        print("\nWelcome to Gmail extractor,\ndeveloped by A. Augustin.")
 
     def initializeVariables(self):
         self.usr = ""
@@ -43,8 +40,8 @@ class GMAIL_EXTRACTOR():
             return False
 
     def checkIfUsersWantsToContinue(self):
-        print("\nWe have found "+str(self.mailCount)+" emails in the mailbox "+self.mailbox+".")
-        return True if input("Do you wish to continue extracting all the emails into "+self.destFolder+"? (y/N) ").lower().strip()[:1] == "y" else False       
+        # print(f"\n {self.mailbox}: {self.mailCount} emails")
+        return True 
         
     def selectMailbox(self):
         # self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
@@ -89,34 +86,25 @@ class GMAIL_EXTRACTOR():
             
             raw = self.data[0][0]
             raw_str = raw.decode("utf-8")
-            uid = raw_str.split()[2]
-            # Body #
+
+            # Get Body 
             if msg.is_multipart():
                 for part in msg.walk():
                     partType = part.get_content_type()
-                    ## Get Body ##
                     if partType == "text/html" and "attachment" not in part:
                         jsonOutput['body'] = part.get_payload()
-                    ## Get Attachments ##
-                    if part.get('Content-Disposition') is None:
-                        attchName = part.get_filename()
-                        if bool(attchName):
-                            attchFilePath = str(self.destFolder)+str(uid)+str("/")+str(attchName)
-                            os.makedirs(os.path.dirname(attchFilePath), exist_ok=True)
-                            with open(attchFilePath, "wb") as f:
-                                f.write(part.get_payload(decode=True))
             else:
-                jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, perhaps no attachments or just text.
+                jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, no attachments or just text.
 
             print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
             print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
-            print(f"URL: \n     {jsonOutput['body']}")
+            print(f"BODY: \n     {jsonOutput['body']}")
 
             def is_url_exists_in_html(html_data):
-                # Use a regular expression to find all URLs in the HTML content
+                # Regular expression to find all URLs in the HTML content
                 url_pattern = re.compile(r'href=["\'](https?://\S+?)["\']', re.IGNORECASE)
                 urls_exist = url_pattern.findall(html_data)
- 
+                
                 return True if urls_exist else False
             
             jsonOutput['body'] = is_url_exists_in_html(jsonOutput["body"])
@@ -136,19 +124,12 @@ class GMAIL_EXTRACTOR():
             # print(jsonOutput['body'])
             # print(self.valueList)
             # exit(0)
-            
-            # outputDump = json.dumps(jsonOutput)
-            # emailInfoFilePath = str(self.destFolder)+str(uid)+str("/")+str(uid)+str(".json")
-            # os.makedirs(os.path.dirname(emailInfoFilePath), exist_ok=True)
-            # with open(emailInfoFilePath, "w") as f:
-            #     f.write(outputDump)
-    
+                
     def value(self):
         return self.valueList
 
     def __init__(self):
         self.initializeVariables()
-        self.helloWorld()
         self.getLogin()
         if self.attemptLogin():
             not self.selectMailbox() and sys.exit()

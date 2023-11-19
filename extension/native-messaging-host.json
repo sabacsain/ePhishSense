@@ -1,0 +1,9 @@
+{
+  "name": "ePhishSense",
+  "description": "Native Messaging Host for Scan Extension",
+  "path": "/home/sendoff/Documents/GitHub/ePhishSense/scan.py",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://opajhbamellhhmmnaafophodmcnifdfi/"
+  ]
+}
