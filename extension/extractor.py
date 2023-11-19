@@ -3,6 +3,8 @@ import os, platform
 import email
 import sys
 import json
+import re, requests
+from extension_dt_model import DT_MODEL
 
 class GMAIL_EXTRACTOR():
     def helloWorld(self):
@@ -53,7 +55,8 @@ class GMAIL_EXTRACTOR():
         return True if self.mailCount > 0 else False
 
     def searchThroughMailbox(self):
-        type, self.data = self.mail.search(None, "ALL")
+        # type, self.data = self.mail.search(None, "ALL")
+        type, self.data = self.mail.search(None, 'SUBJECT "Test with URL"')
         self.ids = self.data[0]
         self.idsList = self.ids.split()
 
@@ -92,7 +95,7 @@ class GMAIL_EXTRACTOR():
                 for part in msg.walk():
                     partType = part.get_content_type()
                     ## Get Body ##
-                    if partType == "text/plain" and "attachment" not in part:
+                    if partType == "text/html" and "attachment" not in part:
                         jsonOutput['body'] = part.get_payload()
                     ## Get Attachments ##
                     if part.get('Content-Disposition') is None:
@@ -105,22 +108,40 @@ class GMAIL_EXTRACTOR():
             else:
                 jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, perhaps no attachments or just text.
 
+            def is_url_exists_in_html(html_data):
+                # Use a regular expression to find all URLs in the HTML content
+                url_pattern = re.compile(r'href=["\'](https?://\S+?)["\']', re.IGNORECASE)
+                urls = url_pattern.findall(html_data)
+                
+                return False if urls is None else True
+            
+            jsonOutput['body'] = is_url_exists_in_html(jsonOutput["body"])
+
             # Converting Email Data to Numerical Value
             # Sender Email Address
-            self.valueList.append[0] if jsonOutput['from'] == 'Null' else self.valueList.append[1]
+            self.valueList.append(0) if jsonOutput['from'] == 'Null' else self.valueList.append(1)
 
-            # Sender Email Address
-            self.valueList.append[0] if jsonOutput['dkim-signature'] == 'Null' else self.valueList.append[1]
+            # DKIM
+            self.valueList.append(0) if jsonOutput['dkim-signature'] == 'Null' else self.valueList.append(1)
 
-            # Sender Email Address
-            self.valueList.append[0] if jsonOutput['body'] == 'Null' else self.valueList.append[1]
-            #PARSE BODY#PARSE BODY#PARSE BODY#PARSE BODY#PARSE BODY#PARSE BODY#PARSE BODY#PARSE BODY
+            # URL
+            self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
+            
+            
+            # print(jsonOutput['from'])
+            # print(jsonOutput['dkim-signature'])
+            # print(jsonOutput['body'])
+            # print(self.valueList)
 
+            
             # outputDump = json.dumps(jsonOutput)
             # emailInfoFilePath = str(self.destFolder)+str(uid)+str("/")+str(uid)+str(".json")
             # os.makedirs(os.path.dirname(emailInfoFilePath), exist_ok=True)
             # with open(emailInfoFilePath, "w") as f:
             #     f.write(outputDump)
+    
+    def value(self):
+        return self.valueList
 
     def __init__(self):
         self.initializeVariables()
@@ -136,3 +157,8 @@ class GMAIL_EXTRACTOR():
 
 if __name__ == "__main__":
     run = GMAIL_EXTRACTOR()
+    input = run.value()
+    predict = DT_MODEL(input)
+    print(input)
+    print(predict)
+    
