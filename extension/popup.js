@@ -1,26 +1,17 @@
+// popup.js
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Add a click event listener to the scan button
   document.getElementById('scanButton').addEventListener('click', function () {
-    // When the button is clicked, display "Scan Completed"
-    document.getElementById('buttonCheck').textContent = 'Button: Working';
-    scanAndDownloadEmlFile();
+    chrome.runtime.sendMessage({ action: 'runScan' });
   });
 
-    // Function to initiate email scan and download
-    function scanAndDownloadEmlFile() {
-      // Send a message to the content script to trigger the download
-      chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
-        const activeTabId = tabs[0].id;
-        chrome.tabs.sendMessage(activeTabId, { initiateDownload: true });
-      });
+  // Listen for the scan complete message
+  chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
+    if (message.action === 'scanComplete') {
+      // Display the result in the popup
+      document.getElementById('buttonCheck').textContent = 'Button: Working: ';
+      document.getElementById('printCheck').textContent = 'Scan Result: ${message.result}';
+      document.getElementById('buttonCheck').textContent = `Scan Result: ${message.result}`;
     }
-
-    // Listen for messages from the content script
-    chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-      // Check if the content script has initiated the download
-      if (message.downloadInitiated) {
-        // Display a message in the popup
-        document.getElementById('emlCheck').textContent = 'EML: Downloaded';
-      }
   });
 });
