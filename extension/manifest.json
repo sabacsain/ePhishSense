@@ -3,7 +3,7 @@
   "name": "Phishing Detection Extension",
   "version": "1.0",
   "description": "Detect phishing emails",
-  "permissions": ["activeTab", "storage", "downloads"],
+  "permissions": ["activeTab", "storage", "downloads", "nativeMessaging"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

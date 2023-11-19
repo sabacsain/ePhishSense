@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
     if (message.action === 'scanComplete') {
       // Display the result in the popup
       document.getElementById('buttonCheck').textContent = 'Button: Working: ';
-      document.getElementById('printCheck').textContent = 'Scan Result: ${message.result}';
-      document.getElementById('buttonCheck').textContent = `Scan Result: ${message.result}`;
+      // document.getElementById('printCheck').textContent = 'Scan Result: ${message.result}';
+      document.getElementById('scanCheck').textContent = `Scan Result: ${message.result}`;
     }
   });
 });

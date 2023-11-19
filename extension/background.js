@@ -1,19 +1,10 @@
 // background.js
 
-// Function to check if the sender's email address exists
-function checkSenderEmailExistence(senderEmailAddress) {
-  // Replace this with your logic to check if the email address exists
-  // For demonstration purposes, it always returns true
-  return true;
-}
-
-// Listen for messages from content script
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-  if (message.checkSender) {
-    // Check if the sender's email address exists
-    const isSenderExisting = checkSenderEmailExistence(message.senderEmailAddress);
-
-    // Broadcast the result to all extension components
-    chrome.runtime.sendMessage({ senderExists: isSenderExisting });
+  if (message.action === 'runScan') {
+    chrome.runtime.sendNativeMessage('your_native_app_name', { command: 'runScan' }, function (response) {
+      // Send a message to the popup with the result
+      chrome.runtime.sendMessage({ action: 'scanComplete', result: response.result });
+    });
   }
 });
