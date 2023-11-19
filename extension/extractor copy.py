@@ -6,9 +6,6 @@ import json
 import re, requests
 from extension_dt_model import DT_MODEL
 
-# ISSUE/S:
-# - CAN'T HANDLE MULTIPLE SIMILAR SUBJECTS
-
 class GMAIL_EXTRACTOR():
     def helloWorld(self):
         print("\nWelcome to Gmail extractor,\ndeveloped by A. Augustin.")
@@ -37,6 +34,10 @@ class GMAIL_EXTRACTOR():
         self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         if self.mail.login(self.usr, self.pwd):
             print("\nLogon SUCCESSFUL")
+            if platform.system() == 'Windows':
+              self.destFolder = '/Users/Public/Documents/'
+            self.destFolder = '/home/sendoff/Downloads/gmail/'
+            if not self.destFolder.endswith("/"): self.destFolder+="/"
             return True
         else:
             print("\nLogon FAILED")
@@ -55,10 +56,10 @@ class GMAIL_EXTRACTOR():
 
     def searchThroughMailbox(self):
         # type, self.data = self.mail.search(None, "ALL")
-        subject = 'SUBJECT "Random"'            # change the SUBJECT as necessary
-        type, self.data = self.mail.search(None, subject)
+        type, self.data = self.mail.search(None, 'SUBJECT "Random"')
         self.ids = self.data[0]
         self.idsList = self.ids.split()
+
 
     def parseEmails(self):
         jsonOutput = {}
@@ -108,10 +109,6 @@ class GMAIL_EXTRACTOR():
             else:
                 jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, perhaps no attachments or just text.
 
-            print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
-            print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
-            print(f"URL: \n     {jsonOutput['body']}")
-
             def is_url_exists_in_html(html_data):
                 # Use a regular expression to find all URLs in the HTML content
                 url_pattern = re.compile(r'href=["\'](https?://\S+?)["\']', re.IGNORECASE)
@@ -130,6 +127,7 @@ class GMAIL_EXTRACTOR():
 
             # URL
             self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
+            
             
             # print(jsonOutput['from'])
             # print(jsonOutput['dkim-signature'])
