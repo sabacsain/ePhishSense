@@ -1,0 +1,705 @@
+Delivered-To: sabacsain@gmail.com
+Received: by 10.103.71.208 with SMTP id b77csp3335767vsg;
+        Mon, 26 Mar 2018 03:26:37 -0700 (PDT)
+X-Google-Smtp-Source: AIpwx4+K9hevAXYs5FaKXz2c5Oy+KpPDqNlx5zBQtL8yeJJiTsCGGg7ppy1/qF+g6M91xLfbqrqL
+X-Received: by 2002:a9d:4718:: with SMTP id a24-v6mr614193otf.338.1522059997639;
+        Mon, 26 Mar 2018 03:26:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1522059997; cv=none;
+        d=google.com; s=arc-20160816;
+        b=c10mRq8FQ0mnOj/PLPbW0X41O4eiWFInLJwIXbDu5IDXxJKdKzzzEHVgR3jCJMVbNg
+         UESROjyxInAFs/t4I1eCVp+aHPB2QXR/rKjTskrojNJmqfVBdr6KIU8oaqxWffL4r/G+
+         mm5diHTudfp7Hc/O/6iwNuHhaumwAr1+PcIYjn+/lGrym3Hr+zVzuoGWLkxkLzdXI+hi
+         mq5KIXu4Bsq+2EHsPNP5ZNsT9G5XwaM52mflGiu2dxGfjxZDE5hgRtKQqXSabb6jREHj
+         nBEanteLPlBJNKQR4Po5a330/2dRePfx5liLetN9irnkUHmy6vSieaq4VMzV7uFSNV7S
+         AuFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:list-unsubscribe:feedback-id:subject:reply-to:from:to
+         :date:content-transfer-encoding:mime-version:dkim-signature
+         :dkim-signature:arc-authentication-results;
+        bh=+ey43dAe9VWAI5Fn8IJB82vU9kmfQIHeAigv64DyaO0=;
+        b=yy7vDKRJqd+zHS6gLHmfymt9FlNPvR8XJ6I7aynDCUPJ3eudvS1EJ9fHWuzI6WSN0b
+         vV9a1fZdgNyqiAlDgp7AZddENUMfgVR7AOsLlEQJOp7OKhbkr7P6B3Se1DNijJWFl1N+
+         dYVRUwOvxYjDz+ndheElE5/4ia6a4vBZq25A4p8YbN73CACwDPlocyxEO/OJbFz/hvjq
+         SjVGPy2buBPObTNVQiH644AB86WUx6Kocl40NgzUw+29JzdCmHwwtuIKs9AnCvDR9KMC
+         /s9pR/b3H9Fk6CTQ1Cnw0xk6rVr4wE9OeDXYxlGtujVe0Y2mZKiUhQWqPP9CIEIDSC7G
+         xWLQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@interact.coursehero.com header.s=coursehero header.b=XuYPPsd/;
+       dkim=pass header.i=@responsys.net header.s=oraclersys header.b=Xh07sNaq;
+       spf=pass (google.com: domain of coursehero@interact.coursehero.com designates 12.130.153.80 as permitted sender) smtp.mailfrom=coursehero@interact.coursehero.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=interact.coursehero.com
+Return-Path: <coursehero@interact.coursehero.com>
+Received: from omp.interact.coursehero.com (omp.interact.coursehero.com. [12.130.153.80])
+        by mx.google.com with ESMTPS id x90-v6si4412313ota.482.2018.03.26.03.26.37
+        for <sabacsain@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 26 Mar 2018 03:26:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of coursehero@interact.coursehero.com designates 12.130.153.80 as permitted sender) client-ip=12.130.153.80;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@interact.coursehero.com header.s=coursehero header.b=XuYPPsd/;
+       dkim=pass header.i=@responsys.net header.s=oraclersys header.b=Xh07sNaq;
+       spf=pass (google.com: domain of coursehero@interact.coursehero.com designates 12.130.153.80 as permitted sender) smtp.mailfrom=coursehero@interact.coursehero.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=interact.coursehero.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=coursehero; d=interact.coursehero.com;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:Feedback-ID:List-Unsubscribe:Message-ID;
+ i=coursehero@interact.coursehero.com;
+ bh=+ey43dAe9VWAI5Fn8IJB82vU9kmfQIHeAigv64DyaO0=;
+ b=XuYPPsd/CEVYa3vuW7GrplFcp3J1vTgyhoC1mEv2aamVfqeNg+JgEZ//CzL01oinifojme6BSLJk
+   t9RqCDZUpl5nB+vkKR1F6GyoLlyhLGItL7djnI0krH1mpS+cr6ls3xbpgaIP3E4p8i1e1lTFx+R+
+   WPjV3qLprqHDSXzv5lc=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=oraclersys; d=responsys.net;
+ h=MIME-Version:Content-Type:Content-Transfer-Encoding:Date:To:From:Reply-To:
+ Subject:Feedback-ID:List-Unsubscribe:Message-ID;
+ bh=+ey43dAe9VWAI5Fn8IJB82vU9kmfQIHeAigv64DyaO0=;
+ b=Xh07sNaq0xszevbarzW7mHMwby3TQCR8C+gZM7WPjNdFtTW+3bn1/6EeJPF4rKO0qApFyCJB+mcU
+   fmlmlM4WGgE6MXzZ6oZmUsz3M+1J5KwBFC+beisjKQie/sowPFbg5Ro/dcXh01P5wYhT9QQaBdlk
+   WUBgFxQW2zzyYuEOEHM=
+Received: by omp.interact.coursehero.com id hn35dq2b610p for <sabacsain@gmail.com>; Mon, 26 Mar 2018 03:26:35 -0700 (envelope-from <coursehero@interact.coursehero.com>)
+X-CSA-Complaints: whitelist-complaints@eco.de
+MIME-Version: 1.0
+Content-Type: text/html;
+	charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+Date: Mon, 26 Mar 2018 03:26:35 -0700
+To: sabacsain@gmail.com
+From: =?UTF-8?B?Q291cnNlIEhlcm8=?= <coursehero@interact.coursehero.com>
+Reply-To: =?UTF-8?B?Q291cnNlIEhlcm8=?= <reply@interact.coursehero.com>
+Subject: You can get the resources you want without upgrading
+Feedback-ID: 7612:236802:oraclersys
+List-Unsubscribe: <https://interact.coursehero.com/pub/optout/UnsubscribeOneStepConfirmAction?YES=true&_ri_=X0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1gCnyyXhGzfYnotWzcwC&_ei_=EolaGGF4SNMvxFF7KucKuWPmGQwB8yeDkf8Uo0MjDcI-xAFhL3gIcjcVGU_5pgHcdtBmOzKuEIVxSfS1woOn1UAlj21YmOcZwoudjwzhDE9BR9NUX_w>, <mailto:unsubscribe-YQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1gCnyyXhGzfYnotWzcwC@imh.rsys2.com?subject=List-Unsubscribe>
+X-sgxh1: kHIHJkHpgxnuHptQJhu
+X-rext: 5.interact2.Eqpa5wY2CDRQbNAedEDJOZFiOKFR8eK1psvuzbSn8gPP_oEx5ghl4XO8
+X-cid: cohero.127162
+Message-ID: <0.1.F.6BF.1D3C4ECEAE29124.0@omp.interact.coursehero.com>
+
+<=21DOCTYPE html>
+<html style=3D=22opacity: 1;=22 xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=
+=22>
+<head>
+   <meta content=3D=22text/html; charset=3Dutf-8=22 http-equiv=3D=22Content=
+-Type=22 />
+   <meta content=3D=22width=3Ddevice-width=22 name=3D=22viewport=22 />
+   <title>Welcome to Course Hero=21</title>
+   <style type=3D=22text/css=22>/* GENERAL STYLING */
+      img =7B
+        height: auto;
+      =7D
+      a img =7B
+        border: none;
+      =7D
+      td, h1, h2, h3, a, span =7B
+        font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif =21=
+important;
+        word-break: break-word;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        hyphens: none;
+      =7D
+      a =7B
+        text-decoration: none;
+        border: 0;
+        outline: none;
+        color:=2339A0FB;
+      =7D
+      a:hover =7B
+        text-decoration:underline;
+        color:=230A84E7;
+        opacity:0=2E7;
+        transition:all =2E25s ease-in-out=7D
+      td=2Epreheader =7B
+        display: none =21important;
+      =7D
+      /* DESKTOP */
+      =40media (max-width: 600px) =7B
+        =2Econtainer=7B
+          width: 100% =21important;
+        =7D
+        a=2Ebutton =7B
+          display: block =21important;
+          margin: 15px 0px =21important;
+        =7D
+        table=5Bclass=3D=22grid=22=5D td =7B
+          display: block;
+        =7D
+        table=5Bclass=3D=22grid=22=5D td img =7B
+          display: block;
+          width: 100%;
+        =7D
+      =7D
+      /* MOBILE */
+      =40media only screen and (max-width: 480px) =7B
+        =2Ecentered =7B
+          display: block =21important;
+          margin-left: auto;
+          margin-right: auto;
+          float: none =21important;
+        =7D
+      =7D
+      /* 3 EQUAL-WIDTH COLUMNS */
+      =40media only screen and (max-width: 599px) =7B
+        td=5Bclass=3D=22pattern=22=5D table =7B
+          width: 100%;
+        =7D
+        td=5Bclass=3D=22pattern=22=5D =2Ecol=7B
+          width: 33%;
+        =7D
+        =40media only screen and (max-width: 500px) =7B
+          td=5Bclass=3D=22pattern=22=5D =2Ecol=7B
+            width: 100%;
+            display: block;
+          =7D
+          td=5Bclass=3D=22pattern=22=5D =2Ecol-left,
+          td=5Bclass=3D=22pattern=22=5D =2Ecol-mid =7B
+            margin-bottom: 20px;
+          =7D
+   </style>
+</head>
+<body style=3D=22min-width: 100%; text-size-adjust: 100%; margin: 0px; padd=
+ing: 0px; background: rgb(241, 241, 241); width: 100%;=22><=21--=5Bif (gte =
+mso 9)=7C(IE)=5D><table width=3D=22600=22 align=3D=22center=22 cellpadding=
+=3D=220=22 cellspacing=3D=220=22 border=3D=220=22><tr><td><=21=5Bendif=5D--=
+><=21-- Begin Container -->
+<table class=3D=22container=22 style=3D=22width: 100%; vertical-align: top;=
+ background: =23f1f1f1; border-spacing: 0; border-collapse: collapse; font-=
+family: 'Helvetica', 'Arial', sans-serif; font-size: 14px; line-height: 140=
+%; color: =233d3d3d; padding: 0;=22>
+   <tbody><=21-- BEGIN PREHEADER -->
+      <tr>
+         <td class=3D=22preheader=22 style=3D=22color: =23f1f1f1; font-size=
+: =2E1px;=22>Here's how to get the resources you need to succeed=2E</td>
+      </tr>
+      <=21-- END PREHEADER -->
+      <tr class=3D=22container=22 style=3D=22vertical-align: top; padding: =
+0=22>
+         <td align=3D=22center=22 style=3D=22vertical-align: top; word-brea=
+k: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bo=
+rder-collapse: collapse =21important; padding: 0px;=22><=21-- Begin Content=
+ -->
+         <table class=3D=22container=22 style=3D=22width: 600px; vertical-a=
+lign: top; background: =23ffffff; border-spacing: 0; border-collapse: colla=
+pse; padding: 0;=22><=21-- BEGIN HEADER -->          <tr style=3D=22backgro=
+und: =23001a96; vertical-align: top; padding: 0; border-bottom: 5px solid =
+=23e00099;=22>
+            <td valign=3D=22top=22 style=3D=22background: =23001a96; vertic=
+al-align: top; text-align: center; word-break: break-word; -webkit-hyphens:=
+ none; -moz-hyphens: none; hyphens: none; border-collapse: collapse =21impo=
+rtant; padding: 20px 25px 15px 25px;=22>
+              <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc?_ri_=
+=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1gCnyyX=
+hGzfYnotWzcwCVXtpKX%3DSWWSRT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtLDI0Ny=
+uV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxOcD0kW=
+YWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2;=22 target=3D=22_blank=22><i=
+mg src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/coher=
+o/contentlibrary/creativeassets/brandassets/chLogo_horizontal_150=2Epng=22 =
+style=3D=22outline: none; text-decoration: none; -ms-interpolation-mode: bi=
+cubic; border: none; max-width: 150px;=22 alt=3D=22Course Hero=22 /></a>
+            </td>
+          </tr><=21-- END HEADER --><=21-- BEGIN BODY CONTENT -->
+            <tbody>
+               <tr style=3D=22background: =23ffffff; vertical-align: top; p=
+adding: 0;=22>
+                  <td colspan=3D=222=22 style=3D=22vertical-align: top; wor=
+d-break: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: no=
+ne; border-collapse: collapse =21important; padding: 0;=22 valign=3D=22top=
+=22><=21-- Begin Hero Image -->
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; text-align: center; margin: 0; padding: 0;=22=
+ valign=3D=22top=22><a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWSAT&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbN=
+PFtLDI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFA=
+PlxOcD0kWYWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2; text-decoration: n=
+one;=22 target=3D=22_blank=22><img src=3D=22https://static=2Ecdn=2Eresponsy=
+s=2Enet/i2/responsysimages/cohero/contentlibrary/creativeassets/heroimages/=
+documents_digitallibrary=2Epng=22 style=3D=22display: block; width: 100%;=
+=22 /></a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Hero Image --><=21-- Begin Spacing -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2210=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Spacing --><=21-- Begin Heading -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 24px; line-height: 140%; color: =
+=23001a96; font-weight: 700; text-align: center; margin: 0; padding: 0px 25=
+px;=22 valign=3D=22top=22>Get Access to Resources for Free</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Heading --><=21-- Begin Spacing -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2210=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px; height: 10p=
+x;=22></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Spacing --><=21-- Begin Copy -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22><=21-- Begin Paragraph 1 -->
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 14px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22>We get it=2E Upgrading your membership may not be in your budget, but=
+ don&rsquo;t worry=2E You can still get access to all of the great study he=
+lp that Course Hero has to offer by uploading study guides, class notes, or=
+ worksheets that you&rsquo;ve created for any of your classes=2E</td>
+                        </tr>
+                        <=21-- End Paragraph 1 --><=21-- Begin Spacing -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2215=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin 2-Col Content, R=
+ow 1 -->
+                     </tbody>
+                  </table>
+                  <=21-- Begin Copy -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22><=21-- Begin Paragraph 2 -->
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 14px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22>When you upload 10 documents, you get 5 free unlocks=2E That&rsquo;s =
+5 documents in the Course Hero library that you can instantly access withou=
+t upgrading your membership=2E</td>
+                        </tr>
+                        <=21-- End Paragraph 2 --><=21-- Begin Spacing -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2210=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin Paragraph 2 -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 14px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22><strong>It&rsquo;s easy to get free access</strong> by uploading: jus=
+t log onto Course Hero and click upload documents=2E Make sure to tag all o=
+f your resources to the class you created them for and then submit=2E You&r=
+squo;ll get an email letting you know when they&rsquo;ve been processed=2E<=
+/td>
+                        </tr>
+                        <=21-- End Paragraph 2 --><=21-- Begin Spacing -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2210=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin Paragraph 2 -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 14px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22>Ready to get more help studying and master your classes?</td>
+                        </tr>
+                        <=21-- End Paragraph 2 -->
+                     </tbody>
+                  </table>
+                  <=21-- End Copy --><=21-- Begin Spacing -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2220=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Spacing --><=21-- Begin Button -->
+
+                  <table align=3D=22center=22 style=3D=22width: 100%; verti=
+cal-align: top; background: =23ffffff; border-spacing: 0; border-collapse: =
+collapse; overflow: hidden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td align=3D=22center=22 style=3D=22background: =
+=23ffffff; word-break: break-word; -webkit-hyphens: none; -moz-hyphens: non=
+e; hyphens: none; border-collapse: collapse =21important; vertical-align: t=
+op; font-family: 'Helvetica', 'Arial', sans-serif; line-height: 140%; margi=
+n: 0; padding: 0px 25px;=22 valign=3D=22top=22><a class=3D=22button=22 href=
+=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc?_ri_=3DX0Gzc2X%3DYQpglLjHJ=
+lTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1gCnyyXhGzfYnotWzcwCVXtpKX%3D=
+SWWTWT&amp;_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtLDI0NyuV1Wvbw2aBtn2u3VEB=
+VGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxOcD0kWYWhF_VxHmNuw=2E=22=
+ style=3D=22display: inline-block; vertical-align: middle; outline: 0; curs=
+or: pointer; border-radius: 5px; font-family: 'Helvetica', 'Arial', sans-se=
+rif; color: =23ffffff; font-size: 18px; line-height: 100%; font-weight: 700=
+; text-decoration: none; text-align: center; background: =23ee0099; box-sha=
+dow: inset 0 -3px 0 rgba(0,0,0,0=2E1); border: 0 solid transparent; padding=
+: 10px 20px; margin: 0;=22>Upload for Access</a></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Button --><=21-- Begin Spacing -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2220=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Spacing --><=21-- Begin Copy -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22><=21-- Begin line -->
+                     <tbody>
+                        <tr style=3D=22background: =23F3F3F3; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=223=22 style=3D=22background: =23F=
+3F3F3; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin Spacing -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2215=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin Paragraph 2 -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 18px; line-height: 140%; color: =
+=23001a96; font-weight: 700; text-align: left; margin: 0; padding: 0px 25px=
+;=22 valign=3D=22top=22>Here's what students are saying about Course Hero's=
+ library:</td>
+                        </tr>
+                        <=21-- End Paragraph 2 --><=21-- Begin Spacing -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2210=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <=21-- End Spacing --><=21-- Begin Paragraph 2 -->
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 16px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22><em>=22The abundance of course notes and tools on the website surpris=
+ed me the most &mdash; there is always an answer that can help you, as well=
+ as notes that can help you work through a problem that you&rsquo;re strugg=
+ling with=2E=22</em></td>
+                        </tr>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=225=22 style=3D=22background: =23f=
+fffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td style=3D=22background: =23ffffff; word-break=
+: break-word; -webkit-hyphens: none; -moz-hyphens: none; hyphens: none; bor=
+der-collapse: collapse =21important; vertical-align: top; font-family: 'Hel=
+vetica', 'Arial', sans-serif; font-size: 14px; line-height: 140%; color: =
+=233d3d3d; text-align: left; margin: 0; padding: 0px 25px;=22 valign=3D=22t=
+op=22>&mdash; Sachin Junda from the University of Illinois at Urbana Champa=
+ign</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Copy --><=21-- Begin Spacing -->
+
+                  <table style=3D=22width: 100%; vertical-align: top; backg=
+round: =23ffffff; border-spacing: 0; border-collapse: collapse; overflow: h=
+idden;=22>
+                     <tbody>
+                        <tr style=3D=22background: =23ffffff; vertical-alig=
+n: top; padding: 0;=22>
+                           <td height=3D=2230=22 style=3D=22background: =23=
+ffffff; font-size: 0=2E5px; line-height:1px; padding: 0px 25px;=22></td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  <=21-- End Spacing --></td>
+               </tr>
+               <=21-- END BODY CONTENT --><=21-- BEGIN FOOTER -->
+            </tbody>
+         </table>
+
+         <table align=3D=22center=22 class=3D=22container=22 style=3D=22wid=
+th: 600px; vertical-align: top; background: =23ffffff; border-spacing: 0; b=
+order-collapse: collapse; padding: 0;=22>        <=21-- BEGIN FOOTER -->
+          <tr style=3D=22background: =23f1f1f1; vertical-align: top; paddin=
+g: 0; border-top: 5px solid =23e8e8e8;=22>
+            <td valign=3D=22top=22 align=3D=22center=22 style=3D=22backgrou=
+nd: =23f1f1f1; word-break: break-word; -webkit-hyphens: none; -moz-hyphens:=
+ none; hyphens: none; border-collapse: collapse =21important; vertical-alig=
+n: top; font-family: 'Helvetica', 'Arial', sans-serif; line-height: 140%; m=
+argin: 0; padding: 0px 25px;=22>
+           =20
+            <=21-- Begin App Buttons -->
+              <table align=3D=22center=22 style=3D=22text-align: center; ma=
+rgin-top: 20px; background: =23f1f1f1;=22>
+                <tr align=3D=22center=22 style=3D=22vertical-align: top; te=
+xt-align: center; padding: 0;=22>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWUAT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 110px;=22 alt=3D=22Available On The=
+ App Store=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysi=
+mages/cohero/contentlibrary/creativeassets/brandassets/badge_appstore=2Epng=
+=22 />
+                    </a>
+                  </td>
+
+                  <td style=3D=22width: 25px;=22></td>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWUCT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 110px;=22 alt=3D=22Available On Goo=
+gle Play=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysima=
+ges/cohero/contentlibrary/creativeassets/brandassets/badge_googleplay=2Epng=
+=22 />
+                    </a>
+                  </td>
+
+                </tr>
+              </table>
+            <=21-- End App Buttons -->
+
+            <=21-- Begin Social Media Icons -->
+              <table align=3D=22center=22 style=3D=22text-align: center; ma=
+rgin-top: 10px; background: =23f1f1f1;=22>
+                <tr align=3D=22center=22 style=3D=22vertical-align: top; te=
+xt-align: center; padding: 0;=22>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWWRT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 20px;=22 alt=3D=22Course Hero Blog=
+=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/cohe=
+ro/contentlibrary/creativeassets/brandassets/social_blog=2Epng=22 />
+                    </a>
+                  </td>
+
+                  <td style=3D=22width: 25px;=22></td>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWWTT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 20px;=22 alt=3D=22Course Hero Linke=
+dIn=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/c=
+ohero/contentlibrary/creativeassets/brandassets/social_linkedin=2Epng=22 />
+                    </a>
+                  </td>
+
+                  <td style=3D=22width: 25px;=22></td>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWWAT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 20px;=22 alt=3D=22Course Hero Faceb=
+ook=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/c=
+ohero/contentlibrary/creativeassets/brandassets/social_facebook=2Epng=22 />
+                    </a>
+                  </td>
+
+                  <td style=3D=22width: 25px;=22></td>
+
+                  <td align=3D=22center=22 style=3D=22text-align: center;=
+=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWWCT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22text-decoration: none; text-align: cente=
+r;=22 target=3D=22_blank=22>
+                      <img xmlns=3D=22http://www=2Ew3=2Eorg/1999/xhtml=22 s=
+tyle=3D=22display: inline-block; width: 20px;=22 alt=3D=22Course Hero Twitt=
+er=22 src=3D=22https://static=2Ecdn=2Eresponsys=2Enet/i2/responsysimages/co=
+hero/contentlibrary/creativeassets/brandassets/social_twitter=2Epng=22 />
+                    </a>
+                  </td>
+
+                </tr>
+              </table>
+            <=21-- End Social Media Icons -->
+
+            <=21-- Begin Address -->
+              <table align=3D=22center=22 style=3D=22text-align: center; ma=
+rgin-top: 10px; background: =23f1f1f1;=22>
+                <tr align=3D=22center=22 style=3D=22vertical-align: top; te=
+xt-align: center; padding: 0;=22>
+                  <td style=3D=22word-break: break-word; -webkit-hyphens: n=
+one; -moz-hyphens: none; hyphens: none; border-collapse: collapse =21import=
+ant; vertical-align: top; font-family: 'Helvetica', 'Arial', sans-serif; fo=
+nt-size: 11px; line-height: 140%; color: =23a6a6ac; text-align: center; mar=
+gin: 0; padding: 0px 25px;=22>
+                    <strong>Course Hero, Inc=2E</strong> 2000 Seaport Blvd=
+=2E, 3rd Floor, Redwood City, CA 94063
+                  </td>
+                </tr>
+              </table>
+            <=21-- End Address -->
+
+            <=21-- Begin Links -->
+              <table align=3D=22center=22 style=3D=22text-align: center; ma=
+rgin-top: 10px; background: =23f1f1f1;=22>
+                <tr align=3D=22center=22 style=3D=22vertical-align: top; te=
+xt-align: center; padding: 0;=22>
+                  <td style=3D=22word-break: break-word; -webkit-hyphens: n=
+one; -moz-hyphens: none; hyphens: none; border-collapse: collapse =21import=
+ant; vertical-align: top; font-family: 'Helvetica', 'Arial', sans-serif; fo=
+nt-size: 11px; line-height: 140%; color: =23a6a6ac; text-align: center; mar=
+gin: 0; padding: 0;=22>
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWYWT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2; text-decoration: none;=
+=22 target=3D=22_blank=22>Help Center</a> &nbsp;&nbsp;=7C&nbsp;&nbsp;
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWYCT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2; text-decoration: none;=
+=22 target=3D=22_blank=22>Terms of Use</a> &nbsp;&nbsp;=7C&nbsp;&nbsp;
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWAWT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2; text-decoration: none;=
+=22 target=3D=22_blank=22>Privacy</a> &nbsp;&nbsp;=7C&nbsp;&nbsp;
+                    <a href=3D=22https://interact=2Ecoursehero=2Ecom/pub/cc=
+?_ri_=3DX0Gzc2X%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1g=
+CnyyXhGzfYnotWzcwCVXtpKX%3DSWWBTT&_ei_=3DEq2tf9zs59idfPO1Sc_9BbnV-FacbNPFtL=
+DI0NyuV1Wvbw2aBtn2u3VEBVGMvsMeBK_4zl2xBRiTqBoDBjeLHLbdnr83BkK3G4PdLHDFAPlxO=
+cD0kWYWhF_VxHmNuw=2E=22 style=3D=22color: =2300b5e2; text-decoration: none;=
+=22 target=3D=22_blank=22>Unsubscribe</a>
+                    <img src=3D=22https://www=2Ecoursehero=2Ecom/pixel=2Ejp=
+g?campaign_id=3Dcohero=2E127162&campaign_name=3DCH_Onboard_Stu_UploadForAcc=
+essExplainer_2017_08&customer_id=3D100000775477359=22/>
+                  </td>
+                </tr>
+              </table>
+            <=21-- End Links -->
+
+            </td>
+          </tr>
+        <=21-- END FOOTER -->
+         </table>
+         <=21-- END FOOTER --><=21-- End Content --></td>
+      </tr>
+   </tbody>
+</table>
+<=21-- End Container --><=21--=5Bif (gte mso 9)=7C(IE)=5D></td></tr></table=
+><=21=5Bendif=5D--><table cellpadding=3D=220=22 cellspacing=3D=220=22 style=
+=3D=22border: 0px; padding: 0px; margin: 0px; position: absolute; display: =
+none; float: left=22>
+<tr>
+<td height=3D=221=22 style=3D=22font-size: 1px; line-height: 1px; padding: =
+0px;=22>
+<br><img src=3D=22https://interact=2Ecoursehero=2Ecom/pub/as?_ri_=3DX0Gzc2X=
+%3DYQpglLjHJlTQGzbiHYO5T890zaIv6LKG9cwzdzgpwdzg0CLdSikNmFI1gCnyyXhGzfYnotWz=
+cwCVXHkMX%3Dw&_ei_=3DEolaGGF4SNMvxFF7KucKuWPmGQwB8yeDkf8Uo0MjDcI-xAFhL3gIcj=
+cVGU_5pgHcdtBmOzKuEIVxSfS1woOn1UAlj21YmOcZwoudjwzhDE9BR9NUX_w=2E=22></img>
+</td>
+</tr>
+</table></body>
+</html>
+
+

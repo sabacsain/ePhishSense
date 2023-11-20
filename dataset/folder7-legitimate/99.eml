@@ -1,0 +1,87 @@
+Delivered-To: ephishsense@gmail.com
+Received: by 2002:a05:7208:b14d:b0:6a:bf98:5822 with SMTP id v13csp2485393rbb;
+        Mon, 13 Nov 2023 23:00:49 -0800 (PST)
+X-Received: by 2002:a17:902:ea08:b0:1cc:42b1:934b with SMTP id s8-20020a170902ea0800b001cc42b1934bmr1537429plg.18.1699945248688;
+        Mon, 13 Nov 2023 23:00:48 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699945248; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gf1HDpq6d6Dvzg+9AHs97JW5pBOzozLpEq2lbkHsfwKQ5tisRxsZ3H3BVMGE+WLE5h
+         GZdwI6J8CgCPwZw79o8pRQI2z92ubftJuqCJRoVxfGlVTGVi0CA06ouFxCtx0D5L1Nus
+         IZtW0mJP+zK3+xEF1R5MBHp5ueIIZJpsEv+FdXf+AWP5AOn1w3aYslOe+EJoJGV6PFJl
+         4Lt4VVccOKCpzQ5UjXXKGFNpkpkAeF8CMTSkSguEhVJceIvCJWTbXLtOy9WwRN2+2G0c
+         Zbl/0b0oO8lqw0XDilz1O+FrdzJPCMHOnbD4eYSCIm2+uvb3QwkhGWfVSU2YbJigNRlN
+         j9mA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=subject:to:from:date:message-id:dkim-signature;
+        bh=leAxZAz0Rmn8vbDPOZlQArvK20iQ+vRR2B+wVR8oXgE=;
+        fh=p+wR414jFs+fJusqVWF2gtnQNJ9z5O/zGf+t7VfRJDs=;
+        b=xCMvQ265KcXH5NJ+o5EBgzKJuW5vfnlDS0qc+HdzTnzBGDDKtO6k1ncd0cHukDit35
+         9yqNSq2hAlGxobkZE80vXDb0ZifQqTdBxPV4gJFZwPr/kKoiG/VFK/FTL8CE0bnIiZJK
+         yPfNPnsYzZyYZK2Kw//PSnM7m+RaKN0R04e0W2vg5P8EPBBNWvjDlOBTrtHFaIaahA/h
+         /hxRzqI8Qi9PizqTSkGkdt/hdiqgl7JYJg4HCMggacYvhQwizTvfGkz9a6ASqbI3ZPar
+         msq0KhWIh2mpuxqFwVmhni4/NdUVDT6kyI9j3v0VlELlTUPVkSUae56Oce9A7MwPdy0p
+         tFyA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=QkT82RgO;
+       spf=pass (google.com: domain of senderephishsense@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=senderephishsense@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <senderephishsense@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id ji22-20020a170903325600b001ca4ad86360sor948261plb.19.2023.11.13.23.00.48
+        for <ephishsense@gmail.com>
+        (Google Transport Security);
+        Mon, 13 Nov 2023 23:00:48 -0800 (PST)
+Received-SPF: pass (google.com: domain of senderephishsense@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20230601 header.b=QkT82RgO;
+       spf=pass (google.com: domain of senderephishsense@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=senderephishsense@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20230601; t=1699945248; x=1700550048; dara=google.com;
+        h=subject:to:from:date:message-id:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=leAxZAz0Rmn8vbDPOZlQArvK20iQ+vRR2B+wVR8oXgE=;
+        b=QkT82RgOfJZdmkRcHEc5yLFdnEM3iXQ+rNIkwadeMuYUQH/2klBe/ZrToks1ulXmzk
+         W3e67PUOs/xS0ZaGB1d0OrQmS6rU6WUhIUc6qJ918SR+LEL+sy+kcKKp4DgGWWTgySfU
+         Qev71PGxV7mbIN5tWcw6bGLzfNtpJDXcljXHVzPLiXrFt0lvY1z3TCsXaJI0VX5QylTt
+         Q9fbag1+N3EW3hOfQmDrvl9NJEbwL951BxMMehD0YfiXnMOhCoEWuYfwMTSkXM0F9t2c
+         tHBK3eScbm66bomgrFWyj/qUVNe60S1VmPbqRy2H/QrOstLzcKoz2sfp6MULZIvYdcy/
+         dzAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1699945248; x=1700550048;
+        h=subject:to:from:date:message-id:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=leAxZAz0Rmn8vbDPOZlQArvK20iQ+vRR2B+wVR8oXgE=;
+        b=PHx6cqOtw5L5K9PYltsE8YHHtcnc8UR5lIxCoqTXVMidAXk1PMzwTkYjm09DnPesBX
+         8ZaUDBJNrAYTrbnw1RpFS0aaAMxIldUlS6YdFQUYxRFkHtF/vz8lpJodALaaQ1wBqMRi
+         A4L/JkS+fgpb0N2QOHJkEl/WCtqKkPTAQDu+OmUWJS/VHWztX8qUzeRP67Auajxg47a8
+         IcWDyQsIjvjjHdKemRunZlMHmACUqJ55GOn/Lyt1Pi/tyAxjpIr2/XiTvLc8cDm25ST7
+         0T6c7Ejfg3BusE4QTItaVmibCMp0O1si2OrZPgQuQ8Oc0+Px9d4ZF+SX/As85Ar3feBT
+         h8xg==
+X-Gm-Message-State: AOJu0YwkronU5kN+WAv72VlOqG57gZostaONL1Gu5VWyVz6G56YDufG4
+	C2aBJVt6hBQqBig9fLdYYPLGTAYzuPeUeQ==
+X-Google-Smtp-Source: AGHT+IElwsKExYXXCBP7b+y802U/GyEF2nuQ2/iAV63GJeMKqS1PK9ayIcLkrjyOt1+B+s60xTWwow==
+X-Received: by 2002:a17:902:c943:b0:1cc:23ea:47b2 with SMTP id i3-20020a170902c94300b001cc23ea47b2mr1533936pla.37.1699945247811;
+        Mon, 13 Nov 2023 23:00:47 -0800 (PST)
+Return-Path: <senderephishsense@gmail.com>
+Received: from pop-os.localdomain ([112.201.131.161])
+        by smtp.gmail.com with ESMTPSA id a6-20020a170902900600b001c736746d33sm5031333plp.217.2023.11.13.23.00.46
+        for <ephishsense@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 13 Nov 2023 23:00:47 -0800 (PST)
+Message-ID: <65531b1f.170a0220.9b41f.b7e2@mx.google.com>
+Date: Mon, 13 Nov 2023 23:00:47 -0800 (PST)
+From: senderephishsense@gmail.com
+To: ephishsense@gmail.com, ephishsense@gmail.com
+Subject: Recipe Swap
+
+Hey Hannah,
+
+Happy Holidays!
+
+I hope you're having a great day.
+
+I'm sending you my best wishes.
+
+Talk to you soon,
+Steven

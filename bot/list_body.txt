@@ -1,0 +1,19 @@
+f"""Hey {random.choice(name_list)}!\n\n
+Hope this email finds you well! It's been a while since we caught up, and I was thinking it's high time we grab a coffee and chat about life. How about we meet up this week? I found this cozy new coffee spot downtown that I've been dying to try.\n\n
+Let me know what day works for you, and we can make it happen. Looking forward to some good laughs and catching up!\n\n
+Cheers,\n
+{random.choice(name_list)}"""
+,         
+
+f"""Hey, what's up? friend!\n\n
+I hope you have been well!\n\n
+Cheers,\n
+{random.choice(name_list)}"""
+,     
+       
+f"""Hi {random.choice(name_list)},\n\n
+Long time, no talk! How about a quick coffee catch-up or a virtual chat? I've got some updates to share and would love to hear what's new with you. Let me know when you're free!\n\n
+Yours,\n
+{random.choice(name_list)}"""
+
+

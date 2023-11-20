@@ -1,0 +1,321 @@
+Delivered-To: sendoff213@gmail.com
+Received: by 10.176.89.242 with SMTP id k47csp1173607uad;
+        Mon, 25 Dec 2017 08:25:18 -0800 (PST)
+X-Google-Smtp-Source: ACJfBos0caNA0+HUV1GZyrDWSoVXJhwpt7F8evWg8eReiDFU2xIqmBK2AL4RQqSkkl/hKkF3Qpmn
+X-Received: by 10.28.134.130 with SMTP id i124mr18224282wmd.10.1514219118671;
+        Mon, 25 Dec 2017 08:25:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1514219118; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ddr6QkDJHQ2TJI4oLpzbpQU1+T4WEKqYilOzYiKm4Kx7ajyz0AGAd2YXYBTypTHvrP
+         3BliLjaXDhG0FW1zRNnHC9wDAoFn6rtW7GpmmiC49Kv77fhWJEkqIS1pLNjOTiKnxqxK
+         LOYfWCS4HK4lz66/aw+/Dei9GfXUfVX9L2HJsEsawxDdm7E9OfvQXKBeXbRjWvORnC7L
+         tsT7CqWFgzj2ILUQi9fGBkkqoMVtv114JhemrIufuSna9T1m3y/Nv7oqupO69vorLQVj
+         AMBKnYuCu+RwYoAR/1Ddf8lOQ97wn0WhfLFDqDydXI/XT/Osby7JYpMpDYy1B/RHycbD
+         KVUw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:list-unsubscribe:list-id
+         :message-id:subject:from:to:date:dkim-signature:dkim-filter
+         :arc-authentication-results;
+        bh=ZCU66RwHCe41XgvWX0BdNfoefSSt6KQVt9/2FP4tkuU=;
+        b=KQsqC4dN5PrNKCdU7hwJZ9etkSINt4m23xdNiORbtgVPrSH1LcuZZvUYdgkdiN4V3P
+         t5/b5mwcE9neYnef7jpiNeIHB68HtEPZpL3I7skNvCDYyB/656oZ+wQaQgXnHQtqDVbn
+         YLLmVUS/QCYwRZXUoodNpXVeVQkWqTBc04Lu/AHMuYKC+hiadAqPC5kiVs2DZKDGE2+T
+         lNmuEA0dIoN10W3hO7OnX0p7DJHOqIeYdz2s+HLgq3EW51wDyeFcYbctaESdDfxNkJrV
+         GDOOE6mijvbNbh+AffObSK4HqVri4a5g0yVBxMH3KXlLSDqct6ddjpN615Sz+Btg1f86
+         ++UA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@ashampoo.com header.s=201507221233 header.b=kAU28kAN;
+       spf=pass (google.com: domain of bounce@mail003.ashampoo.com designates 62.159.55.55 as permitted sender) smtp.mailfrom=bounce@mail003.ashampoo.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=ashampoo.com
+Return-Path: <bounce@mail003.ashampoo.com>
+Received: from mail011.ashampoo.com (mail011.ashampoo.com. [62.159.55.55])
+        by mx.google.com with ESMTPS id n4si11085250wrg.528.2017.12.25.08.25.18
+        for <Sendoff213@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 25 Dec 2017 08:25:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce@mail003.ashampoo.com designates 62.159.55.55 as permitted sender) client-ip=62.159.55.55;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@ashampoo.com header.s=201507221233 header.b=kAU28kAN;
+       spf=pass (google.com: domain of bounce@mail003.ashampoo.com designates 62.159.55.55 as permitted sender) smtp.mailfrom=bounce@mail003.ashampoo.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=ashampoo.com
+Received: from mailrr.ashampoo.com (ashsrvmailrr.ashampoo.local [10.1.1.18])
+	(using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+	(No client certificate requested)
+	by mail011.ashampoo.com (Postfix) with ESMTPS id 3z54GP6XpGz1w
+	for <Sendoff213@gmail.com>; Mon, 25 Dec 2017 17:25:17 +0100 (CET)
+DKIM-Filter: OpenDKIM Filter v2.10.3 mail011.ashampoo.com 3z54GP6XpGz1w
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=ashampoo.com;
+	s=201507221233; t=1514219117;
+	bh=VKJzT04r6Gj9VigbFe/G0rfKRa3Y4yjD60IyW7s9k5Q=;
+	h=Date:To:From:Subject:List-Id:List-Unsubscribe;
+	b=kAU28kANyUaBy0JEd0YT3uNlHcwRtrFpjZltGhZh3CNNo+Hq0GiSTeIF/Aa/ofK89
+	 JrUk6O8ilPEmmZKRYhUiwFBtmCPZj3j700GV/K9a0gM+/lDBzH5ziTT0TaCT/p54jh
+	 wt+VZSN/sbx8fxky6iezZDshdbJbg64/a4kH23h8=
+Received: from mailrr.ashampoo.com (ashsrvmail003.ashampoo.local [10.1.1.7])
+	by mailrr.ashampoo.com (Postfix) with ESMTP id D2C595D
+	for <Sendoff213@gmail.com>; Mon, 25 Dec 2017 17:25:17 +0100 (CET)
+Date: Mon, 25 Dec 2017 13:01:03 +0100
+To: Ashampoo Customer <Sendoff213@gmail.com>
+From: Ashampoo News <news@ashampoo.com>
+Subject: 71% discount - The digital cutter for your images
+Message-ID: <0e410e4e7922c3460c2f16ef7cb4219a@mailrr.ashampoo.com>
+X-Priority: 3
+X-Mailer: PHPMailer 5.2.9 (https://github.com/PHPMailer/PHPMailer/)
+X-CSA-Complaints: <mailto:whitelist-complaints@eco.de>
+List-Id: <171225_en.49982.mailrr.ashampoo.com>
+List-Unsubscribe: <mailto:fbl--24001024--@mail003.ashampoo.com>, <https://www.ashampoo.com/unsubscribe.php?cid=24001024>
+X-rpcampaign: ash49982
+X-Yiggles: 49982-24001024-1
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+	boundary="b1_0e410e4e7922c3460c2f16ef7cb4219a"
+Content-Transfer-Encoding: 8bit
+
+--b1_0e410e4e7922c3460c2f16ef7cb4219a
+Content-Type: text/plain; charset=us-ascii
+
+Your client does not support HTML emails. Please let us know, whether you like to receive text emails.
+
+Please find the mailing here online:
+http://r.ashampoo.com/mailing_online.php?mailing=1%2F171225_en.htm&email=Sendoff213@gmail.com&id_email=24001024&login_key=Kys1iqHY&salutation=Dear Ashampoo customer&rc=0&mid=49982
+
+
+If you do not want to receive any further information (to: Sendoff213@gmail.com) you can cancel your subscription any time. 
+Please log in in "MyAshampoo" on our website and change your Newsletter settings in "Settings".
+
+Click here: https://www.ashampoo.com/en/usd/sub/24001024
+
+(Sendoff213@gmail.com / 24001024)
+
+
+--b1_0e410e4e7922c3460c2f16ef7cb4219a
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=600" />
+<meta name="format-detection" content="date=no">
+<meta name="format-detection" content="telephone=no">
+<title></title>
+
+<style>
+	*{-webkit-text-size-adjust: none;}
+
+	html, body{
+		padding:0px 0px 0px 0px;
+		margin:0px 0px 0px 0px;
+	}
+
+    table{
+        margin:0;
+        padding:0;
+        border:0;
+        border-collapse: collapse;
+        mso-cellspacing: 0px;
+        mso-padding-alt: 0px 0px 0px 0px;
+        mso-table-lspace:0;
+        mso-table-rspace:0;
+    }
+
+    table td {
+        margin:0;
+        padding:0;
+        border:0;
+        border-collapse: collapse;
+        mso-line-height-rule:exactly;
+        mso-cellspacing: 0px;
+        mso-padding-alt: 0px 0px 0px 0px;
+        mso-table-lspace:0;
+        mso-table-rspace:0;
+    }
+
+    img{
+        margin:0;
+        padding:0;
+        border:0;
+        mso-cellspacing: 0px;
+        mso-padding-alt: 0px 0px 0px 0px;
+    }
+
+	/* Apple auto generated links */
+	a[x-apple-data-detectors] {
+		color: inherit !important;
+		text-decoration: none !important;
+		font-size: inherit !important;
+		font-family: inherit !important;
+		font-weight: inherit !important;
+		line-height: inherit !important;
+	}
+
+</style>
+
+
+<!--[if gte mso 9]><xml>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+</head>
+
+<body marginheight="0" marginwidth="0" bgcolor="#FFFFFF" style="font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size:12px; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;">
+<table align="center" cellpadding="0" cellspacing="0" border="0" style="width:100%; text-align:center; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px;" bgcolor="#8ea400">
+    <tr><td colspan="3" align="center" style="padding-top:5px; padding-bottom:5px; font-family:Segoe UI, Helvetica, Arial, sans-serif; font-size:8px; color:#FFFFFF; line-height:9px; border-bottom:1px dotted #CCCCCC;">Stunning photo montages that will amaze you</td></tr>
+    <tr><td align="center" style="border-bottom:2px solid #FFFFFF;">
+            <table border="0" align="center" cellpadding="0" cellspacing="0" style="width:600px; margin-left:auto; margin-right:auto; table-layout:fixed; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px;">
+                <tr>
+                    <td align="left" valign="middle" style="width:130px; font-size:10px;"><img src="https://img.ashampoo.com/images_mailing/template/2015/ashlogo-partner.png" width="120" height="30" alt="(Ashampoo Partner Shop)" style="display:block;"></td>
+                    <td align="center" valign="middle" style="width:340px; font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:10px; color:#FFFFFF; line-height:11px;">Please add <a href="mailto:news@ashampoo.com" style="color:#FFFFFF; font-style:italic; text-decoration:none;">news@ashampoo.com</a> to your address book to ensure that you can receive all Ashampoo mails.</td>
+                    <td align="right" valign="middle" style="width:130px;">	<a href="http://r.ashampoo.com/mailing_online.php?mailing=1%2F171225_en.htm&email=Sendoff213@gmail.com&id_email=24001024&login_key=Kys1iqHY&salutation=Dear Ashampoo customer&rc=0&mid=49982" style="font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:10px; color:#FFFFFF;">View online</a></td>
+                </tr>
+            </table>
+    </td></tr>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:100%; margin:0; padding:0;">
+
+<tr><td style="background-color:#1f2426;" align="center">
+
+<table cellpadding="0" cellspacing="0" border="0" style="width:600px; min-width:600px; margin:0; padding:0; background-color:#ffffff;" align="center">
+	<tr><td style="background-color:#CC0000;"><table border="0" align="center" cellpadding="0" cellspacing="0" style="width:600px;">
+			<tr>
+				<td style="width:130px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/clock.png" width="120" height="60" alt="(clock icon)" style="display:block;"></td>
+				<td align="left" style="width:470px; font-family:Segoe UI, Arial, sans-serif; font-size:20px; color:#FFFFFF; padding-top:10px; padding-right:30px; padding-bottom:10px; background-color:#cc0000;"> SAVE <span>71%</span> TODAY<br><strong>Hurry up – before offer expires!</strong></td>
+			</tr>        
+		</table>
+	</td></tr>
+	<tr><td style="background-color:#009de0;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/head.jpg" width="600" alt="" style="display:block;"></td></tr>
+	<tr><td align="center" style="background-color:#009de0; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:40px; padding:0 30px 30px 30px;">Cutting out objects has never been easier!</td></tr>
+	<!--[if mso]>
+	<tr><td align="center" style="padding-left:30px; padding-right:30px; padding-bottom:10px; background-color:#009de0;">
+		  <v:roundrect href="http://r.ashampoo.com/r.php?id=1551908&ri=tesf&u=24001024&lk=Kys1iqHY" style="height:60px; v-text-anchor:middle; width:530px;" arcsize="5%" strokecolor="#FFCC00" fillcolor="#FFCC00">
+			<v:fill color2="#FFFF66" type="gradient" />
+			<w:anchorlock/>
+			<center style="font-family:Segoe UI, Arial, sans-serif; font-size:18px; color:#333333; font-weight:bold;">Buy now for US$19.99 instead of <span style="text-decoration:line-through; color:#CC0000;">US$69.00</span></center>
+		  </v:roundrect>
+	</td></tr>
+	<![endif]-->
+	<tr style="mso-hide:all;"><td align="center" style="padding-bottom:10px; background-color:#009de0;">
+		<table border="0" align="center" cellpadding="0" cellspacing="0" style="mso-hide:all; width:540px; margin-left:auto; margin-right:auto;">
+			<tr style="mso-hide:all;"><td align="center" valign="middle">
+			<a href="http://r.ashampoo.com/r.php?id=1551908&ri=tesf&u=24001024&lk=Kys1iqHY" name="partner0102 71% EN 251217" target="_blank" style="mso-hide:all; display:block; width:540px; height:60px; text-decoration:none; box-sizing:border-box; padding-top:15px; background-image:url(http://img.ashampoo.com/images_mailing/160112_hdp3/btn-white.gif); background-color:#FFCC00; border-radius:5px; border-right:1px solid #666666; border-bottom:1px solid #666666; font-family:Segoe UI, Arial, sans-serif; font-size:18px; color:#333333; font-weight:bold;">Buy now for US$19.99 instead of <span style="text-decoration:line-through; color:#CC0000;">US$69.00</span></a>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td align="center" style="padding:0 30px 30px 30px; background-color:#009de0; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:10px;">You save <span style="font-weight:bold;">71%</span> | System requirements:: Windows®&nbsp;10, Windows®&nbsp;8.1, Windows®&nbsp;8, Windows®&nbsp;7</td></tr>
+	<tr><td align="left" style="color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:18px; padding:30px 30px 20px 30px; font-weight:bold;">Dear Ashampoo customer!</td></tr>
+	<tr><td align="left" style="color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:18px; padding:0 30px 60px 30px;">Cut out objects and insert them into existing photos with just a few clicks. Create perfect photo montages with stunning realism that will seem completely natural. Tap into your creativity and create fascinating new photo experiences.</td></tr>
+
+	<tr><td style="background-color:#414a4f;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/box1.jpg" width="600" alt="" style="display:block;"></td></tr>
+	<tr><td align="center" style="background-color:#414a4f; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:24px; padding:0 30px 20px 30px; font-weight:bold;">Cut out objects with just a few clicks</td></tr>
+	<tr><td align="center" style="background-color:#414a4f; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 40px 30px;">Work like a pro with chroma keying: Choose your background color and extract your object to a monochrome background with a single mouse click. This procedure is used by movie makers and professional model agencies alike to achieve many special effects!</td></tr>
+
+	<tr><td style="background-color:#c5d0d6;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/box2.jpg" width="600" alt="" style="display:block;"></td></tr>
+	<tr><td align="center" style="background-color:#c5d0d6; color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:22px; padding:0 30px 20px 30px; font-weight:bold;">Creativity without boundaries</td></tr>
+	<tr><td align="center" style="background-color:#c5d0d6; color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 40px 30px;">Layer-based photo editing allows you to place your objects in front of various backgrounds - there's no limits to your creativity. CutOut 5.0 allows you to take single elements from your photos and combine them into a realistic new image composition.</td></tr>
+
+	<tr><td style="background-color:#435c69;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/box3.jpg" width="600" alt="" style="display:block;"></td></tr>
+	<tr><td align="center" style="background-color:#435c69; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:22px; padding:0 30px 20px 30px; font-weight:bold;">Full-fledged photo editor</td></tr>
+	<tr><td align="center" style="background-color:#435c69; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 40px 30px;">CutOut 5.0 not only allows you to cut out objects - it provides full image editing capabilities! Adjust foregrounds and backgrounds with numerous exposure, color and saturation functions and perfect your results with multiple transformation tools. It's everything you need in one application!</td></tr>	
+
+	<tr><td style="background-color:#c5d0d6;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/box4.jpg" width="600" alt="" style="display:block;"></td></tr>
+	<tr><td align="center" style="background-color:#c5d0d6; color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:22px; padding:0 30px 20px 30px; font-weight:bold;">Retouch problem images</td></tr>
+	<tr><td align="center" style="background-color:#c5d0d6; color:#333333; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 40px 30px;">CutOut 5.0 provides smart tools to retouch or remove unwanted objects from your photos. Advanced tools like the smart eraser or the error brush let you touch up your photos like a pro.</td></tr>	
+
+	<tr><td align="center" style="background-color:#303538; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:24px; padding:30px 30px 40px 30px; font-weight:bold;">Benefits at a glance</td></tr>
+	<tr>
+		<td align="left" style="background-color:#303538; padding:0 0 30px 0;">
+		<table cellpadding="0" cellspacing="0" border="0" style="width:600px;">
+			<tr>
+				<td style="width:80px; padding-bottom:30px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/bullet.png" width="80" height="40" alt="" style="display:block;"></td>
+				<td align="left" valign="top" style="color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 20px 0;">Cut out with precision and remove unwanted image elements</td>
+			</tr>
+			<tr>
+				<td style="width:80px; padding-bottom:30px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/bullet.png" width="80" height="40" alt="" style="display:block;"></td>
+				<td align="left" valign="top" style="color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 20px 0;">Stunning photo montages that will amaze you</td>
+			</tr>
+			<tr>
+				<td style="width:80px; padding-bottom:30px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/bullet.png" width="80" height="40" alt="" style="display:block;"></td>
+				<td align="left" valign="top" style="color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 20px 0;">Masks over the most difficult, even tricky objects like fine hair in seconds</td>
+			</tr>	
+			<tr>
+				<td style="width:80px; padding-bottom:30px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/bullet.png" width="80" height="40" alt="" style="display:block;"></td>
+				<td align="left" valign="top" style="color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 20px 0;">Remove unwanted objects from your images at the click of a button</td>
+			</tr>	
+			<tr>
+				<td style="width:80px; padding-bottom:30px;"><img src="http://img.ashampoo.com/images_mailing/160229_cutout5/bullet.png" width="80" height="40" alt="" style="display:block;"></td>
+				<td align="left" valign="top" style="color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:16px; padding:0 30px 20px 0;">Use soft-focus areas for creative effects</td>
+			</tr>	
+													
+		
+		</table>
+	</td></tr>
+	<!--[if mso]>
+	<tr><td align="center" style="padding-left:30px; padding-right:30px; padding-bottom:10px; padding-top:20px; background-color:#435c69;">
+		  <v:roundrect href="http://r.ashampoo.com/r.php?id=1551908&ri=tesf&u=24001024&lk=Kys1iqHY" style="height:60px; v-text-anchor:middle; width:530px;" arcsize="5%" strokecolor="#FFCC00" fillcolor="#FFCC00">
+			<v:fill color2="#FFFF66" type="gradient" />
+			<w:anchorlock/>
+			<center style="font-family:Segoe UI, Arial, sans-serif; font-size:18px; color:#333333; font-weight:bold;">Buy now for US$19.99 instead of <span style="text-decoration:line-through; color:#CC0000;">US$69.00</span></center>
+		  </v:roundrect>
+	</td></tr>
+	<![endif]-->
+	<tr style="mso-hide:all;"><td align="center" style="padding-bottom:10px; padding-top:20px; background-color:#435c69;">
+		<table border="0" align="center" cellpadding="0" cellspacing="0" style="mso-hide:all; width:540px; margin-left:auto; margin-right:auto;">
+			<tr style="mso-hide:all;"><td align="center" valign="middle">
+			<a href="http://r.ashampoo.com/r.php?id=1551908&ri=tesf&u=24001024&lk=Kys1iqHY" name="partner0102 71% EN 251217" target="_blank" style="mso-hide:all; display:block; width:540px; height:60px; text-decoration:none; box-sizing:border-box; padding-top:15px; background-image:url(http://img.ashampoo.com/images_mailing/160112_hdp3/btn-white.gif); background-color:#FFCC00; border-radius:5px; border-right:1px solid #666666; border-bottom:1px solid #666666; font-family:Segoe UI, Arial, sans-serif; font-size:18px; color:#333333; font-weight:bold;">Buy now for US$19.99 instead of <span style="text-decoration:line-through; color:#CC0000;">US$69.00</span></a>
+			</td></tr>
+		</table>
+	</td></tr>
+	<tr><td align="center" style="padding:0 30px 30px 30px; background-color:#435c69; color:#ffffff; font-family:'Segoe UI Regular', Segoe UI, Arial, sans-serif; font-size:10px;">You save <span style="font-weight:bold;">71%</span> | System requirements:: Windows®&nbsp;10, Windows®&nbsp;8.1, Windows®&nbsp;8, Windows®&nbsp;7</td></tr>
+</table>
+
+
+</td></tr></table>
+
+
+<table class="footer" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#f6f6f6" style="border-top:1px dotted #999999; width:100%; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px; table-layout:fixed;">
+    <tr>
+        <td align="center">
+            <img width="1" height="1" alt="" src="http://r.ashampoo.com/copyright.php?mi=49982&ci=24001024&sid=tzag1lk8DdBI&logo=spacer">
+
+            
+            <table align="center" cellpadding="0" cellspacing="0" border="0" style="width:600px; margin-left:auto; margin-right:auto; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px; table-layout:fixed;">
+                <tr>
+                    <td align="left" valign="top" style="width:60%; color:#7f7f7f; padding-top:20px; padding-right:10px; padding-bottom:0px; padding-left:10px; font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:10px;">Newsletter settings:<br />
+If you do not want to receive further information (to Sendoff213@gmail.com) you can cancel your subscription any time. <br />
+Change your newsletter settings here: <a href="http://r.ashampoo.com/r.php?id=1551909&ri=jnmc&u=24001024&lk=Kys1iqHY" name="Dropout en" style="color:#7f7f7f; text-decoration:underline; font-weight:bold;">Newsletter settings</a>
+</td>
+                    <td align="left" valign="top" style="width:40%; color:#7f7f7f; padding-top:20px; padding-right:10px; padding-bottom:0px; padding-left:10px; font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:10px;"><strong>Ashampoo GmbH & Co. KG</strong><br />
+Homepage: <a href="http://r.ashampoo.com/r.php?id=1551910&ri=hade&u=24001024&lk=Kys1iqHY" name="Ashampoo en" style="color:#7f7f7f; text-decoration:underline; font-weight:bold;">www.ashampoo.com</a><br />
+About: <a href="http://r.ashampoo.com/r.php?id=1551911&ri=yr23&u=24001024&lk=Kys1iqHY" name="About en" style="color:#7f7f7f; text-decoration:underline; font-weight:bold;">www.ashampoo.com/en/USD/abs</a><br />
+Support: <a href="mailto:support@ashampoo.com" name="Mail en" style="color:#7f7f7f; text-decoration:underline; font-weight:bold;">support@ashampoo.com</a><br></td>
+                </tr>
+            </table>
+        </td></tr>
+
+    <tr><td>
+            <table align="center" cellpadding="0" cellspacing="0" border="0" style="width:600px; margin-left:auto; margin-right:auto; mso-cellspacing: 0px; mso-padding-alt: 0px 0px 0px 0px; table-layout:fixed;">
+                <tr>
+                    <td align="center" style="padding-top:20px; padding-right:10px; padding-bottom:40px; padding-left:10px; width:600px; font-family:'Segoe UI', Helvetica, Arial, sans-serif; font-size:10px; color:#7f7f7f;">Ashampoo GmbH & Co. KG &nbsp;|&nbsp; Felix-Wankel-Str. 16 &nbsp;|&nbsp; 26125 Oldenburg / Germany</td>
+                </tr>
+            </table>
+
+            
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
+
+
+
+--b1_0e410e4e7922c3460c2f16ef7cb4219a--
+
