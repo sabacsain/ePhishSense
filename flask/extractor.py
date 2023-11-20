@@ -52,7 +52,7 @@ class GMAIL_EXTRACTOR():
 
     def searchThroughMailbox(self):
         # type, self.data = self.mail.search(None, "ALL")
-        subject = 'SUBJECT "Random"'            # change the SUBJECT as necessary
+        subject = 'SUBJECT "Test with URL"'            # change the SUBJECT as necessary
         type, self.data = self.mail.search(None, subject)
         self.ids = self.data[0]
         self.idsList = self.ids.split()
