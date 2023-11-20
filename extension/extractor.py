@@ -62,6 +62,7 @@ class GMAIL_EXTRACTOR():
         for anEmail in self.data[0].split():
             type, self.data = self.mail.fetch(anEmail, '(UID RFC822)')
             raw = self.data[0][1]
+
             try:
                 raw_str = raw.decode("utf-8")
             except UnicodeDecodeError:
@@ -96,9 +97,9 @@ class GMAIL_EXTRACTOR():
             else:
                 jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, no attachments or just text.
 
-            print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
-            print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
-            print(f"BODY: \n     {jsonOutput['body']}")
+            # print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
+            # print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
+            # print(f"BODY: \n     {jsonOutput['body']}")
 
             def is_url_exists_in_html(html_data):
                 # Regular expression to find all URLs in the HTML content
@@ -119,9 +120,9 @@ class GMAIL_EXTRACTOR():
             # URL
             self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
             
-            # print(jsonOutput['from'])
-            # print(jsonOutput['dkim-signature'])
-            # print(jsonOutput['body'])
+            print(jsonOutput['from'])
+            print(jsonOutput['dkim-signature'])
+            print(jsonOutput['body'])
             # print(self.valueList)
             # exit(0)
                 
