@@ -1,0 +1,1265 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp2046458ils;
+        Mon, 6 Nov 2023 10:02:40 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGGsVWbir9s59vMJLJ7gVXMq2wJppATUlDJHCsW6Kgm5E+iVcLZXRIh/uIXmkmgADk+CbIE
+X-Received: by 2002:a50:9356:0:b0:543:56c8:f84b with SMTP id n22-20020a509356000000b0054356c8f84bmr15092819eda.19.1699293759978;
+        Mon, 06 Nov 2023 10:02:39 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699293759; cv=none;
+        d=google.com; s=arc-20160816;
+        b=SamHtjMu7/iiLgK6noy7ZesnSLgsfhmF2FFvOwImYrbGVgEfdooCbXnyNvgouBUndX
+         YLo8QKYp11vQPH+uRP/9yBjJIDOOalFe3vln+a0UYyedYzjPhsQE1OjVvQ+IYtjxld55
+         bfUkFZ0A9cAFh2emozUXYTn7uwonUgQQgLJNrA0M9cq9KC0wmTysQsADRXmOdM0jMHJO
+         6fodseTbogAKcN4sd8Y1Vq39w6X8EGt/0/o1a6xYhDcJNq/ZH4vEguPYsN2HQLm7l5bS
+         tjMpEHYE1u+iB1OjwnBFjj/Pug49bhVbp75IiI8bXJ/A4VphuZbwD25A8IDwCJxhVaCk
+         5/9w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=cL5ypv8zlBsOXz7RpBqfuXPwuZ9RIS/ydWDH5iM2ok8=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=sVGxNbivBkQ/R5at2o29IJ+NelNHIBB/6bqT0FLixYCu/IDZw5Bo05Kf7W8crxrs7D
+         xeCrcwp1QEKAS48ScFVLAUc3TXV1QSxZhl0YY3TPJ7f8CWja2mlV6q71lZT84AF7nwNt
+         CchBt1+tiZqz2Bmf0ij7UnbJ7srxAaSQPM5tMRiU37fJgmbZC3kz/U46ORse5W+Olkzf
+         9/tH2W0IGRv3PFXfz0TImHgnyWrKQ2lKgBVOmDY6Ibd167mrchrjr07intpAe8ZvDgiW
+         gLKKX3JOSkJ4zodDTn97PjbXMLss4fc7HgSvxQFRE2t/qm3xf6JL5QcSGa1DaauaF/TT
+         9pXA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.upwork.com header.s=s1 header.b=Fka7QZgf;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TEYhAZfl;
+       spf=pass (google.com: domain of bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com designates 149.72.115.111 as permitted sender) smtp.mailfrom="bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=upwork.com
+Return-Path: <bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com>
+Received: from o3804.e.email.upwork.com (o3804.e.email.upwork.com. [149.72.115.111])
+        by mx.google.com with ESMTPS id dm15-20020a05640222cf00b0053fe4d16c17si4571249edb.688.2023.11.06.10.02.38
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Nov 2023 10:02:39 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com designates 149.72.115.111 as permitted sender) client-ip=149.72.115.111;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.upwork.com header.s=s1 header.b=Fka7QZgf;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=TEYhAZfl;
+       spf=pass (google.com: domain of bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com designates 149.72.115.111 as permitted sender) smtp.mailfrom="bounces+23296827-a543-ronaldlambertnicolastugadi=gmail.com@e.email.upwork.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=upwork.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=email.upwork.com;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=cL5ypv8zlBsOXz7RpBqfuXPwuZ9RIS/ydWDH5iM2ok8=;
+	b=Fka7QZgfLghYtLoikrid9GEbCM5uNaLkgUD046WSMa5dKweqMM64A2t5/TseVUWQ15rA
+	GzHj77OguzwJL/jD+LwOKa2If39vAFDqNKgUQX8+ZxS7HDIg51wRYkkI9fGGO3m6jz4xZU
+	BSv/w+KRqXTxR3Xd3cFeKNEbfXaji4CIdzcecukKaSXw+cAgnbl9m1w+rV4B02DLM/dUo7
+	Cjy8/dW/M1DO1Rkx8EmoWrhxdXSKreHD/+WL2HCg/zMMlcmjbLuLj1khsrQ6ayFWhNVchB
+	mMv7IkuvD6VtXAA3kXPlm9CboJS04JckYypqaumiOQkx3GrXqf/uEY1dhGvkLUxQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=cL5ypv8zlBsOXz7RpBqfuXPwuZ9RIS/ydWDH5iM2ok8=;
+	b=TEYhAZfliXNaI7+B9iLFcJjPB68VzZPmeBTlERSwjSRopc2M/1lFnZZLgFGzcox95nlc
+	r7v65a2u/IGmxnDNlcV2IYW3CR1szePvGTdXAcz6/7RU9K89/iRaZq2n2SuT15okAcm9ic
+	zTqt239+H8RgULnHPdxwpZmbzuci60FR0=
+Received: by filterdrecv-5f9f645469-5pvqr with SMTP id filterdrecv-5f9f645469-5pvqr-1-65492A2C-41
+        2023-11-06 18:02:20.368603043 +0000 UTC m=+1725635.291598762
+Received: from MjMyOTY4Mjc (unknown)
+	by geopod-ismtpd-31 (SG) with HTTP
+	id lX6GXdnITXqQMQTx0GfoOA
+	Mon, 06 Nov 2023 18:02:20.201 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=e2e4a6e7ac4b65195307dd1564e8d77507380d132e4e6049481627da682b
+Date: Mon, 06 Nov 2023 18:02:20 +0000 (UTC)
+From: Upwork <upwork@email.upwork.com>
+Mime-Version: 1.0
+Message-ID: <lX6GXdnITXqQMQTx0GfoOA@geopod-ismtpd-31>
+Subject: Access curated offers and apps from Adobe, Amazon, Miro, and more
+Reply-To: donotreply@upwork.com
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3A4=5Fojivwc44evrkm4udzs9mtoirf14kaxuewx5py20flzh31kybelcq?=
+ =?us-ascii?Q?1p=40unsubscribe-05=2Eemailinboundprocessin?=
+ =?us-ascii?Q?g=2Ecom=3Fsubject=3DUnsubscribe&body=3DDO=5FNOT=5FD?=
+ =?us-ascii?Q?ELETE-4pwcfj6ou929x5tpr4nsewnfwet8gx3b4?=
+ =?us-ascii?Q?jbcm3kkhjx1or6isdr2kr369blbmn4zm1gaffrb?=
+ =?us-ascii?Q?nc6hlynr2lo0c7gi1pc3r1s16rk3vd0otv2m3x-?=
+ =?us-ascii?Q?DO=5FNOT=5FDELETE=3E?=
+X-Feedback-ID: 23296827:SG
+X-SG-EID: 
+ =?us-ascii?Q?1wdJWxQ9zSpUzyjTY7DlHfnipNi0+jRZ30g4BpjuXjxBVSPkfIVigkXWYCM3GL?=
+ =?us-ascii?Q?V+BXxX27ubV8hEecfEpDNzgsyEzrDCrcMOFwMNI?=
+ =?us-ascii?Q?QjXqMnLjIHqvyldI1rLczsQxyrc1U=2FdUGYvBa0r?=
+ =?us-ascii?Q?67tcgt7RRDkNidcuNtCMffL9IQf9m3KGZGtP=2FXb?=
+ =?us-ascii?Q?Sgwa21jQ5ZKhx+1he31HrSDNpd5iBXSp0tktWft?=
+ =?us-ascii?Q?n6sgXyuYlRjsxfu=2FryPXC=2FbKBpZdjKN217=2FAKOg?=
+ =?us-ascii?Q?KV0pxmgxsQgZ3w+x0wDlg=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?Ch5vLf5reoaXUEE3yNKHeBWygDVZKz=2FXS93ghTR?=
+ =?us-ascii?Q?PN9qxd3HvyN+iMT018Mopjem5F8ImEz+m6GLmD5?=
+ =?us-ascii?Q?Wt1u5nmfNoloc9tEnjTW1gX3K6osXVkE8wyva4Y?=
+ =?us-ascii?Q?W5fyFOwgNs9uv4+5QmZBGjdny0Mf3Nc+T=2FTxiHR?=
+ =?us-ascii?Q?ayWvLoH5E9jbl7nqYgggeVhXlEcCNgCviMU7TOr?=
+ =?us-ascii?Q?=2F9ydAaaStwTkjj8jdYRzUt58LG41S23H72Nj8XK?=
+ =?us-ascii?Q?FJp7ATzO4WUzjTL89L2B7Ra8mWp0e5S93cHj9se?=
+ =?us-ascii?Q?PTonmHKTsB5P2PKYURcP5AppFuq6NNxCAoTCUCm?=
+ =?us-ascii?Q?E37LrYCl6nbRbxwaLk3SQGqc+E5+hPm4o3MNNpu?=
+ =?us-ascii?Q?IEvb5aPfk7l1IJew+NmLYaBGxGxFTSwKChdJ=2FVe?=
+ =?us-ascii?Q?p5Kpm7x3H=2FSbV27oqszKLEH2V5rdRLlgGGxKEHB?=
+ =?us-ascii?Q?7+QA1RZq0gzqK0vupYyG2?=
+To: ronaldlambertnicolastugadi@gmail.com
+X-Entity-ID: EzQM0DUUKtO0XCWTkTakmA==
+
+--e2e4a6e7ac4b65195307dd1564e8d77507380d132e4e6049481627da682b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Work smarter with special offers for AI tools and education on
+Upwork.          @media only screen and (max-width: 580px) {
+.font9{ font-size:7px !important; line-height:10px !important; }
+}      Find Work ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx=
+8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU5SJL1-2Fyc7Regh7GcL9z1OmqaaoPXvZ-2FkQdPMZt=
+vHmAxA-3D-3DM6YC_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8f=
+gsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz=
+9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwN=
+TBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4B=
+NMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGz=
+bnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5=
+RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvA=
+rk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5=
+c0wjQsdjZIipufk62nCC1eSrgGRkgrgtrG1bBZ4KKCKLMaWNid7CRTW667j-2BWw3j0VDf0SO7L=
+loq5PMTPblBMAn3a8kz4v1d2JyF0a938Of82b8B6XIWfwHcOtvlUIKESUPXaPvymYavhZ79PW1Y=
+61vl-2FAlSO )  AI Services Hub=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3=
+ag7rzlW2nWQBZhjU6e-2F-2FitQNLHtVDk-2BSvJu3g1BUiyRfK6XrRlKqAJUXVN-2BQHkEZmG-=
+2BVYucn8VInvqztTbrvEv6vzfx-2Fs7gdp3dcYgcsINNXHtQLnVJc3Cb0eGmYL4Ij9kykDWhhoz=
+aZRkfkCT0MBYiG-2FxdPZIEXY19GDL0ZI41bUGMOLwiYi9bQUlf4DADaTq1GRCLXXTiFZpfG-2F=
+yzk0ii6HP4Po7Jh9kCnge5S3HxY6PWJzCOpCGorwLpmBSkHobWUqrzwsrpGHshgoI0QDBPVIAQU=
+YC76BcXLiuc30b5-2BwTAF-2FIOWDU8U1KNKOBZ8hXM5XAsG2Jpj6PxqlbzyE7xwvyp3ElQZ00B=
+peFjwCpGSjF-2BPyIBlfP4RIwN1scS-2FVVTn4N1jWF-2BlTLqXy6iACb-2FZgRVskp2oGU-2Fe=
+6Jri4J-2FwaGLWsGWbozL7Ddgym5D46M3k4LFe4r4tV2jgzizBFTwzXz4z5jmjgMjhz-2FKi24V=
+zhPO0USVpV-2FzGJ-2BkMyFz4AUKdtEneMLzw7xHE0-3D7kC6_HPC5-2BlCj2pcWYfPYIAuwPPJ=
+2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qB=
+w30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng=
+4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLyt=
+QZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXI=
+ujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwF=
+tDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZ=
+M5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw=
+7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhCTC60ED-2B-2FAS0cHZ4oW-2BvkbF3ZqDG=
+WGTkp1P0V4SKoIS29lGtf-2FyH7gxohteg0uXkRp-2BMEkcyjzCFG9HHEXCG3xHzo4Y61PfwPls=
+xg5pbe5vUTb27Y-2Fgjmi8CB0JLujy-2FT-2FQh5qPvrZi5io-2BWIx7ZP )
+ Affiliate Program ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8=
+fx8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU4Zujo-2FzyaG3k-2FtbiKdp-2BIlir4C_HPC5-2B=
+lCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5=
+OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTj=
+NApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt=
+5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxN=
+VLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQ=
+OQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMn=
+A9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5=
+GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsditKc3B-2FkTxTCDWi=
+Yq-2FBWuqNFyTDSKx2gOvd9Yit63htrw5hYxmKdh7bvSNrmYEupv7TlxpynZ7toJUz822lXWxVf=
+Ar6LaIr5noR8TSscnOQLLjJxL7CuXAtbhBhcoalnjcRU5Tqfza5F8WiVmFVMKy )  Resources=
+ ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv=
+3ag7rzlW2nWQBZhjU6Dk-2FHRCxYbZzVm2rYL-2FgFjxfeO_HPC5-2BlCj2pcWYfPYIAuwPPJ2F=
+brLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw3=
+0aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4t=
+AkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZ=
+y1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIuj=
+Ehxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtD=
+hCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5=
+cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7r=
+suzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhG1ocysgPl52qwCN9BRcTs8Vfb7G11NZOqbqI=
+VQfiDSdIuJyFdvgwAoDYAiyOOiFUJ7Qd1fxLDTRyravTJJPD61x2UvJG5WB-2B2xTKXsqDWqi77=
+5VtaOxqAAfrT-2Bn8-2BslbVHpG27hRtmVdmu8jzaUEN )
+| Log In ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6=
+AZcGbPcv3ag7rzlW2nWQBZhjU6ZP1ewjUtRILcMK6w-2BEhiE8n-2BB4frgZEOVmukAumN34g-3=
+D-3DTQaj_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536K=
+GxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv=
+3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-=
+2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGio=
+B5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7=
+vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZ=
+dhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3=
+YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdh=
+iEhmonQyZZKpLW7bVxWA8hA-2FK-2FqWMFiGCHGZy2de1X6wBiL-2ByydiYbO4JFEekgN0rzpnh=
+OLg-2FWte3Z1wqoqTsE3dDoOsy-2BqPZtcx-2BabysScoLFrVPK1aSF7bRXgV2xPl-2BwbUx7AO=
+ngbXzOOHeVYPS )
+Supercharge your productivity with AI tools.=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3=
+ag7rzlW2nWQBZhjU7AreiCfRwmBc6NsEeBNKcfKj10_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMO=
+U-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScB=
+UoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0=
+BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ=
+5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2=
+S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2=
+FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkL=
+pm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBx=
+cVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdj9vWRQwEd1qePPk3HKmcVaoB2t4eZ1TvA3u-2BlgRd=
+gxhh1o2SFhLO4aIyV-2FplBTe4XBEmcrGjM8PqM-2FmC7e8OFh64xBzUG9uFDKMhn5ytQR2G9Az=
+YP-2FeE5rZcPWjwI0j3zdI15x34g4xoRuEFrKPKFv )        Hi
+
+Ronald
+Lambert,    At Upwork, we=E2=80=99re all
+about helping you get your work done smarter. So we=E2=80=99ve curated
+learning resources=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGXdU-2=
+Bum2rQJXDEHDBhrPxBufRkjq3JpiPVTHiVctHK5lg1KPMqNddfVA23Jy8DTHsYGoN1qFWPW9piX=
+jH9VOduU-3DMKpS_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fg=
+sGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9=
+pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNT=
+BPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BN=
+MSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzb=
+nKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5R=
+GnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvAr=
+k1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c=
+0wjQsdiisY-2BU1MSQlHmNS8xJIu8-2FoQ-2BguR2VtiFUYaZfY6Ce2W71XvPADcIovlyl1MFz0=
+izOTeUuU15vBX8xvLjlnozF6q175-2BWvPzd3bcxJYvZHWDK9ojcf0iz3EeyfAMqsrlWzazK7J7=
+jMMSSX3ukkY5CY )
+ and special deals for industry-leading AI apps and offers=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3=
+ag7rzlW2nWQBZhjU7W9W8G4k3M31-2FecqG5ROfvICz7_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrL=
+MOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aS=
+cBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkk=
+T0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1L=
+vZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhx=
+k2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK=
+-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxv=
+kLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuz=
+BxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdisf42U2fwefKi-2F50dPo6rRf9xgAoI7ODBvDh-2=
+FwbTgRquz4Kvmm6YxJtwoTAmht-2FzhGXYbPcQSPZ-2FNV6tGQG2FJqIepaigh8AexewUItZvDq=
+sXdhkdMiPeUxd27uHsg6iHON9mWiXEL1pK9gXsMf12M ) to help boost your earning
+potential.
+
+Design with Adobe.
+Collaborate with Miro.
+Code with Amazon CodeWhisperer.
+Organize with ClickUp.
+Learn a new skill with educational opportunities.
+Interact with Upwork Chat Pro, our new beta AI app to help you
+start and complete your work faster. Access offers=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3=
+ag7rzlW2nWQBZhjU7W9W8G4k3M31-2FecqG5ROfvMOzg_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrL=
+MOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aS=
+cBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkk=
+T0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1L=
+vZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhx=
+k2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK=
+-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxv=
+kLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuz=
+BxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhOFVdL0mOs-2FXVaaMxcJnwNwP-2FdR3SYpkMvnz=
+QtMT0-2BQR3luP07-2BsrGgTJPhPn0x9hnEmMhCduVB2-2FOD9-2BXqT-2Fzov-2BlAIt5TVL4F=
+9covmvAW7oar4TJVGYdz40Oc4QbVm9jMgMkS9Df1fdtLxuPqdpe )          Learn more=20
+( https://link.email.upwork.com/ls/click?upn=3DkaqIPRuGeErcbV5NashaIFCGySs1=
+S55yJKH2vHAhIJrMs1jlU075uFoggmQy-2Bnxen_Rk_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMO=
+U-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScB=
+UoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0=
+BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ=
+5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2=
+S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2=
+FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkL=
+pm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBx=
+cVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjadQJkDN-2BjhfLPldrMSpGQIn3qcd6pb5OdOUfJUW=
+NCZRMp9YlVWQ1B3GaeAoukHNZYZNpHF65sQ-2Bkd4qEoq6n28V8Gu-2FbvKGW0dMHqlC5dGvxan=
+naLhNPQN4ylHuJxIhueA3S1KtIX-2BGTC7VM1MHUF )
+Mobile app       Download Upwork App for iPhone=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbiRHj=
+fA3JYN71928olQDdE-2F-2BjNtRrRtHSLZ5iPVCMDxH0AV1IX8g50meUI3V9ybmy-2BzKtyD-2F=
+cvdOvDmt7L7qY0-3DVj9g_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2=
+BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2=
+Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2=
+EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFv=
+gVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLec=
+ZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1=
+KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2=
+BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnh=
+xlKg5c0wjQsdgzOMoJmYbgNnIES-2BnbA4b3e9QoO3OOxRavxAUXLrBoLaPjqTxmTvQHQWF7Jqw=
+RRCobia5Q-2BPAfahkxUY5M4Ff7WkQaaCjfWuJfdK-2Fctt1LAfSIr4tJqaRfcEuCh9q-2BTThg=
+IyzcqUBJWrZzRPLf-2B0Hk )
+   Download Upwork App for Android=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGcDKWc=
+6m7LClUBjcrvLF0K40IcOkyLCDlYOMzYUE-2Bn-2BJ1Ms07go7ciWzHnhWrlPaEy59mw5Xz5BYR=
+MoiF5VtBAv4Zz1PHmh-2BZjTadhv3KgVHpNSG_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2Fi=
+jFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwL=
+aidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7a=
+czuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7Lk=
+XsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe=
+-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2Fiuwr=
+IH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2B=
+C-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm=
+-2FH9zen6n7JDcnhxlKg5c0wjQsdgzcKc78zZ-2F3v2pdzI9zCsrQ-2BK8ibU31HhSUB3uVmDSz=
+OQ-2F52ORSBFZqmn92-2FAP1vjat8vlkkU0wlkqRgy-2FPDXs5ArFwiXN4kgCI7CsxLWhk4Udv-=
+2BWlW8EO5YYSKVoKoPMAGxeAPMEDwy4JSrrFTc6N )
+             Follow us      Facebook=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGV4c0l=
+N2b5GA2krjEjYFuXvkVGOiSN6aISWbEEXCuVDmv9Cu_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMO=
+U-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScB=
+UoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0=
+BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ=
+5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2=
+S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2=
+FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkL=
+pm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBx=
+cVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhTheYYsa-2F0ZTD4OJxQpdOYtLGXVrF-2BE-2B5Oot=
+n4Lmsv23PjnDxQC4Z0chec41lagyDJi3WohoXUtqWV8hd9IMsqCHnlkYCP18vHhvnsinP1QRGLA=
+KdckZ31kYjW037-2BKpNu19bqf4X2F4qzaPF3Kp4n ) Linkedin=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGTGAtd=
+pLZcbS78NVsMDuqPRtamj-2FAdbberPTqm6hiXyfUGqrg9tmIl543ogKAE5STg-3D-3DuET8_HP=
+C5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnY=
+B-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDa=
+yIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vym=
+RUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3q=
+xjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2=
+BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15X=
+DvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0uf=
+B79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjVzs85NPtcQP=
+hIWj1NAZSXlVJ2cUAaWRNH0Qe2sG-2BfXMfQvbtz-2Fiy3JQmWVgBNwdkLsrvapf1c8-2FOdrYn=
+qI88qr-2BJIAKeoCvW4IBLj4KHBoVTY4eT4zV1-2BUNVggwazb0FHvN3QxNvGStW2X9SEJn8z )=
+ X=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYxOm-=
+2FHcbsnCk7IRz4Fa34NU6u7QpChLLZLifRGG5HQ8tE8i_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrL=
+MOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aS=
+cBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkk=
+T0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1L=
+vZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhx=
+k2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK=
+-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxv=
+kLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuz=
+BxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdh3F-2B78xoNDnk2CpJUCwqpJHkE8IJZbPeycA9zA=
+EK2HlCElucXaLwyAK5QzRx5aLS7oT57a3i-2Fe97Q2zwEuIc792j9FdtCw0Na2B06OwEj-2BamJ=
+m17y1T5Twi143uER5eStMSQTJGdCxNtl8QYvwPaEf ) YouTube=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYwdTB=
+Au86-2F2oQO9KTQu0svkUBDO8x2KnJm6BtjbQhz2SpOMU4Ji3n2zXg54qTdmJAk0Aae16k5Z7Pa=
+d5iF60io-3D91iE_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fg=
+sGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9=
+pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNT=
+BPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BN=
+MSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzb=
+nKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5R=
+GnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvAr=
+k1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c=
+0wjQsdhWslXIofwbVRRaSENHRJgM6I7bfpCXJF-2BXGECvC-2FWLQC11BKqJLbn4-2FA36X68sB=
+N1-2FYU1nuSPRMz3iGdPugjsXPLfuvzLiICTaf6t3sj3cKsmhLSaQ0RNj-2BgZ4KcsFPOHxZxL5=
+5pMP-2B6aw0SGRTQTv )
+Instagram ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K=
+6AZcGYBD61sW33SL2IMO1Hvsq24983mYg2pDWl45PpR-2FZGhuy8kv_HPC5-2BlCj2pcWYfPYIA=
+uwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquP=
+bJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMW=
+M7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4=
+ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY1=
+9vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthH=
+RuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAf=
+TWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2=
+Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdh2RDa-2F-2Bf77IzcyXeBuyW7Ly7Gr=
+nlaw2aewXtJJHL2Qw6I5-2BzrmwRe2SCgiPuI51zX95xkjQUXZckKSnqYmD6cvt8oz4T0r-2FAh=
+DESOu2C-2FT-2FYc7cr1z70pC4ovZtd4f4desN-2F5UX09N3xX-2B9olYxCKK )
+Privacy Policy=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3=
+ag7rzlW2nWQBZhjU7HTKyR7OIbCXiSXJaXPir-2BfwolMU7-2FtpbfwSkO92efGq-2BpVstNHLo=
+-2FUZP9atQ8EHaw8sZhxs-2BsZ8fXpYsiO-2BLTaXPlksExFlsFWcO5pb0xyO-2BUCFtZiUb7rs=
+BWQF6ADMz-2FMHMFg-2BftehQPvZsNOYeWj5IrjgWjBMV8UJSKzcmJ2lMblj08lDqA-2FWJb5Y6=
+w20enNIiHozP9-2BrGZDyIzDiG-2FUMOQCMeYn-2BMtQxlXMXaQ8ti0M2XNDe8CUZyonGfAXkMt=
+OyKbjDFi3IPp266oq6TXFfnyNsHATL1VdEDFTQ-2BozyPfn6xyBH2Dio1jhQFvaGkK7EUYPw3dn=
+vJ41SeXb1t5hJDJf4Sfen8wnJS-2Butcqqc7oEDfxxnnCFx-2FJKU8XJImprqcS8QEyCopMQWvE=
+y-2FaoJfPfeM7W5gawF454cUQutk75vtI-2BFEo14LUlZizOKexqMT0GTaGv-2Br-2BPLtFOO8H=
+TW8wRQ8n7auv5otRn-2Bk5kLCVoiWSfy8v7cugLPLHEckM-3DeSrf_HPC5-2BlCj2pcWYfPYIAu=
+wPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPb=
+J7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM=
+7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4Z=
+WLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19=
+vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHR=
+uNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfT=
+WayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2F=
+zdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdi3R6j5rir6K0G-2FRdkakJxYnTWL1I0=
+Bmj9iEOK03eyjwyTp43shN5voXAgzUd6IIWixcUdcVVB6Zmbv2fNgIs5sVRjB-2FR-2FHC6E4i3=
+Qozsc8YYkjbbLG4jBe-2BcgbJnEKCUg1IQ0Ehpmy87HfMQllYuii )
+ Contact Support=20
+( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGXNDCX=
+p0TSAFOuI9haVgZVUU-2FvOXrYKyKj2MLXWzfAYKr1rlprqsrkXCUr3mTSRJ0RxtG6ShMYEb-2B=
+uxntxVNes7tS3-2FvlY3wx7DQiomvusCJA1Qk17VHJvplmEoqTCqHMI5PqZAi4k6u-2BR9E9ZMS=
+JLCdSVRz9AHSpSz4xT7DvBGUmVmvZnCb2p7mi-2FEI5Xj9XV5qDFeMXgcwhg0gksh3Mx8-2Fve8=
+PxOiWjV5kGTxtAjj5AeKwKvQfDFL9HS1VyRdt9d-2F54ksuxsfPu4x2xLqI90I7yVU3b6AtED1T=
+L-2F6dOlWLAbY-2By0ju8orF7xZDTmkULFXwRMBi3gmV-2FP6dESyhHJoURrKVlQ5DZ-2B3zNHp=
+xtU2ipYkBpMutJqGb4hP-2BZKfN0Q38avfvN2VvFElmk1BCJUyst8xSFKLMBshLWVKtdsxvqd63=
+UzcZ-2B3OOcSYTl4-2Bmq4-2BeXC8DHtQi3TKlCVRGtK4Sit0d1MCZzz8MLTeNY3sbrO3yaJHXc=
+RgcrBju6LULNQ-3D-3Dx4MD_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY=
+-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD=
+-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPj=
+j2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfad=
+FvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZML=
+ecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTx=
+A1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF=
+-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDc=
+nhxlKg5c0wjQsdgSDh-2Bn91lqzooojj5E94k-2Fx139Rb7u-2BxYLQGnAGY0FSQP13HCI8o-2B=
+EFwFEy01deFauy983MUDf8geTTEZNErzwfRQHzN-2Bx3QSj9I04wOzvdU2-2Fov2PJylARvdPoc=
+DhapRRIkX4A0esjao85j6j-2BhUs )
+ Unsubscribe ( https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2=
+F1K6AZcGYvTFAk-2FZ1v2q9P2ebU8UMFJ389YI9m-2BwEVxJ4xnrT7ASA9i4TXYWobaz-2Benmd=
+mOYiTjc-2F1-2F-2BuSSXH-2F9v660wPrXPbkR3nWfJhItyLXdrfmiermUXjTIehqG6GcsZqamT=
+XPtx9THrK74EU0pkas7gc31v6xrm97-2FwKXG38GbhxKHjLiiYZl-2FRdv9OQ0zh-2Fct7NC3KA=
+dS9VWvFusfq5WINCzru5cn1c4qJa2FY3xO4ReoP2JFsVUHAgMaTJsqSVCTq0JrVG6TmZvQCqy5h=
+vPdPcPkUbq6S2dWPEn4UxPu2LOavkvUUmei-2FdoEMrKHMIIsuo9rvcm9-2BpKjf7UiSsR6-2Bc=
+1guKYuiKEg9jfvaq77Hc-2FGusbwiK4JYbrQKfgkQVtO7mh8Gv-2F5U4rs-2FtPH5M47TUO-2B-=
+2FP1DG65soSlttw6zTJE20XMp5Cesh5jd8ZuTuB-2FPCSAw5b35EicTaJ0IxvI8VfVR03T76fY-=
+2F5U7iQ9aEnxqztiHrJLPhz3kk2qNvhtK3OwwpjOfJmy-2FCEb1ApPWX9MHN8ZdYdSl4RtRcIlo=
+6mZ38RRUhZCqS0Vhuf8rPyLJwOG3VXC7u3njFE5IiNYXN0Pk-3D_VRM_HPC5-2BlCj2pcWYfPYI=
+AuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCqu=
+PbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkM=
+WM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x=
+4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY=
+19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2Fth=
+HRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xA=
+fTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-=
+2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjQiGfX3AOW6haZiUurfBQNgpEGm9M=
+4JC1aiprjO0bbUmDH-2FY3wbqLoZYf9l6HO-2F86slAAZbbGEHpIpzjIvxavn7tGQW2yArqJ0kv=
+JTY9RoYw-2BeaWYrJaiwNKHFCrKxyL5DH8x30tLpGcMsJ-2F2jBjAQ )     655
+Montgomery Street, Suite 490, Dpt 17022, San Francisco, CA 94111
+=C2=A9 2023 Upwork=C2=AE Global Inc.
+--e2e4a6e7ac4b65195307dd1564e8d77507380d132e4e6049481627da682b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<meta content=3D"width=3Ddevice-width, initial-scale=3D1.0" name=3D"viewpor=
+t">
+	<title>Upwork</title>
+=09
+	<!--<![endif]--><!--[if (mso)|(mso 16)]>
+<style type=3D"text/css">
+a {text-decoration: none;}
+td{
+font-family: Helvetica, Arial, sans-serif !important;
+}
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml>
+  <o:OfficeDocumentSettings>
+    <o:AllowPNG />
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+ </o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>@media only screen and (max-width: 580px) {
+  .w100percent {
+    width: 100% !important; min-width: 100% !important; height: auto !impor=
+tant;
+  }
+  .mobile-display {
+    display: block !important; width: auto !important; height: auto !import=
+ant; overflow: visible !important; visibility: visible !important; float: n=
+one !important; max-height: inherit !important; line-height: normal !import=
+ant;
+  }
+  .ac {
+    text-align: center !important;
+  }
+  .dn {
+    display: none !important;
+  }
+  .db {
+    display: block !important;
+  }
+  .pt0 {
+    padding-top: 0px !important;
+  }
+  .pt10 {
+    padding-top: 10px !important;
+  }
+  .pt20 {
+    padding-top: 20px !important;
+  }
+  .pt30 {
+    padding-top: 30px !important;
+  }
+  .pb0 {
+    padding-bottom: 0px !important;
+  }
+  .pb10 {
+    padding-bottom: 10px !important;
+  }
+  .pb20 {
+    padding-bottom: 20px !important;
+  }
+  .pb30 {
+    padding-bottom: 30px !important;
+  }
+  .plr0 {
+    padding-left: 0px !important; padding-right: 0px !important;
+  }
+  .pl10 {
+    padding-left: 10px !important;
+  }
+  .pr10 {
+    padding-right: 10px !important;
+  }
+  .plr_mobile {
+    padding-left: 21px !important; padding-right: 21px !important;
+  }
+  .font9 {
+    font-size: 7px !important; line-height: 10px !important;
+  }
+  .font9 {
+    font-size: 7px !important; line-height: 10px !important;
+  }
+}
+@media only screen and (max-width: 413px) {
+  .plr_mobile {
+    padding-left: 19px !important; padding-right: 19px !important;
+  }
+}
+@media only screen and (max-width: 374px) {
+  .plr_mobile {
+    padding-left: 16px !important; padding-right: 16px !important;
+  }
+}
+</style>
+</head>
+<body style=3D"margin: 0px; padding: 0px;" bgcolor=3D"#F7FAF7">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">Work smarter with special offers for AI tools and educa=
+tion on Upwork.</div>
+<!-- Preview Text Start--><!--[if !mso 9]><!--><!--<![endif]--><!-- Preview=
+ Text End-->
+<table bgcolor=3D"#F7FAF7" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+=09
+		<tr>
+			<td align=3D"center" class=3D"pt0" style=3D"padding-top: 0px; padding-bo=
+ttom: 10px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+			<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"w100per=
+cent" width=3D"600" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;"=
+>
+		=09
+				<!-- Header logo start-->
+	<tr>
+<td align=3D"center" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+">
+
+<table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" bgcol=
+or=3D"" class=3D"w100percent" style=3D"width: 600px; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt;">
+  <tbody>
+    <tr>
+      <td style=3D"font-family: Helvetica, Arial, sans-serif; font-weight: =
+normal; font-size: 12px; line-height: 16px; color: #000000; mso-table-lspac=
+e: 0pt; mso-table-rspace: 0pt; padding: 10px 20px;" class=3D"font9 plr_mobi=
+le" align=3D"center">
+<a href=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6=
+AZcGbPcv3ag7rzlW2nWQBZhjU68HSxJdStc04xlOgqBW2bo-2FYXInu0mcp-2B-2FDw-2F4szKS=
+yubTVW1LGb0Pv16oKpBr8g0aPD9pmuaabfhX8-2B69NLsMdVDETvV8tJq2m-2FoZ9H93uNqNw0p=
+k0AlDS-2F-2FGyNQcWX6bj6m40KlnBrnJE8w6JjxQ-2B4UmuqdAO0I4N8Gg-2BMwf5If8s0QsoG=
+cC6PuzFqd5QtZWedWmWEAc2pXSpxVPgWq6nQWAnYm3Av4CyHKll5lseNxIUi8ybtmArcavktP11=
+ZbFLSZCbLhhxV5RrYRiCO4D6yQ7V023rSwDcxiNNEyRE-2FRP02XFtoB8eE1469zg0I1C1EkGez=
+O5DV51vlTLzH5uD9YWVfVK-2FmkJIOn1hQfDyg0fk5lEbIw6c3cVHiQ9N2V7cCYPXKNU-2FAbWC=
+6REY63uemnQEFi2cPhKmD9DvKRhc6JTPqZWyyUKVpW5TtQu29R2-2BAkZBzJp6TQH7qCGfTFaGb=
+Ti7pb45uMOaY1cgan09XWXyYMzrKPeTd6GLzC-2BI2M-3Dp2gX_HPC5-2BlCj2pcWYfPYIAuwPP=
+J2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7q=
+Bw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fn=
+g4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLy=
+tQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBX=
+IujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNw=
+FtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWay=
+ZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzda=
+w7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjOz3q7ixSVPngLH1czoRrOs5lacf52bYB4=
+3hV0iSc8n-2FUX2SxB23TRc2wlnaG5LeS-2Be1Uy2XHdmJAiSpiClBny0KlbjEKWsvtBSFSEx1H=
+Rri-2FsXe59BWl-2Fse7E4I41eVNq62TNFWQAbeY7XuTWbM3z" style=3D"color: #000000;=
+ text-decoration: none;">Find Work</a> <span class=3D"dn">&nbsp;&nbsp;&nbsp=
+;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; <a href=3D"https://link.email.upwork=
+.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU6e-2F-2FitQ=
+NLHtVDk-2BSvJu3g1BUiyRfK6XrRlKqAJUXVN-2BQHkEZmG-2BVYucn8VInvqztTbrvEv6vzfx-=
+2Fs7gdp3dcYgcsINNXHtQLnVJc3Cb0eGmYL4Ij9kykDWhhozaZRkfkCT0MBYiG-2FxdPZIEXY19=
+GDL0ZI41bUGMOLwiYi9bQUlf4DADaTq1GRCLXXTiFZpfG-2Fyzk0ii6HP4Po7Jh9kCnge5S3HxY=
+6PWJzCOpCGorwLpmBSkHobWUqrzwsrpGHshgoI0QDBPVIAQUYC76BcXLiuc30b5-2BwTAF-2FIO=
+WDU8U1KNKOBZ8hXM5XAsG2Jpj6PxqlbzyE7xwvyp3ElQZ00BpeFjwCpGSjF-2BPyIBlfP4RIwN1=
+scS-2FVVTn4N1jWF-2BlTLqXy6iACb-2FZgRVskp2oGU-2Fe6Jri4J-2FwaGLWsGWbozL7Ddgym=
+5D46M3k4LFe4r4tV2jgzizBFTwzXz4z5jmjgMjhz-2FKi24VzhPO0USVpV-2FzGJ-2BkBLd9nrd=
+Wuj4FpdP5m3g0M77F-2B3hTpMzAp4bFBgk2HwxX4SelY7c60QaX3Ka3bacUx-2B7Qh3TAwaNrKE=
+eh-2FsNSL7TIucABacCCNIJC22sUq-2F-2FAdHx2hYQmkF8UdQFQ7C8w3LHmdCBs2moOz5IIxhs=
+btFQ-2B7IdXm46dqAF07xIhC354ZcA-2BDGnw3LVp3NAtbbOYiu-2BoWagPGML1PEArGMgqPRsq=
+LpzBunER651RtCoXIp1zKUBjwuMCZmDpyo0zeN8x-2Fsx7UK6rvi6NYfKWLwerTxydrzP645lTB=
+eM-2FJtoO9ijo4CQZ-2B9yUNRJo0Tu3VZx7zeGzmwBjjTYgCtUuheEt33fCB7a9MAB1YSd0eS3O=
+1ieLHmWuaFn-2Bn-2FUOuNhwy3fgISR-2BcsZlgbvbxtzyhXDmlbaNpdbJpKKAb3KbjlFld-2BR=
+s0Z6EIgfkTQzUm-2FgUktEy-2FBsInOyqOAiWI-2BbzUOwjoNKTDLVH0DN2Kwf-2F8Fb6Ur8TD9=
+r_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSus=
+YUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGS=
+MoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l=
+6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWx=
+Bt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5V=
+xk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQ=
+k15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5=
+N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhejIbcRI=
+ZuqGv4NtB0vLGoXUg27-2FiTeoIcpcDjc6JkSuHsUEB6FrXOWqsA46lL7Cj7Mo5hgEcMXeAcyIT=
+vN2zd56uncjbNoCsBkEizUooPhc8ZCmXsyGfysrtauqIUoRzuZWTWX-2BfFgygm7-2Fbeuhgf" =
+style=3D"color: #000000; text-decoration: none;">AI Services Hub</a> <span =
+class=3D"dn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp; <a hre=
+f=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbP=
+cv3ag7rzlW2nWQBZhjU6OxgPSof-2FW9q9i27y2wPNW3E9hZx4IwvAFvzvpwjzYr5VkHSW5R9vp=
+DNXzi7rrfuuQm-2FTwc-2F1QbEIJGaNXM-2B6YcOaM-2BkC5ncNO0vqLjFDcbhJQh6L-2BU-2FG=
+vWKzs320NLOSjcAf7nKLE-2BXiiNY1Oi7wAwo2HzNleZ213cx2UqjeazApJUxPbEN-2FXI2sAIi=
+fNUpilyR2FWuye9Oe9tCIQ3xgit-2B5TF8ued6JjUnD0gZgt50iJ8B4ftUWgs-2F2TJP2g-2BPq=
+FjUrRBvc6HMDnk7jNP62y8QL5ZFvlkwpmXUhgWQJw47sE6s-2FNeRO-2Fe8M4Lw6fbO3nYarfcL=
+WE8QXi8S-2F-2F9n25oLGud4hemv8j36-2BmAAay3SnrTnUUlqxHFCU5h5nN981acr3E7do0XiY=
+bBnt4yMXIlFPwN8jCf4KJanhz2QqMB2u1v5MIClE4KJVE6f6xCEzmF-2FNOTc2fqOOBP0kmuQjj=
+EVQdSKdg46Q8BqyzpDtoIQ-3D-3DGR03_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyG=
+tZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5=
+AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUU=
+Dgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJK=
+pEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh=
+7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WV=
+y-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FR=
+bjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9=
+zen6n7JDcnhxlKg5c0wjQsdjzvG2OrAxmjK61PqLTSm20xDKhdkjJd1SOqQPnHh774-2FmOyPX5=
+2yY9hlO1cs6AGjGvxCwr4TMboA4Q5ZGO02gmM1p66JViDrw2pJJ99Flyybw3Tlbmcb77dsGEfzx=
+mGUmi5EMMnonoHg-2BdPGSpcquc" style=3D"color: #000000; text-decoration: none=
+;">Affiliate Program</a> <span class=3D"dn">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&=
+nbsp;&nbsp;</span>&nbsp; <a href=3D"https://link.email.upwork.com/ls/click?=
+upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU6n5ZJGKBtHix0HG-2FfZGrIV1=
+fDkT5BAFKRHUO-2BZeW8T-2FcJe2y2NYg0xW8PVr6QP4dVJOQ7kRFPKbQZx-2FG-2BR3UR2o2-2=
+BzG7hw0FXXEp0Ma9E5-2BnN-2Bk66afkpqMJOcc3gBZ4Apkgzrg6j8xoUai01q-2F0kdtJcXzQu=
+eRGEFrAAFYwQhVCjcBTQghgQ-2FlkGuBMqs0o0kpWjFX38uO3i2FAMB7DtsZAz4-2Fs0ogk46T-=
+2Fq7v1lUXXwjrtmRcAFKvMxbnaT1DHO4UAQMkb1gEscG6TdFdATqPOitmdy7hDArQQT2EphyjgD=
+boa2gVOBl2Q8NmnuLogLQGbUDB64NZet2vf42Xrtdyd7ETOlyuGMvouV-2FIW8tX3icf-2FeIhJ=
+8ZedXvud2uXJZ5K9y2MiDs08M4vmRqSrqoG5sJMAERmrvC5eH5PRrAS-2FQUPrUrMsRXKTXlJNR=
+3V9wKIYZBkwtZSktT5p2l981z2dM7aWNipnegVACTymzSLw-3D-3DwvQw_HPC5-2BlCj2pcWYfP=
+YIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcC=
+quPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0Nnk=
+kMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ=
+4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLw=
+xY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2F=
+thHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5=
+xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg=
+6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhU-2B8Iw-2FltQZ-2B6Pm6Yz1Jp=
+-2BKTedUP2tJ9XKcEqJLYWckz53jVdFHx3220tskZt5KpvxCGPh8dmuFKAWNPeJf7-2BOCAKBs2=
+QG6wTQXDov6rvVGGp1JBiCDP3nHTwtX7raQdzUVWn0mh7VK97mcVSZHxA8" style=3D"color:=
+ #000000; text-decoration: none;">Resources</a><span class=3D"dn">&nbsp;&nb=
+sp;&nbsp;</span>&nbsp; |<span class=3D"dn">&nbsp;&nbsp;&nbsp;</span>&nbsp; =
+<a href=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6=
+AZcGbPcv3ag7rzlW2nWQBZhjU6ZP1ewjUtRILcMK6w-2BEhiEeJ5cTECnj9DMbpkBIWUmKglaVH=
+mbw8-2F2BGpgDe43EbdvUMw-2BLekDz2bl7l9OunEMtNkSQCdAfC2RLXUxFym5-2BeE0fqTIhm2=
+fd1n41oyRzp9l3ugSrAbWjEr-2BT62Br-2B-2BMeqcao-2Frw39eVI2K3CyseuOnW1kfeomBu74=
+-2Bg5BpSkKtAX63DNKWRooh3ifKfWoY2o46psk7dpc-2FZ-2BDPixWHYY2L-2FLKmGwGM8ZO5zE=
+IV8cPxMGnMekxiRag5WXkg-2FEArhZh8P3yr89-2FDYMg3oArHcV31PBlRVhjIH8dwdbR9NWkMQ=
+Dxi6ihRqzHg9fFZOUf3GxSyhe8upp-2FlAspzGz-2BkFHXLAZ3F3joLoBRStkNPKOkJXh2uEGqi=
+uUNCgQ80j-2BSze7kBJpb-2BlnZYs6-2FGeP3S4Hp3bJ7VKJtwKa4G7Ooobj7zLxbPQxuj7Oo07=
+xTimTgrb3FxDaRsGIegPkEjjWaYAHxxcxwJsMwdiHKEbQbJk6L4-3Df2qg_HPC5-2BlCj2pcWYf=
+PYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPc=
+CquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0Nn=
+kkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPg=
+Z4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hL=
+wxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2=
+FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi=
+5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjl=
+g6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdh6WpBugghCwP82dCGfU8nk0bEK=
+xzeh-2B0asbjzCnvhpRoVzwy35bvOCaesDJ8x9HzDLRb6HAlz3N6x10idpS2az1WpFvigx5zOpv=
+qZYkKrwJZNZFk154YmjFcOL7RxTPGKITGDWHEf2bf-2BBNLKtBdrC" style=3D"color: #000=
+000; text-decoration: none; white-space: nowrap;">Log In</a>
+</td>
+    </tr>
+  </tbody>
+</table>
+</td>
+</tr>
+				<tr><td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<a href=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6=
+AZcGbPcv3ag7rzlW2nWQBZhjU6e-2F-2FitQNLHtVDk-2BSvJu3g1BUiyRfK6XrRlKqAJUXVN-2=
+BQHkEZmG-2BVYucn8VInvqztTbrvEv6vzfx-2Fs7gdp3dcYgcsINNXHtQLnVJc3Cb0eGmYL4Ij9=
+kykDWhhozaZRkfkCT0MBYiG-2FxdPZIEXY19GDL0ZI41bUGMOLwiYi9bQUlf6bRnIXmZX8UMmJz=
+s12wO5gHqW6tWsbj5Nh6ahum50IFwWUWVXza1KAGAOVFAK6a-2BuOkukrENc1qK3zV2b3m7qBdM=
+puMztxOv9WCFfzyCegO5JFrw6E5IrMP-2FKejFOwTeHtFTsJIKbgkTM29ZA-2FFIAOdnJMQVxuH=
+6soLWHA2XsoJ5M0ws-2BGcbpFMrBT-2BJIjccUmaVBlO8DD3evnFdWvX1PXp6EgOaKz365oQZoq=
+Z-2BInD8VufVuyC6FCm0EQWPF8SyaUh8JueOo4yY3lEoWlUvuQSH4-2F3ZYbduFjGNZF-2Fxcv6=
+fJ3fKxMzRn18Ky-2FVnungeEWDZy5vy-2BbWKSlBDzyDa70-3Dj-Ns_HPC5-2BlCj2pcWYfPYIA=
+uwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquP=
+bJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMW=
+M7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4=
+ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY1=
+9vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthH=
+RuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAf=
+TWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2=
+Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhqwUa32JEXmVmSaR0vs8j0aHRX4NZS=
+Mc7J5L6YKoLN2hJPMaBX-2FxPRwQUCyI9gSRyybKq6zZH-2BUBqqftWvTjn-2FE9vg0lHeXaada=
+pGJLPMXZHTqe77rveT9UkZJ-2BNKxQ6kBzKdkUG3oO1JZ98GDRzKP"><img src=3D"https://=
+braze-images.com/appboy/communication/assets/image_assets/images/6543f1bb44=
+74c1004de785fd/original.png?1698951611" width=3D"600" style=3D"width: 600px=
+; display: block;" alt=3D"Supercharge your productivity with AI tools." cla=
+ss=3D"w100percent"></a>
+</td></tr>
+	=09
+		  <!--Header logo end-->
+					<tr>
+						<td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <!-- Mai=
+n Body Start-->
+						<table bgcolor=3D"#FFFFFF" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" class=3D"w100percent" style=3D"width: 600px; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;" width=3D"600">
+						=09
+									<tr>
+									<td class=3D"plr_mobile" style=3D"font-family: Helvetica, Arial, s=
+ans-serif; font-weight: normal; font-size: 20px; line-height: 24px; color: =
+#000000; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px 30px 1=
+7px;">Hi  Ronald Lambert,</td>
+								</tr>
+								<tr>
+								  <td align=3D"left" class=3D"plr_mobile" style=3D"font-family: Hel=
+vetica, Arial, sans-serif; font-weight: normal; font-size: 16px; line-heigh=
+t: 24px; color: #000000; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padd=
+ing: 0px 30px 30px;" valign=3D"top">
+						=09
+
+At Upwork, we=E2=80=99re all about helping you get your work done smarter. =
+So we=E2=80=99ve curated <a href=3D"https://link.email.upwork.com/ls/click?=
+upn=3DVqS90m2f8fx8n-2F1K6AZcGXdU-2Bum2rQJXDEHDBhrPxBufRkjq3JpiPVTHiVctHK5lg=
+1KPMqNddfVA23Jy8DTHsXjaCQcBzvAJdgHWJDcQ1s7Fo-2FBVBISjRrtSJ0DyaIM6FvtVKS3912=
+p8lkkIFDsIzzlrKXxkBJICsB4dTTHRZ59sL8EDVpzzCoMJoc2Y-2Fzr479lq4ZwhounNM2NopZx=
+-2F0ZOgcCKJeeoKUHTZkHWn3L7P2BRy-2BY0w5PblmulKTbZSHdL6dzXPyIUpzbQeMiJBktImrG=
+pUpPlxGGtxgVhCslaPOQY0nefCLNCUnhzNMJ2dl-2FVGJtJ5DuP-2BooeujNGJVP5l44WAFLBzn=
+WDBkcMzu94NReFQByJwKMRqFlP1ElzGkQkRB52e76Z73ITS6E93SAh8EOzEm6D9MbVdG9DGxw1P=
+4CBZJ0F38hHmP20rS0ELLduvVDqo29FT8wwc7ktIrlmfvDnvZVhFficWf1Ao98fXOIrQsyUiQzh=
+yN4bUKl8Ox0nS5NY9p-2FkWI0G8rqqDxGbw5J7KfE-2BPh9oy84YZ5-2F7YWttzAWGGreMmNvJh=
+SDebV6or_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536K=
+GxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv=
+3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-=
+2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGio=
+B5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7=
+vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZ=
+dhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3=
+YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdj=
+ZyR-2BlJNMHxGdnBaZ56s0C79HQwVcQ2vGBR4SwiL7xEhTL3MOYh-2FFyBa4ydmcm5tmgUudEIF=
+h8ZT7XIFETQxVwRstLzLM24IqSdoklftD7yjvj8NjZwoS64Dpa-2F5J8rWkAFJvZMwHuUKi10k4=
+PJOzx" style=3D"color: #14A800; text-decoration: underline;">learning resou=
+rces</a> and special deals for industry-leading <a href=3D"https://link.ema=
+il.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU6W=
+LKy65CiPThKNRJsX3moSOOGOSauKEa-2FuV-2Fnr4FBkZ4ClDSBMoFIWpvDQdZOKRcpscVfGV9E=
+wtjbx5SjI7XkHPzrHPkS5cMDk4S17kgf7xEpPlrlGTynt4TPup5ZuF97Kzsquz-2FlCjR0q3ljJ=
+IU1Oqa-2Bp6RcCgerdPGG4tTvwZezaFX5RV7hVBnG4uJBGn0UCLS1715qJEZhCDqYMcHAtPL74f=
+9VYOtifT2DXZclGAMvWMQD4ptO3AQ9sk5bvWOIV4XLrbZUPoH3OFUH7cGSVwnjfkKxBbu-2FGy2=
+pB-2BlgVWgHZDk2tzIl959qsLqfgofnnD-2Bh06oD8a-2FDmurrfpGbQpVtaayOcgMBtP2tZ-2F=
+TSoHKAtTIpdyMM27hdrc3ubmxHKzi3ETxsUW7xZ3sN3e4seOYgq9zy-2Bh667OsInXlORFWCn5A=
+CxQCJWBU-2BqUmTxA4t6SxFFWDnTOpHFHokjCs3ucLHPhFEgHipxyuKP9nENjQ-3D-3DBSZz_HP=
+C5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnY=
+B-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDa=
+yIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vym=
+RUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3q=
+xjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2=
+BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15X=
+DvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0uf=
+B79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdge6bR9zNQjny=
+7iRIcRRVfH5DBQ3Hgpyv-2BuSFNDH5zjDNIekuptqrZjAKs3Wa4pZYKdfxWP97Vw7SRu5LLnp-2=
+BjZcKM-2FGi3nhHm81QbWqMrBf45HZvpQ3fkDOgxFieh0q88SOMqFf3f5j3hl1rA6U2VG" styl=
+e=3D"color: #14A800; text-decoration: underline;">AI apps and offers</a> to=
+ help boost your earning potential.
+<br><br>
+<strong>Design</strong> with Adobe.<br>
+<strong>Collaborate</strong> with Miro.<br>
+<strong>Code</strong> with Amazon CodeWhisperer.<br>
+<strong>Organize</strong> with ClickUp.<br>
+<strong>Learn</strong> a new skill with educational opportunities.<br>
+<strong>Interact</strong> with Upwork Chat Pro, our new beta AI app to help=
+ you start and complete your work faster.
+
+
+
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+ =20
+    <tr>
+      <td height=3D"30" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt;">&nbsp;</td>
+
+    </tr>
+ =20
+</table>
+
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt;">
+			   <tr>
+                <th class=3D"db" style=3D"font-weight: normal; padding-bott=
+om: 0px; padding-top: 0px; padding-right: 15px;" align=3D"left" valign=3D"t=
+op">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-rad=
+ius: 50px; width: 180px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" wid=
+th=3D"200">
+      <tr>
+        <td align=3D"center" style=3D"font-family: Helvetica, Arial, sans-s=
+erif; mso-padding-alt: 8px 30px; border-radius: 50px; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt;" background=3D"https://braze-images.com/appboy/com=
+munication/assets/image_assets/images/628c041afd0e4336f63acc7f/original.png=
+?1653343258" bgcolor=3D"#95DF00"><a href=3D"https://link.email.upwork.com/l=
+s/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3ag7rzlW2nWQBZhjU6WLKy65CiPThKNRJs=
+X3moSOOGOSauKEa-2FuV-2Fnr4FBkZ4ClDSBMoFIWpvDQdZOKRcpscVfGV9Ewtjbx5SjI7XkHPz=
+rHPkS5cMDk4S17kgf7xEpPlrlGTynt4TPup5ZuF97Kzsquz-2FlCjR0q3ljJIU1Oqa-2Bp6RcCg=
+erdPGG4tTvwZezaFX5RV7hVBnG4uJBGn0UCLS1715qJEZhCDqYMcHAtPL74f9VYOtifT2DXZclG=
+AMvWMQD4ptO3AQ9sk5bvWOIV4XLrbZUPoH3OFUH7cGSVwnjfkKxBbu-2FGy2pB-2BlgVWgHZDk2=
+tzIl959qsLqfgofnnD-2Bh06oD8a-2FDmurrfpGbQpVtaayOcgMBtP2tZ-2FTSoHKAtTIpdyMM2=
+7hdrc3ubmxHKzi3ETxsUW7xZ3sN3e4seOYgq9zy-2Bh667OsInXlORFWCn5ACxQCJWBU-2BqUmT=
+xA4t6SxFFWDnTOpHFHokjCs3ucLHPhFEgHipxyuKP9nENjQ-3D-3Dk2AF_HPC5-2BlCj2pcWYfP=
+YIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcC=
+quPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0Nnk=
+kMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ=
+4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLw=
+xY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2F=
+thHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5=
+xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg=
+6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdinnO4eocG-2BCtnS7u9rwFflvHm=
+FJQcsEFGntbK3FrD-2BMMUuZdQ7WS1HVKRreAwVLscTFDM9k342CUusb24JdBxKxCqpJRNt-2B-=
+2FDAs3j9vHFQ79bfzOEJSqpQSaxHD3bQnzHbctI7DolGTT62KMrffvUx" style=3D"display:=
+ block; text-decoration: none; text-align: center; font-family: Helvetica, =
+Arial, sans-serif; font-size: 16px; color: #000000; mso-line-height-rule: e=
+xactly; line-height: 24px; white-space: nowrap; border-radius: 50px; paddin=
+g: 8px 30px; border: 0;">Access offers</a></td>
+      </tr>
+    </table>
+</th>
+ <th class=3D"db" style=3D"font-weight: normal;" align=3D"left">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" styl=
+e=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+			   <tr>
+               <td style=3D"padding-bottom: 0px; padding-top: 0px; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt;" align=3D"left" class=3D"pt20" valign=
+=3D"top">
+<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-rad=
+ius: 50px; width: 180px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" wid=
+th=3D"180">
+      <tr>
+        <td align=3D"center" style=3D"font-family: Helvetica, Arial, sans-s=
+erif; mso-padding-alt: 6px 28px; border-radius: 50px; white-space: nowrap; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; border: 2px solid #000000;"><=
+a href=3D"https://link.email.upwork.com/ls/click?upn=3DkaqIPRuGeErcbV5Nasha=
+IFCGySs1S55yJKH2vHAhIJpc6pas9IUbBSc8UgykiDd87IhnsediULMTxhG-2B2uLdtDP9WbHbE=
+As6GDPR0aRbW1F539dfHeW3uRsOOLN-2BlzIfufQytBBI08TGtCjxLWAJ630jYDsvjPK1Bmc8Lo=
+5SFdpumBQ1OVLZ6zMR9SDmVdrCCRaYguOnmsXBv9-2FY2o9hO0moSR0ObUwA-2BwgrLzVuwrH5E=
+JqOxCirPuKT-2BNUUIlc1ZOqHsJCx3bY25Wsve3PeIwocndsAO27YKUdLL5waE9ln45P1vE1XWU=
+GpdV-2FvoaB9qHk3mPQLKCnzDPZk4PxQk6SADNfl1391WTEN7rg3IDPWDto7z7sdjbED4WGxEcB=
+6EUe1wFiO8GJHR-2FbtxiRxjnba0kjK2ZJfMtfzuMjPK8c1BPwc2ITAEpw8SsawrjqxnrksRDej=
+UNMhahsdQJibpXTTyIWO00v4J0xd0t-2F6xkb2gY5JZDTfBcZ5NCjLHb4VnS9PjHnv4IK7uZ11l=
+M-2Fsbw-3D-3D8Ozz_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8=
+fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0L=
+z9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2Ebqw=
+NTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4=
+BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqG=
+zbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi=
+5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYv=
+Ark1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg=
+5c0wjQsdj9lFlOE0Nd-2FpSTe8EeMs6K-2F02ux7vAh4F-2F4iKsLIp6ahGetKp0cosS7JsDrDW=
+KEX7913uDT0AiyUB7EfEuennxivgo4nYovECGWFMImY4kqEgUfVSL-2FWNSKigdpRaIytipUEL3=
+OfMG9fFdKe7PD1D3" style=3D"display: block; text-decoration: none; text-alig=
+n: center; font-family: Helvetica, Arial, sans-serif; font-size: 16px; colo=
+r: #000000; mso-line-height-rule: exactly; line-height: 24px; white-space: =
+nowrap; border-radius: 50px; padding: 6px 28px; border: 0;">Learn more</a><=
+/td>
+      </tr>
+    </table>
+</td>
+  </tr>
+</table>
+</th>
+	</tr>
+=09
+</table>
+									 =20
+
+</td>
+								</tr>
+							=09
+						=09
+						</table>
+						<!-- Main Body End-->
+</td>
+					</tr>
+			=09
+			</table>
+			<table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" cl=
+ass=3D"w100percent" style=3D"width: 600px; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt;" align=3D"center" bgcolor=3D"#FFFFFF">
+ =20
+    <tr>
+      <td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0=
+px;">
+<table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" class=
+=3D"w100percent" style=3D"width: 600px; mso-table-lspace: 0pt; mso-table-rs=
+pace: 0pt;" align=3D"center" bgcolor=3D"#FFFFFF">
+ =20
+    <tr>
+      <td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0=
+px;">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" bgcolor=3D"#000000" style=3D"mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt;">
+	<tr>
+		<td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 30px;=
+" class=3D"plr_mobile">
+		=09
+			<table class=3D"w100percent" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" align=3D"right" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t;">
+ =20
+    <tr>
+      <td align=3D"center" style=3D"mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt;"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt;">
+ =20
+    <tr>
+      <td style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 14=
+px; line-height: 22px; color: #FFFFFF; font-weight: 500; padding-bottom: 30=
+px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" class=3D"ac">Mobile app<=
+/td>
+    </tr>
+	  <tr>
+      <td class=3D"ac" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t;">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt;">
+ =20
+    <tr>
+      <td style=3D"padding-right: 12px; width: 40px; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt;" width=3D"40">
+      <a href=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n=
+-2F1K6AZcGbiRHjfA3JYN71928olQDdE-2F-2BjNtRrRtHSLZ5iPVCMDxH0AV1IX8g50meUI3V9=
+ybm8KzENRR5lvynrM4snuQNSbd2vTrRy-2F36SyW6EmrX1mUJexg8ekeMG-2B1nkSaRysYbwrte=
+XrflwMVDEOUHLDv6EQgdYKPgpi161Z8pnl-2FLn1d2j-2F8YXfBd0Y197e8ADJdIGqh9mWRpLG0=
+ZE-2Bmy5zIIRi69HLgsYn9mkkyoRI3-2BkcwNN3ZJRUlZD4V57EpKWDVTmUwl-2F9ZRIfSxs1Dy=
+dD4MEZye1Spn88eiLwtTwFnxtxMLJaKySiouKZOXpBIAziF0lUDJmwrEabEt6HmpkU7sd3z8zsl=
+zMl1RXOX8F1oc-2FpFHqZ18D9JjhwaPapUoU8z-2FKUZDLrlOKfM85JkrS46cqBBF1fHtZwCSil=
+RtxUi75ULdoqK7qcMgXExl64lIVyxaZYKdQbiiNwuXlMimHwqje8h7XSH3R7VkIGdlOaiaWimac=
+n9tth8mC6N84Crh4oQNrDJwKBoiPJzSy4onjZfhHz6CIIHafBVAEweMMArN-2BPLzahX_HPC5-2=
+BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B=
+5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUT=
+jNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUIm=
+t5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjx=
+NVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2Bpcd=
+QOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfM=
+nA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q=
+5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdiutgEoTBDWP8jbgg=
+07iB6vmcMEfY1jKH3LyFY0s0MDguEkeTqlw6-2FNQ442R4eQdbp8-2BKt3MSFl7AK-2BtDbuze7=
+uQJ94Jk-2BT4fxBr81OwsCLwMHkhESjL-2FVfzWPea1GRrd72s6yOsSI7AzsmaT7KkqY5"><img=
+ src=3D"https://braze-images.com/appboy/communication/assets/image_assets/i=
+mages/6543f98830acf4004c6babc4/original.png?1698953608" alt=3D"Download Upw=
+ork App for iPhone" width=3D"40" style=3D"width: 40px; display: block;"></a=
+>
+     =20
+     =20
+      </td>
+      <td style=3D"padding-right: 0px; width: 40px; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;" width=3D"40">
+<a href=3D"https://link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6=
+AZcGcDKWc6m7LClUBjcrvLF0K40IcOkyLCDlYOMzYUE-2Bn-2BJ1Ms07go7ciWzHnhWrlPaEy59=
+mw5Xz5BYRMoiF5VtBAvONCxHzu8DW38ZpkqnDiAZ3w9b83YQFYFg2N7igC5-2BXX4Ied-2FB2Qa=
+EbE2-2B3ifpXycC7dZ2Y0TagcFf1xyrwMCQoaJDaOzX4ZMZKg1ZI7Lrj5jMKvMSR0X-2BnjH6xu=
+Rg-2BWM5vFUiTS6f1ljxWf5ISbuWzE1JMBCwVnp1o2hEnxLa8nJx6Ybj6KBCwYHYKuaCH45rXHT=
+eZNfVE45CBN-2FEBaXJY08Tw201pavcVdRsHryiPUuHQK7ohzh-2BbHmCEPX9wrslY2aRLuA2R9=
+2uH1uT7uqsDbesLHrIqymp8NAD7hDfMdTlujqEKSTyTTz3jPvBcjSzjfOpv7WVydTtR574-2Bfa=
+sdGRcZZhIKWWGVdMEKSNS5i5d84XJX4OQPYWbGakshm3g5NBkSI-2FqogxyEuYG6aGS-2FmgFPF=
+U8lRnKpE8R-2FV9PFf5ZMjpKps1vtXpaeFBcHbY2yIozhF5l34ahqbG1uouKjL2j7hxJbZ2RS-2=
+BSTzBj75w-3D-3DwL1V_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZ=
+M8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh=
+0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2Eb=
+qwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgV=
+X4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZh=
+qGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KI=
+Ri5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2Bl=
+YvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxl=
+Kg5c0wjQsdiLL4vc2l1oixRuqh9Rz3QRHRbsnCo1NPvM-2FJmC6f1558cNHTC9lygkvla-2FXa6=
+4QPmizvktxm3ZD1qXtCUuGagEdGHLwADoNvBDRZQeljv4pAkWzpLN0krbeJ2qXXH7Ymzmsi-2Bn=
+3qePvVvoV4i-2BCpz-2B"><img src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/6543f9883595bd0054691ad4/original.png?16989=
+53608" alt=3D"Download Upwork App for Android" border=3D"0" width=3D"40" st=
+yle=3D"width: 40px; display: block;"></a>
+       =20
+      </td>
+    </tr>
+ =20
+</table>
+</td>
+    </tr>
+ =20
+</table></td>
+    </tr>
+ =20
+</table>
+		=09
+			<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" align=3D"left" c=
+lass=3D"w100percent" style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+">
+ =20
+    <tr>
+      <td align=3D"center" style=3D"mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt;"><table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt;">
+ =20
+    <tr>
+      <td style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 14=
+px; line-height: 22px; color: #FFFFFF; font-weight: 500; padding-bottom: 15=
+px; mso-table-lspace: 0pt; mso-table-rspace: 0pt;" class=3D"ac pt20">Follow=
+ us</td>
+    </tr>
+	  <tr>
+      <td style=3D"mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+<table border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"mso-table-=
+lspace: 0pt; mso-table-rspace: 0pt;">
+ =20
+    <tr>
+      <td style=3D"padding-right: 12px; width: 40px; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt;" width=3D"40"><a href=3D"https://link.email.upwork.=
+com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGV4c0lN2b5GA2krjEjYFuXv-2Bk82zihu4=
+xqnySD-2BOOfkOXOKenzUm8TEja5SCOUK8fpmzgnPIzfJF-2BLeHqGksHwJP-2BXj7HPphlZPcC=
+ZyCcTIGwXnCVp0P5FseIQTh-2FLuIb5u99-2F-2BBVM6SWN-2Bb9I7RHdBulqPSi0U6w5J6pEyW=
+m-2BP-2FqkkuN793f-2BY-2FIRizuyTuCV2Xi17m-2B2-2BVF-2FMZgYh8jQCMOeGX-2BooRbhc=
+6aGmWiBAs-2Bl-2BWxsOIVO3nSzHsBBUBG-2BCipL5VpJ-2BxycYAbvrvdupF8Y8EqeFPPjwmQo=
+G99ruO9PHNC3W9JsfhpDfuDnqKFNeXnrhWWkz6n0U2Eril-2FadzCSTCz-2F5xeSYIYqxruthko=
+TYmkUMgtDt2NMpHMAW-2B-2Fkj2q1gJ7vHDOOXqdVpEhyeLM-2BrnzA2TUGLsMRJXgYNBUmJte8=
+HkI9OQKKgWn7QcAq0XL-2FLtHyuHRbY-2F3yK-2BtfTSIf7TaFTGHiZhaUxUjdIDaOK3sj7LjO5=
+eeXiiX-2BkMUw-3D-3DpbC1_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY=
+-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD=
+-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPj=
+j2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfad=
+FvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZML=
+ecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTx=
+A1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF=
+-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDc=
+nhxlKg5c0wjQsdg5ReuqMcB1667jMkZC81qC84Z2jwu9mmvuhvVQ4MG55B5EDfvFp1VSZFTtap9=
+-2F9ofEgvQWBw29Z-2Fy3UljR7YhYHBWM-2BulaKpWcRdIBk1PwnK2W3YcmLdw8nbj-2BY5IGlJ=
+WF5kzKR20uZxuVJ2qeFqc-2F"><img src=3D"https://braze-images.com/appboy/commu=
+nication/assets/image_assets/images/6543f9835c8a5600578032d8/original.png?1=
+698953603" alt=3D"Facebook" width=3D"40" style=3D"width: 40px; display: blo=
+ck;"></a></td>
+		  <td style=3D"padding-right: 12px; width: 40px; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;" width=3D"40"><a href=3D"https://link.email.upwork.co=
+m/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGTGAtdpLZcbS78NVsMDuqPRtamj-2FAdbber=
+PTqm6hiXyfLfvRg3lMKAWzAC1iaDtEGjWTfXUhMN925X3-2FBW4GvS3kJNUwUGI4gx2mMfJ-2F-=
+2Bbhb3yx0TgIZ6-2FODcT4aTlu1A-2B9fgLhLCNTKNBrpdCBWJXJ0NG9MUBIyKgYwkcfc5-2F5-=
+2F-2F7kp2lcFwjwuneuDNTMyahVJNX6zYup67oRM9qgKifsH5hIBebYXp68go1GMd-2FM7ns8BJ=
+XNGD8D5-2BraRzCnmXJKGkoQMllIWQ-2BG1k1eTdJkH0kvNZGIzwnTSPHrouplXWQgyElVN6pEW=
+AFlN6hjO8ePwY8KUmwb2CAQBvGunuDfR60DLq2BPTk-2F9TN3mH62-2B9uw-2Bl3MW81fUJHNtI=
+dA8Yd6H2qv4Be8RRGFYy12MEZppRTVauA7OunABHjPvFlNuy338r0cYo3dk-2FZuqoRkHtcKoyw=
+-2BpZdasDIbjbyLCemgRmLSexbpT23rVfSO42byMULdDI7jPkwB81L8R4d9U4jyTTl-2FALEmcx=
+gPMZWAtsOg-3DtuOE_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8=
+fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0L=
+z9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2Ebqw=
+NTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4=
+BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqG=
+zbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi=
+5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYv=
+Ark1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg=
+5c0wjQsdgwyDDifhqH-2BABg1b-2FHwtU681FKEnpnoId4bFn8WhzWFd1ELvWYxXNJ-2BRSkSN1=
+dF0lhQipKgAJY5USbI1Y7gWaW9dw9xC9KWuyUk3gGkAQwNzXIejXVYyYJFfjg2ZLFY-2FOnTBhU=
+F3B1BavnWuhuiNC-2B"><img src=3D"https://braze-images.com/appboy/communicati=
+on/assets/image_assets/images/6543f98393370f004ccca21a/original.png?1698953=
+603" alt=3D"Linkedin" width=3D"40" style=3D"width: 40px; display: block;"><=
+/a></td>
+		  <td style=3D"padding-right: 12px; width: 40px; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;" width=3D"40"><a href=3D"https://link.email.upwork.co=
+m/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYxOm-2FHcbsnCk7IRz4Fa34ON8FgbcO68je=
+FgoXhJk4x3XsREldN2wN07JgaOPg5QUXCPi-2F0hpoZcKmzFDIe5O5ixtpaWI3MVX3fLeLFyf2c=
+2reINFizNgIzF7d8iDFoYnlCESlPjIYyVAOQW4vwzpWYs8Zft35wGdwY3uFxzv4Cxx4h7V4eA5A=
+JqxrG4dfkGOwnZWMGZLEscyWNGMiP-2B8tr7cSFEkAe5nS-2Fy-2BkSHbEjXeH9PFEtG3ob-2Fh=
+4vsVcKklz47mgzgcgGJH70Rg5xVxPV5LaA7azNJ-2FSTKvVNEt6Y9STN96BwrQuk-2F9ktrKMUc=
+8LlkOyA7-2BHsBVlZQ6EzkXi-2Bo3tu3WC5Weh9tajoqeSvrzt6pItAG4lJofSYPJcVI6FvN7X-=
+2BjbxTAGZ4CSU69kbIuMFIW28pcTkvyLb5M-2B49eDGkZ77Sf0bxlFy-2BKuI4W57BcJ2iyGvcq=
+dhHT81UaXJx0EM98wwOb7YeaklhQReWQc2Ss-2BGT93uRZSBbbhbOdHg-3D-3DAgPv_HPC5-2Bl=
+Cj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5O=
+wyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjN=
+ApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5=
+US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNV=
+LtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQO=
+QsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA=
+9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5G=
+oC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjaxQi-2BYYbdvv7KcN=
+wr3Q7VzzEvgZFNAiDB0jBn9m011q8TzTukrj1nsQd4vmGP4OkQ5KJEBKv5H1XtsP-2BXcq50J2h=
+m5x5hMEX-2FKP0sIk4MZ3dtiGagY7RbW-2BeSjb9XHyjsGnHKdcLNlF28p-2FDiAE8a"><img s=
+rc=3D"https://braze-images.com/appboy/communication/assets/image_assets/ima=
+ges/6543f9837fb1b9004cf62cc1/original.png?1698953603" alt=3D"X" width=3D"40=
+" style=3D"width: 40px; display: block;"></a></td>
+		  <td style=3D"padding-right: 12px; width: 40px; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt;" width=3D"40"><a href=3D"https://link.email.upwork.co=
+m/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYwdTBAu86-2F2oQO9KTQu0svkUBDO8x2KnJ=
+m6BtjbQhz2SpOMU4Ji3n2zXg54qTdmJDsohXB7nJnSfMfdN-2FUsnhUx1hV-2BN-2F5PIFaoB50=
+eQ72tA5tnTAxt4nKtW8rq6rnLwHEGeKoFTEeJpAnsxHGmcqrORlF7o7YGUI-2FZsO6QZeFPAAhs=
+MpJmHVmXt3xOVSzgAxUana9PDFXQbpBroL4PB1JS1DTxjelgfPqA1Ok7daTLO72Fb60pXCWL81j=
+H1cPinQimAMIJpfxWNGtYeOP2tfXwggWkkJErjMJMY1wqCMWFUgWq9lyiCkj7MqoJMJm-2F2iJk=
+6rg1-2FM1e0AIycQD5ke6fFW7E4FWsf9s39-2BiFO-2FjQaIxSTbV4wSYIWQ6k11hGcvqxG2Lzk=
+cUG2D5Qb86spKph96lwqdS0ayoeZV2GqYBOi6-2B07uIAPrWiBDNhGvW9A78DXKb-2BKOM61vCt=
+q4wX9xtKyMXeRb9bdg0NZYWl2bRFDXRj7k7yOfDKSMA3LI5S2glC87guTnSbRX49vxOS4cm7Pq5=
+wB-2F3JlJazClrVorcvHzSh_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY=
+-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD=
+-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPj=
+j2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfad=
+FvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZML=
+ecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTx=
+A1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF=
+-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDc=
+nhxlKg5c0wjQsdjTLQCSPsUCFHuOjgPfNFPKhMyKPt9ERwgafKr-2FrVHhCQIhUV0RYHvAYuIy6=
+NF1dk2ErVbVRADVLQJASqoFF8azHRmtdyFRT0ad-2FvQIaLNJBQ8NcKqoiZTp2yNZK2TiXNxEMc=
+xQJTYuvMko-2BEN1KLZT"><img src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/6543f98330acf4004c6babc3/original.png?16989=
+53603" alt=3D"YouTube" width=3D"40" style=3D"width: 40px; display: block;">=
+</a></td>
+      <td style=3D"padding-right: 0px; width: 40px; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt;" width=3D"40"><a href=3D"https://link.email.upwork.c=
+om/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYBD61sW33SL2IMO1Hvsq27gPMA5DwvwNxd=
+LWe98OU5H28aCzn7SmiOu8mYyrdCm-2FFW1JI0XTV9iYJl1Ihaf6-2BTDhXxz4Yup9VgU6YGXdg=
+9Fg99wFm-2Bc8vrSpIr1G6lBFdpodBE8J4huDGPOGD2xLZ-2BMyr9IVgPzJ3FuO9RgF7qhgRlje=
+-2B0PlMTXqGYxWGekGk3cgho5pyRf7K2-2Fm08mCvJjIyDBTyIeUpLwUlk0vXHPykd28B4Ma-2F=
+s2t-2FKv1dy-2BerX-2B8XD3EdRze2qnYvp2GI5DeNAHBVUt42MJs-2FUtM2eWfxqal4-2FB8E5=
+R0PgebP77M1h2lPjW8gX4NWIWqCFNm4TgJ7o-2FvqFhvQxkjpsJhbknZcEUuaibmmVe5icfpPzH=
+iNMCzW0UcGtSlPf7gLuluxpePVQoGUY5EJQTDFZkRaNfuUJSJxclDnzxsSOYAPVuPJVI2-2FEjI=
+oobZjgNAKlP2oQi7uP9wj7ieDo7f-2FdcDdKyQ6L2RLjXRAXWO9Ab1-2FBxGw-3D-3Duz-T_HPC=
+5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB=
+-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDay=
+IUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymR=
+UImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qx=
+jjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2B=
+pcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XD=
+vfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB=
+79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdh3ztVJG8epqbv=
+1YH0PF7cZZFxsZbTNuEPgQQ3wVVRzHFA4YpMbgINB-2FKMXTgafbB1nnmYDNFrGU7QPwvDaFCXP=
+f-2FG7tCdRX9OhZ3PeG-2Bwyt-2F-2BJIRABSc4w0ISFi2oCWGJkse4QYSXoyaxuHSpzlbsX"><=
+img src=3D"https://braze-images.com/appboy/communication/assets/image_asset=
+s/images/6543f9835c8a56004c803549/original.png?1698953603" alt=3D"Instagram=
+" border=3D"0" width=3D"40" style=3D"width: 40px; display: block;"></a></td=
+>
+    </tr>
+ =20
+</table>
+</td>
+    </tr>
+ =20
+</table></td>
+    </tr>
+ =20
+</table>
+
+			</td>
+		</tr>
+		  </table>
+		  	<table width=3D"600" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+class=3D"w100percent" style=3D"width: 600px; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt;" align=3D"center" bgcolor=3D"#FFFFFF">
+<tr>
+<td align=3D"center" style=3D"font-family: Helvetica,Arial,sans-serif; font=
+-size: 14px; line-height: 22px; color: #001e00; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; padding: 25px 5px 5px;">
+    <a style=3D"color: #14A800; text-decoration: underline;" href=3D"https:=
+//link.email.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGbPcv3ag7rzlW2=
+nWQBZhjU7HTKyR7OIbCXiSXJaXPir-2BfwolMU7-2FtpbfwSkO92efGq-2BpVstNHLo-2FUZP9a=
+tQ8EHaw8sZhxs-2BsZ8fXpYsiO-2BLTaXPlksExFlsFWcO5pb0xyO-2BUCFtZiUb7rsBWQF6ADM=
+z-2FMHMFg-2BftehQPvZsNOYeWj5IrjgWjBMV8UJSKzcmJ2lMblj08lDqA-2FWJb5Y6w20enNIi=
+HozP9-2BrGZDyIzDiG-2FUMOQCMeYn-2BMtQxlXMXaQ8ti0M2XNDe8CUZyonGfAXkMtOyKbjDFi=
+3IPp266oq6TXFfnyNsHATL1VdEDFTQ-2BozyPfn6xyBH2Dio1jhQFvaGkK7EUYPw3dnvJ41SeXb=
+1t5hJDJf4Sfen8wnJS-2Butcqqc7oEDfxxnnCFx-2FJKU8XJImprqcS8QEyCopMQWvEy-2FaoJf=
+PfeM7W5gawF454cUQutk75vtI-2BFEo14LUlZizOKexqMT0GTaGv-2Br-2BPLtFOO8HTW8wRQ8n=
+7auv5otRn-2Bk5kLCVoiWSfy8v7cugLPLHEckM-3DoGN3_HPC5-2BlCj2pcWYfPYIAuwPPJ2Fbr=
+LMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30a=
+ScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAk=
+kT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1=
+LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEh=
+xk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhC=
+K-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cx=
+vkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsu=
+zBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdhycTmFfs7B2F12m-2BsU4HN5Xd5-2FKQb85BhRe=
+5WcwF6TbRovT4d2OR2NVqV1-2Bf4qKTIuhsjc-2BPfFWyU-2B3AAjUNzmXxpbZRf5nHL20Bb8kp=
+gtFV4IexM2Edkcbw94tdE-2FQSIGoW4t6pj1M01-2Ba9B9KLp2" class=3D"db">Privacy Po=
+licy</a> <span class=3D"dn">&nbsp;&nbsp;</span> <a style=3D"color: #14A800;=
+ text-decoration: underline;" href=3D"https://link.email.upwork.com/ls/clic=
+k?upn=3DVqS90m2f8fx8n-2F1K6AZcGXNDCXp0TSAFOuI9haVgZVUU-2FvOXrYKyKj2MLXWzfAY=
+Kr1rlprqsrkXCUr3mTSRJ0RxtG6ShMYEb-2BuxntxVNes7tS3-2FvlY3wx7DQiomvusCJA1Qk17=
+VHJvplmEoqTCqHMI5PqZAi4k6u-2BR9E9ZMSJLCdSVRz9AHSpSz4xT7DvBGUmVmvZnCb2p7mi-2=
+FEI5Xj9XV5qDFeMXgcwhg0gksh3Mx8-2Fve8PxOiWjV5kGTxtAjj5AeKwKvQfDFL9HS1VyRdt9d=
+-2F54ksuxsfPu4x2xLqI90I7yVU3b6AtED1TL-2F6dOlWLAbY-2By0ju8orF7xZDTmkULFXwRMB=
+i3gmV-2FP6dESyhHJoURrKVlQ5DZ-2B3zNHpxtU2ipYkBpMutJqGb4hP-2BZKfN0Q38avfvN2Vv=
+FElmk1BCJUyst8xSFKLMBshLWVKtdsxvqd63UzcZ-2B3OOcSYTl4-2Bmq4-2BeXC8DHtQi3TKlC=
+VRGtK4Sit0d1MCZzz8MLTeNY3sbrO3yaJHXcRgcrBju6LULNQ-3D-3DoqZq_HPC5-2BlCj2pcWY=
+fPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBP=
+cCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXYh2pv3dPyxGSMoDayIUTjNApwZq0N=
+nkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPBfrv-2B-2B7l6vymRUImt5US87nMP=
+gZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSzlGioB5XunWxBt3qxjjxNVLtcmX0h=
+LwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr6mV7vkzcy5Vxk-2BpcdQOQsvM22-=
+2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQOpOZdhwmBLQk15XDvfMnA9XF3CmN=
+i5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F4ri3YeJW9w5N0ufB79Q5GoC106Qj=
+lg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wjQsdjtYZzNNoRGA0-2Fv0lKMkeltP=
+gD4nK0DF-2FujVnSq9qJAYxLvDuw2uldceCvASd8r-2Bv9YItcOx5wm3c7-2Bc8WgS4F5tvEeXQ=
+OmYvlQ9erZVU6F6ve4Y8CZ3krCYT7N6hZPV9Xpe-2FqAiewaTbPObKb-2FyBm-2B" class=3D"=
+db pt10">Contact Support</a> <span class=3D"dn">&nbsp;&nbsp;</span> <a styl=
+e=3D"color: #14A800; text-decoration: underline;" href=3D"https://link.emai=
+l.upwork.com/ls/click?upn=3DVqS90m2f8fx8n-2F1K6AZcGYvTFAk-2FZ1v2q9P2ebU8UMF=
+J389YI9m-2BwEVxJ4xnrT7ASA9i4TXYWobaz-2BenmdmOYiTjc-2F1-2F-2BuSSXH-2F9v660wP=
+rXPbkR3nWfJhItyLXdrfmiermUXjTIehqG6GcsZqamTXPtx9THrK74EU0pkas7gc31v6xrm97-2=
+FwKXG38GbhxKHjLiiYZl-2FRdv9OQ0zh-2Fct7NC3KAdS9VWvFusfq5WINCzru5cn1c4qJa2FY3=
+xO4ReoP2JFsVUHAgMaTJsqSVCTq0JrVG6TmZvQCqy5hvPdPcPkUbq6S2dWPEn4UxPu2LOavkvUU=
+mei-2FdoEMrKHMIIsuo9rvcm9-2BpKjf7UiSsR6-2Bc1guKYuiKEg9jfvaq77Hc-2FGusbwiK4J=
+YbrQKfgkQVtO7mh8Gv-2F5U4rs-2FtPH5M47TUO-2B-2FP1DG65soSlttw6zTJE20XMp5Cesh5j=
+d8ZuTuB-2FPCSAw5b35EicTaJ0IxvI8VfVR03T76fY-2F5U7iQ9aEnxqztiHrJLPhz3kk2qNvht=
+K3OwwpjOfJmy-2FCEb1ApPWX9MHN8ZdYdSl4RtRcIlo6mZ38RRUhZCqS0Vhuf8rPyLJwOHj2TyN=
+sOpj-2BKMcVAYrMVZlMTUGtcTw8zpv0KRbabLmHaUu66EXcvdF52bumkqcpPB5tNCFKQAyXzcOn=
+GQbx6PbPGiMXjNbBpke-2F5r-2F-2Bsl26Wzzk8SKemAKg02wNwyep38LQoHMo0oadpqwBXzvgp=
+qoq-2BQGJu1YLIKSyjDMv1JmODbjZOx2VOhiYsfxgcSEoHg4PodF5ISloGmDCxe9xvIETDbcp62=
+yLdP-2FTpfXNf8sVBMht3owXa0knlbe8tAST5n7b3SyAHrfl-2BINBLK2U-2BKcy6fB5ZKavtKu=
+EQuuRczfaw9umKKw542Mkg7BxDc6YU8GXbhNVD5fOS3C4ld9UD4iNxbNVNa8GDDeop8skurUpkv=
+SNk5vZl0lsJ5R2AlJTgTmKoqQUg26jxQmRy2ETH0LmalAxib4DGsw8SWNjOMnPsPZ-2FJNoJf27=
+SSaNS5BhAYDFrT2dpcUG6LhrEpdNvx7jcAsvMjWlkwFYo4Lp4Skwmo2xIDpXVB2oAg-2FVCs7Wb=
+eA-3D-3DQUHg_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd=
+536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaidw5AGl-2FhpD-2Bh0Lz9pXY=
+h2pv3dPyxGSMoDayIUTjNApwZq0NnkkMWM7Fng4tAkkT0BYc7aczuUUDgil3QGPjj2EbqwNTBPB=
+frv-2B-2B7l6vymRUImt5US87nMPgZ4x4ZWLytQZy1LvZ5d7LkXsLJKpEDrqGfadFvgVX4BNMSz=
+lGioB5XunWxBt3qxjjxNVLtcmX0hLwxY19vBXIujEhxk2S3tMe-2FVh7iX6hEZMLecZhqGzbnKr=
+6mV7vkzcy5Vxk-2BpcdQOQsvM22-2FthHRuNwFtDhCK-2FiuwrIH9WVy-2FtswTxA1KIRi5RGnQ=
+OpOZdhwmBLQk15XDvfMnA9XF3CmNi5xAfTWayZM5cxvkLpm-2BC-2FRbjsPZUHQF-2BlYvArk1F=
+4ri3YeJW9w5N0ufB79Q5GoC106Qjlg6-2Fzdaw7rsuzBxcVScm-2FH9zen6n7JDcnhxlKg5c0wj=
+QsdgWS1rRctXVri3EeDDW1aQYtokQ3q8gQbChxH5ql6YPAItQEPevs8gjZqzzJjhap1DQ-2BWTt=
+A8U48fCpP2m2n3LY2vN37dMS7kKv2kJTLP3205RxcI8d3-2BkJV8PdNUKumk-2F37XB70bh5v9V=
+RsNwtgtdD" class=3D"db pt10">Unsubscribe</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: Helvetica,Arial,sans-serif; font=
+-size: 14px; line-height: 22px; color: #001e00; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; padding: 5px;">
+<a style=3D"color: #5e6d55; text-decoration: none;">655 Montgomery Street, =
+Suite 490, Dpt 17022, San Francisco, CA 94111</a>
+</td>
+</tr>
+<tr>
+<td align=3D"center" style=3D"font-family: Helvetica,Arial,sans-serif; font=
+-size: 14px; line-height: 22px; color: #5e6d55; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; padding: 5px 5px 30px;">
+=C2=A9 2023 Upwork<span style=3D"font-size: 70%; line-height: 0; vertical-a=
+lign: 3px; -webkit-text-size-adjust: none; mso-line-height-rule: exactly;">=
+=C2=AE</span> Global Inc.</td>
+</tr>
+ =20
+</table>
+<!-- Footer End --><!--=E2=80=99-->
+</td>
+		</tr>
+=09
+</table>
+	=09
+	=09
+<!-- Footer End --><!--=E2=80=99-->
+</td>
+		</tr>
+=09
+</table>
+</td>
+</tr>
+</table>
+<img src=3D"https://link.email.upwork.com/wf/open?upn=3DDW-2BSrACj4wfqwIANc=
+jvCqOMsRXaCKicfEInkXFEUAT3on7On2OxLC79EYg1ibXZDp6-2BoiuhdZfsjyWTNKltNwKpMve=
+CjAde4LxjagTsSUjhFcf4NDs-2FUQjTD9IT5LNnY7oc7qxovDEdjEug4XcsvrEJuU9mpUp1knRb=
+DDzYYHhzVSHrJs6yYXRQ7aXteWilK0Zout1SXZJAy6GyGX9ATDQcCos2cXSSPxWD4nRjr2F-2FZ=
+Ndn-2Fh-2BXP5nO71-2BkeyCU9vd0SVPRigbt5PPsS-2FnA2NgmtEOk6QEjRzAdVylapLzwBNTM=
+IT-2BbiekEPP5m7RCXqMEgejuY4ec6-2F9s9CCfc2k8MQhx6m496D6dSRLjXv1hX6hXLIdvZLJs=
+gNg-2FX3WyVw-2BVFG7iYbOWMp4PLbeeI0LoXa1fXRGa-2FE8If-2FPmiRsTmgURoOyAF6LF-2B=
+lOlERVKlBxxYPRH360BkDhHY7ha3OPmyMLn-2BOHo8idQDlRkFtbhaHMM3rYHh70Wkdirx1KN8r=
+w1QZvgBWR2gcGRBeqsxeej3QLj03NOL83ByueRdBK837gto1eA0mptQ3frPNcK-2FQrohUUQN9W=
+Y0TiDtJYWD6MCch3yikFc5inzTLy-2F0jxz4G9V2O2-2BQLmq7tgKxVVLnOy2yPXbdwx94MnE8K=
+9tgkhVa4BtMELxD2sOnQJtU5JMm87jgdvZ-2FBspdcD9mu-2BXoV" alt=3D"" width=3D"1" =
+height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !importa=
+nt;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impor=
+tant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !impo=
+rtant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0=
+ !important;"/></body>
+</html>
+
+--e2e4a6e7ac4b65195307dd1564e8d77507380d132e4e6049481627da682b--

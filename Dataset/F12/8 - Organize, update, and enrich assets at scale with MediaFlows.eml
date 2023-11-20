@@ -1,0 +1,553 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:218f:b0:350:f1df:6bf4 with SMTP id j15csp1272289ila;
+        Thu, 16 Nov 2023 08:25:04 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEdJozzD6mPW8HtW3oFn1couayIRUskM9Bji+S6AHFESXD+vN0BMfWb/eBXzjJ7BCx6xIHC
+X-Received: by 2002:a05:620a:1aaa:b0:775:6d22:d1f5 with SMTP id bl42-20020a05620a1aaa00b007756d22d1f5mr11995747qkb.51.1700151904775;
+        Thu, 16 Nov 2023 08:25:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700151904; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZKKInVqkF1/C4hq987clWAB08+DykQc76RVFC4i+WeOkPsGSuWWolC3U5AYlilesxf
+         hk7OTHcndmuOh/xOTc7vuRU9HjmnDrevUFxJ83X7+WN8vrMz1VEtOoVYKrVBQbwFEI45
+         rnLXM8rO2BG6LxQqd1mQMESI0Lo3/JbcZlWO8vipbfrt42XYSlGZLxu1YIUHK62YW/Bd
+         0thL7yrqN05XFmmDcEgWkF/r5BRpoz6rrNIWTvGtDWmBPJLQYDNcqZIGzb/RFVfhyv1f
+         pueDzq/rdUG6l3wzyyhFw5dL4f03g6KRMcYDWHCHLC/fyG8RjamldQEYkuR8GoRjGpAb
+         T6Ew==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:mime-version:subject:message-id:to:reply-to:from
+         :date:dkim-signature:dkim-signature;
+        bh=ma3i3DVZlegmP0paQgZkAckv9rSdYAxiVinAkR0tl68=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=m5qh8QeARf/MOQz8bbNknaRtgoZNI9qMpOJnvaxuEDYZWXGQdIDQ8hugA8G+libQan
+         jU743oKFB5+7nxvwrXpf8x/RV6chxAWGM+ktPe5S2LMyUPMV+7EJgfvhaJJLlLEGrucS
+         UTWySMjw8thV5qYr/YdCqN/HoVGGeS+wCnLkUVyOk3HAwXtFXMqWZuQNkmQnHY/7Kl7w
+         Qxxo7KgJFJ730hoZAmMIkopxgdI2L3fuqd0NaFIbI8K+exOuccqwtYVkGi0mWfpZKoFH
+         hQTrRhqSlFYlbxlSJSsPgG9C+c3GFD5+Pt5kSmMVtw40kO9i7f97/DwTL4C7Q7t1LafW
+         ehNQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@cloudinary.com header.s=m1 header.b=By11y5FW;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=R1V4Ksqy;
+       spf=pass (google.com: domain of 796-xwl-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com designates 192.28.153.180 as permitted sender) smtp.mailfrom=796-XWL-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cloudinary.com
+Return-Path: <796-XWL-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com>
+Received: from mkto.cloudinary.com (mkto.cloudinary.com. [192.28.153.180])
+        by mx.google.com with ESMTPS id q8-20020a05620a038800b0076801d54d1csi10176812qkm.642.2023.11.16.08.25.04
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 16 Nov 2023 08:25:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of 796-xwl-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com designates 192.28.153.180 as permitted sender) client-ip=192.28.153.180;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@cloudinary.com header.s=m1 header.b=By11y5FW;
+       dkim=pass header.i=@mktdns.com header.s=m1 header.b=R1V4Ksqy;
+       spf=pass (google.com: domain of 796-xwl-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com designates 192.28.153.180 as permitted sender) smtp.mailfrom=796-XWL-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=cloudinary.com
+X-MSFBL: JTz1MXyA17d5GUToN3mO+D0+jnofGrr2hWQPrMMpptI=|eyJyIjoicm9uYWxkbGF
+	tYmVydG5pY29sYXN0dWdhZGlAZ21haWwuY29tIiwidSI6Ijc5Ni1YV0wtNDk2OjA
+	6ODU4NDo1NDQ3MjoxODc5MDI6NjYwMjo5OjEzNzMzOjI2MTI4MSIsImIiOiJkdnA
+	tMTkyLTI4LTE1My0xODAiLCJnIjoiYmctYWJkLTczNSJ9
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1700151573;
+	s=m1; d=cloudinary.com; i=@cloudinary.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=ma3i3DVZlegmP0paQgZkAckv9rSdYAxiVinAkR0tl68=;
+	b=By11y5FWKD5oyGZMWnyVzZpUTJsN+hFc2n1FcJf1p95WZZ5YFYrnuqIgVSNbKCzC
+	BK7NXIXphq37y0ZMVbE4CSg+VWiEQjutMy/cpr7LcluJ02FxKKOt2c/9TpKMRTx1Hat
+	0G9e1wy5TLAbCx5ykYE8oLnxyXhndTwo6z5VXTPc=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; t=1700151573;
+	s=m1; d=mktdns.com; i=@mktdns.com;
+	h=Content-Type:MIME-Version:Subject:To:From:Date;
+	bh=ma3i3DVZlegmP0paQgZkAckv9rSdYAxiVinAkR0tl68=;
+	b=R1V4KsqyaBxKI0IBW0MHJk2yC8TYx17+e+MShDpzqcK+TPTwU5eCx2e7j3IPNyOk
+	Bukzpyo798s3OpL+Vjf8ExYSeE1fvBe4S4XAUcJdvohQLstn7tCGdU3Ek525OWsXqfV
+	DdtL/MOtalxHD9UQpqNC/JoLRTPLlN8Cuf7sJues=
+Date: Thu, 16 Nov 2023 10:19:33 -0600 (CST)
+From: Ehud from MediaFlows <ehud.arieli@cloudinary.com>
+Reply-To: ehud.arieli@cloudinary.com
+To: ronaldlambertnicolastugadi@gmail.com
+Message-ID: <2147363605.172678003.1700151573282@abmktmail-batch1b.marketo.org>
+Subject: Organize, update, and enrich assets at scale with MediaFlows
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_172678002_1171106543.1700151573282"
+X-Binding: bg-abd-735
+X-MarketoID: 796-XWL-496:0:8584:54472:187902:6602:9:13733:261281
+X-Mailfrom: 796-XWL-496.0.13733.0.0.6602.9.261281@mkto.cloudinary.com
+List-Unsubscribe: <mailto:LFATE5SXOU4UUYLTGRBWOR3JJFDGQUC7NRTT2PI=.13733.6602.9@unsub-ab.mktomail.com>
+X-MktArchive: false
+X-MSYS-API: {"options":{"open_tracking":false,"click_tracking":false}}
+X-MktMailDKIM: true
+
+------=_Part_172678002_1171106543.1700151573282
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Drag and drop your way to managing Cloudinary assets =E2=80=93 in minutes
+
+Hi there,
+
+How exactly do MediaFlows <http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGP=
+d-brHmJZx1OAdx2EUwsVQ17Bk8bQQjGav3pYmVd49bbh1qDto-EDiOM_vWWqqAtsZT7wIv0=3D>=
+ users reduce coding time on visual media-related tasks by 70%=C2=A0=E2=80=
+=93 while also lowering development costs, maintenance, and time to market?
+
+Here are just a few examples of what you can do in MediaFlows' drag-and-dro=
+p environment:
+
+=09- Route image and video for approval <http://email.cloudinary.com/Nzk2LV=
+hXTC00OTYAAAGPd-brH31uyJ9jDY00w7jSo-OoTd_B4wt95VbCqvQSBchQGv3ztW8wPV4W9KQZz=
+nhQIWpBUOU=3D>:=C2=A0Pass images or video generated through any flow to the=
+ moderation waiting room in Cloudinary Assets or Nexus for manual review.
+=09- Automatically generate alt text for images <http://email.cloudinary.co=
+m/Nzk2LVhXTC00OTYAAAGPd-brH8hmtkT6_-6aLvUs0wWOVa5X5RT-ksFu98Pn_e1csw5GeIVxz=
+DcKJGGRaJ8VXYEj1UU=3D>:=C2=A0Use Cloudinary capabilities, add-ons, or third=
+-party tools to automatically generate high-quality alt text.
+=09- Archive expired assets <http://email.cloudinary.com/Nzk2LVhXTC00OTYAAA=
+GPd-brHuzk0mAXbpjKgJ5GwNVp_JKL3QF_a_X4lvmlqnRElWgvuqgierseO7PEhms24L3C8-s=
+=3D>:=C2=A0Eliminate the legal risk of delivering expired assets by automat=
+ically blocking delivering and replacing them with a fallback option (or pr=
+eventing specific user groups from accessing them)
+=09- Enrich asset data <http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-b=
+rH3GGBGPDGxIA8KZjHs3Ny8-_-22I-uY_sPDmW-ItpgpGn5p9WVqRuAfPkr6Pt5g5WRc=3D>:=
+=C2=A0Enrich your image or video with relevant metadata or tags scraped fro=
+m the file name, supplied via a .csv, inferred from another image processin=
+g workflow, or added via third-party services (like Google Auto Tagging).
+
+Learn more <http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHmJZx1OAdx2=
+EUwsVQ17Bk8bQQjGav3pYmVd49bbh1qDto-EDiOM_vWWqqAtsZT7wIv0=3D> about managing=
+ media with MediaFlows and get started free <http://email.cloudinary.com/Nz=
+k2LVhXTC00OTYAAAGPd-brH3NcM-WZe7poS1ov3LXnCEPJHJMegQF9bYKSeTjg_5F8kswWOrZrO=
+MTGMmMqIUxbqU4=3D>.
+
+Best,
+Ehud
+
+
+Cloudinary 3400 Central Expressway, Suite 110, Santa Clara, CA,&nbsp;95051 =
+<br> =C2=A9 2023 Cloudinary &nbsp; <a href=3D "http://email.cloudinary.com/=
+Nzk2LVhXTC00OTYAAAGPd-brHhLRF-zKkDW6oxGWZwYHRzQ7MjOaaxr28HLuXD_GKbTgsGLBv3_=
+hGUOvve32-SZQ-Gw=3D" target=3D"_blank" style=3D"text-decoration: underline;=
+ color: #ffffff;" >Terms&nbsp;of&nbsp;Use</a> &nbsp; <a href=3D "http://ema=
+il.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH2RS6pVmB7IPRoCg3-u05QTQpAUboyeUt=
+bFVpW3pcoJpBODtddJhhV0RYzkLfZG0ITU=3D" target=3D"_blank" style=3D"text-deco=
+ration: underline; color: #ffffff;" >Privacy&nbsp;Policy</a>
+This email was sent to ronaldlambertnicolastugadi@gmail.com. If you no long=
+er wish to receive these emails you may unsubscribe <[[https://lp.cloudinar=
+y.com/UnsubscribePage.html?mkt_unsubscribe=3D1&mkt_tok=3DNzk2LVhXTC00OTYAAA=
+GPd-brH_jpSYmu1Ct3fqZokRRtZJvqkun_lr5620lhH2Y41iKYdHwo-X4tVBROSorYL18CoDreY=
+V-in_eae4u6laMTYAd2oieBI9Qgk_p4]]> at any time.
+
+------=_Part_172678002_1171106543.1700151573282
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>=20
+<!--[if gte mso 9]><xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml><![endif]-->=20
+<title>Cloudinary</title>=20
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" />=
+=20
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" />=20
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0 " />=20
+<meta name=3D"format-detection" content=3D"telephone=3Dno" />=20
+<!-- All Background Color -->    =20
+<!-- All Background_Image --> =20
+<!-- All Line Background Color -->       =20
+<!-- All CTA Properties -->          =20
+<!-- All Top-Bottom Spaces -->        =20
+<!--[if !mso]><!-->=20
+<link rel=3D"preconnect" href=3D"https://fonts.googleapis.com" />=20
+<link rel=3D"preconnect" href=3D"https://fonts.gstatic.com" crossorigin=3D"=
+" />=20
+<link href=3D"https://fonts.googleapis.com/css2?family=3DInter:wght@100;200=
+;300;400;500;600;700;800;900&amp;display=3Dswap" rel=3D"stylesheet" />=20
+<!--<![endif]-->=20
+<style type=3D"text/css">
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+img {
+  border: 0 !important;
+  outline: none !important;
+}
+p {
+  Margin: 0px !important;
+  Padding: 0px !important;
+}
+table {
+  mso-table-lspace: 0px;
+  mso-table-rspace: 0px;
+}
+td, a, span {
+  border-collapse: collapse;
+  mso-line-height-rule: exactly;
+}
+.ExternalClass * {
+  line-height: 100%;
+}
+.none {
+  display: none !important;
+}
+.block {
+  display: block !important;
+}
+.em_defaultlink a {
+  color: inherit;
+  text-decoration: none;
+}
+.em_defaultlinkU a {
+  color: inherit;
+  text-decoration: underline;
+}
+.em_g_img + div {
+  display: none;
+}
+a[x-apple-data-detectors], u + .em_body a, #MessageViewBody a {
+  color: inherit;
+  text-decoration: none;
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+}
+
+@media only screen and (max-width:599px) {
+.em_main_table {
+  width: 100% !important;
+}
+.em_wrapper {
+  width: 100% !important;
+}
+.em_hide {
+  display: none !important;
+}
+.em_full_img img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+}
+.em_center {
+  text-align: center !important;
+}
+.em_side10 {
+  width: 10px !important;
+}
+.em_aside10 {
+  padding: 0px 10px !important;
+}
+.em_side15 {
+  width: 15px !important;
+}
+.em_aside15 {
+  padding: 0px 15px !important;
+}
+.em_ptop {
+  padding-top: 20px !important;
+}
+.em_pbottom {
+  padding-bottom: 20px !important;
+}
+.em_side40 {
+  width: 40px !important;
+}
+.em_h20 {
+  height: 20px !important;
+  font-size: 1px!important;
+  line-height: 1px!important;
+}
+.em_h30 {
+  height: 30px !important;
+}
+.em_mob_block {
+  display: block !important;
+}
+.em_hauto {
+  height: auto !important;
+}
+.em_clear {
+  clear: both !important;
+  width: 100% !important;
+  display: block !important;
+}
+.em_pad1 {
+  padding: 20px 15px !important;
+}
+u + .em_body .em_full_wrap {
+  width: 100% !important;
+  width: 100vw !important;
+}
+.em_bg {
+  background-size: cover !important;
+  height: auto !important;
+}
+}
+
+@media screen and (max-width: 480px) {
+u + .em_body .em_full_wrap {
+  width: 100% !important;
+  width: 100vw !important;
+}
+.em_h60 {
+  height: 100px !important;
+}
+}
+</style>=20
+<!--[if gte mso 9]>
+    <style type=3D"text/css">
+      .none { display: none !important; }
+      .block { display: block !important; text-align:center !important; }
+      .em_outlooksol { mso-hide: all !important; overflow: hidden !importan=
+t; max-height: 0 !important; width: 0 !important; display: none !important;=
+ line-height: 0 !important; max-width: 0 !important;}
+      .em_social_img { padding:0px 10px 0px 0px !important;}
+    </style>
+    <![endif]-->=20
+</head>=20
+<body class=3D"em_body" style=3D"margin:0px auto; padding:0px;" bgcolor=3D"=
+#eeeef1">=20
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" clas=
+s=3D"em_full_wrap" bgcolor=3D"#eeeef1" style=3D"table-layout:fixed;">=20
+<tbody>
+<tr>=20
+<td align=3D"center" valign=3D"top">
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center" class=3D"mktoContainer" id=3D"Template">
+<tr class=3D"mktoModule" id=3D"M01_Pre_Header">=20
+<td align=3D"center" valign=3D"top">=20
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:600px; table-layout:fixe=
+d;">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" class=3D"em_defaultlink" valign=3D"top" style=3D"paddi=
+ng: 13px 15px; font-family:'Inter', Arial, sans-serif; font-size:11px; line=
+-height:14px; color:#4D4D4D;">=20
+<div id=3D"txt1" class=3D"mktoText">
+<p>Drag and drop your way to managing Cloudinary assets =E2=80=93 in minute=
+s</p>
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"M06_Hero_Imaged0f97a48-08dd-4b48-a1aa-a35126=
+3c9dba">=20
+<td align=3D"center" valign=3D"top">=20
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:600px; table-layout:fixe=
+d; background-color: #ffffff;">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" valign=3D"top" class=3D"em_full_img">=20
+<div id=3D"img4e972de21-624c-4032-a14d-55649817cceb" class=3D"mktoImg" mkto=
+lockimgsize=3D"true">=20
+<a href=3D"#" target=3D"_blank" style=3D"text-decoration: none;"><img src=
+=3D"https://cloudinary-marketing-res.cloudinary.com/image/upload/v170014867=
+9/Screen_Shot_2023-11-14_at_10.04.42_AM.png" width=3D"600" border=3D"0" sty=
+le=3D"display:block; font-family:Arial, sans-serif; font-size:15px; line-he=
+ight:20px; color:#000000; font-weight:bold; max-width:600px;" /></a>=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"M15_Body_Text_Normal_On_White200cd075-1bc2-4=
+db3-8f4b-941f72463c5f">=20
+<td align=3D"center" valign=3D"top">=20
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:600px; table-layout:fixe=
+d; background-color: #ffffff;">=20
+<tbody>=20
+<tr>=20
+<td height=3D"25px" style=3D"height: 25px;" class=3D"em_h20">&nbsp;</td>=20
+</tr>=20
+<tr>=20
+<td align=3D"center" valign=3D"top" style=3D"padding: 0px 20px 0px 20px;" c=
+lass=3D"em_aside15">=20
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">=20
+<tbody>=20
+<tr>=20
+<td align=3D"left" class=3D"em_defaultlinkU" valign=3D"top" style=3D"font-f=
+amily:'Inter', Arial, sans-serif; font-size:14px; line-height:24px; color:#=
+0C163B;">=20
+<div id=3D"txt147e4baf70-34ba-4094-8294-72ab6bf147e2" class=3D"mktoText">=
+=20
+<div>
+ Hi there,=20
+</div>=20
+<div>=20
+<br />=20
+</div>=20
+<div>
+ How exactly do=20
+<span style=3D"text-decoration: underline; color: #3448c5;"><a href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH2_jg99cGw2YAedZIKbxiY=
+XKu3824H9su9OO76qrRqLrZLjR9wyM9TKkrjiOP7lbBHY=3D" target=3D"_blank" id=3D""=
+ style=3D"color: #3448c5; text-decoration: underline;"
+>MediaFlows</a></span> users reduce coding time on visual media-related tas=
+ks by 70%&nbsp;=E2=80=93 while also lowering development costs, maintenance=
+, and time to market?=20
+</div>=20
+<div>=20
+<br />=20
+</div>=20
+<div>
+ Here are just a few examples of what you can do in MediaFlows' drag-and-dr=
+op environment:=20
+</div>=20
+<ul>=20
+<li><strong><span style=3D"text-decoration: underline; color: #3448c5;"><a =
+href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHsQ44pRsgNB0qGG9qrDvcP=
+ALdFRcHHDo5zBpBaOdHoydTsOYyh-ciwOaVfB4u7L2cy4=3D" target=3D"_blank" id=3D""=
+ style=3D"color: #3448c5; text-decoration: underline;"
+>Route image and video for approval</a></span>:&nbsp;</strong>Pass images o=
+r video generated through any flow to the moderation waiting room in Cloudi=
+nary Assets or Nexus for manual review.</li>=20
+<li><strong><span style=3D"text-decoration: underline; color: #3448c5;"><a =
+href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHp8j4GyVZd3kBWqJjn_tGp=
+4Zvm8-QIzzCsK0KJY0ZOjXAHL1w_hsQomzeFKIK8nEooI=3D" target=3D"_blank" id=3D""=
+ style=3D"color: #3448c5; text-decoration: underline;"
+>Automatically generate alt text for images</a></span>:&nbsp;</strong>Use C=
+loudinary capabilities, add-ons, or third-party tools to automatically gene=
+rate high-quality alt text.</li>=20
+<li><strong><span style=3D"text-decoration: underline; color: #3448c5;"><a =
+href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH1hhzS36toGMuMly7SGy_8=
+tPT94GmWEKJKmzj55n048TBTJuDN1aByXiLvUlbDP-y-A=3D" target=3D"_blank" id=3D""=
+ style=3D"color: #3448c5; text-decoration: underline;"
+>Archive expired assets</a></span>:&nbsp;</strong>Eliminate the legal risk =
+of delivering expired assets by automatically blocking delivering and repla=
+cing them with a fallback option (or preventing specific user groups from a=
+ccessing them)</li>=20
+<li><strong><span style=3D"text-decoration: underline; color: #3448c5;"><a =
+href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH5sIyYKty2Pd6d2auJJ20L=
+VqRN-W1OTjUpsbBJfUx8GnALGuytoX2K_izM-M4jcR0JU=3D" target=3D"_blank" id=3D""=
+ style=3D"color: #3448c5; text-decoration: underline;"
+>Enrich asset data</a></span>:&nbsp;</strong>Enrich your image or video wit=
+h relevant metadata or tags scraped from the file name, supplied via a .csv=
+, inferred from another image processing workflow, or added via third-party=
+ services (like Google Auto Tagging).</li>=20
+</ul>=20
+<div>=20
+<span style=3D"text-decoration: underline;"><span style=3D"color: #3448c5;"=
+><a href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH2_jg99cGw2YAedZIKbxiY=
+XKu3824H9su9OO76qrRqLrZLjR9wyM9TKkrjiOP7lbBHY=3D" target=3D"_blank" style=
+=3D"color: #3448c5; text-decoration: underline;"
+>Learn more</a></span></span> about managing media with MediaFlows and=20
+<span style=3D"text-decoration: underline; color: #3448c5;"><a href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHlXIfTL5EZC64vvhjdOOwb=
+Qoby4RJveUorTTDq_ok-jonKR_xqd3lf93-Ojz4scJwhI=3D" target=3D"_blank" style=
+=3D"color: #3448c5; text-decoration: underline;"
+>get started free</a></span>.=20
+</div>=20
+<div>=20
+<br />=20
+</div>=20
+<div>
+ Best,=20
+</div>=20
+<div>
+ Ehud=20
+</div>=20
+<div>=20
+<br />=20
+</div>=20
+</div></td>=20
+</tr>=20
+<tr>=20
+<td height=3D"20px" style=3D"height: 20px;" class=3D"em_h20">&nbsp;</td>=20
+</tr>=20
+</tbody>=20
+</table> </td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>
+<tr class=3D"mktoModule" id=3D"M66_Footer_static9e71a956-3ffa-4b64-907a-e21=
+c5c6a64da">=20
+<td align=3D"center" valign=3D"top">=20
+<table align=3D"center" width=3D"600" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" class=3D"em_main_table" style=3D"width:600px; table-layout:fixe=
+d; background-color: #ffffff;">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" valign=3D"top" bgcolor=3D"#0c163b" style=3D"padding: 2=
+0px 15px 25px;" class=3D"em_pad1">=20
+<table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" alig=
+n=3D"center">=20
+<tbody>=20
+<tr>=20
+<td align=3D"center" valign=3D"middle" style=3D"line-height: 0px; font-size=
+: 0px; padding-bottom: 18px;">=20
+<div id=3D"img90b9254270-f2b1-4cbd-b7a7-f766cff9a0d4" class=3D"mktoImg">=20
+<a href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHgQ5iK9CU53Tmn5h1ZjZ5P=
+cuHLpvZMh_TCR4CTO_g68P5Q11RLkoQ-TyRE9DdHiVzHY=3D" target=3D"_blank" style=
+=3D"text-decoration:none;"
+><img src=3D"https://res.cloudinary.com/cloudinary-marketing/image/upload/v=
+1639754962/header_logo1.png" alt=3D"Cloudinary" width=3D"120" style=3D"disp=
+lay:block;=20
+font-family:Arial, sans-serif; font-size:10px; line-height:14px; color:#fff=
+fff; font-weight:bold; max-width:120px;" border=3D"0" /></a>=20
+</div></td>=20
+</tr>=20
+<tr>=20
+<td align=3D"center" valign=3D"top" style=3D"font-family:'Inter', Arial, sa=
+ns-serif; font-size:11px; line-height:18px; color:#ffffff;" class=3D"em_def=
+aultlink">=20
+<div id=3D"txt1368b48b454-a5f8-4771-b364-333c8ef58c35" class=3D"mktoText">=
+=20
+<p>Cloudinary 3400 Central Expressway, Suite 110, Santa Clara, CA,&nbsp;950=
+51 <br> =C2=A9 2023 Cloudinary &nbsp; <a href=3D "http://email.cloudinary.c=
+om/Nzk2LVhXTC00OTYAAAGPd-brHhLRF-zKkDW6oxGWZwYHRzQ7MjOaaxr28HLuXD_GKbTgsGLB=
+v3_hGUOvve32-SZQ-Gw=3D" target=3D"_blank" style=3D"text-decoration: underli=
+ne; color: #ffffff;" >Terms&nbsp;of&nbsp;Use</a> &nbsp; <a href=3D "http://=
+email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brH2RS6pVmB7IPRoCg3-u05QTQpAUboy=
+eUtbFVpW3pcoJpBODtddJhhV0RYzkLfZG0ITU=3D" target=3D"_blank" style=3D"text-d=
+ecoration: underline; color: #ffffff;" >Privacy&nbsp;Policy</a><br />This e=
+mail was sent to ronaldlambertnicolastugadi@gmail.com. If you no longer wis=
+h to receive these emails you may <strong><span style=3D"color: #ffffff;"><=
+a href=3D"https://lp.cloudinary.com/UnsubscribePage.html?mkt_unsubscribe=3D=
+1&mkt_tok=3DNzk2LVhXTC00OTYAAAGPd-brH_jpSYmu1Ct3fqZokRRtZJvqkun_lr5620lhH2Y=
+41iKYdHwo-X4tVBROSorYL18CoDreYV-in_eae4u6laMTYAd2oieBI9Qgk_p4" target=3D"_b=
+lank" title=3D"unsubscribe" id=3D"" style=3D"color: #ffffff;">unsubscribe</=
+a></span></strong> at any time.<br /></p>=20
+</div></td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>=20
+</tbody>=20
+</table></td>=20
+</tr>
+</table></td>=20
+</tr>=20
+</tbody>
+</table>  =20
+<a href=3D
+"http://email.cloudinary.com/Nzk2LVhXTC00OTYAAAGPd-brHmv0kYoM4SYNaVyn0n0NcN=
+FN2TUGF59QAwJHTwtvtIDKrmrjfx_Jjzh2YV7WUWlIo9g=3D"
+></a>
+<img src=3D"http://email.cloudinary.com/trk?t=3D1&mid=3DNzk2LVhXTC00OTYAAAG=
+Pd-brH191BZ1Pm8n-2iX5GgoIxbMyXCEg0HBdvqqSG0VEnwwyYiaPxjeaFwGLbjGoOOcRDar7dn=
+K4JeZ18EfbJi6aAk_airg620j_AU2BPmKvXq_8AdYpMaZrT6u9iO1kYAvK-0YDGd01v4bj0-_0l=
+NxVJa5vSNwj" width=3D"1" height=3D"1" style=3D"display:none !important;" al=
+t=3D"" />
+</body>
+</html>
+------=_Part_172678002_1171106543.1700151573282--

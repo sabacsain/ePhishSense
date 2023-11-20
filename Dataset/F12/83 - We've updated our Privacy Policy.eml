@@ -1,0 +1,436 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a92:d44e:0:b0:350:f1df:6bf4 with SMTP id r14csp1893831ilm;
+        Mon, 9 Oct 2023 15:18:03 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFyCNfzDfMULlC23GnxaosTpPESWbL867DTPQw3QJLdoKJnkmtOdcvGXNrakZ/Ms8Q6OtnJ
+X-Received: by 2002:a05:622a:15c2:b0:418:d3d:30e1 with SMTP id d2-20020a05622a15c200b004180d3d30e1mr21678074qty.4.1696889883091;
+        Mon, 09 Oct 2023 15:18:03 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696889883; cv=none;
+        d=google.com; s=arc-20160816;
+        b=QEsQhM8HC0Z9Q7Q1gEL+zaS9bFhypDgwfljKjKf7xUFJ1dUgp8OAzMxp9iLFHPaeTR
+         GTHBmi9n6CnvYJZBSArMTN3hr296jW3kGXQGdMZ5zFs51uVQfv1CVG+EYw4UOopnYkvq
+         0skYS3WT2fnI9LA064Ah3WvwybeULfFC5o1VSaScQx4vd1fUyvjP6M+d/mHBR9mjy2oB
+         3j9nXKAoAe3QAOWJiOTHytEIYZ9fMf+C+PMXDDl2oiRag9pubKlrGmCNSeay0wHSE5WG
+         a9SaTAwx10/k6Oy1dJtwKf1VmiGRfi9Nnaj2Dp+PgGSqz81VI/6hIRhQcMiCTRDfvMBc
+         2M+w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:mime-version:subject:message-id:to:reply-to:from:date
+         :dkim-signature:dkim-signature;
+        bh=if6GxK7MQ2O+Zraa2qgjlPAQSQX2RT2XdXqxH08c9ds=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=KCfmHGcjCp5g0EqobXxOII877l9G1Nq6h4EeNDkmgtMhWB1gn56MBo2zivwyiPWeDs
+         uQfxAa/2xhK1C51ApWHazFjhdLk28gtxXka+PO9wgiY6Re07I73bZFra4Zf2uM0uLxP4
+         ieMVv22fZedApCkr7jP1NSJv4mAhnpRGki3rng0Li7QbcbIeQhgmQe0AqXyv/BKtZc//
+         9ihGa22V0ibntvqcGWrGVo/JQa5lKGSFbvh8q0efI3mtNRHEakgf5JU53Z30w37G32IJ
+         0E/qErHj6YGcl9Gc7+N18X7pUPLHJexygcRIKdUizcJBTloBzOG8UPQlvwuQwHTeveMx
+         Du7w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@7477936t.netlify.com header.s=hs2 header.b=e7YYr1hX;
+       dkim=pass header.i=@netlify.com header.s=hs2 header.b=FkoW9pBR;
+       spf=pass (google.com: domain of 1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com designates 158.247.17.208 as permitted sender) smtp.mailfrom=1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netlify.com
+Return-Path: <1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com>
+Received: from bid46jm.7477936t.netlify.com (bid46jm.7477936t.netlify.com. [158.247.17.208])
+        by mx.google.com with ESMTPS id n17-20020a05622a11d100b00417fd10f754si6868526qtk.412.2023.10.09.15.18.02
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 09 Oct 2023 15:18:03 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com designates 158.247.17.208 as permitted sender) client-ip=158.247.17.208;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@7477936t.netlify.com header.s=hs2 header.b=e7YYr1hX;
+       dkim=pass header.i=@netlify.com header.s=hs2 header.b=FkoW9pBR;
+       spf=pass (google.com: domain of 1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com designates 158.247.17.208 as permitted sender) smtp.mailfrom=1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=netlify.com
+Received: by 172.16.63.36 with SMTP id awbeyyxhcl5fn5gs0g70hkr6dr3txn2s96co2;
+        Mon, 9 Oct 2023 22:17:30 GMT
+DKIM-Signature: v=1; s=hs2; d=7477936t.netlify.com; 
+        i=@7477936t.netlify.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=if6GxK7MQ2O+Zraa2qgjlPAQSQX2RT2XdXqxH08c9ds=; 
+        b=e7YYr1hXNnXzjDyaezj7lBuiOY96gZOCqhKrWjhW3iurcRZDdkbx5H/Y8Dj2ZF
+         rPpcxxIUMz+tFTkdp/db9FoIftavBv7AeXQYPv6qrkO7nXyAV4Lx5zdox+soKvH
+         9Yu8pn63vcVWqCHRRsbfUmPdjvhZxi4er421rdNUA3jv40F41lzmXxJHr6gP4hb
+         2oIyG1+eIiucHKQUnxNaPSOxjIniACrelx0tZhHZe7Qx/1t8vU75J93kD2vjBZr
+         /Q5F/DIHd/jYfaswT0koVUNmOMVBr8f1sbNc59dnFcfssCvzONMCcKdjup3PH4E
+         kBSCuH2RVaNiDS9AbDytqX59fiuQ==; q=dns/txt; t=1696888613; 
+        x=1697061413;
+DKIM-Signature: v=1; s=hs2; d=netlify.com; i=@netlify.com; 
+        h=sender:from:from:reply-to:to:to:cc:cc:subject:subject:list-unsubscribe:form-sub:feedback-id; 
+        a=rsa-sha256; c=relaxed/relaxed; 
+        bh=if6GxK7MQ2O+Zraa2qgjlPAQSQX2RT2XdXqxH08c9ds=; 
+        b=FkoW9pBRz9nqkEwoH0MultYT6jba7uu8Yyj8porjZiYjUCUYY2YOVhZjobtq6a
+         K+d0tSSvnYhjzUy3FUAhZtDN/b6b+7JhS8v/E48jhKV/JfnO4DD2qvjXczCiV/R
+         nJ1iF1yNouUpTo4g/8uzLji09LVir/GEh3vzVoXH62VJ6c+G3jBtF4ZFBgKg58Y
+         p+B4wOToTGpT88k1XT39xHTwhVAOs1/FHSWCA6tw9JXaR7oJeXxqYlU9m3dB2aP
+         q4wePMba824f/bkQQXb7oQu60jHSDExBKeS3eecHNp6DV1B5pgFr84yxpW5ACuc
+         cQJj2BQK+lYxyYLtjfVcnLLQv7Ug==; q=dns/txt; t=1696888613; 
+        x=1697061413;
+Return-Path: <1axburkfcehuf10bi23uci944t2moziqcett0n@7477936t.netlify.com>
+X-HS-Cid: 1axe240cd4gei61q3xrlwhf4o6c9btuib4ias3
+Date: Mon, 9 Oct 2023 15:17:30 -0700
+From: Netlify Team <no-reply@netlify.com>
+Reply-To: no-reply@netlify.com
+To: ronaldlambertnicolastugadi@gmail.com
+Message-ID: <1696887642260.a3d5601b-5113-47a2-b944-71a0d8d184f8@7477936t.netlify.com>
+Subject: We've updated our Privacy Policy
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_935285_352616782.1696888613764"
+X-Report-Abuse-To: abuse@hubspot.com (see
+ https://policy.hubspot.com/abuse-complaints)
+Feedback-ID: aeeqkaq:aievkjqh:aidf:HubSpot
+
+------=_Part_935285_352616782.1696888613764
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Review our latest privacy updates
+
+We've updated our Privacy Policy
+
+Hi there,
+
+Netlify is committed to safeguarding your privacy and ensuring that your pe=
+rsonal information is handled with the utmost care and transparency.
+
+With this is mind, we have recently updated our Privacy Policy (http://comm=
+unications.netlify.com/e3t/Ctc/I6+113/cVvsj04/MWDj9F_WvLpW5Z3DmZ5VmGsWW93kv=
+SZ54rg40N5q1hkH3prCCW8wLKSR6lZ3l7V7tKBK466sTMW7GCBWY4q0SgvW6B3ldq1h5f8HW3ck=
+_zC4CfKylW6tmttg3KRhdKW2fs6gq16X5TFW20hxkm34fS4bW4L9Xm14XwsWnW6rC_p997RWvHW=
+3YFPJN4cjjJyVyzS5r70PYbdW61zg3p9kDRSmW6LBy2d4BxJ_wN4ztwB2xtb1xW641q3M60ZPJX=
+Vwvh-974rD1BW8FGxry4M20sSW3b52BM7XTGkhW62RQqh8N6S_kW6LNWTm2rl6pFTkbG-37BfD2=
+W8N23gh2c7trVW73M9lT8F96kbW5z1Mr83t5BggW6k4h1z1DcNDFW4KYzrQ1p15B_W90CQHG7YX=
+cv6W43bKvc1DTYzMdXsXMx04 ) to better serve you and reflect the latest chang=
+es in data protection laws.
+
+No action is required on your part, this is for your reference only.
+
+Best,
+
+The Netlify Team
+
+Netlify, 44 Montgomery Street, Suite 300, San Francisco, CA 94104
+------=_Part_935285_352616782.1696888613764
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www=
+.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns=3D"http://www.w3=
+.org/1999/xhtml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:=
+v=3D"urn:schemas-microsoft-com:vml" lang=3D"en"><head>
+    <title>We've updated our Privacy Policy</title>
+    <meta property=3D"og:title" content=3D"We've updated our Privacy Policy=
+">
+    <meta name=3D"twitter:title" content=3D"We've updated our Privacy Polic=
+y">
+   =20
+   =20
+   =20
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+    <!--[if gte mso 9]>
+  <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+  </xml>
+ =20
+  <style>
+    ul > li {
+      text-indent: -1em;
+    }
+  </style>
+<![endif]-->
+<!--[if mso]>
+<style type=3D"text/css">
+ body, td {font-family: Arial, Helvetica, sans-serif;}
+ .hse-body-wrapper-table {background-color: #e9ebed;padding: 20px 0 !import=
+ant}
+</style>
+<![endif]-->
+   =20
+     =20
+   =20
+  <meta name=3D"generator" content=3D"HubSpot"><meta property=3D"og:url" co=
+ntent=3D"http://communications.netlify.com/-temporary-slug-b6e9efab-8fca-44=
+23-81d5-4c3d78633ee1"><meta name=3D"robots" content=3D"noindex,follow"><!--=
+[if !((mso)|(IE))]><!-- --><style type=3D"text/css">.moz-text-html .hse-col=
+umn-container{max-width:600px !important;width:600px !important}
+.moz-text-html .hse-column{display:table-cell;vertical-align:top}.moz-text-=
+html .hse-section .hse-size-12{max-width:600px !important;width:600px !impo=
+rtant}
+@media only screen and (min-width:640px){.hse-column-container{max-width:60=
+0px !important;width:600px !important}
+.hse-column{display:table-cell;vertical-align:top}.hse-section .hse-size-12=
+{max-width:600px !important;width:600px !important}
+}@media only screen and (max-width:639px){img.stretch-on-mobile,.hs_rss_ema=
+il_entries_table img,.hs-stretch-cta .hs-cta-img{height:auto !important;wid=
+th:100% !important}
+.display_block_on_small_screens{display:block}.hs_padded{padding-left:20px =
+!important;padding-right:20px !important}
+ul,blockquote{margin:0;padding:1em 40px} }</style><!--<![endif]--><style ty=
+pe=3D"text/css">#hs_body #hs_cos_wrapper_main a[x-apple-data-detectors]{col=
+or:inherit !important;text-decoration:none !important;font-size:inherit !im=
+portant;font-family:inherit !important;font-weight:inherit !important;line-=
+height:inherit !important}
+a{text-decoration:underline}p{margin:0}body{-ms-text-size-adjust:100%;-webk=
+it-text-size-adjust:100%;-webkit-font-smoothing:antialiased;moz-osx-font-sm=
+oothing:grayscale}</style></head>
+  <body id=3D"hs_body" bgcolor=3D"#e9ebed" style=3D"margin:0 !important; pa=
+dding:0 !important; font-family:Helvetica, Arial, sans-serif; font-size:15p=
+x; color:#33373b; word-break:break-word">
+   =20
+<div id=3D"preview_text" style=3D"display:none;font-size:1px;color:#e9ebed;=
+line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">Re=
+view our latest privacy updates</div>
+   =20
+<!--[if gte mso 9]>
+<v:background xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"t">
+    <v:fill type=3D"tile" size=3D"100%,100%" color=3D"#ffffff"/>
+</v:background>
+<![endif]-->
+    <div class=3D"hse-body-background" style=3D"background-color:#e9ebed" b=
+gcolor=3D"#e9ebed">
+      <table role=3D"presentation" class=3D"hse-body-wrapper-table" cellpad=
+ding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !important; border-c=
+ollapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; margin:0; pad=
+ding:0; width:100% !important; min-width:320px !important; height:100% !imp=
+ortant" width=3D"100%" height=3D"100%">
+        <tbody><tr>
+          <td class=3D"hse-body-wrapper-td" valign=3D"top" style=3D"border-=
+collapse:collapse; mso-line-height-rule:exactly; font-family:Helvetica, Ari=
+al, sans-serif; font-size:15px; color:#33373b; word-break:break-word">
+            <div id=3D"hs_cos_wrapper_main" class=3D"hs_cos_wrapper hs_cos_=
+wrapper_widget hs_cos_wrapper_type_dnd_area" style=3D"color: inherit; font-=
+size: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" d=
+ata-hs-cos-type=3D"dnd_area">  <div id=3D"section-0" class=3D"hse-section h=
+se-section-first" style=3D"padding-left:10px; padding-right:10px; padding-t=
+op:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation">
+      <tr>
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-0-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-0-0-0" class=3D"hs_cos_wrapper hs_cos_wr=
+apper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-size=
+: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data-=
+hs-cos-type=3D"module"><table class=3D"hse-image-wrapper" role=3D"presentat=
+ion" width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spa=
+cing:0 !important; border-collapse:collapse; mso-table-lspace:0pt; mso-tabl=
+e-rspace:0pt">
+  <tbody>
+    <tr>
+      <td align=3D"center" valign=3D"top" style=3D"border-collapse:collapse=
+; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-serif; c=
+olor:#33373b; word-break:break-word; text-align:center; padding:0px; font-s=
+ize:0px">
+        <img alt=3D"Header light - SM" src=3D"https://communications.netlif=
+y.com/hs-fs/hubfs/Header%20light%20-%20SM.png?width=3D1200&amp;upscale=3Dtr=
+ue&amp;name=3DHeader%20light%20-%20SM.png" style=3D"outline:none; text-deco=
+ration:none; -ms-interpolation-mode:bicubic; max-width:100%; font-size:16px=
+" width=3D"600" align=3D"middle" srcset=3D"https://communications.netlify.c=
+om/hs-fs/hubfs/Header%20light%20-%20SM.png?upscale=3Dtrue&amp;width=3D1200&=
+amp;upscale=3Dtrue&amp;name=3DHeader%20light%20-%20SM.png 600w, https://com=
+munications.netlify.com/hs-fs/hubfs/Header%20light%20-%20SM.png?upscale=3Dt=
+rue&amp;width=3D2400&amp;upscale=3Dtrue&amp;name=3DHeader%20light%20-%20SM.=
+png 1200w" sizes=3D"(max-width: 600px) 100vw, 600px">
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-5" class=3D"hse-section" style=3D"padding-left:10px; p=
+adding-right:10px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; background-color:#ffffff" bgcolor=3D"#ffffff">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" width=3D"600" bgcolor=3D"#ffffff">
+      <tr style=3D"background-color:#ffffff;">
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-5-0" class=3D"hse-column hse-size-12">
+  <table role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%" style=3D"border-spacing:0 !important; border-collapse:collapse; mso-=
+table-lspace:0pt; mso-table-rspace:0pt"><tbody><tr><td class=3D"hs_padded" =
+style=3D"border-collapse:collapse; mso-line-height-rule:exactly; font-famil=
+y:Helvetica, Arial, sans-serif; font-size:15px; color:#33373b; word-break:b=
+reak-word; padding:50px 30px"><div id=3D"hs_cos_wrapper_module-5-0-1" class=
+=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style=
+=3D"color: inherit; font-size: inherit; line-height: inherit;" data-hs-cos-=
+general-type=3D"widget" data-hs-cos-type=3D"module"><div id=3D"hs_cos_wrapp=
+er_module-5-0-1_" class=3D"hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrap=
+per_type_rich_text" style=3D"color: inherit; font-size: inherit; line-heigh=
+t: inherit;" data-hs-cos-general-type=3D"widget" data-hs-cos-type=3D"rich_t=
+ext"><h2 style=3D"margin:0; mso-line-height-rule:exactly; line-height:175%;=
+ font-family:Helvetica, Arial, sans-serif; font-size:22px; color:#33373b; t=
+ext-align:center" align=3D"center"><span style=3D"color: #151a1e;">We've up=
+dated our Privacy Policy</span></h2>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<ul style=3D"mso-line-height-rule:exactly; line-height:175%"></ul>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Hi there,</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Netlify is comm=
+itted to safeguarding your privacy and ensuring that your personal informat=
+ion is handled with the utmost care and transparency.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">With this is mi=
+nd, we have recently updated our <a href=3D"http://communications.netlify.c=
+om/e3t/Ctc/I6+113/cVvsj04/MWDj9F_WvLpW5Z3DmZ5VmGsWW93kvSZ54rg40N5q1hkH3qgyT=
+W8wLKSR6lZ3lNW27hl7r8l3nrbW4jyYYq7jgpwWW6YjLjy1BFh-6V7N63y5VW1NmW7Ry-Bz1vyJ=
+_9W7MSG_K1Ch-WlW7flG4Y562skQN41bts6kz7QnW2rRvFP7PsgtLW7LlRp79l7_xhW1Kp07M6R=
+FvZhW7n5zsF74zbgGW4BVZHk6bwVs-W2SBDJK4MN_q5W68nPHQ2RLR7gW7XR15W5XsgnPW6RkG4=
+l8nMgTzW42rqVv1z_XtnW8GNFG63j9310W4MdqBD62W_WJW8txJ_w6Bg19CW2MltCf7z-6LxW39=
+BYbQ4DFkPlW2Rt4_263tnghW6M3Wzc67s6KbW2mjVmr1TSsrnW2lMrzN6Xm4CzM_7-W-54cfsf5=
+rlkFW04" rel=3D"noopener" style=3D"mso-line-height-rule:exactly; color:#028=
+07d; font-weight:bold" data-hs-link-id=3D"0" target=3D"_blank">Privacy Poli=
+cy</a> to better serve you and reflect the latest changes in data protectio=
+n laws.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">No action is re=
+quired on your part, this is for your reference only.</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">&nbsp;</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">Best,</p>
+<p style=3D"mso-line-height-rule:exactly; line-height:175%">The Netlify Tea=
+m</p></div></div></td></tr></tbody></table>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+  <div id=3D"section-16" class=3D"hse-section hse-section-last" style=3D"pa=
+dding-left:10px; padding-right:10px; padding-bottom:20px">
+   =20
+   =20
+    <!--[if !((mso)|(IE))]><!-- -->
+      <div class=3D"hse-column-container" style=3D"min-width:280px; max-wid=
+th:600px; width:100%; Margin-left:auto; Margin-right:auto; border-collapse:=
+collapse; border-spacing:0; padding-bottom:20px; padding-top:20px">
+    <!--<![endif]-->
+   =20
+    <!--[if (mso)|(IE)]>
+      <div class=3D"hse-column-container" style=3D"min-width:280px;max-widt=
+h:600px;width:100%;Margin-left:auto;Margin-right:auto;border-collapse:colla=
+pse;border-spacing:0;">
+      <table align=3D"center" style=3D"border-collapse:collapse;mso-table-l=
+space:0pt;mso-table-rspace:0pt;width:600px;" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation">
+      <tr>
+    <![endif]-->
+    <!--[if (mso)|(IE)]>
+  <td valign=3D"top" style=3D"width:600px;padding-bottom:20px; padding-top:=
+20px;">
+<![endif]-->
+<!--[if gte mso 9]>
+  <table role=3D"presentation" width=3D"600" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"border-collapse:collapse;mso-table-lspace:0pt;mso-table-rsp=
+ace:0pt;width:600px">
+<![endif]-->
+<div id=3D"column-16-0" class=3D"hse-column hse-size-12">
+  <div id=3D"hs_cos_wrapper_module-16-0-1" class=3D"hs_cos_wrapper hs_cos_w=
+rapper_widget hs_cos_wrapper_type_module" style=3D"color: inherit; font-siz=
+e: inherit; line-height: inherit;" data-hs-cos-general-type=3D"widget" data=
+-hs-cos-type=3D"module">
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+ =20
+<table role=3D"presentation" class=3D"hse-footer hse-secondary" width=3D"10=
+0%" cellpadding=3D"0" cellspacing=3D"0" style=3D"border-spacing:0 !importan=
+t; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; fo=
+nt-family:Arial, sans-serif; font-size:12px; line-height:135%; color:#23496=
+d; margin-bottom:0; padding:0">
+    <tbody>
+        <tr>
+            <td align=3D"center" valign=3D"top" style=3D"border-collapse:co=
+llapse; mso-line-height-rule:exactly; font-family:Helvetica, Arial, sans-se=
+rif; font-size:15px; color:#33373b; word-break:break-word; text-align:cente=
+r; margin-bottom:0; line-height:135%; padding:10px 20px">
+               =20
+                <p style=3D"mso-line-height-rule:exactly; font-family:Arial=
+, sans-serif; font-size:12px; font-weight:normal; text-decoration:none; fon=
+t-style:normal; color:#23496d; direction:lrt" dir=3D"lrt">
+                  Netlify, 44 Montgomery Street, Suite 300, San Francisco, =
+CA 94104
+                </p>
+               =20
+               =20
+            </td>
+        </tr>
+    </tbody>
+</table></div>
+</div>
+<!--[if gte mso 9]></table><![endif]-->
+<!--[if (mso)|(IE)]></td><![endif]-->
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
+    </div>
+  =20
+  </div>
+</div>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+ =20
+<img src=3D"http://communications.netlify.com/e3t/Cto/I6+113/cVvsj04/MWDj9F=
+_WvLpW5Z3DmZ5VmGsWW93kvSZ54rg40W5q1h3V3CL4RM132" alt=3D"" width=3D"1" heigh=
+t=3D"1" border=3D"0" style=3D"display:none!important;min-height:1px!importa=
+nt;width:1px!important;border-width:0!important;margin-top:0!important;marg=
+in-bottom:0!important;margin-right:0!important;margin-left:0!important;padd=
+ing-top:0!important;padding-bottom:0!important;padding-right:0!important;pa=
+dding-left:0!important"></body></html>
+------=_Part_935285_352616782.1696888613764--
+

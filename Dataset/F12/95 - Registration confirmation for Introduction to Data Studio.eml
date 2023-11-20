@@ -1,0 +1,327 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:547:b0:350:f1df:6bf4 with SMTP id i7csp241532ils;
+        Thu, 21 Sep 2023 02:03:30 -0700 (PDT)
+X-Received: by 2002:a05:6808:14cd:b0:3a7:366f:3b01 with SMTP id f13-20020a05680814cd00b003a7366f3b01mr5854646oiw.33.1695287010670;
+        Thu, 21 Sep 2023 02:03:30 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695287010; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pEg4iJ7cD8em5BgxiIjtS6rin7gdG0Rlwsnw+d9+y58BZAW164BcFo/83K38jdj2HF
+         F+k3Vf/EpTg4duOSJAmuupftTWSDE0PKrhCQommeCzxOusaLhLTuSiQRkI8s2LyGn7/z
+         R9M9Bmoh0FpLmoVduxXUoZF3aDUL7WMms3jOwAs60HqisWscYT2hpuUed9MLNl3coaDx
+         Otpd7HH6/gRXtlPoRciByyOm50/MQG9oa94J9fJgUVU52HThWfjpEfRUidgAgnECZK8D
+         6wYKh6wr/dv9nNmpLzFl3cZ4IgOxGJviNwkRpeJYxpkdP5f2RzFq7Leq8H/+6K08Q3ft
+         MvbA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:dkim-signature;
+        bh=soATKJ6XwaBvogbYYFpc9hQoVSfnLHrmxO3INpJWvH4=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=Xc5aD3fH/3CuZ3ocm2Fl2H1/Hy6td1E8SxGvdFW/ozI8UejHshOIT4PeeFLH2vYUGm
+         FQ7yX+1rbYlidATuPubkQ1kMj0liGA6d0pU6F8nn6mSSmI9LAbMiHSScObEYyJr67XyG
+         5eym9PPuD4ofJ+oJHXtq6W2IIgNSHs4gIvmFAgxO1f6X/+6rqJaPqiMhVCSTWVqppMPE
+         yb/Rdx4J/t58NUZE8JeWIx8D/B75mWr4fh8PQ5tIQKRHD/kw8I+GLaDGyLrJzjaXw5wB
+         4xoG/V85527HHP3vh8+/lzl3GEBIaUhzSIf8OFIzptZs4/rWs2QX9AXOmfBpcuZ9H6TM
+         nrYg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=2Sdi0hUp;
+       spf=pass (google.com: domain of 34gymzrkkae8r4r2fazt9-rtruv3f-458v62fx55x2v.t53@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=34gYMZRkKAE8r4r2FAzt9-rtruv3F-458v62Fx55x2v.t53@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <34gYMZRkKAE8r4r2FAzt9-rtruv3F-458v62Fx55x2v.t53@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 24-20020aca1118000000b003a38af0d932sor584584oir.9.2023.09.21.02.03.30
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (Google Transport Security);
+        Thu, 21 Sep 2023 02:03:30 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 34gymzrkkae8r4r2fazt9-rtruv3f-458v62fx55x2v.t53@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20230601 header.b=2Sdi0hUp;
+       spf=pass (google.com: domain of 34gymzrkkae8r4r2fazt9-rtruv3f-458v62fx55x2v.t53@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=34gYMZRkKAE8r4r2FAzt9-rtruv3F-458v62Fx55x2v.t53@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20230601; t=1695287010; x=1695891810; dara=google.com;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=soATKJ6XwaBvogbYYFpc9hQoVSfnLHrmxO3INpJWvH4=;
+        b=2Sdi0hUpBmHftE0eloqinyIZGoBFUSmmI2fHILoZspqN8OfXUSxH+MGRisQNofgjtr
+         wSAh2QSXadGdFzIdcKUR3aHvyIaUO9XupVlsQzr9E0c30K/xPefdzCEUwxxMLTJsAakL
+         HBBx9XNeIUJfRVE5PIC139055tTo2YDHVR1aVUn6Q0Dibi9WVKSO0d2KCLyt6Lo+K0yN
+         nU+aN5EE4eZwaUQ4hwCw6VQ/g5FIkUdx+H3iTY+VGZ3n8cGGZS+e2Uy8tbJeRlR2R+uQ
+         2EQqrC5zynd0pLkKFIpZ9nS0VpVjXnkDX6hYhssQxJmL9A8/f3L9f/JjH0IEI2BZXLG9
+         M4NQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1695287010; x=1695891810;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=soATKJ6XwaBvogbYYFpc9hQoVSfnLHrmxO3INpJWvH4=;
+        b=fht5Zb/FToDX6HOBsZzJdbQTUAvYO89Jh84rlNDxgma3jyMh4mmOecuhp/E4V9hyDV
+         /MeKJ7VaNtgm6nqhRWKw9WQ3DaIWLQRvHPaAMgOVn6B9KTR8cA5LG8EAxk/072fcWdFb
+         cQr1mMvTEJWgwWXmiU4usr2ZAMt4l+T/ioOi+OgozeoJ/9/h+6GoCVAgC8MaVOsUlfz0
+         Ys8b2TBaKfj6mqE74ksCq+f/gF8nM3zNy9zneZCzLI2UFynKqbrXUlYf0SISLHDSUQiV
+         X6AVkDHY22sgUbJeSvkruMZEE+rbFoEAcvqW82BQx0PMJYi2GDQ0u1Ro8mITGodfBdNP
+         Meow==
+X-Gm-Message-State: AOJu0YxbPUTb0lAJlUVB0VMGV2rQO7SxsX+1+HUwigmfxOxCnjtu1Qam
+	bqNeU2RT+xRLWtqgSAD8f2TH
+X-Google-Smtp-Source: AGHT+IG+0DEZmgdVsag4d+cBs21ccdLBk8/aDbIft4QbuDO7u3joOzGcIj8DypX8hw7Wr1MaTioqtgM=
+MIME-Version: 1.0
+X-Received: by 2002:a05:6808:438c:b0:3a1:d075:348b with SMTP id
+ dz12-20020a056808438c00b003a1d075348bmr4012196oib.59.1695287010491; Thu, 21
+ Sep 2023 02:03:30 -0700 (PDT)
+Date: Thu, 21 Sep 2023 02:03:30 -0700
+Reply-To: Analytics Academy <analytics-academy-noreply@google.com>
+X-Google-Id: 181475
+Precedence: bulk
+List-Unsubscribe: <https://notifications.google.com/g/optout/ANiao5oBz75_wCtUqn-qL0aYmA7QFajxBE5MSGusIOvqRwvPg6-N8O6ENqGmM2IqG8ld0c4a0fYv5pTVMIKsHI4Rta00rUBV7v5lqrG458xrWXsT-ck3rgrbq89SNMZ3ffCbeE5WPSw08TDuCBwjKGRBPaRaXHB_XtlUbpLw4_bmv8SmsjN9_k1c2vEh-MV1jxzMXpr0Yaz5Cgl66nfdbrTyIgF4Wj2B6kJjFCaBt2kR-_0Mzwu9nuqakg47v3wjtIPK-J_Kh7EnRDzUjRw5v_zQOwk2P-HbJ29JiRqlQ84_I7cW8lCdkTVCQ5g0g9gEbTwH?hl=en_US>
+Feedback-ID: P-200-10901:C10031323:M100059725-en-US:gamma
+List-Id: <90466fe2dc1bd92de000e46a2fb714a89c62e56b.google.com>
+X-Notifications: 0d4b2e157d140000
+X-Notifications-Bounce-Info: AaJ7rEqCUpN22SXMZut_9oWniPqUjQ_Z8dvQzwECHTGx2jtQBi_U7mF1Hb0ckN-h5FEBwvVrZBKQVimwNNX7RoQqPmG8JCpiXCBnQUy2OC2nlnJIA5E9vt9uQ89QVHrdZTw2OEDLwBwH1R_zbSC3yErOBkU-JHUbIEohF4t5k0nwnieE4rEHNLWbmtcpsFkXwh38GErZ_GqrM-QIy7XsF1XUWOCl69cQeSK6cRafvl8w1sKXRDx3T0zo-UVk0PGzy_NMfuEfs02DcN0Rswd5VVc2dzVqPNjU-sfwm1ch5nz2Mku48k_ktG2tcEUESbyTMqECfii4wzVWL6TNzyQJ4yuYfc3Do6wEN8V_Pe8x2e_vrY34hf48eKe4WMPZ6inUE6DBsZkH1VK-lgObLoCveeAcwlPMnRZrfpjIx9uv6YmXOn2puZ6Sx7NEF0Tt6oa6-C9IhfRmFJK2ytS0TWYnqzB5FeXmAjwBXle5mKRfiBD_JWUAeEoEAH_DuQNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <37ea543a94a14220b2506a95e682a2d29eb33100-10031323-110295680@google.com>
+Subject: Registration confirmation for Introduction to Data Studio
+From: Analytics Academy <analytics-academy-noreply@google.com>
+To: ronaldlambertnicolastugadi@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000000d7ea50605dac465"
+
+--0000000000000d7ea50605dac465
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+R29vZ2xlIEFuYWx5dGljcw0KDQoNCg0KVGhhbmsgeW91IGZvciByZWdpc3RlcmluZyBmb3IgSW50
+cm9kdWN0aW9uIHRvIERhdGEgU3R1ZGlvIG9uIEFuYWx5dGljcyAgDQpBY2FkZW15Lg0KDQpJbnRy
+b2R1Y3Rpb24gdG8gRGF0YSBTdHVkaW8gbWF5IGJlIGNvbXBsZXRlZCBhdCB5b3VyIG93biBwYWNl
+IGFuZCBoYXMgbm8gIA0KZGVhZGxpbmUuIFlvdXIgY291cnNlIHByb2dyZXNzIGFuZCBjZXJ0aWZp
+Y2F0ZSB3aWxsIGJlIHNhdmVkIGluIHlvdXIgVXNlciAgDQpQcm9maWxlIHdoZXJlIHlvdSBtYXkg
+YWNjZXNzIHRoZW0gYXQgYW55IHRpbWUuDQoNCk5vdGUgdGhhdCB0byBlYXJuIGEgY2VydGlmaWNh
+dGUgb2YgY29tcGxldGlvbiwgeW91IG11c3QgY29tcGxldGUgZWFjaCAgDQphc3Nlc3NtZW50IGlu
+IHRoZSBjb3Vyc2Ugd2l0aCBhIHNjb3JlIG9mIDgwJSBvciBiZXR0ZXIuDQoNCkJlIHN1cmUgdG8g
+Y2hlY2sgb3V0IHRoZSBjb3Vyc2UgY29tbXVuaXR5IGZvciBjb21tb24gcXVlc3Rpb25zLCBHb29n
+bGUgIA0KQW5hbHl0aWNzIHRpcHMsIGFuZCB0byBnZXQgaGVscCBmcm9tIHlvdXIgZmVsbG93IHN0
+dWRlbnRzLg0KDQoNCkdFVCBTVEFSVEVEDQoNCg0KDQrigJQgVGhlIEFuYWx5dGljcyBBY2FkZW15
+IHRlYW0NCg0KDQoNCsKpIDIwMjAgR29vZ2xlIEluYy4gMTYwMCBBbXBoaXRoZWF0cmUgUGFya3dh
+eSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMNCg0KVGhpcyBlbWFpbCB3YXMgc2VudCB0byByb25h
+bGRsYW1iZXJ0bmljb2xhc3R1Z2FkaUBnbWFpbC5jb20gYmVjYXVzZSB5b3UgIA0KaW5kaWNhdGVk
+IHRoYXQgeW91J2QgbGlrZSB0byByZWNlaXZlIEFuYWx5dGljcyBBY2FkZW15IGVtYWlsIHVwZGF0
+ZXMgYW5kICANCmNvdXJzZSByZW1pbmRlcnMuIElmIHlvdSBkbyBub3Qgd2lzaCB0byByZWNlaXZl
+IGNvbW11bmljYXRpb25zIGxpa2UgdGhpcyBpbiAgDQp0aGUgZnV0dXJlLCB1bnN1YnNjcmliZSBo
+ZXJlOiAgDQpodHRwczovL25vdGlmaWNhdGlvbnMuZ29vZ2xlLmNvbS9nL29wdG91dC9BTmlhbzVv
+Qno3NV93Q3RVcW4tcUwwYVltQTdRRmFqeEJFNU1TR3VzSU92cVJ3dlBnNi1OOE82RU5xR21NMklx
+RzhsZDBjNGEwZll2NXBUVk1JS3NISTRSdGEwMHJVQlY3djVscXJHNDU4eHJXWHNULWNrM3JncmJx
+ODlTTk1aM2ZmQ2JlRTVXUFN3MDhURHVDQndqS0dSQlBhUmFYSEJfWHRsVWJwTHc0X2JtdjhTbXNq
+TjlfazFjMnZFaC1NVjFqeHpNWHByMFlhejVDZ2w2Nm5mZGJyVHlJZ0Y0V2oyQjZrSmpGQ2FCdDJr
+Ui1fME16d3U5bnVxYWtnNDd2M3dqdElQSy1KX0toN0VuUkR6VWpSdzV2X3pRT3drMlAtSGJKMjlK
+aVJxbFE4NF9JN2NXOGxDZGtUVkNRNWcwZzlnRWJUd0g/aGw9ZW5fVVMuICANCklmIHlvdSB1bnN1
+YnNjcmliZSwgYmUgc3VyZSB0byBjaGVjayB0aGUgQW5ub3VuY2VtZW50cyBwYWdlIG9uIHRoZSBj
+b3Vyc2UgIA0Kc2l0ZSBmb3IgdGhlIGxhdGVzdCBjb3Vyc2UgbmV3cy4NCg0KDQoNCg0KDQoNCkdv
+b2dsZSBsb2dvDQoNCg0KDQoNCg==
+--0000000000000d7ea50605dac465
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3DContent-Type><tit=
+le>Google Analytics</title>
+<style type=3Dtext/css>/* Client-specific Styles */
+
+/* Force Outlook to provide a "view in browser" menu link. */
+#outlook a {padding:0;}
+
+/* Prevent Webkit and Windows Mobile platforms from changing default font s=
+izes.*/
+body{width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-ad=
+just:100%; margin:0; padding:0;}
+
+/* Force Hotmail to display emails at full width */
+.ExternalClass {width:100%;}
+
+/* Forces Hotmail to display normal line spacing.  More on that: http://www=
+.emailonacid.com/forum/viewthread/43/ */
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div {line-height: 100%;}
+
+#backgroundTable {margin:0; padding:0; width:100% !important; line-height: =
+100% !important;}
+/* End reset */
+
+/* Outlook 07, 10 Padding issue fix
+Bring inline: No.*/
+table td {border-collapse: collapse;}
+
+/* Hide preheader */
+span.preheader	{
+     display: none !important; font-size:1px !important; color:#ffffff !imp=
+ortant;
+}
+
+/* Hotmail symbol fix */
+.symbolfix img{width:10px !important;height:10px !important;}
+
+/* iPhone button fix */
+@media only screen and (max-device-width: 480px) {
+	td[class=3Dbtn-left], td[class=3Dbtn-right] {display:none !important;}
+	td[class=3Dbtn-mid] {position:relative  !important; background-image:none =
+!important; background-color:inherit !important;}
+	a[class=3Dthebtn] {padding:8px 4px 8px 4px !important; background-color:#E=
+89731 !important; -webkit-border-radius: 3px !important;}
+}
+
+/* Apple Link Fix For Footer */
+.forApple_header a { color: #666666 !important; text-decoration: none !impo=
+rtant; }
+
+/* Apple Link Fix For Footer */
+.forApple a { color: #666666 !important; text-decoration: none !important; =
+}
+
+/* Apple Link Fix For ad module */
+.forApple_url a { color: #00802a !important; text-decoration: none !importa=
+nt; }
+
+
+#outlook, .outlooktd {width:600px !important;}
+</style>
+<center>
+<table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 height=3D1=
+00% id=3DbodyTable style=3Dbackground:#448aff; width=3D100%>
+  <tbody>
+    <tr>
+      <td align=3Dcenter id=3DbodyCell style=3Dpadding:20px; valign=3Dtop><=
+!-- BEGIN TEMPLATE // -->
+      <table border=3D0 cellpadding=3D0 cellspacing=3D0 id=3DtemplateContai=
+ner style=3Dmax-width:568px;width:100%;>
+        <tbody>
+          <tr>
+            <td align=3Dcenter valign=3Dtop><!-- BEGIN HEADER // -->
+            <table border=3D0 cellpadding=3D0 cellspacing=3D0 id=3Dtemplate=
+Header style=3Dbackground-color:transparent; width=3D100%>
+              <tbody>
+                <tr>
+                  <td valign=3Dtop><img border=3D0 height=3D50 id=3DheaderI=
+mage src=3Dhttp://services.google.com/fh/files/misc/logo_lockup_analytics_w=
+hite_2x.png style=3D"margin:20px 0 10px 0;" width=3D200></td>
+                </tr>
+              </tbody>
+            </table>
+            <!-- // END HEADER --></td>
+          </tr>
+          <tr>
+            <td align=3Dcenter valign=3Dtop><!-- BEGIN BODY // -->
+            <table border=3D0 cellpadding=3D0 cellspacing=3D0 id=3Dtemplate=
+Body style=3D"background-color:#fafafa; border-radius:2px; box-shadow:0px 0=
+px 2px 0px rgba(0,0,0,0.06), 0px 2px 2px 0px rgba(0,0,0,0.12); margin-botto=
+m: 40px;" width=3D100%>
+              <tbody>
+                <tr>
+                  <td style=3D"color:#444444; font-size:17px; font-family: =
+Roboto, Arial, sans-serif; line-height:150%;padding:20px 40px 10px 40px; te=
+xt-align:left;" valign=3Dtop>
+                  <p style=3Dmargin-bottom:26px>Thank you for registering f=
+or <b>Introduction to Data Studio</b> on Analytics Academy.</p>
+
+                  <p>Introduction to Data Studio may be completed at your o=
+wn pace and has no deadline. Your course progress and certificate will be s=
+aved in your <a href=3Dhttps://notifications.google.com/g/p/ANiao5p5NlErSRz=
+LfQh6jpZtob74AoshflCfP70x8nIAMFnR5bpEauFn17ApLLMQNlAOY7jWlxaCn1ku_Xl21BQY3n=
+feNnROH4uydd-wlNBJWk12t1MFybBoSNodKD97w-JBq6SIBCS_nps433dQXpBRAfcQocXwZjcKA=
+xg5nx6ms1D4Mbcgt7AoxOUGAqqSwG9CFBSmFNhOXVI1196YnAGY6_6FdRt6xcWcR-fm6gr9rqD3=
+v_k>User Profile</a> where you may access them at any time.</p>
+
+                  <p>Note that to earn a certificate of completion, you mus=
+t complete each assessment in the course with a score of 80% or better.</p>
+
+                  <p>Be sure to check out the <a href=3Dhttps://notificatio=
+ns.google.com/g/p/ANiao5pGNYsQ2P6IxLnH_d55fgWnX3pOczTqdYabkJqMEleQzcnS-h7Bx=
+-N8OUPOLdkOXhaZxeYwa19UfNGDQVn9blfVND6X1RD2-Zlv72klJQk9iQOnB8_rLinCqiVi5fMD=
+yS_EEgfotQqRfvMpyOMiFLtVYyy9l6OGSBMuyufFfDXBdaD7xczXzboAaQuWoHrE96m98OCahMn=
+cAwfz4OvlNpD0yX6yWEbeGqDCCr_JZCleJHwraG7tyl9j4xLe46Tx7Q7k95LOsqJkaeolz5HG7e=
+Wxbz9f7cz1VDGvJjd1idX3uqV4TpIfq399JuXsqfw7W9TZmO9E3g51Q4vLQG0g3OqkGc0f0mihR=
+Z9m9gXJC8C--6nwtgR3tIoHsvVV5w9hU1XSPaCJ>course community</a> for common que=
+stions, Google Analytics tips, and to get help from your fellow students.</=
+p>
+                  </td>
+                </tr>
+                <tr>
+                  <td align=3Dcenter><a bgcolor=3D#00c853 color=3D#ffffff h=
+ref=3Dhttps://notifications.google.com/g/p/ANiao5q5BXATt2obO5tQ2pUru6WB3ig0=
+144sy97PCM8nPs44RmieYo8sgWaJOplmStv0waOpMAcArnSrz4fpA35LkvGbgs_Rqk87-KTewTA=
+pDSzvmPpP-v13Bkj05h8Iucub7U0xLTF2sUx_6KSn2vhaXDYdwHLwjtvOBU2w5b9XSu3jd9dNoV=
+kIyXaUxMKS66HcOTsCHPamRgk2a1fDMn7vX2bbfRfd7VxkHU83nvazxRX6tZ2LRYlACVwak3bKY=
+OiWCs98NAmI7b5Hd0BFw7kPHRzRzOpayAHeu8whyajG style=3D"font-size: 18px; font-=
+family: Roboto, Arial, sans-serif; color: #ffffff; text-decoration: none; b=
+ackground-color: #00c853; border-top: 12px solid #00c853; border-bottom: 12=
+px solid #00c853; border-left: 25px solid #00c853; border-right: 25px solid=
+ #00c853; border-radius: 2px; -webkit-border-radius: 2px; -moz-border-radiu=
+s: 2px; display: inline-block;" target=3D_blank>GET STARTED</a>
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td style=3D"color:#444444; font-size:17px; font-fa=
+mily: Roboto, Arial, sans-serif; line-height:150%;padding:0 40px 10px 40px;=
+ text-align:left;" valign=3Dtop>
+                        <p><br>
+                          =E2=80=94 The Analytics Academy team</p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style=3D"color:#000;font-size:12px; font-family=
+: Roboto, Arial, sans-serif; line-height:150%;padding:0 40px 40px 40px;text=
+-align:left;">
+                        <p style=3D"border-top:1px solid #d8d8d8;padding-to=
+p:34px">=C2=A9 2020=C2=A0Google Inc. 1600 Amphitheatre Parkway, Mountain Vi=
+ew, CA 94043</p>
+
+                        <p class=3Dstyle=3D&quot;margin-bottom:0;&quot;>Thi=
+s email was sent to ronaldlambertnicolastugadi@gmail.com because you indica=
+ted that you&#39;d like to receive Analytics Academy email updates and cour=
+se reminders. If you do not wish to receive communications like this in the=
+ future, unsubscribe here: https://notifications.google.com/g/optout/ANiao5=
+oBz75_wCtUqn-qL0aYmA7QFajxBE5MSGusIOvqRwvPg6-N8O6ENqGmM2IqG8ld0c4a0fYv5pTVM=
+IKsHI4Rta00rUBV7v5lqrG458xrWXsT-ck3rgrbq89SNMZ3ffCbeE5WPSw08TDuCBwjKGRBPaRa=
+XHB_XtlUbpLw4_bmv8SmsjN9_k1c2vEh-MV1jxzMXpr0Yaz5Cgl66nfdbrTyIgF4Wj2B6kJjFCa=
+Bt2kR-_0Mzwu9nuqakg47v3wjtIPK-J_Kh7EnRDzUjRw5v_zQOwk2P-HbJ29JiRqlQ84_I7cW8l=
+CdkTVCQ5g0g9gEbTwH?hl=3Den_US. If you unsubscribe, be sure to check the Ann=
+ouncements page on the course site for the latest course news.</p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- // END BODY --> <!-- // END TEMPLATE --></td>
+                </tr>
+                <tr>
+                  <td align=3Dcenter valign=3Dtop><!-- BEGIN FOOTER // -->
+                  <table border=3D0 cellpadding=3D0 cellspacing=3D0 id=3Dte=
+mplateFooter style=3Dbackground-color:#f1f1f1; width=3D100%>
+                    <tbody>
+                      <tr>
+                        <td align=3Dcenter valign=3Dtop><!-- BEGIN HEADER /=
+/ -->
+                        <table border=3D0 cellpadding=3D0 cellspacing=3D0 s=
+tyle=3Dbackground-color:transparent;max-width:568px;width:100%; width=3D100=
+%>
+                          <tbody>
+                            <tr>
+                              <td valign=3Dtop><img alt=3D"Google logo" bor=
+der=3D0 height=3D23 id=3DfooterImage src=3Dhttp://services.google.com/fh/fi=
+les/emails/logo-google-io.png style=3D" margin:30px 0 30px 20px;" width=3D7=
+0></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <!-- // END HEADER --></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <!-- // END FOOTER --></td>
+                </tr>
+              </tbody>
+            </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</center>
+
+--0000000000000d7ea50605dac465--
