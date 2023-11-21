@@ -1,0 +1,125 @@
+Delivered-To: cavaneyroericajoysarilan@gmail.com
+Received: by 2002:a05:7000:1214:b0:3de:f0d3:657d with SMTP id y20csp3497305mag;
+        Tue, 6 Dec 2022 00:14:17 -0800 (PST)
+X-Received: by 2002:a25:7788:0:b0:6fe:cd24:475e with SMTP id s130-20020a257788000000b006fecd24475emr11418449ybc.565.1670314457838;
+        Tue, 06 Dec 2022 00:14:17 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1670314457; cv=none;
+        d=google.com; s=arc-20160816;
+        b=W+AoQ+AgOzAvN4pBDyorJbVA+n/yJO+UOog4PcxKe+7D0U9qfdS33vd2Y+uXcYvMPQ
+         yFlsupmzoQEh8Atp74I+JCWaar43DWXYDniPDJcUjoOcYyDeRNxju+W/aNJMBSlnMkFT
+         p9hTQLwMuiHs46SmCZke0QIyFGgBYDl6mbJZyZlDne8SVrZ5ACijYnv64M0VOdDaoUDb
+         wH69GpMpoFVxhktYVwVI4MvjgVrAF2tA9yvV61toNqV7pPCnMIzpQfeK9H4NaExxXsMA
+         s2juO643it+bVo7rsPHwHtdpLHsyMx0w/v2SR804Hn20iX7W8DvCwMaxL/9iFSLBxsxM
+         AiDw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=42Xz32yhqOUNCsmGSgWE8YlmXbtz3dP2YiZZHuU1mDE=;
+        b=Imq8qK2A7+mknB/SenbaK1L3Lp9I1N7QRbhQEtKhl52vQ4PKAHMcXbWbVkIZrk2sm7
+         02psLOQGE9MaLGZdWh5Ck5JwR+ORPulY2wd6yFWEgPKDkQxhbUMpjWXXQRVjktpKnEai
+         DAU42CSgOiojgOFdH9dLZwC8tHkbnv0adAWGZjB3Q9JT3eCwsRJQ+UR//ejZtsSezDC9
+         g6CPxslqAEtI4shFE3cCtc9wehXD4068qW5Yh6VhkODLMjVY66yn+3tJ+0/a57lIAIQi
+         DVaBbu25uaz/35fl2VXHHGYpZ/SelTBMkqIAJPRss/7T7TtQO7TD42X9X4zSVkb/WN54
+         Xp+w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=iwAyLHJL;
+       spf=pass (google.com: domain of basistanevoel@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=basistanevoel@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <basistanevoel@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id t5-20020a817805000000b0036ee2add934sor6843659ywc.111.2022.12.06.00.14.17
+        for <cavaneyroericajoysarilan@gmail.com>
+        (Google Transport Security);
+        Tue, 06 Dec 2022 00:14:17 -0800 (PST)
+Received-SPF: pass (google.com: domain of basistanevoel@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20210112 header.b=iwAyLHJL;
+       spf=pass (google.com: domain of basistanevoel@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=basistanevoel@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20210112;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=42Xz32yhqOUNCsmGSgWE8YlmXbtz3dP2YiZZHuU1mDE=;
+        b=iwAyLHJL8SFxo8VFoqtnuCtPIqNvm+pXSupqN1XceZB9i0m9trLBRvlZ7zfzLQuFoq
+         1R3xtO9E4oTHazY1KuatR8HM5Tn3eZ7aYP30nEqfATSlwE8SDrU5RbBiiejRQYLJNh+2
+         RZB/B2HZebavRDT1FdcMBf/D1BuYN5fA6W3HQQfEAa+ag8h7myCqqb0tth6+O5eTmzE1
+         C8rMMkkzJyiOyz7i53N9xplqyN1t6ZvXwR37Bb+dG2YbB2iVmcqnlSYjTEQPgmYwTiAF
+         rCQKt2uzInTu770+Lc7SY//bYpteGRk9ItWP7Rrh2+u3wZaCEWJaTwBgQiSLu5KeImUC
+         0Qzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=42Xz32yhqOUNCsmGSgWE8YlmXbtz3dP2YiZZHuU1mDE=;
+        b=n5rICXwaAKU04RkPQiBhYdOAdttx7gKtK5AObu9TinjsGDcB2X/8nwiRIiDPG0EqHP
+         /qSPSYWf0qJwQ2QJLkTvPBCBILdIQ4xZ188CZxCVZAomBnBZKYnk71PvhU/Th2DB9ULp
+         nACgCwNKVXeBFuA8x/v7QBjYzHdxXMxFs+Vtn4eS9YSX3uOKHMjECaR54FtrrawTKSvI
+         Y7ai1JJ+hyP0dAjHRw1IJiUhWhc9dCofg3WP9dcHgHYpV5Oz6T1Q35YMYoQPOSXxjimo
+         Vrt3a1nIE9MQuOEP37axuZcD/xK1uPcSYJP5N+GcvOsyWZX1X28lJsQFfJb6ifBAWWIL
+         KdnQ==
+X-Gm-Message-State: ANoB5plMd6OI+OjvVCJ50a0KBqE/w/5mW9/vVqsOc4ntP9ORuI5LCW9I
+	Y72ri5bb05IWvzVM0jPTrhUrW4jv9P4lYfmFGcDg9coIN0KTkg==
+X-Google-Smtp-Source: AA0mqf4zKOcHK9C6KMUoju0HlqExt46F5Hbng5SG6WkkV6kR0TbMnE5EMIwoZIXAQW+BJkW6v1CpKGUH+cXexLOw5ls=
+X-Received: by 2002:a81:19d0:0:b0:3c4:9828:372c with SMTP id
+ 199-20020a8119d0000000b003c49828372cmr40069701ywz.517.1670314457189; Tue, 06
+ Dec 2022 00:14:17 -0800 (PST)
+MIME-Version: 1.0
+References: <CAEfnPuoFRDdpbRn_N=DSqGJrEL=J7acRFmeXZeOkGJ-wbx9HuQ@mail.gmail.com>
+In-Reply-To: <CAEfnPuoFRDdpbRn_N=DSqGJrEL=J7acRFmeXZeOkGJ-wbx9HuQ@mail.gmail.com>
+From: Leoven Basista <basistanevoel@gmail.com>
+Date: Tue, 6 Dec 2022 16:14:06 +0800
+Message-ID: <CAOarXP1KZxL+44vuP5NS1BgrezE_yOUMzD4wchozEQxAFvGbVA@mail.gmail.com>
+Subject: Re: BSCS 3-2 Wrong announcement
+To: Erica Joy Cavaneyro <cavaneyroericajoysarilan@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000e2508f05ef2463eb"
+
+--000000000000e2508f05ef2463eb
+Content-Type: text/plain; charset="UTF-8"
+
+alright bawi nalang sa susunod
+
+On Tue, Dec 6, 2022 at 3:39 PM Erica Joy Cavaneyro <
+cavaneyroericajoysarilan@gmail.com> wrote:
+
+> Good afternoon po, sir.
+>
+> Nag appear po na ako ay nagkamali ng announcement kahapon, 2:30 pm po ang
+> oras na nailagay ko imbes na 1:30 pm. I think po ay isa ito sa naging
+> dahilan kaya hindi nakapagready ang iba naming kaklase kanina at hindi
+> nakapasok on time.
+>
+> Ako po ay nakikiusap na pagbigyan ninyo po sana ang iba naming kaklase na
+> hindi nakadalo kanina upang makakuha ng midterm examination dahil sa
+> nagkamaling announcement kahapon.
+>
+> Ako po ay humihingi ng pasensya sa inyo, I promise na hindi na po ito
+> mauulit and I will be a better class representative po. Thank you for
+> understanding and sorry for the inconvenience.
+>
+
+--000000000000e2508f05ef2463eb
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">alright bawi nalang sa susunod</div><div><br><div class=
+=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Tue, Dec 6, 2022 =
+at 3:39 PM Erica Joy Cavaneyro &lt;<a href=3D"mailto:cavaneyroericajoysaril=
+an@gmail.com">cavaneyroericajoysarilan@gmail.com</a>&gt; wrote:<br></div><b=
+lockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-le=
+ft-width:1px;border-left-style:solid;padding-left:1ex;border-left-color:rgb=
+(204,204,204)"><div dir=3D"auto"><div dir=3D"auto">Good afternoon po, sir.<=
+/div><div dir=3D"auto"><br></div><div dir=3D"auto">Nag appear po na ako ay =
+nagkamali ng announcement kahapon, 2:30 pm po ang oras na nailagay ko imbes=
+ na 1:30 pm. I think po ay isa ito sa naging dahilan kaya hindi nakapagread=
+y ang iba naming kaklase kanina at hindi nakapasok on time.</div><div dir=
+=3D"auto"><br></div><div dir=3D"auto">Ako po ay nakikiusap na pagbigyan nin=
+yo po sana ang iba naming kaklase na hindi nakadalo kanina upang makakuha n=
+g midterm examination dahil sa nagkamaling announcement kahapon.=C2=A0</div=
+><div dir=3D"auto"><br></div><div dir=3D"auto">Ako po ay humihingi ng pasen=
+sya sa inyo, I promise na hindi na po ito mauulit and I will be a better cl=
+ass representative po. Thank you for understanding and sorry for the inconv=
+enience.</div></div>
+</blockquote></div></div>
+
+--000000000000e2508f05ef2463eb--

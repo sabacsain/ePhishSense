@@ -1,0 +1,122 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a50:b63a:0:0:0:0:0 with SMTP id b55csp3065731ede;
+        Sun, 15 Sep 2019 07:29:08 -0700 (PDT)
+X-Received: by 2002:aed:2da4:: with SMTP id i33mr12670938qtd.320.1568557748223;
+        Sun, 15 Sep 2019 07:29:08 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1568557748; cv=none;
+        d=google.com; s=arc-20160816;
+        b=CtWoBz3JYmtYxqgFGhOavZDFRzkjabx3Tmt2v/PY8ExTgFvoWhZ74HMzU8Xwm/8V0v
+         xdYgxTykfaS9rNmeDTo54hBsQh7xfbYE3akCWO5rIVh6rJwNcQlGdB1gv+mG0mre1Cr6
+         VmFJS6yrOPacjVNBbE/0DGb2o8YIGTIzLyOoMCFOtY24cW+HoCmrm8+gILsSBzZZb0Mk
+         ChxiH6NKeiDH6IYI84E0yr4gBpCE/pXml+5GBuOML4dsrLW2gOucxfrIzSocELzd/wIr
+         YaEHiKG6j6VhQTZOJpk2C08pzTTRLS800I+yzYpgEpb/9eO3F+RYurY6kryvvCUGS06r
+         kX9A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:message-id:user-agent:subject:reply-to:from:date
+         :dkim-signature;
+        bh=nSW670q55Bx2uXXvL2M5r5usojtqlG05IbwBzGVv0/4=;
+        b=hRMADJQ2M8sFPrNqRMfkfVWJzpborGeqPovW/wh9n9Pj7UO2s/r1XD4NO8a5e+Sq3g
+         zFbBmaTqoeCPn5G+dFU8kh4lR3875bKGXDDms2F++l0Gy2ltumFjR55SJTzXlb6pnhf/
+         Ky4Wkjx4dAszAYW5Q/o613P/1w3Q2n4HMlfsgc1YHd8mSaBzHvRgOW/dg2rygrAZpiKJ
+         HmqQa70VHpj5TlE1D/5jP/607hN53uaBGgbKVVvTKH1x7MvW/rDqzDoyxon6WMFJ+rm/
+         NRbj5PKkBLsGoX5Vi1ZWCJeSNPsDP0Es6o/FOreEc4NNpqLicGF3TyGkkDT8UgX9u8a+
+         7fhg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@up.edu.ph header.s=up.edu.ph header.b=DnSh9eym;
+       spf=pass (google.com: domain of *************@up.edu.ph designates 209.85.220.97 as permitted sender) smtp.mailfrom=*************@up.edu.ph;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=up.edu.ph
+Return-Path: <*************@up.edu.ph>
+Received: from mail-sor-f97.google.com (mail-sor-f97.google.com. [209.85.220.97])
+        by mx.google.com with SMTPS id j55sor47849286qtc.60.2019.09.15.07.29.07
+        for <************************@gmail.com>
+        (Google Transport Security);
+        Sun, 15 Sep 2019 07:29:08 -0700 (PDT)
+Received-SPF: pass (google.com: domain of *************@up.edu.ph designates 209.85.220.97 as permitted sender) client-ip=209.85.220.97;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@up.edu.ph header.s=up.edu.ph header.b=DnSh9eym;
+       spf=pass (google.com: domain of *************@up.edu.ph designates 209.85.220.97 as permitted sender) smtp.mailfrom=*************@up.edu.ph;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=up.edu.ph
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=up.edu.ph; s=up.edu.ph;
+        h=date:from:reply-to:subject:user-agent:message-id:mime-version;
+        bh=nSW670q55Bx2uXXvL2M5r5usojtqlG05IbwBzGVv0/4=;
+        b=DnSh9eymEg2kbo1O8cXW9vcaX+B7MrMfJLiVj7ncFRBzCRup/GOKwGJuhh10TIXkL/
+         faP/Rfz7kgb+8xcDQWAPnvuDZ470ZOCaEHRf/POEFrTDE3zNyDPLAUWq6EiOYXenIKU9
+         YpxIetuHyLOd/YzUsK+6nJOBIlV7uXHjVMIm3GGjUUmDFsiBuDWJXISw5BVhRv/2LhMz
+         3QvP+Yt6M1ImFl7MR+kWshMSDbOLq+n2XZ70j3ilJftmwVLuz7YtZdpoFVNnjdz5KpLN
+         J73iPB06mPrMKpp/DEp4YS+G5y8a6cdehNqkGzYQNzUBh0EKOS4BaqtJF2GNDctibYMQ
+         2h2Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:date:from:reply-to:subject:user-agent:message-id
+         :mime-version;
+        bh=nSW670q55Bx2uXXvL2M5r5usojtqlG05IbwBzGVv0/4=;
+        b=rsPIWhZKS9+2LXs5JGODDwRv6jKsbo1LQy3Mc1sxmOExrO5DZauvn4DctfytkYAWI/
+         x6PrOTWH/nVrnxIdkXUkPVZNjiEP32STpvrmT04iNXRRHzLX7jRskWhAP4RXno5TEK+G
+         OTyOMw4d3ooaeksCNjOMJ2X2E4YtJDtml0K9RQxAujh9QcTtQBrp36im8rlSKzsN60dx
+         9i0oBFKKXo3yZD4LuMZO9ucB4pf3oWjeMdHer4mPexh1nFO2tG1oR6z6loWrpc4b8izh
+         MszXcgsVGC0GJMeoBfzaQiMkA0kytP57puekwx4ex41R0EXU8x9wTpvaCz/HywWMrVc1
+         YZkA==
+X-Gm-Message-State: APjAAAVwAe+xORDOJFzWxnNebbmG5YX7BMvRRnDnJvu8YWBk3LqtHO+l
+	aELQ5C9hRM3PuFnHw9M1g3NQk2vlNQ1YQ3l8gjbZ9LHqoYXW/Q==
+X-Google-Smtp-Source: APXvYqy4dHWHzuBCGPkuMEOrfPCFIRqQ9/GYDuTDAxsfGO9Kb5NKQY1djW80vNGcHe2la6hTA5xTvVcm41Tk
+X-Received: by 2002:ac8:2bca:: with SMTP id n10mr13145994qtn.242.1568557747726;
+        Sun, 15 Sep 2019 07:29:07 -0700 (PDT)
+Return-Path: <*************@up.edu.ph>
+Received: from up.edu.ph (li891-254.members.linode.com. [45.56.89.254])
+        by smtp-relay.gmail.com with ESMTPS id t62sm1510345qkf.8.2019.09.15.07.29.07
+        (version=TLS1 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+        Sun, 15 Sep 2019 07:29:07 -0700 (PDT)
+X-Relaying-Domain: up.edu.ph
+Received: by up.edu.ph (Postfix, from userid 0)
+	id 0D9C1A67E; Sun, 15 Sep 2019 22:29:02 +0800 (PHT)
+Date: Sun, 15 Sep 2019 22:29:02 +0800
+From: "UPCAT Online" <*************@up.edu.ph>
+Reply-To: <upcatapplications@up.edu.ph>
+Subject: =?UTF-8?Q?[UPCAT]=20UPCAT=202020=20T?==?UTF-8?Q?est=20Perm?= =?UTF-8?Q?it=20Availability=20and=20E?==?UTF-8?Q?xam=20Deta?= =?UTF-8?Q?ils?=
+User-Agent: CodeIgniter
+X-Sender: *************@up.edu.ph
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <5d7e4aae0a711@up.edu.ph>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="B_ALT_5d7e4aae0a812"
+
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+
+--B_ALT_5d7e4aae0a812
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Good day!
+
+We have received and processed your UPCAT 2020 Application.
+
+To view the schedule for claiming your test permit and your examination
+details, please log in at https://upcatonline.up.edu.ph with your
+application account.
+
+Thank you!
+
+UP Office of Admissions
+
+This is a system-generated email. Please do not reply.
+
+
+--B_ALT_5d7e4aae0a812
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0A<html lang=3D"en">=0A<head>=0A<meta charset=3D"utf-8">=0A=
+<title>[UPCAT] UPCAT 2020 Test Permit Availability and Exam Details</title>=
+=0A</head>=0A<body>=0AGood day!=0A<br/><br/>=0AWe have received and process=
+ed your UPCAT 2020 Application. =0A<br/><br/>=0A<strong>To view the schedul=
+e for claiming your test permit and your examination details, please log in=
+ at <a href=3D"https://upcatonline.up.edu.ph" target=3D"_blank">https://upc=
+atonline.up.edu.ph</a> with your application account.</strong>=0A<br/><br/>=
+=0AThank you!=0A<br/><br/>=0AUP Office of Admissions=0A<br/><br/>=0A<small>=
+This is a system-generated email. Please do not reply.</small>=0A</body>=0A=
+</html>
+
+--B_ALT_5d7e4aae0a812--

@@ -1,0 +1,1084 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:b0dc:b0:47c:9cd4:d817 with SMTP id p28csp1212121maw;
+        Sun, 19 Feb 2023 06:55:26 -0800 (PST)
+X-Received: by 2002:a05:6870:3041:b0:16d:e593:1025 with SMTP id u1-20020a056870304100b0016de5931025mr4538677oau.55.1676818526415;
+        Sun, 19 Feb 2023 06:55:26 -0800 (PST)
+ARC-Seal: i=2; a=rsa-sha256; t=1676818526; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=zoh+j+dQaMYAjgGXnw5fZ2yqIoI1hwW5AtWklNLwZwqoYkcNaBobKYdK15Tp/oPT9+
+         wDboFEgoyYK2wyZKfN7MXBWsP4X2tP3Bbu8HMexX/U9EMjU0pZj8lFr87AD2LS5JzbKu
+         8Fz7x13I2lJJWvTnslQeE3voBgDqeDPKmDT+1+8DrfT7dejLT7ENiH7nKakuuYRpl7cE
+         +Z/D2T64g32pYM2b+FQRWoterw16Wy0KfTKy3zI7DPD5DUo5kG8b9R18TOfUyyGYnqwr
+         yHeurz/g020y+WG62GhbaijEYvaopvcXipSZWq2643bDU1Dq1CF0JTZfy8hMI4+S1+3P
+         OXkw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature;
+        bh=3Uyhm1r18Kjmqc3eoFcV4zyERyJz/lEss9/5CX+SALc=;
+        b=SiXOIzdooANNECll1dmM9k/W9rswrSLOCkcGH8sn5xrgrs6grGCU8syBFXdHTLRSz4
+         4vjFWKuKu0xvC9zljvJORfbdiGlrnoy0btAuUnrt1fK7ubmS+TuVwjNdBcatqGZpr3r5
+         sC2aekfCx5l8Rry3lt0S6BPgj/R962yIb0LsIWvv6qxUnnynwl3wfxaFe7LriKJ9c3xd
+         m3Rcburg7YlA1jWZYUvDmO66vvwEljXvyluf/VfmdH0r7Bmb0Z42rEMIzcASdxMY+vzE
+         +8UyvDmy3xdY36oAxeHxMBIoI8YqU6EWvF21XOllmNGL+SJ+ZYIRa1gS5zFYlSvnJBf0
+         UIVw==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@youtube.com header.s=20210112 header.b=Bh2zzT9U;
+       arc=pass (i=1 spf=pass spfdomain=scoutcamp.bounces.google.com dkim=pass dkdomain=youtube.com dmarc=pass fromdomain=youtube.com);
+       spf=pass (google.com: domain of *******************************@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=*******************************@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=youtube.com
+Return-Path: <*******************************@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id ds44-20020a0568705b2c00b0016dc436f818sor2950508oab.188.2023.02.19.06.55.26
+        for <************************@gmail.com>
+        (Google Transport Security);
+        Sun, 19 Feb 2023 06:55:26 -0800 (PST)
+Received-SPF: pass (google.com: domain of *******************************@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@youtube.com header.s=20210112 header.b=Bh2zzT9U;
+       arc=pass (i=1 spf=pass spfdomain=scoutcamp.bounces.google.com dkim=pass dkdomain=youtube.com dmarc=pass fromdomain=youtube.com);
+       spf=pass (google.com: domain of *******************************@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=*******************************@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=youtube.com
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20210112;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature:x-gm-message-state:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=3Uyhm1r18Kjmqc3eoFcV4zyERyJz/lEss9/5CX+SALc=;
+        b=LAUxo14WzGOEFXSwrWKelyT56WjYgcfbxWhNoq30HbV9s9jLgHQEfX6K3X3mjqqyiM
+         q/zDawRXFR1izIaxOE9ZqhESBQAsWkxooUeQF7mYPpwYXZYYmC9vrptdBUzbgUQgdAyl
+         OHH4oTEIVzJl+5tKjqJbCW3In0WTkhVU6QV3P/og22IknXiMQWSBkTl7nJixGLe+Hz/g
+         3rGNDXdFSXmWDNFEBQOAFpXaBoTCVuy9CFetx+bEkd9/G6tpYvK7HdPomRZcPFEO2Wxx
+         kJAV/uT6AYTTpKNWW6gtBmn/YpYXEamVY2WnDP9S5mvK4XldTONoH/XvY41cIMWVe77j
+         nGgQ==
+X-Gm-Message-State: AO0yUKVlzJGymgto1VxR6nmwCg+Ee9/vZfy2UM8w1iuDPVnVijdIi7mw
+	WPh1dJ7RAHhUrBZtcNtvS/jwBRI=
+X-Received: by 2002:a05:6870:910b:b0:16e:143e:86bf with SMTP id o11-20020a056870910b00b0016e143e86bfmr207614oae.197.1676818526156;
+        Sun, 19 Feb 2023 06:55:26 -0800 (PST)
+X-Google-Smtp-Source: AK7set9LVAnEHlcq2wIQV9+EpJnGUje6xO9VVBVboGlnLh5ctL5isTCchw73jA62NjMf0iLye/72
+X-Received: by 2002:a05:6830:2377:b0:68b:ddbc:76f with SMTP id r23-20020a056830237700b0068bddbc076fmr3759140oth.29.1676818525775;
+        Sun, 19 Feb 2023 06:55:25 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1676818525; cv=none;
+        d=google.com; s=arc-20160816;
+        b=fNCys3cnk4pCHJUPgxbymd9iQdjV3+1gVH3gDZNQXkYAri4+GTAJQyfD9Qiw62+tqP
+         kTSV5rVbtrYfwZ1QgyRPVS2EI6MEfrXZaYae7E4nirMZveFq/jooFULvrR7XFHFiBsW5
+         EbRlQBtKdRJ3vzG2AiuoWbwbPJp/LALK9lz50htBjXRkvt5YDmO5U0xOIqJj2QAVdMyR
+         cmIpmCfpC4SWP26ZZTTE3Qtn3yIoSg00StUa0COl68sdr+RmH1Z9t6rFHKLCQeZ4Sypu
+         bwgsrBX9U3Zan1uVGrQFQKLy7acTktiWN6aTv2Gi+/W7Dllo9qMbkfTK3TBygzvL7TYk
+         09Tw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :dkim-signature;
+        bh=3Uyhm1r18Kjmqc3eoFcV4zyERyJz/lEss9/5CX+SALc=;
+        b=FPYexK7iGsRUFb9cKFn3Ot5SKHqL9ixcgezNsrrr00Akcoue3LlPCPeq8+KGBrix7F
+         MPK78sq6qR4r6WN6a0sqMqfF7VrPAzeGeLNCSScWqMsGwV/+YeJ8HfvhHz4FLxDfAGpZ
+         DqqMnN1a5NyZvNxS7eZWvSKUFwhteqza46NwW6bYUhBK74q3grIDniqrUT/UO8VmanAk
+         XSwqWomQn1yq6pSg0NwdSrDsWf3RzJ77gx4s+OywYwNCj9bL2H/RcaR5W0NcALCqD0Rv
+         g9wMR2b9uiwkWxz1NII5VvKa1nPlLZmFnrOgL0b3yCCN5ZT+t61H4NkFAtOJV88Vvrg/
+         jG9w==
+ARC-Authentication-Results: i=1; gmr-mx.google.com;
+       dkim=pass header.i=@youtube.com header.s=20210112 header.b=Bh2zzT9U;
+       spf=pass (google.com: domain of *******************************@scoutcamp.bounces.google.com designates 2607:f8b0:4864:20::b45 as permitted sender) smtp.mailfrom=*******************************@scoutcamp.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=youtube.com
+Return-Path: <*******************************@scoutcamp.bounces.google.com>
+Received: from mail-yb1-xb45.google.com (mail-yb1-xb45.google.com. [2607:f8b0:4864:20::b45])
+        by gmr-mx.google.com with ESMTPS id bf17-20020a056808191100b00364bb6b07e9si610999oib.5.2023.02.19.06.55.25
+        for <ta-panta-tv-4756@pages.plusgoogle.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 19 Feb 2023 06:55:25 -0800 (PST)
+Received-SPF: pass (google.com: domain of *******************************@scoutcamp.bounces.google.com designates 2607:f8b0:4864:20::b45 as permitted sender) client-ip=2607:f8b0:4864:20::b45;
+Received: by mail-yb1-xb45.google.com with SMTP id k18-20020a25b292000000b0091231592671so465551ybj.1
+        for <ta-panta-tv-4756@pages.plusgoogle.com>; Sun, 19 Feb 2023 06:55:25 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=youtube.com; s=20210112;
+        h=to:from:subject:message-id:feedback-id:reply-to:date:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=3Uyhm1r18Kjmqc3eoFcV4zyERyJz/lEss9/5CX+SALc=;
+        b=Bh2zzT9UFgvuNTADXHXozfoAjjgiF0tx7jTeqhiCvJyGl9Zx2S8bvrGGo5tTEBBlds
+         4MlsXw7YlROY3q0uW4keeEoNg1y5Vi0KdsuqOg9ex0o6QRNcqZP3bH/Wy5ef17skVs2B
+         Vn5uxh26a+hfYk9PAVSVUxKzzbc36ocYmdLebXsOBOkV+qrqrEjEr7DtXQXr+TJYN1bH
+         8A3obs9HMeWkZMkaD4RVUmxEke8MNKwYx1nWmfDNuhOS14Bw4iaNGJepnA+pIC9ZGaPw
+         ObuDwuE446O4RFTDpHpI9fwqtsqIJtV7QmQuQFmRGkjCTtAx2ACFYp0fC3RhJRKwZhtc
+         GsWA==
+MIME-Version: 1.0
+X-Received: by 2002:a25:e805:0:b0:8f9:7b1:b3f9 with SMTP id
+ k5-20020a25e805000000b008f907b1b3f9mr1937759ybd.218.1676818525630; Sun, 19
+ Feb 2023 06:55:25 -0800 (PST)
+Date: Sun, 19 Feb 2023 06:55:25 -0800
+Reply-To: YouTube Community Guidelines <no-reply@youtube.com>
+X-Google-Id: 4053576
+Feedback-ID: P-535829360-0:C20158769:M110433811-en:gamma
+X-No-Auto-Attachment: 1
+X-Notifications: GAMMA:<f1593944d6a4ebe796fc91154f605ba00330dc03-20158769-110949368@google.com>
+X-Notifications-Bounce-Info: AWY41VbVviEETOGE53UcD-fQB8UursBCSGNoN8fuQzafDFMq8UopcxtrB76a3mrJavMdaIzL3iVI9Rg9xgiIuEQif_5iJtcpCYVxIR2sgl8tcS5DQN3BXZ5k4aiv3g5U3S_FUzKfw7aCGBMLQIXtK3Aw8MUja3U2m-0MRbGPEZ7i-B_gRh9WJji6rJuNMp3phd7oKsFjlgaX0DTA68PNg_DUj5zhJGY16tucrcsSa6ofYsHBCcRl_QESwknqQRgtUvUiwEaCKQbOcQNTHWAPyt8nehefJiC_qZgoi7lbsBD7B2q2neoOFo44Hjq_V_csbiUa4cIq263zf671Ta3TYKWELEYCxp2I_5PSCQEsGnZnWXUOjSAyxYf1ZPvwIUejMss5khNaeml-uB1-6o4CccjiCYFH05yDxpy5jKxppOWzAk38tiljrwfs3a-H-5Mcny5EMMicNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <f1593944d6a4ebe796fc91154f605ba00330dc03-20158769-110949368@google.com>
+Subject: =?UTF-8?Q?__=F0=9F=93=A3_YouTube_removed_your_content=0D=0A=0D=0A?=
+From: YouTube Community Guidelines <no-reply@youtube.com>
+To: ta-panta-tv-4756@pages.plusgoogle.com
+Content-Type: multipart/alternative; boundary="00000000000092b2c105f50ebc63"
+
+--00000000000092b2c105f50ebc63
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+DQpIaSBUQSBQQU5UQSBUViwNCg0KT3VyIHRlYW0gaGFzIHJldmlld2VkIHlvdXIgY29udGVudCwg
+YW5kLCB1bmZvcnR1bmF0ZWx5LCB3ZSB0aGluayBpdCAgDQp2aW9sYXRlcyBvdXIgaGFybWZ1bCBh
+bmQgZGFuZ2Vyb3VzIHBvbGljeS4gV2UndmUgcmVtb3ZlZCB0aGUgZm9sbG93aW5nICANCmNvbnRl
+bnQgZnJvbSBZb3VUdWJlOg0KDQpWaWRlbzogSE9XIFRPIFJFTU9WRSBXQVRFUk1BUksgT04gRklM
+TU9SQSAtIEFORFJPSUQgUEhPTkUgfHwgRUFTWSBUVVRPUklBTCAgDQo8aHR0cHM6Ly93d3cueW91
+dHViZS5jb20vd2F0Y2g/dj1nbXJQYlJoWUdxUT4NCg0KDQpXYXJuaW5nDQoNCldlIGtub3cgdGhh
+dCB0aGlzIG1pZ2h0IGJlIGRpc2FwcG9pbnRpbmcsIGJ1dCBpdCdzIGltcG9ydGFudCB0byB1cyB0
+aGF0ICANCllvdVR1YmUgaXMgYSBzYWZlIHBsYWNlIGZvciBhbGwuIElmIGNvbnRlbnQgYnJlYWtz
+IG91ciBydWxlcywgd2UgcmVtb3ZlIGl0LiAgDQpJZiB5b3UgdGhpbmsgd2UndmUgbWFkZSBhIG1p
+c3Rha2UsIHlvdSBjYW4gYXBwZWFsIGFuZCB3ZeKAmWxsIHRha2UgYW5vdGhlciAgDQpsb29rLiBL
+ZWVwIHJlYWRpbmcgZm9yIG1vcmUgZGV0YWlscy4NCg0KSE9XIFlPVVIgQ09OVEVOVCBWSU9MQVRF
+RCBUSEUgUE9MSUNZDQoNCkNvbnRlbnQgdGhhdCBzaG93cyB2aWV3ZXJzIGhvdyB0byBnYWluIHVu
+YXV0aG9yaXplZCBmcmVlIGFjY2VzcyB0byBhdWRpbyAgDQpjb250ZW50LCBhdWRpb3Zpc3VhbCBj
+b250ZW50LCBmdWxsIHZpZGVvIGdhbWVzLCBzb2Z0d2FyZSwgb3Igc3RyZWFtaW5nICANCnNlcnZp
+Y2VzIHRoYXQgbm9ybWFsbHkgcmVxdWlyZSBwYXltZW50IGlzIG5vdCBhbGxvd2VkLiBUaGlzIHBv
+bGljeSBhcHBsaWVzICANCnRvIHZpZGVvcywgdmlkZW8gZGVzY3JpcHRpb25zLCBjb21tZW50cywg
+bGl2ZSBzdHJlYW1zLCBhbmQgYW55IG90aGVyICANCllvdVR1YmUgcHJvZHVjdCBvciBmZWF0dXJl
+LiBLZWVwIGluIG1pbmQgdGhpcyBsaXN0IGlzIG5vdCBjb21wcmVoZW5zaXZlLg0KDQpMRUFSTiBN
+T1JFIDxodHRwczovL3N1cHBvcnQuZ29vZ2xlLmNvbS95b3V0dWJlL2Fuc3dlci8yODAxOTY0Pg0K
+DQpIT1cgVEhJUyBBRkZFQ1RTIFlPVVIgQ0hBTk5FTA0KDQpCZWNhdXNlIGl04oCZcyB0aGUgZmly
+c3QgdGltZSwgdGhpcyBpcyBqdXN0IGEgd2FybmluZy4gSWYgaXQgaGFwcGVucyBhZ2FpbiwgIA0K
+eW91ciBjaGFubmVsIHdpbGwgZ2V0IGEgc3RyaWtlIGFuZCB5b3Ugd29u4oCZdCBiZSBhYmxlIHRv
+IGRvIHRoaW5ncyBsaWtlICANCnVwbG9hZCwgcG9zdCwgb3IgbGl2ZSBzdHJlYW0gZm9yIDEgd2Vl
+ay4NCg0KDQpXSEFUIFRPIERPIE5FWFQNCg0KV2Ugd2FudCB0byBoZWxwIHlvdSBzdGF5IG9uIFlv
+dVR1YmUsIHNvIHBsZWFzZToNCiAgICAgICAqIE1ha2Ugc3VyZSB5b3UgdW5kZXJzdGFuZCBZb3VU
+dWJlJ3MgQ29tbXVuaXR5IEd1aWRlbGluZXMgIA0KPGh0dHBzOi8vbm90aWZpY2F0aW9ucy5nb29n
+bGUuY29tL2cvcC9BUGRSZEZ3Tm9rWjNhV0dyUm9Na3lMbWM1WHo5czV6Y3R6QTdVTVREbmVQcndO
+Mml4cXFIM3V1c1QzeGpYMm0yX2YxX2pFeTlFMWJqaUJYdFA1c2xLN3kxX21JX3QwQV9DRTgxbHFC
+SmVFdE5acUF4N1JWLV9JVDZLdGpPVUU5WFpiMFB1aGpWR3VnTHBiZHQtemZZdkt6Tkt2NWhUak9H
+TjZibENkNkZBOXFFTFFta3RuMUFYZEtNdDJPUFRaSnZaTjlIT0RpVllaYVl2TGdqRWNaNks1aTlK
+VWtybC1SNFBLbjRTa1YxcEVNdk5WOVBjc3F1RlFvRTZoSC0yY1hvQWxFMFl5Y3dWeFpIdHc+ICAN
+CmFuZCBzdHJpa2VzIGJhc2ljcyAgDQo8aHR0cHM6Ly9ub3RpZmljYXRpb25zLmdvb2dsZS5jb20v
+Zy9wL0FQZFJkRnhaOUt4VTZCaFIzclk5TEdTcklrNk9xUkNqdkNMODU2LXVvVG10S3h6RW1fNzVt
+WDB6X2hiMjhIWWx2SmdtcG1vZ0llMFloQ3d5WEtvREVqa1BZZklmSERMRVhkR05yS21fTjJ0MU5x
+UFJxV3VNbzN5VEdQTWE3WFd6VUxWTlJvN1h4ZXY5LU9aNU80QWMxeldBRS04NUM5SUk1T19YS2h5
+OWd1QmF1TFVtdXNjSXl0bHZhSktPclh6OHpCRkttNlVnUG5BS0pydHQ2RTlaMVBTNEtHOEpRaXgy
+TzFhSllJdE5CcGVEZVRnQklsdz4gLg0KDQogICAgICAgKiBSZXZpZXcgeW91ciBjb250ZW50IHdp
+dGggb3VyIHBvbGljaWVzIGluIG1pbmQuIElmIGFmdGVyIHJldmlld2luZyAgDQp5b3VyIGNvbnRl
+bnQgeW91IHRoaW5rIHdlIG1hZGUgYSBtaXN0YWtlLCBsZXQgdXMga25vdy4gWW91IGNhbiBhcHBl
+YWwgdGhpcyAgDQpkZWNpc2lvbiBoZXJlICANCjxodHRwczovL25vdGlmaWNhdGlvbnMuZ29vZ2xl
+LmNvbS9nL3AvQVBkUmRGeVcyVHlJeXhxUEFPcHpBQ0Q3VmtpaUY4clZldXF1SGU1OThBZnVLcWEy
+Zk9NZmMxaXZUSTkxSXNOY1p0bFlTOXJwMHIzME9KZERYOWpIekF0dVlBNUtMSWpRaFlfUVJmMHVy
+RHNjZDI2cTFIdmE3Z1NvQmNQTlpOUkE2NzQ0ZEpRNWdUY3NKRmVoY2xqWGh6N2xMWnU0WFJ5YWNv
+bHpZaGU3SEVWVFBURXlDWm0zNWt6bVVQN20wVmQ5NUN1MjJ6SFd4cC10ZVZ3YlRRVTduSEd4UGlh
+SW9Gemlvd05OWktTWkNwVU1zSXFIMVdPYnNvejJBT2VYckhDVUVSZHNZRnRiUE12RmpHT19WT3FW
+Ymw3QVV5VXhNbGlXS1BNLVRnZldwZ01zTzZ0Q2YwVk05LWZzSGRNUU5BRG5veVAyeXVmYj4gLg0K
+DQoNCg0KU2luY2VyZWx5LA0KVGhlIFlvdVR1YmUgVGVhbQ0KDQoNCkhlbHAgQ2VudGVyICANCjxo
+dHRwczovL25vdGlmaWNhdGlvbnMuZ29vZ2xlLmNvbS9nL3AvQVBkUmRGejBRTG41N2l3ZEl4OVhE
+bGVXVmdJVXByTUNOLUVzSU1xZ01VM3FxS042WV9hRHZuUXVxY05sajc4a2lsN3RCdVJmQW5KOV91
+OEU0cEE1OHVoaUlkVDRfSTNud19OaWxvWlFSdFlYZmVMUUFxOWNlOFRqTkt3Q1F4dENFRkotN3hJ
+TFpscGZZeVNTcTRjcmlZQ09xVHVWZG1WdXJkcXlOMkNEbThvUktlN2gxQVNaT1FsT1NqWUhCX25q
+MjBROHFNck1qZ0xEbVVxVEIzdDlPSklmZ2lUSHEtUkFTMlR5WmhlMUVtX1BxdzJVQ2c+DQoNCkVt
+YWlsIG9wdGlvbnMgIA0KPGh0dHBzOi8vbm90aWZpY2F0aW9ucy5nb29nbGUuY29tL2cvcC9BUGRS
+ZEZ3V2VGSlhoVFhFZFdCREEzdUtNWHM2aFhocVhvdm43Y3NxX0RucmMxaVdQR2FJVXVjMC1Id2NP
+SjNJX0pVd0U5eDRBT2ZqSWI4b25uS182bVotWVFiSDd2Y1UxaW5nOFF3VTJLR1EzUmFfYklXejRu
+Y3llRS1GZ1VrcnFSOGpzc3l6T3FjazVfQl9YaW5HRVFfeV9lcmI0Qnc4bUR6R3ZNaFBzN0ppLXVw
+bnl2LXNqX092Q0VJTkJ5MmVSeF9Uci0yYURLa2Q0NzNZNmJDaEl1UU9nRmc3ZmxGRFZySFduMEww
+NDRqZ3dpdWZON05KMC10cnB5X2plZXBnR2pYaGpCYjFZVVVWNUJGOTNVdHpUQkhNeEVwcThUbGM5
+ZHdhTkM3X1BCeUdJcXNraGVmZTdYQjlKRXNvV3c+DQoNCllvdSBoYXZlIHJlY2VpdmVkIHRoaXMg
+ZW1haWwgdG8gdXBkYXRlIHlvdSBvbiBhY3Rpb25zIHJlbGF0ZWQgdG8geW91ciAgDQpZb3VUdWJl
+IGFjY291bnQuDQoNCg0KKGMpIDIwMjMgR29vZ2xlIExMQyBkL2IvYSBZb3VUdWJlLCA5MDEgQ2hl
+cnJ5IEF2ZSwgU2FuIEJydW5vLCBDQSA5NDA2Ng0K
+--00000000000092b2c105f50ebc63
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html public "- / /w3c / /dtd xhtml 1.0 transitional / /en" "https=
+: / /www.w3.org /tr /xhtml1 /dtd /xhtml1-transitional.dtd">
+<html lang=3Den xmlns=3Dhttp://www.w3.org/1999/xhtml xmlns:v=3Durn:schemas-=
+microsoft-com:vml xmlns:o=3Durn:schemas-microsoft-com:office:office>
+<head>
+<title>
+=F0=9F=93=A3 YouTube removed your content
+</title>
+<!--[if !mso]><!-->
+<meta http-equiv=3DX-UA-Compatible content=3DIE=3Dedge>
+<!--<![endif]-->
+<meta http-equiv=3DContent-Type content=3D"text/html; charset=3Dutf-8">
+<meta name=3Dviewport content=3D"width=3Ddevice-width, initial-scale=3D1.0"=
+>
+<meta name=3Drobots content=3D"no index">
+<meta name=3Dx-apple-disable-message-reformatting>
+<meta name=3Dformat-detection content=3Dtelephone=3Dno,address=3Dno,email=
+=3Dno,date=3Dno,url=3Dno>
+<meta name=3Dcolor-scheme content=3Dlight>
+<meta name=3Dsupported-color-schemes content=3Dlight>
+<link href=3Dhttps://fonts.googleapis.com/css?family=3DRoboto:400,300,500,7=
+00 rel=3Dstylesheet>
+<link href=3Dhttps://fonts.googleapis.com/css?family=3DYouTube%20Sans:700 r=
+el=3Dstylesheet>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<!--[if lte mso 11]>
+<style>
+.mj-outlook-group-fix { width:100% !important; }
+</style>
+<![endif]-->
+<style>
+#outlook a {
+padding: 0;
+}
+* {
+-ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%;
+}
+body {
+font-family: Roboto, Arial, Helvetica, sans-serif;
+margin: 0;
+padding: 0;
+-webkit-text-size-adjust: none !important;
+-webkit-font-smoothing: antialiased !important;
+-ms-text-size-adjust: none !important;
+}
+table,
+tr,
+th,
+td {
+border-spacing: 0;
+border-collapse: collapse;
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+img {
+border: 0;
+height: auto;
+line-height: 100%;
+outline: none;
+text-decoration: none;
+-ms-interpolation-mode: bicubic;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+color: #065fd4;
+text-decoration: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin:0;
+padding:0;
+}
+a[x-apple-data-detectors] {
+border-bottom: 0 !important;
+cursor: default !important;
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+.im {
+color: inherit !important;
+}
+img.g-img + div {
+display: none !important;
+}
+sup {
+line-height: 0;
+font-size: 75%;
+}
+<!--[if gte mso 9]>
+sup {
+font-size: 100% !important;
+}
+<![endif]-->
+</style>
+<style>
+@media only screen and (max-width: 620px) {
+.hide-on-mobile {
+display: none !important;
+}
+.hide-on-desktop {
+display: block !important;
+max-height: none !important;
+}
+.hide-on-desktop td {
+display: table-cell !important;
+max-height: none !important;
+}
+}
+.hide-on-desktop,
+.hide-on-desktop td {
+mso-hide: all;
+display: none;
+max-height: 0;
+overflow: hidden;
+}
+</style>
+<style>
+@media only screen and (max-width:480px) {
+table.mj-full-width-mobile {
+width: 100% !important;
+}
+td.mj-full-width-mobile {
+width: auto !important;
+}
+}
+</style>
+<style>
+@media only screen and (min-width:620px) {
+.mj-column-per-100 {
+width: 100% !important;
+max-width: 100%;
+}
+.mj-column-per-50 {
+width: 50% !important;
+max-width: 50%;
+}
+}
+</style>
+</head>
+<body style=3Dbackground-color:#fff;>
+<div style=3Dbackground-color:#fff;>
+<div style=3D"margin:0 auto; min-width:480px; max-width:600px;">
+<table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpre=
+sentation style=3D"background-position:center center; background-size:conta=
+in; background-repeat:no-repeat; width:100%;">
+<tbody>
+<tr>
+<td align=3Dcenter>
+<!--[if mso | IE]>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" cl=
+ass=3D"block-grid-outlook" style=3D"width:600px;" width=3D"600" >
+<tr>
+<td style=3D"line-height:0; font-size:0; mso-line-height-rule:exactly;">
+<![endif]-->
+<div class=3D"mj-column-per-100 mj-outlook-group-fix" style=3D"font-size:0;=
+ text-align:left; direction:ltr; display:inline-block; vertical-align:top; =
+width:100%;">
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpresentation width=
+=3D100%>
+<tbody>
+<tr>
+<td style=3D"border:none; vertical-align:top; padding:0 0 0 0;">
+<table border=3D0 cellpadding=3D0 cellspacing=3D0 role=3Dpresentation width=
+=3D100%>
+<tr>
+<td>
+<table width=3D100% role=3Dpresentation border=3D0 cellpadding=3D0 cellspac=
+ing=3D0 style=3Dtable-layout:fixed;>
+<tr>
+<td align=3Dleft valign=3Dmiddle style=3D"overflow:hidden; min-width:480px;=
+ max-width:600px; padding:0 0 0 0;">
+<a href=3D# style=3D"display:block; width:600px; height:88px;" aria-hidden=
+=3Dtrue>
+<img src=3Dhttps://www.gstatic.com/gumdrop/files/ytc-youtube-header-fill-w1=
+200px-h176px-2x.png width=3D600 height=3D88 title=3D"" alt=3D"" border=3D0 =
+style=3D"display:block; width:600px; max-width:600px;">
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+Hi TA PANTA TV,
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+Our team has reviewed your content, and, unfortunately, we think it violate=
+s our <strong>harmful and dangerous policy</strong>. We&#39;ve removed the =
+following content from YouTube:
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+<strong>Video:
+</strong> <a style=3D"color:#065fd4; font-weight:500; text-decoration:none"=
+ href=3Dhttps://notifications.google.com/g/p/APdRdFxxqUTNb0W0ezpTCdZC8uNRnU=
+rVcBn-92PjFnTJlJWBbtHdqyBoFuClcSE3RRGJdHqq1bephAO8F_a4BoqWscL8qwl172C78BeCb=
+sRbivQ7B5tnxj7EMOstX0wLnsnfqBe9rk-mTLGZ_TKKy4qBWo-nwoWE6T5Ahzq9QFsxNKHu0FA-=
+HtuaFrbdHxjBQkQIxhqIdcs4fVbvhQ>HOW TO REMOVE WATERMARK ON FILMORA - ANDROID=
+ PHONE || EASY TUTORIAL</a> </p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"20" style=3D"vertical-align:top; height:20px;">
+<![endif]-->
+<div style=3Dheight:20px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"padding:0 24px 0 24px; direction:ltr=
+;">
+<a style=3D"text-decoration:none; display:block;" href=3D#>
+<img src=3Dhttps://services.google.com/fh/files/emails/tns_warning.png widt=
+h=3D552 height=3Dauto title=3DWarning alt=3DWarning style=3D"border:none; d=
+isplay:inline-block; outline:none; text-decoration:none; width:100%; max-wi=
+dth:100%; height:auto; font-size:12px;">
+</a> </td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"8" style=3D"vertical-align:top; height:8px;">
+<![endif]-->
+<div style=3Dheight:8px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+We know that this might be disappointing, but it&#39;s important to us that=
+ YouTube is a safe place for all. If content breaks our rules, we remove it=
+. If you think we&#39;ve made a mistake, you can appeal and we=E2=80=99ll t=
+ake another look. Keep reading for more details.
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<h2 style=3D"margin:0; padding:0; color:#030303; font-family:Roboto, Arial,=
+ Helvetica, sans-serif; font-size:18px; font-weight:600; line-height:27px; =
+letter-spacing:0.1px;">
+How your content violated the policy
+</h2>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+Content that shows viewers how to gain unauthorized free access to audio co=
+ntent, audiovisual content, full video games, software, or streaming servic=
+es that normally require payment is not allowed. This policy applies to vid=
+eos, video descriptions, comments, live streams, and any other YouTube prod=
+uct or feature. Keep in mind this list is not comprehensive.
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"28" style=3D"vertical-align:top; height:28px;">
+<![endif]-->
+<div style=3Dheight:28px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"padding:0 24px 0 24px">
+<table role=3Dpresentation border=3D0 cellpadding=3D0 cellspacing=3D0 align=
+=3Dleft>
+<tbody>
+<tr>
+<td id=3Dbutton align=3Dcenter>
+<a href=3Dhttps://notifications.google.com/g/p/APdRdFzAD625OZBUzYSKQmXFYVKx=
+nc_oCXImDSBXryqpGdCy49LGYms_DKZJZTCxEVHBbR_SeFXY4U841KXCqrsUBaeNN--jIu7-zsq=
+e57U0jWPfJkVSAb5vyT5uOa0AL5IZY7tcHOOa-5llEQGwn7_rq0jkQhNeM2qEbsrCkPOk9IgvKn=
+q-uk4uCl3h6u0u3iNPcaTx9KqFOLjfYLfl-MEgwQ style=3D"display:block; padding-to=
+p:4px; padding-bottom:4px; direction:ltr; text-decoration:none; display:blo=
+ck; color:#fff; line-height:24px; font-family:Roboto, Arial, Helvetica, san=
+s-serif; font-size:16px; font-weight:500; letter-spacing:0.25px; text-trans=
+form:uppercase;">
+<div style=3D"display:block; direction:ltr; text-decoration:none; display:b=
+lock; color:#fff; line-height:24px; font-family:Roboto, Arial, Helvetica, s=
+ans-serif; font-size:16px; font-weight:500; letter-spacing:0.25px; text-tra=
+nsform:uppercase; background-color:#065fd4; -webkit-border-radius:2px; -moz=
+-border-radius:2px; border-radius:2px; border-top:12px solid #065fd4; borde=
+r-right:24px solid #065fd4; border-bottom:12px solid #065fd4; border-left:2=
+4px solid #065fd4;">
+<!--[if gte mso 15]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<=
+![endif]-->
+LEARN=C2=A0MORE
+<!--[if gte mso 15]>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<=
+![endif]-->
+</div>
+</a>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<h2 style=3D"margin:0; padding:0; color:#030303; font-family:Roboto, Arial,=
+ Helvetica, sans-serif; font-size:18px; font-weight:600; line-height:27px; =
+letter-spacing:0.1px;">
+How this affects your channel
+</h2>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+Because it=E2=80=99s the first time, this is just a warning. If it happens =
+again, your channel will get a strike and you won=E2=80=99t be able to do t=
+hings like upload, post, or live stream for 1 week.
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<h2 style=3D"margin:0; padding:0; color:#030303; font-family:Roboto, Arial,=
+ Helvetica, sans-serif; font-size:18px; font-weight:600; line-height:27px; =
+letter-spacing:0.1px;">
+What to do next
+</h2>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+We want to help you stay on YouTube, so please:
+</p>
+</td>
+</tr><tr>
+<td align=3Dleft valign=3Dtop style=3D"padding:0 24px 0 24px; direction:ltr=
+;">
+<ul style=3D"direction:ltr; margin-top:0; margin-bottom:0; padding:0; font-=
+family:Roboto, Arial, Helvetica, sans-serif; color:#131313; font-size:16px;=
+ line-height:24px; margin-left:24px;" type=3Ddisc>
+<li style=3D"margin:14px 0 0 0; direction:ltr;">
+Make sure you understand YouTube&#39;s <a id=3DcgUrl href=3Dhttps://notific=
+ations.google.com/g/p/APdRdFw56zZ6gcqcsDf7lfuOH6X9N-e5YHVxtsM2NLohpS8zsbgjS=
+4WuxRcWJhpc1c7FxxToFgJVQy9Z57rlj8DcGcLWWHYBxKYd0CIKHWAIYevLCrHr7Fy-F2T-5FfG=
+awGDYhfsbSq0RJdUag6krDrilA0GDT2TW11oMu8pzdDEZiGAHqPEl8b3DLiDP0pGluunD__Za4E=
+pnXMReRAdlVWASABql9lZpSu8ve1Q_3xbAXyge0M7fMdyrtqFfbD1AZwthvu2H5Y_V6NZ targe=
+t=3D_blank style=3D"text-decoration: none; color:#065FD4">Community Guideli=
+nes</a> and <a id=3DstrikesInfoUrl href=3Dhttps://notifications.google.com/=
+g/p/APdRdFyVnR5urOZlDcSFEeJSYkMV6lfHg8uNh2jX3I2f5AqtUN-e0YZn8iXEC2EtWh9JMBr=
+rdc6hSItUBmPc3gwnAlVO_WCZRUWPaA9dagjh0IOyNdmbXI9wzmiD02h1MNWfP1N36gJylc5hde=
+HsbWfRHA0riNTOui_9ZXDD0-uGZvQU6GwWhDsr8yKR5ZEuf0IG3XW8i73ElXlk2BOShtkpamFt9=
+RjLNKKzZuK9316CHQfc_J_hwQ target=3D_blank style=3D"text-decoration: none; c=
+olor:#065FD4">strikes basics</a>. </li>
+<li style=3D"margin:14px 0 0 0; direction:ltr;">
+Review your content with our policies in mind. If after reviewing your cont=
+ent you think we made a mistake, let us know. You can appeal this decision =
+<a id=3DappealUrl href=3Dhttps://notifications.google.com/g/p/APdRdFyiIcH5U=
+nP3KbY3Z5fTxbBcd0wVB-fdCjEOve8Yy_aOu_7TQL_pTXk8MZxDnSzG69BB5OScZC0lwaGaJ1iG=
+GkUtfiob8XUJBRFvbolk4h5OK_2icr_Ui4tdk2_N0kTieL_b7L0ph8ZgI3Nr-HbiR3RTEDmpoRg=
+vN4eRgNsrq6nd1V_RbbH5UsnJ6lDCies3HiEJjUzI6odsmhtjOqkGrIZMQfHL_S_CFvv-iAGijD=
+WhKYvij7eJN3j1-3LFOzIwjG35vrw9qOHaJ5VoM6Z2FeDci5SpN7_fXSKjSSlR-etKievRXrX48=
+7wZOsI7RcW7nWLf6Ig target=3D_blank style=3D"text-decoration: none; color:#0=
+65FD4">here</a>. </li>
+</ul>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#131313; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:16px; font-weight:400; line-height:24px; l=
+etter-spacing:0.1px;">
+Sincerely,<br>
+The YouTube Team
+</p>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dcenter style=3D"font-size:0; padding-left:24px; padding-right:2=
+4px;">
+<p style=3D"border-top:1px solid #ccc; font-size:1px; margin:0 auto; width:=
+100%;"> </p>
+<!--[if mso | IE]>
+<table
+align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"=
+border-top:1px solid #ccc; font-size:1px; margin:0 auto; width:550px;" role=
+=3D"presentation" width=3D"550px">
+<tr>
+<td style=3D"height:0; line-height:0;">
+&nbsp;
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr><tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#606060; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:12px; font-weight:400; line-height:18px;">
+<a style=3D"color:#065fd4; font-weight:500; text-decoration:none" href=3Dht=
+tps://notifications.google.com/g/p/APdRdFztLPct-zM6AxB9Uss5U_Bos8hQAxn6DM3w=
+gzl75s1VoWa34pdlhJKn4Cse6enuS3VqCjlaFhEYOB9iWErVrmBUkN6Q3UplDUvuV0cMzEPI5uy=
+TvNyWjyx2GI0nDU79UuUcy6bkRVG3Fs6YEtb-Fp9pvlHbShI10-uZIU-ygEBpvsHkN0rHOiXNFn=
+FF3YbSsd5lOcXgPYqgHY0mcwRsvC5LaHy3pHd2Yn7EJV2BL9HDhTn->Help Center
+</a>
+<span style=3D"color:#606060; font-family:Roboto, Arial, Helvetica, sans-se=
+rif; font-size:12px; font-weight:400; line-height:18px">=E2=80=A2 </span><a=
+ style=3D"color:#065fd4; font-weight:500; text-decoration:none" href=3Dhttp=
+s://notifications.google.com/g/p/APdRdFyutB_ct9z1PIJ4jjkH4FVUAj-NDmj-thxTIA=
+KK3pIAQI5e7MM7gYqgp5z-Q6PVUfv6abGsJiwol15ZgrSiTmQMWOHASp_uLsjLwqJf0scleA8BI=
+AV059TNRnGfwcH0BVFAkZ7JToLt50Jik1IMa6o__sthqL_hXBTyOjsXH6DW3idC3POK3XR7OuTn=
+mYa33Vw3am7lKEq-5x__hOVaF6p14iJLSA-NQM0--ZS132RsmNmztj0llNvmXCzJFkKB27Tbr2d=
+jHbqV03tcaTc5cmWjhRZeK2IGAa68YcyCo_OpOoBcuSdIT5HI9lbM>Email options
+</a>
+</p>
+</td>
+</tr><tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#606060; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:12px; font-weight:400; line-height:18px;">
+You have received this email to update you on actions related to your YouTu=
+be account.
+</p>
+</td>
+</tr><tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"16" style=3D"vertical-align:top; height:16px;">
+<![endif]-->
+<div style=3Dheight:16px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"direction:ltr; padding:0 24px 0 24px=
+;">
+<p style=3D"margin:0; padding:0; color:#606060; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:12px; font-weight:400; line-height:18px;">
+Was this email helpful?
+<a style=3D"color:#065fd4; font-weight:500; text-decoration:none" href=3Dht=
+tps://notifications.google.com/g/p/APdRdFylSfT03ytFs45eEGbFUNTLYFlH-EjuF-pX=
+eIQGGjsXKPOKEnfz5uVYs8a4GrA1F7jn0_v1uqlkAFmcFuBoDbIViqLt2P7Y0-bTlt8SlIkKhsF=
+njwNpDqsjbxLHEXTE6Cj17d702PGJYsJM4ElxSnCbwqUtoBMbw-ZCEuU05BbEKubxpIoQauRpLf=
+y5ndBExreSgS5rnvn25owjcZ3eY7CfkbJYFf5JOfWhg2AmbXJu5TNBK-kQGCXuUCQ_sVofI0z1n=
+kOa8mISha2_qBRZuJ0QTem7LBm-qTkutV2J2r8COofo5-3zWN4>=C2=A0Yes
+=C2=A0</a>=C2=A0=C2=A0|=C2=A0=C2=A0<a style=3D"color:#065fd4; font-weight:5=
+00; text-decoration:none" href=3Dhttps://notifications.google.com/g/p/APdRd=
+FzBAwCJ6Zz86xkUZ4PzcJp_CBEHAr7PyfZFUVdm0HSRslpD5tx39lHkaV7GoR_b8xhXNvSlRk6o=
+Qh6td_1yBQy_V3vThTghLnxZTuESU_RtBz9cxNy5L_OlRODCa9BG3OGeN-tG4IOOgn9F-uAw17s=
+wTRaXRVfv7D9fghwpaCoQIdn_SZRwV8luO378M6MVfguvMg1Dt6iVByVr5fCEBT97L0wGQKSZms=
+GE5jM7IoFfkN2MsKtX0kL3JpxCVGlScy1q-xd1UGPOtxpgXrY1wzQZui0OmE_BxHcCcV5OHq87O=
+Q4TPjX-ocE>=C2=A0No
+=C2=A0</a>
+</p>
+</td>
+</tr> <tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"padding:0 24px 0 24px; direction:ltr=
+;">
+<a href=3D# style=3D"display:block; width:88px; height:20px;" aria-hidden=
+=3Dtrue><img title=3D"" alt=3D"" src=3Dhttps://www.gstatic.com/gumdrop/file=
+s/ytc-youtube-footer-transparent-w176px-h40px-2x.png height=3Dauto width=3D=
+88 style=3D"border:none; display:block; outline:none; text-decoration:none;=
+ width:88px; height:20px;"></a>
+</td>
+</tr>
+<tr>
+<td style=3Dfont-size:0;>
+<!--[if mso | IE]>
+<table role=3D"presentation" border=3D"0" cellpadding=3D"0" cellspacing=3D"=
+0">
+<tr>
+<td height=3D"24" style=3D"vertical-align:top; height:24px;">
+<![endif]-->
+<div style=3Dheight:24px;>=C2=A0</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tr>
+<td align=3Dleft valign=3Dtop style=3D"padding:0 24px 0 24px; direction:ltr=
+; color:#606060; font-family:Roboto, Arial, Helvetica, sans-serif; font-siz=
+e:12px; font-weight:400; line-height:18px;">
+=C2=A9 2023 <a href=3D# style=3D"color:#606060; font-family:Roboto, Arial, =
+Helvetica, sans-serif; font-size:12px; font-weight:400; line-height:18px; t=
+ext-decoration:none;"> Google LLC d/b/a YouTube, 901 Cherry Ave, San Bruno,=
+ CA 94066 </a> </td>
+</tr>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--[if mso | IE]>
+</td>
+</tr>
+</table>
+<![endif]-->
+</td>
+</tr>
+<tbody>
+</table>
+<table width=3D100% role=3Dpresentation border=3D0 cellpadding=3D0 cellspac=
+ing=3D0 align=3Dcenter style=3Dtable-layout:fixed;>
+<tr>
+<td style=3D"width:480px; max-width:480px; min-width:480px;">
+<table width=3D480 role=3Dpresentation cellpadding=3D0 cellspacing=3D0 bord=
+er=3D0 align=3Dcenter>
+<tr>
+<td style=3D"line-height:1px; min-width:160px;"><img src=3Dhttps://www.gsta=
+tic.com/gumdrop/files/youtube-spacer-image-transparent-w1px-h1px-2x.gif alt=
+=3D"" width=3D160 height=3D1 style=3D"display:block; max-height:1px; min-he=
+ight:1px; min-width:160px; width:160px;"></td>
+<td style=3D"line-height:1px; min-width:160px;"><img src=3Dhttps://www.gsta=
+tic.com/gumdrop/files/youtube-spacer-image-transparent-w1px-h1px-2x.gif alt=
+=3D"" width=3D160 height=3D1 style=3D"display:block; max-height:1px; min-he=
+ight:1px; min-width:160px; width:160px;"></td>
+<td style=3D"line-height:1px; min-width:160px;"><img src=3Dhttps://www.gsta=
+tic.com/gumdrop/files/youtube-spacer-image-transparent-w1px-h1px-2x.gif alt=
+=3D"" width=3D160 height=3D1 style=3D"display:block; max-height:1px; min-he=
+ight:1px; min-width:160px; width:160px;"></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<img alt=3D"" class=3Dopen_tracking_img src=3Dhttps://www.youtube.com/gen_2=
+04?tns_content_removed_strike_community_guidelines width=3D1 height=3D1>
+</div>
+</div>
+<img alt=3D"" height=3D1 width=3D3 src=3Dhttps://notifications.google.com/g=
+/img/APdRdFxpWfWXKvmr9arUEDIp1a0bWDsaxGm9XvfH5uWRRpAAxMEo-L6uNth6fZXkjNzzJR=
+hryBMsTKNCrLnndhrzZaWkmhuJIn1po9riB2COqcNjsGtZ-VSVZwafokGeJPuHCF8KOdyT0cgLv=
+-cHDw.gif></body>
+</html>
+--00000000000092b2c105f50ebc63--

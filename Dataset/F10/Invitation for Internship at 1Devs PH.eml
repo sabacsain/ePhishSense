@@ -1,0 +1,113 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:174a:b0:4f4:d48:a6dd with SMTP id c10csp1409705maw;
+        Wed, 16 Aug 2023 09:54:29 -0700 (PDT)
+X-Received: by 2002:ac2:5f96:0:b0:4fb:8948:2b28 with SMTP id r22-20020ac25f96000000b004fb89482b28mr1988732lfe.63.1692204869465;
+        Wed, 16 Aug 2023 09:54:29 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1692204869; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rt5n3jXja7ZzpcJTIpWRWuPFgiKTcBSNpNQLeWAa2xQG3PxLhqGfaK2mmC97XJT7Hu
+         tgM342kEBecDlnTLG/B+9lA7s8lxgJdZ5pH75/tf3Yhl11odXB+Zf57sTEqbyf8vz+h9
+         KaDFmCsbsTkeK+Ha1PKCL2UfEc99bTyMM5Pa/3mKOTvuBGt4nuvT+6MgmBFozTkSHmL0
+         wauny3EKMPJFfDUnh0Yr+SJMPss4O1jBswl5Q2mbUqjvi1AbISwwvbcjFizMOpFs6vu3
+         nLeABPbuMOgnOiyi1l83Scrg1MOXW1pFG72RqWPd7/4Vyftzpzu9EE0M2iI8DVLE6GYS
+         np+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=lpYDFpoBZLdh2+90pPWTgzK5m/RdzG/L/dFV0H/5f9A=;
+        fh=Nn3Cjpw8HyNK514vD+0iZlEPDS3MbAaz+6ttzgu28Nc=;
+        b=QUaP7D9qnVNhhiq82pu8NbdLAMJl/y2TtoTdDOXSKwwrUhY9gJ3RxHUwYITRHPELSv
+         /0KrvAHHCeIHmozu1QjlsBjxwi4KjZd/bpxyDIPHT3xVlJh+Oq278DBaYMi+kGGgmkVZ
+         16yQnXA0vmtmQTZBcavvpJdxQm7Y2Ax5TyALJQuXlGqyT5TnNcyXn45Y1V50Womi5mXi
+         TsQ6NMD9EehZ/SyQH7MXZE+f/F57xtmxfksvXt+ptkIF36/54TkboT1RvxtfMN4kIPjE
+         TZtxDZDYStmidTPq1J1zNA6152Yz2lnoLm7R4f0HeDumN3M2P8HrWmJ+kjlJMiZonkE9
+         8t3Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=IxFE8ojX;
+       spf=pass (google.com: domain of **********@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=**********@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <**********@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id e27-20020a19691b000000b004ff9717eaabsor252666lfc.11.2023.08.16.09.54.28
+        (Google Transport Security);
+        Wed, 16 Aug 2023 09:54:29 -0700 (PDT)
+Received-SPF: pass (google.com: domain of **********@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20221208 header.b=IxFE8ojX;
+       spf=pass (google.com: domain of **********@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=**********@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20221208; t=1692204868; x=1692809668;
+        h=to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=lpYDFpoBZLdh2+90pPWTgzK5m/RdzG/L/dFV0H/5f9A=;
+        b=IxFE8ojXMTiPhTmM0Keu3EBaCDWF3H40EffmDSN7faXRvjUOXg/h1lqMJFTbkFkiJL
+         kAlfn4lE1VPI3SLrPLhan+8TZHNPQI8dLzMT/9KuF9+rsaIHmZSLOfqZxJvTyAPUmua4
+         hBIwpkRUwiQ0CkEqSXUFmCBDe1Re74hpx1TlDZ/n3atAJge671PQEQRQOlCl5UdQsu6U
+         7RP6Wml/nwZZJl6A78IFoC8WVRhtYNu6ED+fUJApZwmcKdDDah+XssHed/VV4d0rU+kj
+         Nl7mQn62pQy0eX36p3sOhGqJLSGjCVU31fL7Tk+djyyJR5KsxdBI1gT2OVxN7C0+weoZ
+         Csqg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692204868; x=1692809668;
+        h=to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=lpYDFpoBZLdh2+90pPWTgzK5m/RdzG/L/dFV0H/5f9A=;
+        b=DQg1JJSPyeDaO6w1HVpHVx5iSUgAxUhjg+vqSkeFmpHZVQmeySWIkwVwAo0Jl//KeN
+         qMrxwsOKOvFbOKlIkcrDlIoCheC/TMJXiEFMdY443M1n/F4GiO4TNQ4Jglq5stQR1Uup
+         3UXyMoqe0rl8Yqin+SowE5i5wcn77dD9EGyc6//0/MI+/keygbYKGWrXztQOsU5LtqoO
+         ZaEQ7FLrDfdvWy0el6Q1JAUtIPw+/JPxjbCRGGGd4i9LSdgMu9U440pK2jh95DBMM4WG
+         FIa3I9eC66DIfHyRQwAaZroxVgf8sq0MaSke5RLYrIg7AbHYn8Ii2SDnnFuPCheIVVNv
+         ohUA==
+X-Gm-Message-State: AOJu0Yx4nSiJNX067cybvsm23CumWG2OAWW63yeAgNbXniavLOxIKr0j
+	rznaOOfTJ9WV3lYS3QBJLxcq1Csn9tVl29ziLdpEGME1lxM=
+X-Google-Smtp-Source: AGHT+IHB4hRs1uki09VIFTY7FI7qB1IR32gdf8Y9IsInfWZ/j/UDKkFebiIm1OR36xhMpqECgRmnkw4DSAYUlDolO4o=
+X-Received: by 2002:ac2:4bc9:0:b0:4fe:93e7:3919 with SMTP id
+ o9-20020ac24bc9000000b004fe93e73919mr2515850lfq.55.1692204867743; Wed, 16 Aug
+ 2023 09:54:27 -0700 (PDT)
+MIME-Version: 1.0
+From: "Timothy Gaius G. Dungao" <**********@gmail.com>
+Date: Thu, 17 Aug 2023 00:54:16 +0800
+Message-ID: <CAKi4dEqHjcP++D=M+JuhEo_TyUoS-veox6p65pgV_N=qKR67Mg@mail.gmail.com>
+Subject: Invitation for Internship at 1Devs PH
+To: ************************@gmail.com, ronaldalbano1@gmail.com, 
+	tonyocabrillas@gmail.com, kenshinrnablo@gmail.com, 
+	macasaulfrancisjhon@gmail.com, hgajoaquin@gmail.com, 
+	mikhanbalbastro00@gmail.com, ruelobregonsalamat@gmail.com, 
+	ccis.ojt@pup.edu.ph, shainamarielaman1@gmail.com
+Content-Type: multipart/alternative; boundary="00000000000007756f06030d2659"
+
+--00000000000007756f06030d2659
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Applicants,
+
+We're excited about your interest in the Internship Program at 1Devs PH.
+You're invited for an interview on August 22, 2023, at 10:00 AM, at our
+office: 1287 C&G Borneo Street, San Isidro, Makati, 1234 Metro Manila.
+
+Please bring your laptop. Confirm your attendance by replying to this
+email. For any questions, contact us at 09176444086.
+
+Looking forward to meeting you.
+
+Best regards,
+Timothy Dungao
+Chief Technology Officer
+1Devs PH
+
+--00000000000007756f06030d2659
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"auto">Dear Applicants,<div dir=3D"auto"><br></div><div dir=3D"a=
+uto">We&#39;re excited about your interest in the Internship Program at 1De=
+vs PH. You&#39;re invited for an interview on August 22, 2023, at 10:00 AM,=
+ at our office: 1287 C&amp;G Borneo Street, San Isidro, Makati, 1234 Metro =
+Manila.</div><div dir=3D"auto"><br></div><div dir=3D"auto">Please bring you=
+r laptop. Confirm your attendance by replying to this email. For any questi=
+ons, contact us at 09176444086.</div><div dir=3D"auto"><br></div><div dir=
+=3D"auto">Looking forward to meeting you.</div><div dir=3D"auto"><br></div>=
+<div dir=3D"auto">Best regards,</div><div dir=3D"auto">Timothy Dungao</div>=
+<div dir=3D"auto">Chief Technology Officer</div><div dir=3D"auto">1Devs PH<=
+/div></div>
+
+--00000000000007756f06030d2659--

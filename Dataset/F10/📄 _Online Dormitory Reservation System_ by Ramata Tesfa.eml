@@ -1,0 +1,1164 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:1214:b0:3de:f0d3:657d with SMTP id y20csp6872958mag;
+        Tue, 3 Jan 2023 10:56:04 -0800 (PST)
+X-Google-Smtp-Source: AMrXdXt9CUGoWCTx0b5iGUXDK6JrEj0UiIeLWmGSbiZ8xO8TWGLgLAXRbzp7u5w7mfC0bpf1RanE
+X-Received: by 2002:a05:622a:4f:b0:3ab:b632:e64c with SMTP id y15-20020a05622a004f00b003abb632e64cmr17678107qtw.18.1672772164019;
+        Tue, 03 Jan 2023 10:56:04 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1672772164; cv=none;
+        d=google.com; s=arc-20160816;
+        b=FwocpEeoU7VkTvucyUMCiruurkFk+XmtRfDSIjn9b2UxzCYDciLphB4PLeu89W18sE
+         lfkmu4CH6TAjxnGablwwcV6XgNFbBfxR08Uxs51Ay+H92cZ3YGJXSTPIVqvxObj1o3CA
+         pl4qOt4HBrtqHdsgaWRSbboPocue1rwG+TC8AAa94dz6fGZXTou2EnGw2eLPvrd3a8xw
+         /fXPopZZg6lwQBatKem3v8qRVYVbNMj9tJj6mnUQkU/asPP8H0VzZ9HDyrhvEhVSqCCo
+         Vx626NQFjkNKGJNooASRevYaA02kbzRZArPsQ0ay7Td3hyf+mDwTpWg5qBqs7mhz/8vY
+         aReg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe-post:list-unsubscribe
+         :content-transfer-encoding:mime-version:subject:message-id:to:from
+         :date:dkim-signature:dkim-signature;
+        bh=VBhK96Q/frtlxw/iTIoGE/eta4aWmn8P3NhQCDwGw58=;
+        b=SMLglSyKELDbR2awdA0jwDyZdWnCBg7IHwskTnR6bGsz6UA2lxfoxQP3MioxwoXeAj
+         qT4bbTyaaV+rEFN9bXvs74F7T7F8loF/MJLJCYLAfCMprWCwOwiKMV5t9T5pzn0OFS/I
+         lkzEdZsmJjsKU+r5Zc4bqPuJDFbW4oHPNfOI526E7ujccZK2nPGF/Zvaai01uO95HV+7
+         dK5RFjywI6JP8B6hkLSZ/av/LPWQoqu28JP0MWblCz2tfrKnnT5q08IYfrX1eXmYC9yE
+         VNYCph5rzdgjdH8JvkYj+YmYAAhZU0q5JW0F7tC7tDKHDRWKRiGnThIGYSnbdXOn16ZP
+         snXQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@academia-mail.com header.s=4vua5mvwhuogm74j2yjeer7iai2cp5nr header.b="epUBz/V6";
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=dJF0PZHr;
+       spf=pass (google.com: domain of 0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com designates 54.240.48.203 as permitted sender) smtp.mailfrom=0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=academia-mail.com
+Return-Path: <0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com>
+Received: from a48-203.smtp-out.amazonses.com (a48-203.smtp-out.amazonses.com. [54.240.48.203])
+        by mx.google.com with ESMTPS id z11-20020a05622a124b00b00343582e11c7si16631451qtx.603.2023.01.03.10.56.03
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Tue, 03 Jan 2023 10:56:04 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com designates 54.240.48.203 as permitted sender) client-ip=54.240.48.203;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@academia-mail.com header.s=4vua5mvwhuogm74j2yjeer7iai2cp5nr header.b="epUBz/V6";
+       dkim=pass header.i=@amazonses.com header.s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw header.b=dJF0PZHr;
+       spf=pass (google.com: domain of 0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com designates 54.240.48.203 as permitted sender) smtp.mailfrom=0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@bounce.academia-mail.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=academia-mail.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=4vua5mvwhuogm74j2yjeer7iai2cp5nr; d=academia-mail.com;
+	t=1672772163;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post;
+	bh=wx3ZelvlzH+833O0Cr39WAuFFAa1rsuZVxlx7iBSns0=;
+	b=epUBz/V6kc4ZFx5hBiVMn+jsh5XuM1CsRGRHlS3D/i3eqmgfZGzRuVE4eZLckiCP
+	xqEz5XTB5Bnf2+4lWeFsErR9OiKrNV3SdhUaJBd5U/LujtybroeeuJPAr6EoKXzG1kj
+	08ekQTgmJ5GbASh0SqkZVSHNBmif6FRZf7Tlvlbk=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=6gbrjpgwjskckoa6a5zn6fwqkn67xbtw; d=amazonses.com; t=1672772163;
+	h=Date:From:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:List-Unsubscribe:List-Unsubscribe-Post:Feedback-ID;
+	bh=wx3ZelvlzH+833O0Cr39WAuFFAa1rsuZVxlx7iBSns0=;
+	b=dJF0PZHrUZuHa1rOWf4oqMOZKpP/Q0jwuv96AIdWjrS2d+mxLMaJ14plgEgaFfSB
+	KWDH3V++I5poluUIydP/W6lpE0IbCZBSra7KBqUDiDclYVGI8viIOXgf9M7bTV7XL6M
+	oZi8mqp9sFkfFNw16/cNntVgaukQcQRk2LlDWWuM=
+Date: Tue, 3 Jan 2023 18:56:03 +0000
+From: PDF By Ramata Tesfa <updates@academia-mail.com>
+To: ************************@gmail.com
+Message-ID: <0100018578fd975d-42fad3d0-4c60-4c20-bdb2-2af8e06f5608-000000@email.amazonses.com>
+Subject: =?UTF-8?Q?=F0=9F=93=84_=22Online_Dormitory_Reservation_System=22?=
+ =?UTF-8?Q?_by_Ramata_Tesfa?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_63b47a42b2988_11e627504477686";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+x-tracking-token: vNCdX-QPXJpKo-R5Uqv
+x-campaignid: upload_related_back_catalog_continue_reading
+List-Unsubscribe: <mailto:unsubscribe@academia-noreply.com?subject=ZFhRU1IrM091eVlJWU1MSnJ2TC9BQkV2NVcyZ2xvQmg3V3dSTWZ1cUppTUNiOThKTmh5TDZjWFdvTFZYU3kybW9MWGFNSmpaYlV5VXNxK3dHNjRpTHM0Y0Q2dmRRWWllc0xOMkN5SWxjN0dGYU9kTDBZeGZEekRlMUV0RDBidENiWTJlbElzQVJCVkhjWnFhd0lWTTk1Q2dJbklMRXAvNDVMRit4WlhoZ2p0VGhiNjVXUllxVHhBMTNHRHV3UVRuNTlrcWJNaFJGMXBwNml2N0g4ZDM1dz09LS01cWVZby9SaEJQZ1JzbW1mdFROL2pRPT0=--50d2ace010df66a433e7c3b33e596e893f2c0042>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Feedback-ID: 1.us-east-1.+D6yPXNQsonfrDMv/Fmi8P0+JMZ6ZUD6kklooEAhQUc=:AmazonSES
+X-SES-Outgoing: 2023.01.03-54.240.48.203
+
+
+----==_mimepart_63b47a42b2988_11e627504477686
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+From your Reading History:
+
+Online Dormitory Reservation System
+  by: RAMATA TESFA
+  view: https://www.academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ==--9658a5fb3576105a5e98c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/35766935/Online_Dormitory_Reservation_System
+
+
+-----
+
+Follow the link below to disable these notifications:
+
+https://academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ==--9658a5fb3576105a5e98c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/confirm_unsubscribe/continue_reading
+
+Academia.edu, 580 California St., Suite 400, San Francisco, CA, 94104
+
+----==_mimepart_63b47a42b2988_11e627504477686
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html xmlns=3D"http://www.w3.org/1999/xhtml" style=3D"min-height: 100%; b=
+ackground-color: #ddd;">=0D
+<head>=0D
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">=
+=0D
+<meta content=3D"width=3Ddevice-width" name=3D"viewport">=0D
+=0D
+<style type=3D"text/css" data-premailer=3D"ignore">@media only screen and=
+ (max-width: 480px){.research-interest{max-width:350px}.container-row{wid=
+th:450px !important}}@media only screen and (max-width: 350px){.container=
+-row{width:290px !important}.research-interest{max-width:200px}.work-card=
+-thumbnail-container{display:none}}=0D
+</style>=0D
+<style>.u-hover-bgColorAqua:hover {=0D
+background-color: cyan !important;=0D
+}=0D
+.u-hover-bgColorBlue:hover {=0D
+background-color: #0954D3 !important;=0D
+}=0D
+.u-hover-bgColorBlueLight:hover {=0D
+background-color: #99B1C4 !important;=0D
+}=0D
+.u-hover-bgColorBlueLighter:hover {=0D
+background-color: #c3d2dd !important;=0D
+}=0D
+.u-hover-bgColorBlueLightest:hover {=0D
+background-color: #eff3f6 !important;=0D
+}=0D
+.u-hover-bgColorGreen:hover {=0D
+background-color: #1A8A20 !important;=0D
+}=0D
+.u-hover-bgColorRed:hover {=0D
+background-color: #e83a30 !important;=0D
+}=0D
+.u-hover-bgColorOrange:hover {=0D
+background-color: #e86830 !important;=0D
+}=0D
+.u-hover-bgColorYellow:hover {=0D
+background-color: #e8b730 !important;=0D
+}=0D
+.u-hover-bgColorPurple:hover {=0D
+background-color: #8400bc !important;=0D
+}=0D
+.u-hover-bgColorWhite:hover {=0D
+background-color: #fff !important;=0D
+}=0D
+.u-hover-bgColorBlack:hover {=0D
+background-color: #000 !important;=0D
+}=0D
+.u-hover-bgColorGrayDarkest:hover {=0D
+background-color: #4b4b4b !important;=0D
+}=0D
+.u-hover-bgColorGrayDarker:hover {=0D
+background-color: #777 !important;=0D
+}=0D
+.u-hover-bgColorGrayDark:hover {=0D
+background-color: #999 !important;=0D
+}=0D
+.u-hover-bgColorGray:hover {=0D
+background-color: #ccc !important;=0D
+}=0D
+.u-hover-bgColorGrayLight:hover {=0D
+background-color: #ddd !important;=0D
+}=0D
+.u-hover-bgColorGrayLighter:hover {=0D
+background-color: #f1f1f1 !important;=0D
+}=0D
+.u-hover-bgColorGrayLightest:hover {=0D
+background-color: #f8f8f8 !important;=0D
+}=0D
+.u-hover-bgColorPremium:hover {=0D
+background-color: #f67e00 !important;=0D
+}=0D
+.u-hover-bgColorTransparent:hover {=0D
+background-color: transparent !important;=0D
+}=0D
+.u-hover-bgColorGoogleRed:hover {=0D
+background-color: #dc4b38 !important;=0D
+}=0D
+.u-hover-bgColorGoogle:hover {=0D
+background-color: #4285F4 !important;=0D
+}=0D
+.u-hover-bgColorGreenDiscount:hover {=0D
+background-color: #4BC012 !important;=0D
+}=0D
+.u-hover-bgColorGreenPremium:hover {=0D
+background-color: #4BC012 !important;=0D
+}=0D
+.u-hover-bgColorBlueStudent:hover {=0D
+background-color: #288AE2 !important;=0D
+}=0D
+.u-hover-bgColorReefGold:hover {=0D
+background-color: #AD9333 !important;=0D
+}=0D
+.u-hover-opacity0_5:hover {=0D
+opacity: .5 !important;=0D
+}=0D
+.u-hover-opacity1:hover {=0D
+opacity: 1 !important;=0D
+}=0D
+.u-onHover-tcAqua:hover {=0D
+color: cyan !important;=0D
+}=0D
+.u-onHover-tcBlue:hover {=0D
+color: #0954D3 !important;=0D
+}=0D
+.u-onHover-tcBlueLight:hover {=0D
+color: #99B1C4 !important;=0D
+}=0D
+.u-onHover-tcBlueLighter:hover {=0D
+color: #c3d2dd !important;=0D
+}=0D
+.u-onHover-tcBlueLightest:hover {=0D
+color: #eff3f6 !important;=0D
+}=0D
+.u-onHover-tcGreen:hover {=0D
+color: #1A8A20 !important;=0D
+}=0D
+.u-onHover-tcRed:hover {=0D
+color: #e83a30 !important;=0D
+}=0D
+.u-onHover-tcOrange:hover {=0D
+color: #e86830 !important;=0D
+}=0D
+.u-onHover-tcYellow:hover {=0D
+color: #e8b730 !important;=0D
+}=0D
+.u-onHover-tcPurple:hover {=0D
+color: #8400bc !important;=0D
+}=0D
+.u-onHover-tcWhite:hover {=0D
+color: #fff !important;=0D
+}=0D
+.u-onHover-tcBlack:hover {=0D
+color: #000 !important;=0D
+}=0D
+.u-onHover-tcGrayDarkest:hover {=0D
+color: #4b4b4b !important;=0D
+}=0D
+.u-onHover-tcGrayDarker:hover {=0D
+color: #777 !important;=0D
+}=0D
+.u-onHover-tcGrayDark:hover {=0D
+color: #999 !important;=0D
+}=0D
+.u-onHover-tcGray:hover {=0D
+color: #ccc !important;=0D
+}=0D
+.u-onHover-tcGrayLight:hover {=0D
+color: #ddd !important;=0D
+}=0D
+.u-onHover-tcGrayLighter:hover {=0D
+color: #f1f1f1 !important;=0D
+}=0D
+.u-onHover-tcGrayLightest:hover {=0D
+color: #f8f8f8 !important;=0D
+}=0D
+.u-onHover-tcPremium:hover {=0D
+color: #f67e00 !important;=0D
+}=0D
+.u-onHover-tcTransparent:hover {=0D
+color: transparent !important;=0D
+}=0D
+.u-onHover-tcGoogleRed:hover {=0D
+color: #dc4b38 !important;=0D
+}=0D
+.u-onHover-tcGoogle:hover {=0D
+color: #4285F4 !important;=0D
+}=0D
+.u-onHover-tcGreenDiscount:hover {=0D
+color: #4BC012 !important;=0D
+}=0D
+.u-onHover-tcGreenPremium:hover {=0D
+color: #4BC012 !important;=0D
+}=0D
+.u-onHover-tcBlueStudent:hover {=0D
+color: #288AE2 !important;=0D
+}=0D
+.u-onHover-tcReefGold:hover {=0D
+color: #AD9333 !important;=0D
+}=0D
+.u-textDecorationLink:hover {=0D
+text-decoration: underline !important; cursor: pointer;=0D
+}=0D
+.u-textDecorationNone:hover {=0D
+text-decoration: none !important;=0D
+}=0D
+.u-linkUnstyled:hover {=0D
+color: inherit; cursor: pointer;=0D
+}=0D
+.u-commaList>li:only-of-type:before {=0D
+content: ''; padding: 0;=0D
+}=0D
+.u-commaList>li:only-of-type:after {=0D
+content: ''; padding: 0;=0D
+}=0D
+.u-commaList>li:after {=0D
+content: ', '; padding-right: 0;=0D
+}=0D
+.u-commaList>li:last-child:after {=0D
+content: ''; clear: both;=0D
+}=0D
+.u-showOnFocus:focus {=0D
+position: static; width: auto; height: auto;=0D
+}=0D
+body {=0D
+width: 100% !important; min-width: 100%; -webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; margin: 0; padding: 0; box-sizing: border-box=
+;=0D
+}=0D
+.ExternalClass {=0D
+width: 100%;=0D
+}=0D
+.ExternalClass {=0D
+line-height: 100%;=0D
+}=0D
+#backgroundTable {=0D
+margin: 0; padding: 0; width: 100% !important; line-height: 100% !importa=
+nt;=0D
+}=0D
+img {=0D
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; wi=
+dth: auto; max-width: 100%; clear: both; display: block;=0D
+}=0D
+body {=0D
+color: #000; font-family: Helvetica,Arial,sans-serif; font-weight: normal=
+; padding: 0; margin: 0; text-align: left; line-height: 150%;=0D
+}=0D
+body {=0D
+font-size: 16px; line-height: 150%;=0D
+}=0D
+a:hover {=0D
+color: #166dba;=0D
+}=0D
+a:active {=0D
+color: #166dba;=0D
+}=0D
+a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h1 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h2 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h3 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h4 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h5 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+h6 a:visited {=0D
+color: #1E88E5;=0D
+}=0D
+table.button:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.tiny table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.small table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large:hover table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large:active table tr td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.large table tr td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button:hover table td {=0D
+background: #166dba; color: #fefefe;=0D
+}=0D
+table.button:visited table td {=0D
+background: #166dba; color: #fefefe;=0D
+}=0D
+table.button:active table td {=0D
+background: #166dba; color: #fefefe;=0D
+}=0D
+table.button:hover table a {=0D
+border: 0 solid #166dba;=0D
+}=0D
+table.button:visited table a {=0D
+border: 0 solid #166dba;=0D
+}=0D
+table.button:active table a {=0D
+border: 0 solid #166dba;=0D
+}=0D
+table.button.secondary:hover table td {=0D
+background: #919191; color: #fefefe;=0D
+}=0D
+table.button.secondary:hover table a {=0D
+border: 0 solid #919191;=0D
+}=0D
+table.button.secondary:hover table td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.secondary:active table td a {=0D
+color: #fefefe;=0D
+}=0D
+table.button.secondary table td a:visited {=0D
+color: #fefefe;=0D
+}=0D
+table.button.success:hover table td {=0D
+background: #39910e;=0D
+}=0D
+table.button.success:hover table a {=0D
+border: 0 solid #39910e;=0D
+}=0D
+table.button.alert:hover table td {=0D
+background: #e23317;=0D
+}=0D
+table.button.alert:hover table a {=0D
+border: 0 solid #e23317;=0D
+}=0D
+table.button.warning:hover table td {=0D
+background: #cc8b00;=0D
+}=0D
+table.button.warning:hover table a {=0D
+border: 0px solid #cc8b00;=0D
+}=0D
+.thumbnail:hover {=0D
+box-shadow: 0 0 6px 1px rgba(30,136,229,0.5);=0D
+}=0D
+.thumbnail:focus {=0D
+box-shadow: 0 0 6px 1px rgba(30,136,229,0.5);=0D
+}=0D
+body.outlook p {=0D
+display: inline !important;=0D
+}=0D
+@media only screen and (max-width: 624px) {=0D
+  .small-float-center {=0D
+    margin: 0 auto !important; float: none !important; text-align: center=
+ !important;=0D
+  }=0D
+  .small-text-center {=0D
+    text-align: center !important;=0D
+  }=0D
+  .small-text-left {=0D
+    text-align: left !important;=0D
+  }=0D
+  .small-text-right {=0D
+    text-align: right !important;=0D
+  }=0D
+  .hide-for-large {=0D
+    display: block !important; width: auto !important; overflow: visible =
+!important; max-height: none !important; font-size: inherit !important; l=
+ine-height: inherit !important;=0D
+  }=0D
+  table.body table.container .hide-for-large {=0D
+    display: table !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .row.hide-for-large {=0D
+    display: table !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .callout-inner.hide-for-large {=0D
+    display: table-cell !important; width: 100% !important;=0D
+  }=0D
+  table.body table.container .show-for-large {=0D
+    display: none !important; width: 0; mso-hide: all; overflow: hidden;=0D=
+
+  }=0D
+  table.body img {=0D
+    width: auto; height: auto;=0D
+  }=0D
+  table.body center {=0D
+    min-width: 0 !important;=0D
+  }=0D
+  table.body .container {=0D
+    width: 95% !important;=0D
+  }=0D
+  table.body .columns {=0D
+    height: auto !important; box-sizing: border-box; padding-left: 24px !=
+important; padding-right: 24px !important;=0D
+  }=0D
+  table.body .column {=0D
+    height: auto !important; box-sizing: border-box; padding-left: 24px !=
+important; padding-right: 24px !important;=0D
+  }=0D
+  table.body .columns .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .columns .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .column .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .column .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .collapse .columns {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.body .collapse .column {=0D
+    padding-left: 0 !important; padding-right: 0 !important;=0D
+  }=0D
+  td.small-1 {=0D
+    display: inline-block !important; width: 8.33333% !important;=0D
+  }=0D
+  th.small-1 {=0D
+    display: inline-block !important; width: 8.33333% !important;=0D
+  }=0D
+  td.small-2 {=0D
+    display: inline-block !important; width: 16.66667% !important;=0D
+  }=0D
+  th.small-2 {=0D
+    display: inline-block !important; width: 16.66667% !important;=0D
+  }=0D
+  td.small-3 {=0D
+    display: inline-block !important; width: 25% !important;=0D
+  }=0D
+  th.small-3 {=0D
+    display: inline-block !important; width: 25% !important;=0D
+  }=0D
+  td.small-4 {=0D
+    display: inline-block !important; width: 33.33333% !important;=0D
+  }=0D
+  th.small-4 {=0D
+    display: inline-block !important; width: 33.33333% !important;=0D
+  }=0D
+  td.small-5 {=0D
+    display: inline-block !important; width: 41.66667% !important;=0D
+  }=0D
+  th.small-5 {=0D
+    display: inline-block !important; width: 41.66667% !important;=0D
+  }=0D
+  td.small-6 {=0D
+    display: inline-block !important; width: 50% !important;=0D
+  }=0D
+  th.small-6 {=0D
+    display: inline-block !important; width: 50% !important;=0D
+  }=0D
+  td.small-7 {=0D
+    display: inline-block !important; width: 58.33333% !important;=0D
+  }=0D
+  th.small-7 {=0D
+    display: inline-block !important; width: 58.33333% !important;=0D
+  }=0D
+  td.small-8 {=0D
+    display: inline-block !important; width: 66.66667% !important;=0D
+  }=0D
+  th.small-8 {=0D
+    display: inline-block !important; width: 66.66667% !important;=0D
+  }=0D
+  td.small-9 {=0D
+    display: inline-block !important; width: 75% !important;=0D
+  }=0D
+  th.small-9 {=0D
+    display: inline-block !important; width: 75% !important;=0D
+  }=0D
+  td.small-10 {=0D
+    display: inline-block !important; width: 83.33333% !important;=0D
+  }=0D
+  th.small-10 {=0D
+    display: inline-block !important; width: 83.33333% !important;=0D
+  }=0D
+  td.small-11 {=0D
+    display: inline-block !important; width: 91.66667% !important;=0D
+  }=0D
+  th.small-11 {=0D
+    display: inline-block !important; width: 91.66667% !important;=0D
+  }=0D
+  td.small-12 {=0D
+    display: inline-block !important; width: 100% !important;=0D
+  }=0D
+  th.small-12 {=0D
+    display: inline-block !important; width: 100% !important;=0D
+  }=0D
+  .columns td.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .column td.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .columns th.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  .column th.small-12 {=0D
+    display: block !important; width: 100% !important;=0D
+  }=0D
+  table.body td.small-offset-1 {=0D
+    margin-left: 8.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-1 {=0D
+    margin-left: 8.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-2 {=0D
+    margin-left: 16.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-2 {=0D
+    margin-left: 16.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-3 {=0D
+    margin-left: 25% !important;=0D
+  }=0D
+  table.body th.small-offset-3 {=0D
+    margin-left: 25% !important;=0D
+  }=0D
+  table.body td.small-offset-4 {=0D
+    margin-left: 33.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-4 {=0D
+    margin-left: 33.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-5 {=0D
+    margin-left: 41.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-5 {=0D
+    margin-left: 41.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-6 {=0D
+    margin-left: 50% !important;=0D
+  }=0D
+  table.body th.small-offset-6 {=0D
+    margin-left: 50% !important;=0D
+  }=0D
+  table.body td.small-offset-7 {=0D
+    margin-left: 58.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-7 {=0D
+    margin-left: 58.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-8 {=0D
+    margin-left: 66.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-8 {=0D
+    margin-left: 66.66667% !important;=0D
+  }=0D
+  table.body td.small-offset-9 {=0D
+    margin-left: 75% !important;=0D
+  }=0D
+  table.body th.small-offset-9 {=0D
+    margin-left: 75% !important;=0D
+  }=0D
+  table.body td.small-offset-10 {=0D
+    margin-left: 83.33333% !important;=0D
+  }=0D
+  table.body th.small-offset-10 {=0D
+    margin-left: 83.33333% !important;=0D
+  }=0D
+  table.body td.small-offset-11 {=0D
+    margin-left: 91.66667% !important;=0D
+  }=0D
+  table.body th.small-offset-11 {=0D
+    margin-left: 91.66667% !important;=0D
+  }=0D
+  table.body table.columns td.expander {=0D
+    display: none !important;=0D
+  }=0D
+  table.body table.columns th.expander {=0D
+    display: none !important;=0D
+  }=0D
+  table.body .right-text-pad {=0D
+    padding-left: 10px !important;=0D
+  }=0D
+  table.body .text-pad-right {=0D
+    padding-left: 10px !important;=0D
+  }=0D
+  table.body .left-text-pad {=0D
+    padding-right: 10px !important;=0D
+  }=0D
+  table.body .text-pad-left {=0D
+    padding-right: 10px !important;=0D
+  }=0D
+  table.menu {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.menu td {=0D
+    width: auto !important; display: inline-block !important;=0D
+  }=0D
+  table.menu th {=0D
+    width: auto !important; display: inline-block !important;=0D
+  }=0D
+  table.menu.vertical td {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.vertical th {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.small-vertical td {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu.small-vertical th {=0D
+    display: block !important;=0D
+  }=0D
+  table.menu[align=3D"center"] {=0D
+    width: auto !important;=0D
+  }=0D
+  table.button.small-expand {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.button.small-expanded {=0D
+    width: 100% !important;=0D
+  }=0D
+  table.button.small-expand table {=0D
+    width: 100%;=0D
+  }=0D
+  table.button.small-expanded table {=0D
+    width: 100%;=0D
+  }=0D
+  table.button.small-expand table a {=0D
+    text-align: center !important; width: 100% !important; padding-left: =
+0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.button.small-expanded table a {=0D
+    text-align: center !important; width: 100% !important; padding-left: =
+0 !important; padding-right: 0 !important;=0D
+  }=0D
+  table.button.small-expand center {=0D
+    min-width: 0;=0D
+  }=0D
+  table.button.small-expanded center {=0D
+    min-width: 0;=0D
+  }=0D
+  .hide-for-large-fix-2-2-2 {=0D
+    display: block !important; width: auto !important; overflow: visible =
+!important; max-height: none !important; font-size: inherit !important; l=
+ine-height: inherit !important;=0D
+  }=0D
+  .fs32-lineHeight1_2-on-small {=0D
+    font-size: 32px !important; line-height: 1.2 !important;=0D
+  }=0D
+}=0D
+</style>=0D
+</head>=0D
+<body style=3D"width: 100% !important; min-width: 100%; -webkit-text-size=
+-adjust: 100%; -ms-text-size-adjust: 100%; box-sizing: border-box; color:=
+ #000; font-family: Helvetica,Arial,sans-serif; font-weight: normal; text=
+-align: left; line-height: 150%; font-size: 16px; margin: 0; padding: 0;"=
+>=0D
+<img border=3D"0" height=3D"1" src=3D"https://www.academia.edu/t/vNCdX-QP=
+XJpKo-R5Uqv/images/clear.gif" width=3D"1" style=3D"outline: none; text-de=
+coration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: =
+100%; clear: both; display: block;"><table class=3D"body" data-made-with-=
+foundation=3D"" style=3D"background-color: white; border-spacing: 0; bord=
+er-collapse: collapse; vertical-align: top; text-align: left; height: 100=
+%; width: 100%; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; font-size: 16px; margin: 0; padding:=
+ 0;"><tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td=
+ align=3D"center" class=3D"center" valign=3D"top" style=3D"word-wrap: bre=
+ak-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens: none; border-=
+collapse: collapse !important; vertical-align: top; text-align: left; col=
+or: #000; font-family: Helvetica,Arial,sans-serif; font-weight: normal; l=
+ine-height: 150%; font-size: 16px; word-break: break-word; margin: 0; pad=
+ding: 0;"><center style=3D"width: 100%; min-width: 600px;">=0D
+<container class=3D"container--header" style=3D"background-color: transpa=
+rent !important;"><row><columns style=3D"padding-bottom: 0px;"><center st=
+yle=3D"max-width: 600px; width: 100%; min-width: 600px;"></center></colum=
+ns></row><row><columns style=3D"padding-bottom: 0px;"><center data-parsed=
+=3D"" style=3D"width: 100%; min-width: 600px;"><table class=3D"button--no=
+Border" style=3D"border-spacing: 0; border-collapse: collapse; vertical-a=
+lign: top; text-align: left; width: auto; margin: 0px; padding: 0;"><tr s=
+tyle=3D"vertical-align: top; text-align: left; padding: 0;"><td style=3D"=
+word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens:=
+ none; border-collapse: collapse !important; vertical-align: top; text-al=
+ign: left; color: #000; font-family: Helvetica,Arial,sans-serif; font-wei=
+ght: normal; line-height: 150%; font-size: 16px; word-break: break-word; =
+margin: 0; padding: 0;"><table style=3D"border-spacing: 0; border-collaps=
+e: collapse; vertical-align: top; text-align: left; padding: 0;"><tr styl=
+e=3D"vertical-align: top; text-align: left; padding: 0;"><td style=3D"bac=
+kground-color: inherit; word-wrap: break-word; -webkit-hyphens: none; -ms=
+-hyphens: none; hyphens: none; border-collapse: collapse !important; vert=
+ical-align: top; text-align: center; color: #fefefe; font-family: Helveti=
+ca,Arial,sans-serif; font-weight: normal; line-height: 150%; font-size: 1=
+6px; word-break: break-word; margin: 0; padding: 0; border: none;"><a sty=
+le=3D"color: #fefefe; font-family: Helvetica,Arial,sans-serif; font-weigh=
+t: bold; text-align: center; line-height: 150%; text-decoration: none; fo=
+nt-size: 16px; display: inline-block; border-radius: 3px; margin: 0; padd=
+ing: 0px; border: none;" title=3D"Academia.edu" href=3D"https://www.acade=
+mia.edu/t/vNCdX-QPXJpKo-R5Uqv/"><img alt=3D"Academia.edu" style=3D"max-wi=
+dth: 265px; width: auto; height: auto; outline: none; text-decoration: no=
+ne; -ms-interpolation-mode: bicubic; clear: both; display: block; border:=
+ none;" src=3D"http://a.academia-assets.com/images/emails/inky/Academia.L=
+ogo.Shadow.png"></a></td></tr></table></td></tr></table></center></column=
+s></row></container><table style=3D"width: 100%; max-width: 600px; border=
+-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: =
+left; padding: 0;"><tr style=3D"vertical-align: top; text-align: left; pa=
+dding: 0;">=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;"></td>=0D
+<td style=3D"width: 600px; word-wrap: break-word; -webkit-hyphens: none; =
+-ms-hyphens: none; hyphens: none; border-collapse: collapse !important; v=
+ertical-align: top; text-align: left; color: #000; font-family: Helvetica=
+,Arial,sans-serif; font-weight: normal; line-height: 150%; font-size: 16p=
+x; word-break: break-word; margin: 0; padding: 0;"><center style=3D"width=
+: 100%; min-width: 600px;">=0D
+<table style=3D"border-spacing: 0; border-collapse: collapse; vertical-al=
+ign: top; text-align: left; padding: 0;">=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td clas=
+s=3D"container-row u-ph1x" style=3D"word-wrap: break-word; -webkit-hyphen=
+s: none; -ms-hyphens: none; hyphens: none; border-collapse: collapse !imp=
+ortant; vertical-align: top; text-align: left; color: #000; font-family: =
+Helvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; font-=
+size: 16px; word-break: break-word; margin: 0; padding: 0 4px;"><hr style=
+=3D"margin: 0px; border: 1px solid #ddd;"></td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td clas=
+s=3D"container-row u-ph1x" style=3D"word-wrap: break-word; -webkit-hyphen=
+s: none; -ms-hyphens: none; hyphens: none; border-collapse: collapse !imp=
+ortant; vertical-align: top; text-align: left; color: #000; font-family: =
+Helvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; font-=
+size: 16px; word-break: break-word; margin: 0; padding: 0 4px;">=0D
+<br><p class=3D"u-mb9x" style=3D"color: #000; font-family: Helvetica,Aria=
+l,sans-serif; font-weight: normal; text-align: left; line-height: 150%; f=
+ont-size: 16px; margin: 0 0 36px; padding: 0;">From your Reading History:=
+</p>=0D
+</td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td clas=
+s=3D"container-row u-ph1x" style=3D"word-wrap: break-word; -webkit-hyphen=
+s: none; -ms-hyphens: none; hyphens: none; border-collapse: collapse !imp=
+ortant; vertical-align: top; text-align: left; color: #000; font-family: =
+Helvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; font-=
+size: 16px; word-break: break-word; margin: 0; padding: 0 4px;">=0D
+=0D
+<table class=3D"box u-borderBottom1 u-borderColorGrayDark" style=3D"width=
+: 100%; background-color: #FCFCFC; border-spacing: 0; border-collapse: se=
+parate; vertical-align: top; text-align: left; border-radius: 20px; overf=
+low: hidden; margin-bottom: 24px; padding: 0; border: 1px solid #999;"><t=
+r style=3D"vertical-align: top; text-align: left; padding: 0;"><td class=3D=
+"paper-top" style=3D"width: 100%; word-wrap: break-word; -webkit-hyphens:=
+ none; -ms-hyphens: none; hyphens: none; border-collapse: collapse !impor=
+tant; vertical-align: top; text-align: left; color: #000; font-family: He=
+lvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; font-si=
+ze: 16px; word-break: break-word; margin: 0; padding: 24px;">=0D
+<table style=3D"width: 100%; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0;">=0D
+<tr style=3D"width: 100%; vertical-align: top; text-align: left; padding:=
+ 0;"><td class=3D"work-card-title-container" colspan=3D"2" style=3D"word-=
+wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens: none=
+; border-collapse: collapse !important; vertical-align: top; text-align: =
+left; color: #000; font-family: Helvetica,Arial,sans-serif; font-weight: =
+normal; line-height: 150%; font-size: 16px; word-break: break-word; overf=
+low: hidden; text-overflow: ellipsis; text-decoration: underline; margin:=
+ 0; padding: 0;"><a class=3D"work-card-title" href=3D"https://www.academi=
+a.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0=
+tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e98c7dcc773c8=
+18187de8be/t/vNCdX-QPXJpKo-R5Uqv/resource/work/35766935/Online_Dormitory_=
+Reservation_System?email_work_card=3Dtitle" style=3D"color: #333; font-fa=
+mily: Georgia, Times, 'Times New Roman', serif; font-weight: normal; text=
+-align: left; line-height: 1.3em; text-decoration: none; display: block; =
+font-size: 24px; margin: 0 0 10px; padding: 0;">Online Dormitory Reservat=
+ion System</a></td></tr>=0D
+<tr style=3D"width: 100%; vertical-align: top; text-align: left; padding:=
+ 0;">=0D
+<td class=3D"work-card-thumbnail-container" style=3D"max-height: 165px; w=
+ord-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens: =
+none; border-collapse: collapse !important; vertical-align: middle; text-=
+align: center; color: #000; font-family: Helvetica,Arial,sans-serif; font=
+-weight: normal; line-height: 150%; font-size: 16px; word-break: break-wo=
+rd; box-shadow: none; max-width: 100%; margin: 0; padding: 0 36px 0 0;"><=
+a class=3D"work-card-thumbnail-anchor" href=3D"https://www.academia.edu/k=
+eypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0=
+tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e98c7dcc773c818187de=
+8be/t/vNCdX-QPXJpKo-R5Uqv/resource/work/35766935/Online_Dormitory_Reserva=
+tion_System?email_work_card=3Dthumbnail" style=3D"color: #1E88E5; font-fa=
+mily: Helvetica,Arial,sans-serif; font-weight: normal; text-align: left; =
+line-height: 150%; text-decoration: none; margin: 0; padding: 0;"><img wi=
+dth=3D"220" class=3D"work-card-thumbnail-image" alt=3D"Paper Thumbnail" s=
+rc=3D"https://0.academia-photos.com/attachment_thumbnails/55643484/mini_m=
+agick20190114-9343-osbdie.png?1547466997" style=3D"outline: none; text-de=
+coration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: =
+100%; clear: both; display: block; min-width: 180px; max-height: 285px; b=
+order: 2px solid #e1e1e1;"></a></td>=0D
+<td class=3D"work-card-info-container" style=3D"word-wrap: break-word; -w=
+ebkit-hyphens: none; -ms-hyphens: none; hyphens: none; border-collapse: c=
+ollapse !important; vertical-align: top; text-align: left; color: #000; f=
+ont-family: Helvetica,Arial,sans-serif; font-weight: normal; line-height:=
+ 150%; font-size: 16px; word-break: break-word; margin: 0; padding: 0;"><=
+table style=3D"border-spacing: 0; border-collapse: collapse; vertical-ali=
+gn: top; text-align: left; padding: 0;">=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td styl=
+e=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyp=
+hens: none; border-collapse: collapse !important; vertical-align: top; te=
+xt-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; font-size: 16px; word-break: break-w=
+ord; margin: 0; padding: 0;"><a class=3D"work-card-author" href=3D"https:=
+//ju-et.academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEz=
+VG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105=
+a5e98c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/RamataTesfa" style=3D"col=
+or: #000000; font-family: Helvetica; font-weight: normal; text-align: lef=
+t; line-height: 28px; text-decoration: none; font-size: 15px; letter-spac=
+ing: 0.4px; margin: 0; padding: 0;"><img class=3D"work-card-profile-pic" =
+width=3D"28" height=3D"28" alt=3D"Author Photo" border=3D"0" src=3D"https=
+://0.academia-photos.com/75475874/23677230/22710654/s65_ramata.tesfa.jpg"=
+ style=3D"outline: none; text-decoration: none; -ms-interpolation-mode: b=
+icubic; width: auto; max-width: 100%; clear: both; display: inline; verti=
+cal-align: middle; height: 24px; border-radius: 50%; font-family: Helveti=
+ca; font-weight: bold; letter-spacing: 0.4px; color: #000000; border: non=
+e;">=C2=A0Ramata Tesfa</a></td></tr>=0D
+<tr style=3D"min-height: 20px; vertical-align: top; text-align: left; pad=
+ding: 0;"><td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-=
+hyphens: none; hyphens: none; border-collapse: collapse !important; verti=
+cal-align: top; text-align: left; color: #000; font-family: Helvetica,Ari=
+al,sans-serif; font-weight: normal; line-height: 150%; font-size: 16px; w=
+ord-break: break-word; margin: 0; padding: 0;"><div class=3D"stat-num-ema=
+il-stats u-mb3x u-mt2x" style=3D"margin-top: 8px !important; margin-botto=
+m: 12px !important; font-size: 13px; overflow: hidden; margin-right: 4px;=
+ font-family: 'Helvetica Neue', sans-serif; line-height: 15px; color: #77=
+7777;">904=C2=A0Views=C2=A0</div></td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td styl=
+e=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyp=
+hens: none; border-collapse: collapse !important; vertical-align: top; te=
+xt-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; font-size: 16px; word-break: break-w=
+ord; margin: 0; padding: 0;"><table style=3D"border-spacing: 0; border-co=
+llapse: collapse; vertical-align: top; text-align: left; padding: 0;"><tr=
+ style=3D"vertical-align: top; text-align: left; padding: 0;">=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;">=0D
+=0D
+<!--[if gte mso 9]><td width=3D"170"><table width=3D"170"><tr><td bgcolor=
+=3D"#0954D3" style=3D"height: 52px; width: 170px; text-align: center; bor=
+der: 2px solid #0954D3"><table style=3D"width: 100%; height: 100%"><tr><t=
+d align=3D"center"><a href=3D"https://www.academia.edu/keypass/aEVXbHB3Tm=
+J2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJ=
+Ma0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e98c7dcc773c818187de8be/t/vNCdX-QPXJp=
+Ko-R5Uqv/resource/work/35766935/Online_Dormitory_Reservation_System?email=
+_work_card=3Dview-paper" style=3D"color: #fff; text-decoration: none; fon=
+t-size: 16px; font-weight: 600;">View PDF =E2=96=B8</a></td></tr></table>=
+</td></tr></table></td><![endif]--><!--[if !gte mso 9]-->=0D
+</td>=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;"><a class=3D"button" href=3D"https://=
+www.academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4w=
+WUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e9=
+8c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/resource/work/35766935/Online=
+_Dormitory_Reservation_System?email_work_card=3Dview-paper" style=3D"colo=
+r: #fff; background-color: #0954D3; width: 100%; min-width: 150px; font-f=
+amily: Helvetica,Arial,sans-serif; font-weight: 600; text-align: center; =
+line-height: 150%; text-decoration: none; justify-content: center; align-=
+items: center; align-self: center; box-sizing: border-box; font-size: 16p=
+x; display: block; margin: 0; padding: 12px 0; border: 2px solid #0954d3;=
+">View PDF =E2=96=B8</a></td>=0D
+<!--[endif]--><td style=3D"width: 16px; word-wrap: break-word; -webkit-hy=
+phens: none; -ms-hyphens: none; hyphens: none; border-collapse: collapse =
+!important; vertical-align: top; text-align: left; color: #000; font-fami=
+ly: Helvetica,Arial,sans-serif; font-weight: normal; line-height: 150%; f=
+ont-size: 16px; word-break: break-word; margin: 0; padding: 0;" width=3D"=
+16"><span>=C2=A0</span></td>=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;">=0D
+=0D
+<!--[if gte mso 9]><td width=3D"170"><table width=3D"170"><tr><td bgcolor=
+=3D"#fff" style=3D"height: 52px; width: 170px; text-align: center; border=
+: 2px solid #0954D3"><table style=3D"width: 100%; height: 100%"><tr><td a=
+lign=3D"center"><a href=3D"https://www.academia.edu/keypass/aEVXbHB3TmJ2U=
+UZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0=
+x0ZWc9PQ=3D=3D--9658a5fb3576105a5e98c7dcc773c818187de8be/t/vNCdX-QPXJpKo-=
+R5Uqv/resource/work/35766935/Online_Dormitory_Reservation_System?auto=3Dd=
+ownload&amp;email_work_card=3Ddownload-paper" style=3D"color: #0954D3; te=
+xt-decoration: none; font-size: 16px; font-weight: 600;">Download PDF =E2=
+=AC=87</a></td></tr></table></td></tr></table></td><![endif]--><!--[if !g=
+te mso 9]-->=0D
+</td>=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;"><a class=3D"button" href=3D"https://=
+www.academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4w=
+WUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e9=
+8c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/resource/work/35766935/Online=
+_Dormitory_Reservation_System?auto=3Ddownload&amp;email_work_card=3Ddownl=
+oad-paper" style=3D"color: #0954D3; background-color: #fff; width: 100%; =
+min-width: 150px; font-family: Helvetica,Arial,sans-serif; font-weight: 6=
+00; text-align: center; line-height: 150%; text-decoration: none; justify=
+-content: center; align-items: center; align-self: center; box-sizing: bo=
+rder-box; font-size: 16px; display: block; margin: 0; padding: 12px 0; bo=
+rder: 2px solid #0954d3;">Download PDF =E2=AC=87</a></td>=0D
+<!--[endif]-->=0D
+</tr></table></td></tr>=0D
+</table></td>=0D
+</tr>=0D
+</table>=0D
+<br><br><table style=3D"width: 100%; border-spacing: 0; border-collapse: =
+collapse; vertical-align: top; text-align: left; padding: 0;">=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td clas=
+s=3D"work-card-abstract-title u-pb3x" style=3D"word-wrap: break-word; -we=
+bkit-hyphens: none; -ms-hyphens: none; hyphens: none; border-collapse: co=
+llapse !important; vertical-align: top; text-align: left; color: #0954d3;=
+ font-family: 'Helvetica Neue', sans-serif; font-weight: 700; line-height=
+: 1em; font-size: 11px; word-break: break-word; display: block; letter-sp=
+acing: 0.7px; text-transform: uppercase; margin: 0; padding: 0 0 12px;">A=
+BSTRACT</td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td clas=
+s=3D"work-card-summary u-pt1x" style=3D"word-wrap: break-word; -webkit-hy=
+phens: none; -ms-hyphens: none; hyphens: none; border-collapse: collapse =
+!important; vertical-align: top; text-align: left; color: #333; font-fami=
+ly: 'Helvetica Neue', sans-serif; font-weight: normal; line-height: 1.4em=
+; font-size: 15px; word-break: break-word; max-height: 88px; overflow: hi=
+dden; text-overflow: ellipsis; margin: 0; padding: 4px 0 0;">Follow this =
+and additional works at: http://opus.govst.edu/capstones Part of the Data=
+bases and Information Systems Commons, and the Systems Architecture Commo=
+ns For more information about the academic degree, extended learning, and=
+ certificate programs of Governors State University, go to</td></tr>=0D
+</table>=0D
+</td></tr></table>=0D
+</td></tr>=0D
+</table>=0D
+<table class=3D"u-mt1x" style=3D"width: 100%; margin-top: 4px !important;=
+ border-spacing: 0; border-collapse: collapse; vertical-align: top; text-=
+align: left; padding: 0;"><tr style=3D"vertical-align: top; text-align: l=
+eft; padding: 0;"><td height=3D"24px" style=3D"word-wrap: break-word; -we=
+bkit-hyphens: none; -ms-hyphens: none; hyphens: none; border-collapse: co=
+llapse !important; vertical-align: top; text-align: left; color: #000; fo=
+nt-family: Helvetica,Arial,sans-serif; font-weight: normal; line-height: =
+150%; font-size: 16px; word-break: break-word; margin: 0; padding: 0;"><a=
+ href=3D"https://www.academia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR=
+6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--96=
+58a5fb3576105a5e98c7dcc773c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/?related_wor=
+k=3D35766935&amp;show_related_work_survey=3Dtrue&amp;source_work=3D357669=
+35" style=3D"color: #1E88E5; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; text-align: left; line-height: 150%; text-decoration: n=
+one; margin: 0; padding: 0;"><center class=3D"u-fs18" style=3D"font-size:=
+ 18px !important; width: 100%; min-width: 600px;">Want fewer recommendati=
+ons like this one?</center></a></td></tr></table>=0D
+<table style=3D"width: 100%; border-spacing: 0; border-collapse: collapse=
+; vertical-align: top; text-align: left; padding: 0;">=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td heig=
+ht=3D"32px" style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hy=
+phens: none; hyphens: none; border-collapse: collapse !important; vertica=
+l-align: top; text-align: left; color: #000; font-family: Helvetica,Arial=
+,sans-serif; font-weight: normal; line-height: 150%; font-size: 16px; wor=
+d-break: break-word; margin: 0; padding: 0;"></td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td styl=
+e=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyp=
+hens: none; border-collapse: collapse !important; vertical-align: top; te=
+xt-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; font-size: 16px; word-break: break-w=
+ord; margin: 0; padding: 0;"><hr style=3D"margin: 0px; border: 1px solid =
+#ddd;"></td></tr>=0D
+<tr style=3D"vertical-align: top; text-align: left; padding: 0;"><td styl=
+e=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyp=
+hens: none; border-collapse: collapse !important; vertical-align: top; te=
+xt-align: left; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; font-size: 16px; word-break: break-w=
+ord; margin: 0; padding: 0;">=0D
+<br><center style=3D"width: 100%; min-width: 600px;">=0D
+<a href=3D"https://academia.page.link?amv=3D42013&amp;apn=3Dcom.academia.=
+academia&amp;efr=3D1&amp;ibi=3Dedu.academia.academia&amp;isi=3D1385234213=
+&amp;link=3Dhttps%3A%2F%2Fwww.academia.edu%2Fkeypass%2FaEVXbHB3TmJ2UUZHeG=
+RYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc=
+9PQ%3D%3D--9658a5fb3576105a5e98c7dcc773c818187de8be%2Ft%2FvNCdX-QPXJpKo-R=
+5Uqv%2F%3Fmedium%3Demail%26source%3Dupload_related&amp;ofl=3Dhttps%3A%2F%=
+2Fwww.academia.edu%2Ft%2FvNCdX-QPXJpKo-R5Uqv%2Finstall_app%3Fplatform%3Di=
+os&amp;utm_medium=3Demail&amp;utm_source=3Dupload_related" style=3D"color=
+: #1E88E5; font-family: Helvetica,Arial,sans-serif; font-weight: normal; =
+text-align: left; line-height: 150%; text-decoration: none; margin: 0; pa=
+dding: 0;"><img style=3D"width: 120px; display: inline-block; outline: no=
+ne; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 10=
+0%; clear: both; border: none;" src=3D"http://a.academia-assets.com/image=
+s/emails/inky/app-store-badge@2x.jpg">=C2=A0=C2=A0</a><a href=3D"https://=
+academia.page.link?amv=3D42013&amp;apn=3Dcom.academia.academia&amp;efr=3D=
+1&amp;ibi=3Dedu.academia.academia&amp;isi=3D1385234213&amp;link=3Dhttps%3=
+A%2F%2Fwww.academia.edu%2Fkeypass%2FaEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNM=
+is4VHEzVG4wWUkxN1JPdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ%3D%3D--9658a5fb=
+3576105a5e98c7dcc773c818187de8be%2Ft%2FvNCdX-QPXJpKo-R5Uqv%2F%3Fmedium%3D=
+email%26source%3Dupload_related&amp;ofl=3Dhttps%3A%2F%2Fwww.academia.edu%=
+2Ft%2FvNCdX-QPXJpKo-R5Uqv%2Finstall_app%3Fplatform%3Dandroid&amp;utm_medi=
+um=3Demail&amp;utm_source=3Dupload_related" style=3D"color: #1E88E5; font=
+-family: Helvetica,Arial,sans-serif; font-weight: normal; text-align: lef=
+t; line-height: 150%; text-decoration: none; margin: 0; padding: 0;"><img=
+ style=3D"width: 134px; display: inline-block; outline: none; text-decora=
+tion: none; -ms-interpolation-mode: bicubic; max-width: 100%; clear: both=
+; border: none;" src=3D"http://a.academia-assets.com/images/emails/inky/p=
+lay-store-badge.png"></a>=0D
+</center>=0D
+</td></tr>=0D
+</table>=0D
+</center></td>=0D
+<td style=3D"word-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: n=
+one; hyphens: none; border-collapse: collapse !important; vertical-align:=
+ top; text-align: left; color: #000; font-family: Helvetica,Arial,sans-se=
+rif; font-weight: normal; line-height: 150%; font-size: 16px; word-break:=
+ break-word; margin: 0; padding: 0;"></td>=0D
+</tr></table>=0D
+<spacer size=3D"40"></spacer><table class=3D"container--footer" style=3D"=
+background-color: transparent !important; border-spacing: 0; border-colla=
+pse: collapse; vertical-align: top; text-align: left; padding: 0;"><tr st=
+yle=3D"vertical-align: top; text-align: left; padding: 0;"><td style=3D"w=
+ord-wrap: break-word; -webkit-hyphens: none; -ms-hyphens: none; hyphens: =
+none; border-collapse: collapse !important; vertical-align: top; text-ali=
+gn: left; color: #000; font-family: Helvetica,Arial,sans-serif; font-weig=
+ht: normal; line-height: 150%; font-size: 16px; word-break: break-word; m=
+argin: 0; padding: 0;">=0D
+<br><p class=3D"text-center u-fs11 u-tcGrayDark" style=3D"font-size: 11px=
+ !important; color: #999 !important; text-align: center; font-family: Hel=
+vetica,Arial,sans-serif; font-weight: normal; line-height: 150%; margin: =
+0 0 10px; padding: 0;"><a style=3D"color: #999; font-family: Helvetica,Ar=
+ial,sans-serif; font-weight: normal; text-align: left; line-height: 150%;=
+ text-decoration: none; margin: 0; padding: 0;">580 California St., Suite=
+ 400, San Francisco, CA, 94104</a></p>=0D
+<p class=3D"text-center u-fs11" style=3D"font-size: 11px !important; text=
+-align: center; color: #000; font-family: Helvetica,Arial,sans-serif; fon=
+t-weight: normal; line-height: 150%; margin: 0 0 10px; padding: 0;"><a cl=
+ass=3D"u-linkUnstyled u-tcGrayDark" target=3D"_blank" href=3D"https://aca=
+demia.edu/keypass/aEVXbHB3TmJ2UUZHeGRYOTMrV2NYRDR6MzlNMis4VHEzVG4wWUkxN1J=
+Pdz0tLXVuN0tFT1dzL0p3UmJ4UUJMa0x0ZWc9PQ=3D=3D--9658a5fb3576105a5e98c7dcc7=
+73c818187de8be/t/vNCdX-QPXJpKo-R5Uqv/confirm_unsubscribe/continue_reading=
+" style=3D"color: #999 !important; font-family: Helvetica,Arial,sans-seri=
+f; font-weight: normal; text-align: left; line-height: 150%; text-decorat=
+ion: none; margin: 0; padding: 0;">Unsubscribe</a>=C2=A0=C2=A0 <a class=3D=
+"u-linkUnstyled u-tcGrayDark" href=3D"https://www.academia.edu/t/vNCdX-QP=
+XJpKo-R5Uqv/privacy" target=3D"_blank" style=3D"color: #999 !important; f=
+ont-family: Helvetica,Arial,sans-serif; font-weight: normal; text-align: =
+left; line-height: 150%; text-decoration: none; margin: 0; padding: 0;">P=
+rivacy=C2=A0Policy</a>=C2=A0=C2=A0 <a class=3D"u-linkUnstyled u-tcGrayDar=
+k" href=3D"https://www.academia.edu/t/vNCdX-QPXJpKo-R5Uqv/terms" target=3D=
+"_blank" style=3D"color: #999 !important; font-family: Helvetica,Arial,sa=
+ns-serif; font-weight: normal; text-align: left; line-height: 150%; text-=
+decoration: none; margin: 0; padding: 0;">Terms=C2=A0of=C2=A0Service</a>=C2=
+=A0=C2=A0 </p>=0D
+<p class=3D"text-center u-tcGrayDark u-fs11" style=3D"font-size: 11px !im=
+portant; color: #999 !important; text-align: center; font-family: Helveti=
+ca,Arial,sans-serif; font-weight: normal; line-height: 150%; margin: 0 0 =
+10px; padding: 0;"><span>=C2=A9=C2=A02023=C2=A0Academia</span></p>=0D
+</td></tr></table>=0D
+</center></td></tr></table>=0D
+<div style=3D"display: none; white-space: nowrap; font: 15px courier;"> =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0=
+ =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=
+=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0 =C2=A0</div>=0D
+</body>=0D
+</html>=0D
+
+----==_mimepart_63b47a42b2988_11e627504477686--

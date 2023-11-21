@@ -1,0 +1,246 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:1984:b0:51c:3591:c489 with SMTP id i4csp1645675maz;
+        Sun, 8 Oct 2023 18:28:19 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF0Jcn6hN2EWce03xaP6uHSCArvCsCdlrZoGUkj/D+2a72ZM86eTXxdXxn/dI3ONqY6eBMF
+X-Received: by 2002:a05:622a:256:b0:412:2dac:acb9 with SMTP id c22-20020a05622a025600b004122dacacb9mr17556607qtx.8.1696814899087;
+        Sun, 08 Oct 2023 18:28:19 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1696814899; cv=none;
+        d=google.com; s=arc-20160816;
+        b=DVjdrclOIazw1POZ5MlYPEuJ84lZEpu04Jiyhz3skRVbq2IFC+VgOotx1hBx/IbhSF
+         Ricopg9XjI87qTIQjwvpuVE5o5K9uTy8OB/wc/hVsDMbLK7izc1gcE9MwKFFXJjob/Yg
+         Q66izmBoDJAcUFpmEbTrFkITnoxd16VAqU7va/Ba8eMKAFbXouiyfZXfkRDP/5zizg2h
+         mtLaBdx1CR9eHI70GPDDahRA2EgxSnPxOHOZWm4WiZJE71FdIl1UtwNaqPOg4IbH0KoS
+         5ZH/WHxi9149tK6l9Su68H16KsbxDdD3AyLdGNLRpPThAFL60XcvNf1CpWsmlz+TenQ/
+         TK5A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=mbYtivQoFkMTvW3fp9kEjZJXIZumaoBV7LiiIw3AbCM=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=FFpVtFXa35h0zAI/f8deQJkAgzuQmYQV6XvCcqMVMv6mfB9OZFYajU9w1LahFNa3FN
+         pCfchnIBT6TJ1YUmJQeTMwA6OdqyZ+H/RGb8lpL0fWuRG2tX7habvvw5knkaDP5LWgFO
+         6Az3V/yS4AF3zjIC85L0gK7XD1tBHaovWClQIDa7KUnhqRvwUMZkzCWQBiYKE+61Muut
+         FY6Fa0IPBloEiNyTeDBm9rOUfYrsv+JJExH/TaQ3iB7+MOiSYwozzNU7WR9NMPyi8gDS
+         FI1FFpbMb4zeN7pej+ce6RAqR00iDzCflwA3pNlXF2F/4INjCQ4UbRmy1QuJJ9qdK9Jo
+         NAHg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@account.tiktok.com header.s=s1 header.b=GSihG2vy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="jSw/M6kg";
+       spf=pass (google.com: domain of bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com designates 167.89.14.4 as permitted sender) smtp.mailfrom="bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tiktok.com
+Return-Path: <bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com>
+Received: from o2.ptr4323.i.account.tiktok.com (o2.ptr4323.i.account.tiktok.com. [167.89.14.4])
+        by mx.google.com with ESMTPS id y16-20020a05622a165000b004178c9cf90csi5770215qtj.21.2023.10.08.18.28.18
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 08 Oct 2023 18:28:19 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com designates 167.89.14.4 as permitted sender) client-ip=167.89.14.4;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@account.tiktok.com header.s=s1 header.b=GSihG2vy;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="jSw/M6kg";
+       spf=pass (google.com: domain of bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com designates 167.89.14.4 as permitted sender) smtp.mailfrom="bounces+15212870-9d1f-************************=gmail.com@em8618.account.tiktok.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=tiktok.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=account.tiktok.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=mbYtivQoFkMTvW3fp9kEjZJXIZumaoBV7LiiIw3AbCM=;
+	b=GSihG2vyckk9VTHtqPYEAj6+u5KoDjRdrVmN83L3yIq1pgbiy1zg6h53o9EnglJLKdtC
+	n2FoHvsP2cYAkEqZFfAryk+CTxheJhmzLc2HesXsJGkDi2nXMVkqZ3XWkA1i0hrV2g72VD
+	0y+/RdDp5BOvE91I5sCv92uU8VofjoZPu1870swm4KwtyuUHlXuROo+tphPbs50fBWwGmd
+	xTTNHJJfTusYEmMyTuQG6/yQMFNxTAjlgJ7sIkQlXBfQnXV1F3G2dIDReZPd2lNEhFRJXn
+	gQZ4b1W5PsnGJogQJMUJjuB3wJM9unEqfTSav8PjtYguxr2Z1deP5imHsTuM7xSQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=mbYtivQoFkMTvW3fp9kEjZJXIZumaoBV7LiiIw3AbCM=;
+	b=jSw/M6kgnkyC3dl4B2RJgjOyuwK4qhWo+vyJipe2oetXyD6lohMNvXeljwQ/VxDDZ5GI
+	ZS8LKXSX+t8Py1bpTGDmGPAaIbZNhiZ4Efw9CumedsL9hRuFQTqwUVXR/AJRlVlz3IKGBe
+	Z5N7kRAL0leG1s53FC/dvQ25PjUkHApp8=
+Received: by filterdrecv-6689567c4c-6fnbz with SMTP id filterdrecv-6689567c4c-6fnbz-1-65235732-15
+        2023-10-09 01:28:18.397282917 +0000 UTC m=+273989.098621315
+Received: from MTUyMTI4NzA (unknown)
+	by geopod-ismtpd-8 (SG) with HTTP
+	id yIGsFvPJTqSIyeVQgEcwmw
+	Mon, 09 Oct 2023 01:28:18.379 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=us-ascii
+Date: Mon, 09 Oct 2023 01:28:18 +0000 (UTC)
+From: TikTok <noreply@account.tiktok.com>
+Mime-Version: 1.0
+Message-ID: <8804f015-9991-4d9a-9c71-dd8a52eec006.noreply@account.tiktok.com>
+Subject: New device login detected
+X-AliDM-Trace: eyJPcGVuVHJhY2UiOiIxIiwiVGFnTmFtZSI6Im9wZW50YWcifQ==
+X-Feedback-ID: 15212870:SG
+X-SG-EID: 
+ =?us-ascii?Q?OQZlAId=2FfieHuE5DHatTsltYPwi=2FYK85UVwC38UsxyodH4=2FIzIzD9j7gOocwvN?=
+ =?us-ascii?Q?Xuek4iRdWV4Jo3s6GeSdKcjmN2bZQIW=2FQmDJfrz?=
+ =?us-ascii?Q?KnTnYMo0lCkKhftwlKJ07wxqwQp3lmW27vDghZx?=
+ =?us-ascii?Q?ESJ64daCyKJmvLku6PTuQqUazBnEs1au5r4qZvO?=
+ =?us-ascii?Q?t0pN=2FWOnvbCveL5ZeuLlPDy1fmbD3C0BqoNA7uE?=
+ =?us-ascii?Q?RgPwnB=2FzVFUHhawdER55G+27Ogzs+CtGyakmH7T?=
+ =?us-ascii?Q?neG9+yjvmx0B6aPcafPMg=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FLIsZE3Bx8VMn=2FlXkoHWN?=
+ =?us-ascii?Q?093yrDseFo+EHFtJTkyvZxVyX9U4s+T2uv4in28?=
+ =?us-ascii?Q?QA50H0cc1I1WDC94n8tT4xWYUSRjMh91IqY8xEw?=
+ =?us-ascii?Q?XTReMOrkPN3cVE2Y4+TR6GQb5au0pETszsGZgsE?=
+ =?us-ascii?Q?FgYO4hCZOkTGn923nCV1r01BjE4pC9JplUPUJgG?=
+ =?us-ascii?Q?DPdo586wjoSd3Ig8E=3D?=
+To: ************************@gmail.com
+X-Entity-ID: /iZ+76rxFgdu7mfOm3BSYQ==
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:o=3D"urn:sch=
+emas-microsoft-com:office:office">
+<head>
+  <meta charset=3D"utf-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1=
+">
+  <meta name=3D"x-apple-disable-message-reformatting">
+  <title>New device log in detected</title>
+  <style>
+    @font-face {
+      font-family: 'ProximaNova-Regular';
+      src: url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxim=
+a-Nova-Regular.woff2?awe_falcon=3Dsh') format('woff2'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Regular.woff?awe_falcon=3Dsh') format('woff'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Regular.otf?awe_falcon=3Dsh') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'ProximaNova-SemiBold';
+      src: url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxim=
+a-Nova-Semibold.woff2?awe_falcon=3Dsh') format('woff2'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Semibold.woff?awe_falcon=3Dsh') format('woff'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Semibold.otf?awe_falcon=3Dsh') format('opentype');
+    }
+
+    @font-face {
+      font-family: 'ProximaNova-Bold';
+      src: url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxim=
+a-Nova-Bold.woff2?awe_falcon=3Dsh') format('woff2'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Bold.woff?awe_falcon=3Dsh') format('woff'),
+          url('https://s16.tiktokcdn.com/tiktok/falcon/tiktok_fonts/Proxima=
+-Nova-Bold.otf?awe_falcon=3Dsh') format('opentype');
+    }
+    div {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body style=3D"margin:0;padding:0;word-spacing:normal;background-color:#fff=
+fff; width: 100%; height: 100%;max-width: 800px;margin-left: auto;margin-ri=
+ght: auto;">
+  <div style=3D"width: 100%; background: #ffffff; font-family: 'ProximaNova=
+-Regular';">
+    <!-- title -->
+    <!-- logo -->
+    <div style=3D"padding: 40px 0 0 32px;">
+      <img src=3D"https://sf16-va.tiktokcdn.com/obj/eden-va2/lbfnuvsps/tikt=
+ok_icon.png" alt=3D"icon" style=3D"width: 150px; height: 40px;" >
+    </div>
+    <!-- main -->
+    <div style=3D"padding: 26px 21px 0 19px;  max-width: 800px; border-radi=
+us: 2px;">
+      <div style=3D"background: rgba(22, 24, 35, 0.1); border-radius: 2px 2=
+px 0px 0px;">
+        <div style=3D"padding: 17px  16px 16px 16px; line-height: 24px; fon=
+t-size: 20px; font-weight: bold; font-family: 'ProximaNova-Bold';">Hi erica=
+kes,</div>
+      </div>
+      <div style=3D"background: rgba(22, 24, 35, 0.03); padding: 24px 16px"=
+>
+        <div style=3D"color: rgba(22, 24, 35, 0.75); padding-bottom: 24px; =
+line-height: 20px; font-size: 17px; font-family: 'ProximaNova-Regular'; whi=
+te-space: pre-line; ">We&#39;re writing to inform you that we detected a lo=
+gin to your account from a new device.</div>
+        <div style=3D"color: #87888d; line-height: 20px; font-size: 17px; f=
+ont-family: 'ProximaNova-Regular'; white-space: pre-line; ">When:</div>
+        <div style=3D"color: rgba(22, 24, 35, 0.75); padding-bottom: 24px; =
+line-height: 20px; font-size: 17px; font-family: 'ProximaNova-Regular'; whi=
+te-space: pre-line; ">10/09 09:28 PST</div>
+        <div style=3D"color: #87888d; line-height: 20px; font-size: 17px; f=
+ont-family: 'ProximaNova-Regular'; white-space: pre-line; ">Device:</div>
+        <div style=3D"color: rgba(22, 24, 35, 0.75); padding-bottom: 24px; =
+line-height: 20px; font-size: 17px; font-family: 'ProximaNova-Regular'; whi=
+te-space: pre-line; ">iPhone 12</div>
+        <div style=3D"color: #87888d; line-height: 20px; font-size: 17px; f=
+ont-family: 'ProximaNova-Regular'; white-space: pre-line; ">Near:</div>
+        <div style=3D"font-size: 17px; line-height: 20px; color: rgba(22, 2=
+4, 35, 0.75); ">Central Luzon</div>
+      </div>
+    </div>
+    <!-- footer -->
+    <div style=3D"padding: 40px 32px 0; max-width:752px; color: rgba(22, 24=
+, 35, 0.5); font-size: 15px;">If this was you, you can ignore this message.=
+</div>
+    <!-- click here  -->
+    <div style=3D"padding: 20px 32px; max-width:752px; color: rgba(22, 24, =
+35, 0.5); font-size: 15px;">If this wasn&#39;t you, open the TikTok app and=
+ go to &#34;Settings and privacy&#34; &gt; &#34;Security and login&#34; &gt=
+; &#34;Security alerts&#34; and review unauthorized logins. If you&#39;re u=
+nable to access your account, <a href=3D"https://www.tiktok.com/legal/repor=
+t/feedback" style=3D"text-decoration: none;" target=3D"_blank"><span style=
+=3D"color: rgba(22, 24, 35, 0.5); font-weight: bold; font-family: 'ProximaN=
+ova-Bold'; ">contact TikTok support.</span></a></div>
+    <!-- divide -->
+    <div style=3D"height: 0.5px; max-width: 800px; background-color: rgba(0=
+, 0, 0, 0.12); margin: 0 20px;"></div>
+
+    <div style=3D"padding: 20px 32px 0; max-width:752px; color: rgba(22, 24=
+, 35, 0.5); font-size: 15px; line-height: 18px; font-family: 'ProximaNova-R=
+egular';">
+      <div>You can also set up 2-step verification to secure your account b=
+y going to &#34;Security and login&#34; &gt; &#34;2-step verification&#34;.=
+</div>
+      <!--  -->
+      <a href=3D"https://support.tiktok.com/en/safety-hc/account-and-user-s=
+afety/account-safety" style=3D"text-decoration: none;" target=3D"_blank"><s=
+pan style=3D"color: #fe2c55; font-weight: bold; font-family: 'ProximaNova-B=
+old'; ">Learn more about 2-step verification</span></a>
+    </div>
+
+    <div style=3D"padding: 20px 32px; max-width:752px; color: rgba(22, 24, =
+35, 0.5); font-size: 15px; line-height: 18px; font-family: 'ProximaNova-Reg=
+ular';">
+      <div>This is an automatically generated email.</div>
+      <div>Replies to this email address aren&#39;t monitored.</div>
+    </div>
+
+    <!-- divide -->
+    <div style=3D"height: 0.5px; max-width: 800px; background-color: rgba(0=
+, 0, 0, 0.12); margin: 0 20px;"></div>
+
+    <div style=3D"padding: 20px 32px 40px; max-width:752px; color: rgba(22,=
+ 24, 35, 0.5); font-size: 12px; line-height: 18px; font-family: 'ProximaNov=
+a-Regular';">
+      <p style=3D"margin: 0 0; padding: 0 0;">This email was generated for =
+ericakes</p>
+      <p style=3D"margin: 0 0; padding: 0 0; text-decoration:underline;"><a=
+ href=3D"https://www.tiktok.com/legal/privacy-policy" target=3D"_blank" sty=
+le=3D"text-decoration-color: rgba(22, 24, 35, 0.5);"><span style=3D"color: =
+rgba(22, 24, 35, 0.5);">Privacy Policy</span></a></p>
+      <p style=3D"margin: 0 0; padding: 0 0;">TikTok 5800 Bristol Pkwy, Cul=
+ver City, CA 90230</p>
+    </div>
+  </div>
+<img src=3D"http://url7709.account.tiktok.com/wf/open?upn=3DOCb5GCKOynI-2B6=
+ls2dHdEIrtmsrG0mfd9P3xmxYEcK4gLlne7HdRNYn4s6CIux8sI9-2BctuEaokn5Lu-2FPeRQQY=
+-2BdodSjZvSBcJcnk8KRXnt5nBO7YzPidDzt6-2Bg1MDFPk20FCuv-2FjPVAkCzZhDWJN-2FdYV=
+74UvcFkgXyahvhGdDBJ4W-2Bb-2BuLeuPFGoAXl5xTAA3g7O5sxMuRFttuovqV-2FK9a6fLKmKi=
+43p8gjsJsb4SwOz0RLiPFjIiYtcZezSVXTIBA4BweY4RniQpWUPDlVhr1UUOaLn-2FJyuNdaIk1=
+Uo2OJjtzawJvCNmBZcikKTPgcsiNmmDV4LFOwJbQIABpZ9pzYsGtzubyBZGV8Ip0RroJ8Xye8LV=
+Q2rYyF7WzMEKnv3qLALj0QLGePn0VkuWRhUfOfGYAeUELsQvMUo6SltKHf4-3D" alt=3D"" wi=
+dth=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important;width:1p=
+x !important;border-width:0 !important;margin-top:0 !important;margin-botto=
+m:0 !important;margin-right:0 !important;margin-left:0 !important;padding-t=
+op:0 !important;padding-bottom:0 !important;padding-right:0 !important;padd=
+ing-left:0 !important;"/></body>
+</html>

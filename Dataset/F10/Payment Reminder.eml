@@ -1,0 +1,85 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:9b48:b0:51c:3591:c489 with SMTP id b8csp781170max;
+        Thu, 12 Oct 2023 11:55:46 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IE2qB5PmA9Jn5jTIJypTEl10JxKQGsVEDz8KAzkrcpOm94nkjLAokW3KP+eSTOoTuUkHvNo
+X-Received: by 2002:a05:6512:3050:b0:503:653:5711 with SMTP id b16-20020a056512305000b0050306535711mr24237643lfb.9.1697136946237;
+        Thu, 12 Oct 2023 11:55:46 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697136946; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Zau3GL4nYDNQlu9fTHPlJDsUWWhQK6lMJkLKqWIjjo6se4YQdSn617KFLiIh95yTal
+         mfadWi2BXjFVhbGMH7Fb402cn15GLuJFFNnUJiXYCABtGpydtYCjy1VcItOkezzbbyRm
+         DPOj5subXj5vYdqqhPaU8CcRhtr3SiJxCGd9ed0O3+4Svmgvo2Yv5UEZNEIs2cpvRpKz
+         mhdpHFpa2NHl/Lnj1k6bo+Y52oxlLvWOZHONSdPsfqmZ8j8i+GSRop2ixYAj688QM5E8
+         PS8nezJ5hiADq0n9LcEXauc+LsozS8q1TwUmillfFpUE683cvJzzw6Og3ZgMwqStVOYt
+         9yjA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:dkim-signature:dkim-signature;
+        bh=5wVDACo+dM5m9q44h++kodr1WKhHk/XWt4tvi0dV1JA=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=atRncer9qqG9jl/Jx85zAaH5i1YwmsMtzAxin6bgcR98dk0JjsMrFV97QB1E0E4YNN
+         y3Vf4vaeakRQgXqbK8iXFz3uIgrA7uQCZJuI7cDMHfWClrpJblYelKlQNKjpGT7OY2U+
+         PdkIZSleUA/jzX8iqmwDVB1QGKTrbs9mTtDhQ6Jto2Z0f+EGtH4z5td9/dwsmDIIdCqh
+         +OcG5mnZCLzDJT1sHeL/vHFk37fcjg75iS+bNONEsvFhN0Vt9Fz3SuxA997YxG88m4fM
+         nLPSKxN1+FUtTOxhn3RY39DkHrKGUTFPvoweH9FPqm3BvE6IENVUznowxdspeQHOUg91
+         pe2g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@payment.convergeict.com header.s=s1 header.b=U9cqiO2r;
+       dkim=pass header.i=@eu.mailgun.org header.s=krs2 header.b=pjOMeedm;
+       spf=pass (google.com: domain of bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com designates 161.38.205.74 as permitted sender) smtp.mailfrom="bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com"
+Return-Path: <bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com>
+Received: from m205-74.eu.mailgun.net (m205-74.eu.mailgun.net. [161.38.205.74])
+        by mx.google.com with UTF8SMTPS id a22-20020a19f816000000b004fe1e956084si10750210lff.322.2023.10.12.11.55.45
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 12 Oct 2023 11:55:46 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com designates 161.38.205.74 as permitted sender) client-ip=161.38.205.74;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@payment.convergeict.com header.s=s1 header.b=U9cqiO2r;
+       dkim=pass header.i=@eu.mailgun.org header.s=krs2 header.b=pjOMeedm;
+       spf=pass (google.com: domain of bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com designates 161.38.205.74 as permitted sender) smtp.mailfrom="bounce+08b1ba.b1be6-************************=gmail.com@payment.convergeict.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=payment.convergeict.com; q=dns/txt; s=s1; t=1697136945; x=1697144145;
+ h=Content-Type: Content-Transfer-Encoding: Message-Id: To: To: From: From:
+ Subject: Subject: Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=5wVDACo+dM5m9q44h++kodr1WKhHk/XWt4tvi0dV1JA=;
+ b=U9cqiO2rLnq7pdV7cqkzry8OhI8yZIVIkdtfXOnw/wqXcDDySD1PoX2E9kX2tL1AY8i+Vl5CY9wMDeQhva96hvSNSuVQ8CGlekFY8pZdEJZIFWpDIzkt+L42T2EN0MyESTpzafQIVC8gLI1Qj0oux+qchuUHbKhmL1eN+fdhIK8=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=eu.mailgun.org;
+ q=dns/txt; s=krs2; t=1697136945; x=1697144145; h=Content-Type:
+ Content-Transfer-Encoding: Message-Id: To: To: From: From: Subject: Subject:
+ Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=5wVDACo+dM5m9q44h++kodr1WKhHk/XWt4tvi0dV1JA=;
+ b=pjOMeedm2vhln4imr33PNYZqRNjGeqHumuYLvjWmlusSfG4qHlcBmGEyyOpBA77xfo8kIZNRjdqqrgVtE2F1vEU4MAOIIG8zR35ESAcMFfE5xI74+JLASY6rQrSc4rlTKYJ3N9QYzJxMt+yiy2ZkdIGZb1ebNkVjpm/BspRG5eM=
+X-Feedback-Id: postmaster@payment.convergeict.com::6369c99099686970a47c5777:mailgun
+X-Mailgun-Sending-Ip: 161.38.205.74
+X-Mailgun-Sid: WyJlODk5NCIsImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb20iLCJiMWJlNiJd
+Received: from <unknown> (<unknown> []) by d5c0bbd6747d with HTTP id
+ 652841310c2c0179e29caba1; Thu, 12 Oct 2023 18:55:45 GMT
+Sender: bssnotification=convergeict.com@payment.convergeict.com
+Date: Thu, 12 Oct 2023 18:55:45 +0000
+Mime-Version: 1.0
+Subject: Payment Reminder
+From: bssnotification@convergeict.com
+To: ************************@gmail.com
+Message-Id: <20231012185545.44cac375e307631d@payment.convergeict.com>
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html; charset=ascii
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <title>Statement of Account</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   </head>
+   <body bgcolor="#FFFFFF">
+      <p>This is a reminder of your balance. </p>
+  <br></br>
+   <p>Account Number: 1680000284031 
+   <br>Your total amount due is: P 1,625.00 
+  </br>Due Date: October 20,2023.</p>
+  <p>For same day posting of payment, you may pay thru  <a href="https://gofiber.ph.">gofiber.ph </a>or the GoFiber app and via Gcash. </br>You may also pay thru our payment partners found on 
+  <a href="https://www.convergeict.com/support/i-want-to-pay/">https://www.convergeict.com/support/i-want-to-pay/</a></p><br></br>
+  <p>Please disregard if bill has been settled or you  are not the recipient of this message.</p><br></br>
+  <p>Thank You.</p>
+   </body>
+</html>

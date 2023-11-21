@@ -1,0 +1,215 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:9ad2:b0:49c:7724:452d with SMTP id m18csp481511maw;
+        Wed, 5 Apr 2023 11:01:32 -0700 (PDT)
+X-Google-Smtp-Source: AKy350b9KO/AjXliQzqLociW2rgHcM0EY+fheQyvfRUhS4G/MUPW222naH3YTuwHsJHgbgrjuXSi
+X-Received: by 2002:a17:902:ea11:b0:1a0:70e5:280a with SMTP id s17-20020a170902ea1100b001a070e5280amr7779205plg.60.1680717692663;
+        Wed, 05 Apr 2023 11:01:32 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1680717692; cv=none;
+        d=google.com; s=arc-20160816;
+        b=x+11W58LptwGwdjcKgWPT85cJduafZEWm0OvKmo2b/Drwxh41T/elniiwP0t0Pvc0d
+         c+vvC5w5QLfr4JAcEG2jRuKoNT3ufRSKUSdx5IBjnf589Ab2zFrVkG7IH3riTmlel4lS
+         NmA4DveI/B6HXvHIkYbVVISGRuZK3IqCQBi6MN2Nr6d5rN/ORidTOlglSFnsFY1epHHJ
+         yuSuSgMxyuTR7PefBmOlQrG9aBRkpSqNUKVyQNrv/DZ1JturuuXD5cXoJZjzqdhQyvs2
+         sSK3EpCGXGrzoKgtOMnoPMoqcXRgdAuST0yXImOeJbDvmrRkpuXMCBDFpyvjrfSMhGwQ
+         mi+A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=dkim-signature:auto-submitted:content-transfer-encoding
+         :mime-version:subject:in-reply-to:message-id:to:reply-to:from:date;
+        bh=ELX07bU0ndaEti8MCMXQCLG4ijG4i+WzBjDOkLnkGyA=;
+        b=LOj+B/vuKt3sYnmkS+bjeANVX0XFp9hQGzDubjzlsZs+qHGiDWpD7IfEIbCLHWbY8F
+         IZLw5FQhZqK/OxJ+4k5o/aSKH0wJjHujJqBP3djOYYqmexg2AcyzKKuw+6xoDQ9ZLQ3N
+         CCXepRlnVPjGDJYu41aN8vIYHO5Ig3xjdJZy+te8p+AItAXbmsH3DZ+CcbXYQg5+jy93
+         sELQ5+5snegIpKkoApx1tNf/g+3XUw8BYyIh1K1KroOUs/YHRKU961v7W1Zps8VBIGK0
+         jdavOHttAIC4tKq/asGIkDvdTG+zx4UTk1hVvd71ulFUFFwmQ+xNBFHFM1b//gpkaQ7i
+         Qm0Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@zendesk.com header.s=zendesk2 header.b=fYreeNgc;
+       spf=pass (google.com: domain of support@joyridesuperapp.zendesk.com designates 103.151.192.1 as permitted sender) smtp.mailfrom=support@joyridesuperapp.zendesk.com
+Return-Path: <support@joyridesuperapp.zendesk.com>
+Received: from outbyoip1.pod25.apne1.zdsys.com (outbyoip1.pod25.apne1.zdsys.com. [103.151.192.1])
+        by mx.google.com with ESMTPS id x6-20020a634a06000000b00508c9686f50si12817181pga.225.2023.04.05.11.01.32
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 05 Apr 2023 11:01:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of support@joyridesuperapp.zendesk.com designates 103.151.192.1 as permitted sender) client-ip=103.151.192.1;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@zendesk.com header.s=zendesk2 header.b=fYreeNgc;
+       spf=pass (google.com: domain of support@joyridesuperapp.zendesk.com designates 103.151.192.1 as permitted sender) smtp.mailfrom=support@joyridesuperapp.zendesk.com
+Received: from zendesk.com (unknown [10.221.179.95])
+	by outbyoip1.pod25.apne1.zdsys.com (Postfix) with ESMTP id 4PsCB327Kkz14K2m
+	for <************************@gmail.com>; Wed,  5 Apr 2023 18:01:31 +0000 (UTC)
+Date: Wed, 05 Apr 2023 18:01:31 +0000
+From: JoyRide Superapp <help@joyride.com.ph>
+Reply-To: JoyRide Superapp <help@joyride.com.ph>
+To: ************************ <************************@gmail.com>
+Message-ID: <W7G703DKP7D_642db77abe2e3_403f20120789_sprut@zendesk.com>
+In-Reply-To: <W7G703DKP7D@zendesk.com>
+ <W7G703DKP7D_642717583f2d9_4e4a8827038c_sprut@zendesk.com>
+Subject: JoyRide Superapp Notification [462586] Order ID 12303314701148799
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_642db77b28d49_403f20120812";
+ charset=utf-8
+Content-Transfer-Encoding: 7bit
+X-Delivery-Context: event-id-17255112034585
+Auto-Submitted: auto-generated
+X-Auto-Response-Suppress: All
+X-Mailer: Zendesk Mailer
+X-Zendesk-From-Account-Id: 827e77a
+X-Zendesk-Email-Id: 01GX999DYBT0DMY75D8YZQZANZ
+DKIM-Signature:  v=1; a=rsa-sha256; c=relaxed/relaxed; d=zendesk.com;
+ q=dns/txt; s=zendesk2; t=1680717691;
+ bh=ELX07bU0ndaEti8MCMXQCLG4ijG4i+WzBjDOkLnkGyA=;
+ h=date:from:reply-to:to:message-id:in-reply-to:subject:mime-version:content-type:content-transfer-encoding;
+ b=fYreeNgc6sGrJ7/AOedBcxqzAeGAFuxUanzbEpdC5P+8ift5IG3Vtntol3zg8O9QEmt+SaQ8WOPT10pXNMuTCWgDg2fKPGAa3a69hXegn+to5WFflUiEi+i1ci/VEA1yDMEx9Ksgk5nS83dWJFyglnLot3dKKROhfuCtGye64E9zyrxwM57nZXPzaczscGtx5+1C5Hq708AnlUPGHE6qOFVko0+3UCZrkmz/xbbLROLqtn0nHYcPOkWSc64AbO4m3a5UB8skJNsuRb3mB/VK8QL3IbvmEdl8jZC/W9ntFUiymy0zQ3BFzFVR8fF9Drx3czV+9n0BVpoF+cBQXOMl1A==
+
+
+----==_mimepart_642db77b28d49_403f20120812
+Content-Type: text/plain;
+ charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi ************************,
+
+This is an automated notification from JoyRide Support. =
+
+
+As we have not heard from you in 72 hours regarding ticket 462586, we hav=
+e marked this as resolved. =
+
+
+We will close the ticket, but if you still have concerns, please feel fre=
+e to reopen this anytime by replying to this message. =
+
+
+In case you forgot, here is what your ticket was about:
+
+[462586] Order ID 12303314701148799
+
+----------------------------------------------
+
+Liezel SJ., Apr 1, 2023, 1:24 AM GMT+8
+
+Dear Erica Joy Cavaneyro,
+
+Good day!
+
+Our team has been trying to reach you, but your line seems busy.
+
+This is regarding your booking with order ID 12303314701148799, under Bik=
+er Mark John Navarro.
+
+May we know when it is best to call you?
+
+We'll wait for your response. Thank you.
+
+Regards,
+
+Liezel | Customer Service
+JoyRide Superapp
+
+--------------------------------
+This email is a service from JoyRide Superapp.
+
+
+
+
+
+
+
+
+
+[W7G703-DKP7D]=
+
+----==_mimepart_642db77b28d49_403f20120812
+Content-Type: text/html;
+ charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html><head>
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+  <style type=3D"text/css">
+    table td {
+      border-collapse: collapse;
+    }
+    body[dir=3Drtl] .directional_text_wrapper { direction: rtl; unicode-b=
+idi: embed; }
+
+  </style>
+
+          <style type=3D"text/css">
+            @media only screen and (max-width: 768px) {
+              .simplified-email-footer .namecard {
+                display: block;
+                min-width: 100%;
+                padding: 0 0 16px 0; }
+
+              .simplified-email-footer .content {
+                padding: 16px; }
+            }
+          </style>
+        </head>
+<body lang=3D"en-us" style=3D"width: 100%!important; margin: 0; padding: =
+0;">
+  <div style=3D"padding: 10px; line-height: 1.5; font-family: 'Lucida Gra=
+nde',Verdana,Arial,sans-serif; font-size: 12px; color:#444444;">
+    <p dir=3D"ltr">Hi ************************,</p><p dir=3D"ltr">This is=
+ an automated notification from JoyRide Support. </p><p dir=3D"ltr">As we=
+ have not heard from you in 72 hours regarding ticket 462586, we have mar=
+ked this as resolved. </p><p dir=3D"ltr">We will close the ticket, but if=
+ you still have concerns, please feel free to reopen this anytime by repl=
+ying to this message. </p><p dir=3D"ltr">In case you forgot, here is what=
+ your ticket was about:</p><p dir=3D"ltr">[462586] Order ID 1230331470114=
+8799</p><p dir=3D"ltr"></p><div style=3D"margin-top: 25px" data-version=3D=
+"2"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" role=3D"presentation">  <tbody><tr>    <td width=3D"100%" style=3D"padd=
+ing: 15px 0; border-top: 1px dotted #c5c5c5;">      <table width=3D"100%"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" style=3D"table-layout:f=
+ixed;" role=3D"presentation">        <tbody><tr>                      <td=
+ valign=3D"top" style=3D"padding: 0 15px 0 15px; width: 40px;">          =
+    <img width=3D"40" height=3D"40" alt=3D"" style=3D"height: auto; line-=
+height: 100%; outline: none; text-decoration: none; -webkit-border-radius=
+: 5px; -moz-border-radius: 5px; border-radius: 5px;" src=3D"https://joyri=
+desuperapp.zendesk.com/system/photos/9101677192473/profile_image_84369840=
+40857_13357102.png">            </td>                    <td width=3D"100=
+%" style=3D"padding: 0; margin: 0;" valign=3D"top">            <p style=3D=
+"font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,=
+Tahoma,sans-serif; font-size: 15px; line-height: 18px; margin-bottom: 0; =
+margin-top: 0; padding: 0; color:#1b1d1e;" dir=3D"ltr">                  =
+                              <strong>Liezel SJ.</strong> (JoyRide Supera=
+pp)                                          </p>            <p style=3D"=
+font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,T=
+ahoma,sans-serif; font-size: 13px; line-height: 25px; margin-bottom: 15px=
+; margin-top: 0; padding: 0; color:#bbbbbb;" dir=3D"ltr">              Ap=
+r 1, 2023, 1:24 AM GMT+8            </p>                                 =
+   <div class=3D"zd-comment" dir=3D"auto" style=3D"color: #2b2e2f; line-h=
+eight: 22px; margin: 15px 0">Dear Erica Joy Cavaneyro,<br>&nbsp;<br>Good =
+day!<br>&nbsp;<br>Our team has been trying to reach you, but your line se=
+ems busy.<br>&nbsp;<br>This is regarding your booking with order ID 12303=
+314701148799, under Biker Mark John Navarro.<br>&nbsp;<br>May we know whe=
+n it is best to call you?<br>&nbsp;<br>We'll wait for your response. Than=
+k you.<br><div class=3D"signature"><p dir=3D"ltr" style=3D"color: #2b2e2f=
+; line-height: 22px; margin: 15px 0">Regards,</p><p dir=3D"ltr" style=3D"=
+color: #2b2e2f; line-height: 22px; margin: 15px 0">Liezel | Customer Serv=
+ice<br><a href=3D"https://joyride.com.ph/" rel=3D"noreferrer">JoyRide Sup=
+erapp</a></p></div></div><p dir=3D"ltr">                      </p></td>  =
+      </tr>      </tbody></table>    </td>  </tr></tbody></table></div>
+  </div>
+  <div style=3D"padding: 10px; line-height: 1.5; font-family: 'Lucida Gra=
+nde',Verdana,Arial,sans-serif; font-size: 12px; color: #aaaaaa; margin: 1=
+0px 0 14px 0; padding-top: 10px; border-top: 1px solid #eeeeee;">
+    This email is a service from JoyRide Superapp. Delivered by <a href=3D=
+"https://www.zendesk.com/support/?utm_campaign=3Dtext&amp;utm_content=3DJ=
+oyRide+Superapp&amp;utm_medium=3Dpoweredbyzendesk&amp;utm_source=3Demail-=
+notification" style=3D"color:black;" target=3D"_blank">Zendesk</a>
+  </div>
+<span style=3D"color:#FFFFFF" aria-hidden=3D"true">[W7G703-DKP7D]</span>
+
+<div itemscope=3D"" itemtype=3D"http://schema.org/EmailMessage" style=3D"=
+display:none">  <div itemprop=3D"action" itemscope=3D"" itemtype=3D"http:=
+//schema.org/ViewAction">    <link itemprop=3D"url" href=3D"https://joyri=
+desuperapp.zendesk.com/hc/requests/462586">    <meta itemprop=3D"name" co=
+ntent=3D"View ticket">  </div></div></body></html>=
+
+----==_mimepart_642db77b28d49_403f20120812--
