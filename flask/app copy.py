@@ -7,9 +7,6 @@ app = Flask(__name__)
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global g_email, g_password, is_authenticated
-    is_authenticated = False
-
     try:
         # Get JSON data from the request body
         data = request.get_json()
@@ -24,16 +21,9 @@ def login():
         if not (run.isAuthenticated()): 
             return jsonify({'message': 'Login FAILED'})
 
-        # Authentication is Successful
-        is_authenticated = True
-
-        # Transfer authenticated credentials to a global variable
-        g_email = email_input
-        g_password = pass_input
-
-        # Clear data
-        email_input = ''
-        pass_input = ''
+        # # For testing, print the values
+        # print('Email Input:', email_input)
+        # print('Password Input:', pass_input)
 
         # Send a response back to the client
         return jsonify({'message': 'Login SUCCESSFUL'})
@@ -60,18 +50,13 @@ def subject():
 
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
-    global input_subject, g_email, g_password, is_authenticated
-
-    if not is_authenticated:
-        return jsonify({'message': 'Not Authenticated'})
+    global input_subject
 
     # Extract Email
-    run = GMAIL_EXTRACTOR(input_subject, g_email, g_password)
+    run = GMAIL_EXTRACTOR(input_subject)
 
-    # Clear data
-    # input_subject = ''
-    # g_email = ''
-    # g_password = ''
+    # Clear input subject
+    input_subject = ''
 
     # Store numeric email value
     input = run.value()
@@ -80,14 +65,11 @@ def main():
     predict = DT_MODEL(input)
     prediction = predict.result()
 
-    print(input)
-    print(prediction)
+    # print(input)
+    # print(prediction)
     
     # Send the prediction to GUI
     return jsonify({'message': prediction})
-
-    
-    
 
 if __name__ == '__main__':
     app.run(debug=True)
