@@ -1,0 +1,115 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:3e87:b0:3c1:3203:f83b with SMTP id bx7csp2058444mab;
+        Mon, 14 Nov 2022 03:15:00 -0800 (PST)
+X-Google-Smtp-Source: AA0mqf5f9hM8QJIV2OJXREdwoem5tykUU42DfRQkJU8kRQ3CqBEFLJxigq5LGQEjXmDEvM1SlNPO
+X-Received: by 2002:aa7:972c:0:b0:56e:1ce2:c919 with SMTP id k12-20020aa7972c000000b0056e1ce2c919mr13414270pfg.78.1668424500694;
+        Mon, 14 Nov 2022 03:15:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1668424500; cv=none;
+        d=google.com; s=arc-20160816;
+        b=csfUAMnOt7hYboYyczrRfLMSglNNvazoOm5I2hKCy25vynk2EUDpeGfpAd6NlTcxTG
+         xKF7FhvUdy1iipeLIz5U4Ajab6T//Gx9KsypQ73zei1SbW5ASffX7Fx6kDmM1aNksELi
+         uIsB3Mj/5qunPMTgldFFNZWA2D4Ok7rwmO/P3jHGduxYaxnluXPpj3yQIH1tOoi7yO9g
+         IbMfdeBopPO0RMkccKkkwOgTYiJtuHFUDsMTTmvybqEDHkxZgXPIPYXUfjgsCS9w/GdL
+         SVuw/64UcgmWxb8PsV0yzD/LCYBceS92lcm/nugMivRo2uEufkitI5hYKY/NpYvQHXRc
+         NEpg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:content-transfer-encoding:mime-version:subject
+         :message-id:to:reply-to:from:date:dkim-signature:dkim-signature;
+        bh=Kmd8svplrWdFRf4XB5F+UgJ0pdcPVMZ1tqnOjmU4GP4=;
+        b=F5jS8ChXd1fL9aIDpOA1W51qHtbhz0V5cjj92t9avQ5t3yP+y3xGD2rKtz0uBRk5Vu
+         pDuIQk/vOVaF0r8ddo7RGNc5rc13+725AOfVp3VaCXYdsjTSzA+LUC4vpXCpjct0bsIS
+         8klSDYFWB7+Z00bAdJshZIQRW4HlGUBs9WyX93ZRjhGXQ+CJQhSLlIqaxBt/ApsztT6I
+         wQRSmgoYQ7HJ9YkohPsNHfteGdqCIFuAYUY17bRKnJrAuBxl6hI6gQPhawe87Tw867Hf
+         OR2wBPmIlgCcuyWRAwlwvdJwoKylWaFVBjoIjlfnduAGIKpH+95X3CaKlH2qTU5DTtN1
+         xzVw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@careers.mcdo.com.ph header.s=5tb75777zg6fqfwfkj6dp7yztvmz4elf header.b=E6k1dR1k;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=YB+4XUmK;
+       spf=pass (google.com: domain of 0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com designates 54.240.27.115 as permitted sender) smtp.mailfrom=0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com
+Return-Path: <0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com>
+Received: from a27-115.smtp-out.us-west-2.amazonses.com (a27-115.smtp-out.us-west-2.amazonses.com. [54.240.27.115])
+        by mx.google.com with ESMTPS id s26-20020a65645a000000b0046ef67cb979si10029836pgv.82.2022.11.14.03.15.00
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 14 Nov 2022 03:15:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com designates 54.240.27.115 as permitted sender) client-ip=54.240.27.115;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@careers.mcdo.com.ph header.s=5tb75777zg6fqfwfkj6dp7yztvmz4elf header.b=E6k1dR1k;
+       dkim=pass header.i=@amazonses.com header.s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx header.b=YB+4XUmK;
+       spf=pass (google.com: domain of 0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com designates 54.240.27.115 as permitted sender) smtp.mailfrom=0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=5tb75777zg6fqfwfkj6dp7yztvmz4elf; d=careers.mcdo.com.ph;
+	t=1668424500;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding;
+	bh=MSQJavlHou4lOHUKAZCU3hKD3JSzLw+enAa5/ZIZ4JU=;
+	b=E6k1dR1kpO7dZGOPj+vrRXnOAAhVYTT1zhYxhwo2P2TIqarL0n2lZytXYKGQuCDO
+	e3tnkqqLPryJ627Uy6RJ80r/tVkAnRCXOGZeMTepEKC9qyQNhr0DvwhreL0Pp65eH9q
+	gEpcdN7NtS3IPjDNGzU+cdY1eZ/7Rh/dkTCgQzwZMjDcWGC6vlbOOc/JM1h+RX8zZkz
+	COvFFMzw6Ew74/sq5FQqfeJhefVMHaJl2w7e4R/IbxJ7eYn1mHnGJ3B3PyA/iJNVnPm
+	FlonqzYIZkHjadTII64F7nAx4L60SMv91VGD0RstfdQh1w++pX5SOp2y6rC/yBeoxBT
+	zGf+cHR/fg==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=gdwg2y3kokkkj5a55z2ilkup5wp5hhxx; d=amazonses.com; t=1668424500;
+	h=Date:From:Reply-To:To:Message-ID:Subject:Mime-Version:Content-Type:Content-Transfer-Encoding:Feedback-ID;
+	bh=MSQJavlHou4lOHUKAZCU3hKD3JSzLw+enAa5/ZIZ4JU=;
+	b=YB+4XUmKZg9h2jzvp9ra64oxLDItr31cyrwbP6iRhZq6dXUx5rLjkbgae7JXh1d1
+	fIvYVQWCMsEsNDm+1muNpeYQxyE8PQ/+B2Q522akHoObfVLc20kkIUBiIhg4CoyyelT
+	NOpcMoi/NQ7NZ0MIwsyly/EC71u10/KT/cXgSdXo=
+Date: Mon, 14 Nov 2022 11:15:00 +0000
+From: McDonald's PH < *********************@careers.mcdo.com.ph>
+Reply-To:  *********************@careers.mcdo.com.ph
+To: ************************@gmail.com
+Message-ID: <0101018475d98341-13b0868c-6a7e-43de-a09b-255c178980a2-000000@us-west-2.amazonses.com>
+Subject: Message from McDonald's PH
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6372233369396_112fcbbe465039228";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Feedback-ID: 1.us-west-2.VxsN/CkSDY60laeMnazDgfV8I+vQcK03z8+MXK95g7A=:AmazonSES
+X-SES-Outgoing: 2022.11.14-54.240.27.115
+
+
+----==_mimepart_6372233369396_112fcbbe465039228
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+  Hello Erica    Our team is curious if you are still interested to join =
+McDonald's PH  . We would like to ask you a few questions to know you bet=
+ter and find the right position for your profile.  Click on this link to =
+apply https://m.me/2431686480227980?ref=3Dsource.retap-campaign . It only=
+ takes a few minutes and it's mobile-friendly =F0=9F=93=B2!  Hope to hear=
+ from you soon! =0D
+  Thanks, =0D
+McDonald's PH   Recruitment Team  =0D
+=0D
+
+----==_mimepart_6372233369396_112fcbbe465039228
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+    <div><p><strong>Hello</strong> Erica  </p><p>Our team is curious if y=
+ou are still interested to join McDonald's PH  . We would like to ask you=
+ a few questions to know you better and find the right position for your =
+profile.</p><p>Click on this link to apply https://m.me/2431686480227980?=
+ref=3Dsource.retap-campaign . It only takes a few minutes and it&#39;s mo=
+bile-friendly =F0=9F=93=B2!</p><p>Hope to hear from you soon! =0D
+</p><p>Thanks, =0D
+McDonald's PH   Recruitment Team</p></div>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+----==_mimepart_6372233369396_112fcbbe465039228--

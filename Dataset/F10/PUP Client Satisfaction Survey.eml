@@ -1,0 +1,155 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:84cb:b0:51c:3591:c489 with SMTP id k11csp463220may;
+        Sat, 21 Oct 2023 09:20:01 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IHsfzM0a1DH+yv0aWMMzeKiMVkTbxVFPbyCpC6vpce3orAzcgERdSEG/kirGH8Wa0vH2gLT
+X-Received: by 2002:a05:6e02:178b:b0:357:c808:1818 with SMTP id y11-20020a056e02178b00b00357c8081818mr1995067ilu.4.1697905201006;
+        Sat, 21 Oct 2023 09:20:01 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697905200; cv=none;
+        d=google.com; s=arc-20160816;
+        b=n5vkITF2vPeWV7b8M19vPXc/Rtz2vAoxL1UshGiGUw74lEkMiDdE/P+pFFNRdARj0a
+         YWwTOAIIxLCsI4PJqUpf5KJ03p9sbd7sGmelyB+o48xM+Dvwwma8nR8Up4nYfIlRZyfd
+         uk+hjNOYoXE+0mbsdC8YiMmuZEel+QBXkO3e0TBjPBKc6HZISkDUBCDmm6vqAdzrXABM
+         aNzNFK60ENudCBGJxn7+ciCv0QvsP2UwiQqg6nGOxjJcTs6Sj+d0j/WrFciYk5hmoOg0
+         RNAaW0aMdGWO8WLg4babVhhFjxaAiOrnOYvib+fgpzhcB7HPBwmkX1yid4syuQnuOzX+
+         AMRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:message-id:user-agent:reply-to:subject:to:from:date;
+        bh=3e9a59POyEqNXaRxZ8C8P9vjFOVGlnj3OYE4zoLjV7I=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=lX0Wko/oY+ly5nthwT+n4m5UiBkz+pMm9USEnxakCNLa69/6VOqaYzUtImHLtTTbAE
+         aBPpF3NrlGKbsgJSay5fUY3upplrDjXRURXeMjXco2uYZogSCU5XcmwHNksy/Z04unsb
+         hQ/11mCmyMnP/5jH65vxq+injs0Epg4PQ6yU71861jqAQalDPs6xqpn5TnfqGnLP5yXb
+         gccDWgPQ45aDuTwJhTjdPTcuIYAr+G62iNtFuVD9owHJhxj8vRBywya3+2bkEYn7vVKb
+         t7IvwQMn6qbnOHBl5Clt3vbuZBCWx8OS0+U53E9gzN0FMMEIweQcrXo5JK0R8bvGjSiK
+         buAw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       spf=pass (google.com: domain of noreply@pup.edu.ph designates 115.146.213.253 as permitted sender) smtp.mailfrom=noreply@pup.edu.ph
+Return-Path: <noreply@pup.edu.ph>
+Received: from systems.pup.edu.ph (systems.pup.edu.ph. [115.146.213.253])
+        by mx.google.com with ESMTPS id x38-20020a634a26000000b00565cc12ee24si3596625pga.874.2023.10.21.09.20.00
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 21 Oct 2023 09:20:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@pup.edu.ph designates 115.146.213.253 as permitted sender) client-ip=115.146.213.253;
+Authentication-Results: mx.google.com;
+       spf=pass (google.com: domain of noreply@pup.edu.ph designates 115.146.213.253 as permitted sender) smtp.mailfrom=noreply@pup.edu.ph
+Received: from survey.pup.edu.ph (test.pup.edu.ph [192.168.4.112])
+	by systems.pup.edu.ph with ESMTP
+	; Sun, 22 Oct 2023 00:16:57 +0800
+Date: Sun, 22 Oct 2023 00:16:56 +0800
+From: <noreply@pup.edu.ph>
+Return-Path: <noreply@pup.edu.ph>
+To: ************************@gmail.com
+Subject: =?UTF-8?Q?PUP=20Client=20Satisfaction=20Survey?=
+Reply-To: <noreply@pup.edu.ph>
+User-Agent: CodeIgniter
+X-Sender: noreply@pup.edu.ph
+X-Mailer: CodeIgniter
+X-Priority: 3 (Normal)
+Message-ID: <6533f97847cba@pup.edu.ph>
+Mime-Version: 1.0
+Content-Type: multipart/alternative; boundary="B_ALT_6533f97847cca"
+
+This is a multi-part message in MIME format.
+Your email application may not support this format.
+
+--B_ALT_6533f97847cca
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+Hi ERICA,
+To help us improve our public services, we would like
+to ask you about your experience, expectations, and
+satisfaction on the service provided to you by Office of
+the University Registrar. We highly appreciate your
+response.
+
+Reference Number
+Service Provided
+Service Provided by
+
+20231012-000206
+Processing of Request for Credentials
+Office of the University Registrar
+
+Reminder: Please complete this survey on or
+before Tuesday, October 17, 2023.
+
+Evaluate the
+Service
+Or copy and paste the URL below into your internet
+browser:
+https://survey.pup.edu.ph/osrfae/survey/form/278821/23d5b32de3
+
+Thank you very much,
+PUP Online Client Satisfaction Survey
+
+This is a system-generated notification. Do not
+reply to this email
+
+
+--B_ALT_6533f97847cca
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html>=0A=09=09=09=09<head>=0A=09=09=09=09=09<meta charset=3D"UTF-8">=0A=09=
+=09=09=09=09<style>=0A=09=09=09=09=09=09=09.btn {=0A=09=09=09=09=09=09=09=
+=09width:300px;=0A=09=09=09=09=09=09=09=09display: inline-block;=0A=09=09=
+=09=09=09=09=09=09font-weight: 400;=0A=09=09=09=09=09=09=09=09color: #21252=
+9;=0A=09=09=09=09=09=09=09=09text-align: center;=0A=09=09=09=09=09=09=09=09=
+vertical-align: middle;=0A=09=09=09=09=09=09=09=09cursor: pointer;=0A=09=09=
+=09=09=09=09=09=09-webkit-user-select: none;=0A=09=09=09=09=09=09=09=09-moz=
+-user-select: none;=0A=09=09=09=09=09=09=09=09-ms-user-select: none;=0A=09=
+=09=09=09=09=09=09=09user-select: none;=0A=09=09=09=09=09=09=09=09backgroun=
+d-color: transparent;=0A=09=09=09=09=09=09=09=09border: 1px solid transpare=
+nt;=0A=09=09=09=09=09=09=09=09padding: .375rem .75rem;=0A=09=09=09=09=09=09=
+=09=09font-size: 1rem;=0A=09=09=09=09=09=09=09=09line-height: 1.5;=0A=09=09=
+=09=09=09=09=09=09border-radius: .25rem;=0A=09=09=09=09=09=09=09=09transiti=
+on: color .15s ease-in-out,background-color=0A.15s ease-in-out,border-color=
+ .15s ease-in-out,box-shadow=0A.15s ease-in-out;=0A=09=09=09=09=09=09=09=09=
+=0A=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09.b=
+tn.btn-flat {=0A=09=09=09=09=09=09=09=09border-radius: 0;=0A=09=09=09=09=09=
+=09=09=09border-width: 1px;=0A=09=09=09=09=09=09=09=09box-shadow: none;=0A=
+=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=0A=09=09=09=09=09=09=09=0A=
+=09=09=09=09=09=09=09.btn-primary =0A=09=09=09=09=09=09=09{=0A=09=09=09=09=
+=09=09=09=09color: #fff;=0A=09=09=09=09=09=09=09=09background-color: #007bf=
+f;=0A=09=09=09=09=09=09=09=09border-color: #007bff;=0A=09=09=09=09=09=09=09=
+=09box-shadow: none;=0A=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=0A=09=
+=09=09=09=09=09=09.tablecontent=0A=09=09=09=09=09=09=09{=0A=09=09=09=09=09=
+=09=09=09border-collapse: collapse;=0A=09=09=09=09=09=09=09}=0A=09=09=09=09=
+=09=09=09=0A=09=09=09=09=09=09=09.tablecontent th,td=0A=09=09=09=09=09=09=
+=09{=0A=09=09=09=09=09=09=09=09width:300px; =0A=09=09=09=09=09=09=09=09text=
+-align:center;=0A=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=0A=09=09=09=
+=09=09=09=09table, td, th =0A=09=09=09=09=09=09=09{=0A=09=09=09=09=09=09=09=
+  border: 1px solid black;=0A=09=09=09=09=09=09=09}=0A=09=09=09=09=09=09=09=
+=0A=09=09=09=09=09=09</style>=0A=09=09=09=09=09</head>=0A=09=09=09=09=09<bo=
+dy>=0A=09=09=09=0A=09=09=09=09=09Hi ERICA,<br /><br />=0A=09=09=09=09=09To =
+help us improve our public services, we would like=0Ato ask you about your =
+experience, expectations, and=0Asatisfaction on the service provided to you=
+ by <b>Office of=0Athe University Registrar</b>. We highly appreciate your=
+=0Aresponse.=0A=09=09=09=09=09<br /><br />=0A=09=09=09=09=09<table class=3D=
+"tablecontent">=0A=09=09=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<th>Referen=
+ce Number</th>=0A=09=09=09=09=09=09=09<th>Service Provided</th>=0A=09=09=09=
+=09=09=09=09<th>Service Provided by</th>=0A=09=09=09=09=09=09</tr>=0A=09=09=
+=09=09=09=09<tr>=0A=09=09=09=09=09=09=09<td>20231012-000206</td>=0A=09=09=
+=09=09=09=09=09<td>Processing of Request for Credentials</td>=0A=09=09=09=
+=09=09=09=09<td>Office of the University Registrar</td>=0A=09=09=09=09=09=
+=09</tr>=0A=09=09=09=09=09</table>=0A=09=09=09=09=09<p><b>Reminder:</b> Ple=
+ase complete this survey on or=0Abefore <b>Tuesday, October 17, 2023</b>.</=
+p>=0A=09=09=09=09=09<div style=3D"text-align:center;">=0A=09=09=09=09=09=09=
+<a=0Ahref=3D"https://survey.pup.edu.ph/osrfae/survey/form/278821/23d5b32de3=
+"=0Atarget=3D"_BLANK" class=3D"btn btn-primary btn-block btn-flat"=0Astyle=
+=3D"text-decoration: none !important; padding:5px=0A!important; border-radi=
+us:5px !important; ">Evaluate the=0AService</a>=0A=09=09=09=09=09=09<p>Or c=
+opy and paste the URL below into your internet=0Abrowser:</p>=0A=09=09=09=
+=09=09=09<p=0Astyle=3D"font-weight:bold;">https://survey.pup.edu.ph/osrfae/=
+survey/form/278821/23d5b32de3<p>=0A=09=09=09=09=09</div>=0A=09=09=09=09=09<=
+br /><br />=0A=09=09=09=09=09Thank you very much,<br /><br />=0A=09=09=09=
+=09=09<b>PUP Online Client Satisfaction Survey</b>=0A=09=09=09=09=09<br />=
+=0A=09=09=09=09=09<br />=0A=09=09=09=09=09<div style=3D"text-align:center; =
+color:#990000;">=0A=09=09=09=09=09=09<i>This is a system-generated notifica=
+tion. Do not=0Areply to this email</i>=0A=09=09=09=09=09</div>=0A=09=09=09=
+=09</body>=0A=09=09=09</html>
+
+--B_ALT_6533f97847cca--
+

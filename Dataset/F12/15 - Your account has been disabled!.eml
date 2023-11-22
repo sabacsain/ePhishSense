@@ -1,0 +1,567 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:218f:b0:350:f1df:6bf4 with SMTP id j15csp926206ila;
+        Wed, 15 Nov 2023 18:40:47 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGWnmvs1620ZpoyNBicvMBEXhpeGd9J53j/3Om5pNjoDuwZ369RCZJ94jNSEMcz0Y6uTaV1
+X-Received: by 2002:a05:600c:5129:b0:409:325:e499 with SMTP id o41-20020a05600c512900b004090325e499mr11855627wms.32.1700102446850;
+        Wed, 15 Nov 2023 18:40:46 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700102446; cv=none;
+        d=google.com; s=arc-20160816;
+        b=rIpvKxV9vf0KduyUJVK0NKJeCDFHEKcLHmgo+87P+10PcUFZmj7TKXWTv8KbHyoF2N
+         UyoK942dsYqLpNOGkIRJeKmvMjzy7dM0jP7ZNw8dIRm1qfyRD2N7zIP/OeyIZvwmezgc
+         yIlgJ7n3wvkjAhE8FdD6PCJ0Z1u1At9ZNqPsQ/Vl4h8YdMHrckJ3uSt02LkqCnxnTcUq
+         tOzgKqRp79dx5aS1lM3ocvEwbcaBaOU39VzmAgawa90RkbUd/jc9XB0VBaQmP4xM23R0
+         kQB35HiALOt40Wqe5eq2ZZkRlhUtAaKaRCclSPtoUFrBcn37u/KgdR6v4rOAsaXljQ8X
+         9fCA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:cfbl-feedback-id:cfbl-address:require-recipient-valid-since
+         :subject:from:feedback-id:list-id:list-unsubscribe-post:message-id
+         :list-unsubscribe:date:mime-version:dkim-signature:dkim-signature;
+        bh=M8ahVwcil3JPKM/pEpDHnbKheFYXGOEirUM249T1kKQ=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=OdpXNsBg/ERSR5bz59ksl2wZJE98laZBF04HeAy/OKKKzjCI93hU5KfqBZoC+s0dy+
+         BGzwwPPtLhZh++LmvUmTSChIm5EdXnm1zAQdmXmX3NUPemCtwwdNrxIKTvCq29YvJXCZ
+         erWrEofPvvd7oqGjlzEFtq5ItuDGkTx1qvyItvU1XdeMy7gtSA9YINOGatlP/1WrVixO
+         KtrcEPHbWZ7WYrddOC70bVcJc5ANKbk45Vydsr+aTKCxU/qCPPglKNp7P/ySaj1+j4kT
+         VCHA7PSrLAEmHq8sr0GmxfZsI33AADRNfsgJ76bZcNkaKgI14FxqCH97zaW4jUij+g3+
+         KbnQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@crsend.com header.s=mail header.b=A1dqgG9K;
+       dkim=pass header.i=@371210.c.crsend.com header.s=mail header.b=AjryIk8c;
+       spf=pass (google.com: domain of bounce+371210@bounce-eu2.crsend.com designates 178.77.121.172 as permitted sender) smtp.mailfrom=bounce+371210@bounce-eu2.crsend.com
+Return-Path: <bounce+371210@bounce-eu2.crsend.com>
+Received: from 007.de-mx.crsend.com (007.de-mx.crsend.com. [178.77.121.172])
+        by mx.google.com with ESMTPS id g2-20020a5d5542000000b0033141ab929fsi6536473wrw.1055.2023.11.15.18.40.46
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 15 Nov 2023 18:40:46 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+371210@bounce-eu2.crsend.com designates 178.77.121.172 as permitted sender) client-ip=178.77.121.172;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@crsend.com header.s=mail header.b=A1dqgG9K;
+       dkim=pass header.i=@371210.c.crsend.com header.s=mail header.b=AjryIk8c;
+       spf=pass (google.com: domain of bounce+371210@bounce-eu2.crsend.com designates 178.77.121.172 as permitted sender) smtp.mailfrom=bounce+371210@bounce-eu2.crsend.com
+Received: from ngw-pn.crsend.com (ngw-pn.crsend.com [52.50.216.172])
+	by 007.de-mx.crsend.com (Postfix) with ESMTP id 4E4C0A8DA6
+	for <ronaldlambertnicolastugadi@gmail.com>; Thu, 16 Nov 2023 03:40:46 +0100 (CET)
+X-DKIM: OpenDKIM Filter v2.6.8 007.de-mx.crsend.com 4E4C0A8DA6
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=crsend.com; s=mail;
+	t=1700102446; r=y; bh=M8ahVwcil3JPKM/pEpDHnbKheFYXGOEirUM249T1kKQ=;
+	h=Date:List-Unsubscribe:Message-ID:List-Unsubscribe-Post:From:
+	 Subject:X-CSA-Complaints:CFBL-Address:CFBL-Feedback-ID:To:
+	 Content-Type:From;
+	b=A1dqgG9KQ72Lvi4Dcc/F0IjJJ3t32vf3JiHoxoKVr/bS/MnwgkO1OkOeJ/hmHJSfo
+	 XbMx4W5dXYzKRC6bsMWYkzYKMr4Z0jg9pPz7PZJkrn9+cITJv6iB5FkiogfgE2vgL0
+	 BxFEQbdO6ItXjkcpE0dsN2tZUYORXGPcs0CfXvio=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ s=mail; d=371210.c.crsend.com; t=1700102446; x=1702732446;
+  h=subject:date:content-type:from:to:message-id:list-unsubscribe:
+ list-unsubscribe-post:list-id:x-email:x-csa-complaints:
+ require-recipient-valid-since:feedback-id:cfbl-address:
+ cfbl-feedback-id; bh=M8ahVwcil3JPKM/pEpDHnbKheFYXGOEirUM249T1kKQ=;
+ b=AjryIk8csgvtKIBe7jo8z1nf7pBZ+yUjEXRuSE4TSVK2yNaxlPIgEdTI3bDKEaGvKkBi8l
+ LXlH7crzlGGbS2BlBX9Qyp6k+sc29DEJRMpAlwv/NBRDpqSAMXrtJuMvd6D75EqS5JOCKr
+ ZtqrUX4OzxJww4YxXAqU6lJZDITjLdk=
+MIME-Version: 1.0
+Date: Thu, 16 Nov 2023 03:40:46 +0100
+List-Unsubscribe: <https://371210.seu2.cleverreach.com/rmftlp.php?cid=0&mid=14895728&h=0-1fe2fe54112c0d>
+Message-ID: <20231116034046.371210.14895728.1125389@bounce-eu2.crsend.com>
+X-Mailer: gomailer-v2.0.19-23-g7617782e
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-email: ronaldlambertnicolastugadi@gmail.com
+List-Id: <14895728.371210.crsend.com>
+Feedback-ID: 371210:14895728:1125389:371210
+From: "OpenSea Team" <Paradiese@Combimed.de>
+Subject: Your account has been disabled!
+X-Mailing: 14895728
+X-CSA-Complaints: <csa-complaints@eco.de>
+Require-Recipient-Valid-Since: ronaldlambertnicolastugadi@gmail.com; Wed,
+ 15 Nov 2023 16:05:58 +0100
+CFBL-Address: fbl+header@fbl.crsend.com
+CFBL-Feedback-ID: 371210:14895728:1125389:371210
+To: ronaldlambertnicolastugadi@gmail.com
+X-Client: 371210
+X-Customer: 1125389
+Content-Type: multipart/alternative;
+ boundary=a1e8cb388bca9d31af5be3c702239b83a9c93426cebcf21d60896627e56e
+
+--a1e8cb388bca9d31af5be3c702239b83a9c93426cebcf21d60896627e56e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+Ihr E-Mail Programm unterst=C3=BCtzt leider keine HTML E-Mails.
+
+Hier finden Sie diesen Newsletter online:
+https://371210.seu2.cleverreach.com/m/14895728/0-6cc804e965cb26d6c8c2b901e0=
+c4c3a02078597781b7e87f4adc33746c6aec0c1b4784efa269f22ab7a9eddd57577fc5
+-----------
+Wenn Sie diese E-Mail nicht mehr empfangen m=C3=B6chten, k=C3=B6nnen
+Sie diese kostenlos abbestellen:
+https://371210.seu2.cleverreach.com/rmftlp.php?cid=3D0&mid=3D14895728&h=3D0=
+-1fe2fe54112c0d-s473fy
+-----------
+Apotheke im Kloster Paradiese
+Hubertus Ahaus
+Im Stiftsfeld 1
+59494 Soest
+Deutschland
+
+
+Paradiese@Combimed.de
+
+
+--a1e8cb388bca9d31af5be3c702239b83a9c93426cebcf21d60896627e56e
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+  <head>
+    <title></title>
+    <!--[if !mso]><!-->
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <!--<![endif]-->
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1">
+    <style  type=3D"text/css" hash=3D"4d1bd037a1c9c3ba337f73162c24b4cc">
+      #outlook a { padding:0; }
+      body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size=
+-adjust:100%; }
+      table, td { border-collapse:collapse;mso-table-lspace:0pt;mso-table-r=
+space:0pt; }
+      img { border:0;height:auto;line-height:100%; outline:none;text-decora=
+tion:none;-ms-interpolation-mode:bicubic; }
+      p { display:block;margin:13px 0; }
+    </style>
+    <!--[if mso]>
+    <noscript>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    </noscript>
+    <![endif]-->
+    <!--[if lte mso 11]>
+    <style  type=3D"text/css">
+      .mj-outlook-group-fix { width:100% !important; }
+    </style>
+    <![endif]-->
+   =20
+   =20
+    <style  type=3D"text/css" hash=3D"d41d8cd98f00b204e9800998ecf8427e">
+
+    </style>
+   =20
+    <!--#template version=3D"2.0" css-to-inline=3D"true"#-->
+
+      <meta property=3D"cr:title" content=3D"Weihnachten mit Theme, Hero-Bi=
+ld, pers=C3=B6nlicher Ansprache und Call to Action" />
+      <meta property=3D"cr:description" content=3D"W=C3=BCnschen Sie Ihren =
+Empf=C3=A4ngern mit einer pers=C3=B6nlichen Ansprache frohe Weihnachten und=
+ verlinken sie mit dem Call to Action auf Ihre Seite oder in Ihren Shop." /=
+>
+      <meta property=3D"cr:tags" content=3D"v3,Weihnachten,saisonal,einspal=
+tig,Hero-Bild,pers=C3=B6nliche-Ansprache,Gru=C3=9Fbotschaft,Call-to-Action,=
+text-bild-ausgewogen,Design-voreingestellt" />
+      <meta property=3D"cr:date" content=3D"2023-11-14T12:17:54.918Z" />   =
+=20
+      <meta property=3D"cr:version" content=3D"1.5" />   =20
+
+      <meta property=3D"cr:lang" content=3D"de_DE" />
+      <meta property=3D"cr:type" content=3D"email" />
+     =20
+
+    <style type=3D"cr/theme">
+/*
+$color-Main_background: #ffffff;
+$color-Outer_text: #000000;
+$color-Content_background: #ffffff;
+$color-Text: #000000;
+$color-Background_misc: #801423;
+$color-Links: #801423;
+$slider-Maximum_width: 600px;
+
+    .bgcolor-1 { background-color: $color-Main_background; }=20
+    .bgcolor-1-outlook { background-color: $color-Main_background; }=20
+    .color-1 { color: $color-Outer_text; }=20
+    .bgcolor-2 { background-color: $color-Content_background; }=20
+    .bgcolor-2-outlook { background-color: $color-Content_background; }=20
+    .color-2 { color: $color-Text; }=20
+    .aux-color-1 { color: $color-Background_misc; }=20
+    .aux-bgcolor-1 { background-color: $color-Background_misc; }=20
+    .aux-color-2 { color: $color-Links; }=20
+    .aux-bgcolor-2 { background-color: $color-Links; }=20
+    body { background-color: $color-Main_background; }=20
+    a {color: $color-Links;}
+    .cr-maxwidth {max-width: $slider-Maximum_width;}
+ */
+    .bgcolor-1 { background-color: #ffffff; }=20
+    .bgcolor-1-outlook { background-color: #ffffff; }=20
+    .color-1 { color: #000000; }=20
+    .bgcolor-2 { background-color: #ffffff; }=20
+    .bgcolor-2-outlook { background-color: #ffffff; }=20
+    .color-2 { color: #000000; }=20
+    .aux-color-1 { color: #801423; }=20
+    .aux-bgcolor-1 { background-color: #801423; }=20
+    .aux-color-2 { color: #801423; }=20
+    .aux-bgcolor-2 { background-color: #801423; }=20
+    body { background-color: #ffffff; }=20
+    a {color: #801423;}
+    .cr-maxwidth {max-width: 600px;}
+    </style>
+   =20
+<!--[if lte mso 11]>
+  <style  type=3D"text/css">
+    .cr-outlook-group-fix { width:100% !important; }
+  </style>
+  <![endif]-->
+
+  <style  type=3D"text/css" hash=3D"8f9f8d31302a7fa52faff5aa102105a5">
+    @media only screen and (min-width:480px) {
+      .cr-column-20 { width:20% !important; max-width: 20%; }
+      .cr-column-25 { width:25% !important; max-width: 25%; }
+      .cr-column-33 { width:33% !important; max-width: 33%; }
+      .cr-column-50 { width:50% !important; max-width: 50%; }
+      .cr-column-66 { width:66% !important; max-width: 66%; }
+    }
+  </style>
+  <style  media=3D"screen and (min-width:480px)" hash=3D"6d2c4552a4538dea1a=
+a2223b55f169cc">
+    .moz-text-html .cr-column-20 { width:20% !important; max-width: 20%; }
+    .moz-text-html .cr-column-25 { width:25% !important; max-width: 25%; }
+    .moz-text-html .cr-column-33 { width:33% !important; max-width: 33%; }
+    .moz-text-html .cr-column-50 { width:50% !important; max-width: 50%; }
+    .moz-text-html .cr-column-66 { width:66% !important; max-width: 66%; }
+  </style>
+<style  hash=3D"39ecbcf2ebf27047e142cd975e5850c3">=20
+/*  @title Text=20
+    @order 1 */
+    .cr-text {
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+    }
+</style>
+
+<style  hash=3D"4fafc203d730611baa594428d8523b34">
+    @media (max-width: 600px) {
+      img  {
+        max-width: 100% !important;
+  		  /* height: auto !important;
+        max-height: 100% !important; */
+      }
+    }
+
+    </style>
+  <meta charset=3D"UTF-8" />
+<style data-source=3D"autogenerated google-fixes">
+u + #body a { color: #801423; }
+u + #body { margin:0;padding:0;-webkit-text-size-adjust:100%;-ms-text-size-=
+adjust:100%;background-color: #ffffff; }
+</style>
+</head>
+  <body id=3D"body" style=3D"background-color: #ffffff; ;;;word-spacing:nor=
+mal;">
+   =20
+   =20
+      <div
+         class=3D"bgcolor-1" style=3D""
+      >
+        <!--#loop#--><!-- -------------------------------------------------=
+----- --><!--#loopitem name=3D"Hero-Bild"#--><table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"background-color: #ffffff=
+; ;;;width: 100%; table-layout: fixed; -webkit-text-size-adjust: 100%; -ms-=
+text-size-adjust: 100%; " class=3D"bgcolor-1" data-style=3D"background-colo=
+r:inherit" data-limit-to=3D"background,background-color" data-name=3D"Outer=
+ Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-2" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><ta=
+ble cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tr>
+        <td class=3D" " data-name=3D"Image" style=3D"padding:10px 20px; " d=
+ata-style=3D"padding:inherit; " data-limit-to=3D"padding"><!--#image xforce=
+px=3D"true" nodesign=3D"true"#--><table cellpadding=3D"0" cellspacing=3D"0"=
+ style=3D"width:100%;border:0px;padding:0px;margin:0px;"><tbody><tr><td ali=
+gn=3D"center" style=3D"text-align: center; line-height: 0px;">
+          <a href=3D"" target=3D"_blank" style=3D"color: #801423; ;;;displa=
+y: inline-block; line-height: 0px; pointer-events: none" title=3D"">
+              <img src=3D"https://files.crsend.com/371000/371210/images/ban=
+ned.png" alt=3D"" width=3D"34%" style=3D"display: inline; height: auto; wid=
+th: 34%;" align=3D""   height=3D"560">
+          </a>
+        </td></tr></tbody></table><!--#/image#--></td></tr></table><!--[if =
+mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table><!--#/loopitem#--><!--#loopitem name=3D"Pers=C3=B6nliche Anspra=
+che"#--><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"10=
+0%" style=3D"background-color: #ffffff; ;;;width: 100%; table-layout: fixed=
+; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; " class=3D"bg=
+color-1" data-style=3D"background-color:inherit" data-limit-to=3D"backgroun=
+d,background-color" data-name=3D"Outer Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-2" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><ta=
+ble cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tr>
+        <td class=3D"cr-text color-2" data-name=3D"Text" style=3D"color: #0=
+00000; ;;;font-family: Helvetica, Arial, sans-serif; font-size: 14px; ;;;pa=
+dding:10px 20px;text-align:left; " data-style=3D"padding:inherit;padding:in=
+herit;color:inherit;" data-limit-to=3D"padding,color"><!--#html#--><div sty=
+le=3D"text-align: center;"><span style=3D"font-size: 18px;"><strong class=
+=3D"false">Your account has been disabled!</strong></span></div>
+<div style=3D"text-align: center;"><br class=3D"false">Your account has bee=
+n disabled due to activity that goes against our Terms of Service. This mea=
+ns you can no longer access OpenSea with your account.</div>
+<div style=3D"text-align: center;"><br class=3D"false">While your collectio=
+ns and any items in those collections are no longer visible or discoverable=
+ on OpenSea, you still have access to your wallet and NFTs in your wallet t=
+hrough other services.</div>
+<div style=3D"text-align: center;"><br class=3D"false">You can cancel any a=
+ctive offers and listings you made using OpenSea below.If you think there's=
+ been a mistake, you can contact our support team for help.</div>
+<div style=3D"text-align: center;">&nbsp;</div>
+<div style=3D"text-align: center;">&nbsp;</div><!--#/html#--></td></tr></ta=
+ble><!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table><!--#/loopitem#--><!--#loopitem name=3D"Call to Action"#--><tab=
+le border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D=
+"background-color: #ffffff; ;;;width: 100%; table-layout: fixed; -webkit-te=
+xt-size-adjust: 100%; -ms-text-size-adjust: 100%; " class=3D"bgcolor-1" dat=
+a-style=3D"background-color:inherit" data-limit-to=3D"background,background=
+-color" data-name=3D"Outer Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-2" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><ta=
+ble cellspacing=3D"0" cellpadding=3D"0" width=3D"100%"><tr>
+        <td class=3D" " data-name=3D"Button" style=3D"padding:10px 20px; " =
+data-style=3D"padding:inherit; " data-limit-to=3D"padding"><!--#button#-->
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"border-collapse:separate;line-height:=
+100%;" width=3D"" class=3D"cred-button">
+        <tbody>
+        <tr>
+        <td align=3D"center" bgcolor=3D"#1984E8" role=3D"presentation" styl=
+e=3D"border: medium; border-radius: 3px; cursor: auto; padding: 10px 25px; =
+background: #1984e8;" valign=3D"middle">
+        <a href=3D"" style=3D"color: #801423; ;;;display:inline-block;backg=
+round:#1984E8;color:#ffffff;font-family:Arial;font-size:13px;font-weight:bo=
+ld;line-height:120%;margin:0;text-decoration:none;text-transform:none;mso-p=
+adding-alt:0px;border-radius:3px;" target=3D"_blank">Cancel all listings an=
+d offers</a>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <!--#/button#--></td></tr></table><!--[if mso | IE]></td></tr></tab=
+le><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table><!--#/loopitem#--><!--#loopitem#--><table border=3D"0" cellpadd=
+ing=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"background-color: #ffff=
+ff; ;;;width: 100%; table-layout: fixed; -webkit-text-size-adjust: 100%; -m=
+s-text-size-adjust: 100%; " class=3D"bgcolor-1" data-style=3D"background-co=
+lor:inherit" data-limit-to=3D"background,background-color" data-name=3D"Out=
+er Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-2" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><!-=
+-#spacer size=3D"20"#--><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0"><tbody><tr><td style=3D"line-height:0;font-size:0;height:20px" heigh=
+t=3D"20"></td></tr></tbody></table><!--#/spacer#--><!--[if mso | IE]></td><=
+/tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table><!--#/loopitem#--><!-- ----------------------------------------=
+-------------- --><!--#/loop#--><table border=3D"0" cellpadding=3D"0" cells=
+pacing=3D"0" width=3D"100%" style=3D"background-color: #ffffff; ;;;width: 1=
+00%; table-layout: fixed; -webkit-text-size-adjust: 100%; -ms-text-size-adj=
+ust: 100%; " class=3D"bgcolor-1" data-style=3D"background-color:inherit" da=
+ta-limit-to=3D"background,background-color" data-name=3D"Outer Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-1" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><di=
+v class=3D"cr-text color-1" style=3D"color: #000000; ;;;font-family: Helvet=
+ica, Arial, sans-serif; font-size: 14px; ;;;text-align:center;font-size:10p=
+x;margin:10px 20px;">
+          <!--#unsubscribe#--><!--#/unsubscribe#-->
+        </div><!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"100%" style=3D"background-color: #ffffff; ;;;width: 100%; table-layout:=
+ fixed; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; " class=
+=3D"bgcolor-1" data-style=3D"background-color:inherit" data-limit-to=3D"bac=
+kground,background-color" data-name=3D"Outer Container">
+    <tr>
+    <td style=3D"font-size: 0px; ">
+      <!--[if mso | IE]><table align=3D"center" border=3D"0" cellpadding=3D=
+"0" cellspacing=3D"0" class=3D"" role=3D"presentation" style=3D"" width=3D"=
+600" gc-width-fix=3D".cr-maxwidth:max-width" ><tr><td style=3D"line-height:=
+0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->   =20
+      <div class=3D"cr-maxwidth" style=3D"max-width: 600px; ;;;margin:0px a=
+uto;">
+       =20
+        <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" style=3D"max-width: 600px; ;;;background-color: #ffffff; ;;;width:10=
+0%; " class=3D"cr-maxwidth bgcolor-1" data-style=3D"background-color:inheri=
+t" data-limit-to=3D"background,background-color" data-name=3D"Container">
+          <tbody>
+            <tr>
+              <td style=3D"direction:ltr;font-size:0px;text-align:center;">
+                <!--[if mso | IE]><table role=3D"presentation" border=3D"0"=
+ cellpadding=3D"0" cellspacing=3D"0" widht=3D"100%"><tr><td><![endif]--><di=
+v class=3D"cr-text color-1" style=3D"color: #000000; ;;;font-family: Helvet=
+ica, Arial, sans-serif; font-size: 14px; ;;;text-align:center;font-size:10p=
+x;margin:10px 20px;">
+          <!--#aboutus custom=3D"true"#--><div style=3D"font-family: Helvet=
+ica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal;=
+ font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orpha=
+ns: 2; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px=
+; -webkit-text-stroke-width: 0px; white-space: normal; text-decoration-thic=
+kness: initial; text-decoration-style: initial; text-decoration-color: init=
+ial; color: #082137; font-size: 14px; background-color: #ffffff;" align=3D"=
+left">Best regards,</div>
+<div style=3D"font-family: Helvetica, Arial, sans-serif; font-style: normal=
+; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 4=
+00; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: n=
+one; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; white-sp=
+ace: normal; text-decoration-thickness: initial; text-decoration-style: ini=
+tial; text-decoration-color: initial; color: #082137; font-size: 14px; back=
+ground-color: #ffffff;" align=3D"left">OpenSea Team</div><!--#/aboutus#-->
+        </div><!--[if mso | IE]></td></tr></table><![endif]-->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+       =20
+      </div>
+      <!--[if mso | IE]></td></tr></table><![endif]-->
+
+      </td>
+    </tr>
+    </table>
+      </div>
+   =20
+  <img src=3D"https://stats-eu2.crsend.com/stats/mc_371210_14895728_1fe2fe5=
+4112c0d-s473fy.gif" border=3D"0" alt=3D"" height=3D"1" width=3D"1"></body>
+</html>
+ =20
+--a1e8cb388bca9d31af5be3c702239b83a9c93426cebcf21d60896627e56e--

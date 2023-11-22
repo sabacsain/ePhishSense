@@ -1,0 +1,462 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:2a05:b0:50e:ba02:d494 with SMTP id k5csp1570804maz;
+        Thu, 24 Aug 2023 19:52:41 -0700 (PDT)
+X-Received: by 2002:a17:907:75c6:b0:99c:10e8:52d7 with SMTP id jl6-20020a17090775c600b0099c10e852d7mr12257683ejc.31.1692931961457;
+        Thu, 24 Aug 2023 19:52:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1692931961; cv=none;
+        d=google.com; s=arc-20160816;
+        b=Cm+9XVQZIoQXddxIDgGo6ng9nIMOWdfEvocTwcqDqIT/kb8FFMEfgzR1i4hujoo7Q6
+         sjah1AaedNAE0UZzAbVVVsEY86CgjqBQbVmQH6B4KHTSQ/BDhGj4EAAz+N3rLRtJCG8T
+         RC7jtG/1ndxdzSWFwWuABZAtlowLBseUjZqCMylCaXihHCTGmN3upWLvXCmeDGD/DYJC
+         MhhBq/ykS4C7wvQaZiscR0OOcENft90WgY3UIdjEOnKcTqHYMX+vaUyqofIYRpoFzkUM
+         BMIgdqBgQ21Jm9uYDuNkSh0ULdFPVzRGPvzY+yBj6MO1KmJZSyvzBWsQimRW8cVd35XR
+         E02w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:from:subject:date:message-id:references:reply-to:mime-version
+         :dkim-signature;
+        bh=NEiCLj/8f7w0QvDnLlCkGJtnI6EW9y/SFe9H8vQpIVU=;
+        fh=nbTPuQz5L0QipLMTIYD770RDBnOw3iM3Ie4XTFBL9YU=;
+        b=S5+8vIm7Rb6AAfgRlUBe6L3gTIZJqR0x/Tvq5FAV97jee7KjsesUyK7VfMvWJuGR4U
+         HCN4/+zmTLGEGYBhqXjYCONiuR5eOz6neuyjT348r2Ga7FWlLiBB2VDutYjS8OwG33Wn
+         QiVzgefLnKasKaLZhiMLztjJ00WMpG9xwNKzcKkuhZHxPMWInzDhnQseCnajRYTuIlsB
+         mYj41qQp4mVNJQjkLA1XIU+5B4uQwxyg/a86J6u2xnG7mJpbwIGb2Xu157EcXBwhPs8M
+         fU676m6xyBLAUJaf8041vv/yicgyyqkhdggTzsb8z8DfH+TRmEtVESPOT6wqmdbQQ991
+         dh+w==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20221208 header.b=gRWMVOP5;
+       spf=pass (google.com: domain of 3ebfozbckahuwkbox-latkxl-wf-ghkxierzhhzex.vhf@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3eBfoZBcKAHUWkboX-laTkXl-Wf-ghkXierZhhZeX.Vhf@doclist.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3eBfoZBcKAHUWkboX-laTkXl-Wf-ghkXierZhhZeX.Vhf@doclist.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id ib24-20020a1709072c7800b0099e03144c76sor254693ejc.1.2023.08.24.19.52.41
+        for <************************@gmail.com>
+        (Google Transport Security);
+        Thu, 24 Aug 2023 19:52:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3ebfozbckahuwkbox-latkxl-wf-ghkxierzhhzex.vhf@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20221208 header.b=gRWMVOP5;
+       spf=pass (google.com: domain of 3ebfozbckahuwkbox-latkxl-wf-ghkxierzhhzex.vhf@doclist.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3eBfoZBcKAHUWkboX-laTkXl-Wf-ghkXierZhhZeX.Vhf@doclist.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20221208; t=1692931961; x=1693536761;
+        h=cc:to:from:subject:date:message-id:references:reply-to:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=NEiCLj/8f7w0QvDnLlCkGJtnI6EW9y/SFe9H8vQpIVU=;
+        b=gRWMVOP5VIL1Q6+kckkpAoJPPK3tIetz/nyg+P3A0eh+ymA7nYCqeWMQztA1Tmg0PP
+         NJp4Wsa0EPmRb/PKZCpGV2QtBnv7bSnXcvApCMrnjpLm0AQg+IA5g8Ih2te9fprKUtEH
+         mUMKtAEi39n2lbOt/SDlsvBxy/oYufHqDHBoOdmgJYV7T8Bx3j364LRV1+3s6SUm4JGZ
+         Rz9KakCI2v9Le6CysQxSBzEy0/YXH/mbMC1GXVZNS9uYRMf9jRsJ+fzyYDM0cYB0DvHi
+         eWZsmpLpR0Vcq/fzBuxXVCzjF+wR9rIChMADdix3s/Xf6TuCat2t2De2Q4M15hF/bfvG
+         f3cg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692931961; x=1693536761;
+        h=cc:to:from:subject:date:message-id:references:reply-to:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=NEiCLj/8f7w0QvDnLlCkGJtnI6EW9y/SFe9H8vQpIVU=;
+        b=UiffUqIG7tOtk2173SYkX1tVIItjmhSRYp/h7zVOOebHEYHC4pqnaJBYUG/8cLi6lR
+         sKSIb31N3aOveQt4+R/pmlVr/K/hB6FCHIjY3BqZgbfJJpUDQw3Wb67UcXYkEs5gi2mi
+         HrDOPMWu5h6MgbUZ4Qbnu4feZJnzmlFVKKomxtuV2Drtz6JinZzkRcnOsz5qVSYmzm2R
+         BxxVdV0s4mk4CcNlYwuy/7dZFXEigt8U2jox3fuCP1+2aXUc/enk/XWUUnbpYRKbhm7d
+         xZf9Ne2OL4YYMiBK8IlEnDPqvdcjSnpkIEtr7Wi0o4axSQKYMziCBCOLlhAupRqqV8gm
+         IFFA==
+X-Gm-Message-State: AOJu0YzJ0IDdWpJFRAfDuZ4Q7XcRwQPUsDxolEaRwO6enm8MsqjVwHvw
+	jaQ7gaPOdrAvox4CveklkbWtQcT1DiRKyg==
+X-Google-Smtp-Source: AGHT+IErwNBSngfRhNSdIVP5mULumWftPf7dOs7voim+rR18ytftoTFNNnptLq0WEgIQMo+rAawHRfHQjN4=
+MIME-Version: 1.0
+X-Received: by 2002:a17:906:8a95:b0:9a1:b54e:4e4f with SMTP id
+ mu21-20020a1709068a9500b009a1b54e4e4fmr130730ejc.3.1692931960889; Thu, 24 Aug
+ 2023 19:52:40 -0700 (PDT)
+Reply-To: Ronald Nicolas Tugadi <ronaldlambertnicolastugadi@gmail.com>
+X-No-Auto-Attachment: 1
+References: <c7dde218-cebe-4966-bb00-31f6989ec697@docs-share.google.com>
+Message-ID: <autogen-java-36632ab9-9837-48a6-bbbe-1c5397421648@google.com>
+Date: Fri, 25 Aug 2023 02:52:40 +0000
+Subject: Document shared with you: "Boundless Rivalry: Makati and Taguig's
+ Territorial Dispute for Bonifacio Global City"
+From: "Ronald Nicolas Tugadi (via Google Docs)" <drive-shares-dm-noreply@google.com>
+To: ************************@gmail.com
+Cc: hannahgraceajoaquin@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000002867bc0603b6707e"
+
+--0000000000002867bc0603b6707e
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+I've shared an item with you:
+
+Boundless Rivalry: Makati and Taguig's Territorial Dispute for Bonifacio  
+Global City
+https://docs.google.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc/edit?usp=sharing&ts=64e81778
+
+It's not an attachment -- it's stored online. To open this item, just click  
+the link above.
+
+--0000000000002867bc0603b6707e
+Content-Type: text/x-amp-html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html><html amp4email><head><meta charset=3D"utf-8"><script async =
+src=3D"https://cdn.ampproject.org/v0.js"></script><script async custom-elem=
+ent=3D"amp-list" src=3D"https://cdn.ampproject.org/v0/amp-list-0.1.js"></sc=
+ript><script async custom-template=3D"amp-mustache" src=3D"https://cdn.ampp=
+roject.org/v0/amp-mustache-0.2.js"></script><script async custom-element=3D=
+"amp-form" src=3D"https://cdn.ampproject.org/v0/amp-form-0.1.js"></script><=
+script async custom-element=3D"amp-bind" src=3D"https://cdn.ampproject.org/=
+v0/amp-bind-0.1.js"></script><script async custom-element=3D"amp-timeago" s=
+rc=3D"https://cdn.ampproject.org/v0/amp-timeago-0.1.js"></script><style amp=
+4email-boilerplate>body{visibility:hidden}</style><style amp-custom>.materi=
+al-button{-webkit-appearance: none; cursor: pointer; outline: none;}.materi=
+al-button:focus {outline: 1px solid transparent;}.material-button:disabled{=
+cursor: initial; outline: none;}.material-button-filled{background-color: #=
+1a73e8; color: #fff;}.material-button-filled:hover{background-color: #1b55c=
+9; box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60,64,=
+67,0.15);}.material-button-filled:focus{background-color: #1b5fb9; box-shad=
+ow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60,64,67,0.15);}.=
+material-button-filled:active{background-color: #1b63c1; box-shadow: 0 1px =
+2px 0 rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);}.materia=
+l-button-filled:disabled{background-color: rgba(60, 64, 67, .12); color: rg=
+ba(60, 64, 67, .38);}.material-button-transparent{background-color: transpa=
+rent; color: #1a73e8;}.material-button-transparent:hover{background-color: =
+rgba(26, 115, 232, .04);}.material-button-transparent:focus{background-colo=
+r: rgba(26, 115, 232, .12);}.material-button-transparent:active{background-=
+color: rgba(26, 115, 232, .12); box-shadow: 0 1px 3px 1px rgba(60, 64, 67, =
+.15);}.material-button-transparent:disabled{background-color: transparent; =
+color: #3c4043; opacity: 0.38;}@media screen and (max-width: 600px){.conten=
+t-spacer{height: 24px;}.content-spacer-small{height: 12px;}}@media screen a=
+nd (min-width: 601px){.content-spacer{height: 32px;}.content-spacer-small{h=
+eight: 20px;}}.dynamic-content-container-wrapper {margin-left: -6px; table-=
+layout: fixed; width: calc(100% + 12px);}.dynamic-content-container-wrapper=
+ * {hyphens: auto; overflow-wrap: break-word; word-wrap: break-word; word-b=
+reak: break-word;}#dynamic-content-container, .thumbnail-link {border: 1px =
+solid #DADCE0; border-radius: 8px; box-sizing: border-box;}#dynamic-content=
+-container {display: inline-block; max-width: 100%; padding: 20px; width: 4=
+05px;}#dynamic-content-container > * + * {margin-top: 18px;}.dynamic-conten=
+t-heading {display: flex; flex-direction: row;}.dynamic-content-heading > *=
+ + * {margin-left: 10px;}#star-form, #star-button {height: 22px; position: =
+relative; width: 22px;}#star-button {background: none; border: none; displa=
+y: block; outline: none; z-index: 1;}#star-button[disabled] {opacity: 0.4;}=
+#star-button:not([disabled]) {cursor: pointer;}#star-button:not([disabled])=
+:hover + .star-button-circle, #star-button:not([disabled]):focus + .star-bu=
+tton-circle{display: block; outline: 1px solid transparent;}.star-button-ci=
+rcle {background-color: #F1F3F4; border-radius: 50%; display: none; height:=
+ 32px; left: 50%; position: absolute; top: 50%; transform: translate(-50%, =
+-50%); width: 32px;}.unstarred-icon, .starred-icon {bottom: 0; left: 0; pos=
+ition: absolute; right: 0; top: 0; visibility: hidden;}#star-button.starred=
+ > .starred-icon, #star-button.unstarred > .unstarred-icon {visibility: vis=
+ible;}#star-error-message {color: #D93025; font: 400 14px/16px Roboto, Aria=
+l, Helvetica, sans-serif; margin-top: 5px;}.display-none {display: none;}.t=
+humbnail-link {display: block; overflow: hidden; position: relative;}.thumb=
+nail-open {align-items: center; background-color: #202124; bottom: 0; color=
+: white; display: none; font: 400 14px/16px Google Sans, Roboto, Arial, Hel=
+vetica, sans-serif; justify-content: center; left: 0; letter-spacing: 0.15p=
+x; opacity: 65%; position: absolute; right: 0; top: 0; z-index: 1;}.thumbna=
+il-link:hover > .thumbnail-open, .thumbnail-link:focus > .thumbnail-open {d=
+isplay: flex;}amp-img.cover img {object-fit: cover; object-position: 0 0;}.=
+large-icon-container {align-items: center; display: flex; height: 100%; jus=
+tify-content: center;}.dynamic-message {align-items: center; display: flex;=
+ flex-direction: row;}.dynamic-message > amp-img {flex-shrink: 0;}.dynamic-=
+message > span {color: #5F6368; font: 400 14px/18px Roboto, Arial, Helvetic=
+a, sans-serif; letter-spacing: 0; margin-left: 18px;}.dynamic-message-summa=
+ry {margin-left: 16px; margin-top: 4px;}.blue-text-header {color: #1a73e8; =
+font-weight: 500;}.horizontal-rule-wrapper {margin-top: 16px;}#amp-timeago =
+{display: inline;}</style></head><body><amp-list diffable binding=3D"refres=
+h-evaluate" src=3D"https://drive.google.com/sharing/dynamicmail/fetchinvite=
+?ts=3D64e81778&amp;shareService=3Dkix&amp;hl=3Den&amp;id=3D1F22f7Xzywh5dd3b=
+hq7aWovvDLWGOPL6e4CF48OKSrNc&amp;dynamicEmailToken=3DAfaSgAPAKvCIPzVBRwMvoR=
+lSefcN5TSFHMBmnBu4KcRCre3vqsFd69oTfF1MPTbnxgcFerWP_9KmSPy0F-qEltIgAuJ0jPj9h=
+1nRKYiBhUYnWIMFu2fjqh3MoJOpWp8EnWkccFnZbSsqkw%3D%3D&amp;resourcekey&amp;bui=
+ldLabel=3Ddrive.explorer_20230816.07_p0" single-item items=3D"." layout=3D"=
+container"><template type=3D"amp-mustache"><table style=3D"border-collapse:=
+ collapse; width: 100%; background-color: white; text-align: center;" role=
+=3D"presentation"><tr><td style=3D"padding: 24px 0 16px 0;"><table style=3D=
+"border-collapse: collapse;font-family: Roboto, Arial, Helvetica, sans-seri=
+f;hyphens: auto; overflow-wrap: break-word; word-wrap: break-word; word-bre=
+ak: break-word;width: 90%; margin: auto;max-width: 700px;min-width: 280px; =
+text-align: left;" role=3D"presentation"><tr><td style=3D"padding: 0;"><tab=
+le style=3D"width:100%; border: 1px solid #dadce0; border-radius: 8px; bord=
+er-spacing: 0; table-layout:fixed; border-collapse: separate;" role=3D"pres=
+entation"><tr><td style=3D"padding: 4.5%;" dir=3D"ltr"><div style=3D"margin=
+-bottom:32px;font-family: Google Sans, Roboto, Arial, Helvetica, sans-serif=
+; font-style: normal; font-size: 28px; line-height: 36px; color: #3c4043;">=
+Ronald Nicolas Tugadi shared a document</div><table style=3D"border-collaps=
+e: collapse;font-family: Roboto, Arial, Helvetica, sans-serif; font-size:16=
+px; line-height:24px; color:#202124; letter-spacing:0.1px; table-layout:fix=
+ed; width:100%; overflow-wrap: break-word;" role=3D"presentation"><tr><td s=
+tyle=3D"padding: 0; vertical-align:top; width:50px;"><!--[if mso]><v:oval x=
+mlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-c=
+om:office:word" style=3D"height:50px;width:50px;" fill=3D"t" stroke=3D"f"><=
+v:fill type=3D"frame" src=3D"https://ssl.gstatic.com/s2/profiles/images/sil=
+houette64.png" alt=3D"Unknown profile photo" style=3D"height:50px;width:50p=
+x;"/></v:oval><![endif]--><div style=3D"mso-hide:all;"><amp-img style=3D"bo=
+rder-radius:50%; display:block;" width=3D"50" height=3D"50" src=3D"https://=
+ssl.gstatic.com/s2/profiles/images/silhouette64.png" alt=3D"Unknown profile=
+ photo"></amp-img></div></td><td style=3D"padding: 0; vertical-align:top; p=
+adding-left:12px;"><div style=3D"padding-top:12px;">Ronald Nicolas Tugadi (=
+<a href=3D"mailto:ronaldlambertnicolastugadi@gmail.com" style=3D"color:inhe=
+rit;text-decoration:none">ronaldlambertnicolastugadi@gmail.com</a>) has inv=
+ited you to <b>edit</b> the following document:</div></td></tr></table><tab=
+le class=3D"dynamic-content-container-wrapper" role=3D"presentation"><tr st=
+yle=3D"height: 20px;"></tr><tr><td id=3D"dynamic-content-container" role=3D=
+"presentation" tabindex=3D"0"><div class=3D"dynamic-content-heading"><a hre=
+f=3D"https://docs.google.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4C=
+F48OKSrNc/edit?usp=3Dsharing_eil_se_dm&amp;ts=3D64e81778" target=3D"_blank"=
+ style=3D"color: #3c4043; display: inline-block; max-width: 100%; text-deco=
+ration: none; vertical-align: top;display: flex; flex-direction: column; ju=
+stify-content: center;"><div style=3D"line-height: 18px; overflow: hidden; =
+text-overflow: ellipsis;display: flex;"><span style=3D"display: inline-bloc=
+k; vertical-align: top; min-width: 26px; width: 26px;"><amp-img src=3D"http=
+s://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x64.png" =
+width=3D"18" height=3D"18" style=3D"vertical-align: top;" role=3D"presentat=
+ion"></amp-img></span><span style=3D"font: 500 14px/18px Google Sans, Robot=
+o, Arial, Helvetica, sans-serif; display: inline; letter-spacing: 0.2px;">B=
+oundless Rivalry: Makati and Taguig&#39;s Territorial Dispute for Bonifacio=
+ Global City</span></div></a><form id=3D"star-form" action-xhr=3D"https://d=
+rive.google.com/sharing/dynamicmail/star?ts=3D64e81778&amp;shareService=3Dk=
+ix&amp;hl=3Den&amp;id=3D1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc&amp;dy=
+namicEmailToken=3DAfaSgAPAKvCIPzVBRwMvoRlSefcN5TSFHMBmnBu4KcRCre3vqsFd69oTf=
+F1MPTbnxgcFerWP_9KmSPy0F-qEltIgAuJ0jPj9h1nRKYiBhUYnWIMFu2fjqh3MoJOpWp8EnWkc=
+cFnZbSsqkw%3D%3D&amp;resourcekey&amp;buildLabel=3Ddrive.explorer_20230816.0=
+7_p0" method=3D"post" on=3D"submit: dynamic-content-container.focus, AMP.se=
+tState({starButton: {value: starButton =3D=3D null ? {{starredByRequester}}=
+ : starButton.value, inProgress: true, error: false}}); submit-success: AMP=
+.setState({starButton: {value: !starButton.value, inProgress: false, error:=
+ false}}); submit-error: AMP.setState({starButton: {inProgress: false, erro=
+r: true}});"><input type=3D"hidden" name=3D"starred" value=3D"{{#starredByR=
+equester}}false{{/starredByRequester}}{{^starredByRequester}}true{{/starred=
+ByRequester}}" data-amp-bind-value=3D"starButton.value ? 'false' : 'true'">=
+<button id=3D"star-button" class=3D"{{#starredByRequester}}starred{{/starre=
+dByRequester}}{{^starredByRequester}}unstarred{{/starredByRequester}}" data=
+-amp-bind-class=3D"starButton.value ? 'starred' : 'unstarred'" type=3D"subm=
+it" aria-live=3D"polite" aria-label=3D"{{#starredByRequester}}Starred{{/sta=
+rredByRequester}}{{^starredByRequester}}Unstarred{{/starredByRequester}}" d=
+ata-amp-bind-aria-label=3D"starButton.value ? 'Starred' : 'Unstarred'" titl=
+e=3D"Star in Drive" data-amp-bind-disabled=3D"starButton.inProgress"><amp-i=
+mg src=3D"https://fonts.gstatic.com/s/i/googlematerialicons/star_border/v8/=
+gm_grey-48dp/1x/gm_star_border_gm_grey_48dp.png" layout=3D"fixed" width=3D"=
+22" height=3D"22" role=3D"presentation" aria-hidden=3D"true" class=3D"unsta=
+rred-icon"></amp-img><amp-img src=3D"https://fonts.gstatic.com/s/i/googlema=
+terialicons/star/v8/gm_grey-48dp/1x/gm_star_gm_grey_48dp.png" layout=3D"fix=
+ed" width=3D"22" height=3D"22" role=3D"presentation" aria-hidden=3D"true" c=
+lass=3D"starred-icon"></amp-img></button><div class=3D"star-button-circle">=
+</div></form></div><div id=3D"star-error-message" class=3D"display-none" da=
+ta-amp-bind-class=3D"starButton.error ? '' : 'display-none'">Something went=
+ wrong. Try again</div><a href=3D"https://docs.google.com/document/d/1F22f7=
+Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc/edit?usp=3Dsharing_eil_se_dm&amp;ts=
+=3D64e81778" target=3D"_blank" class=3D"thumbnail-link"><amp-layout layout=
+=3D"responsive" width=3D"386" height=3D"202">{{#thumbnailUrl}}<amp-img clas=
+s=3D"cover" src=3D"{{thumbnailUrl}}" layout=3D"fill"><div class=3D"large-ic=
+on-container" fallback><amp-img src=3D"https://drive-thirdparty.googleuserc=
+ontent.com/256/type/application/vnd.google-apps.document" width=3D"80" heig=
+ht=3D"80"></amp-img></div></amp-img>{{/thumbnailUrl}}{{^thumbnailUrl}}<div =
+class=3D"large-icon-container"><amp-img src=3D"https://drive-thirdparty.goo=
+gleusercontent.com/256/type/application/vnd.google-apps.document" width=3D"=
+80" height=3D"80"></amp-img></div>{{/thumbnailUrl}}</amp-layout><div class=
+=3D"thumbnail-open">Open</div></a>{{#summaryDescription}}<div><div class=3D=
+"dynamic-message"><amp-img src=3D"https://www.gstatic.com/docs/documents/sh=
+are/images/smart_summary.png" layout=3D"fixed" width=3D"16" height=3D"16" r=
+ole=3D"presentation" aria-hidden=3D"true"></amp-img><span><span class=3D"bl=
+ue-text-header">Summary</span></span></div><div class=3D"dynamic-message dy=
+namic-message-summary"><span>{{summaryDescription}}</span></div><div class=
+=3D"horizontal-rule-wrapper"><div style=3D"height: 1px; background-color: #=
+DADCE0;"></div></div></div>{{/summaryDescription}}{{#ownerOrCreatorMessage}=
+}<div class=3D"dynamic-message"><amp-img src=3D"https://www.gstatic.com/doc=
+s/documents/share/images/person.png" layout=3D"fixed" width=3D"16" height=
+=3D"16" role=3D"presentation" aria-hidden=3D"true"></amp-img><span>{{ownerO=
+rCreatorMessage}}</span></div>{{/ownerOrCreatorMessage}}{{#lastEdited}}<div=
+ class=3D"dynamic-message"><amp-img src=3D"https://www.gstatic.com/docs/doc=
+uments/share/images/clock.png" layout=3D"fixed" width=3D"16" height=3D"16" =
+role=3D"presentation" aria-hidden=3D"true"></amp-img><span>Last edited by {=
+{lastEdited.editor}} <amp-timeago id=3D"amp-timeago" layout=3D"fixed-height=
+" height=3D"1" datetime=3D"{{lastEdited.datetime}}" locale=3D"en">{{lastEdi=
+ted.datetime}}</amp-timeago></span></div>{{/lastEdited}}</td></tr></table><=
+table style=3D"border-collapse: collapse;" role=3D"presentation"><tr style=
+=3D"height: 32px"><td></td></tr></table><div><a href=3D"https://docs.google=
+.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc/edit?usp=3Dsha=
+ring_eip_se_dm&amp;ts=3D64e81778" class=3D"material-button material-button-=
+filled" target=3D"_blank" tabindex=3D"0" role=3D"button" style=3D"padding: =
+0 24px;font: 500 14px/36px Google Sans, Roboto, Arial, Helvetica, sans-seri=
+f; border: none; border-radius: 18px; box-sizing: border-box; display: inli=
+ne-block; letter-spacing: .25px; min-height: 36px; text-align: center; text=
+-decoration: none;">Open</a></div><table style=3D"border-collapse: collapse=
+;" role=3D"presentation"><tr style=3D"height: 32px"><td></td></tr></table><=
+div style=3D"font-size: 12px; color: #5F6368">If you don't want to receive =
+files from this person, <a href=3D"https://drive.google.com/drive/blockuser=
+?blockerEmail=3D************************@gmail.com&amp;blockeeEmail=3Dronal=
+dlambertnicolastugadi@gmail.com&amp;usp=3Dsharing_eib_se_dm" target=3D"_bla=
+nk" style=3D"color: #1a73e8; text-decoration: none;">block the sender</a> f=
+rom Drive</div></td></tr></table><table style=3D"border-collapse: collapse;=
+ width: 100%;" role=3D"presentation"><tr><td style=3D"padding: 24px 4.5%"><=
+table style=3D"border-collapse: collapse; width: 100%;" dir=3D"ltr"><tr><td=
+ style=3D"padding: 0;font-family: Roboto, Arial, Helvetica, sans-serif; col=
+or: #5F6368; width: 100%; font-size: 12px; line-height: 16px; min-height: 4=
+0px; letter-spacing: .3px;">Google LLC, 1600 Amphitheatre Parkway, Mountain=
+ View, CA 94043, USA<br/> You have received this email because <a href=3D"m=
+ailto:ronaldlambertnicolastugadi@gmail.com" style=3D"color:inherit;text-dec=
+oration:none">ronaldlambertnicolastugadi@gmail.com</a> shared a document wi=
+th you from Google Docs.</td><td style=3D"padding: 0;padding-left: 20px; mi=
+n-width: 96px"><a href=3D"https://www.google.com/" target=3D"_blank" style=
+=3D"text-decoration: none"><amp-img src=3D"https://www.gstatic.com/images/b=
+randing/googlelogo/2x/googlelogo_grey_tm_color_96x40dp.png" width=3D"96" he=
+ight=3D"40" alt=3D"Google" style=3D"font-size:16px;font-weight:500;color:#5=
+F6368"></amp-img></a></td></tr></table></td></tr></table></td></tr></table>=
+</td></tr></table></template><div role=3D"list"><table style=3D"border-coll=
+apse: collapse; width: 100%; background-color: white; text-align: center;" =
+role=3D"presentation"><tr><td style=3D"padding: 24px 0 16px 0;"><table styl=
+e=3D"border-collapse: collapse;font-family: Roboto, Arial, Helvetica, sans-=
+serif;hyphens: auto; overflow-wrap: break-word; word-wrap: break-word; word=
+-break: break-word;width: 90%; margin: auto;max-width: 700px;min-width: 280=
+px; text-align: left;" role=3D"presentation"><tr><td style=3D"padding: 0;">=
+<table style=3D"width:100%; border: 1px solid #dadce0; border-radius: 8px; =
+border-spacing: 0; table-layout:fixed; border-collapse: separate;" role=3D"=
+presentation"><tr><td style=3D"padding: 4.5%;" dir=3D"ltr"><div style=3D"ma=
+rgin-bottom:32px;font-family: Google Sans, Roboto, Arial, Helvetica, sans-s=
+erif; font-style: normal; font-size: 28px; line-height: 36px; color: #3c404=
+3;">Ronald Nicolas Tugadi shared a document</div><table style=3D"border-col=
+lapse: collapse;font-family: Roboto, Arial, Helvetica, sans-serif; font-siz=
+e:16px; line-height:24px; color:#202124; letter-spacing:0.1px; table-layout=
+:fixed; width:100%; overflow-wrap: break-word;" role=3D"presentation"><tr><=
+td style=3D"padding: 0; vertical-align:top; width:50px;"><!--[if mso]><v:ov=
+al xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microso=
+ft-com:office:word" style=3D"height:50px;width:50px;" fill=3D"t" stroke=3D"=
+f"><v:fill type=3D"frame" src=3D"https://ssl.gstatic.com/s2/profiles/images=
+/silhouette64.png" alt=3D"Unknown profile photo" style=3D"height:50px;width=
+:50px;"/></v:oval><![endif]--><div style=3D"mso-hide:all;"><amp-img style=
+=3D"border-radius:50%; display:block;" width=3D"50" height=3D"50" src=3D"ht=
+tps://ssl.gstatic.com/s2/profiles/images/silhouette64.png" alt=3D"Unknown p=
+rofile photo"></amp-img></div></td><td style=3D"padding: 0; vertical-align:=
+top; padding-left:12px;"><div style=3D"padding-top:12px;">Ronald Nicolas Tu=
+gadi (<a href=3D"mailto:ronaldlambertnicolastugadi@gmail.com" style=3D"colo=
+r:inherit;text-decoration:none">ronaldlambertnicolastugadi@gmail.com</a>) h=
+as invited you to <b>edit</b> the following document:</div></td></tr></tabl=
+e><table style=3D"border-spacing:0 4px; table-layout:fixed; width:100%; ove=
+rflow-wrap: break-word;" role=3D"presentation"><tr style=3D"height:28px;"><=
+/tr><tr><td style=3D"padding: 0;"><a href=3D"https://docs.google.com/docume=
+nt/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc/edit?usp=3Dsharing_eil_se=
+_dm&amp;ts=3D64e81778" target=3D"_blank" style=3D"color: #3c4043; display: =
+inline-block; max-width: 100%; text-decoration: none; vertical-align: top;b=
+order: 1px solid #DADCE0; border-radius: 16px; white-space: nowrap;"><div s=
+tyle=3D"line-height: 18px; overflow: hidden; text-overflow: ellipsis;paddin=
+g: 6px 12px;"><span style=3D"display: inline-block; vertical-align: top; mi=
+n-width: 26px; width: 26px;"><amp-img src=3D"https://ssl.gstatic.com/docs/d=
+oclist/images/mediatype/icon_1_document_x64.png" width=3D"18" height=3D"18"=
+ style=3D"vertical-align: top;" role=3D"presentation"></amp-img></span><spa=
+n style=3D"font: 500 14px/18px Google Sans, Roboto, Arial, Helvetica, sans-=
+serif; display: inline; letter-spacing: 0.2px;">Boundless Rivalry: Makati a=
+nd Taguig&#39;s Territorial Dispute for Bonifacio Global City</span></div><=
+/a></td></tr></table><table style=3D"border-collapse: collapse;" role=3D"pr=
+esentation"><tr style=3D"height: 32px"><td></td></tr></table><div><a href=
+=3D"https://docs.google.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF=
+48OKSrNc/edit?usp=3Dsharing_eip_se_dm&amp;ts=3D64e81778" class=3D"material-=
+button material-button-filled" target=3D"_blank" tabindex=3D"0" role=3D"but=
+ton" style=3D"padding: 0 24px;font: 500 14px/36px Google Sans, Roboto, Aria=
+l, Helvetica, sans-serif; border: none; border-radius: 18px; box-sizing: bo=
+rder-box; display: inline-block; letter-spacing: .25px; min-height: 36px; t=
+ext-align: center; text-decoration: none;">Open</a></div><table style=3D"bo=
+rder-collapse: collapse;" role=3D"presentation"><tr style=3D"height: 32px">=
+<td></td></tr></table><div style=3D"font-size: 12px; color: #5F6368">If you=
+ don't want to receive files from this person, <a href=3D"https://drive.goo=
+gle.com/drive/blockuser?blockerEmail=3D************************@gmail.com&a=
+mp;blockeeEmail=3Dronaldlambertnicolastugadi@gmail.com&amp;usp=3Dsharing_ei=
+b_se_dm" target=3D"_blank" style=3D"color: #1a73e8; text-decoration: none;"=
+>block the sender</a> from Drive</div></td></tr></table><table style=3D"bor=
+der-collapse: collapse; width: 100%;" role=3D"presentation"><tr><td style=
+=3D"padding: 24px 4.5%"><table style=3D"border-collapse: collapse; width: 1=
+00%;" dir=3D"ltr"><tr><td style=3D"padding: 0;font-family: Roboto, Arial, H=
+elvetica, sans-serif; color: #5F6368; width: 100%; font-size: 12px; line-he=
+ight: 16px; min-height: 40px; letter-spacing: .3px;">Google LLC, 1600 Amphi=
+theatre Parkway, Mountain View, CA 94043, USA<br/> You have received this e=
+mail because <a href=3D"mailto:ronaldlambertnicolastugadi@gmail.com" style=
+=3D"color:inherit;text-decoration:none">ronaldlambertnicolastugadi@gmail.co=
+m</a> shared a document with you from Google Docs.</td><td style=3D"padding=
+: 0;padding-left: 20px; min-width: 96px"><a href=3D"https://www.google.com/=
+" target=3D"_blank" style=3D"text-decoration: none"><amp-img src=3D"https:/=
+/www.gstatic.com/images/branding/googlelogo/2x/googlelogo_grey_tm_color_96x=
+40dp.png" width=3D"96" height=3D"40" alt=3D"Google" style=3D"font-size:16px=
+;font-weight:500;color:#5F6368"></amp-img></a></td></tr></table></td></tr><=
+/table></td></tr></table></td></tr></table></div></amp-list></body></html>
+--0000000000002867bc0603b6707e
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head></head><body><table style=3D"border-collapse: collapse; width: =
+100%; background-color: white; text-align: center;" role=3D"presentation"><=
+tr><td style=3D"padding: 24px 0 16px 0;"><table style=3D"border-collapse: c=
+ollapse;font-family: Roboto, Arial, Helvetica, sans-serif;hyphens: auto; ov=
+erflow-wrap: break-word; word-wrap: break-word; word-break: break-word;widt=
+h: 90%; margin: auto;max-width: 700px;min-width: 280px; text-align: left;" =
+role=3D"presentation"><tr><td style=3D"padding: 0;"><table style=3D"width:1=
+00%; border: 1px solid #dadce0; border-radius: 8px; border-spacing: 0; tabl=
+e-layout:fixed; border-collapse: separate;" role=3D"presentation"><tr><td s=
+tyle=3D"padding: 4.5%;" dir=3D"ltr"><div style=3D"margin-bottom:32px;font-f=
+amily: Google Sans, Roboto, Arial, Helvetica, sans-serif; font-style: norma=
+l; font-size: 28px; line-height: 36px; color: #3c4043;">Ronald Nicolas Tuga=
+di shared a document</div><table style=3D"border-collapse: collapse;font-fa=
+mily: Roboto, Arial, Helvetica, sans-serif; font-size:16px; line-height:24p=
+x; color:#202124; letter-spacing:0.1px; table-layout:fixed; width:100%; ove=
+rflow-wrap: break-word;" role=3D"presentation"><tr><td style=3D"padding: 0;=
+ vertical-align:top; width:50px;"><!--[if mso]><v:oval xmlns:v=3D"urn:schem=
+as-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-com:office:word" sty=
+le=3D"height:50px;width:50px;" fill=3D"t" stroke=3D"f"><v:fill type=3D"fram=
+e" src=3D"https://ssl.gstatic.com/s2/profiles/images/silhouette64.png" alt=
+=3D"Unknown profile photo" style=3D"height:50px;width:50px;"/></v:oval><![e=
+ndif]--><div style=3D"mso-hide:all;"><img style=3D"border-radius:50%; displ=
+ay:block;" width=3D"50" height=3D"50" src=3D"https://ssl.gstatic.com/s2/pro=
+files/images/silhouette64.png" alt=3D"Unknown profile photo"></div></td><td=
+ style=3D"padding: 0; vertical-align:top; padding-left:12px;"><div style=3D=
+"padding-top:12px;">Ronald Nicolas Tugadi (<a href=3D"mailto:ronaldlambertn=
+icolastugadi@gmail.com" style=3D"color:inherit;text-decoration:none">ronald=
+lambertnicolastugadi@gmail.com</a>) has invited you to <b>edit</b> the foll=
+owing document:</div></td></tr></table><table style=3D"border-spacing:0 4px=
+; table-layout:fixed; width:100%; overflow-wrap: break-word;" role=3D"prese=
+ntation"><tr style=3D"height:28px;"></tr><tr><td style=3D"padding: 0;"><a h=
+ref=3D"https://docs.google.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e=
+4CF48OKSrNc/edit?usp=3Dsharing_eil_m&amp;ts=3D64e81778" target=3D"_blank" s=
+tyle=3D"color: #3c4043; display: inline-block; max-width: 100%; text-decora=
+tion: none; vertical-align: top;border: 1px solid #DADCE0; border-radius: 1=
+6px; white-space: nowrap;"><div style=3D"line-height: 18px; overflow: hidde=
+n; text-overflow: ellipsis;padding: 6px 12px;"><span style=3D"display: inli=
+ne-block; vertical-align: top; min-width: 26px; width: 26px;"><img src=3D"h=
+ttps://ssl.gstatic.com/docs/doclist/images/mediatype/icon_1_document_x64.pn=
+g" width=3D"18" height=3D"18" style=3D"vertical-align: top;" role=3D"presen=
+tation"></span><span style=3D"font: 500 14px/18px Google Sans, Roboto, Aria=
+l, Helvetica, sans-serif; display: inline; letter-spacing: 0.2px;">Boundles=
+s Rivalry: Makati and Taguig&#39;s Territorial Dispute for Bonifacio Global=
+ City</span></div></a></td></tr></table><table style=3D"border-collapse: co=
+llapse;" role=3D"presentation"><tr style=3D"height: 32px"><td></td></tr></t=
+able><div><!--[if mso]><v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vm=
+l" xmlns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"https://docs.g=
+oogle.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWGOPL6e4CF48OKSrNc/edit?usp=
+=3Dsharing_eip_m&amp;ts=3D64e81778" style=3D"height:36px;v-text-anchor:midd=
+le;width:100px;" arcsize=3D"50%" stroke=3D"f" fillcolor=3D"#1a73e8"><w:anch=
+orlock/><center style=3D"color:#ffffff;font-family:Arial,Helvetica,sans-ser=
+if;font-weight:500;font-size:14px;">Open </center></v:roundrect><![endif]--=
+><a href=3D"https://docs.google.com/document/d/1F22f7Xzywh5dd3bhq7aWovvDLWG=
+OPL6e4CF48OKSrNc/edit?usp=3Dsharing_eip_m&amp;ts=3D64e81778" class=3D"mater=
+ial-button material-button-filled" target=3D"_blank" tabindex=3D"0" role=3D=
+"button" style=3D"mso-hide:all;padding: 0 24px;font: 500 14px/36px Google S=
+ans, Roboto, Arial, Helvetica, sans-serif; border: none; border-radius: 18p=
+x; box-sizing: border-box; display: inline-block; letter-spacing: .25px; mi=
+n-height: 36px; text-align: center; text-decoration: none;background-color:=
+ #1a73e8; color: #fff; cursor: pointer;">Open</a></div><table style=3D"bord=
+er-collapse: collapse;" role=3D"presentation"><tr style=3D"height: 32px"><t=
+d></td></tr></table><div style=3D"font-size: 12px; color: #5F6368">If you d=
+on't want to receive files from this person, <a href=3D"https://drive.googl=
+e.com/drive/blockuser?blockerEmail=3D************************@gmail.com&amp=
+;blockeeEmail=3Dronaldlambertnicolastugadi@gmail.com&amp;usp=3Dsharing_eib_=
+m" target=3D"_blank" style=3D"color: #1a73e8; text-decoration: none;">block=
+ the sender</a> from Drive</div></td></tr></table><table style=3D"border-co=
+llapse: collapse; width: 100%;" role=3D"presentation"><tr><td style=3D"padd=
+ing: 24px 4.5%"><table style=3D"border-collapse: collapse; width: 100%;" di=
+r=3D"ltr"><tr><td style=3D"padding: 0;font-family: Roboto, Arial, Helvetica=
+, sans-serif; color: #5F6368; width: 100%; font-size: 12px; line-height: 16=
+px; min-height: 40px; letter-spacing: .3px;">Google LLC, 1600 Amphitheatre =
+Parkway, Mountain View, CA 94043, USA<br/> You have received this email bec=
+ause <a href=3D"mailto:ronaldlambertnicolastugadi@gmail.com" style=3D"color=
+:inherit;text-decoration:none">ronaldlambertnicolastugadi@gmail.com</a> sha=
+red a document with you from Google Docs.</td><td style=3D"padding: 0;paddi=
+ng-left: 20px; min-width: 96px"><a href=3D"https://www.google.com/" target=
+=3D"_blank" style=3D"text-decoration: none"><img src=3D"https://www.gstatic=
+.com/images/branding/googlelogo/2x/googlelogo_grey_tm_color_96x40dp.png" wi=
+dth=3D"96" height=3D"40" alt=3D"Google" style=3D"font-size:16px;font-weight=
+:500;color:#5F6368"></a></td></tr></table></td></tr></table></td></tr></tab=
+le></td></tr></table></body></html>
+--0000000000002867bc0603b6707e--

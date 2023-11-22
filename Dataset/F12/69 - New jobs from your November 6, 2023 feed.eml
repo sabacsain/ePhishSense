@@ -1,0 +1,711 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp1801828ils;
+        Mon, 6 Nov 2023 02:12:12 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IHz1WYuDRLXUmNdnjoRjPCiSSLB/0GwCy78nr/7ROJ/IPzRm4+385+ZuB1KRQfnpOmBqadI
+X-Received: by 2002:a05:6808:10c8:b0:3ae:251b:5552 with SMTP id s8-20020a05680810c800b003ae251b5552mr38291264ois.12.1699265532504;
+        Mon, 06 Nov 2023 02:12:12 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699265532; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ySzfHmS60WDwttLZ1yZyHSnPKPV6yaWxcoZfZMIQiTTnoej8Zo61ncGJPsM9q/8cFR
+         h7qYHvmzfC6yQw+ghWVCL5ULCbFsqDK1evohPOSfu7fzWqDXuLAT8c2tAynoDc04VbvJ
+         qZJkBJwtwbMnzBaTjtZs5vHYArZW2NA8UM9RCDpoQ73f3LSaP1r/ow4YsdVprClosWqS
+         SgUZfjDJOQdKIA8HjddPSYj1cowM9TrS6l7hHQZ/toV6ifaEiR1hPodGFcrqegfkr5FM
+         ON+PeH8e2kUuEVfIqDZeZmHGYBZREYJLX1roWXTNIehkV6PW2Wa/r5CvKdmq38tn2F1d
+         qPNw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:list-unsubscribe:from:message-id:list-unsubscribe-post
+         :reply-to:subject:mime-version:date:to:dkim-signature;
+        bh=7py9NEFwh26CgI+whMnNpc/9cAKZc2kVpOFXrxv5zh8=;
+        fh=5fW2FP7wXRrX8h9a2UUjkSZF924Vd4FyjyX/75Ss2v8=;
+        b=mqBIyJvSxxx0cO0tbAypG9Lq7+hAYR7USrt/cCDCoG3/68WC1D+IdhD1iyXMhg8nYp
+         0n/0vbRMyKERRqpxOGMGcYMH14OJaOLhRHR/hhGz5B84RBgDcPZ14Q8pKAMKarfsIezY
+         4a3Lw6dF+bV0mahAKwqL8U1q7Mha7AlKXkUaIBKQYPfgZE5GPB9Y2QvpvsD+GF6Bwi34
+         MXMWkBC6SlRPBheh1bQQSNjFSyoZC1vUpwyeFyiPIyi8t9Eiijdr7BKNncbBwKOYGYyt
+         ksnOA/tXxEbGW1gU8ApNQmXPfOhY5PwIRet/wRuUCyss1icPO3I+kXrkVzEFC+/T7ruQ
+         jrxQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@indeed.com header.s=sp2210 header.b=jbuueSB+;
+       spf=pass (google.com: domain of msprvs1=19674tlnnkbks=bounces-294276@bounces.indeed.com designates 156.70.53.22 as permitted sender) smtp.mailfrom="msprvs1=19674TlNnKBks=bounces-294276@bounces.indeed.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=indeed.com
+Return-Path: <msprvs1=19674TlNnKBks=bounces-294276@bounces.indeed.com>
+Received: from mta-70-53-22.indeed.com.sparkpostmail.com (mta-70-53-22.indeed.com.sparkpostmail.com. [156.70.53.22])
+        by mx.google.com with ESMTPS id k20-20020a056a00135400b006bd20945b23si7963576pfu.37.2023.11.06.02.12.12
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Nov 2023 02:12:12 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=19674tlnnkbks=bounces-294276@bounces.indeed.com designates 156.70.53.22 as permitted sender) client-ip=156.70.53.22;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@indeed.com header.s=sp2210 header.b=jbuueSB+;
+       spf=pass (google.com: domain of msprvs1=19674tlnnkbks=bounces-294276@bounces.indeed.com designates 156.70.53.22 as permitted sender) smtp.mailfrom="msprvs1=19674TlNnKBks=bounces-294276@bounces.indeed.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=indeed.com
+X-MSFBL: aj9bVxd9lyh7NDZeW2JeeAW635o1kEL/HbdAAeqvP3s=|eyJ0ZW5hbnRfaWQiOiJ
+	zcGMiLCJtZXNzYWdlX2lkIjoiNjU0NWZiYmI0ODY1ZDIzNjM4MTQiLCJjdXN0b21
+	lcl9pZCI6IjI5NDI3NiIsInN1YmFjY291bnRfaWQiOiIwIiwiciI6InJvbmFsZGx
+	hbWJlcnRuaWNvbGFzdHVnYWRpQGdtYWlsLmNvbSJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=indeed.com;
+	s=sp2210; t=1699265531; i=@indeed.com;
+	bh=7py9NEFwh26CgI+whMnNpc/9cAKZc2kVpOFXrxv5zh8=;
+	h=To:Date:Content-Type:Subject:List-Unsubscribe-Post:Message-ID:
+	 From:List-Unsubscribe:From:To:Cc:Subject;
+	b=jbuueSB+wcyDvODccY/tUJFaf2TcF1ge/hUYAWAX2jNgUR/+rjJgiSWb+qD3/1ZGa
+	 BHdE0WQtbRoMx7lSQ/LLypPpixzRhUT2QYQhj4DAQGvxWUVf1rFeHAkoqWnoaNUpVn
+	 9VBmpgbrpADrE4VQFrd8M0wBerEJcMQlqIl4WoRah4GVnm6jvm0u7vreRR4vu7Xqk1
+	 aq2P+5fkUKEQYZFQopvlYRvtoGkQgkZnSSvHIXRj0Xoo4WDvUxIHixmlaZdW5mm2uB
+	 3opl6o+LUwMeDmsNkEngzqo6LrcJJT8M7FbfVdRqBnCdjRU/z6Lt5DIIK0kSqCmTNx
+	 hQXMo9aizQ/KA==
+To: <ronaldlambertnicolastugadi@gmail.com>
+Date: Mon, 06 Nov 2023 10:12:11 +0000
+Content-Type: multipart/alternative; boundary="_----LalC6a1PXCdXSThG0aW3AQ===_63/41-08099-BFBB8456"
+MIME-Version: 1.0
+X-Indeed-FBL: 64d9fe094796671d0a0e3059:3:948a4bc5ee2c25e70087aad360dd4f556fe77edb2c3499c17347a6e2502d263f3a33ceaea2650caf
+x-campaign-id: FEED_ALERT
+Subject: New jobs from your November 6, 2023 feed
+Reply-To: Your Indeed Job Feed <do-not-reply@indeed.com>
+X-Indeed-Content-Type: FEED_ALERT
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Message-ID: <1hei1s8vfpb26803.1699265531549.Railgunner@railgun--railgunner-feedalertrailclipservice-86f75f58fd-pcrk2>
+From: "Your Indeed Job Feed" <alert@indeed.com>
+X-Indeed-Client-App: RailgunnerDaemon
+X-Indeed-TK: 1hei1sjktlr61802
+List-Unsubscribe: <https://subscriptions.indeed.com/alerts/cancel?token=CkBfQmvS_7oNFd8RZ9wS3FNBtA8208I4Dbjq9loA5FdEpy-TQnmQhjazvSNTcaQ-7LtNxFVRQTTtXXoXitj-psHWEjArPSKpjujlrdhPXSuSVpscZP0XpOueCtDBY33LhTnRx_RCGVdwJloE8WXnNXF9mHEaEFNSqhwiD7ya3W90aYbD0dE%3D&co=&hl=en&tmtk=1hei1s8vfpb26803&subId=64d9fe094796671d0a0e3059&rgtk=&from=listunsubpost>
+Feedback-ID: FEED_ALERT:RailgunnerDaemon:Indeed
+
+--_----LalC6a1PXCdXSThG0aW3AQ===_63/41-08099-BFBB8456
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+
+&lt;b&gt;Your job feed for&lt;/b&gt;&lt;br&gt;November 6, 2023&lt;br&gt; =
+=0AJobs are based on your preferences, profile, and activity on Indeed &amp=
+;sup1;=0A=0AHuman Resource Assistant (Internship)=0AMagellan Solutions - Ma=
+ndaluyong=0AEasily apply=0ACollege Graduate of HR related Course. Job Type:=
+ OJT (On the job training). Mandaluyong City: Reliably commute or planning =
+to relocate before starting work =E2=80=A6=0AJust posted=0Ahttps://ph.indee=
+d.com/rc/clk/dl=3Fjk=3Dc54e276a56d0f04f&amp;from=3Djaf&amp;qd=3DRnZhMybXSk4=
+M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3DDhBjSXlE3V1N=
+Zz52CZmyepDlyR0NaIqzsclscbZAExU&amp;tk=3D1hei1s8vfpb26803&amp;alid=3D64d9fe=
+094796671d0a0e3059=0A=0AHuman Resources-Intern=0AInteluck Corporation - Mak=
+ati=0AEasily apply=0AThe Human Resources Intern will be responsible for pro=
+viding day to day administrative support to the human resource team. Job Ty=
+pe: OJT (On the job training).=0AJust posted=0Ahttps://ph.indeed.com/rc/clk=
+/dl=3Fjk=3Dd50ada74a8022d64&amp;from=3Djaf&amp;qd=3DRnZhMybXSk4M3QtTVGXWoQF=
+PZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3DkIQXBvJF6_ylKP9nXwSypdPu=
+-0bJyOrVXPgWOW9J5h0&amp;tk=3D1hei1s8vfpb26803&amp;alid=3D64d9fe094796671d0a=
+0e3059=0A=0AHuman Resources Intern (PAID WFH INTERNSHIP | NOVEMBER )=0AOrke=
+stra Communications - Quezon City=0AEasily apply=0AOrganizing interviews wi=
+th shortlisted candidates. Posting job advertisements to job boards and soc=
+ial media platforms. Minimum of 400 internship hours.=0AJust posted=0Ahttps=
+://ph.indeed.com/rc/clk/dl=3Fjk=3D35e6c2f93b7c5168&amp;from=3Djaf&amp;qd=3D=
+RnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3Dw=
+Rw4VfvjpFhMaapCW_-ezV_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hei1s8vfpb26803&amp;al=
+id=3D64d9fe094796671d0a0e3059=0A=0AData and Research Intern (PAID INTERNSHI=
+P | NIGHT SHIFT | NOVEMBER )=0AOrkestra Communications - Quezon City=0AEasi=
+ly apply=0AThe Data &amp; Research Intern assists the Operations and Resear=
+ch Team in the daily management of the database. Compiles or sorts finished=
+ research leads.=0AJust posted=0Ahttps://ph.indeed.com/rc/clk/dl=3Fjk=3D588=
+7be6f41fe2037&amp;from=3Djaf&amp;qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWD=
+l_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3DXz_BPd8uwD7p5SZJpoZayl_MKnaSAFGAsD6kfE=
+RFt3g&amp;tk=3D1hei1s8vfpb26803&amp;alid=3D64d9fe094796671d0a0e3059=0A=0AIn=
+ternship for Human Resources=0AATLASOFFICE INC. - Makati=0APHP 7,500 a mont=
+h=0AEasily apply=0ACurrently pursuing degree in a field to Human Resources,=
+ Management, Business Administration, Psychology, etc. Proficient in Micros=
+oft word/excel.=0AJust posted=0Ahttps://ph.indeed.com/rc/clk/dl=3Fjk=3D43cf=
+4f0362b68e9b&amp;from=3Djaf&amp;qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl=
+_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3Ddxv4k6fCC4xEcfShCM6J4l_MKnaSAFGAsD6kfER=
+Ft3g&amp;tk=3D1hei1s8vfpb26803&amp;alid=3D64d9fe094796671d0a0e3059=0A=0AHum=
+an Resources Trainee | HR | OJT | Intern=0AGlobal Tiger Solutions - Makati=
+=0AEasily apply=0APosting job advertisements to job boards and social media=
+ platforms. Removing job advertisements from job boards and social media pl=
+atforms once vacancies have=E2=80=A6=0AJust posted=0Ahttps://ph.indeed.com/=
+rc/clk/dl=3Fjk=3D6e4af73f2c58109a&amp;from=3Djaf&amp;qd=3DRnZhMybXSk4M3QtTV=
+GXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=3Dx5SUCvphgkEZUN6bPK=
+xzIl_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hei1s8vfpb26803&amp;alid=3D64d9fe094796=
+671d0a0e3059=0A=0AData and Research Intern (PAID WFH INTERNSHIP | NIGHT SHI=
+FT)=0AOrkestra Communications - Quezon City=0AEasily apply=0AThe Data &amp;=
+ Research Intern assists the Operations and Research Team in the daily mana=
+gement of the database. Compiles or sorts finished research leads.=0AJust p=
+osted=0Ahttps://ph.indeed.com/rc/clk/dl=3Fjk=3D8f4ebb85dba1068c&amp;from=3D=
+jaf&amp;qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHP=
+DE&amp;rd=3Dgy7MCxDMWln4LWQRywCz51_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hei1s8vfp=
+b26803&amp;alid=3D64d9fe094796671d0a0e3059=0A=0AIntern, Compliance (Wholesa=
+le Banking, Manila Branch)=0AING - Manila=0AFull time for 5 Months. The mis=
+sion of Compliance is to support ING to conduct its business activities in =
+line with applicable laws and regulations (Rules),=E2=80=A6=0AJust posted=
+=0Ahttps://ph.indeed.com/rc/clk/dl=3Fjk=3D234fa9f2d8a60e3d&amp;from=3Djaf&a=
+mp;qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&am=
+p;rd=3D5AzIPX6IdAOv59BwOZqkFngDVkFzbh8-xI2u2vwcbH0&amp;tk=3D1hei1s8vfpb2680=
+3&amp;alid=3D64d9fe094796671d0a0e3059=0A=0AMarketing Intern (PAID WFH INTER=
+NSHIP | NIGHT SHIFT)=0AOrkestra Communications - Quezon City=0AEasily apply=
+=0AA Marketing Intern, or Corporate Marketing Intern, assists the marketing=
+ department in their advertising and promotional efforts.=0AJust posted=0Ah=
+ttps://ph.indeed.com/rc/clk/dl=3Fjk=3D7ac238ddd1590296&amp;from=3Djaf&amp;q=
+d=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&amp;rd=
+=3DY9tUdkd5kw9dqOv55wcEg1_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1hei1s8vfpb26803&am=
+p;alid=3D64d9fe094796671d0a0e3059=0A=0AHuman Resources Intern=0AShoemaker's=
+ Shop Inc - Marikina=0AResponsive employer=0AEasily apply=0AThe *HR Intern*=
+ will be responsible in providing support to the Corporate Services and HR =
+Department in different HR functions including but not limited to=E2=80=A6=
+=0AJust posted=0Ahttps://ph.indeed.com/rc/clk/dl=3Fjk=3D731490a0e96ba6ac&am=
+p;from=3Djaf&amp;qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCN=
+stNQj4wHPDE&amp;rd=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kfERFt3g&amp;tk=3D1=
+hei1s8vfpb26803&amp;alid=3D64d9fe094796671d0a0e3059=0A=0ASalaries estimated=
+ if unavailable. When a job posting doesn't include a salary, we estimate i=
+t by looking at similar jobs. Estimated salaries are not endorsed by the co=
+mpanies offering those positions and may vary from actual salaries.=0A=0A&a=
+mp;sup1; This email includes Job Ads that are based on your Indeed Profile,=
+ preferences, and activity on Indeed. Indeed may be compensated by these em=
+ployers, helping keep Indeed free for jobseekers. Indeed displays Job Ads b=
+ased on a combination of employer bids and relevance, such as search terms,=
+ other information provided, and activities conducted on Indeed. For more i=
+nformation, see the &lt;a style=3D"text-decoration:underline;color:#085FF7;=
+" class=3D"terms-link" href=3D"https://ph.indeed.com/legal=3Fhl=3Den"&gt;In=
+deed Terms of Service&lt;/a&gt;.=0A=0A=C2=A9 2023 Indeed Ireland Operations=
+, Ltd. =0AIndeed Ireland Operations Limited, Block B, Capital Dock, 80 Sir =
+John Rogerson's Quay, Grand Canal Dock, Dublin, 2, D02 HE36 =0APrivacy Poli=
+cy: https://ph.indeed.com/legal=3Fhl=3Den#privacy =0ATerms: https://ph.inde=
+ed.com/legal=3Fhl=3Den =0AHelp Center: https://support.indeed.com/hc/en-us =
+=0AManage email settings: https://subscriptions.indeed.com=3Ftoken=3DCkBPoR=
+Z4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbSANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L=
+4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0a=
+EPTopD9Iu4jNfGhpgI9lNmo%3D&amp;co=3DPH&amp;hl=3Den&amp;tmtk=3D1hei1s8vfpb26=
+803&amp;from=3Djaf =0AUnsubscribe from this email: https://subscriptions.in=
+deed.com/alerts/cancel=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxB=
+sbSANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPql=
+pR_7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo%3D&amp;co=3D=
+PH&amp;hl=3Den&amp;tmtk=3D1hei1s8vfpb26803&amp;subId=3D64d9fe094796671d0a0e=
+3059&amp;rgtk=3D1hei1sjdklr61800&amp;from=3Djaf
+--_----LalC6a1PXCdXSThG0aW3AQ===_63/41-08099-BFBB8456
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+
+<!DOCTYPE html><html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml" xml=
+ns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com=
+:office:office"><head><title>Indeed Daily Job Feed Email</title><meta http-=
+equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"/><meta name=
+=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"/><meta =
+http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge"/><style>=0A           =
+         body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size=
+-adjust: 100%;}=0A                    table, td { mso-table-lspace: 0pt; ms=
+o-table-rspace: 0pt; }=0A                    img { -ms-interpolation-mode: =
+bicubic; }=0A=0A                    img { border: 0; line-height: 100%; out=
+line: none; text-decoration: none; }=0A                    table { border-c=
+ollapse: collapse !important; }=0A                    body { height: 100% !=
+important; Margin: 0 !important; padding: 0 !important; width: 100% !import=
+ant; }=0A                    table, td, .r-0 {=0A                        fo=
+nt-family:'Noto Sans', Helvetica, Arial, sans-serif !important;=0A         =
+           }=0A                    .terms-link {=0A                        =
+color: #2557A7 !important;=0A                        text-decoration:underl=
+ine;=0A                    }=0A=0A                    .r-1 {=0A            =
+                font-size: 16px !important;=0A                        }=0A =
+                 =0A            =0A                    @media only screen a=
+nd (max-width:530px) {=0A                        #responsive_css_ping {=0A =
+                           background-image: url(https://subscriptions.inde=
+ed.com/imgping=3Faluidhash=3D307783ff124638258e07386d47fd5a47&alert=3D64d9f=
+e094796671d0a0e3059&tk=3D1hei1s8vfpb26803&type=3Djafeedresponsive);=0A     =
+                   }=0A                        .r-2 a {=0A                 =
+           width: 100% !important;=0A                        }=0A          =
+              .r-3 {=0A                            padding: 0 0 32px !impor=
+tant;=0A                        }=0A                        .r-4 {=0A      =
+                      max-width: 236px !important;=0A                      =
+      min-height: 48px !important;=0A                            height: au=
+to !important;=0A                        }=0A                        .r-5 {=
+=0A                            padding: 24px 16px 48px !important;=0A      =
+                  }=0A                        .r-6 {=0A                    =
+        padding: 0 16px !important;=0A                        }=0A         =
+               .r-7 {=0A                            padding: 48px 16px 0 !i=
+mportant;=0A                        }=0A                           .r-8 {=
+=0A                                padding: 0 16px !important;=0A          =
+                  }=0A                        =0A        .r-9 {=0A         =
+   display: block !important;=0A            padding: 0 !important;=0A      =
+      Margin: 0px 0 0 !important;=0A        }=0A        .r-a, .r-b, .r-c, .=
+r-d {=0A            display: block !important;=0A            padding: 0 !im=
+portant;=0A            Margin: 24px 0 0 !important;=0A        }=0A        .=
+r-e {=0A            display: none !important;=0A        }=0A        .r-0 br=
+ {=0A            display: none !important;=0A        }=0A    =0A           =
+             =0A    =0A    .r-f {=0A        padding: 0 !important;=0A    }=
+=0A    =0A    =0A    .r-h {=0A        padding: 0 !important;=0A    }=0A    =
+=0A    .r-i {=0A        padding: 0 !important;=0A    }=0A    =0A    .r-f {=
+=0A        width: auto !important;=0A    }=0A    =0A                       =
+ =0A        =0A    .r-j {=0A        padding: 0 0 24px !important;=0A    }=
+=0A        =0A    .r-k {=0A        font-size: 16px !important;=0A    }=0A  =
+  =0A                    }=0A            =0A                    @media only=
+ screen and (max-width: 414px) {=0A                        u ~ div .main {=
+=0A                            min-width: 100vw;=0A                        =
+}=0A                    }=0A                    </style><!--[if !mso]> <!--=
+--><style type=3D"text/css">@import url('https://fonts.googleapis.com/css2=
+=3Ffamily=3DNoto+Sans:wght@400;700&display=3Dswap')</style><!-- <![endif]--=
+></head><body style=3D"Margin:0;padding:0;background-color:#F3F2F1"><div st=
+yle=3D"display:none;max-height:0px;overflow:hidden">See opportunities at IN=
+G, Magellan Solutions and Inteluck Corporation</div><div style=3D"display:n=
+one;max-height:0px;overflow:hidden">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;</div><div id=3D"r=
+esponsive_css_ping"></div><img alt=3D"" src=3D"https://subscriptions.indeed=
+.com/imgping=3Faluidhash=3D307783ff124638258e07386d47fd5a47&amp;alert=3D64=
+d9fe094796671d0a0e3059&amp;tk=3D1hei1s8vfpb26803&amp;type=3Djafeed" height=
+=3D"1" width=3D"1"/><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"=
+0" border=3D"0" bgcolor=3D"#F3F2F1"><tr><td style=3D"padding:0 8px" align=
+=3D"center"><!--[if (gte mso 9)|(IE)]> <table width=3D"600" bgcolor=3D"#F3F=
+2F1" align=3D"center" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" styl=
+e=3D"max-width:600px;table-layout:fixed;Margin:0 auto;"> <tr> <td class=3D"=
+r-7" align=3D"center" valign=3D"top"> <![endif]--> <table width=3D"100%" ce=
+llPadding=3D"0" cellSpacing=3D"0" border=3D"0" style=3D"max-width:600px;"><=
+tr><td class=3D"r-l" style=3D"padding:0 0 8px 0"><a href=3D"https://clk.ind=
+eed.com/hp=3Fco=3DPH&utm_campaign=3Djob_alerts&utm_medium=3Demail&utm_sourc=
+e=3Djobseeker_emails&from=3Djaf&tk=3D1hei1s8vfpb26803"><img style=3D"width:=
+100px" src=3D"https://subscriptions.indeed.com/static/images/logos/indeed_r=
+etina@2x.png" alt=3D"Indeed homepage" width=3D"100" class=3D"r-m"/></a></td=
+><td width=3D"44" align=3D"right" class=3D"r-n"><a href=3D"https://clk.inde=
+ed.com/messages=3Ftk=3D1hei1s8vfpb26803&co=3DPH&hl=3Den"><img style=3D"widt=
+h:44px" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-messa=
+ges-aurora-updated.png" alt=3D"see messages" width=3D"44" class=3D"r-n"/></=
+a></td><td width=3D"44" align=3D"right" style=3D"padding:0 0 0 4px" class=
+=3D"r-o"><a href=3D"https://clk.indeed.com/notifications=3Ffrom=3Dja&tk=3D1=
+hei1s8vfpb26803&co=3DPH&hl=3Den"><img style=3D"width:44px" src=3D"https://s=
+ubscriptions.indeed.com/static/images/ja/icon-notification-aurora.png" alt=
+=3D"see notifications" width=3D"44" class=3D"r-o"/></a></td></tr></table><t=
+able width=3D"100%" border=3D"0" bgcolor=3D"#FFFFFF" align=3D"center" cellP=
+adding=3D"0" cellSpacing=3D"0" style=3D"max-width:600px;table-layout:fixed;=
+Margin:0 auto"><tr><td class=3D"r-7" style=3D"padding:48px 60px"><table wid=
+th=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0"><tr><td align=
+=3D"center"><h1 style=3D"color:#2D2D2D;font-size:28px;font-weight:400;Margi=
+n:0" class=3D"r-s"><b>Your job feed for</b><br>November 6, 2023<br></h1></t=
+d></tr><tr><td align=3D"center" style=3D"padding:10px 0 24px"><p style=3D"a=
+lign:center;color:#000000;font-size:14px;Margin:0">Jobs are based on your p=
+references, profile, and activity on Indeed &sup1;</p></td></tr><tr><td sty=
+le=3D"border-bottom:1px solid #E4E2E0;font-size:1px;Margin:0">&nbsp;</td></=
+tr></table><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=
+=3D"0"><tr><td><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" bo=
+rder=3D"0"><tr><td style=3D"padding:24px 0 0"><table width=3D"100%" cellPad=
+ding=3D"0" cellSpacing=3D"0" style=3D"border-width:0"><tr><td style=3D"padd=
+ing:0px 0px 32px" class=3D"r-j" align=3D"left"><a href=3D"https://ph.indeed=
+.com/rc/clk/dl=3Fjk=3Dc54e276a56d0f04f&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGX=
+WoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DDhBjSXlE3V1NZz52CZmyepDl=
+yR0NaIqzsclscbZAExU&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" =
+style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPadd=
+ing=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0 0 4px"=
+ align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3Dc54e276a5=
+6d0f04f&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqn=
+CNstNQj4wHPDE&rd=3DDhBjSXlE3V1NZz52CZmyepDlyR0NaIqzsclscbZAExU&tk=3D1hei1s8=
+vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-deco=
+ration:underline;font-size:16px;line-height:20px;font-weight:bold;color:#2D=
+2D2D">Human Resource Assistant (Internship)</a></td></tr><tr><td class=3D"r=
+-t" align=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400=
+;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=3D"font-size:14px=
+;line-height:20px;font-weight:700;color:#2D2D2D">Magellan Solutions=C2=A0</=
+span><span class=3D"jecl-jc-companyRating" style=3D"white-space:nowrap;colo=
+r:#2D2D2D;font-size:14px;line-height:16px">=C2=A03.4</span><span>=C2=A0<img=
+ class=3D"jecl-starreview-companyReviewStars" src=3D"https://subscriptions.=
+indeed.com/static/images/ja/star_aurora_grey.png" width=3D"14" border=3D"0"=
+ alt=3D"3.4/5 rating"/>=C2=A0</span><span class=3D"r-v" style=3D"display:in=
+line !important;color:#767676;font-size:14px">- Mandaluyong</span></td></tr=
+><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0=
+ 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https=
+://subscriptions.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"=
+" width=3D"20"/>Easily apply</td></tr><tr><td class=3D"r-x" align=3D"left" =
+style=3D"font-size:14px;line-height:20px;color:#595959;padding:0 0 4px">Col=
+lege Graduate of HR related Course. Job Type: OJT (On the job training). Ma=
+ndaluyong City: Reliably commute or planning to relocate before starting wo=
+rk =E2=80=A6</td></tr><tr><td class=3D"r-z" style=3D"color:#767676;font-siz=
+e:14px;line-height:20px;padding:0 4px 0 0">Just posted</td></tr></table></a=
+></td></tr><tr><td style=3D"padding:0px 0px 32px" class=3D"r-j" align=3D"le=
+ft"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3Dd50ada74a8022d64&from=
+=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPD=
+E&rd=3DkIQXBvJF6_ylKP9nXwSypdPu-0bJyOrVXPgWOW9J5h0&tk=3D1hei1s8vfpb26803&al=
+id=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-decoration:none"=
+><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D=
+"r-k" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://ph.indeed=
+.com/rc/clk/dl=3Fjk=3Dd50ada74a8022d64&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGX=
+WoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DkIQXBvJF6_ylKP9nXwSypdPu=
+-0bJyOrVXPgWOW9J5h0&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" =
+style=3D"display:block;text-decoration:underline;font-size:16px;line-height=
+:20px;font-weight:bold;color:#2D2D2D">Human Resources-Intern</a></td></tr><=
+tr><td class=3D"r-t" align=3D"left" style=3D"font-size:14px;line-height:20p=
+x;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=
+=3D"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Inteluck=
+ Corporation=C2=A0</span><span class=3D"jecl-jc-companyRating" style=3D"whi=
+te-space:nowrap;color:#2D2D2D;font-size:14px;line-height:16px">=C2=A03.5</s=
+pan><span>=C2=A0<img class=3D"jecl-starreview-companyReviewStars" src=3D"ht=
+tps://subscriptions.indeed.com/static/images/ja/star_aurora_grey.png" width=
+=3D"14" border=3D"0" alt=3D"3.5/5 rating"/>=C2=A0</span><span class=3D"r-v"=
+ style=3D"display:inline !important;color:#767676;font-size:14px">- Makati<=
+/span></td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2=
+D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px =
+0" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-app=
+ly.png" alt=3D"" width=3D"20"/>Easily apply</td></tr><tr><td class=3D"r-x" =
+align=3D"left" style=3D"font-size:14px;line-height:20px;color:#595959;paddi=
+ng:0 0 4px">The Human Resources Intern will be responsible for providing da=
+y to day administrative support to the human resource team. Job Type: OJT (=
+On the job training).</td></tr><tr><td class=3D"r-z" style=3D"color:#767676=
+;font-size:14px;line-height:20px;padding:0 4px 0 0">Just posted</td></tr></=
+table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" class=3D"r-j" al=
+ign=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D35e6c2f93b7c=
+5168&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNs=
+tNQj4wHPDE&rd=3DwRw4VfvjpFhMaapCW_-ezV_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfp=
+b26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-decorat=
+ion:none"><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0"><tr><td=
+ class=3D"r-k" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"https://=
+ph.indeed.com/rc/clk/dl=3Fjk=3D35e6c2f93b7c5168&from=3Djaf&qd=3DRnZhMybXSk4=
+M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DwRw4VfvjpFhMaapC=
+W_-ezV_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a=
+0e3059" style=3D"display:block;text-decoration:underline;font-size:16px;lin=
+e-height:20px;font-weight:bold;color:#2D2D2D">Human Resources Intern (PAID =
+WFH INTERNSHIP | NOVEMBER )</a></td></tr><tr><td class=3D"r-t" align=3D"lef=
+t" style=3D"font-size:14px;line-height:20px;font-weight:400;color:#2D2D2D;p=
+adding:0 0 4px"><span class=3D"r-u" style=3D"font-size:14px;line-height:20p=
+x;font-weight:700;color:#2D2D2D">Orkestra Communications=C2=A0</span><span =
+class=3D"r-v" style=3D"display:inline !important;color:#767676;font-size:14=
+px">- Quezon City</span></td></tr><tr><td style=3D"font-size:14px;line-heig=
+ht:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;=
+padding:0 4px 2px 0" src=3D"https://subscriptions.indeed.com/static/images/=
+ja/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily apply</td></tr><tr>=
+<td class=3D"r-x" align=3D"left" style=3D"font-size:14px;line-height:20px;c=
+olor:#595959;padding:0 0 4px">Organizing interviews with shortlisted candid=
+ates. Posting job advertisements to job boards and social media platforms. =
+Minimum of 400 internship hours.</td></tr><tr><td class=3D"r-z" style=3D"co=
+lor:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">Just posted<=
+/td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" class=
+=3D"r-j" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D5=
+887be6f41fe2037&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPya=
+ibUiDIqnCNstNQj4wHPDE&rd=3DXz_BPd8uwD7p5SZJpoZayl_MKnaSAFGAsD6kfERFt3g&tk=
+=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block=
+;text-decoration:none"><table width=3D"100%" cellPadding=3D"0" cellSpacing=
+=3D"0"><tr><td class=3D"r-k" style=3D"padding:0 0 4px" align=3D"left"><a hr=
+ef=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D5887be6f41fe2037&from=3Djaf&qd=
+=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DXz=
+_BPd8uwD7p5SZJpoZayl_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=3D64d9=
+fe094796671d0a0e3059" style=3D"display:block;text-decoration:underline;font=
+-size:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Data and Resear=
+ch Intern (PAID INTERNSHIP | NIGHT SHIFT | NOVEMBER )</a></td></tr><tr><td =
+class=3D"r-t" align=3D"left" style=3D"font-size:14px;line-height:20px;font-=
+weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=3D"font=
+-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Orkestra Communi=
+cations=C2=A0</span><span class=3D"r-v" style=3D"display:inline !important;=
+color:#767676;font-size:14px">- Quezon City</span></td></tr><tr><td style=
+=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img sty=
+le=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https://subscriptio=
+ns.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"" width=3D"20"=
+/>Easily apply</td></tr><tr><td class=3D"r-x" align=3D"left" style=3D"font-=
+size:14px;line-height:20px;color:#595959;padding:0 0 4px">The Data &amp; Re=
+search Intern assists the Operations and Research Team in the daily managem=
+ent of the database. Compiles or sorts finished research leads.</td></tr><t=
+r><td class=3D"r-z" style=3D"color:#767676;font-size:14px;line-height:20px;=
+padding:0 4px 0 0">Just posted</td></tr></table></a></td></tr><tr><td style=
+=3D"padding:0px 0px 32px" class=3D"r-j" align=3D"left"><a href=3D"https://p=
+h.indeed.com/rc/clk/dl=3Fjk=3D43cf4f0362b68e9b&from=3Djaf&qd=3DRnZhMybXSk4M=
+3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3Ddxv4k6fCC4xEcfShC=
+M6J4l_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0=
+e3059" style=3D"display:block;text-decoration:none"><table width=3D"100%" c=
+ellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0=
+ 0 4px" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D43=
+cf4f0362b68e9b&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyai=
+bUiDIqnCNstNQj4wHPDE&rd=3Ddxv4k6fCC4xEcfShCM6J4l_MKnaSAFGAsD6kfERFt3g&tk=3D=
+1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;te=
+xt-decoration:underline;font-size:16px;line-height:20px;font-weight:bold;co=
+lor:#2D2D2D">Internship for Human Resources</a></td></tr><tr><td class=3D"r=
+-t" align=3D"left" style=3D"font-size:14px;line-height:20px;font-weight:400=
+;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=3D"font-size:14px=
+;line-height:20px;font-weight:700;color:#2D2D2D">ATLASOFFICE INC.=C2=A0</sp=
+an><span class=3D"jecl-jc-companyRating" style=3D"white-space:nowrap;color:=
+#2D2D2D;font-size:14px;line-height:16px">=C2=A04</span><span>=C2=A0<img cla=
+ss=3D"jecl-starreview-companyReviewStars" src=3D"https://subscriptions.inde=
+ed.com/static/images/ja/star_aurora_grey.png" width=3D"14" border=3D"0" alt=
+=3D"4/5 rating"/>=C2=A0</span><span class=3D"r-v" style=3D"display:inline !=
+important;color:#767676;font-size:14px">- Makati</span></td></tr><tr><td cl=
+ass=3D"r-w" style=3D"color:#2D2D2D;font-size:14px;line-height:20px;padding:=
+0 0 4px">PHP 7,500 a month</td></tr><tr><td style=3D"font-size:14px;line-he=
+ight:20px;color:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:middl=
+e;padding:0 4px 2px 0" src=3D"https://subscriptions.indeed.com/static/image=
+s/ja/icon-easily-apply.png" alt=3D"" width=3D"20"/>Easily apply</td></tr><t=
+r><td class=3D"r-x" align=3D"left" style=3D"font-size:14px;line-height:20px=
+;color:#595959;padding:0 0 4px">Currently pursuing degree in a field to Hum=
+an Resources, Management, Business Administration, Psychology, etc. Profici=
+ent in Microsoft word/excel.</td></tr><tr><td class=3D"r-z" style=3D"color:=
+#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">Just posted</td>=
+</tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px" class=3D"=
+r-j" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D6e4af=
+73f2c58109a&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUi=
+DIqnCNstNQj4wHPDE&rd=3Dx5SUCvphgkEZUN6bPKxzIl_MKnaSAFGAsD6kfERFt3g&tk=3D1he=
+i1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-=
+decoration:none"><table width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0">=
+<tr><td class=3D"r-k" style=3D"padding:0 0 4px" align=3D"left"><a href=3D"h=
+ttps://ph.indeed.com/rc/clk/dl=3Fjk=3D6e4af73f2c58109a&from=3Djaf&qd=3DRnZh=
+MybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3Dx5SUCvphg=
+kEZUN6bPKxzIl_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe09479=
+6671d0a0e3059" style=3D"display:block;text-decoration:underline;font-size:1=
+6px;line-height:20px;font-weight:bold;color:#2D2D2D">Human Resources Traine=
+e | HR | OJT | Intern</a></td></tr><tr><td class=3D"r-t" align=3D"left" sty=
+le=3D"font-size:14px;line-height:20px;font-weight:400;color:#2D2D2D;padding=
+:0 0 4px"><span class=3D"r-u" style=3D"font-size:14px;line-height:20px;font=
+-weight:700;color:#2D2D2D">Global Tiger Solutions=C2=A0</span><span class=
+=3D"r-v" style=3D"display:inline !important;color:#767676;font-size:14px">-=
+ Makati</span></td></tr><tr><td style=3D"font-size:14px;line-height:20px;co=
+lor:#2D2D2D;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 =
+4px 2px 0" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-ea=
+sily-apply.png" alt=3D"" width=3D"20"/>Easily apply</td></tr><tr><td class=
+=3D"r-x" align=3D"left" style=3D"font-size:14px;line-height:20px;color:#595=
+959;padding:0 0 4px">Posting job advertisements to job boards and social me=
+dia platforms. Removing job advertisements from job boards and social media=
+ platforms once vacancies have=E2=80=A6</td></tr><tr><td class=3D"r-z" styl=
+e=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">Just =
+posted</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32px=
+" class=3D"r-j" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=
+=3Fjk=3D8f4ebb85dba1068c&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZl=
+RWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3Dgy7MCxDMWln4LWQRywCz51_MKnaSAFGAsD6kfER=
+Ft3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"displa=
+y:block;text-decoration:none"><table width=3D"100%" cellPadding=3D"0" cellS=
+pacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0 0 4px" align=3D"left"=
+><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D8f4ebb85dba1068c&from=3D=
+jaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&r=
+d=3Dgy7MCxDMWln4LWQRywCz51_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=
+=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-decoration:underli=
+ne;font-size:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Data and=
+ Research Intern (PAID WFH INTERNSHIP | NIGHT SHIFT)</a></td></tr><tr><td c=
+lass=3D"r-t" align=3D"left" style=3D"font-size:14px;line-height:20px;font-w=
+eight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=3D"font-=
+size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Orkestra Communic=
+ations=C2=A0</span><span class=3D"r-v" style=3D"display:inline !important;c=
+olor:#767676;font-size:14px">- Quezon City</span></td></tr><tr><td style=3D=
+"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img style=
+=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https://subscriptions=
+.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"" width=3D"20"/=
+>Easily apply</td></tr><tr><td class=3D"r-x" align=3D"left" style=3D"font-s=
+ize:14px;line-height:20px;color:#595959;padding:0 0 4px">The Data &amp; Res=
+earch Intern assists the Operations and Research Team in the daily manageme=
+nt of the database. Compiles or sorts finished research leads.</td></tr><tr=
+><td class=3D"r-z" style=3D"color:#767676;font-size:14px;line-height:20px;p=
+adding:0 4px 0 0">Just posted</td></tr></table></a></td></tr><tr><td style=
+=3D"padding:0px 0px 32px" class=3D"r-j" align=3D"left"><a href=3D"https://p=
+h.indeed.com/rc/clk/dl=3Fjk=3D234fa9f2d8a60e3d&from=3Djaf&qd=3DRnZhMybXSk4M=
+3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3D5AzIPX6IdAOv59BwO=
+ZqkFngDVkFzbh8-xI2u2vwcbH0&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0=
+e3059" style=3D"display:block;text-decoration:none"><table width=3D"100%" c=
+ellPadding=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0=
+ 0 4px" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D23=
+4fa9f2d8a60e3d&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyai=
+bUiDIqnCNstNQj4wHPDE&rd=3D5AzIPX6IdAOv59BwOZqkFngDVkFzbh8-xI2u2vwcbH0&tk=3D=
+1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;te=
+xt-decoration:underline;font-size:16px;line-height:20px;font-weight:bold;co=
+lor:#2D2D2D">Intern, Compliance (Wholesale Banking, Manila Branch)</a></td>=
+</tr><tr><td class=3D"r-t" align=3D"left" style=3D"font-size:14px;line-heig=
+ht:20px;font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" =
+style=3D"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">ING=
+=C2=A0</span><span class=3D"jecl-jc-companyRating" style=3D"white-space:now=
+rap;color:#2D2D2D;font-size:14px;line-height:16px">=C2=A03.9</span><span>=
+=C2=A0<img class=3D"jecl-starreview-companyReviewStars" src=3D"https://subs=
+criptions.indeed.com/static/images/ja/star_aurora_grey.png" width=3D"14" bo=
+rder=3D"0" alt=3D"3.9/5 rating"/>=C2=A0</span><span class=3D"r-v" style=3D"=
+display:inline !important;color:#767676;font-size:14px">- Manila</span></td=
+></tr><tr><td class=3D"r-x" align=3D"left" style=3D"font-size:14px;line-hei=
+ght:20px;color:#595959;padding:0 0 4px">Full time for 5 Months. The mission=
+ of Compliance is to support ING to conduct its business activities in line=
+ with applicable laws and regulations (Rules),=E2=80=A6</td></tr><tr><td cl=
+ass=3D"r-z" style=3D"color:#767676;font-size:14px;line-height:20px;padding:=
+0 4px 0 0">Just posted</td></tr></table></a></td></tr><tr><td style=3D"padd=
+ing:0px 0px 32px" class=3D"r-j" align=3D"left"><a href=3D"https://ph.indeed=
+.com/rc/clk/dl=3Fjk=3D7ac238ddd1590296&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGX=
+WoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DY9tUdkd5kw9dqOv55wcEg1_M=
+KnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" =
+style=3D"display:block;text-decoration:none"><table width=3D"100%" cellPadd=
+ing=3D"0" cellSpacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0 0 4px"=
+ align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D7ac238ddd=
+1590296&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqn=
+CNstNQj4wHPDE&rd=3DY9tUdkd5kw9dqOv55wcEg1_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8=
+vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-deco=
+ration:underline;font-size:16px;line-height:20px;font-weight:bold;color:#2D=
+2D2D">Marketing Intern (PAID WFH INTERNSHIP | NIGHT SHIFT)</a></td></tr><tr=
+><td class=3D"r-t" align=3D"left" style=3D"font-size:14px;line-height:20px;=
+font-weight:400;color:#2D2D2D;padding:0 0 4px"><span class=3D"r-u" style=3D=
+"font-size:14px;line-height:20px;font-weight:700;color:#2D2D2D">Orkestra Co=
+mmunications=C2=A0</span><span class=3D"r-v" style=3D"display:inline !impor=
+tant;color:#767676;font-size:14px">- Quezon City</span></td></tr><tr><td st=
+yle=3D"font-size:14px;line-height:20px;color:#2D2D2D;padding:0 0 4px"><img =
+style=3D"vertical-align:middle;padding:0 4px 2px 0" src=3D"https://subscrip=
+tions.indeed.com/static/images/ja/icon-easily-apply.png" alt=3D"" width=3D"=
+20"/>Easily apply</td></tr><tr><td class=3D"r-x" align=3D"left" style=3D"fo=
+nt-size:14px;line-height:20px;color:#595959;padding:0 0 4px">A Marketing In=
+tern, or Corporate Marketing Intern, assists the marketing department in th=
+eir advertising and promotional efforts.</td></tr><tr><td class=3D"r-z" sty=
+le=3D"color:#767676;font-size:14px;line-height:20px;padding:0 4px 0 0">Just=
+ posted</td></tr></table></a></td></tr><tr><td style=3D"padding:0px 0px 32p=
+x" class=3D"r-j" align=3D"left"><a href=3D"https://ph.indeed.com/rc/clk/dl=
+=3Fjk=3D731490a0e96ba6ac&from=3Djaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZl=
+RWDl_NPyaibUiDIqnCNstNQj4wHPDE&rd=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kfER=
+Ft3g&tk=3D1hei1s8vfpb26803&alid=3D64d9fe094796671d0a0e3059" style=3D"displa=
+y:block;text-decoration:none"><table width=3D"100%" cellPadding=3D"0" cellS=
+pacing=3D"0"><tr><td class=3D"r-k" style=3D"padding:0 0 4px" align=3D"left"=
+><a href=3D"https://ph.indeed.com/rc/clk/dl=3Fjk=3D731490a0e96ba6ac&from=3D=
+jaf&qd=3DRnZhMybXSk4M3QtTVGXWoQFPZ5hjcjKgZlRWDl_NPyaibUiDIqnCNstNQj4wHPDE&r=
+d=3DGZFcyHBScz1y0mDksF1mpF_MKnaSAFGAsD6kfERFt3g&tk=3D1hei1s8vfpb26803&alid=
+=3D64d9fe094796671d0a0e3059" style=3D"display:block;text-decoration:underli=
+ne;font-size:16px;line-height:20px;font-weight:bold;color:#2D2D2D">Human Re=
+sources Intern</a></td></tr><tr><td class=3D"r-t" align=3D"left" style=3D"f=
+ont-size:14px;line-height:20px;font-weight:400;color:#2D2D2D;padding:0 0 4p=
+x"><span class=3D"r-u" style=3D"font-size:14px;line-height:20px;font-weight=
+:700;color:#2D2D2D">Shoemaker's Shop Inc=C2=A0</span><span class=3D"r-v" st=
+yle=3D"display:inline !important;color:#767676;font-size:14px">- Marikina</=
+span></td></tr><tr><td style=3D"font-size:14px;line-height:20px;color:#2D2D=
+2D;padding:0 0 4px"><img style=3D"vertical-align:middle;padding:0 4px 2px 0=
+" src=3D"https://subscriptions.indeed.com/static/images/ja/icon-easily-appl=
+y.png" alt=3D"" width=3D"20"/>Easily apply</td></tr><tr><td style=3D"font-s=
+ize:14px;line-height:20px;color:#2D2D2D;padding:0"><img style=3D"vertical-a=
+lign:middle;padding:0 4px 0 0" src=3D"https://subscriptions.indeed.com/stat=
+ic/images/ja/icon-responsive-emp-aurora.png" alt=3D"" width=3D"14"/>Respons=
+ive employer</td></tr><tr><td class=3D"r-x" align=3D"left" style=3D"font-si=
+ze:14px;line-height:20px;color:#595959;padding:0 0 4px">The *HR Intern* wil=
+l be responsible in providing support to the Corporate Services and HR Depa=
+rtment in different HR functions including but not limited to=E2=80=A6</td>=
+</tr><tr><td class=3D"r-z" style=3D"color:#767676;font-size:14px;line-heigh=
+t:20px;padding:0 4px 0 0">Just posted</td></tr></table></a></td></tr></tabl=
+e></td></tr></table></td></tr><tr><td align=3D"center" valign=3D"top"><tabl=
+e align=3D"center" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" width=
+=3D"100%" role=3D"presentation"><tr><td align=3D"left" class=3D"r-2 r-3" st=
+yle=3D"padding:0" valign=3D"top"><div><!--[if mso]>=0A        <v:roundrect =
+xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schemas-microsoft-=
+com:office:word" href=3D"https://clk.indeed.com/hp=3Fco=3DPH&utm_campaign=
+=3Djob_alerts&utm_medium=3Demail&utm_source=3Djobseeker_emails&from=3Djaf&t=
+k=3D1hei1s8vfpb26803" style=3D"v-text-anchor:middle;height:44px;width:auto;=
+" title=3D"link: View job feed" arcsize=3D"18.181818181818183%" strokeweigh=
+t=3D"1.5pt" strokecolor=3D"#ffffff" fillcolor=3D"#2557a7">=0A              =
+      <w:anchorlock/>=0A                    <center style=3D"color:#ffffff;=
+font-size:16px;font-family:'Noto Sans', Helvetica, Arial, sans-serif;font-w=
+eight:bold;">View job feed</center></v:roundrect>=0A        <![endif]-->=0A=
+<a class=3D"r-4" href=3D"https://clk.indeed.com/hp=3Fco=3DPH&utm_campaign=
+=3Djob_alerts&utm_medium=3Demail&utm_source=3Djobseeker_emails&from=3Djaf&t=
+k=3D1hei1s8vfpb26803" style=3D"mso-hide:all;border:2px solid #ffffff;backgr=
+ound-color:#2557a7;border-radius:8px;color:#ffffff;display:inline-block;fon=
+t-family:'Noto Sans', Helvetica, Arial, sans-serif;font-size:16px;font-weig=
+ht:bold;line-height:44px;padding:0px 10px;text-align:center;text-decoration=
+:none;width:auto;-webkit-text-size-adjust:none;min-width:284px">View job fe=
+ed</a></div></td></tr></table></td></tr></table></td></tr></table><table bg=
+color=3D"#FFFFFF" align=3D"center" border=3D"0" width=3D"100%" cellPadding=
+=3D"0" cellSpacing=3D"0" style=3D"max-width:600px;table-layout:fixed;Margin=
+:0 auto"><tr><td style=3D"border-bottom:1px solid #E4E2E0;font-size:1px;Mar=
+gin:0">&nbsp;</td></tr><tr><td class=3D"r-8" style=3D"padding:0 60px"><tabl=
+e width=3D"100%"><tr><td class=3D"r-f" style=3D"padding:48px 0"><table widt=
+h=3D"100%"><tr><td><table><tr><td class=3D"r-1" align=3D"LEFT"><p style=3D"=
+color:#000000;font-size:16px;line-height:22px;font-weight:bold">Overall, ho=
+w relevant are these jobs=3F</p></td></tr></table></td></tr><tr><td><table =
+width=3D"100%"><tr><td align=3D"left" style=3D"width:15%" class=3D"r-10"><a=
+ href=3D"https://subscriptions.indeed.com/relsurvey/64d9fe094796671d0a0e305=
+9=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbSANQFlHpEeypUOmBfZI=
+8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNecQ7=
+kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo%3D&co=3DPH&hl=3Den&tmtk=3D1hei1s8=
+vfpb26803&origScore=3D1"><img style=3D"width:44px" src=3D"https://subscript=
+ions.indeed.com/static/images/ja/rel-survey-emoji-1.png" alt=3D"Job relevan=
+ce: 1- Not at all relevant" width=3D"44"/></a></td><td align=3D"center" sty=
+le=3D"width:23%" class=3D"r-10"><a href=3D"https://subscriptions.indeed.com=
+/relsurvey/64d9fe094796671d0a0e3059=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-O=
+JUBxWfHjXDsxBsbSANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDA=
+iSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo=
+%3D&co=3DPH&hl=3Den&tmtk=3D1hei1s8vfpb26803&origScore=3D2"><img style=3D"wi=
+dth:44px" src=3D"https://subscriptions.indeed.com/static/images/ja/rel-surv=
+ey-emoji-2.png" alt=3D"Job relevance: 2- Slightly relevant" width=3D"44"/><=
+/a></td><td align=3D"center" style=3D"width:25%"><a href=3D"https://subscri=
+ptions.indeed.com/relsurvey/64d9fe094796671d0a0e3059=3Ftoken=3DCkBPoRZ4M-Is=
+5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbSANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L4dNFyz=
+6EjDast21lKo77PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD=
+9Iu4jNfGhpgI9lNmo%3D&co=3DPH&hl=3Den&tmtk=3D1hei1s8vfpb26803&origScore=3D3"=
+><img style=3D"width:44px" src=3D"https://subscriptions.indeed.com/static/i=
+mages/ja/rel-survey-emoji-3.png" alt=3D"Job relevance: 3- Somewhat relevant=
+" width=3D"44"/></a></td><td align=3D"center" style=3D"width:23%" class=3D"=
+r-10"><a href=3D"https://subscriptions.indeed.com/relsurvey/64d9fe094796671=
+d0a0e3059=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbSANQFlHpEey=
+pUOmBfZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9=
+r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo%3D&co=3DPH&hl=3Den&tmtk=
+=3D1hei1s8vfpb26803&origScore=3D4"><img style=3D"width:44px" src=3D"https:/=
+/subscriptions.indeed.com/static/images/ja/rel-survey-emoji-4.png" alt=3D"J=
+ob relevance: 4- Very relevant" width=3D"44"/></a></td><td align=3D"right" =
+style=3D"width:15%" class=3D"r-10"><a href=3D"https://subscriptions.indeed.=
+com/relsurvey/64d9fe094796671d0a0e3059=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22n=
+P-OJUBxWfHjXDsxBsbSANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77=
+PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9l=
+Nmo%3D&co=3DPH&hl=3Den&tmtk=3D1hei1s8vfpb26803&origScore=3D5"><img style=3D=
+"width:44px" src=3D"https://subscriptions.indeed.com/static/images/ja/rel-s=
+urvey-emoji-5.png" alt=3D"Job relevance: 5- Extremely relevant" width=3D"44=
+"/></a></td></tr></table></td></tr><tr><td><table width=3D"100%"><tr><td al=
+ign=3D"LEFT" style=3D"width:30%" alt=3D"Not at all" class=3D"r-g"><p style=
+=3D"color:#6F6F6F;font-size:12px;line-height:16px">Not at all</p></td><td a=
+lign=3D"CENTER" style=3D"width:40%" alt=3D"Somewhat" class=3D"r-h"><p style=
+=3D"color:#6F6F6F;font-size:12px;line-height:16px">Somewhat</p></td><td ali=
+gn=3D"RIGHT" style=3D"width:30%" alt=3D"Extremely" class=3D"r-i"><p style=
+=3D"color:#6F6F6F;font-size:12px;line-height:16px">Extremely</p></td></tr><=
+/table></td></tr></table></td></tr></table></td></tr></table><table width=
+=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" border=3D"0" style=3D"max-wid=
+th:600px;;Margin:0 auto"><tr><td class=3D"r-q" style=3D"padding:24px 60px 4=
+8px"><p align=3D"center" style=3D"align:center;color:#2D2D2D;font-size:12px=
+;Margin:0"><strong>Do not share this email</strong></p><p align=3D"center" =
+style=3D"align:center;color:#2D2D2D;font-size:12px;Margin:0">This email con=
+tains secure links that are personalized for you. Please do not share this =
+email or links with others.</p></td></tr><tr><td class=3D"r-5" style=3D"pad=
+ding:0px 60px 48px"><p align=3D"center" style=3D"align:center;color:#2D2D2D=
+;font-size:12px;Margin:0">Salaries estimated if unavailable. When a job pos=
+ting doesn't include a salary, we estimate it by looking at similar jobs. E=
+stimated salaries are not endorsed by the companies offering those position=
+s and may vary from actual salaries.</p></td></tr><tr><td class=3D"r-6" sty=
+le=3D"padding:0 60px"><p align=3D"center" style=3D"align:center;color:#2D2D=
+2D;font-size:12px;Margin:0"><span>&sup1; This email includes Job Ads that a=
+re based on your Indeed Profile, preferences, and activity on Indeed. Indee=
+d may be compensated by these employers, helping keep Indeed free for jobse=
+ekers. Indeed displays Job Ads based on a combination of employer bids and =
+relevance, such as search terms, other information provided, and activities=
+ conducted on Indeed. For more information, see the <a style=3D"text-decora=
+tion:underline;color:#085FF7;" class=3D"terms-link" href=3D"https://ph.inde=
+ed.com/legal=3Fhl=3Den">Indeed Terms of Service</a>.</span></p></td></tr><t=
+r><td class=3D"r-r" style=3D"padding:48px 60px 0"><p align=3D"center" style=
+=3D"align:center;color:#2D2D2D;font-size:12px;Margin:0"><span>You are recei=
+ving daily Job Feed emails.</span></p></td></tr></table><table class=3D"jec=
+l-Footer" width=3D"100%" cellPadding=3D"0" cellSpacing=3D"0" style=3D"font-=
+family:'Noto Sans', Helvetica, Arial, sans-serif;font-size:12px;color:#2D2D=
+2D;line-height:22px;Margin:0 auto;border:0"><tr><td class=3D"r-11" lang=3D"=
+en" align=3D"center" style=3D"padding:48px 0px 0px;font-family:'Noto Sans',=
+ Helvetica, Arial, sans-serif">=C2=A9 2023 Indeed Ireland Operations, Ltd.<=
+/td></tr><tr><td class=3D"r-12" lang=3D"en" align=3D"center" style=3D"paddi=
+ng:0px;font-family:'Noto Sans', Helvetica, Arial, sans-serif">Indeed Irelan=
+d Operations Limited, Block B, Capital Dock, 80 Sir John Rogerson's Quay, G=
+rand Canal Dock, Dublin, 2, D02 HE36</td></tr><tr><td class=3D"r-0" align=
+=3D"center" style=3D"padding:48px 0px 64px"><a href=3D"https://ph.indeed.co=
+m/legal=3Fhl=3Den#privacy" title=3D"Privacy Policy" style=3D"color:#2557A7;=
+text-decoration:underline;font-family:'Noto Sans', Helvetica, Arial, sans-s=
+erif" class=3D"r-9">Privacy Policy</a><span class=3D"r-e"> | </span><a href=
+=3D"https://ph.indeed.com/legal=3Fhl=3Den" title=3D"Terms" style=3D"color:#=
+2557A7;text-decoration:underline;font-family:'Noto Sans', Helvetica, Arial,=
+ sans-serif" class=3D"r-a">Terms</a><span class=3D"r-e"> | </span><a href=
+=3D"https://support.indeed.com/hc/en-us" title=3D"Help Center" style=3D"col=
+or:#2557A7;text-decoration:underline;font-family:'Noto Sans', Helvetica, Ar=
+ial, sans-serif" class=3D"r-b">Help Center</a><br/><a href=3D"https://subsc=
+riptions.indeed.com=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbS=
+ANQFlHpEeypUOmBfZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPqlpR_=
+7QdHGg1Ph9r6zNecQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo%3D&co=3DPH&hl=
+=3Den&tmtk=3D1hei1s8vfpb26803&from=3Djaf" title=3D"Manage email settings" s=
+tyle=3D"color:#2557A7;text-decoration:underline;font-family:'Noto Sans', He=
+lvetica, Arial, sans-serif" class=3D"r-c">Manage email settings</a><span cl=
+ass=3D"r-e"> | </span><a href=3D"https://subscriptions.indeed.com/alerts/ca=
+ncel=3Ftoken=3DCkBPoRZ4M-Is5OD5_sWeAZe22nP-OJUBxWfHjXDsxBsbSANQFlHpEeypUOmB=
+fZI8rrcn1sV-KavgheB1L4dNFyz6EjDast21lKo77PDAiSjg-DjYCuPqlpR_7QdHGg1Ph9r6zNe=
+cQ7kTRpg01nDY5BZmFZ0aEPTopD9Iu4jNfGhpgI9lNmo%3D&co=3DPH&hl=3Den&tmtk=3D1hei=
+1s8vfpb26803&subId=3D64d9fe094796671d0a0e3059&rgtk=3D1hei1sjdklr61800&from=
+=3Djaf" title=3D"Unsubscribe from this email" style=3D"color:#2557A7;text-d=
+ecoration:underline;font-family:'Noto Sans', Helvetica, Arial, sans-serif" =
+class=3D"r-d">Unsubscribe from this email</a></td></tr></table><!--[if (gte=
+ mso 9)|(IE)]> </td> </tr> </table> <![endif]--> </td></tr></table><img alt=
+=3D"" src=3D"https://subscriptions.indeed.com/imgping=3Faluidhash=3D307783f=
+f124638258e07386d47fd5a47&amp;alert=3D64d9fe094796671d0a0e3059&amp;tk=3D1he=
+i1s8vfpb26803&amp;type=3Djafeedfull" height=3D"1" width=3D"1"/></body></htm=
+l>
+--_----LalC6a1PXCdXSThG0aW3AQ===_63/41-08099-BFBB8456--
+

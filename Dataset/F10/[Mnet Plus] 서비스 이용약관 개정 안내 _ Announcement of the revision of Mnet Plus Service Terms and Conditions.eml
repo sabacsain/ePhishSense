@@ -1,0 +1,774 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:7982:b0:4f4:d48:a6dd with SMTP id o2csp1565017maz;
+        Sat, 12 Aug 2023 01:06:11 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IErUDd64lypKKV41pxeKPlq4UlxVY/7/f5waV9Bch6XkYfQYuxxROO7QcRxo9Jnj8f+z3xG
+X-Received: by 2002:a81:83c7:0:b0:576:9d2e:ef2b with SMTP id t190-20020a8183c7000000b005769d2eef2bmr4002242ywf.10.1691827571066;
+        Sat, 12 Aug 2023 01:06:11 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1691827571; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iERC37HD5OY6i8KbyF9S4lkbb7SztkG0WLgoglAlRMqsn1tvSuYzP1x9TrlbPtu8Vy
+         NyQr22jTmPIqaCDPoo5hdB4oAoJxYianw3zntqe9rCTQTdCjMzuJwqRAzuc85IFKLSTF
+         jStn2xLawn1JkzhmHWxXPqWttl0vRtmF8QT02v91rhNhU7lHOmT7bYNRjthMOw0lpsuH
+         lx2GF7Ya1UiIgZrEqajUuPfFFExIwDuzNSroNqdVD1NDeAlwnCpBkzmxhVEg6ZrjzBEF
+         qtcSfOSZw4+kcMBwJ/xmAyJh+orIT9KvHlq05HPsyAesb6RJpazWD181dr0OuIRhOEl/
+         pRKw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:to:from:subject:mime-version
+         :date:sender:dkim-signature:dkim-signature;
+        bh=t1sJEJVGsQ2vIVdCWHRkcVJgRMYh1/zIOtgWf5vLSTc=;
+        fh=HBRjKW6y68H/sL9bC0bF2UPh5hj09EfenLVWgVD+t8o=;
+        b=fsufuwHCUhu2alV8x/WHJLY40CJiLSffS0Lu4Jd50swm6bHiSjoiYwApXCY0DefgAj
+         hUMURKdSBV4smUmZMvL6uyoBPmi8uyfjFV8EaIcEbJHRhcDzCafMTzjNOTRqlNL3UuAX
+         oKkBewgaKC8MbyqkwqMmjSU9XZxGxLHKLPQdQIMM2Aj6VBWXHI8fimJErZ4vxDZa/CPC
+         GiA55lRsJq9CMTZM8yhplDdvdH8Z+XOaw9Cvho3tC34kwvpl9ggUF7wtFeYSivjr908m
+         j7H7UBgAP8f2FrkxftReiW88BsVgl7ztm2foSpO7kHJDzecfAueENAXazl0Cnjgf2Acc
+         bNgQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.mnet.world header.s=mailo header.b=hu2tgQyh;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=ZFI7SWHq;
+       spf=pass (google.com: domain of bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world designates 198.61.254.29 as permitted sender) smtp.mailfrom="bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world"
+Return-Path: <bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world>
+Received: from so254-29.mailgun.net (so254-29.mailgun.net. [198.61.254.29])
+        by mx.google.com with UTF8SMTPS id c138-20020a814e90000000b00589ac787957si5028426ywb.90.2023.08.12.01.06.10
+        for <cavaneyroericajoysarilan@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sat, 12 Aug 2023 01:06:11 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world designates 198.61.254.29 as permitted sender) client-ip=198.61.254.29;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.mnet.world header.s=mailo header.b=hu2tgQyh;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=ZFI7SWHq;
+       spf=pass (google.com: domain of bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world designates 198.61.254.29 as permitted sender) smtp.mailfrom="bounce+4e0f8c.4849c0-cavaneyroericajoysarilan=gmail.com@mg.mnet.world"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.mnet.world;
+ q=dns/txt; s=mailo; t=1691827570; x=1691834770; h=Content-Type:
+ Content-Transfer-Encoding: Message-Id: To: To: From: From: Subject: Subject:
+ Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=t1sJEJVGsQ2vIVdCWHRkcVJgRMYh1/zIOtgWf5vLSTc=;
+ b=hu2tgQyhjvcBjf7s0cS1KLFrfUt3CzXIAoiJRjnmOV07VE0fbvt9CqCvjR97oORtJF/4CZi1s5ZCNV8H5Bgog4i0VFgxSdBFZYcvciysuLf0z2qZsQbQkUATujkjz9rctq3/B3ygLctRN3I4M3bSf7stKrM1WUqHTxESYL/doVw=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1691827570; x=1691834770; h=Content-Type:
+ Content-Transfer-Encoding: Message-Id: To: To: From: From: Subject: Subject:
+ Mime-Version: Date: Sender: Sender: X-Feedback-Id;
+ bh=t1sJEJVGsQ2vIVdCWHRkcVJgRMYh1/zIOtgWf5vLSTc=;
+ b=ZFI7SWHqDY2YrbYsw/mrmTNKRndhd5EbYEernZDXIEhVmC2NsbSkRIsovJnA5ddPpEMZZxcnDc9BdiI2jds48dbALtzFaNIBibfsVitaOr2gDQlcQ8dkaFjexrKpDTK+dLhMG8u3/Q1p/NilY89CuP4RYU5LLW8Lh+8NFhe18ag=
+X-Feedback-Id: postmaster@mg.mnet.world::6246ae8f174b091bfaee910e:mailgun
+X-Mailgun-Sending-Ip: 198.61.254.29
+X-Mailgun-Sid: WyJhMGE5NCIsImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb20iLCI0ODQ5YzAiXQ==
+Received: from <unknown> (<unknown> []) by 252cbd814ac9 with HTTP id
+ 64d73d72d27a3b1a36e78c4a; Sat, 12 Aug 2023 08:06:10 GMT
+X-Mailgun-Batch-Id: 64d73d7277a96f3690b0b84b
+Sender: no-reply=mnet.world@mg.mnet.world
+Date: Sat, 12 Aug 2023 08:06:10 +0000
+Mime-Version: 1.0
+Subject: =?UTF-8?b?W01uZXQgUGx1c10g7ISc67mE7IqkIOydtOyaqeyVveq0gCDqsJzsoJUg7JWI?=
+ =?UTF-8?b?64K0IHwgQW5ub3VuY2VtZW50IG9mIHRoZSByZXZpc2lvbiBvZiBNbmV0IFBs?=
+ =?UTF-8?b?dXMgU2VydmljZSBUZXJtcyBhbmQgQ29uZGl0aW9ucw==?=
+From: Mnet Plus <no-reply@mnet.world>
+To: cavaneyroericajoysarilan@gmail.com
+Message-Id: <20230812080610.df8a96b896810afd@mg.mnet.world>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<!DOCTYPE html>
+<html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micr=
+osoft-com:office:office" lang=3D"en">
+
+<head>
+	<title></title>
+	<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+	<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1=
+=2E0"><!--[if mso]><xml><o:OfficeDocume=
+ntSettings><o:PixelsPerInch>96</o:Pixe=
+lsPerInch><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]-->
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		a[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: inherit !important;
+		}
+
+		#MessageViewBody a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		p {
+			line-height: inherit
+		}
+
+		.desktop_hide,
+		.desktop_hide table {
+			mso-hide: all;
+			display: none;
+			max-height: 0px;
+			overflow: hidden;
+		}
+
+		.image_block img+div {
+			display: none;
+		}
+
+		@media (max-width:620px) {
+			.image_block img.fullWidth {
+				max-width: 100% !important;
+			}
+
+			.mobile_hide {
+				display: none;
+			}
+
+			.row-content {
+				width: 100% !important;
+			}
+
+			.stack .column {
+				width: 100%;
+				display: block;
+			}
+
+			.mobile_hide {
+				min-height: 0;
+				max-height: 0;
+				max-width: 0;
+				overflow: hidden;
+				font-size: 0px;
+			}
+
+			.desktop_hide,
+			.desktop_hide table {
+				display: table !important;
+				max-height: none !important;
+			}
+		}
+	</style>
+</head>
+
+<body style=3D"margin: 0; background-color: #fff; padding: 0; -webkit-text-=
+size-adjust: none; text-size-adjust: none;">
+	<table class=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0=
+" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; background-color: #fff;">
+		<tbody>
+			<tr>
+				<td>
+					<table class=3D"row row-1" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6f7f9;">
+						<tbody>
+							<tr>
+								<td>
+									<table class=3D"row-content stack" align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; w=
+idth: 600px; margin: 0 auto;" width=3D"600">
+										<tbody>
+											<tr>
+												<td class=3D"column column-1" width=3D"100%" style=3D"mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; pa=
+dding-bottom: 5px; padding-top: 5px; vertical-align: top; border-top: 0px; =
+border-right: 0px; border-bottom: 0px; border-left: 0px;">
+													<table class=3D"image_block block-1" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad" style=3D"width:100%;padding-right:0px;padd=
+ing-left:0px;">
+																<div class=3D"alignment" align=3D"center" style=3D"line-hei=
+ght:10px"><img class=3D"fullWidth" src=3D"https://d15k2d11r6t6rl.cloudfront=
+=2Enet/public/users/Integrators/BeeProA=
+gency/619992_601867/Logo_new%20%E1%84%=
+87%E1%85%A9%E1%86%A8%E1%84%89%E1%85%A1.png" style=3D"display: block; height=
+: auto; border: 0; max-width: 600px; width: 100%;" width=3D"600" alt=3D"Bur=
+ger Shop logo" title=3D"Burger Shop logo"></div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"divider_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:5px;padding-left:2=
+0px;padding-right:20px;padding-top:5px;">
+																<div class=3D"alignment" align=3D"center">
+																	<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%" style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt;">
+																		<tr>
+																			<td class=3D"divider_inner" style=3D"font-size: 1px; lin=
+e-height: 1px; border-top: 1px solid #E8E8E8;"><span>&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table class=3D"row row-2" align=3D"center" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; background-color: #f6f7f9;">
+						<tbody>
+							<tr>
+								<td>
+									<table class=3D"row-content stack" align=3D"center" border=3D"0" c=
+ellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; background-color: #fff; color: #000; w=
+idth: 600px; margin: 0 auto;" width=3D"600">
+										<tbody>
+											<tr>
+												<td class=3D"column column-1" width=3D"100%" style=3D"mso-table=
+-lspace: 0pt; mso-table-rspace: 0pt; font-weight: 400; text-align: left; pa=
+dding-bottom: 30px; padding-left: 25px; padding-right: 25px; padding-top: 2=
+0px; vertical-align: top; border-top: 0px; border-right: 0px; border-bottom=
+: 0px; border-left: 0px;">
+													<table class=3D"heading_block block-1" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad" style=3D"text-align:center;width:100%;">
+																<h1 style=3D"margin: 0; color: #8a3c90; direction: ltr; fon=
+t-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 23px; fo=
+nt-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left=
+; margin-top: 0; margin-bottom: 0;"><strong>Mnet Plus =EC=84=9C=EB=B9=84=EC=
+=8A=A4 =EC=9D=B4=EC=9A=A9=EC=95=BD=EA=B4=80 =EA=B0=9C=EC=A0=95 =EC=95=88=EB=
+=82=B4</strong></h1>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-2" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0; margin-bottom: 16px;"><br><br>=EC=
+=95=88=EB=85=95=ED=95=98=EC=84=B8=EC=9A=94.</p>
+																	<p style=3D"margin: 0; margin-bottom: 16px;">Mnet Plus=EB=
+=A5=BC =EC=9D=B4=EC=9A=A9=ED=95=B4 =EC=A3=BC=EC=8B=9C=EB=8A=94 =ED=9A=8C=EC=
+=9B=90 =EB=B6=84=EB=93=A4=EA=BB=98 =EA=B0=90=EC=82=AC=EB=93=9C=EB=A6=AC=EB=
+=A9=B0, =EC=8B=A0=EA=B7=9C =EA=B0=9C=EC=A0=95=EB=90=A0 =EC=9D=B4=EC=9A=A9=
+=EC=95=BD=EA=B4=80=EC=9D=84 =EC=95=88=EB=82=B4 =EB=93=9C=EB=A6=AC=EC=98=A4=
+=EB=8B=88 =EC=84=9C=EB=B9=84=EC=8A=A4 =EC=9D=B4=EC=9A=A9=EC=97=90 =EC=B0=B8=
+=EA=B3=A0=ED=95=98=EC=8B=9C=EA=B8=B0 =EB=B0=94=EB=9E=8D=EB=8B=88=EB=8B=A4.<=
+/p>
+																	<p style=3D"margin: 0;">&nbsp;</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-3" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-top:1=
+0px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>1. =EA=B0=9C=EC=A0=95 =EC=
+=82=AC=EC=9C=A0:&nbsp;</strong>=ED=9C=B4=EB=A9=B4=ED=9A=8C=EC=9B=90 =EC=A0=
+=9C=EB=8F=84 =ED=8F=90=EC=A7=80 =EB=B2=95=EB=A5=A0 =EA=B0=9C=EC=A0=95=EC=97=
+=90 =EB=94=B0=EB=A5=B8 =EC=97=A0=EB=84=B7=ED=94=8C=EB=9F=AC=EC=8A=A4 =E2=80=
+=9C=EC=84=9C=EB=B9=84=EC=8A=A4=E2=80=9D =EC=9D=B4=EC=9A=A9 =EC=A2=85=EB=A3=
+=8C=E2=80=A8 =ED=9B=84=EC=9D=98 =EC=A1=B0=EC=B9=98 =EC=95=BD=EA=B4=80 =EB=
+=82=B4=EC=9A=A9 =EC=8B=A0=EA=B7=9C =EC=B6=94=EA=B0=80</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-4" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-top:1=
+0px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>2. =EC=A3=BC=EC=9A=94 =EA=
+=B0=9C=EC=A0=95 =EB=82=B4=EC=9A=A9</strong></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"html_block block-5" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"font-family:Helvetica Neue, Helvetica, Arial,=
+ sans-serif;text-align:center;" align=3D"center"><table style=3D"border-col=
+lapse: collapse; font-size: 14px; text-align: left; width: 100%; height: 77=
+px;" border=3D"1">
+  <tbody>
+    <tr style=3D"height: 22px;">
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 17.619%; heig=
+ht: 10px;">
+        <strong data-stringify-type=3D"bold">=EC=A1=B0=ED=95=AD</strong>
+      </td>
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 14.7619%; hei=
+ght: 10px;">
+        <strong data-stringify-type=3D"bold">=EA=B0=9C=EC=A0=95 =EC=A0=84</=
+strong>
+      </td>
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 67.619%; heig=
+ht: 10px;">
+        <strong data-stringify-type=3D"bold">=EA=B0=9C=EC=A0=95 =ED=9B=84</=
+strong>
+      </td>
+    </tr>
+    <tr style=3D"height: 67px;">
+      <td style=3D"width: 17.619%; height: 67px;">
+        <div class=3D"page" title=3D"Page 8">
+          <div class=3D"layoutArea">
+            <div class=3D"column">
+              <p>
+                <strong>=EC=A0=9C27=EC=A1=B0=E2=80=A8<br />(=E2=80=9C=EC=84=
+=9C=EB=B9=84=EC=8A=A4=E2=80=9D =EC=9D=B4=EC=9A=A9 =EC=A2=85=EB=A3=8C =ED=9B=
+=84=EC=9D=98 =EC=A1=B0=EC=B9=98)</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td style=3D"width: 14.7619%; height: 67px;">
+        <p class=3D"wysiwyg-text-align-center">
+          <span style=3D"color: black;">[=EC=8B=A0=EC=84=A4]</span>
+        </p>
+      </td>
+      <td style=3D"width: 67.619%; height: 67px;">
+        <div class=3D"page" title=3D"Page 8">
+          <div class=3D"layoutArea">
+            <div class=3D"column">
+              <p>
+                =E2=91=A0 =E2=80=9C=ED=9A=8C=EC=9B=90=E2=80=9D=EA=B3=BC =E2=
+=80=9C=ED=9A=8C=EC=82=AC=E2=80=9D =EA=B0=84=EC=9D=98 =E2=80=9C=EC=84=9C=EB=
+=B9=84=EC=8A=A4 =EC=9D=B4=EC=9A=A9 =EA=B3=84=EC=95=BD=E2=80=9D=EC=9D=B4 =EC=
+=A2=85=EB=A3=8C=EB=90=A0 =EA=B2=BD=EC=9A=B0, =E2=80=9C=ED=9A=8C =EC=82=AC=
+=E2=80=9D=EB=8A=94 =EB=8B=A4=EC=9D=8C=EA=B3=BC =EA=B0=99=EC=9D=80
+                =EC=82=AC=EC=9C=A0=EB=A5=BC =EC=A0=9C=EC=99=B8=ED=95=98=EA=
+=B3=A0=EB=8A=94 =ED=95=B4=EB=8B=B9 =E2=80=9C=ED=9A=8C=EC=9B=90=E2=80=9D=EA=
+=B3=BC =EA=B4=80=EB=A0=A8=EB=90=9C =EB=AA=A8=EB=93=A0 =EC=A0=95=EB=B3=B4=EB=
+=A5=BC =EC=A6=89=EC=8B=9C =ED=8C=8C=EA=B8=B0=ED=95=A9=EB=8B=88=EB=8B=A4.
+              </p>
+              <p>
+                =C2=A01. =EA=B4=80=EA=B3=84 =EB=B2=95=EB=A0=B9=EC=97=90 =EB=
+=94=B0=EB=9D=BC =EC=98=88=EC=99=B8=EC=A0=81=EC=9D=B8 =EB=B3=B4=EA=B4=80=EC=
+=9D=B4 =ED=95=84=EC=9A=94=ED=95=9C =EA=B2=BD=EC=9A=B0<br />
+                =C2=A02. =E2=80=9C=ED=9A=8C=EC=9B=90=E2=80=9D=EC=97=90 =EB=
+=8C=80=ED=95=9C =EC=B6=94=EA=B0=80 =EC=86=90=ED=95=B4 =EC=98=88=EB=B0=A9 =
+=EB=98=90=EB=8A=94 =EA=B3=A0=EA=B0=9D=EA=B3=BC=EC=9D=98 =EC=83=81=EB=8B=B4 =
+=EB=AA=A9=EC=A0=81=EC=9C=BC=EB=A1=9C =E2=80=A8 30=EC=9D=BC=EA=B0=84
+                =EC=A0=80=EC=9E=A5=ED=95=98=EB=8A=94 =EA=B2=BD=EC=9A=B0
+              </p>
+              <p>=E2=91=A1 =EC=A0=9C 25=EC=A1=B0=EC=97=90=EC=84=9C =EC=A0=
+=95=ED=95=9C =EB=B0=94=EC=97=90 =EB=94=B0=EB=9D=BC =ED=8C=AC=ED=8F=AC=EC=9D=
+=B8=ED=8A=B8=EB=8A=94 =EC=9E=90=EB=8F=99 =EC=86=8C=EB=A9=B8 =EB=90=A9=EB=8B=
+=88=EB=8B=A4.</p>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-6" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:10px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong><br>3. =EA=B0=9C=EC=A0=95 =
+=EC=9D=BC=EC=8B=9C: </strong>2023=EB=85=84 9=EC=9B=94 15=EC=9D=BC</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-7" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:10px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>4. =EC=A0=81=EC=9A=A9 =EB=
+=8C=80=EC=83=81: </strong>=EC=97=A0=EB=84=B7=ED=94=8C=EB=9F=AC=EC=8A=A4 =EC=
+=A0=84=EC=B2=B4 =ED=9A=8C=EC=9B=90</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-8" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:15px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0; margin-bottom: 16px;">Mnet Plus =ED=
+=9A=8C=EC=9B=90=EC=9D=80 =EB=B3=B8 =EC=84=9C=EB=B9=84=EC=8A=A4 =EC=9D=B4=EC=
+=9A=A9=EC=95=BD=EA=B4=80 =EA=B0=9C=EC=A0=95=EC=97=90 =EB=8C=80=ED=95=B4 =ED=
+=9A=8C=EC=9B=90=ED=83=88=ED=87=B4=EB=A5=BC =ED=86=B5=ED=95=B4 =EA=B0=9C=EC=
+=A0=95=EC=97=90 =EB=8F=99=EC=9D=98=ED=95=98=EC=A7=80 =EC=95=8A=EC=9C=BC=EC=
+=8B=A4 =EC=88=98 =EC=9E=88=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+																	<p style=3D"margin: 0; margin-bottom: 16px;">- =ED=9A=8C=
+=EC=9B=90 =ED=83=88=ED=87=B4 =EB=B0=A9=EB=B2=95: 1) Mnet Plus =EB=A1=9C=EA=
+=B7=B8=EC=9D=B8 =E2=86=92 2) =ED=9A=8C=EC=9B=90 =EC=A0=95=EB=B3=B4 =E2=86=
+=92 3) =EA=B3=84=EC=A0=95 =EC=82=AD=EC=A0=9C<br>- =EA=B4=80=EB=A0=A8 =EB=AC=
+=B8=EC=9D=98: <a href=3D"https://mnetplus.zendesk.com/hc/ko/requests/new" t=
+arget=3D"_blank" style=3D"text-decoration: underline; color: #8a3c90;" rel=
+=3D"noopener">=EC=97=A0=EB=84=B7=ED=94=8C=EB=9F=AC=EC=8A=A4 =EA=B3=A0=EA=B0=
+=9D=EC=84=BC=ED=84=B0</a></p>
+																	<p style=3D"margin: 0;">&nbsp;</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"html_block block-9" width=3D"100%" border=3D"0=
+" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"font-family:Helvetica Neue, Helvetica, Arial,=
+ sans-serif;text-align:center;" align=3D"center"></div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"divider_block block-10" width=3D"100%" border=
+=3D"0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad">
+																<div class=3D"alignment" align=3D"center">
+																	<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%" style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt;">
+																		<tr>
+																			<td class=3D"divider_inner" style=3D"font-size: 1px; lin=
+e-height: 1px; border-top: 1px solid #dddddd;"><span>&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"heading_block block-11" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad" style=3D"text-align:center;width:100%;">
+																<h1 style=3D"margin: 0; color: #8a3c90; direction: ltr; fon=
+t-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 23px; fo=
+nt-weight: 700; letter-spacing: normal; line-height: 120%; text-align: left=
+; margin-top: 0; margin-bottom: 0;"><strong><br>Announcement of the revisio=
+n of Mnet Plus Service Terms and Conditions</strong></h1>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-12" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:15px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:18px;">
+																	<p style=3D"margin: 0; margin-bottom: 16px;"><br><br></p>
+																	<p style=3D"margin: 0; margin-bottom: 16px;">Hello.</p>
+																	<p style=3D"margin: 0; margin-bottom: 16px;">Thank you to =
+members who use Mnet Plus, and please refer to the newly revised terms and =
+conditions for use of the service.</p>
+																	<p style=3D"margin: 0;">&nbsp;</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-13" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-top:1=
+0px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>&nbsp;1. Reasons for revis=
+ion :&nbsp;</strong>Following the revision of the Act on the Abolition of t=
+he Dormant Membership System, the contents of the terms and conditions of m=
+easures after the end of the use of Mnet Plus "Service" were newly added</p=
+>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-14" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:10px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>2. Major revisions</strong=
+></p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"html_block block-15" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"font-family:Helvetica Neue, Helvetica, Arial,=
+ sans-serif;text-align:center;" align=3D"center"><table style=3D"border-col=
+lapse: collapse; font-size: 14px; text-align: left; width: 100%; height: 77=
+px;" border=3D"1">
+  <tbody>
+    <tr style=3D"height: 22px;">
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 17.619%; heig=
+ht: 10px;">
+        <strong data-stringify-type=3D"bold">Article</strong>
+      </td>
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 14.7619%; hei=
+ght: 10px;">
+        <strong data-stringify-type=3D"bold">Before the revision</strong>
+      </td>
+      <td class=3D"wysiwyg-text-align-center" style=3D"width: 67.619%; heig=
+ht: 10px;">
+        <strong data-stringify-type=3D"bold">After the revision</strong>
+      </td>
+    </tr>
+    <tr style=3D"height: 67px;">
+      <td style=3D"width: 17.619%; height: 67px;">
+        <div class=3D"page" title=3D"Page 8">
+          <div class=3D"layoutArea">
+            <div class=3D"column">
+              <p>
+                <strong>Article 27 (Measures after termination of use of "s=
+ervice")</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td style=3D"width: 14.7619%; height: 67px;">
+        <p class=3D"wysiwyg-text-align-center">
+          <span style=3D"color: black;">[creation]</span>
+        </p>
+      </td>
+      <td style=3D"width: 67.619%; height: 67px;">
+        <div class=3D"page" title=3D"Page 8">
+          <div class=3D"layoutArea">
+            <div class=3D"column">
+              <p class=3D"p1">
+                =E2=91=A0=C2=A0If the "Service use contract" between "Membe=
+rs"
+                and "Company" is terminated, "Company" will immediately
+                destroy all information related to that "Members"
+                except for the following reasons.
+              </p>
+              <p>
+                =C2=A01. Where exceptional storage is required in
+                accordance =E2=80=A8 with relevant laws and regulations<br =
+/>
+                =C2=A02. Where a "member" is stored for 30 days for
+                the =E2=80=A8 purpose of preventing additional damage or
+                consulting =E2=80=A8 with a customer
+              </p>
+              <p class=3D"p1">
+                =E2=91=A1 The fan point is automatically extinguished as
+                prescribed by Article 25.
+              </p>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table></div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-16" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:10px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong><br>3. Effective Date: </s=
+trong>September 15, 2023</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-17" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:15px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0;"><strong>4. Subject to application:=
+ </strong>All members of Mnet Plus</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"paragraph_block block-18" width=3D"100%" borde=
+r=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"=
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-left:=
+5px;padding-right:5px;padding-top:15px;">
+																<div style=3D"color:#101112;direction:ltr;font-family:Helve=
+tica Neue, Helvetica, Arial, sans-serif;font-size:14px;font-weight:400;lett=
+er-spacing:0px;line-height:120%;text-align:left;mso-line-height-alt:16.8px;=
+">
+																	<p style=3D"margin: 0; margin-bottom: 16px;">Mnet Plus mem=
+bers may not agree to amend this Service Terms and Conditions through withd=
+rawal.<br><br>- How to cancel membership: 1) Mnet Plus login =E2=86=92 2) M=
+ember information =E2=86=92 3) Delete account <br>- Contact: <a href=3D"htt=
+ps://stayge.zendesk.com/hc/en-us/requests/new" target=3D"_blank" style=3D"t=
+ext-decoration: underline; color: #8a3c90;" rel=3D"noopener">Mnet Plus Help=
+ Center</a></p>
+																	<p style=3D"margin: 0;">&nbsp;</p>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"divider_block block-19" width=3D"100%" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-top:5=
+0px;">
+																<div class=3D"alignment" align=3D"center">
+																	<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" ro=
+le=3D"presentation" width=3D"100%" style=3D"mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt;">
+																		<tr>
+																			<td class=3D"divider_inner" style=3D"font-size: 1px; lin=
+e-height: 1px; border-top: 1px solid #dddddd;"><span>&#8202;</span></td>
+																		</tr>
+																	</table>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"text_block block-20" width=3D"100%" border=3D"=
+0" cellpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-t=
+able-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad" style=3D"padding-bottom:10px;padding-top:1=
+0px;">
+																<div style=3D"font-family: sans-serif">
+																	<div class style=3D"font-size: 12px; font-family: Helvetic=
+a Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14.3999999999999=
+99px; color: #C0C0C0; line-height: 1.2;">
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;">&nbsp;</p>
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;">=E2=80=BB =EB=B3=B8 =EB=A9=94=EC=9D=BC =EA=B4=80=EB=A0=A8 =EB=AC=
+=B8=EC=9D=98 =EC=82=AC=ED=95=AD=EC=9D=80 <a href=3D"https://mnetplus.zendes=
+k.com/hc/requests/new" target=3D"_blank" style=3D"text-decoration: underlin=
+e; color: #C0C0C0;" rel=3D"noopener">=EA=B3=A0=EA=B0=9D=EC=84=BC=ED=84=B0</=
+a>=EB=A1=9C =EB=AC=B8=EC=9D=98=ED=95=98=EC=8B=9C=EA=B8=B0 =EB=B0=94=EB=9E=
+=8D=EB=8B=88=EB=8B=A4.</p>
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;">=E2=80=BB =EB=B3=B8 =EB=A9=94=EC=9D=BC=EC=9D=80 =EA=B4=80=EB=A0=
+=A8 =EB=B2=95=EB=A0=B9=EC=97=90 =EC=A4=80=EC=88=98=EC=97=90 =EB=94=B0=EB=9D=
+=BC =EC=95=88=EB=82=B4=EB=90=98=EB=8A=94 =EB=A9=94=EC=9D=BC=EB=A1=9C =EC=88=
+=98=EC=8B=A0 =EB=8F=99=EC=9D=98 =EC=97=AC=EB=B6=80=EC=99=80 =EA=B4=80=EA=B3=
+=84 =EC=97=86=EC=9D=B4 =EB=B0=9C=EC=86=A1=EB=90=A9=EB=8B=88=EB=8B=A4.</p>
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;">=E2=80=BB =EB=B3=B8 =EB=A9=94=EC=9D=BC=EC=9D=80 =EB=B0=9C=EC=8B=
+=A0 =EC=A0=84=EC=9A=A9 =EB=A9=94=EC=9D=BC=EB=A1=9C =ED=9A=8C=EC=8B=A0 =EB=
+=90=98=EC=A7=80 =EC=95=8A=EC=8A=B5=EB=8B=88=EB=8B=A4.</p>
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;"><br>=E2=80=BB If you have any questions about this email, please =
+contact the&nbsp;<a href=3D"https://mnetplus.zendesk.com/hc/requests/new" t=
+arget=3D"_blank" style=3D"text-decoration: underline; color: #C0C0C0;" rel=
+=3D"noopener">customer service center.</a><br>=E2=80=BB&nbsp;This e-mail ha=
+s been sent to you pursuant to relevant laws and regulations, regardless of=
+ whether you have agreed to receive it.</p>
+																		<p style=3D"margin: 0; mso-line-height-alt: 14.3999999999=
+99999px;">=E2=80=BB&nbsp;This e-mail is an outgoing-only e-mail and cannot =
+receive incoming e-mails.</p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+													<table class=3D"text_block block-21" width=3D"100%" border=3D"=
+0" cellpadding=3D"10" cellspacing=3D"0" role=3D"presentation" style=3D"mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt; word-break: break-word;">
+														<tr>
+															<td class=3D"pad">
+																<div style=3D"font-family: sans-serif">
+																	<div class style=3D"font-size: 12px; font-family: Helvetic=
+a Neue, Helvetica, Arial, sans-serif; mso-line-height-alt: 14.3999999999999=
+99px; color: #C0C0C0; line-height: 1.2;">
+																		<p style=3D"margin: 0; font-size: 12px; text-align: cente=
+r; mso-line-height-alt: 14.399999999999999px;"><br>Mnet Plus</p>
+																	</div>
+																</div>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table><!-- End -->
+</body>
+
+</html>

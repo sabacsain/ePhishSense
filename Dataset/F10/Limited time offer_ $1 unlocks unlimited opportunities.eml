@@ -1,0 +1,1746 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:6a42:b0:533:785:174b with SMTP id v2csp601674mat;
+        Thu, 2 Nov 2023 09:03:23 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFhGfAyKoAwXXre265jtXt9b596Z+wBI3mNRieO6U6f0x9BQLG3qEb0AkBKsIydqkVYMlo+
+X-Received: by 2002:a25:adc8:0:b0:d86:2cd4:c443 with SMTP id d8-20020a25adc8000000b00d862cd4c443mr19632880ybe.21.1698941002846;
+        Thu, 02 Nov 2023 09:03:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698941002; cv=none;
+        d=google.com; s=arc-20160816;
+        b=n44jFeeW4MN91+aLcMSXfMfqny1TJcFPpiZhYX5C5vdKdYmid06PBlqAkTESCgBl8r
+         R4BV0wstxE+rIzFlwdzqsrh3UQnZoIT6PPhHu1P+0l0l0IQMxAZ858ZipUlvGNGdFKK8
+         2NcWy/w/jFGkiTXfOwPozkFm51PWmR1swuavJPPj+lZiqNybDmd79XEEV8xBCr5/irY8
+         L4Qud6aBAuAZIWWpGGi85F2YFE2tjLqdG5t7cvnBQwUd3UCdVfW9ZFb8FlY1u5jBEhGe
+         WEtZyaePULI+asGdaSlVLEpUdaUTaiF9SDJellB8isGPg4RDCIhXUvDzQm/RaQDMr06D
+         wT+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=DDzZ33Yc8DXdMHGn6vc636DkDAFhHiG0Jo/ra+w3BeY=;
+        fh=G+K403dSfxXFWRFEhQM+gv8eiNQfNXg6eiNJDMzEcKc=;
+        b=FVOWFpimjNGZ2uxGlGRRimbPzvsDAUYY9VUhy6GavLWzq8evBlzLPIUIhNAOWDiaQO
+         wSHzkvlhrZ/XvRA6CwD0a5ujDaDPMzw/oBSQ7hhGPpE1SLw3m+BIcUr8VK93s9nqqTyv
+         zyvZq4X+TbdH29hcjxj3j5MWHkh0huCWjCxiNsi1eG6j74gQP57z3D1ah9MPnUGyLWpq
+         1dereG7gSbLG/HwM4sDDIOfesiomWLT/oj16uciMrwupsJCYm4J5r67t/xeQ1Q4fy8NH
+         wisW6F5luYRGfWXvROJEGwFrW71adjzwaHKdAe1QmlkWT3lxBwPu4fJOl9DKq6hiyNTq
+         xhtQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.coursera.org header.s=11dkim1 header.b=kOnHjUuC;
+       spf=pass (google.com: domain of bounce-21_html-185894155-43895-514003089-6@bounce.email.coursera.org designates 13.111.170.17 as permitted sender) smtp.mailfrom=bounce-21_HTML-185894155-43895-514003089-6@bounce.email.coursera.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.coursera.org
+Return-Path: <bounce-21_HTML-185894155-43895-514003089-6@bounce.email.coursera.org>
+Received: from mta2.email.coursera.org (mta2.email.coursera.org. [13.111.170.17])
+        by mx.google.com with ESMTPS id y203-20020a25dcd4000000b00d9cacce81c1si1377538ybe.670.2023.11.02.09.03.22
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 02 Nov 2023 09:03:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-21_html-185894155-43895-514003089-6@bounce.email.coursera.org designates 13.111.170.17 as permitted sender) client-ip=13.111.170.17;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.coursera.org header.s=11dkim1 header.b=kOnHjUuC;
+       spf=pass (google.com: domain of bounce-21_html-185894155-43895-514003089-6@bounce.email.coursera.org designates 13.111.170.17 as permitted sender) smtp.mailfrom=bounce-21_HTML-185894155-43895-514003089-6@bounce.email.coursera.org;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=email.coursera.org
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=11dkim1; d=email.coursera.org;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=Coursera@email.coursera.org;
+ bh=DDzZ33Yc8DXdMHGn6vc636DkDAFhHiG0Jo/ra+w3BeY=;
+ b=kOnHjUuCtwNexoBsvHorcnsny/ljvk3Qkb0f0FI+5f5U0546C1dEvjiSmAtA+DNZmHPyHsqVfBSw
+   1OLINCecq49HYQES5A0+3MxfC2/JuK20OoTKpOfy58hZcbdm7dmrpZZjqFQeDTTiFklTn2HZGo33
+   gKmKAgWSADhE/Mss4iVIy5+1Sja5TBZrGXMZCkGF7t4Dldgt7q2CvtpORvJ2I6mFqs8X9ZHpdGd4
+   izYJ3mUaUE34RrtTBeUMHy7/QuVCFo0rjwwy3QDqkeWch1W/e3d0H49UvkB0LiCot8tJ6JuajIZ/
+   My6zi+ufoEEcmjra2uXW+ydIQuu1vPU5jOgZ8A==
+Received: by mta2.email.coursera.org id h8f44k2fmd4g for <************************@gmail.com>; Thu, 2 Nov 2023 16:03:21 +0000 (envelope-from <bounce-21_HTML-185894155-43895-514003089-6@bounce.email.coursera.org>)
+From: "Coursera" <Coursera@email.coursera.org>
+To: <************************@gmail.com>
+Subject: Limited time offer: $1 unlocks unlimited opportunities
+Date: Thu, 02 Nov 2023 10:03:20 -0600
+List-Unsubscribe: <https://click.email.coursera.org/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MTQwMDMwODkiLCJzIjoiMTg1ODk0MTU1IiwibGlkIjoiMjEiLCJqIjoiNDM4OTUiLCJqYiI6IjYiLCJkIjoiMTEwMDI2In0.rJvaL-YokQSWeu6u3KYrm93L7efNPIXw9bDnzBylg_g>, <mailto:leave-fd8816711a3c402029-fe211578706c0d79741175-fef210737d6d01-fe3111717164047e751c79-ffc912@leave.email.coursera.org>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "Coursera" <reply-fef210737d6d01-21_HTML-185894155-514003089-6@email.coursera.org>
+List-ID: <514003089.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+x-messageKey: 089c752a-5b2a-4d00-a5f9-78e552413b7b
+X-SFMC-Stack: 11
+x-job: 514003089_43895
+Message-ID: <f574f514-065e-4a05-a288-06613ff4885d@atl1s11mta345.xt.local>
+Feedback-ID: 514003089:43895:13.111.170.17:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="HQPmqWN9aeLc=_?:"
+
+This is a multi-part message in MIME format.
+
+--HQPmqWN9aeLc=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+Character Limit 50 - Learn about %%dynamic value%% | Coursera
+
+
+ 
+ 
+https://click.email.coursera.org/?qs=3c60719f6e4cfe3df1b860ff7ffd9c75b099c7dec7609c10177e693ad850bb6e80f3742b3c344f5c71c69da006b1931dda1917adec0452f01cdefa0d27132e1f 
+
+ 
+
+https://click.email.coursera.org/?qs=3c60719f6e4cfe3d59603ee7fafab056c1bf0a07acbafb46ac5138e47f737be8ce2fe4ac2349a90dbb1ac37ea51df9ac249345f55703796cf840a27dbb633237 
+
+
+
+
+Character Limit 50 - Learn about %%dynamic value%%
+
+
+
+
+
+Character Limit 200 - Max 200 characters including spaces lorem ipsum dolor ametuconse ctetuer adipiscing. Aenean commodo ligula eget dolora enean massa. Sociis natoquep penatibus e %%dynamic value%%.
+
+
+
+
+
+
+Character Limit 200 - Max 200 characters including spaces lorem ipsum dolor ametuconse ctetuer adipiscing. Aenean commodo ligula eget dolora enean massa. Sociis natoquep penatibus e %%dynamic value%%.
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ https://click.email.coursera.org/?qs=3c60719f6e4cfe3d59603ee7fafab056c1bf0a07acbafb46ac5138e47f737be8ce2fe4ac2349a90dbb1ac37ea51df9ac249345f55703796cf840a27dbb633237 
+Character Limit 30 - Read more 
+
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+<sup>1</sup>Here is a note
+
+ 
+ 
+
+ 
+
+https://click.email.coursera.org/?qs=3c60719f6e4cfe3d7c430e3da98b9475225171ce02e4b5e60406a6f10de74f05c114c35236444f9d7b942d7134aa508f24157fe0a199f2f1a2ff39c0217531dd 
+Help
+
+  
+ 
+ https://click.email.coursera.org/?qs=3c60719f6e4cfe3d3de32df95af3e6bab160bb86a907e08ca33aa65a8954ef3d81a1a7845fad75c1cb1f3bd85ebf1f3ba160a2614cbba23b76582fb60660c594 
+Email Settings
+
+  
+ 
+  
+ 
+
+https://click.email.coursera.org/?qs=3c60719f6e4cfe3d800aafa6db57a00540b5ae653b9e89bd4ca7f97763ccf1efa97247d217ddb1822b87bbecf49618243a862e3a0e96db70cc634c2a09d2a3a4 
+Privacy Notice
+ 
+ 
+
+  
+ 
+
+© 2023 Coursera Inc. All rights reserved. Coursera and the Coursera logo are registered trademarks of Coursera, Inc. All other trademarks are property of their respective owners.<br><br>This email does not contain an unsubscribe link because it contains important account information that we are required to send you. Log in to manage all your notification preferences in  
+ 
+ https://click.email.coursera.org/?qs=3c60719f6e4cfe3d3de32df95af3e6bab160bb86a907e08ca33aa65a8954ef3d81a1a7845fad75c1cb1f3bd85ebf1f3ba160a2614cbba23b76582fb60660c594 
+Email Settings.
+  
+ 
+
+Coursera | 3﻿81 E﻿ast Evelyn A﻿ve, M﻿ountain View, C﻿A 9﻿4041 USA
+
+--HQPmqWN9aeLc=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE html>
+<html lang="EN" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="x-apple-disable-message-reformatting">
+<meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark">
+<title>Limited time offer: $1 unlocks unlimited opportunities | Coursera</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+ /* START Reset */
+ /* Remove spaces around the email design added by some email clients. */
+ html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ }
+ html,
+ body,
+ #body {
+  height: 100% !important;
+  Margin: 0 auto !important;
+  margin: 0;
+  padding: 0 !important;
+  width: 100% !important;
+ }
+ body,
+ #body {
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+ }
+ body, #body, #backgroundTable {
+  background: #ffffff;
+ }
+ #backgroundTable {
+  line-height: 100% !important;
+  Margin: 0;
+  padding: 0;
+  width: 100% !important;
+ }
+ body, #body, table, td, th, p, a, li, blockquote{ -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; } /* Prevent WebKit and Windows mobile changing default text sizes */
+ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section { display: block; }
+ table {
+  border: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
+  mso-table-lspace: 0pt;
+  mso-table-rspace: 0pt;
+ }
+ table, td, th{ mso-table-lspace: 0pt; mso-table-rspace: 0pt; } /* Remove spacing between tables in Outlook 2007 and up */
+ table tr, table td, table th { border-collapse: collapse; }
+ th {
+  font-weight: normal;
+  text-align: left;
+ }
+ img {
+  border: 0;
+  height: auto;
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  -ms-interpolation-mode: bicubic; /* Allow smoother rendering of resized image in Internet Explorer */
+ }
+ a, a:visited, a strong {
+  color: #0056D2;
+ }
+ a:hover {
+  text-decoration: none !important;
+ }
+ a img {
+  border: none;
+ }
+
+ /* Client-specific styles */
+ #outlook a { padding: 0; }
+ #MessageViewBody, #MessageWebViewDiv { width: 100% !important; } /* Forces Samsung Android mail clients to use the entire viewport. */
+ .ReadMsgBody{ width: 100%; } .ExternalClass{ width: 100%; } /* Force Hotmail to display emails at full width */
+ .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass th, .ExternalClass div { line-height: 100%; } /* Force Hotmail to display normal line spacing */
+ .ExternalClass .outlook-hide,
+ [owa] .outlook-hide,
+ [class="x_outlook-hide"] {
+  display: none !important;
+ }
+
+ /* iOS BLUE LINKS */
+ a[x-apple-data-detectors] {
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  text-decoration: none !important;
+ }
+ /* GMAIL BLUE LINKS */
+ /* SAMSUNG MAIL BLUE LINKS */
+ #MessageViewBody a, /* Samsung Mail */
+ [x-apple-data-detectors], /* iOS */
+ u ~ div a, u + #body a,
+ .detected-link,
+ .detected-link a {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+ }
+
+ .im { color: inherit !important; } /* Prevents Gmail from changing the text color in conversation threads. */
+ .a6S { display: none !important; opacity: 0.01 !important; } /* Prevents Gmail from displaying an download button on large, non-linked images. */
+ .a5q, img.prevent-download + div { display:none !important; } /* If the above doesn't work, add a .prevent-download class to any image in question. */
+ img.prevent-download { cursor: default !important; }
+ 
+ a[href^="tel"], a[href^="sms"],
+ .detected-link a[href^="tel"], .detected-link a[href^="sms"] {
+  color: inherit;
+  cursor: default;
+  pointer-events: none;
+  text-decoration: none;
+ }
+ /* Yahoo Mail hack to fix centering of main content */
+ @media yahoo {
+  .yahoo {
+   table-layout: fixed !important;
+  }
+ }
+ /* END Reset */
+
+ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  Margin: 0;
+ }
+ h1, .h1 {
+  font-size: 48px;
+  line-height: 100%;
+  Margin: 0 0 24px;
+ }
+
+ h2, .h2 {
+  font-size: 36px;
+  line-height: 100%;
+  Margin: 0 0 48px;
+ }
+
+ h3, .h3 {
+  font-size: 24px;
+  line-height: 110%;
+  Margin: 0 0 16px;
+ }
+
+ h4, .h4 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 17px;
+ }
+
+ p {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 150%;
+ }
+
+  p, ul, ol {
+  Margin: 0 0 32px;
+ }
+
+ ol, ul, .card p {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 24px;
+ }
+ .card p {
+  Margin: 0; 
+ }
+ li {
+  padding: 0 0 8px;
+ }
+
+ .institution p,
+ .footer p {
+  color: #636363;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 21px;
+ }
+ .footer a {
+  color: #636363;
+ }
+ .institution p {
+  Margin: 0 0 8px;
+ }
+
+ .footer p {
+  Margin: 0 0 16px;
+ }
+
+ .footer .utility-links p {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 19px;
+  Margin: 0 0 16px;
+ }
+ .footer .utility-links a {
+  text-decoration: none;
+ }
+ .utility-links {
+  padding: 0 0 32px;
+ }
+ .btn-outline a,
+ .btn-outline a strong {
+  background: transparent !important;
+  border: 2px solid #0056D2 !important;
+  color: #0056D2 !important;
+ }
+
+ .sr-only {
+  border: 0!important;
+  clip: rect(0,0,0,0)!important;
+  height: 1px!important;
+  max-height: 1px;
+  margin: -1px!important;
+  mso-hide: all;
+  overflow: hidden!important;
+  padding: 0!important;
+  position: absolute!important;
+  white-space: nowrap!important;
+  width: 1px!important;
+ }
+
+  strong, b {
+  font-weight: 600; 
+ }
+ em, i {
+  font-style: italic;
+ }
+ sup {
+  font-size: 70%;
+  line-height: 0;
+  vertical-align: super;
+ }
+ .small, small {
+  font-size: 13px;
+  line-height: 20px;
+ }
+ .text-lowercase {
+  text-transform: lowercase;
+ }
+ .text-uppercase {
+  text-transform: uppercase;
+ }
+ .text-capitalize {
+  text-transform: capitalize;
+ }
+ .text-left {
+  text-align: left;
+ }
+ .text-center {
+  text-align: center;
+ }
+ .text-right {
+  text-align: right;
+ }
+ .gmailfix {
+  display: none;
+  display: none !important;
+ }
+ .show {
+  display: none;
+  max-height: 0;
+  mso-hide: all;
+  overflow: hidden;
+  width: 0;
+ }
+
+  /* simple text */
+
+  .simple-text h1 {
+    margin-bottom: 48px !important;
+  }
+
+  .simple-text h3 {
+    margin-top: 48px !important;
+  }
+
+  .simple-text div.btn {
+    margin: 0 !important;
+  }
+
+  .sign-off p {
+    margin-bottom: 0px !important;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .reduced-margin{
+    font-size:48px;
+  }
+
+
+ /*
+
+//styleName: Body 3 - Semibold;
+font-size: 14px;
+font-weight: 600;
+letter-spacing: -0.02em;
+line-height: 21px;
+
+
+
+//styleName: Body 3;
+
+*/
+/* Insert Template Specific Desktop CSS*/
+
+ @media only screen and (max-width: 699px) {
+    /*[[MobileCSSTop]]*/
+  h1, .h1 {
+    font-size: 38px;
+    line-height: 100%;
+    Margin: 0 0 16px;
+   }
+ 
+   h2, .h2 {
+    font-size: 32px;
+    line-height: 32px;
+    line-height: 100%;
+   }
+ 
+   h3, .h3 {
+    font-size: 20px;
+    line-height: 120%;
+   }
+   p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 150%;
+   }
+ 
+   .card p, ol, ul {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 21px;
+   }
+   .institution p {
+    Margin: 0 0 4px;
+   }
+ 
+   table.container,
+   .w-100,
+   .full-width {
+    width: 100% !important;
+   }
+   table.full-width {
+    display: block !important;
+    float: none !important;
+    Margin: auto !important;
+   }
+   table.full-width + table.full-width {
+    Margin-top: 20px !important;
+   }
+   td.full-width,
+   th.full-width {
+    display: inline-block !important;
+   }
+   img.full-width {
+    height: auto !important;
+   }
+   .content {
+    padding: 0 7.5% !important;
+   }
+   .logo {
+    height: 16px !important;
+    width: auto !important;
+   }
+   .footer a {
+    white-space: normal !important;
+   }
+   .p-reset, .p-0 {
+    padding: 0 !important;
+   }
+   .p-lg {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+   }
+   .ptb-0, .p-y-0 {
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+   }
+   .plr-0, .p-x-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+   }
+   .pt-lg {
+    padding-top: 16px !important;
+   }
+   .bdrt { 
+    border-top: 1px solid #000;
+   }
+   .hide {
+    display: none !important;
+    font-size: 0;
+    line-height: 0;
+    max-height: 0;
+    mso-hide: all;
+    overflow: hidden;
+    width: 0;
+   }
+   .show {
+    display: block !important;
+    margin: 0;
+    max-height: inherit !important;
+    overflow: visible !important;
+    padding: 0;
+    width: auto !important;
+   }
+   .text-center {
+    text-align: center;
+   }
+   .center {
+    float: none !important;
+    text-align: center;
+   }
+ 
+   .btn a {
+    border-radius: 6px !important;
+    font-size: 14px !important;
+    line-height: 40px !important;
+    min-width: 76px !important;
+   }
+   .btn-app-store {
+    padding: 0 0 32px !important;
+   }
+   .card .feat-image {
+    width: 224px;
+   }
+ 
+   /* horizontal card */
+   .horizontal-card h2 {
+     font-size: 16px!important;
+     line-height: 19px!important;
+     letter-spacing: -0.09px!important;
+   }
+   .horizontal-card .spacer {
+    width: 12px!important;
+   }
+   .horizontal-card-content,
+   .horizontal-card-img {
+     display: inline-block !important;
+     width: 100% !important;
+   }
+   .horizontal-card-img {
+     padding-bottom: 16px!important;
+     padding-right: 0px!important;
+   }
+   .horizontal-card-img img {
+    width: 64px !important;
+   }
+   .horizontal-testimonial-img {
+    width: 66px !important;
+   }
+   .horizontal-card .spacer {
+    display: none;
+   }
+ 
+   /* recs cards */
+ 
+   .recs-card {
+     width: 64px !important;
+     padding:35px 31px 0% 16px !important;
+   }
+ 
+   .recs-card img {
+     width: 64px !important;
+     height: 64px !important;
+   }
+ 
+   /* simple text */
+ 
+   .simple-text h1 {
+     margin-bottom: 32px !important;
+     font-size: 38px !important;
+     line-height: 38px !important;
+   }
+ 
+   .simple-text h3 {
+     margin-top: 32px !important;
+     font-size: 20px !important;
+     line-height: 24px !important;
+   }
+ 
+   /* half_and_half */
+ 
+   .half_and_half_image, .half_and_half_text {
+     display: block;
+     clear: both;
+   }
+ 
+   .half_and_half_image {
+     padding: 0 0 30px 0 !important;
+   }
+ 
+   .mobile-only {
+     display: table !important;
+   }
+ 
+   .reduced-margin{
+     font-size:38px !important;
+   }
+
+  .mobile_stack_horizontal_card th {
+    display: block;
+    clear: both;
+   }
+   
+   .mobile_stack_horizontal_card img {
+    width: 120px !important;
+    height: auto !important;
+   }
+
+   .mobile_stack_horizontal_card_medium img {
+    width: 170px !important;
+    height: auto !important;
+   }
+ 
+   /*[[MobileCSS]]*/
+  /* Insert Template Specific Mobile CSS*/
+
+ }
+ @media screen and (-webkit-min-device-pixel-ratio:0) {
+  /* Insert styles here (CSS3) */
+
+ }
+ :root {
+  color-scheme: light dark;
+  supported-color-schemes: light dark;
+ }
+
+ /* Target Dark Mode */
+ @media (prefers-color-scheme: dark ) {
+  .dark-img {
+   display: block !important;
+   display: table-cell !important;
+   float: none !important;
+   line-height: inherit !important;
+   Margin-top: 0px !important;
+   max-height: inherit !important;
+   max-width: inherit !important;
+   overflow: visible !important;
+   visibility: inherit !important;
+  }
+  .light-img {
+   display: none;
+   display: none !important;
+   mso-hide: all;
+  }
+  .darkmode,
+  body,
+  #backgroundTable,
+  #body,
+  .body {
+   background-color: #202123 !important;
+  }
+  *, h1, h2, p, span, b, address {
+   color: #ffffff !important;
+  }
+  a, a:visited, a strong {
+   color: #889AEB !important;
+  }
+  .utility-links a, .utility-links a:visited, .utility-links a strong {
+   color:  #ffffff !important;
+  }
+  .btn a, .btn a strong {
+   background: #889AEB !important;
+   color: #202123 !important;
+  }
+  .btn-link a,
+  .btn-link a strong {
+   background: transparent !important;
+   color: #889AEB !important;
+  }
+  .btn-outline a,
+  .btn-outline a strong {
+   background: transparent !important;
+   border: 2px solid #889AEB !important;
+   color: #889AEB !important;
+  }
+  a .logo {
+   color: #0056D2 !important;
+  }
+
+   .black-text-summary{
+      color:#000 !important;
+    }
+
+    .v-space-summary{
+        background-color:#202123 !important;
+    }
+ }
+ /* Target Dark Mode Outlook app (Android) */
+ [data-ogsc] .dark-img {
+  display: block !important;
+  display: table-cell !important;
+  float: none !important;
+  line-height: inherit !important;
+  Margin-top: 0px !important;
+  max-height: inherit !important;
+  max-width: inherit !important;
+  overflow: visible !important;
+  visibility: inherit !important;
+ }
+ [data-ogsc] .light-img {
+  display: none;
+  display: none !important;
+  mso-hide: all;
+ }
+ [data-ogsc] .darkmode,
+ [data-ogsc] body,
+ [data-ogsc] #backgroundTable,
+ [data-ogsc] #body,
+ [data-ogsc] .body {
+  background-color: #202123 !important;
+ }
+ [data-ogsc] *, [data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc] a, [data-ogsc] b {
+  color: #ffffff !important;
+ }
+ [data-ogsc] a, [data-ogsc] a:visited, [data-ogsc] a strong {
+  color: #889AEB !important;
+ }
+ [data-ogsc] .utility-links a, [data-ogsc] .utility-links a:visited, [data-ogsc] .utility-links a strong {
+  color:  #ffffff !important;
+ }
+ [data-ogsc] .btn a, [data-ogsc] .btn a strong {
+  background: #889AEB !important;
+  color: #202123 !important;
+ }
+ [data-ogsc] .btn-link a,
+ [data-ogsc] .btn-link a strong {
+  background: transparent !important;
+  color: #889AEB !important;
+ }
+ [data-ogsc] .btn-outline a,
+ [data-ogsc] .btn-outline a strong {
+  background: transparent !important;
+  border: 2px solid #889AEB !important;
+  color: #889AEB !important;
+ }
+ [data-ogsc] a .logo {
+  color: #0056D2 !important;
+ }
+ /* Removes right gutter in Gmail iOS app. */
+ /* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+ @media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+  u ~ div .email-container {
+   min-width: 320px !important;
+  }
+ }
+ /* iPhone 6, 6S, 7, 8, and X */
+ @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+  u ~ div .email-container {
+   min-width: 375px !important;
+  }
+ }
+ /* iPhone 6+, 7+, and 8+ */
+ @media only screen and (min-device-width: 414px) {
+  u ~ div .email-container {
+   min-width: 414px !important;
+  }
+ }
+</style>
+<!--[if mso]>
+ <style>
+  body, table, td, th, h1, h2, h3, div, span, strong, b, i, p, ul, ol, li, a { font-family: Helvetica, sans-serif !important;}
+  sup { font-size: 100% !important; }
+ </style>
+ <xml>
+  <o:OfficeDocumentSettings>
+   <o:AllowPNG/>
+   <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+ </xml>
+<![endif]-->
+</head>
+<body id="body"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Claim your offer today and increase your career confidence</div>
+<div style="font-size:0; line-height:0;">
+<img src="https://click.email.coursera.org/open.aspx?ffcb10-fef210737d6d01-fe1610707d6d0d7a7c1374-fe3111717164047e751c79-ff9c1671-fe211578706c0d79741175-ffc912&d=110026&bmt=0" width="1" height="1" alt="">
+  
+  </div>
+ <center>
+  <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" class="yahoo" id="backgroundTable">
+   <tbody>
+    <tr style="display: none; font-size: 1px; height: 0; line-height: 1px; max-height: 0px; overflow: hidden;">
+     <td height="0"><div style="display: none;"><span style="font-size: 1px; line-height: 1px;"></span></div><div style="display: none; max-height: 0px; mso-hide: all; overflow: hidden;" aria-hidden="true">&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;
+<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;<wbr>&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;</div></td>
+    </tr>
+    <!-- container -->
+    <tr>
+     <td valign="top">
+      <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="700" class="container">
+       <tbody>
+        <tr>
+         <td class="content" style="padding: 10px 52px 0;">
+          <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
+           <tbody>
+            
+            <!-- body -->
+            <tr>
+             <td>
+              <table bgcolor="#ffffff" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" class="body">
+               <tbody>
+                
+                
+<tr>
+ <td height="84" valign="middle">
+  
+  <center><a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3de6ac43d8ae1bb95b38e1e2eace61d7ac01ee98ae5749b35989f1cc66520a0fb1826447f402c7afbe02d60c87924fa821c7c5d2ce0f829634" target="_blank" style="text-decoration: none;"><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_19_2022_19_16_21_logo-coursera.png" alt="Coursera" border="0" height="20" class="logo" style="display: block; border: 0; font-size: 38px; font-weight: 600; height: 20px; line-height: 20px; Margin: 0 auto; max-width: 142px; text-transform: lowercase; width: auto;" /></a></center>
+  
+ </td>
+</tr>
+<!-- END header -->
+                
+                <tr>
+                 <td class="detected-link">
+                  <!-- HERO VARIABLES -->
+                  
+                  <!-- START HERO -->
+                  
+                  <div class="hero" style="Margin: 0 auto 48px;">
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d553f5acdf487b3169a7361d3b72059c385613ff91b066d26055403bcda968b3447517bfbccf95e238f790efe2e871cc91182e91540b6b450" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+ <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/11_01_2023_19_56_29_Email111.2.23.png?border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" width="596" alt="Coursera Plus $1" class="full-width" style="border:0; border-radius: 10px; display: block;">
+   </a>
+</div>
+
+
+
+<h1 style="Margin: 0 0 24px; mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">$1 unlocks your access to Coursera Plus</h1>
+
+
+
+
+<p align="left" dir="ltr" style="font-weight:normal; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Investing in your future has never been easier. Gain access to thousands of programs, from leading companies and universities, for one low price with Coursera Plus. Whether you're looking to start, switch, or advance in your career, you'll find a program to help you reach your goals.</p>
+
+
+
+
+<p align="left" dir="ltr" style="font-weight:normal; font-family: 'Source Sans Pro', Helvetica, sans-serif;">For a limited time only, get your <b>first month of Coursera Plus for only $1</b>. Get started today!</p>
+
+
+
+
+
+
+
+
+
+
+
+ <!-- START CTA -->
+ <div class="btn"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/courseraplus/special/onedollar-nov-2023" style="height: 48px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fillcolor="#0056D2">
+  <w:anchorlock/>
+   <center>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d553f5acdf487b3169a7361d3b72059c385613ff91b066d26055403bcda968b3447517bfbccf95e238f790efe2e871cc91182e91540b6b450" style="background-color: #0056D2; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 16px; font-weight: 700; line-height: 48px; text-align: center; text-decoration: none; min-width: 97px; padding: 0 32px; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Save now</a>
+ <!--[if mso]>
+   </center>
+  </v:roundrect>
+ <![endif]--></div>
+
+ 
+ <!-- END CTA -->
+
+
+
+
+
+                     
+                  <!-- END HERO -->
+                  
+                  <!-- CARD VARIABLES -->
+                  
+                  
+<hr style="Margin: 64px 0; border-width: 0; background: #E5E7E8; clear: both; color: #E5E7E8; height: 1px">
+
+
+                  <!-- START CARDS -->
+                  
+                  
+    <h2 style="Margin: 0 0 48px; mso-line-height-rule:exactly;  font-family: 'Source Sans Pro', Helvetica, sans-serif;">Top programs included in your subscription </h2>
+
+
+
+    <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="cards">
+     <thead>
+
+      <tr>
+            
+               <th class="full-width card-1" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d21fc37abe08fe8725bc2f519ad49e7819dce89ac67fe334b854df3437ec4b518414b6599887cd208550c436165c08e0b5741cabb799f324b" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/03_28_2023_18_02_17_card_hor_google_pm.png?w=256&h=128&fit=crop&crop=edge&dpr=2&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Google
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Google Project Management: Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/google-project-management?recoOrder=0" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d21fc37abe08fe8725bc2f519ad49e7819dce89ac67fe334b854df3437ec4b518414b6599887cd208550c436165c08e0b5741cabb799f324b" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  <th width="40" class="hide">&nbsp;</th>
+            
+               <th class="full-width card-2" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d3a51d5d5c0d2f7deab1ba7a03b5c34f772c7ba1bc5f5d13bf647ce5ced388a36ea570ad23e051af0cfbe9700b22bd9a1fdeee84733038683" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/ba/e14875b76f4e799e067d3551076e8c/1200x600_DA.png?w=256&h=128&fill=blur&fit=fill&crop=entropy&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Google
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Google Data Analytics Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/google-data-analytics?recoOrder=1" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d3a51d5d5c0d2f7deab1ba7a03b5c34f772c7ba1bc5f5d13bf647ce5ced388a36ea570ad23e051af0cfbe9700b22bd9a1fdeee84733038683" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  </tr><tr>
+            
+               <th class="full-width card-3" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d18b3ad6b02f79005b02b3900173bfcf03f598fb1d26431ccd64742f0737e503ccc0015e2b704d1a9e86dda8cf42a3969086c31dd5d1bf88f" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/03_28_2023_20_21_53_Screenshot_2023-03-28_at_1.10_1_google_uxd.png?w=256&h=128&fit=crop&crop=edge&dpr=2&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Google
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Google UX Design Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/google-ux-design?recoOrder=2" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d18b3ad6b02f79005b02b3900173bfcf03f598fb1d26431ccd64742f0737e503ccc0015e2b704d1a9e86dda8cf42a3969086c31dd5d1bf88f" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  <th width="40" class="hide">&nbsp;</th>
+            
+               <th class="full-width card-4" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d7cb1553570a6f53cf7642773bfc00773b971ed1abef92168be1ee4cda40fea2d3a16d6f57543459c8af634ee6e027912b3541ef2a1e56759" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/03_28_2023_20_15_06_image_1.png?w=256&h=128&fit=crop&crop=edge&dpr=2&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  <td style="color: #000000;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Updated
+   </td>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Google
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Google IT Support Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/google-it-support?recoOrder=3" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d7cb1553570a6f53cf7642773bfc00773b971ed1abef92168be1ee4cda40fea2d3a16d6f57543459c8af634ee6e027912b3541ef2a1e56759" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  </tr><tr>
+            
+               <th class="full-width card-5" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d654377a521bc59dc81586247e0d845fb5e8cf5c5f246475706c6bdd1e7e789b1c0e30df8ef4fea299877d592c5d4af9f0b244e67a378a7e1" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d2j5ihb19pt1hq.cloudfront.net/sdp_page/header_images_2/python.jpg?w=256&h=128&fit=crop&crop=edge&dpr=2&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  <td style="color: #000000;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Popular
+   </td>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    University of Michigan
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Python for Everybody Specialization</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/specializations/python?recoOrder=4" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d654377a521bc59dc81586247e0d845fb5e8cf5c5f246475706c6bdd1e7e789b1c0e30df8ef4fea299877d592c5d4af9f0b244e67a378a7e1" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  <th width="40" class="hide">&nbsp;</th>
+            
+               <th class="full-width card-6" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3da6412fec6c5f6630fd274abbe2d8aa66a7f04fe4c7d3ef02079baaf460892cad65398a79f24b622858ea2050289dfe769126ed86f1b5f4f7" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/02/41460a29d744dfa39106941eae2e02/fb-specialization.png?w=256&h=128&fill=blur&fit=fill&crop=entropy&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Meta
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Meta Social Media Marketing Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/facebook-social-media-marketing?recoOrder=5" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3da6412fec6c5f6630fd274abbe2d8aa66a7f04fe4c7d3ef02079baaf460892cad65398a79f24b622858ea2050289dfe769126ed86f1b5f4f7" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  </tr><tr>
+            
+               <th class="full-width card-7" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d61c05e050720015ff276bc1c5a880865c7264964f384a3ca931cf5a57d922d3e83915ab8af3a0a4539842d3e3d6b83e5453dde80bc712095" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/06_13_2023_21_02_43_msftbi.png?w=256&h=128&fit=crop&crop=edge&dpr=2&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  <td style="color: #000000;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    New
+   </td>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Microsoft
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Microsoft Power BI Analyst Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst?recoOrder=6" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d61c05e050720015ff276bc1c5a880865c7264964f384a3ca931cf5a57d922d3e83915ab8af3a0a4539842d3e3d6b83e5453dde80bc712095" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+                  <th width="40" class="hide">&nbsp;</th>
+            
+               <th class="full-width card-8" style="padding: 0 0 64px;" valign="top">
+                <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%" class="card">
+ <tbody>
+  <tr>
+   <td style="padding: 0 0 8px;">
+    <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3de001967ffa56a6cafae8c0b457efa4cac4f5f58b3497e502cd5bf8c6c7f415b71f274e90d50b1d7fc778e92802e0a1306fec5a8e4f91da20" target="_blank" style="font-size: 16px; line-height: 18px;  text-decoration: none; ">
+    <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/a4/0ee0209fb444a38ade1afccde6355e/option2.jpg?w=256&h=128&fill=blur&fit=fill&crop=entropy&border=1,E5E7E8&border-radius=6,6,6,6&border-radius-inner=6,6,6,6" alt="" width="278" class="feat-image" style="border:0; border-radius: 6px; display: block;">
+     </a>
+   </td>
+  </tr>
+   
+   
+<tr>
+  
+  </tr>      
+   
+   
+   <tr>
+  <td style="color: #636363;font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; padding: 0 0 4px; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    Intuit
+   </td>
+  
+  </tr>
+  <tr>
+   <td style="text-align: left;">
+    <h3 style="mso-line-height-rule:exactly; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Intuit Bookkeeping Professional Certificate</h3>
+   </td>
+  </tr>
+  
+  
+  
+  <tr>
+   <td style="padding: 2px 0; text-align: left; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+    
+ <!-- START CTA -->
+ <div class="btn btn-link"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/professional-certificates/intuit-bookkeeping?recoOrder=7" style="height: 48px; width: 200px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fill="false">
+  <w:anchorlock/>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3de001967ffa56a6cafae8c0b457efa4cac4f5f58b3497e502cd5bf8c6c7f415b71f274e90d50b1d7fc778e92802e0a1306fec5a8e4f91da20" target="_blank" style="background-color: transparent !important; color: #0056D2; display: inline-block; font-size: 16px; line-height: 48px;  text-decoration: none; text-transform: none; vertical-align: middle; font-family: 'Source Sans Pro', Helvetica, sans-serif;" class="">
+   <table role="presentation" cellspacing="0" cellpadding="0" border="0" height="48" align="left">
+    <tbody>
+     <tr>
+      <td>
+       <strong style="color: #0056D2; font-weight: 700; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Enroll now</strong>
+      </td>
+      <td width="10">&nbsp;</td>
+      <td valign="middle" height="48" class="dark-img" style="display: none; overflow: hidden; visibility: hidden; mso-hide: all; padding: 2px 0 0 0;">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_54_00_arrow-darkmode.png" height="17" width="17" alt="">
+      </td>
+      <td valign="middle" height="48" style="display: block; display: table-cell; padding: 2px 0 0 0;" class="light-img">
+       <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_06_53_48_arrow.png" height="17" width="17" alt="">
+      </td>
+     </tr>
+    </tbody>
+   </table>
+  </a>
+ <!--[if mso]>
+  </v:roundrect>
+ <![endif]--></div>
+ 
+ <!-- END CTA -->
+
+
+   </td>
+  </tr>
+ </tbody>
+</table>
+               </th>
+        
+            
+      </tr>
+     </thead>
+    </table>
+
+    
+                  <!-- END CARDS -->
+                  
+                  <!-- START CTA -->
+                  
+                  
+ <!-- START CTA -->
+ <div class="btn"><!--[if mso]>
+  <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.coursera.org/courseraplus/special/onedollar-nov-2023" style="height: 48px; v-text-anchor: middle; mso-wrap-style:none; mso-position-horizontal: center" arcsize="17%" stroke="f" fillcolor="#0056D2">
+  <w:anchorlock/>
+   <center>
+ <![endif]-->
+  <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d553f5acdf487b3169a7361d3b72059c385613ff91b066d26055403bcda968b3447517bfbccf95e238f790efe2e871cc91182e91540b6b450" style="background-color: #0056D2; border-radius: 8px; color: #ffffff; display: inline-block; font-size: 16px; font-weight: 700; line-height: 48px; text-align: center; text-decoration: none; min-width: 97px; padding: 0 32px; font-family: 'Source Sans Pro', Helvetica, sans-serif;">Save now</a>
+ <!--[if mso]>
+   </center>
+  </v:roundrect>
+ <![endif]--></div>
+
+ 
+ <!-- END CTA -->
+
+
+                   
+                  
+                  <!-- END CTA -->
+                  
+                  <!-- HERO VARIABLES -->
+                  
+                  
+                 </td>
+                </tr>
+               </tbody>
+              </table>
+             </td>
+            </tr>
+            <!-- // body -->
+            <!-- footer -->
+            
+            
+            <!-- legal footer -->
+            <tr>
+             <td class="footer detected-link" style="color: #636363; font-size: 14px; font-weight: 400; letter-spacing: -0.02em; line-height: 21px; Margin: 0 0 16px; padding: 0; font-family: 'Source Sans Pro', Helvetica, sans-serif;">
+               
+              
+<hr style="Margin: 64px 0; border-width: 0; background: #E5E7E8; clear: both; color: #E5E7E8; height: 1px">
+
+
+               
+              
+
+              <p style="margin-bottom: 48px;">**Valid until November 24, 2023, 11:59 PM PT for new Coursera Plus subscribers only. Void in India. <a  href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d790a7a7ff8eb9895fe6d5b473c6fceb683af9c4b838b36753912a85e03ebc46bdf90d8f4450fa4dfc870fb8977b316bb2f5b04caceac871a" target="_blank" style="color: #0056D2; text-decoration:underline;"><strong style="color: #0056D2; font-weight:normal;">Terms</strong></a><i></i><b></b> for Promotional Offers apply.</p>
+              
+              
+
+              <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="100%">
+               <thead>
+                <tr>
+                 <th width="318" class="utility-links full-width" style="color: #636363; font-size: 16px; font-weight: 600; letter-spacing: -0.03em; line-height: 19px; Margin: 0 0 16px; font-family: 'Source Sans Pro', Helvetica, sans-serif;" align="left">
+                  <p><a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d1e720f7aa39a6784d00c74f7e6317cc42c77d878e9205e57e0215b8319cdfb70c10b8e051acc5088a823e887eff9e1602f3d43091f67f779" target="_blank" style="color: #636363"><strong style="color: #636363;font-weight: 600;">Help</strong></a></p>
+                  <!-- business line-->
+                  <p><a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d0bbaacf37c794f9f4298ed4d55c0aff565b9588af8e7e60d7191777ed58e60ff37fe43aa59dccf274caf0490f3d9264e80865ba0bde926bd" target="_blank" style="color: #636363"><strong style="color: #636363;font-weight: 600;">Coursera&nbsp;for&nbsp;Business</strong></a></p>
+                   
+                  <!-- settings -->
+                   <p><a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3da7afd598df7b0c7c8cef615e5fe481f7d91120a16bbdcba405ff4ed92ccc59492379ceb640c9a359b7ab4a9d000b2dd7cb20ba681bcb5bed" target="_blank" style="color: #636363"><strong style="color: #636363;font-weight: 600;">Email&nbsp;Settings</strong></a></p>
+                   
+                  <!-- unsubscribe -->
+                  <p><a href="https://click.email.coursera.org/unsub_center.aspx?qs=711f1bd7912ea1709d65b1d77e31ad39a008574c29b3b4336c412118d4c8b694ef0feda693c3906c687ff452b57338bdc1d20cf8b19664f61a1149add88465d6" target="_blank" style="color: #636363"><strong style="color: #636363;font-weight: 600;">Unsubscribe</strong></a></p>
+                   
+                  <p><a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3dd822cb8f58ba8c6e27d4ee64136cbe4e2c312ac1110498123935d2dba994c968682cd072e7e3756b4d0c20910eafbabfce8f8d64b4e9f14d" target="_blank" style="color: #636363"><strong style="color: #636363;font-weight: 600;">Privacy&nbsp;Notice</strong></a></p>
+                 </th>
+                 <th class="full-width">
+                  <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="left" width="174">
+                    <!-- apps --> 
+                   <tr>
+                    <td style="padding: 0 0 16px;">
+                     <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d26690a7a5069b4ef9d53e7da5e1d122fdb6759433ba8a4fcce17fbfd11332a3bd583172db015bf70272348092dffcfec03d8a60b363a0aca" target="_blank" style="text-decoration: none;"><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/09_23_2022_00_50_40_google-play-badge-EN.png?trim=color&h=80&w=270&fit=scale" alt="Get it on Google Play" border="0" height="40" width="135" class="" style="display: block; border: 0;" /></a>
+                    </td>
+                   </tr> 
+                   <tr>
+                    <td style="padding: 0 0 40px;" class="btn-app-store">
+                     <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d5db923234d685c73126e1815866cbf931baa94f39311d97057e6800fcf0f81332d71fe9695ad7a5c14eb19008822a3eace1ef298e17a1eb9" target="_blank" style="text-decoration: none;"><img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_04_36_29_btn-app-store.png" alt="Download on the App Store" border="0" height="40" width="135" class="" style="display: block; border: 0;" /></a>
+                    </td>
+                   </tr>
+                   
+                    <!-- Social Icons -->   
+                   <tr>
+                    <td style="padding: 0 0 48px;">
+                     <div class="sr-only">Follow Coursera on</div>
+                     <table role="presentation" aria-hidden="true" cellspacing="0" cellpadding="0" border="0" align="center">
+                      <tr>
+                       <td style="padding: 0 18px 0 0;">
+                         <a style="font-size:1px;" href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d113bf1aef768fe850ce1a0d436c94c2b35ef5956a422ac683c531058239d24df2ada73872a4f2e9773a64b176c41bf9d">
+                           <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_04_37_07_ico-facebook.png" height="30" width="30" alt="Facebook"></a></td>
+                       <td style="padding: 0 18px 0 0;">
+                         <a style="font-size:1px;" href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d3d6d415003a1fd16395fb64756b19502e31e8f321f296eb57f70bcbff7fa4f4c4623dbf2817fc7a491c562a9bb3a4350">
+                           <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_04_37_38_ico-linkedin.png" height="30" width="30" alt="LinkedIn"></a></td>
+                       <td style="padding: 0 18px 0 0;">
+                         <a style="font-size:1px;" href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d514efd16629a95784937fed76d9bf09be397faa51b40f2bd99cac3175537949464083a2bc0a4c3f43df910ce4abd3bf8">
+                           <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_04_38_05_ico-twitter.png" height="30" width="30" alt="Twitter"></a></td>
+                       <td style="padding: 0 18px 0 0;">
+                         <a style="font-size:1px;" href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3dba52eb4ba1e1a1c98ae3387843a3278c80a4beeaf19a4a9c46917b94323c5c09232bbd2543893ac4a484446415af7d41">
+                           <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/04_25_2022_04_37_51_ico-instagram.png" height="30" width="30" alt="Instagram"></a></td>
+                       <td style="padding: 0;">
+                         <a style="font-size:1px;" href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3d4175f40fbd73f94f0af80786000066b267119dc61659acbef70a467874c87edf2c114da3ca41f4728de889b2569fbad3">
+                           <img src="https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://coursera-misc.s3.amazonaws.com/mailspin/prod/03_30_2023_18_59_36_icon-tik-tok.png" height="30" width="30" alt="TikTok"></a></td>
+                      </tr>
+                     </table>
+                    </td>
+                   </tr>
+                                     
+                  </table>
+                 </th>
+                </tr>
+               </thead>
+              </table>
+              <p style="font-family: 'Source Sans Pro', Helvetica, sans-serif;">© 2023 Coursera Inc. All rights reserved. Coursera and the Coursera logo are registered trademarks of Coursera, Inc. All other trademarks are property of their respective owners. Log in to manage all your notification preferences in                     
+                <!-- settings -->
+                   <a href="https://click.email.coursera.org/?qs=3c60719f6e4cfe3da7afd598df7b0c7c8cef615e5fe481f7d91120a16bbdcba405ff4ed92ccc59492379ceb640c9a359b7ab4a9d000b2dd7cb20ba681bcb5bed" target="_blank" style="color: #636363"><span style="color: #636363;font-weight: none; text-decoration: underline;">Email&nbsp;Settings</span>.</a>
+                   
+                  <!-- settings end -->
+               </p>
+              
+              <p style="font-family: 'Source Sans Pro', Helvetica, sans-serif;">Coursera | 3﻿81 E﻿ast Evelyn A﻿ve, M﻿ountain View, C﻿A 9﻿4041 USA </p>
+             </td>
+            </tr>
+            <!-- legal -->
+            <tr>
+             <td>
+              <!-- prevent Gmail on iOS font size manipulation -->
+              <div class="gmailfix" style="font-size: 15px; line-height: 0; white-space: nowrap;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+             </td>
+            </tr>
+             
+            <!-- footer -->
+            <tr><td>
+<!-- prevent Gmail on iOS font size manipulation -->
+<div class="gmailfix" style="font-size: 15px; line-height: 0; white-space: nowrap;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </div>
+</td></tr>
+           </tbody>
+          </table>
+         </td>
+        </tr>
+       </tbody>
+      </table>
+     </td>
+    </tr>
+    <!-- // container -->
+   </tbody>
+  </table>
+ </center>
+</body>
+</html>
+
+--HQPmqWN9aeLc=_?:--
+

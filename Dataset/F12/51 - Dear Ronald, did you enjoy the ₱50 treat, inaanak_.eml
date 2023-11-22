@@ -1,0 +1,1769 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a92:ce44:0:b0:350:f1df:6bf4 with SMTP id a4csp326300ilr;
+        Fri, 17 Nov 2023 01:47:35 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IE7JUOYhUMJtDwlsfZJ4wDX2XwDMkk5MrsOzjY7hrw9YgQV5aqL5dBaCKCma/gsjQ4pxKQc
+X-Received: by 2002:a0c:f88a:0:b0:677:f3c4:6558 with SMTP id u10-20020a0cf88a000000b00677f3c46558mr2264404qvn.22.1700214455387;
+        Fri, 17 Nov 2023 01:47:35 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1700214455; cv=none;
+        d=google.com; s=arc-20160816;
+        b=l/0CNpjpsqlsa4360iA75bV2/yXbSHyNVkRXFPtK/QE2gdj4n8AIAiBh/lIPxI+P56
+         XtZpfZppwV2E+6EgeKIi3O0XYdk4xcoZrXItiqZEbdXq0BCnXjteuAmMaEIeDRNs/eEP
+         ONF28YfBNKUi3BJQGGQvdVXgZMrLzGocFO0VVnWygHt4+qRaPkzk9AMVaRyfdNS+hyay
+         Ft7sFGd0VzvUwSd2x+4kuTR7e1JZ4su7KN1NoXpIEhOf8UmyCYZoj7Y4l6otvt7wlJJN
+         LVuKfwxxv3U3Oecpao3CEneO4TJ9tgKKyBYOTy3Va6RDMvAGyHLuYbmWELXAL/L5dX/c
+         xWXA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=osFdhvEeS/TH5BiVqO9WY3+EAl3wa9y0+iDNWa8oyTc=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=VS8+F902wXg5E9Gb+qT+y3py7c76kVT45aC9MQfUyyvgaSUqkXVkyRMSYQvngQSy9E
+         Vok5CJTaUHriKK5AtDZ3Ti+omTAEDeCBXHcUBABjPmduY3C3LKA+LdbDRHOdZqi0qiEQ
+         QXd96qgHl0fQN5is/tfgpczVsVd4FuS01/YZAhGcmwWTCiM/u0OLx8ydpWX0xQ677tcV
+         Zy+8m3E848hyqRo/lM3GF2vmxSH7vF8zUC/AWGJbPmSAjsX4H12ThuwIR8okDe6mpKsI
+         VzJlpmpbLNQ+GueOlRsNpc4Fl6XNMfaG8Z+NiK3pXvtAOy0Hu1msEx/kNGCfwDQTiZ+p
+         31Lw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.foodpanda.ph header.s=s1 header.b=x8J48dUp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IzH5tV5o;
+       spf=pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.117.48 as permitted sender) smtp.mailfrom="bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph"
+Return-Path: <bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph>
+Received: from o3909.abmail.info.foodpanda.co.th (o3909.abmail.info.foodpanda.co.th. [168.245.117.48])
+        by mx.google.com with ESMTPS id k3-20020a0cfd63000000b006588de6ae6csi1339406qvs.266.2023.11.17.01.47.34
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 17 Nov 2023 01:47:35 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.117.48 as permitted sender) client-ip=168.245.117.48;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.foodpanda.ph header.s=s1 header.b=x8J48dUp;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=IzH5tV5o;
+       spf=pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.117.48 as permitted sender) smtp.mailfrom="bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.foodpanda.ph;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=osFdhvEeS/TH5BiVqO9WY3+EAl3wa9y0+iDNWa8oyTc=;
+	b=x8J48dUpxJG7MZM6wWm/r2uWvWzEk+ymG8dgt4cQnL1sVLAz6jgJB8t/Qfc3GUiBmVOW
+	sRG/d0YCF1Z+d8RmMgcBKWWJBSTLy9mjrubh2TRGbEAxoYPg+nxQXC+7mMsKgQHzxmziEv
+	fCcztonGBXhns3yQGRY7nNN2vOd0piJlAzzcbIWJ8hKmyVC5zV6IYjQ4pPugcCX+mI0T56
+	2RXzmKJlgYR/kgvSOMjX24bUqkQpIwWtI6Dv/f2EIj76MMH3x1WndexbP+Nx4/511UiQ9L
+	7g4pj9UViFIwTYKSUxYyUi4cl6stEBMRLN+rEzUYVmpAV3qb/FTLu96sT+wbnPew==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=osFdhvEeS/TH5BiVqO9WY3+EAl3wa9y0+iDNWa8oyTc=;
+	b=IzH5tV5o6IK98LjqdpHc7ukUSxSDrFPnAyoPkZmlKX8mo7yWCi+CdXlGneX/6bjQ1eUB
+	nMNGZYbPoTECKCgUboiQkvaWSaRXpFXOZK04uJVhFCdiPjb+TdDqKXNCaYCWy4NRLDrkE/
+	Kjm7ATDjSWaLSfBIK/yZEIXe4YRwIbOVE=
+Received: by filterdrecv-559468bd77-kdfql with SMTP id filterdrecv-559468bd77-kdfql-1-655736B4-12
+        2023-11-17 09:47:32.700706363 +0000 UTC m=+2646453.880507253
+Received: from NDY0MDQ1Nw (unknown)
+	by geopod-ismtpd-15 (SG) with HTTP
+	id F8euvm0QSfKTIpXiH4cioA
+	Fri, 17 Nov 2023 09:47:32.548 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=5869e13ad1488d38fbe9b6db8e7d88d07a9d856eb9782b76d3860deea6e7
+Date: Fri, 17 Nov 2023 09:47:32 +0000 (UTC)
+From: foodpanda <contact@info.foodpanda.ph>
+Mime-Version: 1.0
+Message-ID: <F8euvm0QSfKTIpXiH4cioA@geopod-ismtpd-15>
+Subject: Dear Ronald, did you enjoy the =?UTF-8?B?4oKxNTA=?= treat, inaanak?
+Reply-To: noreply@info.foodpanda.ph
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3A4=5Fmb9cc8xq7jmrg6p9wepq09tk5figw2sc3y1ywfsopdhgqget1552?=
+ =?us-ascii?Q?4y=40unsubscribe=2Eemailinboundprocessing=2Ec?=
+ =?us-ascii?Q?om=3Fsubject=3DUnsubscribe&body=3DDO=5FNOT=5FDELE?=
+ =?us-ascii?Q?TE-4pwchqvvxyi5qvn5isn9hb3g88eczanmjzh0?=
+ =?us-ascii?Q?famz94ugqh56s6b6pvjy1ad75gst59y8dncai20?=
+ =?us-ascii?Q?nhrv370apnou8scguv23rgpib9znf1csvot-DO=5F?=
+ =?us-ascii?Q?NOT=5FDELETE=3E?=
+X-Feedback-ID: 4640457:SG
+X-SG-EID: 
+ =?us-ascii?Q?Hud1Q=2FU+SZou61nZgb0AZ8QnPmZH7miSG3CQgUoiXt0xDvr8YCeOzZo1P4QWyn?=
+ =?us-ascii?Q?HEMj+rUqBK04n=2FeHJXeNFh=2FkP2OPXYUzk2qK0lO?=
+ =?us-ascii?Q?q4DNk8NyARU+Rt1ZB0nBEIfGRh3mJN0PWzQNuEs?=
+ =?us-ascii?Q?sfB9Ov2hChaRyrryB4LlN4Yd+GNc31crIRNpwDo?=
+ =?us-ascii?Q?+VswMfQUte019BNLrsMhbsPsmP=2FB=2F7XwXGkLu9k?=
+ =?us-ascii?Q?6XWtl=2FHWuVscIYQAkheIG0WQU2tnNwXU=2FumH+Qa?=
+ =?us-ascii?Q?cjE1=2FGY9LCwLYzDz3=2FkmQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?Ch=2F4h42hr6c3zZ3mA0HlXZNpCYnZc=2FQuP5ksXNh?=
+ =?us-ascii?Q?+oHTjoqX2qgNDGij3rmedFKddcMV8+gbOBoPyFz?=
+ =?us-ascii?Q?is4mkLm7Sr24U5E=2FAJA5YGZ91QgmguZLWTpaEci?=
+ =?us-ascii?Q?NHYSdYYNjuFtPPihMTup8jx0kwc5QZrjah7hLEz?=
+ =?us-ascii?Q?GQRcSTaNyw5+FPtGCjSpW0bdpmnaRddT77gEr05?=
+ =?us-ascii?Q?RsgRQ9YC2+p1idawU9yGPI9SpplqYYHNXr0WxPk?=
+ =?us-ascii?Q?Rc2F0nSehXRUnXBEaW4ucHle8mcK5qe5zMAHpqG?=
+ =?us-ascii?Q?jafkvJsyCUVUih4t17ssatnjtMgvlba4XtZsi1B?=
+ =?us-ascii?Q?xYrDrcWUOw6xfF6Fbs10mgCUGU+aSwMo=2FXyi3cD?=
+ =?us-ascii?Q?wA0fkzjsxy50AcveAJvCRbWSqvfx1jQMHtpjbv4?=
+ =?us-ascii?Q?o4CvRZmrNhIuWCGVHpPOuSXzOgYQoucWGjlyGIf?=
+ =?us-ascii?Q?LtMh+kSHy=2FB9oHZUehIdDZY=2F4k4xDwIBVME0xL6?=
+ =?us-ascii?Q?W5RnsYburTbxtV+GYM1CaW7bm+62eSSM8b6maO7?=
+ =?us-ascii?Q?2aIDgXs?=
+To: ronaldlambertnicolastugadi@gmail.com
+X-Entity-ID: L85+E/IrDWXdq9/QtqfN/w==
+
+--5869e13ad1488d38fbe9b6db8e7d88d07a9d856eb9782b76d3860deea6e7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+foodpanda    * { font-family: 'Avenir Next LT Pro',
+Helvetica, Arial, 'Roboto', sans-serif; }   *     @font-face {
+font-family: 'Avenir Next LT Pro'; font-weight: 300; font-style:
+normal; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUbvXGI6-2FnmVZW7ZO-2FqepV-2FG-2FgVt0bPqDxYEphTF7CkYc6p6-2Fa=
+L7y5w05tGf4HELE3juYUdVn6i6agSqvedILk7pCm4q_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMO=
+U-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScB=
+UoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCj=
+truRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-=
+2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILra=
+JwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkS=
+Cf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWU=
+vrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABk=
+TSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2=
+BfQQGZaKTqmW8t1WeByUM7rFmVVX0mHOQJ5auJx7errlqimXMn2y52d6gC3AS2TUyAPBkJo0mkn=
+aEjGCOIP-2FFmHfg1mZH-2FpSf9dUTVFBSWuYrnvTZnK7h0tB1OdDFZFz1c4ZlELQ3hFUJujKEF=
+6EqEG9OTSw-2F-2FM-2FVXrFgVNi3QxfPd2Neu
+format("opentype"); } @font-face { font-family: 'Avenir Next LT
+Pro'; font-style: normal; font-weight: normal; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUab0UTP4zgts5LuRejPnVho7lNVEi4SwD48YIEAzF8cGQu7v6ENFIuwQUlE=
+uzGAjeIM51H8cn7wrW7rhEZ7uZbZvsvo_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyG=
+tZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0=
+YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s=
+8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3=
+DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdT=
+La-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9m=
+gEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4L=
+MU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5F=
+ATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTq=
+mW8t1WeByUM7rFmVVX0Hu1LbKoxoiq2dU4vX1lr4XGAcVj81mVGsgM1z2JrFYkMmo1ZvRIlrMaE=
+sE6Hbg-2Bh5aPsyWhN7kncPchmzHkPV33LmCr9hMnjaaYpbN6yFsXbXxpAcWpUihD-2F731q4P1=
+7wGaDprEChx8N4M5fWgpw0
+format("opentype"); } @font-face { font-family: 'Avenir Next LT
+Pro'; font-style: normal; font-weight: bold; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUZKQTxyHSaiW-2FrvyVhZv6CNbovp7F1b888gGoGIdQdpHDfESLNj-2Bndz=
+IBSDxn8XhWIWJEiew2XUC9SygcjqZwCKIjcV_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2Fij=
+FXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLa=
+icL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ=
+7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUX=
+sXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11r=
+LCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq7=
+2R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuu=
+no4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIo=
+kd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZ=
+aKTqmW8t1WeByUM7rFmVVX1ujw2AFSBr0SIpouDsfzqo03fHiq4QKjBE9RE5zVBczuKtehkBLaW=
+JrTIxiSXKzRPE3R-2BP-2FxUrnrXBdat9H-2BUdfa2TyN6quUBQQMbZHwzgukrTf982P7sDq78a=
+RlfURudNLRu7HhiqQoCo9T3L5m-2Bd
+format("opentype"); }      html, body { margin: 0 auto
+!important; padding: 0 !important; height: 100% !important;width:
+100% !important; } * { -ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; } #body a { color: inherit;
+text-decoration: none; font-size: inherit; font-family: inherit;
+font-weight: inherit; line-height: inherit; } div[style*=3D"margin:
+16px 0"] { margin:0 !important; } table, td { mso-table-lspace:
+0pt !important; mso-table-rspace: 0pt !important; } table {
+border-spacing: 0 !important; border-collapse: collapse
+!important; table-layout: auto !important; margin: 0 auto
+!important; } table table table { table-layout: auto; } img {
+-ms-interpolation-mode:bicubic; } *[x-apple-data-detectors],
+.x-gmail-data-detectors, .x-gmail-data-detectors *, .aBn {
+border-bottom: 0 !important; cursor: default !important; color:
+inherit !important; text-decoration: none !important; font-size:
+inherit !important; font-family: inherit !important; font-weight:
+inherit !important; line-height: inherit !important; } .a6S {
+display: none !important; opacity: 0.01 !important; } img.g-img +
+div { display:none !important; } .button-link { text-decoration:
+none !important; } @media only screen and (min-device-width:
+320px) and (max-device-width: 480px) { .email-container {
+min-width: 380px !important; } } @media screen and (max-width:
+480px) { .wrapper { width: 100% !important; } /* Hero image Rules
+*/ .mob-hero-img { height: 200px !important; } .mob-th-width {
+width: 300px !important; height: 300px !important;} /* Specific
+Rules */ /* Deal Rules */ .m-pad-85 { padding: 20px 85px
+!important; } .mob-padd-80 { padding: 0 80px !important; }
+.mob-font-25 { font-size: 25px !important; } .mob-font-20 {
+font-size: 20px !important; } .mob-font-18 { font-size: 16px
+!important; } .mob-font-16 { font-size: 16px !important;
+line-height: 20px !important; } .mob-font-14 { font-size: 14px
+!important; line-height: 18px !important; } .m-pad-20 { padding:
+0 20px !important; } .mob-padd-bottom { padding-bottom: 20px
+!important; } .mob-padding-invoice { padding: 10px 5px
+!important; } .mob-margin-bottom { margin-bottom: 40px
+!important; } .mob-pad-10 { padding: 0 15px 40px !important; }
+.mob-pad-5 { padding: 0 5px 15px !important; } .mob-display-none
+{ display: none !important; } .mob-deal-width { width: 165px
+!important; } .mob-deal-w-180 { width: 180px !important; }
+.mob-deal-w-50 { width: 50% !important; } .mob-height-188 {
+height: 188px !important; } .mob-max-width { max-width: 150px
+!important; display: inline-block !important; } /* Voucher Rules
+*/ .mob-font-30 { font-size: 45px !important; } .mob-voucher-img
+{ background-size: 600px !important; } .mob-hide-img {
+background: none !important;background-color: #ffffff !important;
+} .mob-voucher-padding { padding: 0 10px;} /* Download app
+specific rules */ .colAppL {width: 100% !important; display:
+block !important; text-align: center !important;} .colAppR
+{width: 100% !important; display: block !important; text-align:
+center !important;} .colAppL-t {width: 300px !important; display:
+block !important; text-align: center !important;margin: 0 auto
+!important; } .colAppL-left {width: 100% !important; display:
+inline-block !important; text-align: left !important;} .mob-font
+{ font-size: 18px !important; } .mob-font-12 { font-size: 12px
+!important; } .mob-hide { background: none
+!important;background-color: #FF2B85 !important; } .mob-padd-0 {
+padding-left: 0 !important; } .mob-pad-0 { padding: 0 0 33px
+!important; } .mob-bg-color { background-color: #ffffff
+!important; } .mob-gutter { height: 20px !important; }
+.padding-tw-deal { padding: 90px 22px !important; } }       96
+body, table, td {font-family: 'Avenir Next LT Pro', Helvetica,
+Arial, 'Roboto', sans-serif;}
+
+
+
+
+
+
+
+
+
+
+( https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5if=
+xhPboWIcXG8UB-2FS78Ml09Spme8RjkvIppVurNGu-2BTjyvvp8yiStsRr5aXqOpI8Wk1hgfLac=
+A54SlDB0w5MvrLrjfEBU2OfaFN3rfrSxe8txOVwdGLNFxt3wBya1w2qq4-2Fmtho1fYDQazK8Lv=
+6EUQCTuKPQqEqMGxQfXIA5zwpzrPa1GzGYWUTWFtSn9Y8ofu9zquhUrAwZNHmB46GTQUQ5ChV5z=
+q8w0r-2BfJ6oV9pgzHPN_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN=
+5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMu=
+KruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7=
+ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6=
+SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1Gms=
+oSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnk=
+AJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSER=
+Q1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7=
+rFmVVX2TDH5XJWgqX6h3RiKfcK5PaCsvANhGAS-2BcNsmsQSKB21BwTS5KQCn1c4t92Yl6W8E3-=
+2BtILGHrHcQ4MSJKj-2FdW1ivZ-2FGfwO3tPO2tlka6Oqaxx-2ByzVJ-2FcTzE67yffChm5eKw7=
+XmldQWSOlnHBD743H7 )
+Don't let it go, Ronald!
+Don't miss your =E2=82=B150 discount! Order today and select the voucher at=
+ checkout. Oh, use it na ha!
+
+Redeem now  (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml2FjOX-2BLZKoA-2Fu-2BFlbA5NkOUZJNbPH5i8IPfggN09Z99o7fwVN0=
+jp0kUZulXBYqUL5U-2Fl8WlSWh4CX-2Fd02CllV5dBpRmC9bcXwmBYBr2dK2ZK2gSkHcr5Io-2B=
+QuXkrKw-2FAYTsAEvjKJ5gjFsAmQRH4ehAVA57ArKFlQHvpLp9tDpmTwo0z-2BycH2fv-2BDCyV=
+TLKMY6-2BRLUXb0VSuge3B3mfg4Ay0CkUa7C1gsqn0DH9v-2Bg6UdJvtgAtAONWlPMKLdsVX2Wv=
+8Z6JQyaVI85UEdRhV9c8fk-2Bz1mJMyw5g-2B4NqVnImuuXJj-2FDZ1bJN4rmzGv4KO770PyHru=
+DeeY-2Bc6Ys-2FWILIximjt8sEU0-2Bf-2Br24-2FZAAaw-3D-3D_p5T_HPC5-2BlCj2pcWYfPY=
+IAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCq=
+uPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspw=
+mTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2J=
+GZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1=
+ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08j=
+Xv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa=
+2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9=
+MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdM=
+LXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX1JZMSnDUf-2FUNafeyFG9kUgbjY3BXQC7=
+ZxkBNi52PcyP5fYmRKecZ9v4pbnK837-2BWfJ6V675UW3-2BTpD6tqU8yFiczzxZqYbfC8zPQjM=
+UNJybibBL5hNZxWiWaGAVBPHTc4DfDJPOOdDYFA9nZK5fGAv )
+*Valid for orders worth =E2=82=B1100 or more, until 21/11/2023.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml2FjOX-2BLZKoA-2Fu-2BFlbA5NkOt0iLE-2BWOozrc9wGVWyzvwIqqPx=
+w2u5fFRKSr2rizIDTL0v-2FIo42ljcyM-2BXkfXzexlzTkjdeu-2FFGLnoeMZT4cO-2Flnn713R=
+KdyZzPZJ6V9akharRfc6rfk7ugljoRujBrKN2iWEw1DyUVEzYAq1fW3bWbqpTZ9WRuT9870re7F=
+vQbOsImEEgQtbXrULrUblBTFdxoOa8lql0q-2FKkx83jV04aVLYq-2FvYbQWg5IkSy0nHMA4938=
+ohm6PJGfyaG72NTxQQAe3G-2Bj6BxNIs1sgMocrLWgZn1tgvd4KFibsbmq0177pSU9LWZPfVyoX=
+KSpCfLEDbGKjkcNZHPm48NT-2F7SFrcY2dcxilwFlP-2ByxEtibItmGlHpjQSTIQQM78tazHY0C=
+hkA9K_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQ=
+OSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3=
+AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEga=
+OV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2=
+FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqd=
+ctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BU=
+IoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6=
+wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGb=
+wp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX1Mwj7sHFY=
+4kTb9F0R4YL9y5shZe-2BiZso1Q0f0Qxq3gu1Wjd4jMH3tKHfbe-2F0BdKYw78njUuadzFSwCXw=
+tfAx3ow93THBCTHOlInObgcQG-2FgcCiGWuEdvpJGBVtLwHjiu8IlFlPv0MG0Z8SxR4td9ti )
+
+
+
+
+
+
+
+
+
+
+
+<strong>food and more,</strong> delivered ios (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5gz-2=
+BYWprj4f9zKyPntMEI4CnFwOX1UhglZn3r95VgwXyCQQNEj3URVAlJdOXrJlRcAzlOHX1F6sql9=
+N4tQcCxXZOMOl7OpfKa7J1GFkY1ADIMPpp-2F-2B-2FuBuerhesVNNzyXQ-3D-3DTSQy_HPC5-2=
+BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B=
+5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ=
+288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsi=
+g9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0=
+oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPH=
+IjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB=
+6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BD=
+AXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMv=
+DBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX0dm7f1-2F4B627FMw3Y2s=
+gTRrnpOu1OzxYgLeFq-2FJullyf4rA6stmyJ6TM6gzVKZLd-2FrYIvN20vyexA6MDXiyYh60dj2=
+5jZlQODLxfqEV8IDNDfTAZu0KlKkZ7-2FiNwsEo2vDKhDQSyE3oGpLaqje1e5r )     play (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5mwTh=
+dUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2BT0QNHDWRpIeJ3WowyNNiWuP6se=
+96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrYUGJhODdQ-3D-3DPr01_HPC5-2Bl=
+Cj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5O=
+wyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ28=
+8R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9=
+WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oI=
+QiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIj=
+mS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6s=
+m02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAX=
+qpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDB=
+hde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX3L6GIZX3gVPoxdmBixxNBqk=
+dbuIHJE7xctJu8slMhJtC59quOmUZ-2FlVWwh0yyySxY9V85fCjO9h8TfRqvA-2FKgYAYA5BEqv=
+LR9xCPraQsCjVh7YP2RZDw-2FiLbNJX2u7FT3KnWAEq-2BSdc8bErPnAtHRi )
+social-icons ( https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfon=
+cUR7Zm1WXg5smSW4vyJLWkGqwjVLXdJdIU1gMGmvBJLwtKP1uSS3GmlarNweEI6T1jeIUaXdirG=
+A-3D-3Dw8dG_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd5=
+36KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlX=
+BE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpI=
+qnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHH=
+i2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0D=
+fEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyN=
+N5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIU=
+fn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeK=
+aapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX2lG=
+W2iMkxIEhGGanyoyT-2Fi9LAXrqqCan9KETGm0pbJvgN8BUhDQTZ2inYrjLRw1kOSHa1A37nhwK=
+MIz0-2F-2BZGxJFBSUOQHVtc2Vl3FIyJTjl3ZqQDIOfUcyzE2Fc-2Fucsk0LwtJ8raS6-2B-2BF=
+GtcWtxDBb )
+social-icons ( https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfon=
+cUR7Zm1WXg5mwJET83ITgF90VxuhfZ9KpncVknXLxF4uLDso3FB4dBqLKS_HPC5-2BlCj2pcWYf=
+PYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPc=
+CquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fys=
+pwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY=
+2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aG=
+V1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt0=
+8jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZ=
+Na2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlR=
+m9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wS=
+dMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX1tmsTZGTqnWX8-2BdvG-2BzWz4ADDgy=
+9T6SNfIjHMhTzvl8uX6Avl0uc8lxHvOgSyPA6hTjdOsmIi26a8INkYcA9nbl7rdJaUwkurC5hYH=
+CrEyQsYndBpBQ45Q4RO3jUgHKaZ8023hnV3-2Bwr4Qmc1nvJcW )
+Privacy | (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5vw0C=
+TYJvF9XDuJ8Qk6zPVHCCRnMESkP-2BGSN252YCxdJ-2FXsa5LXsgG-2Fki0JX4yxiVg-2FSr-2F=
+NvWfx-2FbpXBQLcOvJ2pmZmqByqKh6iTCIcNUfFRwageWp1fj4jToY4qTKQgFaGuU97SXp2du22=
+DKIb0zkwfhc8CqSKkj-2BLKuGZ0xkB7wZn3q2WZDq4zaHVoZGO-2BQeZGze9L22-2Bhv-2FzTbY=
+m-2FM1hhTtuZuOUznM41YoxFm-2Bh7vL7M_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFX=
+yGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaic=
+L0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q=
+8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsX=
+K3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLC=
+dTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R=
+9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno=
+4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd=
+5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaK=
+TqmW8t1WeByUM7rFmVVX1R6FIxyBydZ-2F4nx1uFVz38jc9nTgk6IPp9z0HjPtZVA1ow5zk56Ul=
+IgOjGJpTa7fknGNURpBgekxRakikFoPy4Hw2Le6bjwhudwEOfyeUioWDcPxk7zBw-2Bq061veek=
+4J3PJZCHGUECsLceN2J9jkSE
+) General terms and conditions | (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5vw0C=
+TYJvF9XDuJ8Qk6zPVHBKwXG-2BKhz2itgOb5N0DIESQcVW-2BmpvVG9FPXzWdwxVaEiF3qVA2mn=
+Iiq9xi6df5ccVWfSvhNVxAX2pUuDYRDKKha-2BgnI9juc6OAUTJsL-2FewNzMldjynyUm27fXzs=
+YGZx2UKVmRlc7SW16atlbhB8f5YZRVwPCUmshZG-2BdrRnva3M-2BC4XVw-2FpHQTFqh2UKvf7D=
+QK2xyhVyOGBLom5JOizGKT1z_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWso=
+Y-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYA=
+DymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJh=
+VMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1=
+iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhA=
+uGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ=
+1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2Bq=
+bLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2=
+FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeB=
+yUM7rFmVVX1A69YVzMSOYS-2FkStLFqpWKFblEmfATKbYnoIsjdbLWR-2B3O-2ByWUExhb3lmZX=
+nwoJWcWM-2FFRSSPdmf-2FeK-2B-2FecRy-2FrbRTTQe-2BAB-2FQMocxDlsWpc3L8K5rCtrT3c=
+J0RwCgGQgwYh3YvQR87A4p0c3vO9Gs
+) Unsubscribe (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5qdxf=
+ciF8UkAjOVz3-2FUrSh6ZWAXRnW3uKZCuNaak2z48yAlLgYxVnugcMn1RIzRha0FRyKYIzxvZ-2=
+FJdhih88mRj8-2BUd7VwIzJasj5-2F-2FwfvgyEF1-2Bm9yfQV4ak1MfYoijeor975ASikzjDy1=
+C035SEo26sv8W3XM2s-2BWhLgnKLntEC3DXxAJEIS9ol-2BqAk6Suvp0hCVVLUkwnXQvXlURSvU=
+2rmLOBwj58CRPLY9rw3Ff5AmoLaUDrD0FRV9t0kvMGYQogvioN8lOaPSxCCImWS6GDZ5meieBcZ=
+goL8HO6XT5x7IWb9pCx30bD36Zpjn9-2Fk6PvkUda2pZSWgaoBfO9Uz-2Fk8-2FSpZf-2B-2Bst=
+LImPYYQjPst-2Bcq4BYVuKVaescvNrbId-2FAZP6zzMyv7EXtbzGKbT8KRioMdTw4lkH-2Fw9yZ=
+SplD553t09Pz60A0BIL0iAg8hg3Qb7Mch9X2rS3GRsKRTpTxO3djbc82Jb0MEruS3cKxw-2Bykf=
+I92gRUqUxgSZ65-2BqxEUl2SdwqzJm3vxvPIbhoIup8Wj-2FhOPHCi7UKiq0HmM-2BI9sVcCJws=
+95CLI-2B5QuoXp23GoWAzJ8HE8Es-2B0-2FUtAAMSGeZOezZAGmUm02sCzS8FiNu5NYc6xqZKFJ=
+ZbveSrZvTx0uuvEN2MZdA6ZPtzS2WLXo6IKMvQ4SVYbzfIWBe6yX1h-2FRm2PNAVBmyQysx1Ag-=
+3D-3DWyl-_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536=
+KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE=
+-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqn=
+kEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2=
+Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfE=
+JnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5=
+-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn=
+85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaa=
+pwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX1oveV=
+bDSnIB3UV908Qxqza-2FfZ0tcL7-2B96oHsRjoxp3OhSBK7kjP-2FVgrMzUj4i1MslJfPat-2Bb=
+900DuHqUYmjwfpP15LSq31kUuGgbZyizt5l-2F388mtdrM6gI-2FSuyrhMAhfyLO6MYHqiZ3Mg8=
+HbiqTB6 )
+16/17F Milestone at Fifth Avenue, 5th Ave., Taguig City, Metro Manila, Phil=
+ippines =C2=A9
+foodpanda Philippines
+
+
+--5869e13ad1488d38fbe9b6db8e7d88d07a9d856eb9782b76d3860deea6e7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html style=3D"height: 100% !important; width: 100% !important; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding: 0=
+;">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style>@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 100; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgVxH=
+Izc.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 300; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5f=
+Cxc9.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 400; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu7WxP=
+.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 500; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9f=
+Cxc9.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 700; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlf=
+Cxc9.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Roboto'; font-style: normal; font-weight: 900; font-display: =
+swap; src: url('https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtf=
+Cxc9.ttf') format('truetype');
+}
+@font-face {
+font-family: 'Avenir Next LT Pro'; font-weight: 300; font-style: normal; sr=
+c: url('https://appboy-images.com/appboy/communication/assets/font_assets/f=
+iles/6152f16fd61dae3f6aca35d4/original.otf?1632825711') format("opentype");
+}
+@font-face {
+font-family: 'Avenir Next LT Pro'; font-style: normal; font-weight: normal;=
+ src: url('https://appboy-images.com/appboy/communication/assets/font_asset=
+s/files/6152f16f27fb9a55799b4385/original.otf?1632825711') format("opentype=
+");
+}
+@font-face {
+font-family: 'Avenir Next LT Pro'; font-style: normal; font-weight: bold; s=
+rc: url('https://appboy-images.com/appboy/communication/assets/font_assets/=
+files/6152f16fe9502e09b418b16c/original.otf?1632825711') format("opentype")=
+;
+}
+body {
+margin: 0 auto !important; padding: 0 !important; height: 100% !important; =
+width: 100% !important;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480=
+px) {
+  .email-container {
+    min-width: 380px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .wrapper {
+    width: 100% !important;
+  }
+  .mob-hero-img {
+    height: 200px !important;
+  }
+  .mob-th-width {
+    width: 300px !important; height: 300px !important;
+  }
+  .m-pad-85 {
+    padding: 20px 85px !important;
+  }
+  .mob-padd-80 {
+    padding: 0 80px !important;
+  }
+  .mob-font-25 {
+    font-size: 25px !important;
+  }
+  .mob-font-20 {
+    font-size: 20px !important;
+  }
+  .mob-font-18 {
+    font-size: 16px !important;
+  }
+  .mob-font-16 {
+    font-size: 16px !important; line-height: 20px !important;
+  }
+  .mob-font-14 {
+    font-size: 14px !important; line-height: 18px !important;
+  }
+  .m-pad-20 {
+    padding: 0 20px !important;
+  }
+  .mob-padd-bottom {
+    padding-bottom: 20px !important;
+  }
+  .mob-padding-invoice {
+    padding: 10px 5px !important;
+  }
+  .mob-margin-bottom {
+    margin-bottom: 40px !important;
+  }
+  .mob-pad-10 {
+    padding: 0 15px 40px !important;
+  }
+  .mob-pad-5 {
+    padding: 0 5px 15px !important;
+  }
+  .mob-display-none {
+    display: none !important;
+  }
+  .mob-deal-width {
+    width: 165px !important;
+  }
+  .mob-deal-w-180 {
+    width: 180px !important;
+  }
+  .mob-deal-w-50 {
+    width: 50% !important;
+  }
+  .mob-height-188 {
+    height: 188px !important;
+  }
+  .mob-max-width {
+    max-width: 150px !important; display: inline-block !important;
+  }
+  .mob-font-30 {
+    font-size: 45px !important;
+  }
+  .mob-voucher-img {
+    background-size: 600px !important;
+  }
+  .mob-hide-img {
+    background: none !important; background-color: #ffffff !important;
+  }
+  .mob-voucher-padding {
+    padding: 0 10px;
+  }
+  .colAppL {
+    width: 100% !important; display: block !important; text-align: center !=
+important;
+  }
+  .colAppR {
+    width: 100% !important; display: block !important; text-align: center !=
+important;
+  }
+  .colAppL-t {
+    width: 300px !important; display: block !important; text-align: center =
+!important; margin: 0 auto !important;
+  }
+  .colAppL-left {
+    width: 100% !important; display: inline-block !important; text-align: l=
+eft !important;
+  }
+  .mob-font {
+    font-size: 18px !important;
+  }
+  .mob-font-12 {
+    font-size: 12px !important;
+  }
+  .mob-hide {
+    background: none !important; background-color: #FF2B85 !important;
+  }
+  .mob-padd-0 {
+    padding-left: 0 !important;
+  }
+  .mob-pad-0 {
+    padding: 0 0 33px !important;
+  }
+  .mob-bg-color {
+    background-color: #ffffff !important;
+  }
+  .mob-gutter {
+    height: 20px !important;
+  }
+  .padding-tw-deal {
+    padding: 90px 22px !important;
+  }
+}
+</style>
+</head>
+<body style=3D"height: 100% !important; width: 100% !important; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding: 0=
+;">
+<p style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+  <meta charset=3D"utf-8" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%;">
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" style=3D"-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" style=3D"-ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <meta name=3D"x-apple-disable-message-reformatting" style=3D"-ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <title style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">foodpanda</title>
+  <!-- Web Font / @font-face : BEGIN -->
+
+  <!--[if mso]>
+  <style>
+  * {
+  font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif=
+;
+}
+</style>
+<![endif]-->
+
+<!--[if !mso]><!-->
+
+
+<!--<![endif]-->
+
+<!-- Web Font / @font-face : END -->
+
+<!--[if !mso]><!-->
+
+<!--<![endif]-->
+<!-- Web Font / @font-face : END -->
+
+<!-- CSS -->
+
+<!-- What it does: Makes background images in 72ppi Outlook render at corre=
+ct size. -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+
+
+  <center style=3D"width: 100%; background-color: #ffffff; text-align: left=
+; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+    <!--[if mso]>
+    <style type=3D"text/css">
+    body, table, td {font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif;}
+  </style>
+  <![endif]-->
+
+  <div style=3D"max-width: 600px; -ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; margin: auto;" class=3D"wrapper">
+    <!--[if mso]>
+    <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600" a=
+lign=3D"center">
+    <tr>
+    <td>
+    <![endif]-->
+    <!-- EMAIL BODY : BEGIN -->
+    <table bgcolor=3D"#ffffff" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" align=3D"center" width=3D"600" style=3D"max-width: 600px; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important; border-spacing: 0 !important; bo=
+rder-collapse: collapse !important; table-layout: auto !important; margin: =
+0 auto;" class=3D"wrapper email-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- VENDOR BANNER : BEGIN -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacin=
+g: 0 !important; border-collapse: collapse !important; table-layout: auto !=
+important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2Bj=
+RkpfoncUR7Zm1WXg5ifxhPboWIcXG8UB-2FS78Ml09Spme8RjkvIppVurNGu-2BTjyvvp8yiSts=
+Rr5aXqOpI8Wk1hgfLacA54SlDB0w5MvrLrjfEBU2OfaFN3rfrSxe8txOVwdGLNFxt3wBya1w2qq=
+4-2Fmtho1fYDQazK8Lv6EUQCTuKPQqEqMGxQfXIA5zwpzrPa1GzGYWUTWFtSn9Y8ofu9zquhUrA=
+wZNHmB46GTQUQ5ChV5zq8w0r-2BfJ6oV9pguJHn_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2=
+FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoR=
+wLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtru=
+RuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2Fw=
+HUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV=
+11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2=
+qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrT=
+Luuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSr=
+zIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQ=
+QGZaKTqmW8t1WeByUM7rFmVVX29Rld02InneRiuEDAupj-2BbCW7j8-2FgtYRjdansWTS4k5fia=
+hwmq1e-2ByX4QiUTXNdE8l56rdOhNP9SjKOOFivsJGDRAfTqQgme9PkIxqQN9hMMT3159vLnShf=
+vgERlx9bVYxdGmQsNay-2FOoun3UUsxkb" target=3D"_blank" style=3D"-ms-text-size=
+-adjust: 100%; -webkit-text-size-adjust: 100%;"><img width=3D"600" src=3D"h=
+ttps://braze-images.com/appboy/communication/assets/image_assets/images/644=
+b39a8f6613076cc1c2b64/original.png?1682651560" class=3D"wrapper" alt-text=
+=3D"Banner Image" style=3D"vertical-align: bottom; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic; margin=
+: 0;"></a>
+          </th>
+      </tr>
+     <!-- ******** GUTTER : BEGIN ******** -->
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+          <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" width=3D"100%" style=3D"border-collapse: collapse !important; -ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0p=
+t !important; mso-table-rspace: 0pt !important; border-spacing: 0 !importan=
+t; table-layout: auto !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <td class=3D"mob-gutter" height=3D"10" style=3D"font-size: 1p=
+x !important; line-height: 1px !important; color: #37454d; -ms-text-size-ad=
+just: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !importan=
+t; mso-table-rspace: 0pt !important;">
+                &nbsp;
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!-- ******** GUTTER : END ******** -->
+      </table>
+    </th>
+  </tr>
+  <!-- VENDOR BANNER: END -->
+
+
+
+<!-- HERO IMAGE SIMPLE : BEGIN -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacin=
+g: 0 !important; border-collapse: collapse !important; table-layout: auto !=
+important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2Bj=
+RkpfoncUR7Zm1WXg5ifxhPboWIcXG8UB-2FS78Ml2FjOX-2BLZKoA-2Fu-2BFlbA5NkOUZJNbPH=
+5i8IPfggN09Z99o7fwVN0jp0kUZulXBYqUL5U-2Fl8WlSWh4CX-2Fd02CllV5dBpRmC9bcXwmBY=
+Br2dK2ZK2gSkHcr5Io-2BQuXkrKw-2FAYTsAEvjKJ5gjFsAmQRH4ehAVA57ArKFlQHvpLp9tDpm=
+Two0z-2BycH2fv-2BDCyVTLKMY6-2BRLUXb0VSuge3B3mfg4Ay0CkUa7C1gsqn0DH9v-2Bg6UdJ=
+vtgAtAONWlPMKLdsVX2Wv8Z6JQyaVI85UEdRhV9c8fk-2Bz1mJMyw5g-2B4NqVnImuuXJj-2FDZ=
+1bJN4rmzGv4KO770PyHruDeeY-2Bc6Ys-2FWILIximjt8sEU0-2Bf-2Br24-2FZAAaw-3D-3DdM=
+hC_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSu=
+sYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxW=
+dj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-=
+2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu=
+0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctE=
+RrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoB=
+HjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxG=
+RVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9=
+f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX1r2tUP13f0In=
+JZy3-2FCsTBZApGWSbzZ6tYjCYOsdz-2B3n8qXZoIytWP9pHHaNKxGM1D5AL3a3ZGfR-2FbSUmz=
+ZS3YWftKXHkEuwUmBKv2S3W3tCVekZenV9LITqp8pWRO0e2GE9nw2lRgVo-2Fhfgg-2F5ig4k" =
+target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;"><img width=3D"600" src=3D"https://braze-images.com/appboy/comm=
+unication/assets/image_assets/images/62b1606a23056d536c24b883/original.png?=
+1655791722" class=3D"wrapper" alt=3D"" style=3D"vertical-align: bottom; -ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpolation-=
+mode: bicubic; margin: 0;"></a>
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+  <!-- HERO IMAGE SIMPLE: END -->
+
+  <!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0=
+" width=3D"100%" height=3D"20" style=3D"border-collapse: collapse !importan=
+t; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-ls=
+pace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0 !=
+important; table-layout: auto !important; margin: 0 auto;" bgcolor=3D"fffff=
+f">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #231f20; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+  <!-- HEADLINE TEXT : BEGIN -->
+  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+; padding: 0 10px 44px;">
+      <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-=
+table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spac=
+ing: 0 !important; border-collapse: collapse !important; table-layout: auto=
+ !important; margin: 0 auto;">
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"wrapper mob-font-20" style=3D"font-family: 'Roboto',=
+ Arial; color: #231f20; font-size: 45px; font-weight: 900; line-height: nor=
+mal; padding-bottom: 30px; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;" align=3D"center">
+           Don't let it go, Ronald!
+          </th>
+        </tr>
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"wrapper mob-font" style=3D"font-family: 'Roboto', Ar=
+ial; color: #231f20; font-size: 24px; font-weight: 400; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%;" align=3D"center">
+            Don't miss your =E2=82=B150 discount! Order today and select th=
+e voucher at checkout. Oh, use it na ha!
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+  <!-- HEADLINE TEXT : END -->
+
+
+<!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" height=3D"20" style=3D"border-collapse: co=
+llapse !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; table-layout: auto !important; margin: 0 auto;" =
+bgcolor=3D"ffffff">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #37454d; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+<!-- CTA BUTTON : BEGIN -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th valign=3D"top" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; padding: 0 0 20px;">
+    <div align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%;">
+      <!--[if mso]>
+      <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn=
+:schemas-microsoft-com:office:word" href=3D"" style=3D"height:40px;v-text-a=
+nchor:middle;width:185px;text-align: center;" arcsize=3D"0%" strokecolor=3D=
+"#ff2b85" fill=3D"t" align=3D"center">
+      <v:fill type=3D"tile" src=3D"" color=3D"#ff2b85" />
+      <w:anchorlock/>
+      <center style=3D"color:#ffffff; font-family: 'Avenir Next LT Pro', He=
+lvetica, Arial, 'Roboto', sans-serif; font-size:18px;text-align: center; fo=
+nt-weight: 900;">
+     =20
+    </center>
+  </v:roundrect>
+  <![endif]-->
+  <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncU=
+R7Zm1WXg5ifxhPboWIcXG8UB-2FS78Ml2FjOX-2BLZKoA-2Fu-2BFlbA5NkOUZJNbPH5i8IPfgg=
+N09Z99o7fwVN0jp0kUZulXBYqUL5U-2Fl8WlSWh4CX-2Fd02CllV5dBpRmC9bcXwmBYBr2dK2ZK=
+2gSkHcr5Io-2BQuXkrKw-2FAYTsAEvjKJ5gjFsAmQRH4ehAVA57ArKFlQHvpLp9tDpmTwo0z-2B=
+ycH2fv-2BDCyVTLKMY6-2BRLUXb0VSuge3B3mfg4Ay0CkUa7C1gsqn0DH9v-2Bg6UdJvtgAtAON=
+WlPMKLdsVX2Wv8Z6JQyaVI85UEdRhV9c8fk-2Bz1mJMyw5g-2B4NqVnImuuXJj-2FDZ1bJN4rmz=
+Gv4KO770PyHruDeeY-2Bc6Ys-2FWILIximjt8sEU0-2Bf-2Br24-2FZAAaw-3D-3DKWoR_HPC5-=
+2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2=
+B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14Z=
+J288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSs=
+ig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB=
+0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPP=
+HIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZ=
+B6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2B=
+DAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPM=
+vDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX0-2B-2BYBF6TGqTp7wdr=
+z36rVg51WLteQ-2Ba-2FshOpylUIzze8ODYkSDZnM-2BvGjnxq8y8n4oCpzBTZc1Sd0nVZMYyMt=
+ceZwCScMd37rsR8NBwuDN3Zt4djeCg5RBH7KgiOdTyLlDJQTY-2FjeUzL0e-2Fr05hM3E" targ=
+et=3D"_blank" style=3D"background-color: #ff2b85; border-radius: 40px; colo=
+r: #ffffff; display: inline-block; font-family: 'Avenir Next LT Pro', Helve=
+tica, Arial, 'Roboto', sans-serif; font-size: 16px; line-height: 36px; text=
+-align: center; text-decoration: none; width: 160px; -webkit-text-size-adju=
+st: none; mso-hide: all; font-weight: 900; -ms-text-size-adjust: 100%; bord=
+er: 4px solid #ff2b85;">
+  <span style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+    Redeem now
+  </span>
+</a>
+</div>
+
+</th>
+</tr>
+<!-- CTA BUTTON : END -->
+
+<!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" height=3D"20" style=3D"border-collapse: co=
+llapse !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; table-layout: auto !important; margin: 0 auto;" =
+bgcolor=3D"ffffff">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #37454d; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th align=3D"left" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;">
+    <!-- TEXT : BEGIN -->
+    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" style=3D"font=
+-family: museo-sans, Arial, sans-serif; color: #231f20; font-size: 12px; li=
+ne-height: 115% !important; font-weight: 300; -ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-=
+rspace: 0pt !important; border-spacing: 0 !important; border-collapse: coll=
+apse !important; table-layout: auto !important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <th align=3D"center" style=3D"font-weight: 300; -ms-text-size-adjus=
+t: 100%; -webkit-text-size-adjust: 100%; padding: 24px 40px 44px;">
+          <!-- TEXT -->
+            *Valid for orders worth =E2=82=B1100 or more, until 21/11/2023.
+          <!-- TEXT -->
+        </th>
+      </tr>
+    </table>
+    <!-- TEXT : END -->
+  </th>
+</tr>
+
+
+<!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" height=3D"20" style=3D"border-collapse: co=
+llapse !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; table-layout: auto !important; margin: 0 auto;" =
+bgcolor=3D"ffffff">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #37454d; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+<!-- ******** GUTTER : END ******** -->
+
+
+
+
+
+
+   =20
+  <!-- ******** GUTTER : END ******** -->
+ =20
+
+ =20
+
+
+       =20
+      <!-- ******** GUTTER : END ******** -->
+     =20
+
+     =20
+
+
+
+         =20
+
+
+
+<!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" height=3D"20" style=3D"border-collapse: co=
+llapse !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; table-layout: auto !important; margin: 0 auto;" =
+bgcolor=3D"ffffff">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #37454d; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- VENDOR BANNER : BEGIN -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacin=
+g: 0 !important; border-collapse: collapse !important; table-layout: auto !=
+important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2Bj=
+RkpfoncUR7Zm1WXg5ifxhPboWIcXG8UB-2FS78Ml2FjOX-2BLZKoA-2Fu-2BFlbA5NkOt0iLE-2=
+BWOozrc9wGVWyzvwIqqPxw2u5fFRKSr2rizIDTL0v-2FIo42ljcyM-2BXkfXzexlzTkjdeu-2FF=
+GLnoeMZT4cO-2Flnn713RKdyZzPZJ6V9akharRfc6rfk7ugljoRujBrKN2iWEw1DyUVEzYAq1fW=
+3bWbqpTZ9WRuT9870re7FvQbOsImEEgQtbXrULrUblBTFdxoOa8lql0q-2FKkx83jV04aVLYq-2=
+FvYbQWg5IkSy0nHMA4938ohm6PJGfyaG72NTxQQAe3G-2Bj6BxNIs1sgMocrLWgZn1tgvd4KFib=
+sbmq0177pSU9LWZPfVyoXKSpCfLEDbGKjkcNZHPm48NT-2F7SFrcY2dcxilwFlP-2ByxEtibItm=
+GlHpjQSTIQQM78tazHY0ChTdVo_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerW=
+soY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHd=
+YADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJ=
+JhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3H=
+z1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FK=
+hAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0i=
+BJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2=
+BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F=
+-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1W=
+eByUM7rFmVVX3SYnsxBwLwenXT5huPl-2F0uaRZgAVAs-2BHDkCPDQtsii-2Bfwfu8Os9GqnLRH=
+q4wImqkQJNYD6MCdE-2B-2B94I5XovGFQ3UJOB-2BL-2BAbbphaTK2GmykGLFDurBVoPGeiyqml=
+lxOHox0oPEVvfGuV7tyvPX53rW" target=3D"_blank" style=3D"-ms-text-size-adjust=
+: 100%; -webkit-text-size-adjust: 100%;"><img width=3D"600" src=3D"
+
+
+https://braze-images.com/appboy/communication/assets/image_assets/images/62=
+96f87cc9a1351827c9f010/original.png?1654061180
+
+
+" class=3D"wrapper" alt-text=3D"Banner Image" style=3D"vertical-align: bott=
+om; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms-interpo=
+lation-mode: bicubic; margin: 0;"></a>
+          </th>
+        </tr>
+      </table>
+    </th>
+  </tr>
+  <!-- VENDOR BANNER: END -->
+
+
+
+
+ =20
+
+
+<!-- ******** GUTTER : BEGIN ******** -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" height=3D"20" style=3D"border-collapse: co=
+llapse !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; bor=
+der-spacing: 0 !important; table-layout: auto !important; margin: 0 auto;" =
+bgcolor=3D"ffffff">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td height=3D"20" style=3D"height: 20px; font-size: 20px !important=
+; line-height: 20px !important; color: #37454d; -ms-text-size-adjust: 100%;=
+ -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tabl=
+e-rspace: 0pt !important;">
+          &nbsp;
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<!-- ******** GUTTER : END ******** -->
+
+
+=09
+ =20
+=09
+
+=09
+=09
+
+
+=09
+=09
+=09
+
+
+=09
+
+	  <!-- footer --><!-- wrapper:html -->
+
+<!-- DOWNLOAD APP WAVE SHAPE : BEGIN -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"wrapper" align=3D"center" width=3D"600" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rsp=
+ace: 0pt !important; border-spacing: 0 !important; border-collapse: collaps=
+e !important; table-layout: auto !important; margin: 0 auto;">
+      <th class=3D"mob-hide wrapper" background=3D"https://braze-images.com=
+/appboy/communication/assets/image_assets/images/61f3ba52f06ccf522b8467a2/o=
+riginal.jpg?1643362898" bgcolor=3D"#ffffff" width=3D"600" height=3D"170" va=
+lign=3D"middle" style=3D"background-size: 600px !important; background-repe=
+at: no-repeat !important; background-position: center bottom !important; -m=
+s-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+      <!--[if gte mso 9]>
+      <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" strok=
+e=3D"false" style=3D"width:600px;height:170px;">
+      <v:fill type=3D"frame" src=3D"https://braze-images.com/appboy/communi=
+cation/assets/image_assets/images/61f3ba52f06ccf522b8467a2/original.jpg?164=
+3362898" color=3D"#ffffff" />
+      <v:textbox inset=3D"0,0,0,0">
+      <![endif]-->
+      <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+        <!-- DESKTOP : BEGIN -->
+        <!--[if mso]>
+        <table role=3D"presentation" border=3D"0" cellspacing=3D"0" cellpad=
+ding=3D"0" align=3D"center" width=3D"600">
+        <tr>
+        <th align=3D"center" valign=3D"middle" width=3D"600" style=3D"paddi=
+ng: 20px 10px 0 0;">
+        <![endif]-->
+        <table class=3D"wrapper" width=3D"600" cellpadding=3D"0" cellspacin=
+g=3D"0" border=3D"0" valign=3D"middle" align=3D"right" style=3D"-ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !imp=
+ortant; mso-table-rspace: 0pt !important; border-spacing: 0 !important; bor=
+der-collapse: collapse !important; table-layout: auto !important; margin: 0=
+ auto;">
+          <!--[if !mso]><!-->
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <th class=3D"colAppL" style=3D"display: none; font-family: 'Rob=
+oto', Arial; font-size: 22px; color: #ffffff; mso-hide: all; -ms-text-size-=
+adjust: 100%; -webkit-text-size-adjust: 100%;" align=3D"center">
+                <strong>food and more,</strong> delivered
+            </th>
+          </tr>
+          <!--<![endif]-->
+          <!-- ******** GUTTER : BEGIN ******** -->
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !importan=
+t;">
+              <table align=3D"center" border=3D"0" cellpadding=3D"0" cellsp=
+acing=3D"0" width=3D"100%" style=3D"border-collapse: collapse !important; -=
+ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace=
+: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0 !impo=
+rtant; table-layout: auto !important; margin: 0 auto;">
+                <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">
+                  <td class=3D"mob-gutter" height=3D"80" style=3D"font-size=
+: 1px !important; line-height: 1px !important; color: #37454d; -ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !impo=
+rtant; mso-table-rspace: 0pt !important;">
+                    &nbsp;
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <!-- ******** GUTTER : END ******** -->
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <!-- IOS & PLAY FOR DESKTOP : BEGIN --->
+            <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" align=3D"center" valign=3D"middle" style=3D"-ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-=
+table-rspace: 0pt !important; border-spacing: 0 !important; border-collapse=
+: collapse !important; table-layout: auto !important; margin: 0 auto;">
+              <!-- IOS : BEGIN --->
+              <th class=3D"mob-padd-0" width=3D"110" align=3D"right" style=
+=3D"padding-left: 220px; -ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+                <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D=
+12-2BjRkpfoncUR7Zm1WXg5gz-2BYWprj4f9zKyPntMEI4CnFwOX1UhglZn3r95VgwXyCQQNEj3=
+URVAlJdOXrJlRcAzlOHX1F6sql9N4tQcCxXZOMOl7OpfKa7J1GFkY1ADIMPpp-2F-2B-2FuBuer=
+hesVNNzyXQ-3D-3DIAds_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN=
+5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMu=
+KruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7=
+ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6=
+SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1Gms=
+oSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnk=
+AJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSER=
+Q1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7=
+rFmVVX2prI0kbIevFhL3L7Oj1tsqlC2s8GIAeSC0T2cnlGchlDZlOp38mnuzAwA7p7RFSCVY3I9=
+4vKiqaO0OlQLL53YpWJyQxzkzA-2Bw-2BLauC4-2FwP67ftYXScH1-2BMMSESqbALSdlNVf9L8j=
+CKJtNVRAzRqIvG" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                  <img width=3D"110" src=3D"https://images.deliveryhero.io/=
+image/adcatalog/202103-FP-iOS-banner.png" style=3D"width: 110px; vertical-a=
+lign: middle; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -=
+ms-interpolation-mode: bicubic; margin: 0; padding: 0; border: none;" borde=
+r=3D"0" alt=3D"ios">
+                </a>
+              </th>
+              <!-- IOS : END --->
+              <!-- PLAY : BEGIN --->
+              <th width=3D"110" align=3D"left" style=3D"padding-left: 10px;=
+ -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+                <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D=
+12-2BjRkpfoncUR7Zm1WXg5mwThdUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2=
+BT0QNHDWRpIeJ3WowyNNiWuP6se96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrY=
+UGJhODdQ-3D-3DpOLx_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM=
+8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5v=
+WTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKr=
+uBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ip=
+QTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SH=
+B3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoS=
+yqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJ=
+XY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1=
+X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rF=
+mVVX2II4FdDRLUK07ZnPJFTmdyni-2BwO1reBLMsoTrdpmseNbh1ucAchbFNYpV5hhtkaDENdLq=
+hhHQfc70ILO-2FLeIlu75fy2SwQYkouQK7b2xejJ7kOK9SRF9DxSeOeDnGEBH8MNQQQIGf1Nx7V=
+gn9SkHoW" target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%;">
+                  <img width=3D"110" src=3D"https://images.deliveryhero.io/=
+image/adcatalog/202103-FP-play-badge.png" style=3D"width: 110; vertical-ali=
+gn: middle; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms=
+-interpolation-mode: bicubic; margin: 0; padding: 0; border: none;" border=
+=3D"0" alt=3D"play">
+                </a>
+              </th>
+              <!-- PLAY : END --->
+            </table>
+            <!-- IOS & PLAY FOR DESKTOP : END --->
+          </tr>
+        </table>
+        <!--[if mso]>
+      </th>
+    </tr>
+  </table>
+  <![endif]-->
+</div>
+<!--[if gte mso 9]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</th>
+</table>
+</th>
+</tr>
+<!-- DOWNLOAD APP WAVE SHAPE : END -->
+
+	<!-- FOOTER & SOCIAL : BEGIN -->
+	<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+	  <td width=3D"600" class=3D"wrapper" align=3D"center" style=3D"-ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;">
+	    <table bgcolor=3D"#f0eff0" align=3D"center" class=3D"wrapper" role=3D"=
+presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600=
+" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-=
+table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spac=
+ing: 0 !important; border-collapse: collapse !important; table-layout: auto=
+ !important; margin: 0 auto;">
+	      <!-- SOCIAL ICONS : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td width=3D"96" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt=
+ !important; padding: 0px 40px 26px;" align=3D"center">
+	          <table align=3D"center" width=3D"100" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-bottom-width: 2px; border-bottom-c=
+olor: #ffffff; border-bottom-style: solid; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rsp=
+ace: 0pt !important; border-spacing: 0 !important; border-collapse: collaps=
+e !important; table-layout: auto !important; margin: 0 auto;">
+	            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+	              <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !impor=
+tant; padding: 22px 5px 22px 22px;">
+	                <table width=3D"100%" align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace:=
+ 0pt !important; border-spacing: 0 !important; border-collapse: collapse !i=
+mportant; table-layout: auto !important; margin: 0 auto;">
+	                  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;">
+	                    <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; padding: 0;">
+	                      <!-- FACEBOOK : BEGIN --->
+	                      <a href=3D"https://ablink.info.foodpanda.ph/ls/click=
+?upn=3D12-2BjRkpfoncUR7Zm1WXg5smSW4vyJLWkGqwjVLXdJdIU1gMGmvBJLwtKP1uSS3Gmla=
+rNweEI6T1jeIUaXdirGA-3D-3Dk_d9_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZ=
+WerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0Yg=
+egHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8S=
+J8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJ=
+Ts3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa=
+-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgE=
+sr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU=
+9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FAT=
+k-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW=
+8t1WeByUM7rFmVVX1YM7D74modHA-2BaO3Tx4iUWiE2YkdfHXeybJOJnrsoiiPkXg5G49xZHl49=
+6m1Cv8tZb7jZL-2FVHQPV3MgJrDGbcLT6EV8XShEz0eZkfW7RD0iMeVEFDu7p4I-2B5Y-2F48EB=
+uD4meZsn33DEXKfUY-2ByhKKK4" target=3D"_blank" alias=3D"social-icons" conver=
+sion=3D"true" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+	                        <img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/62062a645e670d1d27a93543/original.png?16=
+44571236" width=3D"25" style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; -ms-interpolation-mode: bicubic; margin: 0; padding: 0; bo=
+rder: none;" border=3D"0" alt=3D"social-icons">
+	                      </a>
+	                      <!-- FACEBOOK : END --->
+	                    </td>
+	                    <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; padding: 0;">
+	                      <!-- INSTAGRAM : BEGIN --->
+	                      <a href=3D"https://ablink.info.foodpanda.ph/ls/click=
+?upn=3D12-2BjRkpfoncUR7Zm1WXg5mwJET83ITgF90VxuhfZ9KpncVknXLxF4uLDso3FB4dBLK=
+J0_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSu=
+sYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxW=
+dj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-=
+2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu=
+0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctE=
+RrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoB=
+HjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxG=
+RVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9=
+f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX2GgF7ws1-2FA=
+2IZmKctE7PzFluX3KTBdYzrPaGvhXOShEK8zxV3cH8FXf3B-2Fnb4yqTLKEbfqV4IIjaILfyCLv=
+EmvqRU73hxgZh1maZ9C3Yqujrscq1hJhkKJ-2BQP-2BEXJph46JGuu6jiW3oCdVJDS31xrl" ta=
+rget=3D"_blank" alias=3D"social-icons" conversion=3D"true" style=3D"-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+	                        <img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/62062a649432bb5897907fb4/original.png?16=
+44571235" width=3D"25" style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; -ms-interpolation-mode: bicubic; margin: 0; padding: 0; bo=
+rder: none;" border=3D"0" alt=3D"social-icons">
+	                      </a>
+	                      <!-- INSTAGRAM : END --->
+	                    </td>
+	                  </tr>
+	                </table>
+	              </td>
+	            </tr>
+	          </table>
+	        </td>
+	      </tr>
+	      <!-- SOCIAL ICONS : END -->
+
+	      <!-- CONTACT : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td align=3D"center" style=3D"font-family: museo-sans, Arial, sans=
+-serif; font-size: 15px; line-height: 18px; color: #888888; text-decoration=
+: none; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0px 2=
+5px;">
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5vw0CTYJvF9XDuJ8Qk6zPVHCCRnMESkP-2BGSN252YCxdJ-2FXsa5LXsgG=
+-2Fki0JX4yxiVg-2FSr-2FNvWfx-2FbpXBQLcOvJ2pmZmqByqKh6iTCIcNUfFRwageWp1fj4jTo=
+Y4qTKQgFaGuU97SXp2du22DKIb0zkwfhc8CqSKkj-2BLKuGZ0xkB7wZn3q2WZDq4zaHVoZGO-2B=
+QeZGze9L22-2Bhv-2FzTbYm-2FM1hhTtuZuOUznM41YoxFm-2Bh7HkNJ_HPC5-2BlCj2pcWYfPY=
+IAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCq=
+uPbJ7qBw30aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspw=
+mTMIuLgLHmwjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2J=
+GZlqhXK-2FnIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1=
+ZNo6qQNLPGILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08j=
+Xv2V5yJgS-2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa=
+2VyzIj2iNpBSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9=
+MtYNmtrNT4yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdM=
+LXmBwlsDfG49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX3-2BLNDjinrVd4iimrNa0V5i1X5Kl1Gsi=
+flzuXYq6pykPM5CpM4lH-2B35EAQgowTrJaY8rxrSOeO7qdOTZ0wob2EPLScVlyL-2B2gZJz3jC=
+DTcUwnsZrbi39MV3M5kCSpyNKNSNULBWrZmKlk6KhjKG7seB" target=3D"_blank" style=
+=3D"text-decoration: none; color: #888888; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">Privacy |</a>
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5vw0CTYJvF9XDuJ8Qk6zPVHBKwXG-2BKhz2itgOb5N0DIESQcVW-2BmpvV=
+G9FPXzWdwxVaEiF3qVA2mnIiq9xi6df5ccVWfSvhNVxAX2pUuDYRDKKha-2BgnI9juc6OAUTJsL=
+-2FewNzMldjynyUm27fXzsYGZx2UKVmRlc7SW16atlbhB8f5YZRVwPCUmshZG-2BdrRnva3M-2B=
+C4XVw-2FpHQTFqh2UKvf7DQK2xyhVyOGBLom5JOizGq_6W_HPC5-2BlCj2pcWYfPYIAuwPPJ2Fb=
+rLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30=
+aScBUoRwLaicL0YgegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHm=
+wjCjtruRuQ7Q8s8SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2F=
+nIr-2FwHUXsXK3DJTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPG=
+ILraJwV11rLCdTLa-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-=
+2BkSCf2qq72R9mgEsr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNp=
+BSWUvrTLuuno4LMU9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4=
+yABkTSrzIokd5FATk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG=
+49-2BfQQGZaKTqmW8t1WeByUM7rFmVVX2qjn8pQEuGQv8-2FImwnqr49OV5wW1Z6zPQP12cyu9u=
+syj3LbBaPKDLqGvIjaRQ42LdRJElKleYSTEwqlQaOQILxMHJYhNhtZokP29AERx1u4BLtBmCR6o=
+4CEh-2BBh08z0X635qNz3saughZTVU8h4ujC" target=3D"_blank" style=3D"text-decor=
+ation: none; color: #888888; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">General terms and conditions |</a>
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5qdxfciF8UkAjOVz3-2FUrSh6ZWAXRnW3uKZCuNaak2z48yAlLgYxVnugc=
+Mn1RIzRha0FRyKYIzxvZ-2FJdhih88mRj8-2BUd7VwIzJasj5-2F-2FwfvgyEF1-2Bm9yfQV4ak=
+1MfYoijeor975ASikzjDy1C035SEo26sv8W3XM2s-2BWhLgnKLntEC3DXxAJEIS9ol-2BqAk6Su=
+vp0hCVVLUkwnXQvXlURSvU2rmLOBwj58CRPLY9rw3Ff5AmoLaUDrD0FRV9t0kvMGYQogvioN8lO=
+aPSxCCImWS6GDZ5meieBcZgoL8HO6XT5x7IWb9pCx30bD36Zpjn9-2Fk6PvkUda2pZSWgaoBfO9=
+Uz-2Fk8-2FSpZf-2B-2BstLImPYYQjPst-2Bcq4BYVuKVaescvNrbId-2FAZP6zzMyv7EXtbzGK=
+bT8KRioMdTw4lkH-2Fw9yZSplD553t09Pz60A0BIL0iAg8hg3Qb7Mch9X2rS3GRsKRTpTxO3djb=
+c82Jb0MEruS3cKxw-2BykfI92gRUqUxgSZ65-2BqxEUl2SdwqzJm3vxvPIbhoIup8Wj-2FhOPHC=
+i7UKiq0HmM-2BI9sVcCJws95CLI-2B5QuoXp23GoWAzJ8HE8Es-2B0-2FUtAAMSGeZOezZAGmUm=
+02sCzS8FiNu5NYc6xqZKFJZbveSrZvTx0uuvEN2MZdA6ZPtzS2WLXo6IKMvQ4SVYbzfIWBe6yX1=
+h-2FRm2PNAVBmyQysx1Ag-3D-3DNNoq_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGt=
+ZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicL0Y=
+gegHdYADymN5vWTz9ZlXBE-2F3AxWdj-2F14ZJ288R1i3fyspwmTMIuLgLHmwjCjtruRuQ7Q8s8=
+SJ8tJJhVMMuKruBHuNpIqnkEgaOV-2FvzAwSsig9WaCkADaY2JGZlqhXK-2FnIr-2FwHUXsXK3D=
+JTs3Hz1iRb7ipQTWZIHHi2Wb-2FNu0xW3dRrB0oIQiHx03aGV1ZNo6qQNLPGILraJwV11rLCdTL=
+a-2FKhAuGU6SHB3wUc0DfEJnqdctERrjmcuPPHIjmS-2BFt08jXv2V5yJgS-2BkSCf2qq72R9mg=
+Esr0iBJ1GmsoSyqulFyNN5-2BUIoBHjYwkkxZB6sm02CDOnZNa2VyzIj2iNpBSWUvrTLuuno4LM=
+U9E-2BqbLnkAJXY7TaIUfn85k6wxGRVLbC-2BDAXqpS-2BlRm9MtYNmtrNT4yABkTSrzIokd5FA=
+Tk-2F-2FSERQ1X-2BAeKaapwGbwp9f7rj6aPMvDBhde3Y6wSdMLXmBwlsDfG49-2BfQQGZaKTqm=
+W8t1WeByUM7rFmVVX0-2Fc-2Bbn2pWdC2XxftEAe3QoQbAIPI2dXu6bA-2FZuo-2Bkxd4bg6lUM=
+M0Ty8IOVUusj8guOr51eb0dPyBrxmBr2YzNKUBMNQCXv7woS8GrHZz6ceSi0Sx0DbhA0iH2blGg=
+-2FGjSuS5OGk1aVDw0oMCo1ecM9" target=3D"_blank" style=3D"text-decoration: no=
+ne; color: #888888; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">Unsubscribe</a>
+	        </td>
+	      </tr>
+	      <!-- CONTACT : END -->
+
+	      <!-- CONTACT : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td style=3D"font-family: museo-sans, Arial, sans-serif; font-size=
+: 15px; color: #888888; line-height: 20px; text-decoration: none; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !i=
+mportant; mso-table-rspace: 0pt !important; padding: 0px 40px 44px;" align=
+=3D"center">
+	          16/17F Milestone at Fifth Avenue, 5th Ave., Taguig City, Metro M=
+anila, Philippines
+	          =C2=A9 foodpanda Philippines
+	        </td>
+	      </tr>
+	      <!-- CONTACT : END -->
+	    </table>
+	  </td>
+	</tr>
+	<!-- FOOTER & SOCIAL : END -->
+
+	</table>
+	<!-- EMAIL BODY : END -->
+
+	<!--[if mso]>
+	</td>
+	</tr>
+	</table>
+	<![endif]-->
+	</div>
+
+	</center>
+=09
+=09
+
+
+
+
+
+<img src=3D"https://ablink.info.foodpanda.ph/wf/open?upn=3DDW-2BSrACj4wfqwI=
+ANcjvCqOMsRXaCKicfEInkXFEUAT3on7On2OxLC79EYg1ibXZDp6-2BoiuhdZfsjyWTNKltNwKp=
+MveCjAde4LxjagTsSUjjlAlUZKcAWn8AeWRe6bq2AWqaSGuK0Kj-2BZ7XzW6nLWgEc93g5lApME=
+BDj5Fq0Au-2Bbu5hWRSgPbVNIMmZsKV4n19REctYiF7tiO0kpTJGPP0HtmiVHJ9I4UEKQQUAfOb=
+nMtktSB-2BR4tKMV-2B5ba-2F2o8T6IdHR5BQrkcblSJSIdkwuq280ZFBkjXd80xBlPw7RqxSno=
+rcvvzjwTbYab-2BlCte-2BXq3Ld8EspV4QjeZO05-2BhMvDMp3GrtoKGVKysFu7qjdCYFo0Bb3M=
+7GWDTTZtxRSHKhTVdbtZ3-2B1BWIo5vQKg4u2btum1zc8NnaYhD9ke0q8VTh4805Hqr1MhwDTUG=
+X6SYcionVEqv-2FTfF-2FYJ9TdQ2Suip2jnmTflAY7UXrSmE92k5rzaq4B-2Fi2ieh-2BcO3o4L=
+uUZxQqGFuBkzfpsR91bmwIcgSNKvdXjhuunBaCdhWc6V1I7VrMWIqxI2sQIJjshtO2w6-2FWzpI=
+rmq59qH1xEiIXXgwAPm2uAcu-2BnuxRhDOCb7-2BGs-2Fa0wyRatFUGHZgc6glzHQjKD77L6WbD=
+n1musfVHOmoKwEwzeJS1uLSu-2Fqsu04l-2FoHATZTNgu9PR5oocr0j8Eb3LOnyPVLQL5YVsxIs=
+M8r3qc-2B0X3j8HCjAcZ-2BzA1b6P-2BK6G3rkZWvxNAr6b-2FUu" alt=3D"" width=3D"1" =
+height=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !importa=
+nt;border-width:0 !important;margin-top:0 !important;margin-bottom:0 !impor=
+tant;margin-right:0 !important;margin-left:0 !important;padding-top:0 !impo=
+rtant;padding-bottom:0 !important;padding-right:0 !important;padding-left:0=
+ !important;"/></body>
+</html>
+
+--5869e13ad1488d38fbe9b6db8e7d88d07a9d856eb9782b76d3860deea6e7--

@@ -1,0 +1,255 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:1808:b0:4f4:d48:a6dd with SMTP id p8csp2635839max;
+        Tue, 1 Aug 2023 05:39:35 -0700 (PDT)
+X-Received: by 2002:a05:6870:148b:b0:1b0:4fc5:2e4b with SMTP id k11-20020a056870148b00b001b04fc52e4bmr15533912oab.9.1690893575134;
+        Tue, 01 Aug 2023 05:39:35 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1690893575; cv=none;
+        d=google.com; s=arc-20160816;
+        b=J//aJRoNu8IfqZ3V5hciBFb02IIllGyDHNlzSxiVu5iWHX1ibjeM07W7xV7vVa96rO
+         QzsD2TL//MtcKx9YybR6ARG8X7noXn4CJSe6fbvQ4CVDEy1nnGjxoTHy5hhdct3MMQx9
+         2B6XowyvdAMzUmz8GDSUqovL3pIYX7VjYBCKT1KzTtAFLz+S0HfhIM/zXDLB3b0SAT3j
+         0ytA/wqvFnmLHqVLyFXcDfvJdKYpVhk4v1Ed2ptBnN6pQuIfku4kFo/WvH0JSSh0pRbV
+         6VmK7huvDtq5X0GPZLYjFoPqxBOk1OX562IH2SzkVHvsRydf/AI+i+4JR6+sSwkM5vTl
+         sE1A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:date:mime-version:dkim-signature;
+        bh=WQm8+0QdatMWDCKUmBqzOyPg8PqPDIzDDaEXH0QtrZ0=;
+        fh=WeKB+OBSicpi0GtTg1ZUQjEsXdjl7RpfqCWQkKaZYB8=;
+        b=xVgJBbP4TEOJvv/qbRwgksiOgJWU9eqDQMu9yerph7XwnA66s2PHEFrajmUfkA1nLl
+         zyyFAN+uopg2HHNKPIvhJ4akZkAQUmGNWYIO3gKcNEjwD/OomGfTpGhUpAV0vDA9Eg/n
+         QHWF9F7any9rIhu2/I1gAr7bI7wkciSWt9wpftehG3uMZZOqUXJZcafXLItpWzr0w5W0
+         YhvK0W9N/bRlpeDMfEK6+FSJNtDhMXyeliUKvukIjVlpmqr+RBc18/kVQpVZzblKeJCM
+         2f13uQupJbJaoD3FMIu7LjfVbz6w4GDUMGPgAtlngXRoNeg+5XxPp2fj5z+VwFoiqfTc
+         T6sw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@google.com header.s=20221208 header.b=CE4hbMgh;
+       spf=pass (google.com: domain of 3bv3izaguafe67-ax84hv4tbba775.z77z4x.v75@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3Bv3IZAgUAFE67-Ax84Hv4tBBA775.z77z4x.v75@chime-notifications.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+Return-Path: <3Bv3IZAgUAFE67-Ax84Hv4tBBA775.z77z4x.v75@chime-notifications.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id e73-20020a4a554c000000b0056ca5657991sor4446212oob.1.2023.08.01.05.39.34
+        for <************************@gmail.com>
+        (Google Transport Security);
+        Tue, 01 Aug 2023 05:39:35 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 3bv3izaguafe67-ax84hv4tbba775.z77z4x.v75@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@google.com header.s=20221208 header.b=CE4hbMgh;
+       spf=pass (google.com: domain of 3bv3izaguafe67-ax84hv4tbba775.z77z4x.v75@chime-notifications.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3Bv3IZAgUAFE67-Ax84Hv4tBBA775.z77z4x.v75@chime-notifications.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20221208; t=1690893574; x=1691498374;
+        h=to:from:subject:message-id:date:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=WQm8+0QdatMWDCKUmBqzOyPg8PqPDIzDDaEXH0QtrZ0=;
+        b=CE4hbMgh4j/1rNJG9RxiXQ3vSgQGVvi19l8q36Rr2cLnVTfjX9O+O5ZfenTGP777VW
+         XSMnyqpckuLDAZaoQlTWUL4AZmdSQlkvfZKwijDlQe/ijgvRGmjT9oUC65MmjxC3W2XV
+         2tHQR11b8qjqy3LlhosQqnfzlaCa0UGeKAB43fyAsfkMX0W1Qg/oDMPgT36jMgaWNK1a
+         9RZTL2/uYfgiE75whA5pRhe8T13b6+Kqw3f06Hxbeo86P5lD4HBsVsA0GfSdVxnszWTk
+         qYiTZt1z1Sx5XIxX4/SOgE4LvQt/q9l2zbrWDMEnV9DbWa6vu/VMIBSVzvBo1xWn5+LQ
+         HijA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1690893574; x=1691498374;
+        h=to:from:subject:message-id:date:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=WQm8+0QdatMWDCKUmBqzOyPg8PqPDIzDDaEXH0QtrZ0=;
+        b=QDNqLIG9UPcwQn9zs2jrQQIuB8WEdZrLXa2LpRytr8byfuqF+Z6/n0gA307b4qvk21
+         163/2KQzfQqZGg1s/qpuzWo8apTiSCjuo+fZ2OqX/o42xehdG0ycuI7tYRukNDwaw9xo
+         ebQr7yYwDjKhGyHxRTSOZEsBel/t3IA3XdKRo32GE2YW1KtJBb6ZYun4v8oQd2h+WYZ8
+         RKDTpNyiCoA2W1tD41jIjWB9jxjviZYKXSv6WmRMWCS6vmYuIRyXDGveT5aPVJn7QeQH
+         3gebi4OTcDQIw0DRt/UKrnN6bOqWGMAW/nYgsBUBBkJ1U1eFiUwzY5YjaoxAyRYWZ9TG
+         EM/w==
+X-Gm-Message-State: ABy/qLatvparR55u8PMMIIpr87kN7gWbqeW0EeKZnX0al/TTvcSmPNmm
+	8R5bIAcVi/smjf0N+02JKHnImgQgehVdoVMi1z3c
+X-Google-Smtp-Source: APBJJlGXaoHa2/vGhht0jGKOptbl4i3QZeHPK5MfkLuUKNpOkhA+ruiRtqkozsa43XnOC+oHMnEyegE17sm515bX36SW
+MIME-Version: 1.0
+X-Received: by 2002:a4a:6b1b:0:b0:566:ffa7:fd00 with SMTP id
+ g27-20020a4a6b1b000000b00566ffa7fd00mr10056468ooc.6.1690893574584; Tue, 01
+ Aug 2023 05:39:34 -0700 (PDT)
+Date: Tue, 01 Aug 2023 05:39:34 -0700
+X-Notifications: NEW_QUESTION:518492255227:617038269669-1690893521802
+X-Notifications-Bounce-Info: AayBb5OMb4oxdrcR6lNlnvJxg4tT-Ef0SIprOghzsAzOaV8S6YDulyydUHqMlkvv_PYgKUlrQPEjlfvrqK--h1HiZLu9aqtXM-7U_kBgHc21tROvD4bPWoSp4q-POUNLuApYaY-ercbjo7rE_7W5m_eoRQFD5z5QIxsKDyZY36KpZN14rHiGCc7yFUZZfJJ8FIR7NQJ9QTO936Rwx0hOQ0Nmk941VZqdRhi9iNW-0bdMJvpjZx4-3sMTf6toUaVsxmZEpfjoCXattmbYImZIU-UB9y7cz5W2WwF7EjeQHgQNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <isDULjfrpy7TYx25hlxxBQ@notifications.google.com>
+Subject: New material: "REMEDIAL FINAL EXAM PART 1"
+From: "Leoven Basista (Classroom)" <no-reply@classroom.google.com>
+To: ************************@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ddbc260601dbd642"
+
+--000000000000ddbc260601dbd642
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+
+Notification settings  
+<https://accounts.google.com/AccountChooser?continue=https://classroom.google.com/s&Email=************************@gmail.com>
+BASISTA | Information Assurance and Security BSCS 3-2 | T/F  
+(01:30PM-04:30PM - 01:30PM-03:30PM)  
+<https://accounts.google.com/AccountChooser?continue=https://classroom.google.com/c/NTE4NDkyMjU1MjI3&Email=************************@gmail.com>
+New material
+
+REMEDIAL FINAL EXAM PART 1
+Remedial for FINAL Exam PART 1:  https://bit.ly/3Oft7xC
+
+
+Note: You can answer the remedial until August 02, 2023 midnight (11:59Pm)
+See details  
+<https://accounts.google.com/AccountChooser?continue=https://classroom.google.com/c/NTE4NDkyMjU1MjI3/m/NjE3MDM4MjY5NjY5/details&Email=************************@gmail.com>
+Posted on 8:38 PM, Aug 1 (PST) by Leoven Basista
+
+Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043 USA
+This email was sent to you because you indicated that you'd like to receive  
+email notifications from Google Classroom. If you don't want to receive  
+emails like this, you can unsubscribe or change your settings  
+<https://accounts.google.com/AccountChooser?continue=https://classroom.google.com/s&Email=************************@gmail.com>.
+
+--000000000000ddbc260601dbd642
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html><head><link href=3Dhttps://fonts.googleapis.com/css?family=3DRoboto:4=
+00,500,700,bold|Google+Sans:400,500,700,bold rel=3Dstylesheet><style>@media=
+ (forced-colors: active) and (prefers-color-scheme: dark){.classroomTitleDa=
+rk{content: url("https://www.gstatic.com/classroom/email/classroom_type_whi=
+te.png");}}</style></head><body style=3D"font-family: Roboto,Helvetica,Aria=
+l,sans-serif; margin: 0; padding: 0; background-color: #FFFFFF"><img src=3D=
+"https://notifications.googleapis.com/email/t/AFG8qyUSi5_UgMDYEt5jZeJrsSjaY=
+vc1xb8Q2IZsrQMbz2Tmsszg93pCb2csW5Rs7tGepgYkQXgP1e4M0_BM7mJugTWusw0cfVJ_vSJN=
+eI3lWF9rs-Cw-nqeJQka5XcUCUu4YJ-Pd-39XYtHZ4_VqYHyUm3EmwU4cirTAhDSV0uGT7zGnYt=
+pa95wEesux61UlUBEmD6rwp92zWah7LtFALiUOj42LK38zABhfYCMUHHjGc1fY83nFsy0Z3rx3C=
+gcMmLHo1icmKJUASbZLS_EoIKoQ-pOolwZWp-K_wtd-uJPZ8CELUW7gZxQZS-Jm5_2P3E6og0cc=
+hSMrBUrxcPrjVu6y5WdAHZ0Rwf70k1XRmYzc-hZ33wC6-1P99Mg2vERi49bP33g_St0Z7ej/a.g=
+if" width=3D1 height=3D1><!--[if mso]><style>body, table, div, ul, li, td, =
+span, a { font-family: Helvetica, Arial, sans-serif !important; }</style><!=
+[endif]--><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentat=
+ion align=3Dcenter style=3D"background-color: #FFFFFF; border-collapse: col=
+lapse; max-width: 632px; min-width: 256px; word-break: break-word; width: 1=
+00%;"><!--[if mso]><table cellpadding=3D"0" cellspacing=3D"0" role=3D"prese=
+ntation" width=3D"600" style=3D"border-collapse: collapse; table-width: fix=
+ed;"><tr><td><![endif]--><tr><td style=3D"padding: 16px;"><table cellpaddin=
+g=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentation><tbody><tr><td style=3D=
+"padding-bottom: 16px;"><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr ro=
+le=3Dpresentation style=3D"background-color: #FFFFFF; border-collapse: coll=
+apse; max-width: 632px; min-width: 256px; background-color: #FFFFFF; width:=
+ 100%;" width=3D100%><tr><td><div style=3D"float: left; line-height: 32px;"=
+><img alt=3DClassroom&#32;Logo aria-hidden=3Dtrue style=3D"display: block; =
+margin: 0;" height=3D32 width=3D190 src=3Dhttps://www.gstatic.com/classroom=
+/email/classroom_text_with_logo_grey700.png></div><div style=3D"float: righ=
+t; padding-left: 32px; vertical-align: top;" align=3Dright><a href=3D"https=
+://notifications.googleapis.com/email/redirect?t=3DAFG8qyU_fd-zrsNec8rAcq8l=
+tdZ2fKudhbhzBKSJRoMXItnzXGdWFkwoQ5ZBNUnKX47-J4yBv2hx___VwZF5jwhOAp2vMIMtxkN=
+8hBSBMFLgQR5gxXOZxPwRkNVrUHkFJVy1k083pRseaBu22XaFPJs_Vhcqwd1gJXrapfknSFm1Ib=
+o_quXZHYQvke_qFi22ZtlwlkPh94vZjgCUqKGBkMmCo8NzUeKK6N53fpkWYbRMhQ5GR4vsC5t5I=
+71lXMINZBEVUZ626OuQOJPp8FDwF3WFrSmA_EODqIKcFfeIYYxrvKsubmcEBveJ9EpunZViivbR=
+cWqENFCTE2aH9X6LtCtQE9uZutKw-VlK&amp;r=3DeJxNizsKwzAMhm_T0d4Lpg2hBxFC2A62_i=
+LZhdy-hGTI-j3KGF9_xkjMmDo8ZCA3CYwel5OtBXCxF0NH1SmpXA83cjeg3yd_fDrVlph-pLIbx=
+CrTht3JaiN950Mf6R9iSi9W&amp;s=3DALHZ2r4MWaiCIBTn0P3Hv7lZDeln" style=3D"text=
+-decoration: none;"><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=
+=3Dpresentation style=3D"border-collapse: collapse;"><tr><td style=3D"paddi=
+ng-top: 6px;"><img alt=3D&#39;&#39; style=3D"vertical-align: middle" height=
+=3D18 width=3D18 src=3Dhttps://fonts.gstatic.com/s/i/googlematerialicons/no=
+tifications/v18/gm_grey-24dp/1x/gm_notifications_gm_grey_24dp.png></td><td =
+style=3D"font-family: Google Sans,Roboto,Helvetica,Arial,sans-serif; font-s=
+ize: 14px; font-weight: 500; letter-spacing: 0.25px; line-height: 20px;colo=
+r: #3C4043; padding-left: 4px; white-space: nowrap; padding-top: 8px;">Noti=
+fication settings</td></tr></table></a></div></td></tr></table></td></tr><t=
+r><td style=3D"padding-bottom: 24px;"><table cellpadding=3D0 cellspacing=3D=
+0 dir=3Dltr role=3Dpresentation style=3D"border: 1px solid #DADCE0; border-=
+collapse: separate; border-radius: 8px; width: 100%;"><tr><td style=3D"padd=
+ing: 0"><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentatio=
+n style=3D"width: 100%; border-collapse: collapse; "><tr><td style=3Dpaddin=
+g:&#32;24px&#32;24px&#32;0;><table cellpadding=3D0 cellspacing=3D0 dir=3Dlt=
+r role=3Dpresentation style=3D"width: 100%; border-collapse: collapse; "><t=
+r><td style=3Dborder&#45;bottom:&#32;1px&#32;solid&#32;#DADCE0;&#32;height:=
+&#32;0;padding&#45;bottom:&#32;8px;&#32;width:&#32;100%;><a href=3D"https:/=
+/notifications.googleapis.com/email/redirect?t=3DAFG8qyWoNeKsdZzyEttWPp2YI0=
+aB4Vjr8dpeawLW6Unch9-O4TE9Gq3vfRYfOy3chQiSxnGelpEIt_UewKRryJLVHa4fheqwcl7GF=
+8TdeC2lyCoBhihK7OsPcafNSI_myXBoNghQ0M41-LhKz3wnWchQ8QBJ3zWGXvJCMsnySJOzuRX9=
+Lnut57pYT4I5d0HTlDpSGBc9a2CA1kMqDng9RnckFCXxTZir9_tMT5dGVgjfNvQ7GM2cVC0c2r3=
+OvGtUZF95WKwPWc_iOGEXlaQEtyxQq14A2yhRKwUBcOx19cyZ5xcnm2c0C0OD00WGC6foXKawG5=
+DBz0rcXp-zUn6OzLQUGAUvbQ&amp;r=3DeJxNy8sKwjAQRuG3cdlQdCUUFe3CRbvSBxiGkIvJ_J=
+JJhby9lLpwew6fr_WtR2OIGYtU7Rzgku0Y2Vy2dvWA2nJiSA2y2MH_DCdSLUD-R2zmx3iYb682x=
+Wc_xft-N2YKaWD6kNhWYEtgimhKJSSSs1v3ar91UzR2&amp;s=3DALHZ2r69yyHAfesM5kmATyo=
+zohOs" style=3D"text-decoration: none;"><table cellpadding=3D0 cellspacing=
+=3D0 dir=3Dltr role=3Dpresentation style=3Dborder-collapse:collapse;><tr><t=
+d style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 16px;=
+ font-weight: 400; letter-spacing: 0.1px; line-height: 24px;color: #c26401;=
+vertical-align: top;">BASISTA | Information Assurance and Security BSCS 3-2=
+ | T/F (01:30PM-04:30PM - 01:30PM-03:30PM)</td><td style=3D"padding-top: 3p=
+x; padding-left: 4px; vertical-align: top;"><img alt=3D&#39;&#39; height=3D=
+18 src=3Dhttps://fonts.gstatic.com/s/i/googlematerialicons/open_in_new/v21/=
+gm_grey-24dp/1x/gm_open_in_new_gm_grey_24dp.png width=3D18></td></tr></tabl=
+e></a></td></tr></table></td></tr></table></td></tr><tr><td style=3D"paddin=
+g: 24px 24px 32px 24px; "><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr =
+role=3Dpresentation border=3D0 style=3D"width: 100%"><tr><td colspan=3D2 st=
+yle=3D"font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 11px; fon=
+t-weight: 500; letter-spacing: 0.8px; line-height: 16px; text-transform: up=
+percase;color: #5F6368; padding-bottom: 8px;">New material</td></tr><tr><td=
+ style=3D"padding-right: 12px; vertical-align: top; width: 40px;"><!--[if m=
+so]><v:oval xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:w=3D"urn:schema=
+s-microsoft-com:office:word" style=3D"height:40px;width:40px;" fillcolor=3D=
+"#e8710a" stroke=3D"f" /><v:image src=3D"https://fonts.gstatic.com/s/i/goog=
+lematerialicons/book/v8/white-48dp/2x/gm_book_white_48dp.png" style=3D"posi=
+tion: absolute; top: 8px; left: 8px; height: 24px; width: 24px;"/><![endif]=
+--><span style=3Dmso-hide:all;><div style=3D"border-radius: 50%;background-=
+color: #e8710a;height: 24px; width: 24px;padding: 8px;"><img height=3D24 sr=
+c=3Dhttps://fonts.gstatic.com/s/i/googlematerialicons/book/v8/white-48dp/2x=
+/gm_book_white_48dp.png width=3D24 role=3Dpresentation /></div></span></td>=
+<td><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentation st=
+yle=3D"width: 100%; word-break: break-word;"><tr><td style=3D"font-family: =
+Google Sans,Roboto,Helvetica,Arial,sans-serif; font-size: 16px; font-weight=
+: 500; letter-spacing: 0.1px; line-height: 24px;color: #000000; padding-bot=
+tom: 4px;"><div>REMEDIAL FINAL EXAM PART 1</div></td></tr><tr><td style=3D"=
+font-family: Roboto,Helvetica,Arial,sans-serif; font-size: 14px; font-weigh=
+t: 400; letter-spacing: 0.2px; line-height: 20px;color: #3C4043; padding: 0=
+ 24px 0 0; word-break: break-word; white-space: pre-line; padding-bottom: 1=
+6px;"><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentation =
+style=3D"width: 100%;"><tr><td style=3D"font-family: Roboto,Helvetica,Arial=
+,sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0.2px; line=
+-height: 20px;color: #3C4043; padding: 0 24px 0 0; word-break: break-word; =
+white-space: pre-line;"><div><b>Remedial for FINAL Exam PART 1:=C2=A0</b>=
+=C2=A0<a href=3D"https://notifications.googleapis.com/email/redirect?t=3DAF=
+G8qyWZW-aRTkZAVin1clPZO6qsC7rdpMG5obHqTErIELXnV2UE5gsYhCVAoWxb6wjKsjMIZvcxJ=
+1ZxxPL4ux6CZeQbr9FJfDGFE9VKkcIMz8mJPRtRKJTg01CVED2QjZAoKRifCVkzJRZpxSZhCvkB=
+u-AFY_Nm_si0CfD0jetfw8PfUXNvrnf7ZmYYNDvveCfLs6xTHjdaybtSMrx2GabcpEhq_-MF7-S=
+DZAUw_YgQsFyOtSlL1bX3fSq7mVXFdVbMPdT5W3cDQIk-ZTeRFBvUmvYtnVeIW7oTbkl55i0_6F=
+FvSfcoDjMH7Vo5zMtfqRaC-JkNMpKaEbVpjFQ&amp;r=3DeJzLKCkpKLbS10_KLNHLqdQ39k8rM=
+a9wBgBafAeb&amp;s=3DALHZ2r7TDD7xS2KcwHZnGel4tl35" target=3D_blank style=3Dc=
+olor:#c26401;>https://bit.ly/3Oft7xC</a><br><br><br>Note: You can answer th=
+e remedial until August 02, 2023 midnight (11:59Pm)</div></td></tr></table>=
+</td></tr><tr><td style=3D"padding-bottom: 12px;"><a href=3D"https://notifi=
+cations.googleapis.com/email/redirect?t=3DAFG8qyV8KR0kji1KEIpKdGvt2yAFsLaEg=
+1lORZRlWbq3P-x-VkejiMyw4FZW7dShj2kRT9sAegmkZs0PwQrJmZBu8qGjfn1cXUN4GWmWeilo=
+afZnxeVfB_pk4OFEMxZ46O2zVwGnHYg593jOaeLza-nZZ5pwQnT7l0TAKtFaXE4TbEzBbo7Vm9n=
+C2o4dIiidNz0xcbuNAndL0uwmuhnewX9dapi-0JwZRmGWrXgkXDsyfPdYnMFsjUPPk2xKh9kuIT=
+QQq1PBom3yNCs839T_mQBWGFK3EiUKsHIe1Uf2LlJrpAfoc6jexk5fggdiieWczakta1ZVOG36J=
+ppmjMm7d1djPb9LjwNEmvaF4Q&amp;r=3DeJxNjDELwjAQhf-NYw9pXYSiYjM4JJMOjscZmsQkJ=
+7lU6L-3RQeHx4P38T1X60v2AEjEU67SjMxjtA1xgtN3OztmseVAnKvPk-3dz6GIIoU5_UsE5qo6=
+MzxnHW5bHS4tJDBBtXrQnQ73nVkCD1vRR9motFRP-MZs58K2eMLAs2DxEfNxXPF6-wEhRz0j&am=
+p;s=3DALHZ2r5IRkFfS8igNs_Ua1ocfvc4" style=3D"text-decoration: none;" target=
+=3D_blank><table cellpadding=3D0 cellspacing=3D0 dir=3Dltr role=3Dpresentat=
+ion style=3D"display: inline;"><tr><td style=3D"font-family: Google Sans,Ro=
+boto,Helvetica,Arial,sans-serif; font-size: 14px; font-weight: 500; letter-=
+spacing: 0.25px; line-height: 20px;border-radius: 4px;border: 1px solid #DA=
+DCE0;color: #c26401; padding: 8px 24px;">See details</td></tr></table></a><=
+/td></tr><tr><td style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; f=
+ont-size: 12px; font-weight: 400; letter-spacing: 0.3px; line-height: 16px;=
+color: #5F6368;">Posted on 8:38 PM, Aug 1 (PST) by Leoven Basista</td></tr>=
+</table></td></tr></table></td></tr></table></td></tr><tr><td><div style=3D=
+"float: left; margin-right: 12px;"><img alt=3DGoogle&#32;logo src=3Dhttps:/=
+/www.gstatic.com/classroom/email/google_logo_grey700.png height=3D26 width=
+=3D64></div><div style=3D"font-family: Roboto,Helvetica,Arial,sans-serif; f=
+ont-size: 12px; font-weight: 400; letter-spacing: 0.3px; line-height: 16px;=
+color: #9AA0A6; width: 80%; float: left; margin-top: 4px;">Google LLC 1600 =
+Amphitheatre Parkway, Mountain View, CA 94043 USA<br />This email was sent =
+to you because you indicated that you'd like to receive email notifications=
+ from Google Classroom. If you don't want to receive emails like this, you =
+can <a href=3D"https://notifications.googleapis.com/email/redirect?t=3DAFG8=
+qyXJ9UF386fKmGjUpKOtyh1gHdmu0hhnCdKuZhl36wlmV4T1EAkZsCJRz4Tle0Xnapurg8fcX6i=
+GWGWDRHYXyxaG87NBqmqEXLZCMIhVm2lJYQd1CsM9WinrASA0ckrt-VL55fhHdRt9_kXfT1G3BX=
+L4rUNaVI9RuoXjhVSA1ec_gCECcTepSMVbKUF3tqhpyC_Pduw8FTWjvxAGjNWpLZ_e36zmIbqNt=
+xHqofL9kB3pBjgWEjRyo_jQwo0U-Bi2ZuXemJz3dsgerye1xjzzzHonxvEY9j1M5rRcsCh1QS03=
+53Vcw2Ef6P17xo913gt5g6v44mk0wN9xiE-uLI4jJhvWtT1wdiS8&amp;r=3DeJxNizsKwzAMhm=
+_T0d4Lpg2hBxFC2A62_iLZhdy-hGTI-j3KGF9_xkjMmDo8ZCA3CYwel5OtBXCxF0NH1SmpXA83c=
+jeg3yd_fDrVlph-pLIbxCrTht3JaiN950Mf6R9iSi9W&amp;s=3DALHZ2r7fU_Ar8UdsaJfeX42=
+gOkZt" style=3D"color: #9AA0A6;">unsubscribe or change your settings</a>.</=
+div></td></tr></tbody></table></td></tr><!--[if mso]></td></tr></table><![e=
+ndif]--></table></body></html>
+--000000000000ddbc260601dbd642--

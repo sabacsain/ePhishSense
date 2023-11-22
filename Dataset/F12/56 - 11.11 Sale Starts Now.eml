@@ -1,0 +1,1347 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp1656393ils;
+        Sun, 5 Nov 2023 18:01:13 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGz1gc3KjmHfLJroncs4m5WF9V58pEAH1+kUTqkBVbGB9dJ/Xo0drSnD6iiB5+jnoBxu6Hl
+X-Received: by 2002:a05:690c:f8e:b0:5a7:ba17:7109 with SMTP id df14-20020a05690c0f8e00b005a7ba177109mr7388799ywb.1.1699236073057;
+        Sun, 05 Nov 2023 18:01:13 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699236073; cv=none;
+        d=google.com; s=arc-20160816;
+        b=gFpZkWE2mRdsdqi1wmliHcRVG1hLdZPzxutwlPjAEBuIdwrcqs1CO68zvuuwHyaUFU
+         UJ3ZeYDYNzr/hfaXa73vIy+8xjGiTyRgyIxGZUYrtbn3748X1DMj1LoOXeAPcgWUGIiT
+         gjXd5SPY10uD9p270yfCyPhn714993+cR5eDhcjUKUpWrINMXRLsfNjc4iWwu85kegiP
+         2UI30m9G4eZ/VrNcImOzm77D5hTTFUjZLelVnp+xCi8/yNNGYw+C6PDuAeGxxnrReKpI
+         Evr94zr5ahoy90UwouBS1F/k72wT9ca8Na2xfCiYWUCacVf6zywFZgn2W3gB3mW7trWN
+         9R1g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature:dkim-signature;
+        bh=1mzI6i2Y5ULbC/55feFoxJt/ed9bTqNhjbjjFtr/QI4=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=FMARNcHhMhx9copPKYi5ZVMwTm7EhMX4W8Mm2rTt+hqf6cdN7SfVWnUPPm0gWiSnDA
+         6OMaSU4WaUCgmZyP16aHT2O4GiZ3RNUtoW2OxBWWipqvK82VCT2BgSftjFOZfwKNurV6
+         CkqZFAJW0AxnlhOOQz/z2KpAB0OeGKvfp461STDO9K2w5kH+SL8kGmceEfjplm1v83Ge
+         XSE1FIbxMS00httt7wNB+zzfdJRdv74EWcj+XgioQVeB1t2GJF8wZE9sfZYEVYaAxbCK
+         FZGVBs6s4WxDYtDCD1YmUGNDosqPcCkAFEP7gR4RTIVyF6X4AFldpHnLfT8dhnUzGs23
+         vIRQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@official.nike.com header.s=s1 header.b=Tx2G10IX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="bs2/ZPgb";
+       spf=pass (google.com: domain of bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com designates 159.183.179.184 as permitted sender) smtp.mailfrom="bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=official.nike.com
+Return-Path: <bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com>
+Received: from o8.ptr4036.official.nike.com (o8.ptr4036.official.nike.com. [159.183.179.184])
+        by mx.google.com with ESMTPS id el2-20020ad459c2000000b006722e075eb9si4863424qvb.439.2023.11.05.18.01.12
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Sun, 05 Nov 2023 18:01:13 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com designates 159.183.179.184 as permitted sender) client-ip=159.183.179.184;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@official.nike.com header.s=s1 header.b=Tx2G10IX;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b="bs2/ZPgb";
+       spf=pass (google.com: domain of bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com designates 159.183.179.184 as permitted sender) smtp.mailfrom="bounces+22994177-475d-ronaldlambertnicolastugadi=gmail.com@em7254.official.nike.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=official.nike.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=official.nike.com;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=1mzI6i2Y5ULbC/55feFoxJt/ed9bTqNhjbjjFtr/QI4=;
+	b=Tx2G10IX7FiD9eNaw9SJAlqbf8ftvaaOyt2n/lAG3picZHKTiKjE7M7uj2JB1jKwTBlm
+	Hn0N4Lg2/H3j1XMqPrJzgEx6hONHftPIdm1G8IY61qQmBKPHsZ/ZaaNHToikJtqUeeor6B
+	xnfgwKXYgkcwsoo+jmZZvm5yY692NzWhdsABBPic8LTTMCmJrvg9WgvLHWfuccCPMXWYud
+	FKR78UyeLkHzGSjjd1+EGu81SUt72FXzX5mKa1vG2wDcQ8VbthqJBCk/BhXQNknjRYNHB0
+	Z4pgBF2Dux8mbP+HNNyQXt7eVGGldRA6FcWg8eYvStq3IvNY/OY7Lv1V96jBX2zQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=1mzI6i2Y5ULbC/55feFoxJt/ed9bTqNhjbjjFtr/QI4=;
+	b=bs2/ZPgbFZPCmHZyXVsF09X56rNUxyF8H15s1S370PkL6lhi95UM95VP4/yfxmIIQnOa
+	zOWWA5Dpniq0FNG/b0ogBzJPnraEf4B8z7KJuICV+8fEMBY+75+QyY7MxfUBIVtvFqTJFs
+	0cvyTNdd3cfvp5bE56vpwWL4IWJDrSaUg=
+Received: by filterdrecv-6d6bf4565d-xbqg8 with SMTP id filterdrecv-6d6bf4565d-xbqg8-1-654848E8-62
+        2023-11-06 02:01:12.440877196 +0000 UTC m=+1667973.583078126
+Received: from MjI5OTQxNzc (unknown)
+	by geopod-ismtpd-36 (SG) with HTTP
+	id ZW2hN0xRS-usmmCZbvnjGA
+	Mon, 06 Nov 2023 02:01:12.396 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=iso-8859-1
+Date: Mon, 06 Nov 2023 02:01:12 +0000 (UTC)
+From: Nike <nike@official.nike.com>
+Mime-Version: 1.0
+Message-ID: <ZW2hN0xRS-usmmCZbvnjGA@geopod-ismtpd-36>
+Subject: 11.11 Sale Starts Now
+Reply-To: Nike <nike@official.nike.com>
+X-Feedback-ID: 22994177:SG
+X-SG-EID: 
+ =?us-ascii?Q?m7u2djwH9PXnCSvoLoDMLr5uUFhN+xUctU2XIpsC48s+sJ4zLtiBJRR1miYNJ5?=
+ =?us-ascii?Q?Hz0re3FAQBjc4q2ze+AlBqQxK=2F3ud93CXEh+x7t?=
+ =?us-ascii?Q?x4reYmAxlsfObhZxOpDiQpruWPHSGgPr9Hy45h8?=
+ =?us-ascii?Q?o9rau76F8j+V6YUXj0LJjvHaH7jPh=2FmNMq0Xrsx?=
+ =?us-ascii?Q?S0GKzBRekT7eTp2aG81Xmm543+07jBUDGbc46hR?=
+ =?us-ascii?Q?mfqosh2xsd3NPxs=2FovUW05BmwhGkDTAGETIp6f3?=
+ =?us-ascii?Q?qIQxkYYc5YAlsFM+S7RuQ=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FJE9y1n4FqkDYccoxN2GP?=
+ =?us-ascii?Q?xfAzMss6TBnbEUqJDQdR6elKwBvtUqut4m2OHni?=
+ =?us-ascii?Q?0f15zh8lff7iOjdzYMvLGcCFjVD6Vb1muY8G7KR?=
+ =?us-ascii?Q?XAfGeFfDE48VDb29EdFt=2F3D1EpOv7d9Q4kjWyPR?=
+ =?us-ascii?Q?XrvGKpjw40=2Fh+Ut6NbdFwUyGdfeQrW0NHW0a186?=
+ =?us-ascii?Q?7pld9rz+HWvpFWbDu+q1ndH4W2C9V6nB2KwQxvh?=
+ =?us-ascii?Q?hcsR0yMYVxhvdLciylz5bBCQZIgeHz3iVajUC61?=
+ =?us-ascii?Q?mPs6b6R8Oy1nzzPFYc7Z2mQAu62e8ZSICOmTwVY?=
+ =?us-ascii?Q?ax9Y45fWgSA=2FJHlAxj+AEMhIDtRPewl52EJUPQN?=
+ =?us-ascii?Q?qwvd6GYiBSiXqRqAzfzzMCOtYQXvkV7yOMIXQD4?=
+ =?us-ascii?Q?GM1SZOXe9wDDSBBIldnfJA1ICPY768BDJyuTbq6?=
+ =?us-ascii?Q?WmVTNkEGfjTZ8wUO3GAdx1EEM=2F9zjchH0=2FC=2F9rZ?=
+ =?us-ascii?Q?au=2Fdr1jaeDBocNcLUTtpepa7kUXVu86l7wVjQqj?=
+ =?us-ascii?Q?3BQbRs3+1=2FUZsSYmzS74U4NQeaiDHNQxe2kHNwX?=
+ =?us-ascii?Q?9ndvehUh7d70vEsAWxJfvGyWmB7TLWU8kOgCGJQ?=
+ =?us-ascii?Q?CNBzLltUqS9wWgWCkB3yyvcZ+WXu+5tZ2Fz7vTA?=
+ =?us-ascii?Q?uHnh0gFbaDi2opur1MOw2WYgjZ2MpUsSKbQZN+V?=
+ =?us-ascii?Q?yKQUH8gtnnpVgRlKTQcoDYKpvKryobGuwTOqLN4?=
+ =?us-ascii?Q?JvQVyfnEQXGM6ZccHf7YHeSmk2njZo9yYKFurAy?=
+ =?us-ascii?Q?qWsaxEUjvL6P7bRiTTXXnEKZAaZF1vBdyTwQYId?=
+ =?us-ascii?Q?C9x3YH4eHU7yHu4Dausl41eV4mZ7HnfZ1V=2FwyUZ?=
+ =?us-ascii?Q?s+moWGdQSy9HWZHRiQZzsUDYzBMjOo1ijBK=2Fpua?=
+ =?us-ascii?Q?t0=2FbaDJ3gETaWnkQ+Sfq1Y+GBIaAiweITV1LjvC?=
+ =?us-ascii?Q?yMiukdfjgfcqZ1=2FdUxIg7Kg=2FE88ySMt96izwTPi?=
+ =?us-ascii?Q?D4YrUL6zrmrKoq4YOkb4MYDvAsnRWPQ64oA0jBn?=
+ =?us-ascii?Q?dEQl0=3D?=
+To: ronaldlambertnicolastugadi@gmail.com
+X-Entity-ID: /5MrjV9ydBhbTY592//uqg==
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"> <html xmlns=3D"http://www.w3.org/1999/xh=
+tml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micro=
+soft-com:office:office" style=3D"background-color: #FFF;"> <head> <style ty=
+pe=3D"text/css"> @font-face { font-family: "Nike Futura"; src: url("https:/=
+/www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.woff=
+2") format("woff2"), url("https://www.nike.com/assets/ncss/2.2/dotcom/fonts=
+/nike-futura-extra-bold-v200.woff") format("woff"), url("https://www.nike.c=
+om/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-bold-v200.ttf") format("t=
+ruetype"), url("https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futu=
+ra-extra-bold-v200.eot") , url("https://www.nike.com/assets/ncss/2.2/dotcom=
+/fonts/nike-futura-extra-bold-v200.eot?#iefix") format("embedded-opentype")=
+, url("https://www.nike.com/assets/ncss/2.2/dotcom/fonts/nike-futura-extra-=
+bold-v200.svg#nike-futura-extra-bold-v200") format("svg");} </style><style =
+type=3D"text/css"> @media only screen { html { min-height: 100%; } } @media=
+ only screen and (max-width:640px) { .small-float-center { margin: 0 auto!i=
+mportant; float: none!important; } .small-float-center, .small-text-center =
+{ text-align: center!important; } .small-text-left { text-align: left!impor=
+tant; } .small-text-right { text-align: right!important; } } a:active, a:ho=
+ver { color: #147dc2; } a:visited, h1 a, h1 a:visited, h2 a, h2 a:visited, =
+h3 a, h3 a:visited, h4 a, h4 a:visited, h5 a, h5 a:visited, h6 a, h6 a:visi=
+ted { color: #2199e8; } table.button.large:active table tr td a, table.butt=
+on.large:hover table tr td a, table.button.large table tr td a:visited, tab=
+le.button.small:active table tr td a, table.button.small:hover table tr td =
+a, table.button.small table tr td a:visited, table.button.tiny:active table=
+ tr td a, table.button.tiny:hover table tr td a, table.button.tiny table tr=
+ td a:visited, table.button:active table tr td a, table.button:hover table =
+tr td a, table.button table tr td a:visited { color: #fefefe; } @media only=
+ screen and (max-width:640px) { table.body img { width: auto; height: auto;=
+ } table.body center { min-width: 0!important; } table.body .container { wi=
+dth: 100%!important; } table.body .column, table.body .columns { height: au=
+to!important; box-sizing: border-box; padding-left: 0!important; padding-ri=
+ght: 0!important; } table.body .collapse .column, table.body .collapse .col=
+umns, table.body .column .column, table.body .column .columns, table.body .=
+columns .column, table.body .columns .columns { padding-left: 0!important; =
+padding-right: 0!important; } td.small-1, th.small-1 { display: inline-bloc=
+k!important; width: 8.33333%!important; } td.small-2, th.small-2 { display:=
+ inline-block!important; width: 16.66667%!important; } td.small-3, th.small=
+-3 { display: inline-block!important; width: 25%!important; } td.small-4, t=
+h.small-4 { display: inline-block!important; width: 33.33333%!important; } =
+td.small-5, th.small-5 { display: inline-block!important; width: 41.66667%!=
+important; } td.small-6, th.small-6 { width: 50%!important; } td.small-7, t=
+h.small-7 { display: inline-block!important; width: 58.33333%!important; } =
+td.small-8, th.small-8 { display: inline-block!important; width: 66.66667%!=
+important; } td.small-9, th.small-9 { display: inline-block!important; widt=
+h: 75%!important; } td.small-10, th.small-10 { display: inline-block!import=
+ant; width: 83.33333%!important; } td.small-11, th.small-11 { display: inli=
+ne-block!important; width: 91.66667%!important; } td.small-12, th.small-12 =
+{ width: 100%!important; } .columns td.small-12, .columns th.small-12, .col=
+umn td.small-12, .column th.small-12 { display: block!important; width: 100=
+%!important; } table.body td.small-offset-1, table.body th.small-offset-1 {=
+ margin-left: 8.33333%!important; Margin-left: 8.33333%!important; } table.=
+body td.small-offset-2, table.body th.small-offset-2 { margin-left: 16.6666=
+7%!important; Margin-left: 16.66667%!important; } table.body td.small-offse=
+t-3, table.body th.small-offset-3 { margin-left: 25%!important; Margin-left=
+: 25%!important; } table.body td.small-offset-4, table.body th.small-offset=
+-4 { margin-left: 33.33333%!important; Margin-left: 33.33333%!important; } =
+table.body td.small-offset-5, table.body th.small-offset-5 { margin-left: 4=
+1.66667%!important; Margin-left: 41.66667%!important; } table.body td.small=
+-offset-6, table.body th.small-offset-6 { margin-left: 50%!important; Margi=
+n-left: 50%!important; } table.body td.small-offset-7, table.body th.small-=
+offset-7 { margin-left: 58.33333%!important; Margin-left: 58.33333%!importa=
+nt; } table.body td.small-offset-8, table.body th.small-offset-8 { margin-l=
+eft: 66.66667%!important; Margin-left: 66.66667%!important; } table.body td=
+.small-offset-9, table.body th.small-offset-9 { margin-left: 75%!important;=
+ Margin-left: 75%!important; } table.body td.small-offset-10, table.body th=
+.small-offset-10 { margin-left: 83.33333%!important; Margin-left: 83.33333%=
+!important; } table.body td.small-offset-11, table.body th.small-offset-11 =
+{ margin-left: 91.66667%!important; Margin-left: 91.66667%!important; } tab=
+le.body table.columns td.expander, table.body table.columns th.expander { d=
+isplay: none!important; } table.body .right-text-pad, table.body .text-pad-=
+right { padding-left: 10px!important; } table.body .left-text-pad, table.bo=
+dy .text-pad-left { padding-right: 10px!important; } table.menu { width: 10=
+0%!important; } table.menu td, table.menu th { width: auto!important; displ=
+ay: inline-block!important; } table.menu.small-vertical td, table.menu.smal=
+l-vertical th, table.menu.vertical td, table.menu.vertical th { display: bl=
+ock!important; } table.menu.text-center { width: auto!important; } } .dynam=
+icProductContainer__link { display: block; } .text-link { display: inline-b=
+lock; text-decoration: none; margin: 16px 16px 0px 0px; } table.menu.footer=
+__links--primary, table.menu.footer__info { table-layout: fixed; } table.me=
+nu.footer__links--primary th.menu-item a { font-family: Helvetica Neue, Ari=
+al, sans-serif; font-size: 12px; text-align: left; color: #111111; text-dec=
+oration: none; word-break: break-all; word-wrap: normal; white-space: norma=
+l; max-width: 335px; hyphens: none; -moz-hyphens: none; -ms-hyphens: none; =
+-webkit-hyphens: none; } table.menu.footer__links--primary th.menu-item { p=
+adding: 0 20px 0 0 !important; display: inline-block; white-space: nowrap; =
+} table.menu.footer__links--primary table, table.menu.footer__info table { =
+table-layout: fixed; width: inherit !important; max-width: 375px; } table.m=
+enu.footer__links--primary table tr, table.menu.footer__info table tr { dis=
+play: block; } .text-link--solid-light { color: #fff; padding: 0; } .text-l=
+ink--transparent-light { color: #fff; text-decoration: underline; padding: =
+0px 0px 2px 0px; } .text-link--solid-dark { color: #111; padding: 0; } .tex=
+t-link--transparent-dark { color: #111; text-decoration: underline; padding=
+: 0px 0px 2px 0px; } </style><style type=3D"text/css"> @media only screen a=
+nd (max-width: 640px) { th.columns.product__image--padding-left { padding-l=
+eft: 2.5px !important; } th.columns.product__image--padding-right { padding=
+-right: 2.5px !important; } th.columns.product__image--inset-padding { padd=
+ing-right: 20px !important; padding-left: 20px !important; } .vertical-alig=
+n--start { padding-top: 40px !important; padding-bottom: 0px !important; } =
+.vertical-align--before { padding-top: 0px !important; padding-bottom: 20px=
+ !important; } .vertical-align--center { padding-top: 0px !important; paddi=
+ng-bottom: 0px !important; } .vertical-align--end { padding-top: 0px !impor=
+tant; padding-bottom: 0px !important; } .vertical-align--after { padding-to=
+p: 20px !important; padding-bottom: 0px !important; } .vertical-align--none=
+ { padding-top: 0px; padding-bottom: 0px; } .background__image--start { ver=
+tical-align: top; } .background__image--before { vertical-align: top; } .ba=
+ckground__image--center { vertical-align: center; } .background__image--end=
+ { vertical-align: bottom; } .background__image--after { vertical-align: bo=
+ttom; } .background__image--none { vertical-align: bottom; } table.body th.=
+columns.horizontal-align--left { padding-left: 20px !important; padding-rig=
+ht: 20px !important; } table.body th.columns.horizontal-align--center { pad=
+ding-left: 20px !important; padding-right: 20px !important; } table.body th=
+.columns.horizontal-align--right { padding-left: 20px !important; padding-r=
+ight: 20px !important; } table.body th.columns.horizontal-align--default { =
+padding-right: 20px !important; padding-left: 20px !important; } .button--n=
+o-margin { margin-left: 0 !important; margin-right: 0 !important; } .button=
+--margin-left-none { margin-left: 0 !important; } .button--margin-right-non=
+e { margin-right: 0 !important; } .button--margin-left { margin-left: 8px !=
+important; } .button--margin-right { margin-right: 8px !important; } .butto=
+n--margin-left-double { margin-left: 16px !important; } .button--margin-rig=
+ht-double { margin-right: 16px !important; } .button--margin-left-extra { m=
+argin: 0 0 0 20px; } .textCard .columns { padding-left: 20px !important; pa=
+dding-right: 20px !important; mso-padding-alt: 0 20px 0 20px; } .totals str=
+ong { color: #111; font-weight: 500 !important; } .totals .columns { paddin=
+g: 20px !important; } .totals .divider { display: block; margin: 20px 0 18p=
+x; width: 100%; } .totals .textCardBodyColumn { padding: 6px 0; color: #757=
+575; font-size: 14px; line-height: 20px; } .totals .textCardBodyColumns { p=
+adding: 5px 0px; } .totals .textCardBodyColumns:last-child .textCardBodyCol=
+umn { color: #000000; font-size: 18px; } .totals a { text-decoration: none =
+!important; } .gallery__title { margin: 0; font-size: 18px; line-height: 22=
+px; } .gallery__subtitle { margin: 0; font-size: 14px; line-height: 20px; }=
+ .padding-top--none { padding-top: 0px; } .padding-top--extra_small { paddi=
+ng-top: 12px; } .padding-top--small { padding-top: 16px; } .padding-top--me=
+dium { padding-top: 24px; } .padding-top--large { padding-top: 40px; } .pad=
+ding-top--extra_large { padding-top: 56px; } .list__wrapper { } .list__item=
+ { padding: 24px 0; display: flex; align-items: center; } .list__item__imag=
+e { margin-right: 18px; width: 30px; } .list__item__title { font-size: 16px=
+; line-height: 24px; margin: 0; } .list__item__subtitle { font-size: 12px; =
+line-height: 18px; margin: 0; } } </style> <!--[if gte mso 9]> <xml> <o:Off=
+iceDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:PixelsPerInch> </=
+o:OfficeDocumentSettings> </xml> <![endif]--> <base target=3D"_blank"> </he=
+ad><body style=3D"min-width: 100%; -webkit-text-size-adjust: 100%; -ms-text=
+-size-adjust: 100%; box-sizing: border-box; color: #0a0a0a; font-family: 'H=
+elvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0;=
+ Margin: 0; text-align: left; line-height: 1.3; background-color: #FFF; wid=
+th: 100%;"><table data-made-with-foundation=3D"true" class=3D"body" style=
+=3D"border-spacing: 0; border-collapse: collapse; vertical-align: top; back=
+ground-color: #FFF; height: 100%; width: 100%; color: #0a0a0a; font-family:=
+ 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin:=
+ 0; Margin: 0; text-align: left; line-height: 1.3;" width=3D"100%" height=
+=3D"100%" valign=3D"top" align=3D"left" bgcolor=3D"#FFF"><tr style=3D"paddi=
+ng: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left=
+"><td class=3D"float-center" align=3D"center" valign=3D"top" style=3D"word-=
+break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font=
+-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0;=
+ line-height: 1.3; margin: 0 auto; Margin: 0 auto; float: none; text-align:=
+ center; border-collapse: collapse;"><div class=3D"center" style=3D"text-al=
+ign: center;"><div style=3D"margin-left: auto; margin-right: auto; display:=
+ none;" align=3D"center" class=3D"float-center"></div><div style=3D"margin-=
+left: auto; margin-right: auto; display: none;" align=3D"center" class=3D"f=
+loat-center">Get up to 60% off sale items.&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>=
+<div style=3D"margin-left: auto; margin-right: auto; display: none;" align=
+=3D"center" class=3D"float-center"></div><table class=3D"wrapper emailConta=
+iner" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0; ve=
+rtical-align: top; width: 100%; margin: 0 auto; text-align: inherit; margin=
+-left: auto; margin-right: auto;" width=3D"100%" valign=3D"top" align=3D"in=
+herit"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: lef=
+t;" valign=3D"top" align=3D"left"><td class style=3D"word-break: break-word=
+; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Helveti=
+ca Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margi=
+n: 0; text-align: left; line-height: 1.3; border-collapse: collapse;" valig=
+n=3D"top" align=3D"left"><table class=3D"wrapper boundaryWrapper margin__to=
+p--none" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: center; table-layout: fixed; margin: 0 au=
+to; width: 100%; max-width: 100%;" width=3D"100%" valign=3D"top" align=3D"c=
+enter"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: lef=
+t;" valign=3D"top" align=3D"left"><td class style=3D"word-break: break-word=
+; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Helveti=
+ca Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margi=
+n: 0; text-align: left; line-height: 1.3; border-collapse: collapse;" valig=
+n=3D"top" align=3D"left"><div style=3D"margin:0 3px !important"><a data-id =
+class href=3D"https://u22994177.ct.sendgrid.net/ls/click?upn=3DzmZ3Tc3UyLkY=
+2j7ZlvPlniCXymj6ptP9KrVZGdVcGdYzHdku6L81U0v-2FF0jLg6tEL3zTiWO-2BlMlZTMHNzgU=
+Tp4WYsr1-2F7bzifP-2FsvrHikC4pMXu78GXQlnONntgKlcGyQ1bE-2FTOpSSqkV-2F2vNKcGe4=
+1ZrnrgQCXBO42LpKSCJfeHEOyz4jwLjm85OZa2LzjSItDKDeQ000ITrSD7JbO3h9ViIUgTG8YLr=
+-2BDzrl0lX9obqNYvEjpG0WaITFs4jbuwjL-2BiVnL5m0FrbCOPa-2FDE-2BSHh0cbL0iL-2B-2=
+B3Z3ZJ6Wm4yTd28fGid30e592-2BRhxcNu3oQVRiVfDF5IGLL8T9QQN8SfeS0YegxGS-2BLtsiR=
+4teI-3DN3md_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd5=
+36KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQ=
+ZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3u=
+zEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6Jbnr=
+UpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyh=
+VM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFE=
+nWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d=
+22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q=
+8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7=
+KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY5=
+6umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPT=
+TRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2Fw=
+nPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F=
+0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt=
+2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEGqLh=
+82mJgkgQXxC03edhq2seet7YPG6isoFtr-2B-2Fsm-2BF0-2FwG7vEef-2BcJK-2FBz1qx4glI5=
+ex-2F8Nq44b6qeaFUJTRKq9kldjWYbaKtrP-2B3yf8ibTLkZbkFhJD7lHHtvyW4-2Bx6UVweE9S=
+zBxMPiHCiE5v-2BQ-3D" style=3D"font-family: 'Helvetica Neue', Arial, sans-se=
+rif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; =
+line-height: 1.3; color: #111; cursor: pointer; text-decoration: underline;=
+"><table class=3D"wrapper text-center" style=3D"border-spacing: 0; border-c=
+ollapse: collapse; padding: 0; vertical-align: top; width: 100%; text-align=
+: center;" width=3D"100%" valign=3D"top" align=3D"center"><tbody><tr style=
+=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" alig=
+n=3D"left"><td class=3D"imgCard__column" style=3D"word-break: break-word; h=
+yphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica =
+Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: =
+0; text-align: left; line-height: 1.3; border-collapse: collapse;" valign=
+=3D"top" align=3D"left"><div class=3D"center" style=3D"text-align: center;"=
+><img src=3D"https://static.nike.com/a/images/f_auto,q_auto:eco,w_1536,c_li=
+mit/d4c838ef-899d-4a60-8103-5056180e7a2f/image.png" alt=3D"image" width=3D"=
+640" style=3D"outline: none; text-decoration: none; -ms-interpolation-mode:=
+ bicubic; max-width: 100%; clear: both; display: block; border: none; margi=
+n: 0 auto; Margin: 0 auto; float: none; text-align: center; width: 640px;" =
+align=3D"center" class=3D"float-center"></div></td></tr></tbody></table></a=
+></div></td></tr></tbody></table></td></tr><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><td class st=
+yle=3D"word-break: break-word; hyphens: none; vertical-align: top; color: #=
+0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400;=
+ padding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; bord=
+er-collapse: collapse;" valign=3D"top" align=3D"left"><table class=3D"wrapp=
+er boundaryWrapper margin__top--md" style=3D"border-spacing: 0; border-coll=
+apse: collapse; padding: 0; vertical-align: top; text-align: center; table-=
+layout: fixed; margin: 24px auto auto auto; width: 375px; max-width: 375px;=
+" width=3D"375" valign=3D"top" align=3D"center"><tbody><tr style=3D"padding=
+: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left">=
+<td class style=3D"word-break: break-word; hyphens: none; vertical-align: t=
+op; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-=
+weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-heigh=
+t: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><div styl=
+e=3D"margin:0 3px !important"><table class=3D"wrapper textCard" style=3D"bo=
+rder-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 375px; max-width: 375px; min-width: 375px;" widt=
+h=3D"375" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; ver=
+tical-align: top; text-align: left;" valign=3D"top" align=3D"left"><td clas=
+s=3D"textCard__column text-left" style=3D"word-break: break-word; hyphens: =
+none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', A=
+rial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; line-=
+height: 1.3; padding-left: 20px; padding-right: 20px; text-align: left; bor=
+der-collapse: collapse;" valign=3D"top" align=3D"left"><p class=3D"eyebrow =
+text-left font-size--sm font-family--base font-weight--medium" style=3D"Mar=
+gin: 0; Margin-bottom: 10px; margin-bottom: 0; margin: 0; padding: 0; color=
+: #111111; line-height: 1.45; word-break: break-word; font-family: Helvetic=
+a Neue, Arial, sans-serif; font-weight: 500; text-align: left; font-size: 1=
+6px;">06 Nov - 11 Nov</p><table class=3D"spacer" style=3D"border-spacing: 0=
+; border-collapse: collapse; padding: 0; vertical-align: top; text-align: l=
+eft; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr =
+style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top"=
+ align=3D"left"><td height=3D"12px" style=3D"word-break: break-word; hyphen=
+s: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue'=
+, Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; te=
+xt-align: left; line-height: 1.3; mso-line-height-rule: exactly; border-col=
+lapse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></table><=
+p class=3D"headline text-left font-size--md font-family--marketing font-wei=
+ght--medium" style=3D"margin: 0; Margin: 0; Margin-bottom: 10px; margin-bot=
+tom: 0; padding: 0; line-height: 1.0; color: #111111; word-break: break-wor=
+d; font-weight: 500; text-align: left; font-size: 42px; font-family: Nike F=
+utura, Helvetica Neue, Arial, sans-serif;">LET THE 11.11 <br />SALE BEGIN</=
+p><table class=3D"spacer" style=3D"border-spacing: 0; border-collapse: coll=
+apse; padding: 0; vertical-align: top; text-align: left; width: 100%;" widt=
+h=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; ve=
+rtical-align: top; text-align: left;" valign=3D"top" align=3D"left"><td hei=
+ght=3D"24px" style=3D"word-break: break-word; hyphens: none; vertical-align=
+: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; fo=
+nt-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-he=
+ight: 1.3; mso-line-height-rule: exactly; border-collapse: collapse;" valig=
+n=3D"top" align=3D"left"></td></tr></tbody></table><div class=3D"copy s tex=
+t-left font-size--sm font-family--base font-weight--regular" style=3D"line-=
+height: 1.75; word-break: break-word; font-family: Helvetica Neue, Arial, s=
+ans-serif; font-weight: 400; font-size: 14px;"><p style=3D"font-weight: 400=
+; padding: 0; margin: 0; Margin: 0; text-align: left; Margin-bottom: 10px; =
+color: #111111; margin-bottom: 0; line-height: 1.75; word-break: break-word=
+; font-family: Helvetica Neue, Arial, sans-serif;">Level up your wardrobe w=
+ith the best of Nike.</p><br /><p style=3D"font-weight: 400; padding: 0; ma=
+rgin: 0; Margin: 0; text-align: left; Margin-bottom: 10px; color: #111111; =
+margin-bottom: 0; line-height: 1.75; word-break: break-word; font-family: H=
+elvetica Neue, Arial, sans-serif;">From now till 11 Nov, get up to 60% off =
+sale items. No promo code needed.</p></div><table class=3D"spacer" style=3D=
+"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: =
+top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D=
+"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: lef=
+t;" valign=3D"top" align=3D"left"><td height=3D"8px" style=3D"word-break: b=
+reak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family:=
+ 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin:=
+ 0; Margin: 0; text-align: left; line-height: 1.3; mso-line-height-rule: ex=
+actly; border-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr>=
+</tbody></table><div style=3D"text-align:left"><a data-id target=3D"_blank"=
+ class=3D"rounded action button--solid-dark button--no-margin" href=3D"http=
+s://u22994177.ct.sendgrid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6pt=
+P9KrVZGdVcGdYzHdku6L81U0v-2FF0jLg6tEL3zTiWO-2BlMlZTMHNzgUTp4WYsr1-2F7bzifP-=
+2FsvrHikC4pMXu78GXQlnONntgKlcGyQ1bE-2FTOpSSqkV-2F2vNKcGe41ZrnrgQCXBO42LpKSC=
+JfeHEOyz4jwLjm85OZa2LzjSItDKDeQ000ITrSD7JbO3h9ViIUgTG8YLr-2BDzrl0lX9obqNYvE=
+jpG0WaITFs4jbuwjL-2BiVnL5m0FrbCOPa-2FDE-2BSHh0cbL0iL-2B-2B3Z3ZJ6Wm4yTd28fGi=
+d30e592-2BRhxcNu3oQVRiVfDF5IGLL8T9QQN8SfeS0YegxGS-2BLtsiR4teI-3DDc-k_HPC5-2=
+BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h=
+1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9k=
+CWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKa=
+Oca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUV=
+sOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXc=
+nG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3=
+Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnP=
+MD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2=
+DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6=
+DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPi=
+jsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0uj=
+Fgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2B=
+z9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2B=
+L4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV=
+9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BECAJDoMmaLXVzbI3mBSM1Zv=
+AdseUcpjgkKEzpbByGS-2FakxFA82b4cQKl45XDQWMO5AhltDZ6nDbkG9XP98OCQ4pSC9JSc-2F=
+BvaVCTwXaJA8cYtsjrf6s87HQ3R-2FnAH5D6igaFmaJfvffBfS7rETIf1v4-3D" rel=3D"nore=
+ferrer" style=3D"margin: 0; Margin: 0; text-align: left; cursor: pointer; b=
+order-collapse: separate; margin-top: 16px; margin-bottom: 0px; display: in=
+line-block; font-family: Helvetica Neue, Arial, sans-serif; font-size: 14px=
+; font-weight: 500; line-height: 1.5; text-decoration: none; text-transform=
+: none; padding: 10px 25px; border-radius: 500px; word-break: break-word; c=
+olor: #FFF; background: #111111; border: 1px solid #111111; margin-left: 0;=
+ margin-right: 0;">Shop Now</a><table class=3D"spacer" style=3D"border-spac=
+ing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-al=
+ign: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbod=
+y><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=
+=3D"top" align=3D"left"><td height=3D"40px" style=3D"word-break: break-word=
+; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Helveti=
+ca Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margi=
+n: 0; text-align: left; line-height: 1.3; mso-line-height-rule: exactly; bo=
+rder-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody><=
+/table></div></td></tr></tbody></table></div></td></tr></tbody></table></td=
+></tr><tr style=3D"padding: 0; vertical-align: top; text-align: left;" vali=
+gn=3D"top" align=3D"left"><td class style=3D"word-break: break-word; hyphen=
+s: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue'=
+, Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; te=
+xt-align: left; line-height: 1.3; border-collapse: collapse;" valign=3D"top=
+" align=3D"left"><table class=3D"wrapper boundaryWrapper margin__top--md" s=
+tyle=3D"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-=
+align: top; text-align: center; table-layout: fixed; margin: 24px auto auto=
+ auto; width: 375px; max-width: 375px;" width=3D"375" valign=3D"top" align=
+=3D"center"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align=
+: left;" valign=3D"top" align=3D"left"><td class style=3D"word-break: break=
+-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'He=
+lvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; =
+Margin: 0; text-align: left; line-height: 1.3; border-collapse: collapse;" =
+valign=3D"top" align=3D"left"><table class=3D"wrapper boundaryWrapper" styl=
+e=3D"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-ali=
+gn: top; text-align: center; table-layout: fixed; width: 375px; max-width: =
+375px;" width=3D"375" valign=3D"top" align=3D"center"><tbody><tr style=3D"p=
+adding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left"><td class style=3D"word-break: break-word; hyphens: none; vertical-al=
+ign: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif;=
+ font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line=
+-height: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><a =
+class=3D"productBox" href=3D"https://u22994177.ct.sendgrid.net/ls/click?upn=
+=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdYLos74g4a5tByYg2tftTBYSYWbft6F=
+H-2BkP8rxh8UbvySx5bZP3NAhOUnUZedjJ-2Bf32-2BEDKx20uxEP5uBMM7DeN761dl6rhVtYFv=
+Eyi4sHIf1i1TnKzUbpfzoVZJAJiUhtpzmE-2FOzaLkLsm2RP80HRLF96FnhXckaTy67BhZSc9ve=
+R3xnR139Fp9A4S7Hw8uLD4uAGZELI4VN8MUeMcIvZjPqQatQ3-2Ba8caqzrQJkHpZGBPe-2F3zQ=
+AW8K-2FK-2FLrPlQ9-2FNVh5WJ6Uzm323FqhJeUXrA4ituKy7yjH87-2FWVdfAaFX3k3TAaKrLc=
+f-2Fou88-2F-2FMHlof0fZKKhs9rvl5fLUY2HfhvNFZEIbwCyuzryjlAlclg-3D-3DLvhH_HPC5=
+-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh=
+1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ=
+9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqm=
+KaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2Fq=
+UVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaI=
+XcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9=
+K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZU=
+nPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbr=
+F2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5=
+S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCx=
+PijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0=
+ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-=
+2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-=
+2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElh=
+IV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEME8e9UbMaJ6pNLsywgoC=
+MeVDbm-2B31BZYMyhkyEz8ZAZxway8cNp9yp1sVbqys5GOtX6Q0l0UonfUq927VNf8UdATFUTwv=
+tErVmKUH5es3yH8HbDxebJ1SrpKAh51QfFA7k9Z0Vzgu5mUX9Ofh1aUFs-3D" style=3D"font=
+-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-heig=
+ht: 1.3; cursor: pointer; font-size: 14px; font-family: Helvetica Neue, Ari=
+al, sans-serif; text-decoration: none; color: #111111;"><table class=3D"wra=
+pper productWall" style=3D"border-spacing: 0; border-collapse: collapse; pa=
+dding: 0; vertical-align: top; text-align: left; width: 185px; max-width: 1=
+85px; min-width: 185px;" width=3D"185" valign=3D"top" align=3D"left"><tbody=
+><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left"><td class style=3D"word-break: break-word; hyphens: no=
+ne; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Ari=
+al, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-al=
+ign: left; line-height: 1.3; border-collapse: collapse;" valign=3D"top" ali=
+gn=3D"left"><img style=3D"outline: none; text-decoration: none; -ms-interpo=
+lation-mode: bicubic; max-width: 100%; clear: both; display: block; border:=
+ none; width: 185px; margin: 0 3px 0 0;" src=3D"https://static.nike.com/a/i=
+mages/t_default/c78ffece-5f0f-4af1-b900-dd874cd53313/waffle-trainer-2-shoe-=
+6sm8c5.png" alt=3D"product" width=3D"185"><table class=3D"spacer" style=3D"=
+border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: t=
+op; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"=
+left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left=
+;" valign=3D"top" align=3D"left"><td height=3D"20px" style=3D"word-break: b=
+reak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family:=
+ 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin:=
+ 0; Margin: 0; text-align: left; line-height: 1.3; mso-line-height-rule: ex=
+actly; border-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr>=
+</tbody></table></td></tr><tr style=3D"padding: 0; vertical-align: top; tex=
+t-align: left;" valign=3D"top" align=3D"left"><td class style=3D"word-break=
+: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-fami=
+ly: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; marg=
+in: 0; Margin: 0; text-align: left; line-height: 1.3; border-collapse: coll=
+apse;" valign=3D"top" align=3D"left"><div class=3D"productBox__text" style=
+=3D"margin: 0 20px;"><div>Nike Waffle Trainer 2</div></div></td></tr><tr st=
+yle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left"><td class style=3D"word-break: break-word; hyphens: none; ver=
+tical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, san=
+s-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: le=
+ft; line-height: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"l=
+eft"><div class=3D"productBox__text" style=3D"margin: 0 20px;"><table class=
+=3D"spacer" style=3D"border-spacing: 0; border-collapse: collapse; padding:=
+ 0; vertical-align: top; text-align: left; width: 100%;" width=3D"100%" val=
+ign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: =
+top; text-align: left;" valign=3D"top" align=3D"left"><td height=3D"12px" s=
+tyle=3D"word-break: break-word; hyphens: none; vertical-align: top; color: =
+#0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400=
+; padding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; mso=
+-line-height-rule: exactly; border-collapse: collapse;" valign=3D"top" alig=
+n=3D"left"></td></tr></tbody></table><div>Men&#x27;s Shoe</div></div></td><=
+/tr></tbody></table></a><table class=3D"spacer" style=3D"border-spacing: 0;=
+ border-collapse: collapse; padding: 0; vertical-align: top; text-align: le=
+ft; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr s=
+tyle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" =
+align=3D"left"><td height=3D"40px" style=3D"word-break: break-word; hyphens=
+: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue',=
+ Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; tex=
+t-align: left; line-height: 1.3; mso-line-height-rule: exactly; border-coll=
+apse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></table></=
+td><td class style=3D"word-break: break-word; hyphens: none; vertical-align=
+: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; fo=
+nt-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-he=
+ight: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><a cla=
+ss=3D"productBox" href=3D"https://u22994177.ct.sendgrid.net/ls/click?upn=3D=
+zmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdb0wUenqXTgYUH02RzpS0xTtZtxHpq0Fd9=
+S7cmY-2FLu0VF4AqDW-2FBRLVYMOmS8agueU-2FTO3FjkTNV-2FhLVw07Kc9lr6ufPwHK22-2FI=
+I-2FBzhudWtqi-2Fcgn2dysjsHLizXtIfJ9mEi8KxIYlZGNnT6lEE4v7qUu0IqH0ReMa7YkKsAb=
+NKSvxqnV5zB-2FWlLd6RRQh-2FT8P-2FI9GiPd-2BSzea-2FboeheU63cXds7PjHn9exMOvzKus=
+uYoDOgP58sA1eJHGm5WOlakvEoTwYUIYFySbBTB3eyE0FkTc2obRW7e3YVAtVcWlTrCRbn4wfxm=
+d4gFCL7OEIQO4BxDOP7HZHQXkzx78C5LVd9FlhxNAK5X2wA99oQT7mg-3D-3DvpQl_HPC5-2BlC=
+j2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bg=
+G88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWA=
+fMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca=
+-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOt=
+YC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8=
+MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb=
+-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6=
+IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZ=
+KpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdU=
+EkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsI=
+iXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgr=
+w2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9i=
+YAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4v=
+IzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Fr=
+x-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BENFyYw9ZW22-2FlvC2PH1ozR7C=
+3xiTJm19HUtOiAmqQH18eUCvp0LNrhxt2ZVRs0oNDhj0oaKTTUQgB6v70fDbRklC4fQ7-2Fh2n4=
+ZN6sajdc9z0lVAckyNknBuskH1I1NGFWC5R0g9gFf640oN3JpmJoqU-3D" style=3D"font-we=
+ight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-height:=
+ 1.3; cursor: pointer; font-size: 14px; font-family: Helvetica Neue, Arial,=
+ sans-serif; text-decoration: none; color: #111111;"><table class=3D"wrappe=
+r productWall" style=3D"border-spacing: 0; border-collapse: collapse; paddi=
+ng: 0; vertical-align: top; text-align: left; width: 185px; max-width: 185p=
+x; min-width: 185px;" width=3D"185" valign=3D"top" align=3D"left"><tbody><t=
+r style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"to=
+p" align=3D"left"><td class style=3D"word-break: break-word; hyphens: none;=
+ vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial,=
+ sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align=
+: left; line-height: 1.3; border-collapse: collapse;" valign=3D"top" align=
+=3D"left"><img style=3D"outline: none; text-decoration: none; -ms-interpola=
+tion-mode: bicubic; max-width: 100%; clear: both; display: block; border: n=
+one; width: 185px; margin: 0 0 0 2px;" src=3D"https://static.nike.com/a/ima=
+ges/t_default/c69cd1db-a0f0-4a14-a115-5e11d09fbacd/nikecourt-royale-shoe-6K=
+FK7C.png" alt=3D"product" width=3D"185"><table class=3D"spacer" style=3D"bo=
+rder-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"le=
+ft"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;"=
+ valign=3D"top" align=3D"left"><td height=3D"20px" style=3D"word-break: bre=
+ak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: '=
+Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0=
+; Margin: 0; text-align: left; line-height: 1.3; mso-line-height-rule: exac=
+tly; border-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr></=
+tbody></table></td></tr><tr style=3D"padding: 0; vertical-align: top; text-=
+align: left;" valign=3D"top" align=3D"left"><td class style=3D"word-break: =
+break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family=
+: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin=
+: 0; Margin: 0; text-align: left; line-height: 1.3; border-collapse: collap=
+se;" valign=3D"top" align=3D"left"><div class=3D"productBox__text" style=3D=
+"margin: 0 20px;"><div>NikeCourt Royale</div></div></td></tr><tr style=3D"p=
+adding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"=
+left"><td class style=3D"word-break: break-word; hyphens: none; vertical-al=
+ign: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif;=
+ font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line=
+-height: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><di=
+v class=3D"productBox__text" style=3D"margin: 0 20px;"><table class=3D"spac=
+er" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0; vert=
+ical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"t=
+op" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; tex=
+t-align: left;" valign=3D"top" align=3D"left"><td height=3D"12px" style=3D"=
+word-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a;=
+ font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; paddin=
+g: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; mso-line-he=
+ight-rule: exactly; border-collapse: collapse;" valign=3D"top" align=3D"lef=
+t"></td></tr></tbody></table><div>Women&#x27;s Shoe</div></div></td></tr></=
+tbody></table></a><table class=3D"spacer" style=3D"border-spacing: 0; borde=
+r-collapse: collapse; padding: 0; vertical-align: top; text-align: left; wi=
+dth: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=
+=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" alig=
+n=3D"left"><td height=3D"40px" style=3D"word-break: break-word; hyphens: no=
+ne; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Ari=
+al, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-al=
+ign: left; line-height: 1.3; mso-line-height-rule: exactly; border-collapse=
+: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></table></td><=
+/tr><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=
+=3D"top" align=3D"left"><td class style=3D"word-break: break-word; hyphens:=
+ none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', =
+Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text=
+-align: left; line-height: 1.3; border-collapse: collapse;" valign=3D"top" =
+align=3D"left"><a class=3D"productBox" href=3D"https://u22994177.ct.sendgri=
+d.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdbGtRdzLh1RV4=
+DvuPfZBTLA2aKiHXrq93hFXoLncQ1wEDVRz-2BUpgAcmhsNjreRRzAaOFYJACpoWzykUKx18o1l=
+o2rtusb-2F5uu5ISXLOqmnV25KODUbEACFLLwI9isEaD1J29-2BLLNxpVn8AkwbWdGbaHNS3UQE=
+v-2BeCi5ULartiqyKohvD9oHVlPw-2Fce78Sf-2BNDR98RnyedfDwL2-2FfaDnR5fB5uW-2B-2B=
+1ZyngHdYfcSCx-2B0TVKZTGKxXIP5HpBEXIgD5I7ld6h8IS6hLe0BS82Nl0IItKJD7e3kr-2F8V=
+8-2B222QWi0bLAJZ5fqM1L-2Bq-2B-2FGuKPfgWcZyscyfOPMOS5scFQn1GY-gfE_HPC5-2BlCj=
+2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG=
+88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAf=
+MljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-=
+2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtY=
+C4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8M=
+XDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-=
+2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6I=
+FR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZK=
+pveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUE=
+kbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIi=
+XtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw=
+2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iY=
+Awo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vI=
+zsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx=
+-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEOdflGR6T526a9-2FbW279H5v2B=
+j4Uq8GGkcOdsyPhZ-2BFCbVHgiBzdKpyz08mVMFPFu6MRZenuMmUAH8rUSxNDaCqpc7ulKJVO8t=
+u2MALXO4te5or0GzJmHgVKiKDq-2B5pHQtoXzNVYAlL7X3J6Sn-2FEH4M-3D" style=3D"font=
+-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-heig=
+ht: 1.3; cursor: pointer; font-size: 14px; font-family: Helvetica Neue, Ari=
+al, sans-serif; text-decoration: none; color: #111111;"><table class=3D"wra=
+pper productWall" style=3D"border-spacing: 0; border-collapse: collapse; pa=
+dding: 0; vertical-align: top; text-align: left; width: 185px; max-width: 1=
+85px; min-width: 185px;" width=3D"185" valign=3D"top" align=3D"left"><tbody=
+><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D=
+"top" align=3D"left"><td class style=3D"word-break: break-word; hyphens: no=
+ne; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Ari=
+al, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-al=
+ign: left; line-height: 1.3; border-collapse: collapse;" valign=3D"top" ali=
+gn=3D"left"><img style=3D"outline: none; text-decoration: none; -ms-interpo=
+lation-mode: bicubic; max-width: 100%; clear: both; display: block; border:=
+ none; width: 185px; margin: 0 3px 0 0;" src=3D"https://static.nike.com/a/i=
+mages/t_default/8347b631-d31f-410b-aebd-573f259fc0f8/ebernon-low-shoe-xCnmN=
+q.png" alt=3D"product" width=3D"185"><table class=3D"spacer" style=3D"borde=
+r-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; t=
+ext-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"=
+><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" va=
+lign=3D"top" align=3D"left"><td height=3D"20px" style=3D"word-break: break-=
+word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Hel=
+vetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; M=
+argin: 0; text-align: left; line-height: 1.3; mso-line-height-rule: exactly=
+; border-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbo=
+dy></table></td></tr><tr style=3D"padding: 0; vertical-align: top; text-ali=
+gn: left;" valign=3D"top" align=3D"left"><td class style=3D"word-break: bre=
+ak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: '=
+Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0=
+; Margin: 0; text-align: left; line-height: 1.3; border-collapse: collapse;=
+" valign=3D"top" align=3D"left"><div class=3D"productBox__text" style=3D"ma=
+rgin: 0 20px;"><div>Nike Ebernon Low Premium</div></div></td></tr><tr style=
+=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" alig=
+n=3D"left"><td class style=3D"word-break: break-word; hyphens: none; vertic=
+al-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-s=
+erif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left;=
+ line-height: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left=
+"><div class=3D"productBox__text" style=3D"margin: 0 20px;"><table class=3D=
+"spacer" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=
+=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top=
+; text-align: left;" valign=3D"top" align=3D"left"><td height=3D"12px" styl=
+e=3D"word-break: break-word; hyphens: none; vertical-align: top; color: #0a=
+0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; p=
+adding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; mso-li=
+ne-height-rule: exactly; border-collapse: collapse;" valign=3D"top" align=
+=3D"left"></td></tr></tbody></table><div>Men&#x27;s Shoe</div></div></td></=
+tr></tbody></table></a><table class=3D"spacer" style=3D"border-spacing: 0; =
+border-collapse: collapse; padding: 0; vertical-align: top; text-align: lef=
+t; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr st=
+yle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left"><td height=3D"40px" style=3D"word-break: break-word; hyphens:=
+ none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', =
+Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text=
+-align: left; line-height: 1.3; mso-line-height-rule: exactly; border-colla=
+pse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></table></t=
+d><td class style=3D"word-break: break-word; hyphens: none; vertical-align:=
+ top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; fon=
+t-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-hei=
+ght: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><a clas=
+s=3D"productBox" href=3D"https://u22994177.ct.sendgrid.net/ls/click?upn=3Dz=
+mZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdauSTq5gl5yaIMwzHO8ExLv-2Bq8qt8phIq=
+MFtVqZifQPaWnQli8AM34PSE-2FDs8i9PYq4GMUuLpBgWkNaHFLLDf4wJvTPdCpVr0J41-2F0NG=
+lu3KUL7-2BU8OLGv9446eSm-2Bjgfk6TyPchPakuZDuBFlhksRhjKAnnD9K5WWx7iYP-2FJsgoB=
+LJ3xr2uCwKxWfAzIIEKKm2JfOkqmSklHcl2axyZOdfncM6Ml-2FtaXSobXZVpcltNM4m44B7WxB=
+XePeEQQaMd6BLago1sTyEBYGeZlSArV8q8Sskta9kS4S38FRaYZmZmsKTadnWloycs7A0AZ3JlX=
+9KnPZkESMrTtwKBISG7Whc27nS_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerW=
+soY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RY=
+ru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaF=
+bhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tN=
+EZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4=
+JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa=
+3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s=
+3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpj=
+xpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXn=
+XgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4=
+vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2D=
+sDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-=
+2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8=
+uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTb=
+LcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwse=
+yPSYdml-2BEAyGxHYgX-2FRSdN7NfMY5-2FghBDEEUqQ-2BzLm3di9qZlN96Ahl7Yz4mA6XJrvA=
+fECO3t8G9PoUUXOmxNraeAGxuVHkXnUM3-2FRADG92xJvRvr0Eb7nbOKOwD-2FMqerGZ3ckjGBl=
+K8DfGQcUVlXtW0FjGOJDc-3D" style=3D"font-weight: 400; padding: 0; margin: 0;=
+ Margin: 0; text-align: left; line-height: 1.3; cursor: pointer; font-size:=
+ 14px; font-family: Helvetica Neue, Arial, sans-serif; text-decoration: non=
+e; color: #111111;"><table class=3D"wrapper productWall" style=3D"border-sp=
+acing: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-=
+align: left; width: 185px; max-width: 185px; min-width: 185px;" width=3D"18=
+5" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-a=
+lign: top; text-align: left;" valign=3D"top" align=3D"left"><td class style=
+=3D"word-break: break-word; hyphens: none; vertical-align: top; color: #0a0=
+a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; pa=
+dding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; border-=
+collapse: collapse;" valign=3D"top" align=3D"left"><img style=3D"outline: n=
+one; text-decoration: none; -ms-interpolation-mode: bicubic; max-width: 100=
+%; clear: both; display: block; border: none; width: 185px; margin: 0 0 0 2=
+px;" src=3D"https://static.nike.com/a/images/t_default/96a139be-2faa-463b-b=
+3ce-04547c58b0cd/air-trainer-1-shoes-PHFK5z.png" alt=3D"product" width=3D"1=
+85"><table class=3D"spacer" style=3D"border-spacing: 0; border-collapse: co=
+llapse; padding: 0; vertical-align: top; text-align: left; width: 100%;" wi=
+dth=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; =
+vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><td h=
+eight=3D"20px" style=3D"word-break: break-word; hyphens: none; vertical-ali=
+gn: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; =
+font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-=
+height: 1.3; mso-line-height-rule: exactly; border-collapse: collapse;" val=
+ign=3D"top" align=3D"left"></td></tr></tbody></table></td></tr><tr style=3D=
+"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" align=
+=3D"left"><td class style=3D"word-break: break-word; hyphens: none; vertica=
+l-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-se=
+rif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; =
+line-height: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"=
+><div class=3D"productBox__text" style=3D"margin: 0 20px;"><div>Nike Air Tr=
+ainer 1</div></div></td></tr><tr style=3D"padding: 0; vertical-align: top; =
+text-align: left;" valign=3D"top" align=3D"left"><td class style=3D"word-br=
+eak: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-f=
+amily: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; m=
+argin: 0; Margin: 0; text-align: left; line-height: 1.3; border-collapse: c=
+ollapse;" valign=3D"top" align=3D"left"><div class=3D"productBox__text" sty=
+le=3D"margin: 0 20px;"><table class=3D"spacer" style=3D"border-spacing: 0; =
+border-collapse: collapse; padding: 0; vertical-align: top; text-align: lef=
+t; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr st=
+yle=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" a=
+lign=3D"left"><td height=3D"12px" style=3D"word-break: break-word; hyphens:=
+ none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue', =
+Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; text=
+-align: left; line-height: 1.3; mso-line-height-rule: exactly; border-colla=
+pse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></table><di=
+v>Men&#x27;s Shoes</div></div></td></tr></tbody></table></a><table class=3D=
+"spacer" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=
+=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top=
+; text-align: left;" valign=3D"top" align=3D"left"><td height=3D"40px" styl=
+e=3D"word-break: break-word; hyphens: none; vertical-align: top; color: #0a=
+0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; p=
+adding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; mso-li=
+ne-height-rule: exactly; border-collapse: collapse;" valign=3D"top" align=
+=3D"left"></td></tr></tbody></table></td></tr></tbody></table></td></tr></t=
+body></table></td></tr><tr style=3D"padding: 0; vertical-align: top; text-a=
+lign: left;" valign=3D"top" align=3D"left"><td class style=3D"word-break: b=
+reak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family:=
+ 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin:=
+ 0; Margin: 0; text-align: left; line-height: 1.3; border-collapse: collaps=
+e;" valign=3D"top" align=3D"left"><table class=3D"wrapper boundaryWrapper m=
+argin__top--md" style=3D"border-spacing: 0; border-collapse: collapse; padd=
+ing: 0; vertical-align: top; text-align: center; table-layout: fixed; margi=
+n: 24px auto auto auto; width: 100%; max-width: 100%;" width=3D"100%" valig=
+n=3D"top" align=3D"center"><tbody><tr style=3D"padding: 0; vertical-align: =
+top; text-align: left;" valign=3D"top" align=3D"left"><td class style=3D"wo=
+rd-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; f=
+ont-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding:=
+ 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; border-collap=
+se: collapse;" valign=3D"top" align=3D"left"><div class=3D"divider-wrapper"=
+ style=3D"margin:0 3px !important"><table class=3D"text-center" style=3D"bo=
+rder-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top=
+; text-align: center; width: 100%;" width=3D"100%" valign=3D"top" align=3D"=
+center"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: le=
+ft;" valign=3D"top" align=3D"left"><td class=3D"divider fluid" style=3D"wor=
+d-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; fo=
+nt-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: =
+0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; border-top: 1p=
+x solid #DDDDDD; height: 1; border-collapse: collapse; width: 640px;" width=
+=3D"640" valign=3D"top" align=3D"left"></td></tr></tbody></table></div></td=
+></tr></tbody></table></td></tr><tr style=3D"padding: 0; vertical-align: to=
+p; text-align: left;" valign=3D"top" align=3D"left"><td class style=3D"word=
+-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; fon=
+t-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0=
+; margin: 0; Margin: 0; text-align: left; line-height: 1.3; border-collapse=
+: collapse;" valign=3D"top" align=3D"left"><table class=3D"wrapper boundary=
+Wrapper margin__top--md" style=3D"border-spacing: 0; border-collapse: colla=
+pse; padding: 0; vertical-align: top; text-align: center; table-layout: fix=
+ed; margin: 24px auto auto auto; width: 375px; max-width: 375px;" width=3D"=
+375" valign=3D"top" align=3D"center"><tbody><tr style=3D"padding: 0; vertic=
+al-align: top; text-align: left;" valign=3D"top" align=3D"left"><td class s=
+tyle=3D"word-break: break-word; hyphens: none; vertical-align: top; color: =
+#0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400=
+; padding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; bor=
+der-collapse: collapse;" valign=3D"top" align=3D"left"><table class=3D"boun=
+dary fixed" style=3D"border-spacing: 0; border-collapse: collapse; padding:=
+ 0; vertical-align: top; text-align: center; table-layout: fixed; width: 37=
+5px; max-width: 375px;" width=3D"375" valign=3D"top" align=3D"center"><tbod=
+y><tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=
+=3D"top" align=3D"left"><th style=3D"color: #0a0a0a; font-family: 'Helvetic=
+a Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin=
+: 0; text-align: left; line-height: 1.3; padding-bottom: 0;" align=3D"left"=
+><table align=3D"left" class=3D"wrapper" style=3D"border-spacing: 0; border=
+-collapse: collapse; padding: 0; vertical-align: top; text-align: left; wid=
+th: 100%;" width=3D"100%" valign=3D"top"><tr style=3D"padding: 0; vertical-=
+align: top; text-align: left;" valign=3D"top" align=3D"left"><td class=3D"w=
+rapper-inner" style=3D"word-break: break-word; hyphens: none; vertical-alig=
+n: top; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; f=
+ont-weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-h=
+eight: 1.3; border-collapse: collapse;" valign=3D"top" align=3D"left"><tabl=
+e class=3D"row static" style=3D"border-spacing: 0; border-collapse: collaps=
+e; vertical-align: top; text-align: left; padding: 0; position: relative; w=
+idth: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr style=
+=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top" alig=
+n=3D"left"><th class=3D"columns small-12 large-12" style=3D"color: #0a0a0a;=
+ font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; paddin=
+g: 0; text-align: left; line-height: 1.3; margin: 0 auto; Margin: 0 auto; w=
+idth: 564px; padding-left: 0; padding-right: 0; padding-bottom: 0;" width=
+=3D"564" align=3D"left"><table style=3D"border-spacing: 0; border-collapse:=
+ collapse; padding: 0; vertical-align: top; text-align: left; width: 100%;"=
+ width=3D"100%" valign=3D"top" align=3D"left"><tr style=3D"padding: 0; vert=
+ical-align: top; text-align: left;" valign=3D"top" align=3D"left"><th style=
+=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-=
+weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-heigh=
+t: 1.3; padding-bottom: 0;" align=3D"left"><div style=3D"margin:0 20px"><ta=
+ble class=3D"spacer" style=3D"border-spacing: 0; border-collapse: collapse;=
+ padding: 0; vertical-align: top; text-align: left; width: 100%;" width=3D"=
+100%" valign=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertica=
+l-align: top; text-align: left;" valign=3D"top" align=3D"left"><td height=
+=3D"40px" style=3D"word-break: break-word; hyphens: none; vertical-align: t=
+op; color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-=
+weight: 400; padding: 0; margin: 0; Margin: 0; text-align: left; mso-line-h=
+eight-rule: exactly; font-size: 40px; line-height: 40px; border-collapse: c=
+ollapse;" valign=3D"top" align=3D"left">=A0</td></tr></tbody></table><a tar=
+get=3D"_blank" class=3D"footer__headline" href=3D"https://u22994177.ct.send=
+grid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdYFDbxzha3=
+ud2p2vAflW0xvLW5VsbTUenOwKjIcht0izbwHsu9oEv5AH5viRXi7vkoQrXI2vZ44A0aSNzh-2B=
+VJIi1KG1wiWTLC278Yso3ecZTxOoet22787-2FvO6RVDeC8tjqoy4GrkpuoXpifcHX7PEBGbj3p=
+2IWV1p2JsjsndoO48Uq76Pf2olSBl5zfrUJtBPinCKyJr9LY4f2rH4hW5x1azzkCShj-2F1IJD5=
+DbFH-2BRoeSsRjKPdaUnF9O9LpTnkEdw1hr4dTCv6idqk0NF5x790UDWGWxy8xeHGVTdXsducA-=
+3D-3DZWNv_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536=
+KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZk=
+souBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzE=
+sU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUp=
+bY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM=
+7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnW=
+iLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22=
+Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8x=
+BQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KU=
+EF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56u=
+mG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTR=
+PGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnP=
+DadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0m=
+mMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2W=
+gNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEMvW72f=
+77MwUP-2BYUqzWbmaffJ3x1-2B872x83G6Gb4I2ed7lwL8EWNS-2B7AiGmbC9EUpXluPWSWhMkw=
+FSWbEY-2BNfyP1K7EwHDWQhcrcYeKBbIkETm51-2BAEWibTFFNDnNmlvjhj5PfYcGyP3mCiGRJa=
+-2BSIc-3D" rel=3D"noreferrer" style=3D"padding: 0; margin: 0; Margin: 0; te=
+xt-align: left; line-height: 1.3; cursor: pointer; display: inline; font-fa=
+mily: Helvetica Neue, Arial, sans-serif; font-size: 24px; font-weight: 500;=
+ text-decoration: none; color: #111111;">Nike.com</a><table class=3D"spacer=
+" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0; vertic=
+al-align: top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top=
+" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-=
+align: left;" valign=3D"top" align=3D"left"><td height=3D"40px" style=3D"wo=
+rd-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; f=
+ont-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding:=
+ 0; margin: 0; Margin: 0; text-align: left; mso-line-height-rule: exactly; =
+font-size: 40px; line-height: 40px; border-collapse: collapse;" valign=3D"t=
+op" align=3D"left">=A0</td></tr></tbody></table><table class=3D"menu footer=
+__links--primary" style=3D"border-spacing: 0; border-collapse: collapse; pa=
+dding: 0; vertical-align: top; text-align: left; table-layout: fixed; width=
+: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tr style=3D"padding:=
+ 0; vertical-align: top; text-align: left;" valign=3D"top" align=3D"left"><=
+td style=3D"word-break: break-word; hyphens: none; vertical-align: top; col=
+or: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight:=
+ 400; padding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3;=
+ border-collapse: collapse;" valign=3D"top" align=3D"left"><table style=3D"=
+border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: t=
+op; text-align: left; table-layout: fixed; max-width: 375px; width: inherit=
+;" valign=3D"top" align=3D"left"><tr style=3D"padding: 0; vertical-align: t=
+op; text-align: left; display: block;" valign=3D"top" align=3D"left"><th cl=
+ass=3D"menu-item" style=3D"color: #0a0a0a; font-family: 'Helvetica Neue', A=
+rial, sans-serif; font-weight: 400; margin: 0; Margin: 0; text-align: left;=
+ line-height: 1.3; display: inline-block; white-space: nowrap; padding-bott=
+om: 0; padding: 0 20px 0 0;" align=3D"left"><a href=3D"https://u22994177.ct=
+.sendgrid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdadd-=
+2BQcSk-2BbN5VP0EeYTH8qibJrunh-2Fih4z7Yrbe3Ngzu4qcDqdqNHn9gXkxE1CKFROHiajlvk=
+qbm-2FGgUHyZwefCXcxIuuWviZmbL2d0IlwDwWInoV5IyVsbCm0PQn26AXBJMQGOtdc9ovVelNT=
+d2VbUqYt0-2BVEZVGyPKGTMDpYsJuTDS1qdVrAApyjtdpPk8zFKRjYxMSVwExh4TqOM7M0w5myU=
+guj1-2B8RCcDaR-2BHj-2BuXb0Wh3BTcZA8NoVdBGii-2BtJw7T-2B4612oC9UPSF2rICP6diG5=
+o3vwCFuUxeNjaGPM5t2EuEwL9jTSfNnwr79fE-3DoEY4_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrL=
+MOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjR=
+d5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8Z=
+Evy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPae=
+dYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3AB=
+UNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukO=
+TaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72=
+oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES=
+-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2Fx=
+O7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7r=
+kpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGM=
+BOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvO=
+zSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2B=
+p0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZ=
+kqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYur=
+ESlhlPqxuY2tkOwwseyPSYdml-2BEMvSeiiYZbNOACMTj3OT2SkBaJTur97Vuqm7JpXF2FS2Ex-=
+2FDhIrPSBBLk5PgjqryIwspsB3drRhT-2FCHwMcNuNYTkB301tfaEo-2BPfIEhoY-2BL5mdlcbP=
+YudjaiBDeC7MAekJsSMCRnlWF39RPrZ8VdKw4-3D" target=3D"_blank" style=3D"font-w=
+eight: 400; padding: 0; margin: 0; Margin: 0; line-height: 1.3; cursor: poi=
+nter; font-family: Helvetica Neue, Arial, sans-serif; font-size: 12px; text=
+-align: left; color: #111111; text-decoration: none; word-break: break-all;=
+ word-wrap: normal; white-space: normal; max-width: 335px; hyphens: none; -=
+moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none;">Men</a></th><=
+th class=3D"menu-item" style=3D"color: #0a0a0a; font-family: 'Helvetica Neu=
+e', Arial, sans-serif; font-weight: 400; margin: 0; Margin: 0; text-align: =
+left; line-height: 1.3; display: inline-block; white-space: nowrap; padding=
+-bottom: 0; padding: 0 20px 0 0;" align=3D"left"><a href=3D"https://u229941=
+77.ct.sendgrid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcG=
+daXsBhIZ-2BTRIyQctM1HCgAwnsKEaiZduMOr8huO0k4T595BzoDN5eKRqvU4rEkAytx28SJTlO=
+sWV-2Fggennlp3vDqYuCxMgdv7chnszjtxCINDP6jEqC5Aa63EeSaSa2fdGbKRMPSkB3qWTFuTY=
+AkUv0xhVBGrktar1P9shBPvzyt-2BY-2FveL0ExEayuyWGl4rp-2B-2FV6YnkRf6wBycVyOfd0F=
+Qw81ApEUZxRwBvrhZVFejqFKrF0KG53cSJybTcsy4xZU2qQ6b5BitNY5ohwzplF9c8OThr7KduU=
+EQ-2FsAWGZXz1mdSNEMron74mHTkNhKP3hfQ-3D9j1l_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLM=
+OU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd=
+5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZE=
+vy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaed=
+Ych61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABU=
+NMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOT=
+aLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72o=
+OHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-=
+2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO=
+7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rk=
+pcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMB=
+OZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOz=
+SMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp=
+0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZk=
+qW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurE=
+SlhlPqxuY2tkOwwseyPSYdml-2BEH9lLS3Aj-2Fv-2FhgKsBG8z7OJ2sRPLkKGesD5qkEzifJBp=
+Wmr98gqVssg3Va4v7Ap6R3lpZFrho9HfS1p-2BlpEd6LvxlvffZz0e3t-2BWwAW6hAbtsv5avFd=
+eE8Z6ROenDVqBv1Rr6PvI6s5AuJFexV8hE-2F4-3D" target=3D"_blank" style=3D"font-=
+weight: 400; padding: 0; margin: 0; Margin: 0; line-height: 1.3; cursor: po=
+inter; font-family: Helvetica Neue, Arial, sans-serif; font-size: 12px; tex=
+t-align: left; color: #111111; text-decoration: none; word-break: break-all=
+; word-wrap: normal; white-space: normal; max-width: 335px; hyphens: none; =
+-moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none;">Women</a></t=
+h><th class=3D"menu-item" style=3D"color: #0a0a0a; font-family: 'Helvetica =
+Neue', Arial, sans-serif; font-weight: 400; margin: 0; Margin: 0; text-alig=
+n: left; line-height: 1.3; display: inline-block; white-space: nowrap; padd=
+ing-bottom: 0; padding: 0 20px 0 0;" align=3D"left"><a href=3D"https://u229=
+94177.ct.sendgrid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGd=
+VcGdblA6d-2FDIWlI0JzlCoMEI-2Bi7jGVfWgbkoC2yS58ySMK9G1epuEPNzUy0mgWMoiWZQIT1=
+x9egUI-2BH0OyNQtwpN3oiv2S4uFpmRsnbJG0Nbrp1hKeVj2OvT0h27IRYb0CszaOKt6lADxTi1=
+qX43wsfqUGdFzSSb4ynzbkyX1BbjqxWTzqLc0F1-2FTwp2lTKMIgo6mkiYZFNlBZ5rEobbs4ApI=
+hVZyvW59nIA533F8526oKFliF-2BuL-2BJsciiQ8-2B80BNzqTRiQ5eE8N37XYKJ-2F7XZpZ9q8=
+vHpneVkmbh-2BnmYkPalsu1D8pSszOlAAG-2BzicJasnQ-3DQYSK_HPC5-2BlCj2pcWYfPYIAuw=
+PPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nN=
+zycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1h=
+kC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83=
+ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM=
+5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZ=
+HdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYq=
+L95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOE=
+Qf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69ho=
+mKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUn=
+lldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0=
+Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACM=
+EtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNi=
+vTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mP=
+z55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r=
+2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEDiER9pkOhGtAQMoNOXVocjkYNvTtK9CgNC-2B0=
+ZW5eh4KJ4Ovn-2FfLIxiW3R0ManOYBnsP6A8Uq-2BFOrF8-2BtVH9WkFNSgXQ0g9l5xZ6oCU8sG=
+XjBTARZXNk7wOTSlBI94CQ7VKMLs7w6EFLX7ozy93QE2w-3D" target=3D"_blank" style=
+=3D"font-weight: 400; padding: 0; margin: 0; Margin: 0; line-height: 1.3; c=
+ursor: pointer; font-family: Helvetica Neue, Arial, sans-serif; font-size: =
+12px; text-align: left; color: #111111; text-decoration: none; word-break: =
+break-all; word-wrap: normal; white-space: normal; max-width: 335px; hyphen=
+s: none; -moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none;">Kid=
+s</a></th></tr></table></td></tr></table><table class=3D"spacer" style=3D"b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: to=
+p; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"l=
+eft"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;=
+" valign=3D"top" align=3D"left"><td height=3D"40px" style=3D"word-break: br=
+eak-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: =
+'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: =
+0; Margin: 0; text-align: left; mso-line-height-rule: exactly; font-size: 4=
+0px; line-height: 40px; border-collapse: collapse;" valign=3D"top" align=3D=
+"left">=A0</td></tr></tbody></table><table class=3D"text-center" style=3D"b=
+order-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: to=
+p; text-align: center; width: 100%;" width=3D"100%" valign=3D"top" align=3D=
+"center"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: l=
+eft;" valign=3D"top" align=3D"left"><td class=3D"divider" style=3D"word-bre=
+ak: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-fa=
+mily: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; ma=
+rgin: 0; Margin: 0; text-align: left; line-height: 1.3; border-top: 1px sol=
+id #DDDDDD; height: 1; width: 375px; border-collapse: collapse;" width=3D"3=
+75" valign=3D"top" align=3D"left"></td></tr></tbody></table><table class=3D=
+"spacer" style=3D"border-spacing: 0; border-collapse: collapse; padding: 0;=
+ vertical-align: top; text-align: left; width: 100%;" width=3D"100%" valign=
+=3D"top" align=3D"left"><tbody><tr style=3D"padding: 0; vertical-align: top=
+; text-align: left;" valign=3D"top" align=3D"left"><td height=3D"40px" styl=
+e=3D"word-break: break-word; hyphens: none; vertical-align: top; color: #0a=
+0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; p=
+adding: 0; margin: 0; Margin: 0; text-align: left; mso-line-height-rule: ex=
+actly; font-size: 40px; line-height: 40px; border-collapse: collapse;" vali=
+gn=3D"top" align=3D"left">=A0</td></tr></tbody></table><div class=3D"footer=
+__info" style=3D"display: block; color: #ABABAB; font-family: Helvetica Neu=
+e, Arial, sans-serif; font-size: 12px; font-weight: normal; text-decoration=
+: none; text-transform: none;"><span style=3D"overflow-wrap: normal; white-=
+space: nowrap; width: 375px;" class=3D"footer__membership">Become a Nike Me=
+mber and unlock more. </span><span class=3D"footer__membership" style=3D"ov=
+erflow-wrap: normal; width: 375px;"><a target=3D"_blank" class=3D"footer__i=
+nfo underline" href=3D"https://u22994177.ct.sendgrid.net/ls/click?upn=3DzmZ=
+3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGda2V4Li5eCmQcmqphtF3RywAhMJql4LogUuRK=
+HgVFuMRm-2BsE0nwh8Q4wfQ-2BPMMA-2BLQTZ7PoM6QnEDVPc5B0htkRe3h6eWWS-2BzFOU9btI=
+sAv7d5HcnREkHEq6TCu-2F0vtmifDT-2BBYQgIRxjSl-2BXny6plxDUOcxIo0zfS1ml3yWgCCwn=
+1QxePWBol0o4JlTskzSOEGmAnI5rrdnqwzm5sIyQ6d4SQY2qttcHRB-2FY0n8LhOw-2BIHziNF6=
+xbDjOoKve-2BtsxKZWYAGDVAUcwKCNSSx3SMwSaA-2FkTJt-2F-2Bybh1YCWL0jOBy5g2F26KLF=
+XRKW8wZbQfs-3DQ_iW_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM=
+8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpK=
+xHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0=
+zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGM=
+YO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQ=
+vH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA=
+6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4f=
+S5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6h=
+V7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iE=
+h55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3=
+cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0Nx=
+RXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMl=
+Tia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7=
+ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVM=
+MNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-=
+2BEDx-2BChEhQmgKRSi8V1Y0Zglmqex2dTDfiSlWiMonyz0yktEjF9-2FB9AXJaqMUDERemWV0u=
+LVMBNt08gV2jwU9dDYEG-2BoklaYw0iJ-2BOWn9FWiYRk9y70oN1RkQWUKGAVdBWB9BnKWpDJh8=
+Wyx1GfBGKso-3D" rel=3D"noreferrer" style=3D"padding: 0; margin: 0; Margin: =
+0; text-align: left; line-height: 1.3; cursor: pointer; color: #ABABAB; fon=
+t-family: Helvetica Neue, Arial, sans-serif; font-size: 12px; font-weight: =
+normal; text-transform: none; text-decoration: underline; display: inline;"=
+>Join Now</a></span></div><table class=3D"spacer" style=3D"border-spacing: =
+0; border-collapse: collapse; padding: 0; vertical-align: top; text-align: =
+left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"><tbody><tr=
+ style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"top=
+" align=3D"left"><td height=3D"24px" style=3D"word-break: break-word; hyphe=
+ns: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica Neue=
+', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0; t=
+ext-align: left; mso-line-height-rule: exactly; font-size: 24px; line-heigh=
+t: 24px; border-collapse: collapse;" valign=3D"top" align=3D"left">=A0</td>=
+</tr></tbody></table><div class=3D"footer__info" style=3D"display: block; c=
+olor: #ABABAB; font-family: Helvetica Neue, Arial, sans-serif; font-size: 1=
+2px; font-weight: normal; text-decoration: none; text-transform: none;">=A9=
+ 2023 Nike, Inc. All Rights Reserved.</div><table class=3D"spacer" style=3D=
+"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: =
+top; text-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D=
+"left"><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: lef=
+t;" valign=3D"top" align=3D"left"><td height=3D"16px" style=3D"word-break: =
+break-word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family=
+: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin=
+: 0; Margin: 0; text-align: left; mso-line-height-rule: exactly; font-size:=
+ 16px; line-height: 16px; border-collapse: collapse;" valign=3D"top" align=
+=3D"left">=A0</td></tr></tbody></table><div class=3D"footer__info" style=3D=
+"display: block; color: #ABABAB; font-family: Helvetica Neue, Arial, sans-s=
+erif; font-size: 12px; font-weight: normal; text-decoration: none; text-tra=
+nsform: none;">Nike European Operations Netherlands, B.V. Colosseum 1, 1213=
+ NL, Hilversum, The Netherlands</div><table class=3D"spacer" style=3D"borde=
+r-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: top; t=
+ext-align: left; width: 100%;" width=3D"100%" valign=3D"top" align=3D"left"=
+><tbody><tr style=3D"padding: 0; vertical-align: top; text-align: left;" va=
+lign=3D"top" align=3D"left"><td height=3D"40px" style=3D"word-break: break-=
+word; hyphens: none; vertical-align: top; color: #0a0a0a; font-family: 'Hel=
+vetica Neue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; M=
+argin: 0; text-align: left; mso-line-height-rule: exactly; font-size: 40px;=
+ line-height: 40px; border-collapse: collapse;" valign=3D"top" align=3D"lef=
+t">=A0</td></tr></tbody></table><table class=3D"menu footer__info" style=3D=
+"border-spacing: 0; border-collapse: collapse; padding: 0; vertical-align: =
+top; text-align: left; display: block; color: #ABABAB; font-family: Helveti=
+ca Neue, Arial, sans-serif; font-size: 12px; font-weight: normal; text-deco=
+ration: none; text-transform: none; table-layout: fixed; width: 100%;" widt=
+h=3D"100%" valign=3D"top" align=3D"left"><tr style=3D"padding: 0; vertical-=
+align: top; text-align: left;" valign=3D"top" align=3D"left"><td style=3D"w=
+ord-break: break-word; hyphens: none; vertical-align: top; color: #0a0a0a; =
+font-family: 'Helvetica Neue', Arial, sans-serif; font-weight: 400; padding=
+: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; border-colla=
+pse: collapse;" valign=3D"top" align=3D"left"><table style=3D"border-spacin=
+g: 0; border-collapse: collapse; padding: 0; vertical-align: top; text-alig=
+n: left; table-layout: fixed; max-width: 375px; width: inherit;" valign=3D"=
+top" align=3D"left"><tr style=3D"padding: 0; vertical-align: top; text-alig=
+n: left; display: block;" valign=3D"top" align=3D"left"><th class=3D"menu-i=
+tem" style=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-se=
+rif; font-weight: 400; margin: 0; Margin: 0; text-align: left; line-height:=
+ 1.3; display: inline-block; white-space: nowrap; padding-bottom: 0; paddin=
+g: 0 15px 0 0;" align=3D"left"><a href=3D"https://u22994177.ct.sendgrid.net=
+/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlnuFQRsbo-2FCzHfCC2rzQplH7kK3dIEUX8GMivj=
+aZqhuS9Ie4mVRmDkizq0Ph1aHumq1wkN6lV9q-2B7oDLIQScFJ6nVP3FasUtvRL-2FOhcMYAvmg=
+38aES8fHRrcWph3NUDk84FC-2FZEXazBUfdHbZJrZRqGn9T30TJrjnQ1OWAsZ1kSOWQuYvmnBwG=
+zyY6vqrI9lKoe-2FiPF0fhx-2BBgydg-2Bmt-2FSLg1sGMFpTu4T-2B3CDEu3WHWOEgem-2BJY6=
+ywlWxo6JRVeks4vkrfx9SQ85nIteQhLY0-2Bc-2Fy7L-2FKajcpvBWgbq22Yk51H0LcsjPCROGl=
+zNDBv-2BLtFAkI4t-2BALUh-2FKZAIJb9YcUAHD7tjTM1OpCxLYsYdK0AbNgh7qDnYcn-2FoD2E=
+vd03v7qpqjh9fA1Z3WLJ59c-2F21q2OuJMxOQcboU14wouE7-2FECgCg8HANFi5Ql92udYCOfTP=
+xw-2FZNXs-2FQelKHX-2BcMghRrUKuPuMxYpOzYV2tKL7hwBQ4BofwXGJpEPWCJL9OgTg-3D-3D=
+WIYP_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQO=
+fsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY=
+7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o3=
+3mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dg=
+HN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENI=
+u2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlk=
+FY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2=
+FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRV=
+kwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2=
+BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26v=
+MlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-=
+2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZ=
+Igjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu=
+5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2=
+FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEBisP5AykWVo=
+S3s41i3eVkcAZnLH6nuK5Ae3JG0iNQGlLEZc7Oa5O9d8IMcjqGEwuGCkC3P2dIF5V6c4itKkOGT=
+bPSBLYuXypK8Eb9L7tZkHB73DiR8-2FlYDEO4U6iMhJ0iln0g34cjcPlBKMLEdJ2h8-3D" styl=
+e=3D"padding: 0; margin: 0; Margin: 0; text-align: left; line-height: 1.3; =
+cursor: pointer; color: #ABABAB; font-family: Helvetica Neue, Arial, sans-s=
+erif; font-size: 12px; font-weight: normal; text-decoration: none; text-tra=
+nsform: none; word-break: break-all; word-wrap: normal; white-space: normal=
+; max-width: 335px; hyphens: none; -moz-hyphens: none; -ms-hyphens: none; -=
+webkit-hyphens: none;">Privacy Policy</a></th><th class=3D"menu-item" style=
+=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font-=
+weight: 400; margin: 0; Margin: 0; text-align: left; line-height: 1.3; disp=
+lay: inline-block; white-space: nowrap; padding-bottom: 0; padding: 0 15px =
+0 0;" align=3D"left"><a href=3D"https://u22994177.ct.sendgrid.net/ls/click?=
+upn=3DzmZ3Tc3UyLkY2j7ZlvPlniCXymj6ptP9KrVZGdVcGdZ9j2mRCSRlUaHrS78O3c4ztKgE2=
+vJJdej3OIWVbAZcPJ21TnfHpoOtBpEej2ZbNvtDo-2Fv02TPGi6Z7uh-2FRnGZNJIR84V08fhap=
+Y9ehbV33u5Zm-2B-2FMGNVBmKyPRtCim1eRDxXCnNnNpwhAch9SMhG3KgdMDOnIqY2ksnRqb3aa=
+X9GwL9xe8o5l58j-2BPAb-2FEOrRW904GRdzhs0vl8QFRoofFfhoXvoaup1M-2FgNBsW1VUW-2B=
+2NkX0CQNLWFUyQFRqU3vgT85VgkpElqQk5tdXi7ZABqdNYi6RW9t3A87IbfMFCIA-3D-3Dkzia_=
+HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsion=
+UCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb=
+0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79=
+gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ=
+-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAv=
+PfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44w=
+XVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwi=
+KxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A=
+2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9=
+Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgO=
+DiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWN=
+SrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7=
+L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1=
+Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmt=
+iElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdml-2BEAAw3QDps1OlZFCW-=
+2B163dwpNRcdhJzLy-2FOeHXXFAsmqsktEKPRaVFb6UrJZYgJanBJlwnSBDTZyOKJMsDpWKT0vR=
+7tgEGSUX8u0RXWjNRwXbJ9kC7hBtOuHrp8J-2B-2BNIm-2FIxvotOu3SLRrkYQjm-2Be8-2Fk-3=
+D" style=3D"padding: 0; margin: 0; Margin: 0; text-align: left; line-height=
+: 1.3; cursor: pointer; color: #ABABAB; font-family: Helvetica Neue, Arial,=
+ sans-serif; font-size: 12px; font-weight: normal; text-decoration: none; t=
+ext-transform: none; word-break: break-all; word-wrap: normal; white-space:=
+ normal; max-width: 335px; hyphens: none; -moz-hyphens: none; -ms-hyphens: =
+none; -webkit-hyphens: none;">Get Help</a></th><th class=3D"menu-item" styl=
+e=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; font=
+-weight: 400; margin: 0; Margin: 0; text-align: left; line-height: 1.3; dis=
+play: inline-block; white-space: nowrap; padding-bottom: 0; padding: 0 15px=
+ 0 0;" align=3D"left"><a href=3D"https://u22994177.ct.sendgrid.net/ls/click=
+?upn=3DzmZ3Tc3UyLkY2j7ZlvPlnrkS1bBJmtPvOyoSrI6QNGC-2FaaDkDKDMm-2F0ATuINyGuX=
+rop-2FFcnFCYxKuG7xv4KdjagLaJY78bXwucRKo2vp8Ane-2Fz-2B0lpgsgye81rrd2klvgQrcG=
+82c3PR-2FVMujjI3OQIWkT8BrQyyXP3vc8NPHy2k-2FHMCBJddR3RsYEhmn5nj7uKLt0NFD-2Fy=
+u-2BiAmQZ4RUm35HKUO-2FkclFIjVb0weNruofrlcyLy-2Fd6Eqz9FiC3Dh4Oa3wPeYKBqf3E1M=
+-2BkZNK9iUkwF4-2BHMZT7LCOvkWTHEPkeh6fGmyd8pHLCO-2BKQy7lxGKnzmSaKwEL-2FX7rcv=
+83-2BjjEsdnxpRS3ktiqMzqafGcjuvUxmQF-2Bh74npeXFjGPth-2FRbc7C1kctxZU791vhY0fk=
+KD5CgqXIkIMgaaagCNjnktcFWPH13AY-2Br6b-2BOVX8FUzZZfEPQdTxUJ5hSsWuH7UAUJgTtTz=
+DIjoJK5TRKlpY-3DRrSB_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2BagueIlD83RYru-2Bj=
+pKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-2Bgf9ukZRaFbhuMfD=
+W0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61Htm4M-2FS4tNEZpC1N=
+GMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvRvDh6JcD6DZ4JRgwVK=
+CQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-2Bz10D5E0wa3mLj6h=
+dA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5F2u9NsrQo0s3HIEwV=
+4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2KfBjrzpQSpjxpRBUe=
+6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awiO6DCMyHyEXnXgOBu0=
+iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikSbgo4uSJKKI4vvyamA=
+z3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCytx0YLvIamu2DsDoXk0=
+NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpaA6BoFMb8bs-2BbHCR=
+MlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0BxrBs-2BjVd8uG8zdS=
+u7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZLLLu-2FuGpTbLcITOr=
+VMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPqxuY2tkOwwseyPSYdm=
+l-2BECHYUIs-2BGXprYa-2BcVcY0uzeAWpPeJgNuD4M8waTnVCKKil8rfCXXiT89HoGjwtRvrlB=
+aH8SCrA6Ua4syXR6SlstVaQOLfETSolqeJmvqkmDU9ohyVjqnnL7ywQRLP6rCM-2Fqm9TNfmeK2=
+lLwQ0O9a2uA-3D" style=3D"padding: 0; margin: 0; Margin: 0; text-align: left=
+; line-height: 1.3; cursor: pointer; color: #ABABAB; font-family: Helvetica=
+ Neue, Arial, sans-serif; font-size: 12px; font-weight: normal; text-decora=
+tion: none; text-transform: none; word-break: break-all; word-wrap: normal;=
+ white-space: normal; max-width: 335px; hyphens: none; -moz-hyphens: none; =
+-ms-hyphens: none; -webkit-hyphens: none;">Unsubscribe</a></th><th class=3D=
+"menu-item" style=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, =
+sans-serif; font-weight: 400; margin: 0; Margin: 0; text-align: left; line-=
+height: 1.3; display: inline-block; white-space: nowrap; padding-bottom: 0;=
+ padding: 0 15px 0 0;" align=3D"left"><a href=3D"https://u22994177.ct.sendg=
+rid.net/ls/click?upn=3DzmZ3Tc3UyLkY2j7ZlvPlnqICVNMxyURHvSs07LH7hIwlVtGmWDyN=
+eyyhOmiMWgrQVL4XdYOTBKyX7U9NfnA7gfhvKVIKUVX8agqNrdDMBvtVwsOZDmT40Alt3uWcwg0=
+wX6ghkiZA4Wz3bMmfuK5Xcl4Q4j7n4YIR9fJflul5lSxDyF481s8OIkixNeskQPY4z-2FvCl4PG=
+CNf4f02EWOE6FRzIGODy3rA4i9hHh5fCh7SOcAbDtI9-2Fghs32oti2g6C0hbZH1dfLlVVFs8WH=
+nza-2FOeUG3FaaioN0V66DiLuBZxcXNMj36VYxe643SeV-2BW2MSLYGMvdvnZroBuaCldYxaBhh=
+5z6i7QlCwPfgDzSrakmHvs6djDuV6-2BmpiKerYmZ6bReQwkvFO-2B9sMsd867DqiI4yJcwKNur=
+kSX4COYNhlUfn2kaHtY4O1VG6zjO8VmPV2Evc_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2Fi=
+jFXyGtZWerWsoY-2BZM8fgsGd536KGxQOfsionUCxh1h1bgG88h8AjxYs4nNzycHxOjRd5nJ-2B=
+agueIlD83RYru-2BjpKxHTcsAQZksouBY7SdJb0sGZ9kCWAfMljhEWXljv1hkC5FNa8ZEvy5xu-=
+2Bgf9ukZRaFbhuMfDW0zh5hM3uzEsU2o33mP79gzqmKaOca-2BE2DMWTpn83ZZylBPaedYch61H=
+tm4M-2FS4tNEZpC1NGMYO6JbnrUpbY7dgHN2oQ-2FqUVsOtYC4zSZsIAb8BM5Jm5p3ABUNMjFvR=
+vDh6JcD6DZ4JRgwVKCQvH8ICyhVM7SENIu2ZAvPfaIXcnG8MXDCb1y2L-2FZHdfVgukOTaLSXG-=
+2Bz10D5E0wa3mLj6hdA6IK4hFEnWiLWlkFY44wXVU9K3Fnb-2F4IvfCKRKYqL95rfM72oOHcmR5=
+F2u9NsrQo0s3HIEwV4fS5IFt6d22Hol-2FASwiKxZUnPMD6IFR1TqKLY4OOEQf3-2BES-2BzEc2=
+KfBjrzpQSpjxpRBUe6hV7bQb7Q8xBQbRVkwd8A2fbrF2DmZKpveHFjEX69homKag-2FxO7V7awi=
+O6DCMyHyEXnXgOBu0iEh55PvZ7KUEF0-2BJSi9Feq5S6DdUEkbgFDOvRRFUnlldR8e7rkpcZikS=
+bgo4uSJKKI4vvyamAz3cqa6PY56umG26vMlCgODiCxPijsIiXtG8msyrsMM0Bn-2BYGMBOZSCyt=
+x0YLvIamu2DsDoXk0NxRXhhAPTTRPGeW-2FTWNSrO0ujFgrw2dK4av1GNACMEtnLlQvOzSMZOpa=
+A6BoFMb8bs-2BbHCRMlTia-2FwnPDadNZIgjt7L4X-2Bz9iYAwo7oMq5kcNivTThn-2Bp0ioY0B=
+xrBs-2BjVd8uG8zdSu7ZYAa-2F0mmMxQu5srJ1Xl9-2BL4vIzsY-2B0i30mPz55dkEFZkqW3XZL=
+LLu-2FuGpTbLcITOrVMMNfW2Nt2WgNb-2FkBmtiElhIV9Frx-2Be74Giur7r2E-2BYurESlhlPq=
+xuY2tkOwwseyPSYdml-2BEFs-2B2lKXSqRExAfk4zNuvG2MuISo19cDeNjE1etuUs0GAdCdzAMO=
+t6aWdEejZoS7D7zCeSS8-2Fn7w71jws-2BovogFx68Yynf1TCKi6btepK7XKWgw-2FVLJHKqTFq=
+c1DnnjRh5C091Vy7QS7jovxkE1jf1s-3D" style=3D"padding: 0; margin: 0; Margin: =
+0; text-align: left; line-height: 1.3; cursor: pointer; color: #ABABAB; fon=
+t-family: Helvetica Neue, Arial, sans-serif; font-size: 12px; font-weight: =
+normal; text-decoration: none; text-transform: none; word-break: break-all;=
+ word-wrap: normal; white-space: normal; max-width: 335px; hyphens: none; -=
+moz-hyphens: none; -ms-hyphens: none; -webkit-hyphens: none;">Web Version</=
+a></th></tr></table></td></tr></table></div></th><th class=3D"expander" sty=
+le=3D"color: #0a0a0a; font-family: 'Helvetica Neue', Arial, sans-serif; fon=
+t-weight: 400; margin: 0; Margin: 0; text-align: left; line-height: 1.3; vi=
+sibility: hidden; width: 0; padding-bottom: 0; padding: 0;" align=3D"left">=
+</th></tr></table></th></tr></tbody></table></td></tr></table></th></tr></t=
+body></table></td></tr></tbody></table></td></tr></tbody></table><table cla=
+ss=3D"spacer" style=3D"border-spacing: 0; border-collapse: collapse; paddin=
+g: 0; vertical-align: top; text-align: left; width: 100%; margin-left: auto=
+; margin-right: auto;" width=3D"100%" valign=3D"top" align=3D"left"><tbody>=
+<tr style=3D"padding: 0; vertical-align: top; text-align: left;" valign=3D"=
+top" align=3D"left"><td height=3D"90px" style=3D"word-break: break-word; hy=
+phens: none; vertical-align: top; color: #0a0a0a; font-family: 'Helvetica N=
+eue', Arial, sans-serif; font-weight: 400; padding: 0; margin: 0; Margin: 0=
+; text-align: left; line-height: 1.3; mso-line-height-rule: exactly; border=
+-collapse: collapse;" valign=3D"top" align=3D"left"></td></tr></tbody></tab=
+le></div></td></tr></table><div style=3D"display:none;white-space:nowrap;fo=
+nt:15px courier;line-height:0"> </div><img src=3D"https://u22994177.ct.send=
+grid.net/wf/open?upn=3DDW-2BSrACj4wfqwIANcjvCqOMsRXaCKicfEInkXFEUAT3on7On2O=
+xLC79EYg1ibXZD2-2ByQb-2B9XymP61QOr5xF3aVYGcuqQ0PO74nomk9Hg-2FU6zy1jijfIFgPM=
+smzZGI3gmUA2eQOFYNMKHtcoFlV0E6vysL9B1S4ZeUZxiwshzGCGVcAyTnwxJqKeNwQ2lpSzvlE=
+HkU6Ae9A3Gyd07VAE6V8sH10O8EdJwJBR-2Ba04F2vHRoBGFbfU0ZhWJJZZpYlx-2F9SNoPomsy=
+4QscrLcRAUtL-2BLSVNMwpFKk3ftd378VZlA8nvURlFINQZpQS2ZZkHrgOrOUZSQAlIlwB5G-2B=
+7rkHwJ8N6Ka6ewvluImXWu0zcCls6iTSD0-2Br52s2qdvShuOuoN5fpaL85SWxPQFz2CCuHE5ti=
+0Le7jCyaB44iGRjI8IjiJXoTxGYoYV2PGFfqw54pwr6s-2F-2FE-2FbmUhcCyRgiv-2FcDqgX5w=
+TRdez5dOgTeYlb01qUzOLy4EIhwtLSJQ3pr1FQZ3iNIGJHM12EWUpjEIDpa2UyhZtk3Fu589NWR=
+AmCqh9QfVLr6jqh53mwpYZbf8AeAxEjnvpjC-2Blt37r56WaVBxB6Hd9ceeG-2BW7UQAUt7iGLw=
+RAA-2B-2FEMUWh2MvDiWECthHHOQF9G5w3jEvVwM29RDfLpaQZIDHBD7OSbp8FvC-2F4j0a97r6=
+iZ56DnyXjlDXEYwSEEqxHyTTZTlhv-2FtW4vcPvBTbVZxqfPDHbZL610dP2LT469UMQrJcbS2qi=
+-2B-2B8YKxCIrpL463Q9WQW3UOzZX-2FJAJ5kTmspGBQtA5DPWtyiUvEk3eFjqdr6tQLPWkekJn=
+2dIi2aBiL1etI0qGLeI5x6DRN1iA2yEOXQ1vPNPmJf4skeCYYg94svq2CfifoEpD71H-2FTA22F=
+5U3Etf2X9dCU6kRM6eueApcVcLMG0kzxSMQm6Fzxv0Bhk5Q9qkfgnoc-2Bp8tQ4pbBqM40Ze8RT=
+bRV-2Bq7YC5I3cqSpCiekqJRlmphAFkNbfKWGwGtlKvtq6wWe7qWmVEvPuUha-2BtKBGFMugb8l=
+7K7JatBzTSNn-2F-2FIQ6xCVtmqd79XekPB8ZJNMT7VVEKoeqyj6iichm1OyKHwcPy7HNxp9G-2=
+FBF2iRR32y9xrm41Um8hzW1ZcfNf8E5cg7USTv4ERYCMXt-2FskW4qpOVMN2-2BsPS31jjVrili=
+c8XXBbxPVcgMCC52UVVXz9FjsG" alt=3D"" width=3D"1" height=3D"1" border=3D"0" =
+style=3D"height:1px !important;width:1px !important;border-width:0 !importa=
+nt;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !impor=
+tant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 !im=
+portant;padding-right:0 !important;padding-left:0 !important;"/></body></ht=
+ml>

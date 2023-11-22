@@ -1,0 +1,1234 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:80db:b0:4cc:8c8:11bf with SMTP id g27csp3141096maf;
+        Mon, 5 Jun 2023 12:39:13 -0700 (PDT)
+X-Google-Smtp-Source: ACHHUZ6X5k6ltVZXXIM5r1OTt0DTHNoKMKHtp1bo15J+kTi/t1ZXh3zSnW3UJXo0TxjQDhqqu4GW
+X-Received: by 2002:a5d:5050:0:b0:30e:3c81:ca1c with SMTP id h16-20020a5d5050000000b0030e3c81ca1cmr4201087wrt.29.1685993952905;
+        Mon, 05 Jun 2023 12:39:12 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1685993952; cv=none;
+        d=google.com; s=arc-20160816;
+        b=U5UqX2ogb2hrlli45Sje31YelfKWj855vGgDGiTDMH1AvJjVsJz3uhgh2Zm3fCHUtN
+         6IvoPjjzAj/cm7vG0LbmnIR+eLpenQjOtO2zezBcjw2LPmd3RZVKYyGmki05SXoDdJ5U
+         rxfF2Yd+MDoRkt1Kn9WQ9uGmpj1SrCZE5R0/P2RPkoUHJnoi88v3AYUkjcxo2x39KFny
+         288r+NwpgRE34ATwXxNC4Pdu27WkSdwLYpTL/SDnt3/2yYmJvS0np4qpEB5wSFEcKLHX
+         rQIlwyZUBD2+Ziqo6c2AZCB5Ly5X7QQQDl3lqRTry4VfF0SuVhakS959icmmvcr9VIVv
+         hV8A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=reply-to:precedence:message-id:mime-version:list-unsubscribe-post
+         :list-unsubscribe:list-id:from:feedback-id:date:subject:to
+         :dkim-signature:dkim-signature;
+        bh=T03AJg9mZBZwmmlmUhNMVWUhyI9BcH7Qn6/aO7I/MVg=;
+        b=Fi8LmOH+NjlK4tLPL+zSWm/3SnHmZRxRhUe0IpHaodAYvUgG/sKRHPHqXuxHkxqT0k
+         +YjFj5RLJibN50/hzsQ7NOgjK/P4DLZ/0O8bbmBNY9YVNCLU/AxMFJXgHp6T7oHIEspd
+         4iRWDwprM1+hTAF4Bc6Y09kb4pyazTkG42HmPVH5BUZ9cGWlzZYu5QTgzQK6mlRqGGKQ
+         mWy3medhb3ABdXyD9vn+S6toGwKFo28hLTn2/wslVoLoPBh0MjA/VFxqnjc7h1uGBHos
+         cPTSh84ZcXcN8sFgbAQca0VPaJkcZqJ0fnEzfBq5bBphwKeYNtqjMjdlA/6RcKpWSy/r
+         BwqA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@codewars.com header.s=mail header.b=Epg9Assd;
+       dkim=pass header.i=@sendib.com header.s=mail header.b=dolUUSqB;
+       spf=pass (google.com: domain of noreply@news.codewars.com designates 212.146.207.139 as permitted sender) smtp.mailfrom=noreply@news.codewars.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=codewars.com
+Return-Path: <noreply@news.codewars.com>
+Received: from news.codewars.com (news.codewars.com. [212.146.207.139])
+        by mx.google.com with ESMTPS id r8-20020adfe688000000b0030adbff46c0si4477071wrm.601.2023.06.05.12.39.12
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 05 Jun 2023 12:39:12 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noreply@news.codewars.com designates 212.146.207.139 as permitted sender) client-ip=212.146.207.139;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@codewars.com header.s=mail header.b=Epg9Assd;
+       dkim=pass header.i=@sendib.com header.s=mail header.b=dolUUSqB;
+       spf=pass (google.com: domain of noreply@news.codewars.com designates 212.146.207.139 as permitted sender) smtp.mailfrom=noreply@news.codewars.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=codewars.com
+DKIM-Signature: a=rsa-sha256; bh=T03AJg9mZBZwmmlmUhNMVWUhyI9BcH7Qn6/aO7I/MVg=;
+ c=relaxed/relaxed; d=codewars.com;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id;
+ q=dns/txt; s=mail; t=1685992699; v=1;
+ b=Epg9AssdLGmhbmiVFRFWsIUTMUixEgfkAuBTw5MPD3xLt6X7bNqORkZA3k8mjO9JX3ikXoBG
+ AH7MswC+ozQmLK5lqIVbIMcT9kMDFZjr2Ut2MeJscOnXngil2hjtcacFjbF8xsSfcMBigQKYl0u
+ RHzA95T2jQk83fQbLo6fgwVI=
+DKIM-Signature: a=rsa-sha256; bh=T03AJg9mZBZwmmlmUhNMVWUhyI9BcH7Qn6/aO7I/MVg=;
+ c=relaxed/relaxed; d=sendib.com;
+ h=to:cc:from:reply-to:subject:date:mime-version:content-type:list-id:list-unsubscribe:x-csa-complaints:list-unsubscribe-post:message-id:sender:x-sib-id:x-mailin-client:x-mailin-campaign:feedback-id;
+ q=dns/txt; s=mail; t=1685992699; v=1;
+ b=dolUUSqBc3Ks0AhtjgIk6+LuskYcxx1XgY5fuOeJqbzRtT7f6R5z0vTc2A1OAF33lWNkDfdT
+ lcr9ZDOhe/cl/7y9ekQHktc1JD/IiPqmhgo1dA+HcuG8tFOSfxVYixzBRAyeKsKjpRP9qMJ7mm5
+ ZzE+UQ45ICBvZiwLFgp5JhvE=
+To: <************************@gmail.com>
+Subject: =?utf-8?q?NumPy,_AI_and_Data_Science:_How_to_get_hired_by_the_world?= =?utf-8?q?=E2=80=99s_best_companies?=
+Content-Type: multipart/alternative; boundary="-------?=_89124-7187870478870"
+Date: Mon, 05 Jun 2023 19:18:19 +0000
+Feedback-ID: 212.146.207.139:3113575_161:3113575:Sendinblue
+From: Codewars <info@codewars.com>
+List-Id: MzExMzU3NS0xNTUzMTA0LTM= <MzExMzU3NS0xNTUzMTA0LTM=.list-id.news.codewars.com>
+List-Unsubscribe: <mailto:unsubscribe@news.codewars.com?subject=unsub-xzzjer9m3bmhzj&body=xzzjer9m3bmhzj>,<https://list-unsubscribe.me/mk/un/li/FF6TUOVG6G3b9XxTCk3o9hbOambfrVnfDasDHXO7uEdH1chT03Gz-gaW1CIqki5L4vtWshETRwRaR94Myl_6ZWqfKo475-1q7Z186cLGO47guRYXjZFnlKSxwOqqb6BzoAeHIQu8n2MbmkbfJgWzCJMcEbgvpLDT9rSkU-BrzFzQ1GIF6xmxXPdceQ>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+MIME-Version: 1.0
+Message-Id: <202305061918.xzzjer9m3bmhzj@news.codewars.com>
+Precedence: bulk
+Reply-To: info@qualified.io
+X-Csa-Complaints: csa-complaints@eco.de
+X-Mailer: Sendinblue
+X-Mailin-Campaign: 161
+X-Mailin-Client: 3113575
+X-sib-id: t3piovZyUY9me8nKP86RXnHvN3jebSGeIR9BVGUWLgyUPoUf0QjUNBezOq83pdfL8y0Ce6pC9y6xG-TpwaPH2iEaHE5xf4JJYK-voVw87P6Cl-x-95MG0ZZyX2QgymWa5y3RXy-m0gI0B4PfkITE79DTrmbKABXjZ8MzZ_SSCuebdzJX14-VRX31mqDbkYcDD6AIfmmno4QT2WsIg0xrYtWsMJ0pKnBJ8PQfEQz3a44_RlIw1nnDwg
+
+---------?=_89124-7187870478870
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=UTF-8
+
+*=C2=A0*Welcome to Codewars.
+
+This month=E2=80=A6 discover how you can build your career as a data scient=
+ist, explore our ultimate guide to NumPy for Machine Learning, learn how AI=
+ can help solve the biggest design challenge and find out how you can get h=
+ired by the world=E2=80=99s best companies with Andela!
+
+From the Andela Blog
+--------------------
+
+The Data Science career roadmap
+
+Whether you're just starting out, or honing your craft, we've created an in=
+-depth roadmap to help you ascend the career ladder in Data Science!=C2=A0
+
+[ Build your career](https://andela.com/insights/the-data-science-career-ro=
+admap/?utm_medium=3Demail&utm_source=3Dnewsletter&utm_campaign=3Dtalent-glo=
+bal-june5-codewarsjdata)
+
+Resources
+---------
+
+###[The ultimate guide to NumPy for Machine Learning=C2=A0](https://andela.=
+com/insights/the-ultimate-guide-to-numpy-for-machine-learning/?utm_medium=
+=3Demail&utm_source=3Dnewsletter&utm_campaign=3Dtalent-global-june5codewars=
+jnumpy)
+
+Explore the value and benefits of using NumPy - a library for Python suppor=
+ting large, multi-dimensional arrays and matrices - for Machine Learning, i=
+n this ultimate guide.
+
+###[How AI is solving the biggest design challenge](https://andela.com/insi=
+ghts/how-ai-is-solving-the-biggest-design-challenge/?utm_medium=3Demail&utm=
+_source=3Dnewsletter&utm_campaign=3Dtalent-global-june5codewarsjai)
+
+Tamer Okail offers his experiences as a product designer to explore how art=
+ificial intelligence (AI) can simplify design research to help designers de=
+liver exceptional products and applications.
+
+###[5 tips to get you hired by the world=E2=80=99s top tech companies](http=
+s://andela.com/insights/5-tips-to-help-you-get-hired-by-the-worlds-top-tech=
+-companies/?utm_medium=3Demail&utm_source=3Dnewsletter&utm_campaign=3Dtalen=
+t-global-june5codewarsjgethired)
+
+Want to work for the world's best companies? Of course you do! Let us guide=
+ you with our 5 top tips to help you stand out from the crowd and land your=
+ dream role through Andela.
+
+Latest job opportunities
+------------------------
+
+[Data Engineer](https://talent.andela.com/signup?_gl/?utm_medium=3Demail&ut=
+m_source=3Dnewsletter&utm_campaign=3Dtalent-global-codewarsjob1)
+
+Our high-profile client is seeking a Data Engineer to join their team. You =
+will be responsible for developing data pipelines, integrating data from va=
+rious sources, and optimizing data for consumption. Proficiency in tools su=
+ch as DataBricks, Snowflake, and SQL is crucial for this role!
+
+[QA Engineer](https://talent.andela.com/signup?_gl/?utm_medium=3Demail&utm_=
+source=3Dnewsletter&utm_campaign=3Dtalent-global-codewarsjob1)
+
+This global technology company is building the world=E2=80=99s most accessi=
+ble financial services. With more than $350 million raised from visionary i=
+nvestors, they=E2=80=99ve been listed on the Fortune Impact 20 list, CNBC=
+=E2=80=99s Disruptor 50, and Forbes=E2=80=99 Fintech 50 list for five years=
+ running. They=E2=80=99re currently seeking a QA Engineer with an understan=
+ding of Blockchain to join their team to plan, execute, and report on test =
+results for all products developed within the Product Engineering team.
+
+Time to Train
+-------------
+
+=C2=A0
+
+###[Array plus array](https://www.codewars.com/kata/5a2be17aee1aaefe2a00015=
+1?utm_source=3Dnewsletter)
+
+I'm new to coding and now I want to get the sum of two arrays... Actually t=
+he sum of all their elements. I'll appreciate for your help.
+
+P.S. Each array includes only integer numbers. Output is a number too.
+
+[Dmitry Kudla](https://www.codewars.com/users/Dmitry Kudla?utm_source=3Dnew=
+sletter)
+
+=C2=A0
+
+###[How Green Is My Valley?](https://www.codewars.com/kata/56e3cd1d93c3d940=
+e50006a4?utm_source=3Dnewsletter)
+
+-=20
+
+Input : an array of integers.
+
+
+-=20
+
+Output : this array, but sorted in such a way that there are two wings:
+
+
+-=20
+
+the left wing with numbers decreasing,
+
+
+-=20
+
+the right wing with numbers increasing.
+
+
+-=20
+
+the two wings have the same length. If the length of the array is odd the w=
+ings are around the bottom, if the length is even the bottom is considered =
+to be part of the right wing.
+
+[g964](https://www.codewars.com/users/g964?utm_source=3Dnewsletter)
+
+[**Andela**](http://andela.com)
+
+580 5th Ave Suite 820 New York, NY 10036 United States
+
+This email was sent to=C2=A0************************@gmail.com
+
+You've received this email because you've subscribed to our newsletter.
+
+[Unsubscribe](http://r.news.codewars.com/mk/un/v2/BMbDj60khCHECDuxyfus6e6gS=
+2Vf8BigVoyTk5WSJz5RMvKed3QgMfucgsnLYO7WY2f4cJqc2ni0m4O_ugwjaGYBptgX82IhE7kE=
+AFNFiAUna6DuTVUnTqT_X9jYqJfZ0xXfl6SmQtz9095gZn0gLZxX8Iaer7EGKnehIcei8nEAkbS=
+IRmRJjcvfzQ)
+
+
+---------?=_89124-7187870478870
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=UTF-8
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns=3D"http://www.w3.org/1999/xht=
+ml" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:schemas-micros=
+oft-com:office:office"><head><meta http-equiv=3D"Content-Type" content=3D"t=
+ext/html; charset=3Dutf-8"/><meta http-equiv=3D"X-UA-Compatible" content=3D=
+"IE=3Dedge"/><meta name=3D"format-detection" content=3D"telephone=3Dno"/><m=
+eta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"=
+/><title>NumPy, AI and Data Science: How to get hired by the world=E2=80=99=
+s best companies</title><style type=3D"text/css" emogrify=3D"no">#outlook a=
+{padding:0;}.ExternalClass{width:100%;}.ExternalClass, .ExternalClass p, .E=
+xternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass d=
+iv{line-height:100%;}table td{border-collapse:collapse;mso-line-height-rule=
+:exactly;}.editable.image{font-size:0 !important;line-height:0 !important;}=
+.nl2go_preheader{display:none !important;mso-hide:all !important;mso-line-h=
+eight-rule:exactly;visibility:hidden !important;line-height:0px !important;=
+font-size:0px !important;}body{width:100% !important;-webkit-text-size-adju=
+st:100%;-ms-text-size-adjust:100%;margin:0;padding:0;}img{outline:none;text=
+-decoration:none;-ms-interpolation-mode:bicubic;}a img{border:none;}table{b=
+order-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}th{font-=
+weight:normal;text-align:left;}*[class=3D"gmail-fix"]{display:none !importa=
+nt;}</style><style type=3D"text/css" emogrify=3D"no"> @media (max-width:600=
+px){.gmx-killpill{content:' \03D1'}}</style><style type=3D"text/css" emogri=
+fy=3D"no">@media (max-width:600px){.gmx-killpill{content:' \03D1'}.r0-c{box=
+-sizing:border-box !important;text-align:center !important;valign:top !impo=
+rtant;width:320px !important}.r1-o{border-style:solid !important;margin:0 a=
+uto 0 auto !important;width:320px !important}.r2-i{background-color:#1b1b1e=
+ !important}.r3-c{box-sizing:border-box !important;text-align:center !impor=
+tant;valign:top !important;width:100% !important}.r4-o{border-style:solid !=
+important;margin:0 auto 0 auto !important;width:100% !important}.r5-i{backg=
+round-color:#1b1b1e !important;padding-bottom:20px !important;padding-left:=
+15px !important;padding-right:15px !important;padding-top:10px !important}.=
+r6-c{box-sizing:border-box !important;display:block !important;valign:top !=
+important;width:100% !important}.r7-o{border-style:solid !important;width:1=
+00% !important}.r8-i{padding-left:0px !important;padding-right:0px !importa=
+nt}.r9-o{background-size:auto !important;border-style:solid !important;marg=
+in:0 auto 0 auto !important;width:100% !important}.r10-i{padding-bottom:15p=
+x !important;padding-top:15px !important}.r11-c{box-sizing:border-box !impo=
+rtant;text-align:left !important;valign:top !important;width:100% !importan=
+t}.r12-o{border-style:solid !important;margin:0 auto 0 0 !important;width:1=
+00% !important}.r13-i{padding-bottom:15px !important;padding-top:0px !impor=
+tant;text-align:center !important}.r14-i{background-color:#1b1b1e !importan=
+t;padding-bottom:20px !important;padding-left:15px !important;padding-right=
+:15px !important;padding-top:0px !important}.r15-o{border-style:solid !impo=
+rtant;margin-bottom:0px !important;margin-top:0px !important;width:100% !im=
+portant}.r16-i{padding-top:15px !important;text-align:left !important}.r17-=
+i{padding-bottom:0px !important;padding-top:15px !important}.r18-o{border-s=
+tyle:solid !important;margin:0 auto 0 0 !important;margin-bottom:0px !impor=
+tant;margin-top:0px !important;width:100% !important}.r19-i{padding-bottom:=
+0px !important;padding-top:15px !important;text-align:left !important}.r20-=
+i{padding-bottom:15px !important;padding-top:15px !important;text-align:lef=
+t !important}.r21-o{border-style:solid !important;margin:0 auto 0 auto !imp=
+ortant;margin-bottom:15px !important;margin-top:15px !important;width:100% =
+!important}.r22-i{text-align:center !important}.r23-r{background-color:#ff4=
+d4d !important;border-radius:4px !important;border-width:0px !important;box=
+-sizing:border-box;height:initial !important;padding-bottom:12px !important=
+;padding-left:5px !important;padding-right:5px !important;padding-top:12px =
+!important;text-align:center !important;width:100% !important}.r24-i{backgr=
+ound-color:#1b1b1e !important;padding-bottom:20px !important;padding-left:1=
+5px !important;padding-right:15px !important;padding-top:20px !important}.r=
+25-i{background-color:#1d1c1e !important;padding-bottom:0px !important;padd=
+ing-left:15px !important;padding-right:15px !important;padding-top:0px !imp=
+ortant}.r26-c{box-sizing:border-box !important;width:100% !important}.r27-i=
+{color:#3b3f44 !important;padding-bottom:15px !important;padding-top:15px !=
+important}.r28-c{box-sizing:border-box !important;text-align:center !import=
+ant;width:100% !important}.r29-i{font-size:0px !important;padding-bottom:15=
+px !important;padding-left:65px !important;padding-right:65px !important;pa=
+dding-top:15px !important}.r30-c{box-sizing:border-box !important;width:32p=
+x !important}.r31-o{border-style:solid !important;margin-right:8px !importa=
+nt;width:32px !important}.r32-i{padding-bottom:5px !important;padding-top:5=
+px !important}.r33-o{border-style:solid !important;margin-right:0px !import=
+ant;width:32px !important}.r34-i{padding-bottom:0px !important;padding-top:=
+15px !important;text-align:center !important}.r35-i{padding-bottom:0px !imp=
+ortant;padding-top:0px !important;text-align:center !important}.r36-i{paddi=
+ng-bottom:15px !important;padding-top:15px !important;text-align:center !im=
+portant}body{-webkit-text-size-adjust:none}.nl2go-responsive-hide{display:n=
+one}.nl2go-body-table{min-width:unset !important}.mobshow{height:auto !impo=
+rtant;overflow:visible !important;max-height:unset !important;visibility:vi=
+sible !important;border:none !important}.resp-table{display:inline-table !i=
+mportant}.magic-resp{display:table-cell !important}}</style><!--[if !mso]><=
+!--><style type=3D"text/css" emogrify=3D"no"> </style><!--<![endif]--><styl=
+e type=3D"text/css">p, h1, h2, h3, h4, ol, ul{margin:0;}a, a:link{color:#ff=
+4d4d;text-decoration:underline}.nl2go-default-textstyle{color:#3b3f44;font-=
+family:tahoma,geneva,sans-serif;font-size:16px;line-height:1.5;word-break:b=
+reak-word}.default-button{color:#ffffff;font-family:arial,helvetica,sans-se=
+rif;font-size:16px;font-style:normal;font-weight:normal;line-height:1.15;te=
+xt-decoration:none;word-break:break-word}.default-heading1{color:#1F2D3D;fo=
+nt-family:lucida sans unicode,lucida grande,sans-serif, Arial;font-size:36p=
+x;word-break:break-word}.default-heading2{color:#1F2D3D;font-family:lucida =
+sans unicode,lucida grande,sans-serif, Arial;font-size:32px;word-break:brea=
+k-word}.default-heading3{color:#1F2D3D;font-family:lucida sans unicode,luci=
+da grande,sans-serif, Arial;font-size:24px;word-break:break-word}.default-h=
+eading4{color:#1F2D3D;font-family:lucida sans unicode,lucida grande,sans-se=
+rif, Arial;font-size:18px;word-break:break-word}a[x-apple-data-detectors]{c=
+olor:inherit !important;text-decoration:inherit !important;font-size:inheri=
+t !important;font-family:inherit !important;font-weight:inherit !important;=
+line-height:inherit !important;}.no-show-for-you{border:none;display:none;f=
+loat:none;font-size:0;height:0;line-height:0;max-height:0;mso-hide:all;over=
+flow:hidden;table-layout:fixed;visibility:hidden;width:0;}</style><!--[if m=
+so]><xml> <o:OfficeDocumentSettings> <o:AllowPNG/> <o:PixelsPerInch>96</o:P=
+ixelsPerInch> </o:OfficeDocumentSettings> </xml><![endif]--><style type=3D"=
+text/css">a:link{color:#ff4d4d;text-decoration:underline}</style></head><bo=
+dy bgcolor=3D"#1b1b1e" text=3D"#3b3f44" link=3D"#ff4d4d" yahoo=3D"fix" styl=
+e=3D"background-color:#1b1b1e"> <div><img width=3D"1" height=3D"1" src=3D"h=
+ttp://r.news.codewars.com/mk/op/IoHhDwXlWlnw-wHZU2BwFOJQz0ve6es7sYKCkCjVF0A=
+eB7ODoPrxeVQ7e_GOQ0lHAjgWrg69LWlYxymXH7L9-ajIF7b2plxJh8CvEwCzuBd5ydw0KYH3fb=
+mDNMsjXlk_uDLpwGmEdQRC"/></div> <table cellspacing=3D"0" cellpadding=3D"0" =
+border=3D"0" role=3D"presentation" class=3D"nl2go-body-table" width=3D"100%=
+" style=3D"background-color:#1b1b1e;width:100%"><tbody><tr><td align=3D"cen=
+ter" class=3D"r0-c"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation" width=3D"600" class=3D"r1-o" style=3D"table-layout:=
+fixed;width:600px"><tbody><tr><td valign=3D"top" class=3D"r2-i" style=3D"ba=
+ckground-color:#1b1b1e"> <table width=3D"100%" cellspacing=3D"0" cellpaddin=
+g=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r3-c" al=
+ign=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r4-o" style=3D"table-layout:fixe=
+d;width:100%"><tbody><tr><td class=3D"r5-i" style=3D"background-color:#1b1b=
+1e;padding-bottom:20px;padding-top:10px"> <table width=3D"100%" cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th =
+width=3D"100%" valign=3D"top" class=3D"r6-c" style=3D"font-weight:normal"> =
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n" width=3D"100%" class=3D"r7-o" style=3D"table-layout:fixed;width:100%"><t=
+body><tr><td valign=3D"top" class=3D"r8-i" style=3D"padding-left:15px;paddi=
+ng-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" b=
+order=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r3-c" align=3D"ce=
+nter"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pres=
+entation" width=3D"501" class=3D"r9-o" style=3D"table-layout:fixed;width:50=
+1px"><tbody><tr><td class=3D"r10-i" style=3D"font-size:0px;line-height:0px;=
+padding-bottom:15px;padding-top:15px"> <a href=3D"http://r.news.codewars.co=
+m/mk/cl/f/hF2UypV9tDsJcISv2EfsacH3wcXDtI1sdIUtAs5vIO_dmAeAq0lMTyU18muk7FNe5=
+bbIfadhWQello5Y_7xk5ze50jXuu_3fp2GDi0DhAYOXVhiCfteZqF7gc9k5mi_W6dbLaoLEfUnF=
+04o0FabrbozR4jnjMuRecPmtLnEU_R3-ptN0-2Bu-FgqlxTnWxjLlbDEQih11NS0uPx4WMmzWGy=
+p71-MeeOc_jsffCgq9bOVa0pOCcavCRRVDdRG2xKxcfkJjGJDVfsz-G7-vKJ6QHq8D7hSalllll=
+N0QHcvTg" target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:underlin=
+e" sib_link_id=3D"0" templating=3D"n"> <img src=3D"https://img.news.codewar=
+s.com/im/3113575/30fd45c2fd48d970026a109801829a7ed432a53fb5018468c9a14a50a2=
+ce4319.png?e=3Dkv_80LuohpQX8NeBhPpL-DYGzxQueOr1k3V8ooCN3yNIUQHeqOuQ0ntX9Nkb=
+1gWboYwoogJ4aQX6Ku4MlG0EA4-peco8k9LTthE-0uG8YQF8Nrb54aVWMD-qzRZ_maZU4eihs5n=
+OBN4FlfvAUstSKn8lTOZLBb0Q0w92UTnNPggBJPTV4k_awyNwQQxvNZgmwyIPLD3p-cL8zucxgz=
+idq9oyqo3d3WRkhu8-tgWHSbmA1-8" width=3D"501" border=3D"0" class=3D"" style=
+=3D"display:block;width:100%" sib_img_id=3D"0"/></a> </td> </tr></tbody></t=
+able></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"r13-i nl2go-default-textstyle" style=
+=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;line-=
+height:1.5;word-break:break-word;padding-bottom:15px;text-align:center"> <d=
+iv><p style=3D"margin:0"><span style=3D"color:#ffffff;font-family:Tahoma, g=
+eneva, sans-serif"><i>=C2=A0</i></span><span style=3D"color:#ffffff">Welcom=
+e to Codewars.</span></p><p style=3D"margin:0"><span style=3D"color:#ffffff=
+">This month=E2=80=A6 discover how you can build your career as a data scie=
+ntist, explore our ultimate guide to NumPy for Machine Learning, learn how =
+AI can help solve the biggest design challenge and find out how you can get=
+ hired by the world=E2=80=99s best companies with Andela!</span></p></div> =
+</td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody></=
+table></th> </tr></tbody></table></td> </tr></tbody></table></td> </tr><tr>=
+<td class=3D"r3-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r4-o" sty=
+le=3D"table-layout:fixed;width:100%"><tbody><tr><td class=3D"r14-i" style=
+=3D"background-color:#1b1b1e;padding-bottom:20px"> <table width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody=
+><tr><th width=3D"100%" valign=3D"top" class=3D"r6-c" style=3D"font-weight:=
+normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation" width=3D"100%" class=3D"r15-o" style=3D"table-layout:fixed;widt=
+h:100%"><tbody><tr><td valign=3D"top" class=3D"r8-i" style=3D"padding-left:=
+15px;padding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r11-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fix=
+ed;width:100%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r16-i =
+nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,s=
+ans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-top:=
+15px;text-align:left"> <div><h2 class=3D"default-heading2" style=3D"margin:=
+0;color:#1f2d3d;font-family:lucida sans unicode,lucida grande,sans-serif,Ar=
+ial;font-size:32px;word-break:break-word"><span style=3D"color:#ffffff;font=
+-family:'Lucida sans unicode', 'lucida grande', sans-serif">From the Andela=
+ Blog</span></h2></div> </td> </tr></tbody></table></td> </tr><tr><td class=
+=3D"r3-c" align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" role=3D"presentation" width=3D"570" class=3D"r4-o" style=3D"border=
+-collapse:separate;border-radius:89px;table-layout:fixed;width:570px"><tbod=
+y><tr><td class=3D"r17-i" style=3D"border-radius:89px;font-size:0px;line-he=
+ight:0px;padding-top:15px"> <img src=3D"https://img.news.codewars.com/im/31=
+13575/c1a5091099266d7ddc1d09f2755fde8281312197bad0984c25f1c134ba945227.jpg?=
+e=3DD8VyGepbglTRhRUEiv5j5zesnyPNZi9hDfraJGIF8yfr1QnIDi2UberRFC9sH_Nf7efCrF2=
+dci1aKLaock9vKxLn8xy9LicINB1kxi1HZPTi0UDxXCCI6Ycjt5ECWf6vFOxq-3CucLBPNZQDfm=
+eAmJ7aUR4C_wB7ipzv32AsjLp_xmMYGaKcREh_7BIoljS04V_7u6XEJ0zxuhSH2tqkSgM6gFNbu=
+rKgnDDgHztMQJeCluE" width=3D"570" border=3D"0" class=3D"" style=3D"display:=
+block;width:100%;border-radius:89px" sib_img_id=3D"1"/></td> </tr></tbody><=
+/table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacin=
+g=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%"=
+ class=3D"r18-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td ali=
+gn=3D"left" valign=3D"top" class=3D"r19-i nl2go-default-textstyle" style=3D=
+"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;line-hei=
+ght:1.5;word-break:break-word;padding-top:15px;text-align:left"> <div><p st=
+yle=3D"margin:0;color:#677876;font-size:26px"><span style=3D"color:#ffffff;=
+font-family:'Lucida sans unicode', 'lucida grande', sans-serif">The Data Sc=
+ience career roadmap</span></p></div> </td> </tr></tbody></table></td> </tr=
+><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r12-o" =
+style=3D"table-layout:fixed;width:100%"><tbody><tr><td align=3D"left" valig=
+n=3D"top" class=3D"r20-i nl2go-default-textstyle" style=3D"color:#3b3f44;fo=
+nt-family:tahoma,geneva,sans-serif;font-size:16px;line-height:1.5;word-brea=
+k:break-word;padding-bottom:15px;padding-top:15px;text-align:left"> <div><p=
+ style=3D"margin:0"><span style=3D"color:#ffffff;font-family:Tahoma, geneva=
+, sans-serif">Whether you&#39;re just starting out, or honing your craft, w=
+e&#39;ve created an in-depth roadmap to help you ascend the career ladder i=
+n Data Science!=C2=A0</span></p></div> </td> </tr></tbody></table></td> </t=
+r><tr><td class=3D"r3-c" align=3D"center"> <table cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation" width=3D"285" class=3D"r21-o"=
+ style=3D"table-layout:fixed;width:285px"><tbody><tr class=3D"nl2go-respons=
+ive-hide"><td height=3D"15" style=3D"font-size:15px;line-height:15px">=C2=
+=AD</td> </tr><tr><td height=3D"18" align=3D"center" valign=3D"top" class=
+=3D"r22-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahom=
+a,geneva,sans-serif;font-size:16px;line-height:1.5;word-break:break-word"> =
+<!--[if mso]> <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:=
+w=3D"urn:schemas-microsoft-com:office:word" href=3D"http://r.news.codewars.=
+com/mk/cl/f/MsyLhzGksNkY3uHizcpGUUfvC81_i40gEo-BZccjqPwdOJQ1S1Y_J70qLpfpEbU=
+QjG4GVYpD8F7skWLa3IKz3s7Fs6nwqeRexAi6fmR4a_aJB218b81IEioGBYuKLSx0kDirwJ3I26=
+uHcGKMvAeBMQ3rOTypR2d2msqvNVUhSLJuowQfyk-c_RArQZguhBjYrH2t3I-52G30wH-nQl6PN=
+a1yIBAPLmdL0sWhOyJgoEGz5Qem1wTsJfDNSHQT-uxtQg3ieoOlq58xQjTk6HlbNEE8hf61kppd=
+g9Kyq9Rv_6ahr1oa6TQ9wTCzfBC8KIugVIoLSgYVgdDdjWUT5OYzVVNDY22-hwuLVn4uzf9T" s=
+tyle=3D"v-text-anchor:middle; height: 41px; width: 284px;" arcsize=3D"10%" =
+fillcolor=3D"#ff4d4d" strokecolor=3D"#ff4d4d" strokeweight=3D"1px" data-btn=
+=3D"1" sib_link_id=3D"1" templating=3D"n"> <w:anchorlock> </w:anchorlock> <=
+v:textbox inset=3D"0,0,0,0"> <div style=3D"display:none;"> <center class=3D=
+"default-button"><span>Build your career</span></center> </div> </v:textbox=
+> </v:roundrect> <![endif]--> <!--[if !mso]><!-- --> <a href=3D"http://r.ne=
+ws.codewars.com/mk/cl/f/9cHFHUuEHqW40cJqXiYVKwV-fevDV6nNYdsETUGDc08ledEAdeJ=
+e4YoqMDrlSOpD32FYba5o2TpUEBBnKDOtNZ98pFFiLGZ26swMya6DBNufFNfOcUlBO3NGvTG_LC=
+coGyXas8ZgTwXmHw2FTaGRiTPN76UqZrTyVyxaJIiYWw1dMS_NHvkQmTDFg9OMleZtp4qpaz_Vq=
+Gk0SmmJkJVibsHD9mJOOg03iGPHIcvZg8LmbgPOveAd6aanQ-Pn0OLJVL56yzNwWClRQU9KdrOf=
+S-v4hsbrNsPe0gKxCCQ_v2QCO6uV-nx-_7RT3ztA48XtFL6eH9XaxyYmDEhzTmExK9nZb3GB3I2=
+VHIz09sVV" class=3D"r23-r default-button" target=3D"_blank" data-btn=3D"1" =
+style=3D"font-style:normal;font-weight:normal;line-height:1.15;text-decorat=
+ion:none;word-break:break-word;border-style:solid;word-wrap:break-word;disp=
+lay:inline-block;-webkit-text-size-adjust:none;background-color:#ff4d4d;bor=
+der-color:#ff4d4d;border-radius:4px;border-width:0px;color:#ffffff;font-fam=
+ily:arial,helvetica,sans-serif;font-size:16px;height:18px;mso-hide:all;padd=
+ing-bottom:12px;padding-left:5px;padding-right:5px;padding-top:12px;width:2=
+75px" sib_link_id=3D"1" templating=3D"n"> <span>Build your career</span></a=
+> <!--<![endif]--> </td> </tr><tr class=3D"nl2go-responsive-hide"><td heigh=
+t=3D"15" style=3D"font-size:15px;line-height:15px">=C2=AD</td> </tr></tbody=
+></table></td> </tr></tbody></table></td> </tr></tbody></table></th> </tr><=
+/tbody></table></td> </tr></tbody></table></td> </tr><tr><td class=3D"r3-c"=
+ align=3D"center"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" =
+role=3D"presentation" width=3D"100%" class=3D"r4-o" style=3D"table-layout:f=
+ixed;width:100%"><tbody><tr><td class=3D"r24-i" style=3D"background-color:#=
+1b1b1e;padding-bottom:20px;padding-top:20px"> <table width=3D"100%" cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr>=
+<th width=3D"100%" valign=3D"top" class=3D"r6-c" style=3D"font-weight:norma=
+l"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation" width=3D"100%" class=3D"r7-o" style=3D"table-layout:fixed;width:100%=
+"><tbody><tr><td valign=3D"top" class=3D"r8-i" style=3D"padding-left:15px;p=
+adding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r11-c" align=
+=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"=
+presentation" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;wi=
+dth:100%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r16-i nl2go=
+-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-s=
+erif;font-size:16px;line-height:1.5;word-break:break-word;padding-top:15px;=
+text-align:left"> <div><h2 class=3D"default-heading2" style=3D"margin:0;col=
+or:#1f2d3d;font-family:lucida sans unicode,lucida grande,sans-serif,Arial;f=
+ont-size:32px;word-break:break-word"><span style=3D"color:#ffffff;font-fami=
+ly:'Lucida sans unicode', 'lucida grande', sans-serif">Resources</span></h2=
+></div> </td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></=
+tbody></table></th> </tr></tbody></table></td> </tr></tbody></table></td> <=
+/tr><tr><td class=3D"r3-c" align=3D"center"> <table cellspacing=3D"0" cellp=
+adding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r4-=
+o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td class=3D"r14-i" s=
+tyle=3D"background-color:#1b1b1e;padding-bottom:20px"> <table width=3D"100%=
+" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><t=
+body><tr><th width=3D"100%" valign=3D"top" class=3D"r6-c" style=3D"font-wei=
+ght:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation" width=3D"100%" class=3D"r7-o" style=3D"table-layout:fixed=
+;width:100%"><tbody><tr><td valign=3D"top" class=3D"r8-i" style=3D"padding-=
+left:15px;padding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cell=
+padding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r1=
+1-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" role=3D"presentation" width=3D"100%" class=3D"r12-o" style=3D"table-layou=
+t:fixed;width:100%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r=
+16-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,gen=
+eva,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding=
+-top:15px;text-align:left"> <div><h3 class=3D"default-heading3" style=3D"ma=
+rgin:0;color:#1f2d3d;font-family:lucida sans unicode,lucida grande,sans-ser=
+if,Arial;font-size:24px;word-break:break-word"><a href=3D"http://r.news.cod=
+ewars.com/mk/cl/f/ryKVNce3M-cD-MoGg1U7bM4pSLK4AsTg64ai7-hUtwwFnEjfd9JNSjiEl=
+z8iF2h4hK1dGV76CaJVicr0pLR6xtLNEXevSj9Rds6InbbIrpCSDmrvLTjbOlXCC9wQt88s7iaF=
+rZ03VzfleodRFTdo2i6kzEjSbPDV7HVI-ghgxO5u_mPd5xRkU7z47yp5ert5XYmEW-g6vlIOjqX=
+S4OdzrFaEb8OjERkdsbZqi5ZPjYShM3EbLJFnibg7lRDYL3G8wHUDbBqApU7kwylJ1dKiPxZZvt=
+GqC5xc57nZY27ruJZga_qRYm6gWhAwIgByZMMrnv7cdcuy174BPeBUiGk3X_m3ZlGTSClhm_2Lq=
+mDJPe4pjwQPFy999wUZbdrMfic" target=3D"_blank" style=3D"color:#ff4d4d;text-d=
+ecoration:underline" sib_link_id=3D"2" templating=3D"n"><span style=3D"colo=
+r:#ffffff;font-family:'Lucida sans unicode', 'lucida grande', sans-serif">T=
+he ultimate guide to NumPy for Machine Learning=C2=A0</span></a></h3></div>=
+ </td> </tr></tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D"lef=
+t"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"present=
+ation" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100=
+%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r20-i nl2go-defaul=
+t-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;fo=
+nt-size:16px;line-height:1.5;word-break:break-word;padding-bottom:15px;padd=
+ing-top:15px;text-align:left"> <div><p style=3D"margin:0"><span style=3D"co=
+lor:#ffffff;font-family:Tahoma, geneva, sans-serif">Explore the value and b=
+enefits of using NumPy - a library for Python supporting large, multi-dimen=
+sional arrays and matrices - for Machine Learning, in this ultimate guide.<=
+/span></p></div> </td> </tr></tbody></table></td> </tr><tr><td class=3D"r11=
+-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0"=
+ role=3D"presentation" width=3D"100%" class=3D"r12-o" style=3D"table-layout=
+:fixed;width:100%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r1=
+6-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,gene=
+va,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-=
+top:15px;text-align:left"> <div><h3 class=3D"default-heading3" style=3D"mar=
+gin:0;color:#1f2d3d;font-family:lucida sans unicode,lucida grande,sans-seri=
+f,Arial;font-size:24px;word-break:break-word"><a href=3D"http://r.news.code=
+wars.com/mk/cl/f/NmnTCCTCziWEhJGhOkeV2abFI6zy5BwOVsu4xAFQJFjQWuiDhNjnNfWyeg=
+dfE3A5LY_7z6B8j19KRxNn3oAg0YQXgcx13bk-ognKNt2H3HLofRI26j1dUY61nYk5wGi6MLo-T=
+laDajO1-MbtjKvLce9Hwyoz67etyBr2OvWimMCP5DCQ5kcrjEKHy-urcvi1RgzoXCsoN1E-4MC6=
+lEBPE1wjgFhOq0XMhTzGxNBKdvcGl8IJDTfcW_Ab24bepmPKEFYpHW3w4cM7qBtQ4b-1_QVmdnh=
+YCstYCOCZykyWUq3Z9sXVyyfeH0mfBHS1j9fNjeug-KVyLwVNh5jsYWGBwne8b2joLgnCF8YpCi=
+EYVZOTg6Ji3WB2UN63PjwJ" target=3D"_blank" style=3D"color:#ff4d4d;text-decor=
+ation:underline" sib_link_id=3D"3" templating=3D"n"><span style=3D"color:#f=
+fffff;font-family:'Lucida sans unicode', 'lucida grande', sans-serif">How A=
+I is solving the biggest design challenge</span></a></h3></div> </td> </tr>=
+</tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><t=
+r><td align=3D"left" valign=3D"top" class=3D"r20-i nl2go-default-textstyle"=
+ style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px=
+;line-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px=
+;text-align:left"> <div><p style=3D"margin:0"><span style=3D"color:#ffffff"=
+>Tamer Okail offers his experiences as a product designer to explore how ar=
+tificial intelligence (AI) can simplify design research to help designers d=
+eliver exceptional products and applications.</span></p></div> </td> </tr><=
+/tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><t=
+r><td align=3D"left" valign=3D"top" class=3D"r16-i nl2go-default-textstyle"=
+ style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px=
+;line-height:1.5;word-break:break-word;padding-top:15px;text-align:left"> <=
+div><h3 class=3D"default-heading3" style=3D"margin:0;color:#1f2d3d;font-fam=
+ily:lucida sans unicode,lucida grande,sans-serif,Arial;font-size:24px;word-=
+break:break-word"><a href=3D"http://r.news.codewars.com/mk/cl/f/1OoGDBo_jYE=
+J3nCHxTYycwEcYUtp1UupORDwQHf46KnOpozbA8mRKezSJwhokLLaY752ocHUk5dBVnn9UqcNa0=
+0FptamATUZpZDwBRDhTtj79W4dg58Mk8OkQ3KxGsNBTWfWvdhE7VIY1rJ5AqmwefbR0oc0NRAZ9=
+TW0vzZqb-pHTdYw1iRP08D21pxv76YabNFo-kSe97pjkp7QIyUY3fowavKiGvehbPz3MBMljy4z=
+rH1m4OzPuMbrgAvMvG84n2EMLyTqIa92kNJyflO8jdaOEct9U8GuiV7pXb80Kol9duvgebdZJMp=
+3OSaz4u26ROIUqMP-8R5O0RvqEr4zGNIXMCsxfgdjVFOMp_bMC0J3etZLYqJmP2bfu5HpHgUK0-=
+rRyf8aIanzBkcS" target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:un=
+derline" sib_link_id=3D"4" templating=3D"n"><span style=3D"color:#ffffff;fo=
+nt-family:'Lucida sans unicode', 'lucida grande', sans-serif">5 tips to get=
+ you hired by the world=E2=80=99s top tech companies</span></a></h3></div> =
+</td> </tr></tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D"left=
+"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presenta=
+tion" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%=
+"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r20-i nl2go-default=
+-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;fon=
+t-size:16px;line-height:1.5;word-break:break-word;padding-bottom:15px;paddi=
+ng-top:15px;text-align:left"> <div><p style=3D"margin:0"><span style=3D"col=
+or:#ffffff;font-family:Tahoma, geneva, sans-serif">Want to work for the wor=
+ld&#39;s best companies? Of course you do! Let us guide you with our 5 top =
+tips to help you stand out from the crowd and land your dream role through =
+Andela.</span></p></div> </td> </tr></tbody></table></td> </tr></tbody></ta=
+ble></td> </tr></tbody></table></th> </tr></tbody></table></td> </tr></tbod=
+y></table></td> </tr><tr><td class=3D"r3-c" align=3D"center"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r4-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td =
+class=3D"r25-i" style=3D"background-color:#1d1c1e"> <table width=3D"100%" c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbod=
+y><tr><th width=3D"100%" valign=3D"top" class=3D"r6-c" style=3D"font-weight=
+:normal"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation" width=3D"100%" class=3D"r7-o" style=3D"table-layout:fixed;widt=
+h:100%"><tbody><tr><td valign=3D"top" class=3D"r8-i" style=3D"padding-left:=
+15px;padding-right:15px"> <table width=3D"100%" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r11-c" =
+align=3D"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" rol=
+e=3D"presentation" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fix=
+ed;width:100%"><tbody><tr><td align=3D"left" valign=3D"top" class=3D"r16-i =
+nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,s=
+ans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-top:=
+15px;text-align:left"> <div><h2 class=3D"default-heading2" style=3D"margin:=
+0;color:#1f2d3d;font-family:lucida sans unicode,lucida grande,sans-serif,Ar=
+ial;font-size:32px;word-break:break-word"><span style=3D"color:#ffffff;font=
+-family:'Lucida sans unicode', 'lucida grande', sans-serif">Latest job oppo=
+rtunities</span></h2></div> </td> </tr></tbody></table></td> </tr></tbody><=
+/table></td> </tr></tbody></table></th> </tr></tbody></table></td> </tr></t=
+body></table></td> </tr><tr><td class=3D"r3-c" align=3D"center"> <table cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r4-o" style=3D"table-layout:fixed;width:100%"><tbody><tr=
+><td class=3D"r24-i" style=3D"background-color:#1b1b1e;padding-bottom:20px;=
+padding-top:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0=
+" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"100%" valign=
+=3D"top" class=3D"r6-c" style=3D"font-weight:normal"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r7-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td valign=
+=3D"top" class=3D"r8-i" style=3D"padding-left:15px;padding-right:15px"> <ta=
+ble width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation"><tbody><tr><td class=3D"r11-c" align=3D"left"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td=
+ align=3D"left" valign=3D"top" class=3D"r19-i nl2go-default-textstyle" styl=
+e=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;line=
+-height:1.5;word-break:break-word;padding-top:15px;text-align:left"> <div><=
+p style=3D"margin:0;font-size:22px"><a href=3D"http://r.news.codewars.com/m=
+k/cl/f/wjA0ZLr51Mu7cNUtdtBidsl6c6dqzRXthY1ku66cBS4GKIlYVD_sg9vkQrli-8ALuExF=
+38-nCgSsxvcWOLYJBG79IhPfi5tRX3nbr2-IZFRbLLvPxEghur3tCiQUpiG9SVXlq-zR-O2HqgG=
+zD2Zo6ZbHZnAOwGxtyJguWBdtv7xHp20vwB7h0caZVgbzZWTy9rp5jGfkm2GtSbtQKTDc6C3OWC=
+s44qIFjplXMZiZIXaJu-KJW3sKMDlKr_iQ5s7qu_opoVShZwItc9bg-ZFwQ12p-tNx2eB0vVGI6=
+l5f4TgOs4J_t8P9LpSn0qXHwqD6JpzLHpa9rg" target=3D"_blank" style=3D"color:#ff=
+4d4d;text-decoration:underline" sib_link_id=3D"5" templating=3D"n"><span st=
+yle=3D"color:#ffffff">Data Engineer</span></a></p></div> </td> </tr></tbody=
+></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspac=
+ing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100=
+%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td a=
+lign=3D"left" valign=3D"top" class=3D"r20-i nl2go-default-textstyle" style=
+=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;line-=
+height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px;text-=
+align:left"> <div><p style=3D"margin:0"><span style=3D"color:#ffffff;font-f=
+amily:Tahoma, geneva, sans-serif">Our high-profile client is seeking a Data=
+ Engineer to join their team. You will be responsible for developing data p=
+ipelines, integrating data from various sources, and optimizing data for co=
+nsumption. Proficiency in tools such as DataBricks, Snowflake, and SQL is c=
+rucial for this role!</span></p></div> </td> </tr></tbody></table></td> </t=
+r></tbody></table></td> </tr></tbody></table></th> </tr></tbody></table></t=
+d> </tr></tbody></table></td> </tr><tr><td class=3D"r3-c" align=3D"center">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r4-o" style=3D"table-layout:fixed;width:100%"><=
+tbody><tr><td class=3D"r24-i" style=3D"background-color:#1b1b1e;padding-bot=
+tom:20px;padding-top:20px"> <table width=3D"100%" cellspacing=3D"0" cellpad=
+ding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"100%"=
+ valign=3D"top" class=3D"r6-c" style=3D"font-weight:normal"> <table cellspa=
+cing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"10=
+0%" class=3D"r7-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td v=
+align=3D"top" class=3D"r8-i" style=3D"padding-left:15px;padding-right:15px"=
+> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" ro=
+le=3D"presentation"><tbody><tr><td class=3D"r11-c" align=3D"left"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><t=
+r><td align=3D"left" valign=3D"top" class=3D"r19-i nl2go-default-textstyle"=
+ style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px=
+;line-height:1.5;word-break:break-word;padding-top:15px;text-align:left"> <=
+div><p style=3D"margin:0;font-size:22px"><a href=3D"http://r.news.codewars.=
+com/mk/cl/f/7fRD2IlNuckZk7J5E17PdebnAG9Qzuv9ZuMn4kJTahbJYjuEy3lgzeZK7uC3LRn=
+vOCbbwxd9Zu1bZ9XK7p0BCxhZQqhMi2zve9p_sMhaWgVr8eStcA-NQENruV7VgnkCPsmAuCj5bR=
+C6mT_RG-IctJ2ut4tS-ikAkhG_uY7orgYWgRRoHaT0nt6Or17A3HA6NVTCp13INGnq6CcftPyv3=
+GHbG0vpbYpvnCXBvXxeAhvC_1zvQNidrgwSGZBQMb4LjRmHVCKD1FoIVfLRMv8-ssDMQcQ2rTwD=
+OgqCp-mVrWIHNwxgWdZAbFOnsi-EDnaWH0PIkT52IQ" target=3D"_blank" style=3D"colo=
+r:#ff4d4d;text-decoration:underline" sib_link_id=3D"6" templating=3D"n"><sp=
+an style=3D"color:#ffffff">QA Engineer</span></a></p></div> </td> </tr></tb=
+ody></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cells=
+pacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"=
+100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><t=
+d align=3D"left" valign=3D"top" class=3D"r20-i nl2go-default-textstyle" sty=
+le=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;lin=
+e-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px;tex=
+t-align:left"> <div><p style=3D"margin:0"><span style=3D"color:#ffffff;font=
+-family:Tahoma, geneva, sans-serif">This global technology company is build=
+ing the world=E2=80=99s most accessible financial services. With more than =
+$350 million raised from visionary investors, they=E2=80=99ve been listed o=
+n the Fortune Impact 20 list, CNBC=E2=80=99s Disruptor 50, and Forbes=E2=80=
+=99 Fintech 50 list for five years running. They=E2=80=99re currently seeki=
+ng a QA Engineer with an understanding of Blockchain to join their team to =
+plan, execute, and report on test results for all products developed within=
+ the Product Engineering team.</span></p></div> </td> </tr></tbody></table>=
+</td> </tr></tbody></table></td> </tr></tbody></table></th> </tr></tbody></=
+table></td> </tr></tbody></table></td> </tr><tr><td class=3D"r3-c" align=3D=
+"center"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"p=
+resentation" width=3D"100%" class=3D"r4-o" style=3D"table-layout:fixed;widt=
+h:100%"><tbody><tr><td class=3D"r14-i" style=3D"background-color:#1b1b1e;pa=
+dding-bottom:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"100%" valign=
+=3D"top" class=3D"r6-c" style=3D"font-weight:normal"> <table cellspacing=3D=
+"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" cla=
+ss=3D"r7-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td valign=
+=3D"top" class=3D"r8-i" style=3D"padding-left:15px;padding-right:15px"> <ta=
+ble width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D=
+"presentation"><tbody><tr><td class=3D"r11-c" align=3D"left"> <table cellsp=
+acing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"1=
+00%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td=
+ align=3D"left" valign=3D"top" class=3D"r16-i nl2go-default-textstyle" styl=
+e=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;font-size:16px;line=
+-height:1.5;word-break:break-word;padding-top:15px;text-align:left"> <div><=
+h2 class=3D"default-heading2" style=3D"margin:0;color:#1f2d3d;font-family:l=
+ucida sans unicode,lucida grande,sans-serif,Arial;font-size:32px;word-break=
+:break-word"><span style=3D"color:#ffffff;font-family:'Lucida sans unicode'=
+, 'lucida grande', sans-serif">Time to Train</span></h2></div> </td> </tr><=
+/tbody></table></td> </tr><tr><td class=3D"r26-c"> <table cellspacing=3D"0"=
+ cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"570" class=
+=3D"r7-o" style=3D"table-layout:fixed;width:570px"><tbody><tr><td class=3D"=
+r10-i nl2go-default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,ge=
+neva,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;paddin=
+g-bottom:15px;padding-top:15px"> <table border=3D"0" cellpadding=3D"0" cell=
+spacing=3D"0" width=3D"100%" class=3D"cw_kata_title"><tbody><tr><td width=
+=3D"60"><img align=3D"none" height=3D"26" src=3D"https://img.news.codewars.=
+com/im/3113575/845b6b2f5314aff535481852e10748d6668075ae17b06a837249911f87bf=
+07ac.png?e=3DC12N5VpB-QHrged1hLAEHw8hKvFKcCdKN9rtW6Yekch_IQff3U3CYkYp5NuCGo=
+lk3vCPJq6DsSzC5FEA-a-rbdVIPmgt8CR3PRJzZ_LPWprnNBU4roDEYm3MS1W5P-bayZVR3DVl9=
+X70nEePpd8-WHd6leTC3GFrYMP20IQFmxRXYg" width=3D"50" sib_img_id=3D"2"/> =C2=
+=A0 </td> <td> <h3 style=3D"margin:0"> <a href=3D"http://r.news.codewars.co=
+m/mk/cl/f/DICOq6Fqck8elAaYhxxZOAjeCodVSDjkmhuPn0ofT8P-r0TIZRszMLV4cxRpjc1vK=
+pOEO5wnxrOvnoPZlFhXz_0pe8dwVlFjupI_FCewbz2G7ffzn8dNcfzLd0PR9n63sqnaNJWhqNyU=
+jgcpMfKNpvQDYUdKQP_LwtHEvWIx2Nbv_oa_lrAC2x58LomJTaDo0cGpfHzahaZGltRZt88Tf1G=
+2JR-MvW_DT4OneeBxYMT269OJxngzpDMDmgsIdsR59jMmLgPyv3jCtc-3pe7nojDuSM6SOSfmmO=
+7R-cIQNoIx9HC_NAW937zUbV6SUVBfH9G6G6DBn6qzGO3m56t8ziBI5wVjAg" target=3D"_bl=
+ank" style=3D"color:#cb3d2b;font-weight:normal;text-decoration:none;word-wr=
+ap:break-word" sib_link_id=3D"7" templating=3D"n">Array plus array</a> </h3=
+> </td> </tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%" class=3D"cw_kata_languages"><tbody><tr><td> <img a=
+lign=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575=
+/a05a0f699e93aadc868ea4c38608978b463c05bdeed76812afe1f8c182cd6f74.png?e=3DL=
+bG0CmTE_fXaTFR2JICq7pLdSYX_jsv-eFfa_uOwIU_8hc0DIyGvgX23OQaBSRwvjS1Q7_-6BvIP=
+VYDxKf86n6Zfzy5cD4dOtwgqjeGdcYBNfegjCRnZnTvzn3pEpveDAWemgy1AFSto_kCL94zoUsp=
+LSWZzWjg806AY" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_i=
+mg_id=3D"3"/><img align=3D"none" height=3D"20" src=3D"https://img.news.code=
+wars.com/im/3113575/e14b33df490040d0071e65e4b619449884d51dbdcf1b0253611dc88=
+4eb570b15.png?e=3DCQfJS3gqBYR61d4U1JtwY9OGM2RndTT0otorNLcHU8Ssce7ePzUQpcGzB=
+PgPKbeHSuMrXkU5UZMQoyYsuJ96Zut7SQCLeKhovyxB5kl14ISI3KsddkC_VjY6FDZnFRT4YlEd=
+TN0qWMCRgCkw2u38uMUFLJzx07A8NKb0DmNb" width=3D"20" style=3D"margin-right:5p=
+x;margin-top:5px" sib_img_id=3D"4"/><img align=3D"none" height=3D"20" src=
+=3D"https://img.news.codewars.com/im/3113575/bac9fb7cd6e8d6db991370c06254f9=
+7cc52db98a717e285510db187aa010ec72.png?e=3DpjXkpcCgQRyZ5xtf-8V_seYOXXZGTngD=
+TjDA3i7ulId-p2_b_r3z47V_e_KjBR9A3DpNIAYiFL_kiuT7iJGVqi3m9pnLglfF0N0d7EN7jnX=
+blBXyPqOA-xuwS7y4CmXAVOg1xNiZodJy0fF0IJLD82u5TRBZHYNdtDeBFBWn9Rdz6T3q6LA" w=
+idth=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"5"/><im=
+g align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113=
+575/4a92d989c83cd4f6d3c488b19a0d8c6c48f77e07ddbfc38105c8bf3af1073eb4.png?e=
+=3DZxXvv88B-eSD6Jo2TyhDwykK5aNGxK9gaVkz0J1Gh9awib2TqYIUMYa9SFJitKS1gObaTt_h=
+oUXWgVZ4mVudhFhnbngfL1Wqt_G62S6w41KoDaw71cIC8idUPRMojd5WSkYA6tRU9xsKLKop-Xb=
+aMianJmIO9u6S6jviAUE" width=3D"20" style=3D"margin-right:5px;margin-top:5px=
+" sib_img_id=3D"6"/><img align=3D"none" height=3D"20" src=3D"https://img.ne=
+ws.codewars.com/im/3113575/3a784968462b598bcad47337b9abc2b162eeba418618f04e=
+ca115a29253ff8d9.png?e=3DiQuFhZW5lPEZsBR3eYdTPHf8UmzcRu9NGPfvvve9aUuOqTtw34=
+bzAXxcFpI6KMNtNRJFcBtmRV8Mup_5_sm4WWDVle3Ret3PrVQJyM-WjI-MtrA7pHk3xBRp0fpdW=
+CmhRvO-Tfh-Ti6e8NPKTidDiFWDnvj6alOAPC8iEpXaPbb5" width=3D"20" style=3D"marg=
+in-right:5px;margin-top:5px" sib_img_id=3D"7"/><img align=3D"none" height=
+=3D"20" src=3D"https://img.news.codewars.com/im/3113575/9b5c703c9857ff4019e=
+e6828b3e3bd5b46b1acc77c724c1d31a7585af5b74c43.png?e=3DAa6YVAbQ7MZNih5RPUUq5=
+eU5yx2Pf5i7A70MqqoEl02HU4tHGwwS3eqSjQbbM_MEv1WL3US8bz0VPGUKJYOXrMpWcoN0FWKC=
+F7mknMCVrnYGtE0G6bjl2vm3WSY-Yg5ptpiLgpOc7vY2TRccuJZbQrpB_AUStymDOVcK0ZmquEo=
+" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"8"/>=
+<img align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3=
+113575/35ba9d1c60b7dd47c33749e470ae8d1a8a0a2b67d7fe9a792643f542f63644e2.png=
+?e=3Dl-tJ8DlndeIFyaG83__GNKnHFg6hPliXBIe28sD0vKJvQihDSnfpB_siVqQLcaKrdgHEbh=
+7GCyELs64yUpPRDnkhSxBbHlWiCd3Py3EpHLMWeQ1c7ImjtIJK0WLExmCaHT6wmRcFFP2-AWk99=
+689my08m552kY1IPBtrj4YIoqI" width=3D"20" style=3D"margin-right:5px;margin-t=
+op:5px" sib_img_id=3D"9"/><img align=3D"none" height=3D"20" src=3D"https://=
+img.news.codewars.com/im/3113575/6ad7de50fb56adb7dc5ff8c478df92763e85015594=
+764f13fa0923a23161fd6e.png?e=3Dj0PFEwERyo_dKhGs9Nd4DVBH74APb4l6RsyImiO_8Xc5=
+bULbzj_L8MbTrvE1bmnrwoFev0x1afH0f_N7g4dmQpThJTh7c_MC-nj4XfthqLIyaLfm4y4lQrZ=
+AKFD24buoAPl7sIZ97UTAM-Ht_0bOjcob1MtzSBtYqn9PJojNuPfo" width=3D"20" style=
+=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"10"/><img align=3D"none"=
+ height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/7ec0060a2707=
+e345bf271a95aa2edfbab93a1b20750b3e098169abf673487018.png?e=3D6tBvo3bz8J1HSU=
+qgt6lVScsNdzFNa9i-bLJA187inZMef0VIotw7WLpS_Wc1FvtDB8BYgWXeRFadihq4Cy5gk34ma=
+C51wNw67NJJwyjlBLxOzIryZhsuSfGPx9xg55IqzkaGFVlM_F2SCrBo9UF1iSoxjWEnLapNvZQK=
+bQgp" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"=
+11"/><img align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com=
+/im/3113575/cbdbdd273faad7b5732765e3b7c33695946fa8655992d2023754f7d022463bc=
+8.png?e=3Ds2vdNmqm4KgBQKlkVJ8D5YvOQdneNRL9qNXkJO3W2tKFp-mZD70arJOyMUBPbgMEk=
+7kQme_1zM4wBOoNdYcSWEEfSUWRtQmoblUgdBsl8EOTpkSoHogrgUPqsqkbFgZGssXI9okzxT9P=
+0chBED6EfehrlWyPQZ0RwMHsbKUJ_Blt2EiC" width=3D"20" style=3D"margin-right:5p=
+x;margin-top:5px" sib_img_id=3D"12"/><img align=3D"none" height=3D"20" src=
+=3D"https://img.news.codewars.com/im/3113575/155ce3da97fc06f95a0023a1823cd4=
+96bd1d3ec5577b12cf2d0558a9bca16b76.png?e=3DYK50NAuRjoEjYhSw68VWqs9DBP_WkmgI=
+RgsyZ8X6OUz4CHm-zcvVC0wceZqTeGe7nTS_2IDCI8AEOBgEjkvKXKU9OuedWkpElAxtHxc0wj9=
+dSzAKeDm4-ZpN9iv0SUgk4et5aJgotAF0FQCXTImEWLiR1UlOh_yNdma-ykUP7g" width=3D"2=
+0" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"13"/><img align=
+=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/63f=
+b6bac5aee55a5b8ff56c4b92cdfb708bcd6258598a8f483c882c81b146e26.png?e=3DIdx5O=
+d6lGcoTkEkXBKTLEgwhk26aW0OBncQKKysbYPhQUwBeUuZ0LlGZt9L7rzhjLxefH5kB3IdRc9LW=
+UjlbNJZZ5EKjkuzAXKSG6U4CFdDcdqVTPLq5a6DLY5oisoyGS6M_sFrO950DVrWdMn3y826gYko=
+HHVONu3C8ULm_" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_i=
+mg_id=3D"14"/><img align=3D"none" height=3D"20" src=3D"https://img.news.cod=
+ewars.com/im/3113575/767c8fb9cc968870fe7d89f78a7b73f949616a0054c3bb2555ba88=
+f029180e80.png?e=3DUHidURY0Mj03SSH2PMto4jyG68AdOFcH6wnCz51M31WTBICMzf9tAhMe=
+Bi2lPNhbL1YPVGmhAAmSrijw_goJ6q2hY2hCnKdRXKsYaHJ7w_AKa0dtUPfgdk-6FWrfDxqt3vN=
+CUb1H3RVTCsx_CSrNfl2y_q06y7bePPqIYQkOewM6h0Lf" width=3D"20" style=3D"margin=
+-right:5px;margin-top:5px" sib_img_id=3D"15"/><img align=3D"none" height=3D=
+"20" src=3D"https://img.news.codewars.com/im/3113575/08e31c80f878f106865735=
+ab2828bd94a297742bdd9ef2d7aa3213c29f986506.png?e=3DUclVPsYyQYyOEVLFmyxwOYkf=
+s3j5qy-n_LSghJIUBrEL8NNdiRNuU79fCp8QEbwUQ1yKeUSR_l6hsOllUAZo7oMpAUqJYCFkn13=
+fnCNk_WqvAqrqOn42KXKpdBI4r8R7N0qgMz_terD1CfGzam05pgWcMASuGCWhTt2Dfe1rLlU" w=
+idth=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"16"/><i=
+mg align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/311=
+3575/ea8174288889aee3842067ba803db6021df333e9ae1e227e44cbba3ff2d8a144.png?e=
+=3DPM7Ls6mcaQ8kDAZlhPAFaK_KROKvAE4EDo6LzA2CCO8Z1R6nSH9vbUik9EIbQ85lPVCQd8o5=
+cVZWsVMuJEH_Mkz2xNieQjnG4Kjj-SY_llAeSNk2pOIzjbhBf1sQcclH9tBXRPizGENYXn17bDt=
+NeSCEplxVA3kcHRNhjdOi7vU" width=3D"20" style=3D"margin-right:5px;margin-top=
+:5px" sib_img_id=3D"17"/><img align=3D"none" height=3D"20" src=3D"https://i=
+mg.news.codewars.com/im/3113575/f20bace31808af48d17cfd11dea775471a2f82a3537=
+d595d358325b20a7160c2.png?e=3D6VhKeweMVGbPnFjAB84OLGSZ-iHw4T9tF4VDmMpBlQesI=
+DcCaJoQhVc9wRhh0EJc9WB3cZ77lhSdCeeIWrjtoZjtj11TC6PyUdGJOoeFQH56RcxXpZvpQqFR=
+lZkOyRg7CNK3dwtBY5RsXPV7UpPxtF0n3FEcvMgfyiYs" width=3D"20" style=3D"margin-=
+right:5px;margin-top:5px" sib_img_id=3D"18"/><img align=3D"none" height=3D"=
+20" src=3D"https://img.news.codewars.com/im/3113575/75be2c065c3b88d3c185b54=
+78791c1360a1ba87d87d4ab6736eb5dc6ee4ecee6.png?e=3DI-W5O5EJwoy5qoyXUuy9NBf2r=
+YnUZehqTk79qkV3Y1CmeXB1rq5hdZMA8krihRYrwTVVNyMvRwWXJPToGbxsVxl16YGcquga6HKb=
+HaB_B9aatmaa2b_f9rL7dUHvxT-AzC8b4JDqkBA9qecY4Fm9TulXGOCIAWKTnq0u5qOM" width=
+=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"19"/><img a=
+lign=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575=
+/f4f4dc530c328bd1bf22109dde0931e7b89eca5e925013af89c210f32a0e800d.png?e=3Dx=
+73UbYHxFwHBWFdt0ePCUYimUsnNRJJejGn0ZLdC_kWmaX3xbnGzFAMqfFZ7H-dFeHfJ9-_sCzTf=
+3L_JPF_n9iMliK-1YfAcs7YQHFUEODD5VVMbu0r0mkL1S3pBP1PzMLcqMm7798jf1MLd9En7vdd=
+h7sjNVxcekTgIN0K5" width=3D"20" style=3D"margin-right:5px;margin-top:5px" s=
+ib_img_id=3D"20"/><img align=3D"none" height=3D"20" src=3D"https://img.news=
+.codewars.com/im/3113575/048f021e78d5f4bcdff4a36ed9018f796e43a41b63081a7e3b=
+5948fca8b90b29.png?e=3De5dwHJf5RqDoxTiUyYIQ7t8xIfWKbqgI6JI-p-MZiOLdh9ZlEp1Z=
+Kj6Mtb3Hb5fPiOm8uFdS77vYBacK-hIezqeFqtyWNpxWAK_OuH_LacqxDns4GX3GPzx2kMLFTo7=
+1lMtDpDK8KMIOthB04RGZ27T0HOaghQQ02Xba1moUqQ" width=3D"20" style=3D"margin-r=
+ight:5px;margin-top:5px" sib_img_id=3D"21"/><img align=3D"none" height=3D"2=
+0" src=3D"https://img.news.codewars.com/im/3113575/9a308c30feff8ba034a1c364=
+b4776c14bf34b22b0fb4bb2108fd0f9e4fa7962e.png?e=3DaU1kjF5np_BAaIvcz6B4BF8Gyj=
+cq1DcB2Sr7rXtO2ugFaecndIFQ051cmNI87ln-RWwtGZ-8MtNFHAI76GxT4hYAC3EOZXUaeUIdN=
+bppb4SgKIk9Hhu5bNuA8rJCzwBZNtAMVVebB0t9wchuWlzGO06dsM5WoaxITWWA2mfw0-U7DJ0n=
+" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"22"/=
+></td> </tr></tbody></table><table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%" class=3D"cw_kata_description" style=3D"max-width:60=
+0px;overflow-x:hidden;color:white"><tbody><tr><td> <br/><p style=3D"margin:=
+0">I&#39;m new to coding and now I want to get the sum of two arrays... Act=
+ually the sum of all their elements. I&#39;ll appreciate for your help.</p>=
+<p style=3D"margin:0">P.S. Each array includes only integer numbers. Output=
+ is a number too.</p> </td> </tr><tr><td> <a href=3D"http://r.news.codewars=
+.com/mk/cl/f/uX1Z-h6pHF1cuXb41NMt_9VcSuq_P5VYmmWwRFYKbByQorO0Tdgxc3Ald09Eqf=
+UEnwlgI5wMrG96P-znv4KYUnMPsOsr1JtUzH6n-XBS0Swnl27URlnx9SNBc4M453shqHyUdl7Kk=
+gT_BpqzMyci_FXuqLE8PRZgi1ki504gPpc1aMU7bfO8JhAeyw62kSiDIP0rsLMgEYVnm1oZllCE=
+8n9JRdGJebYX-idgWivNPG2brvCdvzsYAh-hGGwDIMKWlyIRwhPOOx7IDGhaxXzpzRz2oQErd3d=
+-Nr_o1lRlYkmCqzyvF5Slpj6kE4lZhDeNe2GxzE1MlgApVIY" target=3D"_blank" style=
+=3D"color:#cb3d2b;font-weight:normal;text-decoration:none;word-wrap:break-w=
+ord" sib_link_id=3D"8" templating=3D"n">Dmitry Kudla</a> </td> </tr></tbody=
+></table></td> </tr></tbody></table></td> </tr><tr><td class=3D"r26-c"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"570" class=3D"r7-o" style=3D"table-layout:fixed;width:570px"><tbod=
+y><tr><td class=3D"r10-i nl2go-default-textstyle" style=3D"color:#3b3f44;fo=
+nt-family:tahoma,geneva,sans-serif;font-size:16px;line-height:1.5;word-brea=
+k:break-word;padding-bottom:15px;padding-top:15px"> <table border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"cw_kata_title"><tb=
+ody><tr><td width=3D"60"><img align=3D"none" height=3D"26" src=3D"https://i=
+mg.news.codewars.com/im/3113575/6009f780979c0ea94167a7f9320756f45d7f7b05b29=
+f68c5f43efa37908ca92c.png?e=3DgGZ0T5uSW2tBVVYFEMtY3yBnsJw2T_MOS6bjAAHMKk19T=
+Y02Z7qoEcnPP3AnX1TcCxErEVk7D_CmwibcMXGPedGhbeFfpS3UAOrUFpp-TykNBsRh88z16Maf=
+O0C9erl6nNR0HONgX3bAhh4b3kTxb4LlTShERJGow3FqrCF4fijqXQ" width=3D"50" sib_im=
+g_id=3D"23"/> =C2=A0 </td> <td> <h3 style=3D"margin:0"> <a href=3D"http://r=
+.news.codewars.com/mk/cl/f/jMhkWgxWnV9FufhZbYS8W-5M4JRo0NOb5oWh5m0i6CTSR-uI=
+n2jIfiC9yIvOLfO8kOi4TPX9TNejUhcxTFaQr6KOgqNAIToe02-tgVtjbhqo_5l1VbItCZIX5nm=
+R8ntj4Tw3eaY0OXwrAa2sudbfCtWSxrCbwSwkQe6Q3Tg5EymKOsXcvHoF7Hxz-ow_infLTVY82a=
+zJpgwp2YWD6iDJK_bGDOp3f8w7E9-dnX7QJiaMEmC-7uv78w2Q-HudlAtRSEG9TMYDd5OsX-uTz=
+za78QQ9cWvVXHYS3EC2LWJHX0VCSWj6QfNFvuL45Y_cIsBanAOwpocuouhurZIq1gQAa0PiM9GE=
+ig" target=3D"_blank" style=3D"color:#cb3d2b;font-weight:normal;text-decora=
+tion:none;word-wrap:break-word" sib_link_id=3D"9" templating=3D"n">How Gree=
+n Is My Valley?</a> </h3> </td> </tr></tbody></table><table border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"cw_kata_languages=
+"><tbody><tr><td> <img align=3D"none" height=3D"20" src=3D"https://img.news=
+.codewars.com/im/3113575/a05a0f699e93aadc868ea4c38608978b463c05bdeed76812af=
+e1f8c182cd6f74.png?e=3De4UVAGFpSHIUEBIVwKwMmCQCiLoDXPG-pItRwl_iXOpIvvCPPFqT=
+jbvjWoVLDFvrTRnUPgySspaaakCH6ToQQVqmRgSjfhsP2_Mb24uPyshAYyKF3jZyvCIQACr5Sme=
+h5komffKqD96BgXzF3M8UWo5yP42aDbr0H3g2" width=3D"20" style=3D"margin-right:5=
+px;margin-top:5px" sib_img_id=3D"3"/><img align=3D"none" height=3D"20" src=
+=3D"https://img.news.codewars.com/im/3113575/67bfd4e6eaeb00470b53412b64277d=
+4cfbda8eb00ea118217a8b4d77d05baaf7.png?e=3D6q-dwAIlIUxO0gLbGR_Lx7vPbRE0rLis=
+tL4bADczwMCpZmwN-b_JPbly4pNR-7NCUfIBA-6oIfQNarEOhaVVVGXE6T36aCdTqKhtgxXTfD0=
+H2JhnXlG48w3DnVzgF-hrFMHOsZEF2mAZChCqotqRhAd7Plb96_L3yXdBoy_119u8" width=3D=
+"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"24"/><img alig=
+n=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/13=
+3e51325f24bf8a7c924c94d09e76656e43a42455c51a0272e2604bad290e1e.png?e=3DbPkj=
+0SJ6rrcLlkGMHu1CCUGz6k7SkgEKMzaYfzefTdvugXGF433YYrwa67lLl6fq-mMiqt44CsNwSaF=
+1uHqYohQCP9Xc_bEVt5MkvP_byX8dVCp_DcwPgZ4wrgzWn_5_8ty8G2e4ICs7CYRbbESkwhmVUE=
+HYwk5usGH_8e3J_w" width=3D"20" style=3D"margin-right:5px;margin-top:5px" si=
+b_img_id=3D"25"/><img align=3D"none" height=3D"20" src=3D"https://img.news.=
+codewars.com/im/3113575/bac9fb7cd6e8d6db991370c06254f97cc52db98a717e285510d=
+b187aa010ec72.png?e=3DzkDtg1Bpd0iRgdZTOmoIZy1zDYCxTFyMh-jSQXLeRY0-jUbZDMRCe=
+fqM45O9p5tg3Fow5qwM1Dq_eGviPEw6rmn0DOiPqpE1gb1_ASFIa7VuRlfKINjHDngu3tWEEqHu=
+fxsHy-Fi0HumK1IjArSkgYN6ogCP7hUwt3Um7lZQlAC5rire9j8" width=3D"20" style=3D"=
+margin-right:5px;margin-top:5px" sib_img_id=3D"5"/><img align=3D"none" heig=
+ht=3D"20" src=3D"https://img.news.codewars.com/im/3113575/4a92d989c83cd4f6d=
+3c488b19a0d8c6c48f77e07ddbfc38105c8bf3af1073eb4.png?e=3DPCakqqhD_pTHlh0lIiq=
+87ucnr1bG1Myva6-V0KUn_Zyk2MlHYl0WjKbWxhBVltqIDKmh-wrsihqlkAfNjpM3vQGYtqd4-K=
+gWaTbQkbYJ1iUo9k4aFdeLPXUO_v7XIFNJ3rH81F6LcABvNRgQ2h5US6bPyU6pE0IEAjTPVmg" =
+width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"6"/><i=
+mg align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/311=
+3575/3a784968462b598bcad47337b9abc2b162eeba418618f04eca115a29253ff8d9.png?e=
+=3DUqOrQ4q7EZxQQRBl6kC7TH-fHMxu83L4nophJj0pX3WUsI2jkt6aIWy8EWiPAq37OpFSd72_=
+mgjXiykFL1HIWu-W9HZbDmSfDfDM0WOhUtX8yv0vj3WObXbf9SB6hO9buIdah2jH2D9Kgvk33Nc=
+bn_-uhgC1kRU5weks28MViYFI" width=3D"20" style=3D"margin-right:5px;margin-to=
+p:5px" sib_img_id=3D"7"/><img align=3D"none" height=3D"20" src=3D"https://i=
+mg.news.codewars.com/im/3113575/9b5c703c9857ff4019ee6828b3e3bd5b46b1acc77c7=
+24c1d31a7585af5b74c43.png?e=3DM_aUxHtlMpG5PuaO-LPYTiLRjjnbow1517jGFPru2N9qj=
+kEGhBEyE7bHfoyW_8U7ijInhnLXwYzUyy1kw0KeU-OoraWFkLGBsFBIWcieu2Bjz6_IULfTDX-P=
+Z75SPWglsH_MGSENwZTWtGUAl4lKm-L2gdmmbvo_T6qheuwXgN4" width=3D"20" style=3D"=
+margin-right:5px;margin-top:5px" sib_img_id=3D"8"/><img align=3D"none" heig=
+ht=3D"20" src=3D"https://img.news.codewars.com/im/3113575/4a8b326928dfa5a32=
+8e759de2af5ea766cff914fc986d9a602344b75d68d744f.png?e=3D8tFlC_XdZU6QlQY81zJ=
+4wTd79Gz1Tdos_7l8w4fsrJFCpasZgtVcEZ2uxF7lanXWyzgApVPqSy3wLMEnNTJWlY-rF2L0re=
+OcDKpoDAK3WjhWhvP4_LKFRQCFV-XAszYpUAGHMqjRkbBR9exYH9R3IsAxYnNnc1iqXYMV" wid=
+th=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"26"/><img=
+ align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/31135=
+75/915bd38ab91f093c3171e82521f1b31e5ff53498075631e09fc1ca965cf4b541.png?e=
+=3DXHssUOHI3q2Oognv2chQqwBhbndRSq9zzku2zoijD3D9yDlbwyHTy7tUsl4mF50xypvJLbIJ=
+Bfh0U63oHo-89_2HqaPv5A4CQSa89yccvGgO4DxaNQpe-PHB_0GkBMmIO_gIndpE2Yod4Cgzk29=
+MfvlAo2rwZViYKnKM5u92wr4" width=3D"20" style=3D"margin-right:5px;margin-top=
+:5px" sib_img_id=3D"27"/><img align=3D"none" height=3D"20" src=3D"https://i=
+mg.news.codewars.com/im/3113575/5db07e48de2fbdca0360b7b9cf21ca61c718c0ca7c2=
+4ed2e6a7fed90d368934d.png?e=3DAPBM78rz9Em3f-jPs1RoxNCRUc10gHkvajS90k59NfRFJ=
+3_1mjsdk2xdds1bmMfUiLlLIZS2wqrtDFBqOo3BrVBX2iTMq2WvtAKbWQTXAj9IzC-ClbWkgWQm=
+LZGHh3Iu0oyd5--bivUhzhpxy-qGbUbil8GPWa_2HL6Dzd8QP-U" width=3D"20" style=3D"=
+margin-right:5px;margin-top:5px" sib_img_id=3D"28"/><img align=3D"none" hei=
+ght=3D"20" src=3D"https://img.news.codewars.com/im/3113575/a2f878075fce9197=
+c66bec750b572eb87ee28a156d274ce79401a7a34a31ba01.png?e=3DM42uZy5e67KzQ9RN4l=
+NtaTLEsjEY8hLbMzJelshrLrkXtkh7_6U-TvObsdW44eFXLtTgjfNggXU-1m-hBjApvpCQKlUkr=
+0Nw7aJFZXH_xdpUYxBaIiQ7KgwVld3uHpU71KoKVwPIiTBUhX_0o-Dq2x-_Z0niMMSbUno3lHi0=
+Urs" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"2=
+9"/><img align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/=
+im/3113575/97de325bbd751192b721d5da376edaad5244ffa4cba9e07d5e9c400e48be085f=
+.png?e=3Djd1MaPZd6qEsQaFAmA7MQxr3G8QcRlv9ErZZtZKwzj9_jjzHfHIRrfItINuTUqqXca=
+pQ0PCNubuxZHgcdZUYdqA5rpUoGaiZzeO75UvDRnBtCxMROuFHr2PwYj--3iWGX9oDLSdOeyAyR=
+-DP-rOgIkSpiOa-dhUo1Hr0Tg" width=3D"20" style=3D"margin-right:5px;margin-to=
+p:5px" sib_img_id=3D"30"/><img align=3D"none" height=3D"20" src=3D"https://=
+img.news.codewars.com/im/3113575/6ad7de50fb56adb7dc5ff8c478df92763e85015594=
+764f13fa0923a23161fd6e.png?e=3DigFNwZGmb23BE9lMjdcU_AQLOQngGuYttlvpQCQYioJ5=
+G0cerrkGRxWEc_YnLzD1Y5U42L5ksElX5rNXF4TC7-tiYymhGgara99ywuOX-YwvSR2rSNbI4qr=
+NZvmTE8xQ6ziF3bU4L7-5GeFo5UBmf1TFuuJ2lTmgLrCAfqlyKSx2" width=3D"20" style=
+=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"10"/><img align=3D"none"=
+ height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/7ec0060a2707=
+e345bf271a95aa2edfbab93a1b20750b3e098169abf673487018.png?e=3Dpw67GiAFBi1twl=
+GFUc4WisGUlJx3dm4NDN5C7iQSsO0VfAKOxQxtFUOJzB4NExjnliVsgDW5WThSz5ju2FD49VfSo=
+dgiuJbvJpApPnw_tP4G4AGgGjGTBKXTyo62cCswRiDk-hcmwvt0YyGIf-IHlrjjPgTlb0JQi_WK=
+WWzt" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"=
+11"/><img align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com=
+/im/3113575/cbdbdd273faad7b5732765e3b7c33695946fa8655992d2023754f7d022463bc=
+8.png?e=3DU2U3Gr3pWipVGUbWBI2MB9AZQbdyyTo5vWCrNuAesdyWMs5rzT7wEwYml3Ov40rDU=
+RqFs08RIjmFpQ7gQWrsVOY2RfBuX42UmsVCt6gdecFziYQ2LHnBEHMR7BVNyi6Kb1uxNSq--Ihl=
+mGmy3MzsuWNw61RPI22VV_tl5vGB1JeQNUMG" width=3D"20" style=3D"margin-right:5p=
+x;margin-top:5px" sib_img_id=3D"12"/><img align=3D"none" height=3D"20" src=
+=3D"https://img.news.codewars.com/im/3113575/155ce3da97fc06f95a0023a1823cd4=
+96bd1d3ec5577b12cf2d0558a9bca16b76.png?e=3DC4bU6qd9rihNmAqyrjQm60t86MNvhBJ0=
+TDJ0OQYFB5lzWpWoRYJAoVn4vLjbD4WYAPZDNSGhg4WzM28L6voQDRAEXf_a19PD7kfLurIeeiY=
+CrCGXRfi4i7_oki-uOIxIozetoRoCPty5aH7JvL4RiCprjkHgngGjgbeWq3578w" width=3D"2=
+0" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"13"/><img align=
+=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/eff=
+a0df3363d50cc9b59ab3d2b68645cfe23eb410b72d25b38bbbfc228f8f0ec.png?e=3DB-oSH=
+aiSRpLEDDYWxaPsYYTSfR8ugO2s61gWo2hpb7vn6ErIKd5-EQXuJBR0Z8VF0EtvtEduu5C59zYE=
+ZmQR9NI3u_SZDnLD0mbpBVsDyTbWkBC5TbDr7YldklI2yQDFE23b9z3zbpSx74z4Wb9x3e2tuE2=
+zlSQYVsKQQ2RJTXU" width=3D"20" style=3D"margin-right:5px;margin-top:5px" si=
+b_img_id=3D"31"/><img align=3D"none" height=3D"20" src=3D"https://img.news.=
+codewars.com/im/3113575/afce59e08be5c58fdca61138382ca6c91b23d65d22fda69205d=
+5e3699e444572.png?e=3DvL06xwumSoEySh_gyYrmzPmkEtns7HVqetotQ464VIhX94KmOouIt=
+qJKLYfjXC8wp28abW1eLoyJqTSrq-s9RKktQCMwTP6nR6g_VAD6uSLCOgPJMP3p3v88G1TY-6yl=
+Xc0PhBjn9IqDTVShqBhokaqomuLFgGS4XFo_Mhs" width=3D"20" style=3D"margin-right=
+:5px;margin-top:5px" sib_img_id=3D"32"/><img align=3D"none" height=3D"20" s=
+rc=3D"https://img.news.codewars.com/im/3113575/948b3a8bb64130e7e87110921c46=
+ff7d8fdc4749dbe62378ad6071e87be3146c.png?e=3DX3Fej7QRMgoKND1HrcyVNKRqM9IV6i=
+xmN9SR441tjTSo3i9ri43JtorcHkpWZXPBkrFwcjNH0UDQUtwaHnS-OLjFisqFR7TN2KnVEw7SX=
+DpNHz7eSt3-9pC8DiUCPDeN6u5TvU2VCB_Ua6FaZdbgMqMqt-JnT0ZmizLsOgPzRA" width=3D=
+"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"33"/><img alig=
+n=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/ee=
+54a89750667434883beb019dde5f4a7dbf211b564befe88ff06bcff64ab228.png?e=3DGbkm=
+H2y_WHU0W9j4hyhfzsY-U6qOx7o48TlqnmE6wi6rbD3OuuauRISXgfaMdicJgbYMoBBuvqgWXl9=
+5cywtHjffgsKr9Y35oJz4Oz0rxiH7eHHneV7yJgwCfvB4r7mPiMmVwJPdgFLfKsQEpMmpgBXoZm=
+q-8jVbHgxqGQJ05vo" width=3D"20" style=3D"margin-right:5px;margin-top:5px" s=
+ib_img_id=3D"34"/><img align=3D"none" height=3D"20" src=3D"https://img.news=
+.codewars.com/im/3113575/26a0edbb08f2951a96b65aaaad9367bcd8c5eb879972ba692f=
+276d032af09d37.png?e=3DQD5iBshn6uyLUt982Qez3hkx9uFJEHAeDhKZ-Dz78fvDkiotnhHv=
+5FTEyD7_t51JEV4JNHfVk0eEPF7UQxTmTo1F8OJeiUEtDar15NXuNuxO3ZYyvX6HgMmk5uIxwvx=
+tVBNDhbPXmdv_QkVuOdM7iEzDIIQ1K21ecT8MSJlM" width=3D"20" style=3D"margin-rig=
+ht:5px;margin-top:5px" sib_img_id=3D"35"/><img align=3D"none" height=3D"20"=
+ src=3D"https://img.news.codewars.com/im/3113575/9bb78c026ab1d7e1e1544f2495=
+621eb3d451982410dddeb2ff88a818827d0f58.png?e=3DDkcsHc9TYPl3MKjDFqzE9wpQGoMb=
+VW5QFhO5cUwpWs12fEavxaGtJy1CfI1kTKnSxvRsenOHfQtObPCaSuvPHeKM93K902cvgXW9t61=
+0jqAhRLImIFmZkbpLWknFodjMXF_dpAREZ5SYpLkRECFreSzYrfTGsE1am7TeU84" width=3D"=
+20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"36"/><img align=
+=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/ea8=
+174288889aee3842067ba803db6021df333e9ae1e227e44cbba3ff2d8a144.png?e=3DjP4ro=
+236O2OTn4x7ouKYXJZkuTd464_LyXuFGSARPBL4sShfdVFmljBmmAOfmmM9PE8W5NrnS1_tTtkF=
+nrWl304-LsCO2iTkeh5wBP2g0dBlW4pckjpL6syckgYBJcnxsip376DiqOG9UuYqMZPDINGFWu5=
+059nYT7esuRGX2t0" width=3D"20" style=3D"margin-right:5px;margin-top:5px" si=
+b_img_id=3D"17"/><img align=3D"none" height=3D"20" src=3D"https://img.news.=
+codewars.com/im/3113575/f20bace31808af48d17cfd11dea775471a2f82a3537d595d358=
+325b20a7160c2.png?e=3DOprXqUJvSncgfpakbEhhaRItlcTfwHOglakoS1QFX2WKpdlR4ka1t=
+bkMV0k_FgBfOFL9BmECDrywDyqgGu_DQv2pXX2QLaGV_PxSt65I314a9u75QipX6YERxyByGpWj=
+sP4CIhBMBph0cF1H4EH8IlzPb7luWjtWadzP" width=3D"20" style=3D"margin-right:5p=
+x;margin-top:5px" sib_img_id=3D"18"/><img align=3D"none" height=3D"20" src=
+=3D"https://img.news.codewars.com/im/3113575/ab1de9ca0e6386d198208c49d91c1f=
+1ade6853007fadd542a32ae4b3f695e8a7.png?e=3DkYzmSZlroq4lyi7aUrwIjQNnP2J6xZlW=
+gIm_okOIRRXw5ydUCSkiaZchTcIQ4UCEqIIryg7goBP6p2VKoVQnbg88cPnCL6MskxFwAQ_5FPu=
+CoCWwZvrl3sWhqhyAL8ToFMEBil3Rom_k0uC9b0HWV7apkx8rTPEIuUEJtt7aH3U" width=3D"=
+20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"37"/><img align=
+=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/eb5=
+83a1d9d104c41be2603b03e9b7140e8881a5d3e11bbb2434ea729ebb42ef5.png?e=3D0lG1j=
+-BswsfJFUH_Dah-9JCLz3JDZTCJnsdHQ3ZxNvhd8b-M2kl6WBr_7elSyfBMqoOqqMbAFwAvchtF=
+IT6gFnYpv4GVH3HmRLLI7CvsMb1C9-Rmli7ik27NFwm8eUzj9-IcS6QmaEI4qYds5FPs-5Vpjyf=
+hMK8h4D7eHFzrPck" width=3D"20" style=3D"margin-right:5px;margin-top:5px" si=
+b_img_id=3D"38"/><img align=3D"none" height=3D"20" src=3D"https://img.news.=
+codewars.com/im/3113575/75be2c065c3b88d3c185b5478791c1360a1ba87d87d4ab6736e=
+b5dc6ee4ecee6.png?e=3Dezwrnj5__c7hnjNwfMlPylNXuSmeFIuzeKk0_sg-OvGy11RMVCJ1q=
+bxo4C_3V2b23IM2a2eKk598deqPJKfZSpwtzC03shOvek4N9cbb_97iqrRKTDiwJwJCit0CH39V=
+AxdyZ90D_k75REUiyLX082TjQyE8wuMfyCf7Q1Pu" width=3D"20" style=3D"margin-righ=
+t:5px;margin-top:5px" sib_img_id=3D"19"/><img align=3D"none" height=3D"20" =
+src=3D"https://img.news.codewars.com/im/3113575/f4f4dc530c328bd1bf22109dde0=
+931e7b89eca5e925013af89c210f32a0e800d.png?e=3Drd21NEuYQCXxhGWRCAtsdlmnMKozH=
+vrVLCsLuaRCB785nGbR0LnrJdZSjthyPgV_MkITQpNmcYbnnGnEfye0kOlL-6aX5o6D69aMrEZS=
+9yWIQ6hyd3FlILAZOIpjMFtNWQf60R2DJ4ODkLgtJlAdi47M1tcrZkEfXaO4OTqs" width=3D"=
+20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"20"/><img align=
+=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/3113575/048=
+f021e78d5f4bcdff4a36ed9018f796e43a41b63081a7e3b5948fca8b90b29.png?e=3DpQ350=
+kmrpcjGLmtPZNXn8rYUGirKD4k8jQ03nwbw2LBXN7t9zjn57q8W3QEQ6TknZcR9Z7BeIwsEsYMM=
+zFUilZE_v4N0Y_mvqDVijgjkazrBqfI1JP_5cMVo8K84vvRczEkvs9sOKWb-KrWXdxUrYcmgsdw=
+PTXnPRr6NEhFETQ" width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib=
+_img_id=3D"21"/><img align=3D"none" height=3D"20" src=3D"https://img.news.c=
+odewars.com/im/3113575/432176403572b1f96609378b2a74be8bd6fffdcf4124ec0682d5=
+b25920a1672a.png?e=3DJGbPrDn6ZQvULTCQywaxDlKOjWCkCxna9d0T4tt1AoTASDqJQUQaXa=
+0kM76eK6fzbl7kssZQA3CLLfghrRWBquwFKVC3RnBaUAP50CkLNz8r9Ddh1P4bII4OrnrZ8pzgK=
+_rzpb3kmz1RI9mVQhAYAA_jffCAU9Gnm5GkbCrN6Q" width=3D"20" style=3D"margin-rig=
+ht:5px;margin-top:5px" sib_img_id=3D"39"/><img align=3D"none" height=3D"20"=
+ src=3D"https://img.news.codewars.com/im/3113575/9a308c30feff8ba034a1c364b4=
+776c14bf34b22b0fb4bb2108fd0f9e4fa7962e.png?e=3DBd41MqX6NSoIpg1AX_MGiiiRU5OL=
+oaqhXSn54yObEdMnqv4Ukk06olaSBJCtrO5FxY_pu7MiparLkRf1OByp-RKCr5qXjq7mMn1uM9G=
+0BtRlBN33cqnzf74HiXYIf5wR5QSMhortxT3t4SIbDhYjj5C4q0yAJLfWjZXtZPMlWEOnGEED" =
+width=3D"20" style=3D"margin-right:5px;margin-top:5px" sib_img_id=3D"22"/><=
+img align=3D"none" height=3D"20" src=3D"https://img.news.codewars.com/im/31=
+13575/c69521e2e7482f3d8cc556680cff121ca570b823809c5949d5bd70b2c9c38c32.png?=
+e=3DCLSDLd6bM7fyjKycX-K1S4xIHq-IfB6iWUn7gliz3pfm2-E7Q66BErV0zwir7uwHdLlif_-=
+RXEyXEsO4FHzSHCpzu-dXr4b32H9XYWImcmXVlcXB4KwyxeIGcm6W4o3181JMT3HjPpnAMl5W9s=
+XRQQiQKpgAzC2eBsGmKw" width=3D"20" style=3D"margin-right:5px;margin-top:5px=
+" sib_img_id=3D"40"/></td> </tr></tbody></table><table border=3D"0" cellpad=
+ding=3D"0" cellspacing=3D"0" width=3D"100%" class=3D"cw_kata_description" s=
+tyle=3D"max-width:600px;overflow-x:hidden;color:white"><tbody><tr><td> <br/=
+><ul style=3D"margin:0"><li><p style=3D"margin:0">Input : an array of integ=
+ers.</p></li><li><p style=3D"margin:0">Output : this array, but sorted in s=
+uch a way that there are two wings:</p></li><li><p style=3D"margin:0">the l=
+eft wing with numbers decreasing,</p></li><li><p style=3D"margin:0">the rig=
+ht wing with numbers increasing.</p></li><li><p style=3D"margin:0">the two =
+wings have the same length. If the length of the array is odd the wings are=
+ around the bottom, if the length is even the bottom is considered to be pa=
+rt of the right wing.</p> </li></ul></td> </tr><tr><td> <a href=3D"http://r=
+.news.codewars.com/mk/cl/f/ueiN50KoOIPXvyG2nZRgx0QWp3VpATpgXovazpHtg3i4jqi6=
+_kcgj5UhxP_2sSM1qKcHXMOI6xDf2NG_Bgjk_2q-tQDiS_SVyp8RnBYwiryse00BMmTz_HHxqeR=
+9gFi38HawtpFNrPpnVG7QOeQxGTbiReaQHRW-q4V_CktO2eFqQEZPArooDySlqWN4AdQKailKxN=
+WgN9LNgBKDQ1e93i8zU5ojdmlFwR7Ba-gyzOkzoNWCGm8R9BjqPO-4En8ymYEye-rG3fsGbkvLA=
+YH0WKZs2Yro2owzQePGzkau6whQ_elA9xK3SecHpi8mtwDPUFazMQ" target=3D"_blank" st=
+yle=3D"color:#cb3d2b;font-weight:normal;text-decoration:none;word-wrap:brea=
+k-word" sib_link_id=3D"10" templating=3D"n">g964</a> </td> </tr></tbody></t=
+able></td> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbo=
+dy></table></th> </tr></tbody></table></td> </tr></tbody></table></td> </tr=
+><tr><td class=3D"r3-c" align=3D"center"> <table cellspacing=3D"0" cellpadd=
+ing=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r4-o" =
+style=3D"table-layout:fixed;width:100%"><tbody><tr><td class=3D"r24-i" styl=
+e=3D"background-color:#1b1b1e;padding-bottom:20px;padding-top:20px"> <table=
+ width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pr=
+esentation"><tbody><tr><th width=3D"100%" valign=3D"top" class=3D"r6-c" sty=
+le=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"0" borde=
+r=3D"0" role=3D"presentation" width=3D"100%" class=3D"r7-o" style=3D"table-=
+layout:fixed;width:100%"><tbody><tr><td valign=3D"top" class=3D"r8-i" style=
+=3D"padding-left:15px;padding-right:15px"> <table width=3D"100%" cellspacin=
+g=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td=
+ class=3D"r26-c"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" r=
+ole=3D"presentation" width=3D"570" class=3D"r7-o" style=3D"table-layout:fix=
+ed;width:570px"><tbody><tr><td class=3D"r27-i nl2go-default-textstyle" styl=
+e=3D"line-height:1.5;word-break:break-word;color:#3b3f44;font-family:arial,=
+helvetica,sans-serif;font-size:16px;padding-bottom:15px;padding-top:15px"> =
+<style>pre{display:block;padding:9.5px;margin:0 0 10px;font-size:13px;line-=
+height:1.42857143;color:#333;word-break:break-all;word-wrap:break-word;back=
+ground-color:#f5f5f5;border:1px solid #ccc;border-radius:4px;overflow-x:hid=
+den;}pre code{padding:0;font-size:inherit;color:inherit;white-space:pre-lin=
+e;background-color:transparent;border-radius:0;overflow-x:hidden;}.cw_kata_=
+languages td > img{margin-right:5px;margin-top:5px;}.cw_kata_description{ma=
+x-width:600px;overflow-x:hidden;}.cw_kata_description h1, .cw_kata_descript=
+ion h2, .cw_kata_description h3, .cw_kata_description h4, .cw_kata_descript=
+ion h5, .cw_kata_description h6{margin-top:20px;margin-bottom:10px;}.cw_kat=
+a_description{color:white;}</style></td> </tr></tbody></table></td> </tr></=
+tbody></table></td> </tr></tbody></table></th> </tr></tbody></table></td> <=
+/tr></tbody></table></td> </tr><tr><td class=3D"r3-c" align=3D"center"> <ta=
+ble cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" =
+width=3D"100%" class=3D"r4-o" style=3D"table-layout:fixed;width:100%"><tbod=
+y><tr><td class=3D"r24-i" style=3D"background-color:#1b1b1e;padding-bottom:=
+20px;padding-top:20px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><th width=3D"100%" val=
+ign=3D"top" class=3D"r6-c" style=3D"font-weight:normal"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r7-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td valig=
+n=3D"top" class=3D"r8-i" style=3D"padding-left:15px;padding-right:15px"> <t=
+able width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=
+=3D"presentation"><tbody><tr><td class=3D"r28-c" align=3D"center"> <table c=
+ellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=
+=3D"570" class=3D"r4-o" style=3D"table-layout:fixed;width:570px"><tbody><tr=
+><td valign=3D"top" class=3D""> <table width=3D"100%" cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation"><tbody><tr><td class=3D"r=
+26-c" style=3D"display:inline-block"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"570" class=3D"r7-o" styl=
+e=3D"table-layout:fixed;width:570px"><tbody><tr><td class=3D"r29-i" style=
+=3D"padding-bottom:15px;padding-left:209px;padding-right:209px;padding-top:=
+15px"> <table width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"=
+0" role=3D"presentation"><tbody><tr><th width=3D"40" valign=3D"" class=3D"r=
+30-c mobshow resp-table" style=3D"font-weight:normal"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r31-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td clas=
+s=3D"r32-i" style=3D"font-size:0px;line-height:0px;padding-bottom:5px;paddi=
+ng-top:5px"> <a href=3D"http://r.news.codewars.com/mk/cl/f/LHRtom8G9KECGyXg=
+nG_fJskloL4BqCLMCt4FFkOCzHtq_cGXqNbWJGCbcOmpL-1KuYwyP328sDHqtV66bcteJGYcj-8=
+hMkhY23jOoNyTUx1WQABYF8kc5Ps34VLfjZYSWrCXvUO9g-5MwBXYODSrwXpkoAp-TpEGat5_au=
+DSDkG8MCr1LTtvRhq4d-4VA3nL39eK86l_Wg66afauF3b5VT3CLGOT4ue_YT4LQY144Vno4rPIX=
+m7MH00Fi-L6E0Qsu1jZ2RK3dQrYvfG7I1Ip1_VtVvaG1l_EJ9O1DiikfTIywDbllzdwtQM8mQ" =
+target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:underline" sib_lin=
+k_id=3D"11" templating=3D"n"> <img src=3D"https://img.news.codewars.com/im/=
+3113575/c4db17b5eb345d59b7c37acae04f831120e0066fcacc433bda5889095ce831ca.pn=
+g?e=3DQI6XuJ9FOZQtupRsEG0RGOiofiw-ITTWKaOTJnZK-GIudhuD4bZcgbl-C-mA_5XAMAc24=
+FyuYchY82GqDbvGfgVMA-VeRwSQkWBPFq5k1UcweLZd1Sl2QQfHZwydBG42vha69LnJxLTswX9d=
+K_ACUnmtE_6FXS-p9UjRDEMy4aXbzPDy7drFSJP_SSzhCQj4OzPnrHeo1NF-WxxsHrrYTkdGLXV=
+r9B55_-It" width=3D"32" border=3D"0" class=3D"" style=3D"display:block;widt=
+h:100%" sib_img_id=3D"41"/></a> </td> <td class=3D"nl2go-responsive-hide" w=
+idth=3D"8" style=3D"font-size:0px;line-height:1px">=C2=AD </td> </tr></tbod=
+y></table></th> <th width=3D"40" valign=3D"" class=3D"r30-c mobshow resp-ta=
+ble" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpadding=3D"=
+0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r31-o" style=
+=3D"table-layout:fixed;width:100%"><tbody><tr><td class=3D"r32-i" style=3D"=
+font-size:0px;line-height:0px;padding-bottom:5px;padding-top:5px"> <a href=
+=3D"http://r.news.codewars.com/mk/cl/f/lKwP3oJ_7zEdzXB-Dn3qZdMjp2HYyeqvFfZc=
+sCIa-g8JO2ZAb7ZjKzPC6XQIRZdG1x25R7NUo8nFb4zPzPLKEh5aEtiFaVNe0R4pxMx95NZar91=
+wlVHJg0ZKd8Yr1O1mi1oxRTHSv2x_OtPIbAK7yDmVq4f9sA2lp_jTUqjiTK8hVNBPr-4kJIUAOQ=
+bsY6ytHUAK2HjrAAPG-HWAtq_LG8rkYoyDalg3DFSgqFik-I0Fr-WWRftgAaCGSaI9Cr9rQrvOR=
+gaG_zyYpsADKnwzYPcgnprDoAxDWFFnS4zZY5jRY7jxvsY4z8o-oAfPUSAPI7OMYWeJW1PTGa64=
+BQ" target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:underline" sib=
+_link_id=3D"12" templating=3D"n"> <img src=3D"https://img.news.codewars.com=
+/im/3113575/aadc0c698985ea350c049e67e9310b03e0ae6840341f89462b73a8fbab38767=
+4.png?e=3DRHKpVRXzp5UTNrH3rTEh6xaTxYMIo93iKzBpPdh5r86ey9hIoLaLTtZmU-rMKmvFJ=
+JmE525WibNUU3wcYlX330rcR4enhBsaSOmNtDA_yQduVhBNpvgXqfQfrr_2G1BvcAfC76bXV6np=
+0w9ZBT3EYACmIPbDD--tXyq_OX4a108gDrkjLdgH__gf2UwCk-oi5gcvclINqc4GOHlzwV681Xa=
+gP2d76DBVIrHlCQ" width=3D"32" border=3D"0" class=3D"" style=3D"display:bloc=
+k;width:100%" sib_img_id=3D"42"/></a> </td> <td class=3D"nl2go-responsive-h=
+ide" width=3D"8" style=3D"font-size:0px;line-height:1px">=C2=AD </td> </tr>=
+</tbody></table></th> <th width=3D"40" valign=3D"" class=3D"r30-c mobshow r=
+esp-table" style=3D"font-weight:normal"> <table cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r31-o" =
+style=3D"table-layout:fixed;width:100%"><tbody><tr><td class=3D"r32-i" styl=
+e=3D"font-size:0px;line-height:0px;padding-bottom:5px;padding-top:5px"> <a =
+href=3D"http://r.news.codewars.com/mk/cl/f/9ME4ngIscDzQgn7NWjCO8rK54qqc3v71=
+c0xidCHjDNwx8Ox7s18MEq9_lftQV9wWjCjYJuEb6N8qfYQHLtz48j3mUPq1gsEAxiWWrdUaZ3L=
+WbSZYwM2voIOqTN8WBFk1zTXLmki47wEfzn_1r5orVVv7UNclPcOAcAYqGMYvcJIh3Kc2eFvuy8=
+R8YYJ5tWdv09BSjRY-7o7R5yupeOrbsplI4CnY6Rz0NjqqHS-SFv_m64Fc_rtQkOxj7ltN86HCT=
+wMNpnLhD18hPt8Rk6X2y_NlICme2HhDCjUNDA_9" target=3D"_blank" style=3D"color:#=
+ff4d4d;text-decoration:underline" sib_link_id=3D"13" templating=3D"n"> <img=
+ src=3D"https://img.news.codewars.com/im/3113575/e4e0ec3229d7d2f216a5cfc3b2=
+2895c3e3aaeecd1f5c2c202166436b9e0ab003.png?e=3DmBasZTNI02hzsc2U2b9PN-dc-c6s=
+x2wLMCimAQjYN700nkVpqb4rj3R7x11MTJapg9XRXXFjFfJM_l5SQNMxkt_rO4CMnogtXbbWsqH=
+DI59L0ngeK0Erh--jifmjN1k5ognDzOp2efK14OAqpXkAUqrlJDuf4dbWavZqinr_XnlpsA7g61=
+LHTbd8z2q-WNoMW5uegM-hFHOmdP9Ge7cFMpy8f0Iuqyg9kuwS" width=3D"32" border=3D"=
+0" class=3D"" style=3D"display:block;width:100%" sib_img_id=3D"43"/></a> </=
+td> <td class=3D"nl2go-responsive-hide" width=3D"8" style=3D"font-size:0px;=
+line-height:1px">=C2=AD </td> </tr></tbody></table></th> <th width=3D"32" v=
+align=3D"" class=3D"r30-c mobshow resp-table" style=3D"font-weight:normal">=
+ <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentati=
+on" width=3D"100%" class=3D"r33-o" style=3D"table-layout:fixed;width:100%">=
+<tbody><tr><td class=3D"r32-i" style=3D"font-size:0px;line-height:0px;paddi=
+ng-bottom:5px;padding-top:5px"> <a href=3D"http://r.news.codewars.com/mk/cl=
+/f/95umCb-Z_i9AM_tESVEzErBmeAqEj1ZHDaqaoxFF-cQKRU6G4rxBb5ZuRLMMHrFVXtUWc62X=
+yr3I56Hd88YUjL_uBX1L_ywaNs0J0m7_4NL0onA-NRJR8JicaFtV2BNm4z_m-z1q7fUULhEkPj3=
+vvKbV8DJJbW3lNJH03mNMdktMk_aF1EH_KzdTgNjRLC8oeTQm3poCPOkgICaJQbOa35DbT2NoOg=
+8dEslDLLec9niKHhwa5XOaq4BUApo7Wp3_PXiChLxl8P1IwQiP3IkQ7jAMKW_fSaS8719Ad3BNk=
+ERnmnjGCdPDkZk" target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:un=
+derline" sib_link_id=3D"14" templating=3D"n"> <img src=3D"https://img.news.=
+codewars.com/im/3113575/24dc5d34efe739e0a948310c544b2f8aeba153283b7f5a5c0fc=
+006f88671dd44.png?e=3DuSKMB1C8HhYyXFiANJEHdfKVDhjZa0l7E1nYGTNwxDLr6alGRLEfv=
+jJyM1HENGn0QQt_ZGL0KlkPD0gy9aDQbjqyDN_eTSYbwL4eIVL_j7djXgVVwXzm3xsqyh7VTBPn=
+j3j16nQam8roL0vsrbvXE968Xi-ERP7V40u3XBTMyZdNLt2EolNJc6F0gXt0ZNlkyv9x27nL0zn=
+aVQ5ecoV5areSdkfbe4cFixk" width=3D"32" border=3D"0" class=3D"" style=3D"dis=
+play:block;width:100%" sib_img_id=3D"44"/></a> </td> </tr></tbody></table><=
+/th> </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody></t=
+able></td> </tr></tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D=
+"left"> <table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"pre=
+sentation" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width=
+:100%"><tbody><tr><td align=3D"center" valign=3D"top" class=3D"r34-i nl2go-=
+default-textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-se=
+rif;word-break:break-word;font-size:18px;line-height:1.5;padding-top:15px;t=
+ext-align:center"> <div><p style=3D"margin:0"><a href=3D"http://r.news.code=
+wars.com/mk/cl/f/djjqHZ0qBPSls9vTjAuogCPtF-42_SHqIZ5c1DHa9qOT72bdMC55ulEhkt=
+fAoN2RjSai8AZ7BDctMpSwydFKLudO93uVEUeLy4eXoRUcMOfr2wXVOXXK-JO9LWOKZa8MNL37Z=
+FknZHyHsGByQzbxDbnyzV5gstEE3dKEO9MOVhd1c61ANRC8HyvVWCSKQYBpeKEgi1itCufseH1n=
+-sLUfkZkpJbnT-RztxeoCCKkztsWHJW0LsFepW6UJXFlfIIlUknQBWToGpKQ-DZhoEGOhhhXkvs=
+ix80CJWqZ4JcS" target=3D"_blank" style=3D"color:#ff4d4d;text-decoration:und=
+erline" sib_link_id=3D"15" templating=3D"n"><span style=3D"color:#ffffff"><=
+strong>Andela</strong></span></a></p></div> </td> </tr></tbody></table></td=
+> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=3D"0" cel=
+lpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r=
+12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td align=3D"cente=
+r" valign=3D"top" class=3D"r35-i nl2go-default-textstyle" style=3D"color:#3=
+b3f44;font-family:tahoma,geneva,sans-serif;word-break:break-word;font-size:=
+18px;line-height:1.5;text-align:center"> <div><p style=3D"margin:0;font-siz=
+e:14px"><span style=3D"color:#ffffff">580 5th Ave Suite 820 New York, NY 10=
+036 United States</span></p></div> </td> </tr></tbody></table></td> </tr><t=
+r><td class=3D"r11-c" align=3D"left"> <table cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" class=3D"r12-o" st=
+yle=3D"table-layout:fixed;width:100%"><tbody><tr><td align=3D"center" valig=
+n=3D"top" class=3D"r34-i nl2go-default-textstyle" style=3D"color:#3b3f44;fo=
+nt-family:tahoma,geneva,sans-serif;word-break:break-word;font-size:18px;lin=
+e-height:1.5;padding-top:15px;text-align:center"> <div><p style=3D"margin:0=
+;font-size:14px"><span style=3D"color:#ffffff">This email was sent to=C2=A0=
+************************@gmail.com</span></p></div> </td> </tr></tbody></ta=
+ble></td> </tr><tr><td class=3D"r11-c" align=3D"left"> <table cellspacing=
+=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentation" width=3D"100%" =
+class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><tbody><tr><td alig=
+n=3D"center" valign=3D"top" class=3D"r35-i nl2go-default-textstyle" style=
+=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;word-break:break-wor=
+d;font-size:18px;line-height:1.5;text-align:center"> <div><p style=3D"margi=
+n:0;font-size:14px"><span style=3D"color:#ffffff">You&#39;ve received this =
+email because you&#39;ve subscribed to our newsletter.</span></p></div> </t=
+d> </tr></tbody></table></td> </tr><tr><td class=3D"r11-c" align=3D"left"> =
+<table cellspacing=3D"0" cellpadding=3D"0" border=3D"0" role=3D"presentatio=
+n" width=3D"100%" class=3D"r12-o" style=3D"table-layout:fixed;width:100%"><=
+tbody><tr><td align=3D"center" valign=3D"top" class=3D"r36-i nl2go-default-=
+textstyle" style=3D"color:#3b3f44;font-family:tahoma,geneva,sans-serif;word=
+-break:break-word;font-size:18px;line-height:1.5;padding-bottom:15px;paddin=
+g-top:15px;text-align:center"> <div><p style=3D"margin:0;font-size:14px"> <=
+a href=3D"http://r.news.codewars.com/mk/un/v2/BMbDj60khCHECDuxyfus6e6gS2Vf8=
+BigVoyTk5WSJz5RMvKed3QgMfucgsnLYO7WY2f4cJqc2ni0m4O_ugwjaGYBptgX82IhE7kEAFNF=
+iAUna6DuTVUnTqT_X9jYqJfZ0xXfl6SmQtz9095gZn0gLZxX8Iaer7EGKnehIcei8nEAkbSIRmR=
+JjcvfzQ" style=3D"color:#ff4d4d;text-decoration:underline">Unsubscribe</a><=
+/p></div> </td> </tr></tbody></table></td> </tr></tbody></table></td> </tr>=
+</tbody></table></th> </tr></tbody></table></td> </tr></tbody></table></td>=
+ </tr></tbody></table></td> </tr></tbody></table></td> </tr></tbody></table=
+> </body></html>
+
+---------?=_89124-7187870478870--
+

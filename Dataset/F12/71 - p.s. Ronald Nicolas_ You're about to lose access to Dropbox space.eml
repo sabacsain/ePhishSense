@@ -1,0 +1,196 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp2239332ils;
+        Mon, 6 Nov 2023 17:48:07 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEQ3PSvaS65si+8RQ90fnFN3FS1HsFUqSjr0zU0aTrJ9Bhs9vDYr0FUnCifeXfNgtaej2js
+X-Received: by 2002:a05:6214:daa:b0:671:e02a:8bfc with SMTP id h10-20020a0562140daa00b00671e02a8bfcmr28100833qvh.16.1699321687685;
+        Mon, 06 Nov 2023 17:48:07 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699321687; cv=none;
+        d=google.com; s=arc-20160816;
+        b=tHx/33xDr0PLJyYJym3RHiTe4KaRzT6kJ/PoL+ju55Anqi/gVkhxxEVyXp6YcvIxJT
+         nGXSnDFgVNtykNoNjCEA6/4rpfm0ivdZPvkmrI6mVJIsZ2LSwkjR2GKYtCb9Hg9vqkbC
+         O4dzzObEDuPfM8pnFun0V90p5UcQqD7huCwuAUlL2iLEBUhnHl4DDnEukNOyZv3g5Mr9
+         M7XZvLi87/rFFsYKZC535KCkNzT1stc3LFgTScNaYq5uEP34ioQ4qDDOCJp/7BYm2mWn
+         beBaIRpDkRwkVY+yd7RN2EyusyP+arJsb0/4CYu+DZawj4pLhFpfwVGO0LJ6cw/FMGEN
+         JJQw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:date:subject:cc:to:from:mime-version
+         :dkim-signature:dkim-signature;
+        bh=FyTCX/D5Hrd757Y5gGW88quGjezV6qGdPnsJQxdv58s=;
+        fh=9XMahSI3zkf4/UMBoA4LLPXKEIXolPyWcXH4u81AAGg=;
+        b=kvw3mENCGTQfzPk7QBFNYCwVWJ3hPAIBi+S3sIj1RHZDhRWNdKLH97ibiSJo3NMlx4
+         3I8Bgdx5K961COwmsbRPj8284wwJhp0q2qbgE3dKrR6CVYPRSgP48dRHc7e4mHCtniIE
+         c51h7CEfBbI4B36DJKP+ANzcc8kxgvlLFcKdDJkxUDo8ewGRrXjBD/KwDYXodZEt0Rqp
+         45U6loZkxWYy0aaopt3YCk7n0Y8cEIxyNRvdyhcIH0fP8FBkraQHPXQX/NkBac1Lxy93
+         FtYtQKIo0/uUkSfszlGdHmWIhGjf4Tjy4Ol6pktt5KFgYd01QH/5O0VsCJci7zUH+66K
+         umMQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@dropbox.com header.s=wmgpbkvgcpmwlqchafzz6sobpgc5dg4h header.b="a7p/yz29";
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=FXMvDdLh;
+       spf=pass (google.com: domain of 0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com designates 54.240.39.230 as permitted sender) smtp.mailfrom=0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dropbox.com
+Return-Path: <0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com>
+Received: from a39-230.smtp-out.amazonses.com (a39-230.smtp-out.amazonses.com. [54.240.39.230])
+        by mx.google.com with ESMTPS id f9-20020a05621400c900b00656262151b7si6578004qvs.256.2023.11.06.17.48.07
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Nov 2023 17:48:07 -0800 (PST)
+Received-SPF: pass (google.com: domain of 0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com designates 54.240.39.230 as permitted sender) client-ip=54.240.39.230;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@dropbox.com header.s=wmgpbkvgcpmwlqchafzz6sobpgc5dg4h header.b="a7p/yz29";
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b=FXMvDdLh;
+       spf=pass (google.com: domain of 0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com designates 54.240.39.230 as permitted sender) smtp.mailfrom=0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.dropbox.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=dropbox.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=wmgpbkvgcpmwlqchafzz6sobpgc5dg4h; d=dropbox.com; t=1699321687;
+	h=Content-Type:MIME-Version:From:To:CC:Subject:Date:Message-ID;
+	bh=j86+QsXZ0PhtLm3uDSFzylCVczck9M9CYNmypqM5d3w=;
+	b=a7p/yz29gCnXn+x4RUXEg0g8MiY21rMvIEdyMloTrXicwq0pBLpJ4yr1F0sE1zpe
+	Geb77vkMZ8vmvFkEmNFRyLZVmFY0i+NcJZSj+q+vU6m5UStwuGe7GwEEvS3slHC6O8m
+	VjZTmo4gsmj0UhR8UHn+Y5gbQFhk1jz2fFyQPxNc=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1699321687;
+	h=Content-Type:MIME-Version:From:To:CC:Subject:Date:Message-ID:Feedback-ID;
+	bh=j86+QsXZ0PhtLm3uDSFzylCVczck9M9CYNmypqM5d3w=;
+	b=FXMvDdLh0eg1zZebcr3KEF3/NjUd7RYJt8U5i0iPR7JC/xYIHr6KxPanG5jMHbs0
+	q2JzdXcCQ4itcEmolg4zC9dFl+jANsVPfpd9jnzzIuRvC3lbYtOqQK9PqobRvd2nqbT
+	Ig+brZDorpzvWHFj+toPGqXyvtI4ACAMg5zblGsc=
+Content-Type: multipart/alternative; boundary="===============2831148044095698894=="
+MIME-Version: 1.0
+From: Dropbox <no-reply@dropbox.com>
+To: ronaldlambertnicolastugadi@gmail.com
+CC: 
+Subject: =?utf-8?q?p=2Es=2E_Ronald_Nicolas=3A_You=27re_about_to_lose_access_to_Dropbox_space?=
+Date: Tue, 7 Nov 2023 01:48:07 +0000
+Message-ID: <0100018ba7772cc3-19ffb8c4-db28-4551-bb6f-0e3b801929ff-000000@email.amazonses.com>
+X-Dropbox-Message-ID: 7179748444125852385
+Feedback-ID: 1.us-east-1.syWQ1+fF8Wo1tY8y/+s85ptiAKu7bILK6PHyxwpB+xo=:AmazonSES
+X-SES-Outgoing: 2023.11.07-54.240.39.230
+
+--===============2831148044095698894==
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+Hi Ronald Nicolas,
+
+After November 20, 2023 you'll no longer be able to save new files if you'r=
+e over your limit. When you got your Acer device, you received 100 GB of ad=
+ditional space, but that space is about to expire.
+
+That's why we want to offer you a special deal on Dropbox Plus[1] - a more =
+powerful Dropbox with 2 TB (2,000 GB) of space and advanced sharing feature=
+s. Upgrade before November 20, 2023 and get 20% off when you buy a year of =
+Dropbox Plus!
+ View your account[1]
+
+Thanks for supercharging your Acer device with Dropbox.
+
+Happy Dropboxing!
+- The Dropbox Team
+
+
+[1]: https://www.dropbox.com/l/AABiZ1dLOs8XzRuU8HOPplz08JBncsyqCtQ/special_=
+offer
+--===============2831148044095698894==
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w=
+3.org/TR/REC-html40/loose.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+<meta content=3D"text/html; charset=3Dutf-8" http-equiv=3D"Content-Type">
+<style>
+            @font-face {
+                font-family: "proxima_nova";
+                src: url("https://www.dropbox.com/static/fonts/proximanova/=
+proxima-nova-regular.otf") format("opentype");
+                font-weight: normal;
+                font-style: normal;
+            }
+           =20
+            @font-face {
+                font-family: "atlas_grotesk";
+                src: url("https://www.dropbox.com/static/fonts/atlasgrotesk=
+/AtlasGrotesk-Regular.otf") format("opentype");
+                font-weight: normal;
+                font-style: normal;
+            }
+           =20
+            @font-face {
+                font-family: "sharp_grotesk_db";
+                src: url("https://www.dropbox.com/static/fonts/sharpgrotesk=
+/SharpGroteskDBMedium22.woff") format("woff");
+                font-weight: normal;
+                font-style: normal;
+            }
+            =20
+        a {
+            color: #007ee6;
+            text-decoration: none;
+        }
+        </style>
+</head> <body marginheight=3D"0" marginwidth=3D"0" style=3D"width: 100% !im=
+portant; margin: 0; padding: 0; -webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%;"><center><table border=3D"0" cellpadding=3D"8" cellspacing=
+=3D"0" style=3D"background-color: #ffffff; background: #ffffff; width: 100%=
+ !important; margin: 0; padding: 0; *width: 540px;"><tr><td valign=3D"top">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" st=
+yle=3D"border: 1px #dceaf5 solid; border-radius: 4px; -webkit-border-radius=
+: 4px; -moz-border-radius: 4px;">
+<tr><td colspan=3D"3" height=3D"6"></td></tr>
+<tr style=3D"line-height: 0px;"><td align=3D"center" height=3D"1" style=3D"=
+font-size: 0px;" width=3D"100%"><img alt=3D"" catalogid=3D"logo_glyph_34_2x=
+_png" src=3D"https://cfl.dropboxstatic.com/static/metaserver/static/images/=
+emails/logo_glyph_34_m1%402x.png" style=3D"width: 40px; max-height: 73px; *=
+width: 40px; *height: 73px;" width=3D"40px"></td></tr> <tr><td><table align=
+=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" style=3D"line-=
+height: 25px;">
+<tr><td colspan=3D"3" height=3D"30"></td></tr>
+<tr>
+<td width=3D"36"></td>
+<td align=3D"left" style=3D"font-size: 11pt; color: #444444; font-family: p=
+roxima_nova, 'Open Sans', 'Lucida Grande', 'Segoe UI', Arial, Verdana, 'Luc=
+ida Sans Unicode', Tahoma, 'Sans Serif'; border-collapse: collapse; max-wid=
+th: 454px;" valign=3D"top" width=3D"454">
+<p>Hi Ronald Nicolas,</p>
+<p>After November 20, 2023 you'll no longer be able to save new files if yo=
+u're over your limit. When you got your Acer device, you received 100 GB of=
+ additional space, but that space is about to expire.</p>
+<p>That's why we want to offer you <a href=3D"https://www.dropbox.com/l/AAB=
+oDHn9HFvDGu6Fwv7RQ6s6Sn5sxFDvv7M/special_offer">a special deal on Dropbox P=
+lus</a> - a more powerful Dropbox with 2 TB (2,000 GB) of space and advance=
+d sharing features. Upgrade before November 20, 2023 and get <b>20% off whe=
+n you buy a year of Dropbox Plus!</b></p>
+<center><a href=3D"https://www.dropbox.com/l/AABoDHn9HFvDGu6Fwv7RQ6s6Sn5sxF=
+Dvv7M/special_offer" style=3D"text-align: center; text-decoration: none; fo=
+nt-size: 15px; margin: 6px auto; padding: 14px 7px 14px 7px; display: block=
+; width: 265px; max-width: 265px; border-radius: 3px; font-family: proxima_=
+nova, 'Open Sans', 'lucida grande', 'Segoe UI', arial, verdana, 'lucida san=
+s unicode', tahoma, sans-serif; color: white; background-color: #0070e0; bo=
+rder: 1px #1373b5 solid; box-shadow: inset 0 1px 0 #6db3e6, inset 1px 0 0 #=
+48a1e2;">View your account</a></center>
+<p>Thanks for supercharging your Acer device with Dropbox.</p>
+<p>Happy Dropboxing!<br>  - The Dropbox Team</p>
+</td>
+<td width=3D"36"></td>
+</tr>
+<tr><td colspan=3D"3" height=3D"36"></td></tr>
+</table></td></tr>
+</table>
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0">
+<tr><td height=3D"10"></td></tr>
+<tr><td style=3D"padding: 0; border-collapse: collapse;"><table align=3D"ce=
+nter" border=3D"0" cellpadding=3D"0" cellspacing=3D"0"><tr style=3D"color: =
+#a8b9c6; font-size: 11px; font-family: proxima_nova, 'Open Sans', 'Lucida G=
+rande', 'Segoe UI', Arial, Verdana, 'Lucida Sans Unicode', Tahoma, 'Sans Se=
+rif'; -webkit-text-size-adjust: none;">
+<td align=3D"left" width=3D"400"> </td>
+<td align=3D"right" width=3D"128">=C2=A9 2023 Dropbox</td>
+</tr></table></td></tr>
+</table>
+</td></tr></table></center></body>
+</html><img height=3D"1" src=3D"https://www.dropbox.com/l/AAAU-M3lr7kXdsduh=
+_bEM9XO3xzUVQTANws" width=3D"1" />
+--===============2831148044095698894==--

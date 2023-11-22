@@ -1,0 +1,543 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:5a05:b0:4f4:d48:a6dd with SMTP id v5csp574585may;
+        Fri, 18 Aug 2023 05:30:48 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEHPbey55AuCH5R/AoJS9gP7NBG7x5QaL4Dm0JkMLRQ2Tt5dipnJQ7wcW/cYrl8/+RVlKBS
+X-Received: by 2002:a17:90a:8505:b0:26b:db8:2973 with SMTP id l5-20020a17090a850500b0026b0db82973mr7436894pjn.5.1692361848394;
+        Fri, 18 Aug 2023 05:30:48 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1692361848; cv=none;
+        d=google.com; s=arc-20160816;
+        b=PwsLm1I5Fj6HLoC10Uzl23y7+IAlQqBZoRgowgy7TV7cZq0miPa0PcId1UD/hHBo3A
+         rSA3tR2F3/9lMkwNmx1iSjleTOpWoFXcAJPQ3Ar+MJRsc2pa2g/xbmjc/guL2lstucMR
+         Do7zwlGKojr5JCSF2HgWcmt6rJers3xxU+k8gSUkAKcP+nEtN6S6tfX0YE4kh4/4Txyj
+         bN261gBuc9DP0B66z9/bnmLPD4wfaU4LXw0ejFsecjnyPWW7vW0RyK2I4oLVmDXF1DR/
+         ASucUcDo1HS0U+l3BzOKXPpOr25udsAOvzIzyU+3AGeiWq/lSiyMfZwlLHdIT2eY3pD2
+         H0Dg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:message-id:list-id:reply-to:mime-version
+         :list-unsubscribe-post:list-unsubscribe:date:subject:to:from
+         :dkim-signature;
+        bh=NU1reddblAIDBJQbXsOfEtvFNK3GVb1NLId1J44x/Qw=;
+        fh=jvvPnYA2z3zIgZAkx9TJF+u1sRLNO41J9GriI76lTb4=;
+        b=nC3UVqYPTAH0Awk9c9rqT3Jj8AzQtbyH18obDOs/BClR/Z9mA9ICMW/tmfkWBMgBb6
+         QmNarJbl4ROEFFYxCb88GnQXuOoEebSPf2z23u43aKlSaCy/R/VxmJ+sYRqVX3T7qSf9
+         dliuAnPoxMT6iKnlRvJZkDq+yOjYl19ioHO+duOAKFYVJNcS8FXk1MQw00F+loR1G+A4
+         ReQN/soDR+5S+0WErtjvTa33Pab1MytYse8F1zp2d1nQxDY9hEgmA77CqOwv6vL9Rv7o
+         vrR/HZULdQLAh6oX8AZLzBBKlu7JLl42orPSvHtS10dhMlaNJJFsQWjk3lP8SZVTirKm
+         FH9A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@e-mail.quillbot.com header.s=12dkim1 header.b=jniHZ227;
+       spf=pass (google.com: domain of bounce-9_html-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com designates 13.110.235.57 as permitted sender) smtp.mailfrom=bounce-9_HTML-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e-mail.quillbot.com
+Return-Path: <bounce-9_HTML-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com>
+Received: from mta.e-mail.quillbot.com (mta.e-mail.quillbot.com. [13.110.235.57])
+        by mx.google.com with ESMTPS id g14-20020a65580e000000b005641dfc74d0si1367216pgr.601.2023.08.18.05.30.45
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 18 Aug 2023 05:30:48 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-9_html-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com designates 13.110.235.57 as permitted sender) client-ip=13.110.235.57;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@e-mail.quillbot.com header.s=12dkim1 header.b=jniHZ227;
+       spf=pass (google.com: domain of bounce-9_html-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com designates 13.110.235.57 as permitted sender) smtp.mailfrom=bounce-9_HTML-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=e-mail.quillbot.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=12dkim1; d=e-mail.quillbot.com;
+ h=From:To:Subject:Date:List-Unsubscribe:List-Unsubscribe-Post:MIME-Version:
+ Reply-To:List-ID:X-CSA-Complaints:Message-ID:Content-Type;
+ i=support@e-mail.quillbot.com;
+ bh=NU1reddblAIDBJQbXsOfEtvFNK3GVb1NLId1J44x/Qw=;
+ b=jniHZ227oX7c9SZGciIwHIz+6OYrxnl33OF8GQWiEHf8ZNIMgPyrM63LoGSg90/VPg2JyfSs5gBM
+   8oaB2FTnbTGOV8eTz2hWqv6aVLfMlMRmpVOWMsqdeTZCP70rS01zpcYWM9B/kXx6cbEa7RPW/9Hb
+   xIwO3GIp/v8tUaige6EYLH40HDDq19xkGBG7mq+jX12thwk8ytYDYPjhsf/RRdwlVVupEXzow5pr
+   BmMgi8w/GKOm80/jdWHz57h07bF7iwZJAp5jto76zJbt633wQftWIDcRLW6bFWvcdN+Rq2jAkzgk
+   f7BcZhlhk8qFMdx+/ve7gUrbNXdVzKCsCN7RNw==
+Received: by mta.e-mail.quillbot.com id hrti7g2fmd40 for <************************@gmail.com>; Fri, 18 Aug 2023 01:26:41 +0000 (envelope-from <bounce-9_HTML-38013977-85280-534007694-235818@bounce.e-mail.quillbot.com>)
+From: "QuillBot" <support@e-mail.quillbot.com>
+To: <************************@gmail.com>
+Subject: Get creative this semester
+Date: Thu, 17 Aug 2023 19:26:41 -0600
+List-Unsubscribe: <https://click.e-mail.quillbot.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI1MzQwMDc2OTQiLCJzIjoiMzgwMTM5NzciLCJsaWQiOiI5IiwiaiI6Ijg1MjgwIiwiamIiOiIyMzU4MTgiLCJkIjoiMTIwMDE0In0.kW7VRDd2Gm5cnNpNlupAem1iJ35CwmyuGywYTOiyi9Q>, <mailto:leave-fdb21d1f2d205921-fe591778756507747213-fef81c75776c04-fe2911737164047a731d74-fec41673706c0575@leave.e-mail.quillbot.com>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+x-CSA-Compliance-Source: SFMC
+MIME-Version: 1.0
+Reply-To: "QuillBot" <reply-fef81c75776c04-9_HTML-38013977-534007694-235818@reply.e-mail.quillbot.com>
+List-ID: <534005577.xt.local>
+X-CSA-Complaints: csa-complaints@eco.de
+X-SFMC-Stack: 12
+x-job: 534007694_85280
+Message-ID: <d7a44717-304e-4cdd-b426-0311cbc90b88@iad4s12mta763.xt.local>
+Feedback-ID: 534007694:85280:13.110.235.57:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="24sZ63amaKEU=_?:"
+
+This is a multi-part message in MIME format.
+
+--24sZ63amaKEU=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+
+ 
+ 
+
+ Back2School - 2
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e20eb378ea8b688fad6087087b6978657a7f3bdf2ae98de8bbc06a7ad38d55581bca79f28a93438afe75df1e7b158addb4634def4ce88cdfb 
+
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261ef5a7209fc4da1c8df40df9cecfdf91f2688b0edfbbcff3ba1c0d56a643f618c817cd906b4f77c6930ef9a75658ff9cb3fc2d0fc4ee90ef3e 
+
+
+ Limited time only: save 40%
+ 
+
+
+ Get great savings on QuillBot Premium with our
+ back-to-school sale. Don’t skip out on this
+ amazing offer—it only comes once a year.
+ 
+
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e32deba89b3e281d7e5df36afb9d8bbea90a9d48d8442a4f4f25b95695501f9d31ea0dbf3da126aec90bb271ec18570710d7a0d61fbd7895e 
+
+
+ Use code to save. Offer ends August 25.
+ 
+
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261eefb172bbe5627418571fecd5e850043340d15462ea83ab4ce4e3f540405d1a3804b614268dec003061999dc6bd550db6ac609df5ad722cd0 
+Upgrade now 
+
+
+ “This has been quite beneficial to me in school,
+ and I highly suggest it”
+ 
+
+
+ Joshua, via QuillBot for Chrome
+ 
+
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e582810f83385bc80ff2d65dc0b22062d23a27afc9a3b99c480888e91af4973ee597835fba33af797d62803c9395aa7e3144a5701459682a6 
+
+
+ 35+ million writers
+ 
+
+
+ As always, thank you for your support.
+ 
+
+
+ If you have comments, questions, or suggestions,
+ feel free to reach out at our
+ 
+https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e90d110423c0230358ce780d244cbfd1e9ac7dca215cb1229d447a3a8379fd37533a777367e350513ae311c858f269a963cf97599f7b25966 
+
+ Help Center .  No longer want to receive these emails?
+ 
+https://click.e-mail.quillbot.com/unsub_center.aspx?qs=369c416e4e0aafdaf186ffee8de4efb78bfa2ea15ccef7ce65c53b2dce770fd703f41317591399f2723636f63b15f478d88bac5d1a3369f31a67cda501ed91450b7f8e4c0732d7be 
+
+ Unsubscribe .
+ 
+
+
+ Your friends at
+ 
+https://click.e-mail.quillbot.com/?qs=da168f1dea2108acfaa138ef873533f21a824a9091e543ab7f8bbf61dca9242ba8273387c3bc6f98a7c776996e1c1b8cff9ddc7acfd359bb7a07c2662aba5ee2 
+
+ QuillBot
+  
+
+https://click.e-mail.quillbot.com/?qs=da168f1dea2108ac511fe597dd03d05c4f7596da55fbc9f8339e6c51638ec79210d50185310aafda06ed05dd203a604a78b04ce83233cb004194e39c7548ee46 
+
+https://click.e-mail.quillbot.com/?qs=da168f1dea2108acda06d66fb5f93bc3351d08ee4a82f3a0612bc4e610f2626e8c234ff2bada5acc8538a35639714b6516eea9aeb70dde4e6975739242f065d2 
+
+https://click.e-mail.quillbot.com/?qs=da168f1dea2108acb3542cfb26023917fe6cbd8ace5ee4dfce73268aa6d5b54f7d05c20cee91b31d1d847a09899eeeaa7b3ca934797187d59a1ffd078f5033b7 
+
+https://click.e-mail.quillbot.com/?qs=da168f1dea2108ac69f00b3b5e7556e4eecf8803926be531d146186f06bb90b6a0bd8f15da6bc9bfe4dd890f65e44f8158ed301324beef38d62f781f3150b480 
+
+
+ 
+ 
+
+
+ 
+ 
+
+
+--24sZ63amaKEU=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      ReadMsgBody{ width: 100%;}
+      .ExternalClass {width: 100%;}
+      .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: 100%;}
+      body {-webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;margin:0 !important;}
+      p { margin: 1em 0;}
+      table td { border-collapse: collapse;}
+      img {outline:0;}
+      a img {border:none;}
+      @-ms-viewport{ width: device-width;}
+    </style>
+    <style type="text/css">
+      @media only screen and (max-width: 480px) {
+        .container {width: 100% !important;}
+        .footer { width:auto !important; margin-left:0; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        img { max-width:100% !important; height:auto !important; max-height:auto !important;}
+        .header img{max-width:100% !important;height:auto !important; max-height:auto !important;}
+        .photo img { width:100% !important; max-width:100% !important; height:auto !important;}
+        .drop { display:block !important; width: 100% !important; float:left; clear:both;}
+        .footerlogo { display:block !important; width: 100% !important; padding-top:15px; float:left; clear:both;}
+        .nav4, .nav5, .nav6 { display: none !important; }
+        .tableBlock {width:100% !important;}
+        .responsive-td {width:100% !important; display:block !important; padding:0 !important; }
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        /* MOBILE GLOBAL STYLES - DO NOT CHANGE */
+        body { padding: 0px !important; font-size: 16px !important; line-height: 150% !important;}
+        h1 { font-size: 22px !important; line-height: normal !important;}
+        h2 { font-size: 20px !important; line-height: normal !important;}
+        h3 { font-size: 18px !important; line-height: normal !important;}
+        .buttonstyles {
+          font-family:arial,helvetica,sans-serif !important;
+          font-size: 16px !important;
+          color: #FFFFFF !important;
+          padding: 10px !important;
+        }
+        /* END OF MOBILE GLOBAL STYLES - DO NOT CHANGE */
+      }
+      @media only screen and (max-width: 640px) {
+        .container { width:100% !important; }
+        .mobile-hidden { display:none !important; }
+        .logo { display:block !important; padding:0 !important; }
+        .photo img { width:100% !important; height:auto !important;}
+        .nav5, .nav6 { display: none !important;}
+        .fluid, .fluid-centered {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+        .fluid-centered {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+    </style>
+    <!--[if mso]>       <style type="text/css">           /* Begin Outlook Font Fix */           body, table, td {               font-family: Arial, Helvetica, sans-serif ;               font-size:16px;               color:#000000;               line-height:1;           }           /* End Outlook Font Fix */       </style>     <![endif]-->
+  </head>
+  <body bgcolor="#ffffff" text="#000000" style="background-color: #ffffff; color: #000000; padding: 0px; -webkit-text-size-adjust:none; font-size: 16px; font-family:arial,helvetica,sans-serif;"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">Invent your own writing style with Custom mode</div>
+    <div style="font-size:0; line-height:0;"><img src="https://click.e-mail.quillbot.com/open.aspx?ffcb10-fef81c75776c04-fe5f17737c62067c751c-fe2911737164047a731d74-ffc61d-fe591778756507747213-fec41673706c0575&d=120014&bmt=0" width="1" height="1" alt=""></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" align="center">
+      <tr>
+        <td align="center" valign="top">
+          
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <table cellspacing="0" cellpadding="0" border="0" width="600" class="container" align="center">
+            <tr>
+              <td>
+                <table class="tb_properties border_style" style="background-color:#FFFFFF;" cellspacing="0" cellpadding="0" bgcolor="#ffffff" width="100%">
+                  <tr>
+                    <td align="center" valign="top">
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                          <!-- added padding here -->
+                          <td class="content_padding" style="">
+                            <!-- end of comment -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                              <tr> <!-- top slot -->
+                                <td align="center" class="header" valign="top">
+                                  <table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                          <td align="left" valign="top">
+                                            <table cellspacing="0" cellpadding="0" style="width:100%">
+                                              <tbody>
+                                              <tr>
+                                                <td class="responsive-td" valign="top" style="width: 100%;">
+                                                  <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+  
+    <title>Back2School - 2</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- iphone fix -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="x-apple-disable-message-reformatting">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!--- CSS will be here -->
+    <style type="text/css">
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        -webkit-text-size-adjust: none;
+      }
+
+      body {
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        color: #252525;
+        font-weight: normal;
+        font-family: "Open Sans", Roboto, system-ui, -apple-system,
+          BlinkMacSystemFont, Lucida Grande, San Francisco, "Segoe UI", Oxygen,
+          Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        background-color: #fff;
+      }
+    </style>
+  
+  
+    <center>
+      <!-- main container -->
+      <!--[if (gte mso 9)|(IE)]>                   <table align="center" border="0" cellspacing="0" cellpadding="0" width="600">                      <![endif]-->
+      <!-- Email content -->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="           width: 600px;           -ms-text-size-adjust: 100%;           -webkit-text-size-adjust: 100%;           color: #252525;           font-weight: normal;           font-family: 'Open Sans', Roboto, system-ui, -apple-system,             BlinkMacSystemFont, Lucida Grande, San Francisco, 'Segoe UI', Oxygen,             Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;           margin: 0;           padding: 0;           font-weight: 400;           background-color: #eaeaea;         ">
+        
+          <tr>
+            <td align="center" valign="top">
+              <!-- inner container -->
+              <table border="0" cellpadding="0" cellspacing="0" style="max-width: 450px; background-color: #fff">
+                
+                  <!-- Header -->
+                  <tr>
+                    <td align="center" valign="top">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="-webkit-text-size-adjust: none">
+                        <tr>
+                          <td align="center" valign="top" style="background-color: #fff">
+                            <!--[if (gte mso 9)|(IE)]>                             <v:background xmlns:v="urn:schemas-microsoft-com:vml" fill="t">                             <v:fill type="gradient" color="#fff" color2="#fff" />                           <![endif]-->
+                            <a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e20eb378ea8b688fad6087087b6978657a7f3bdf2ae98de8bbc06a7ad38d55581bca79f28a93438afe75df1e7b158addb4634def4ce88cdfb" target="_blank" title="QuillBot">
+                              <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/backToSchool/2023/qb-logo.png" alt="QuillBot" width="160px" style="margin: 25px 0">
+                            </a>
+                            <!--[if (gte mso 9)|(IE)]>                           </v:background>                           </v:fill>                           <![endif]-->
+                          </td>
+                        </tr>
+                        <!-- Hero -->
+                        <tr>
+                          <td align="center" valign="top">
+                            <a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261ef5a7209fc4da1c8df40df9cecfdf91f2688b0edfbbcff3ba1c0d56a643f618c817cd906b4f77c6930ef9a75658ff9cb3fc2d0fc4ee90ef3e" target="_blank">
+                              <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/backToSchool/2023/Hero-2.png" alt="Think outside the box this semester" width="450px">
+                            </a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- code -->
+                  <tr>
+                    <td align="center" valign="top">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 45px auto">
+                        <tr>
+                          <td align="center" valign="top">
+                            <h2 style="                                 width: 60%;                                 color: #004c0d;                                 text-align: center;                                 font-size: 28px;                                 font-style: normal;                                 font-weight: 700;                                 line-height: 1.5;                                 margin: 0 auto 20px;                               ">
+                              Limited time only: save 40%
+                            </h2>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top">
+                            <p style="                                 color: #252525;                                 text-align: center;                                 font-size: 16px;                                 font-style: normal;                                 font-weight: 400;                                 width: 80%;                                 line-height: 1.6;                                 margin: 0 auto 15px;                               ">
+                              Get great savings on QuillBot Premium with our
+                              back-to-school sale. Don’t skip out on this
+                              amazing offer—it only comes once a year.
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top">
+                            <a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e32deba89b3e281d7e5df36afb9d8bbea90a9d48d8442a4f4f25b95695501f9d31ea0dbf3da126aec90bb271ec18570710d7a0d61fbd7895e" title="SCHOOL40" target="_blank">
+                              <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/backToSchool/2023/b2s-code.png" alt="SCHOOL40" style="                                   width: 178px;                                   margin-bottom: 20px;                                   display: block;                                 ">
+                            </a>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top">
+                            <p style="                                 color: #252525;                                 text-align: center;                                 font-size: 16px;                                 font-style: normal;                                 font-weight: 400;                                 margin: 0px auto 30px;                               ">
+                              Use code to save. Offer ends August 25.
+                            </p>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="center" valign="top">
+                            
+<a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261eefb172bbe5627418571fecd5e850043340d15462ea83ab4ce4e3f540405d1a3804b614268dec003061999dc6bd550db6ac609df5ad722cd0" target="_blank" title="Upgrade Now" style="                                 color: #fff;                                 text-decoration: none;                                 border-radius: 32px;                                 background: #178733;                                 box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.12),                                   2px 2px 0px 0px rgba(0, 0, 0, 0.14);                                 font-size: 16px;                                 font-style: normal;                                 font-weight: 700;                                 padding: 22px 12px;                                 border: none;                                 margin: 5px auto 0px;                                
+ line-height: 0px;                                 display: inline-block;                                 width: 150px;                               ">Upgrade now</a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- testimonials -->
+                  <tr>
+                    <td align="center" valign="top" style="                         display: block;                         margin: auto;                         background-color: #edf3fb;                       ">
+                      <table border="0" cellpadding="0" cellspacing="0" width="340px">
+                        
+                          <tr>
+                            <td align="center" valign="top">
+                              <p style="                                   margin: 50px 0 13px;                                   font-style: italic;                                   font-size: 16px;                                   line-height: 1.8;                                   width: 85%;                                 ">
+                                “This has been quite beneficial to me in school,
+                                and I highly suggest it”
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top">
+                              <p style="                                   margin: 0 0 24px;                                   font-weight: 600;                                   font-size: 14px;                                   line-height: 1.8;                                 ">
+                                Joshua, via QuillBot for Chrome
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top">
+                              <a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e582810f83385bc80ff2d65dc0b22062d23a27afc9a3b99c480888e91af4973ee597835fba33af797d62803c9395aa7e3144a5701459682a6" target="_blank">
+                                <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/backToSchool/2023/ratings.png" alt="Ratings" style="width: 90px">
+                              </a>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top">
+                              <p style="                                   font-size: 14px;                                   margin-top: 5px;                                   margin-bottom: 50px;                                 ">
+                                35+ million writers
+                              </p>
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    </td>
+                  </tr>
+                  <!-- footer -->
+                  <tr>
+                    <td align="center" valign="top">
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" style="width: 340px; display: block; margin: auto">
+                        
+                          <tr>
+                            <td align="center" valign="top">
+                              <h5 style="                                   color: #49ac5b;                                   font-size: 14px;                                   font-weight: 700;                                   margin-top: 40px;                                   margin-bottom: 10px;                                 ">
+                                As always, thank you for your support.
+                              </h5>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top">
+                              <p style="                                   font-size: 14px;                                   width: 85%;                                   line-height: 1.8;                                   margin-bottom: 15px;                                 ">
+                                If you have comments, questions, or suggestions,
+                                feel free to reach out at our
+                                <a href="https://click.e-mail.quillbot.com/?qs=2e7c7a128787261e90d110423c0230358ce780d244cbfd1e9ac7dca215cb1229d447a3a8379fd37533a777367e350513ae311c858f269a963cf97599f7b25966" target="_blank" title="Help Center" style="                                     color: #252525;                                     text-decoration: underline;                                   ">
+                                  Help Center</a>. &nbsp;No longer want to receive these emails?
+                                <a href="https://click.e-mail.quillbot.com/unsub_center.aspx?qs=369c416e4e0aafdaf186ffee8de4efb78bfa2ea15ccef7ce65c53b2dce770fd703f41317591399f2723636f63b15f478d88bac5d1a3369f31a67cda501ed91450b7f8e4c0732d7be" target="_blank" title="Unsubscribe" style="                                     color: #252525;                                     text-decoration: underline;                                   ">
+                                  Unsubscribe</a>.
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top">
+                              <p style="                                   font-weight: 700;                                   font-size: 14px;                                   line-height: 1.6;                                   margin: 0px 0px 15px;                                 ">
+                                Your friends at
+                                <a href="https://click.e-mail.quillbot.com/?qs=da168f1dea2108acfaa138ef873533f21a824a9091e543ab7f8bbf61dca9242ba8273387c3bc6f98a7c776996e1c1b8cff9ddc7acfd359bb7a07c2662aba5ee2" target="_blank" title="QuillBot" style="                                     color: #252525;                                     text-decoration: underline;                                   ">
+                                  QuillBot
+                                </a>
+                              </p>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top" style="padding-top: 20px; padding-bottom: 40px">
+                              <table border="0" cellpadding="0" cellspacing="0">
+                                <tr>
+                                  <td align="center" valign="top" style="padding-right: 8px">
+                                    <a href="https://click.e-mail.quillbot.com/?qs=da168f1dea2108ac511fe597dd03d05c4f7596da55fbc9f8339e6c51638ec79210d50185310aafda06ed05dd203a604a78b04ce83233cb004194e39c7548ee46" target="_blank" title="Linkedin">
+                                      <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/writingEmails/linkedin-new-black.png" alt="linkedin" width="20" height="19">
+                                    </a>
+                                  </td>
+                                  <td align="center" valign="top" style="padding-right: 8px">
+                                    <a href="https://click.e-mail.quillbot.com/?qs=da168f1dea2108acda06d66fb5f93bc3351d08ee4a82f3a0612bc4e610f2626e8c234ff2bada5acc8538a35639714b6516eea9aeb70dde4e6975739242f065d2" title="Facebook" target="_blank">
+                                      <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/writingEmails/facebook-new-black.png" alt="facebook" width="20" height="19">
+                                    </a>
+                                  </td>
+                                  <td align="center" valign="top" style="padding-right: 8px">
+                                    <a href="https://click.e-mail.quillbot.com/?qs=da168f1dea2108acb3542cfb26023917fe6cbd8ace5ee4dfce73268aa6d5b54f7d05c20cee91b31d1d847a09899eeeaa7b3ca934797187d59a1ffd078f5033b7" target="_blank" title="Twitter">
+                                      <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/writingEmails/twitter-new-black.png" alt="twitter" width="20" height="19">
+                                    </a>
+                                  </td>
+                                  <td align="center" valign="top">
+                                    <a href="https://click.e-mail.quillbot.com/?qs=da168f1dea2108ac69f00b3b5e7556e4eecf8803926be531d146186f06bb90b6a0bd8f15da6bc9bfe4dd890f65e44f8158ed301324beef38d62f781f3150b480" title="Instagram" target="_blank">
+                                      <img src="https://storage.googleapis.com/cdn.quillbot.com/mailer/writingEmails/insta-new-black.png" alt="instagram" width="20" height="19">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        
+                      </table>
+                    </td>
+                  </tr>
+                
+              </table>
+            </td>
+          </tr>
+        
+      </table>
+      <!--[if (gte mso 9)|(IE)]>                   </table>                   <![endif]-->
+    </center>
+  
+</td></tr></table>
+												  
+                                                </td>
+                                              </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+--24sZ63amaKEU=_?:--
+

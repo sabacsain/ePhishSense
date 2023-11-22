@@ -1,0 +1,3022 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:3e87:b0:3c1:3203:f83b with SMTP id bx7csp259729mab;
+        Wed, 16 Nov 2022 08:55:38 -0800 (PST)
+X-Google-Smtp-Source: AA0mqf67mLyrgQvaC4qsEIgISSpjT+2JxzOH15wohxSWSogtpjy4pmH5RVud2nE1m6kTwXNW4nGe
+X-Received: by 2002:a17:902:a5c3:b0:188:52df:7786 with SMTP id t3-20020a170902a5c300b0018852df7786mr9886358plq.109.1668617738499;
+        Wed, 16 Nov 2022 08:55:38 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1668617738; cv=none;
+        d=google.com; s=arc-20160816;
+        b=X+D1+As0R69M81UI5H5WqccYsXK2aQaJxzZGtLgo77PD4eZH75YUT5FvAQ0/LfhaZR
+         uBG4kE2W1WWY2mlzg9tgqRL+DZaE4DBKrPIs9vkL6tyxlQq3PLxOQD6pDhBCTN4OW1Gk
+         zKTw4TS96oARnVtFK5dfoyRmmWuGE3INEbMyfhYJ9H3Hd21Faxtsu5yakEOG/vAwjUID
+         t9qAfTNu++Z7dO/3aWpMFhuqe+rZKMruNAHXIw9j5d1xpiS7RMEmY6stiIdxZzI7U8aC
+         h9ryvcGs77be+oKCcKHR8rQ33y7x0BvyEnQ2R1WNh0HXuIr28C8V00MDdlr5iVpGzKtl
+         VRAQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=reply-to:message-id:date:to:from:subject:mime-version
+         :dkim-signature;
+        bh=9JjXYTT8ejUmzfag8NQQWcsTh6zgJoufSH/U0Bmi0a4=;
+        b=DaoybpLvzEbYGOtj2lMhhMvgcxouhy8mn3hrHz9poYmo6Lu9ThBXkLsNJSgWJXYQ0c
+         Ux4NvAx3v/Gejppmquf2Ykr1+8/J+5YJTCkrLRq3CWcjIrKy5082euTcL7kto3MLM79V
+         AqHHtkZcvvl64EbUm7cZ9EtkasU9lGxVfyyxykQVjtviNJzIWMuz/zbVhSSWdAYS3cOb
+         DLpHXqP93178t+Xql7eABcivMN3eCPfyJmtFutjIUj24Me6vPyorRLjMWAHG95cvZf4O
+         LNu0KyqT2HLTvowaJUyd0YiFdFZblhfDIupreJ1tIQKHZMFPkPJhqdDu7ZOcPtOVcmbj
+         jebw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@order.eventbrite.com header.s=scph0420 header.b=CrdGvoz3;
+       spf=pass (google.com: domain of msprvs1=19319oy_lmne6=bounces-274689@bounce.eventbrite.com designates 156.70.3.137 as permitted sender) smtp.mailfrom="msprvs1=19319oY_LmNe6=bounces-274689@bounce.eventbrite.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=eventbrite.com
+Return-Path: <msprvs1=19319oY_LmNe6=bounces-274689@bounce.eventbrite.com>
+Received: from mta-70-3-137.eventbrite.com.sparkpostmail.com (mta-70-3-137.eventbrite.com.sparkpostmail.com. [156.70.3.137])
+        by mx.google.com with ESMTPS id ik26-20020a170902ab1a00b00186bb4a081csi14597555plb.393.2022.11.16.08.55.38
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 16 Nov 2022 08:55:38 -0800 (PST)
+Received-SPF: pass (google.com: domain of msprvs1=19319oy_lmne6=bounces-274689@bounce.eventbrite.com designates 156.70.3.137 as permitted sender) client-ip=156.70.3.137;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@order.eventbrite.com header.s=scph0420 header.b=CrdGvoz3;
+       spf=pass (google.com: domain of msprvs1=19319oy_lmne6=bounces-274689@bounce.eventbrite.com designates 156.70.3.137 as permitted sender) smtp.mailfrom="msprvs1=19319oY_LmNe6=bounces-274689@bounce.eventbrite.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=eventbrite.com
+X-MSFBL: uFH3y9ZLGpGU+A97CuDwtFULQg75WsPnLrC6AMLzJpw=|eyJtZXNzYWdlX2lkIjo
+	iNjM3NDA5MTY3NTYzZmY5Njc4ZTQiLCJyIjoiY2F2YW5leXJvZXJpY2Fqb3lzYXJ
+	pbGFuQGdtYWlsLmNvbSIsInRlbmFudF9pZCI6InNwYyIsInN1YmFjY291bnRfaWQ
+	iOiIwIiwiY3VzdG9tZXJfaWQiOiIyNzQ2ODkifQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+	d=order.eventbrite.com; s=scph0420; t=1668617738;
+	i=@order.eventbrite.com;
+	bh=9JjXYTT8ejUmzfag8NQQWcsTh6zgJoufSH/U0Bmi0a4=;
+	h=Content-Type:Subject:From:To:Date:Message-ID:From:To:Cc:Subject;
+	b=CrdGvoz3v9TUebLD0H/oeryeohhPA6mWMUqfUaEom5Q5KpC3ELNOwrilICZCLjCEz
+	 hDRRxyAMh97ZsfC6AgIjySl0mlq6/GYXwNIo2A40PxkGNYEuMYBFr4QvmhMeyncrp2
+	 gAGlB18wARIjqm3kJ5fK2e3aMaq8J/1Yg8ROVzms=
+Authentication-Results:  gc.mta1vsmtp.cc.prd.sparkpost smtp.user=<hidden>; auth=pass (PLAIN)
+Received: from [52.201.4.8] ([52.201.4.8:59511] helo=8a020b837c40)
+	by gc.mta1vsmtp.cc.prd.sparkpost (envelope-from <bounces@bounce.eventbrite.com>)
+	(ecelerity 4.4.0.17998 r(msys-ecelerity:tags/4.4.0.44)) with ESMTPSA (cipher=AES-256-GCM) 
+	id 87/4E-26617-90615736; Wed, 16 Nov 2022 16:55:38 +0000
+Content-Type: multipart/alternative;
+ boundary="===============3273184963107973121=="
+MIME-Version: 1.0
+Subject: Order Confirmation for Women in AI - Engage USA - Artificial
+ Intelligence and
+ Gender Bias
+From: "Eventbrite" <noreply@order.eventbrite.com>
+To: ************************@gmail.com
+Date: Wed, 16 Nov 2022 16:55:37 -0000
+Message-ID: <166861773773.8.9146953600803068608@8a020b837c40>
+X-EventbriteMailer: message
+x-campaignid: order-lifecycle:order-confirmation
+Reply-To: hey@womeninai.co
+
+--===============3273184963107973121==
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+
+Eventbrite
+
+
+    
+
+    
+**** Eventbrite ****
+--------------------
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+
+     
+    
+*** Erica Joy , <br />you've got tickets!
+------------------------------------------------------------------------
+
+
+    
+** 
+------------------------------------------------------------------------
+
+        
+
+        
+Go to My Tickets: https://clicks.eventbrite.com/f/a/hcUUL60ZbSlhHErYvU501Q~~/AAQxAQA~/RgRlVkmJP0S1aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmYXBwX2N0YV9zcmM9b3JkZXJfY29uZl9lbWFpbCZ1dG1fdGVybT12aWV3dGlja2V0c1cDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA
+
+    
+
+
+    
+** Women in AI - Engage  USA - Artificial Intelligence and Gender Bias
+------------------------------------------------------------------------
+
+    
+
+
+        
+Women in AI - Engage  USA - Artificial Intelligence and Gender Bias
+
+        
+
+
+        
+1 x Ticket
+
+            
+Order total: Free
+
+        
+
+
+        
+Thursday, November 17, 2022 from 6:00 PM to 7:00 PM (ET)
+
+        
+
+
+
+    
+View event details: https://clicks.eventbrite.com/f/a/gCsYHbz_6LpQmp72kWwEIg~~/AAQxAQA~/RgRlVkmJP0TpaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vZS93b21lbi1pbi1haS1lbmdhZ2UtdXNhLWFydGlmaWNpYWwtaW50ZWxsaWdlbmNlLWFuZC1nZW5kZXItYmlhcy10aWNrZXRzLTQ2MTg3NzMwNjQ1Nz9hZmY9ZWVtYWlsb3JkY29uZiZyZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT12aWV3ZXZlbnRXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~
+
+    
+
+
+        
+        
+
+        
+
+        
+    Follow Women in AI: https://clicks.eventbrite.com/f/a/zi-pCrYlByjME8fiR7lYAw~~/AAQxAQA~/RgRlVkmJP0SbaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vby93b21lbi1pbi1haS0xNjUxMDU5OTgwMz9yZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT1mb2xsb3dvcmdXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~
+
+        
+
+
+    
+    
+* Questions about this event?
+------------------------------------------------------------------------
+
+
+    
+
+
+    
+Contact the organizer: https://clicks.eventbrite.com/f/a/HppEsmDCQm4JtYOfkVhaqQ~~/AAQxAQA~/RgRlVkmJP0SraHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmY29udGFjdF9vcmdhbml6ZXI9MSZ1dG1fdGVybT1jb250YWN0b3JnVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~
+
+
+        
+<table cellpadding="0" cellspacing="0" border="0" class="no_text_resize" width="100%" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+        <tr>
+            <td colspan="3">
+                
+
+** Order Summary
+------------------------------------------------------------------------
+
+            </td>
+        </tr>
+        
+
+        <tr>
+            <td colspan="3">
+                
+Order 
+#5185069699: https://clicks.eventbrite.com/f/a/1vM8SLDA5yFtoDogA8vjUg~~/AAQxAQA~/RgRlVkmJP0SUaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09b3JkZXJpZFcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA
+ - November 16, 2022
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+            </td>
+        </tr>
+            
+
+        <tr>
+            <td colspan="3">
+                <table cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <tbody>
+                            <tr>
+                                <td width="25%" valign="top">
+                                    
+Erica Joy Cavaneyro
+
+                                </td>
+                                <td width="50%" valign="top">
+                                    
+1 x
+
+                                    
+General Admission - Free
+                                </td>
+                                <td width="20%" align="right" valign="top" style="text-align: right;">
+                                    
+Free
+
+                                </td>
+                            </tr>
+                            
+
+
+
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        
+
+    </table>
+
+    
+                    
+
+                        
+View and manage: https://clicks.eventbrite.com/f/a/5_SEJScxepFtPOKLMGj8qg~~/AAQxAQA~/RgRlVkmJP0SjaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09dmlld21hbmFnZW9yZGVyc3VtbWFyeVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA
+ your order online
+                    
+
+
+
+
+
+                        
+
+                            
+    <a href="https://clicks.eventbrite.com/f/a/dopYUTk6GejAnmUeJu1bow~~/AAQxAQA~/RgRlVkmJP0S4aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmY29udGFjdF9vcmdhbml6ZXI9MSZ1dG1fdGVybT1jb250YWN0b3Jnb3JkZXJzdW1tYXJ5IlcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; font-weight:normal;">Contact the organizer</a>                     for any questions related to this purchase.
+                        
+
+
+
+                    
+
+                        
+    This order is subject to Eventbrite 
+Terms of Service: https://clicks.eventbrite.com/f/a/zZg0_LKwjRG_SbR40bBn8g~~/AAQxAQA~/RgRlVkmJP0SAaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vdG9zLz9yZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT10b3NXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~
+ and 
+Privacy Policy: https://clicks.eventbrite.com/f/a/ND8L5i535gKkJ4mOAkv9KA~~/AAQxAQA~/RgRlVkmJP0SUaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vcHJpdmFjeXBvbGljeS8_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09cHJpdmFjeXBvbGljeVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA
+, and 
+Cookie Policy: https://clicks.eventbrite.com/f/a/rvN08UPEISE1LPQHSVmpkQ~~/AAQxAQA~/RgRlVkmJP0SNaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY29va2llcy8_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09Y29va2llcG9saWN5VwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~
+.
+
+
+
+        
+** Your tickets
+------------------------------------------------------------------------
+
+
+    
+
+
+        
+
+
+        
+1 eTicket
+
+
+        
+
+
+        
+The organizer will follow up with instructions on how to redeem your ticket and access the event.
+
+
+
+
+
+
+
+
+
+    
+
+Questions? Contact us anytime day or night.
+https://clicks.eventbrite.com/f/a/dcCcqdS-IoyUoc7hR3jCsA~~/AAQxAQA~/RgRlVkmJP0QtaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vc3VwcG9ydC9jb250YWN0LXVzVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~
+
+- The Eventbrite Team
+
+
+View our user agreement and privacy policy if you have further questions:
+https://clicks.eventbrite.com/f/a/ONXvViUxuLcV-d0JNgThew~~/AAQxAQA~/RgRlVkmJP0QeaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vdG9zVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~
+https://clicks.eventbrite.com/f/a/Odz4PNaa2wGno_zE-BHzkg~~/AAQxAQA~/RgRlVkmJP0QmaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vdG9zI3ByaXZhY3lXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~
+
+
+
+Copyright 2022 Eventbrite. All rights reserved.
+Eventbrite is located at 535 Mission Street, 8th Floor, San Francisco, CA 94105.
+
+
+
+
+--===============3273184963107973121==
+Content-Transfer-Encoding: 7bit
+Content-Type: text/html; charset="utf-8"
+MIME-Version: 1.0
+
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+ <!-- Turn off iOS phone number autodetect -->
+ <meta name="format-detection" content="telephone=no" />
+ <meta name="format-detection" content="address=no" />
+
+ <style type="text/css">
+ /*
+ * Styles for all the emails
+ */
+
+ /* Normalizing */
+ #outlook a {padding:0;}
+ * {
+ -ms-text-size-adjust:100%;
+ -webkit-text-size-adjust:100%;
+ }
+ html, body {
+ font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ text-rendering: optimizeLegibility;
+ font-weight:normal;
+ width:100% !important;
+ height:100% !important;
+ margin:0;
+ padding:0;
+ }
+ img{border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;height:auto;line-height:100%;display:inline-block;}
+ a img{border:none;display:block;}
+
+ .default-heading h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {color:#3F60E7 !important;}
+ .default-heading h1 a:active, h2 a:active, h3 a:active, h4 a:active, h5 a:active, h6 a:active {color:#3F60E7 !important;}
+ .default-heading h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {color:#3F60E7 !important;}
+
+ .default-table table {
+ border-collapse:collapse;
+ mso-table-lspace:0pt;
+ mso-table-rspace:0pt;
+ border-spacing:0;
+ border:0;
+ padding:0;
+ table-layout:fixed;
+ margin:0;
+ }
+ .default-table table td {border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;}
+ .no_text_resize {
+ -moz-text-size-adjust:none;
+ -webkit-text-size-adjust:none;
+ -ms-text-size-adjust:none;
+ text-size-adjust:none;
+ }
+ a[href^="x-apple-data-detectors:"] {
+ color:inherit !important;
+ text-decoration:none !important;
+ font-size:inherit !important;
+ font-family:inherit !important;
+ font-weight:inherit !important;
+ line-height:inherit !important;
+ }
+
+ td[class="grid__col"] {
+ padding-left: 10px !important;
+ padding-right: 10px !important;
+ }
+
+ .grid__col {
+ padding-left: 10px !important;
+ padding-right: 10px !important;
+ }
+
+ /* Footer */
+ .footer-content.bottom-section {
+ padding: 0px 32px;
+ }
+ .content .align-center,
+ .footer-content .align-center {
+ text-align: center;
+ }
+ .footer-content {
+ color: #B7B6C0 !important;
+ }
+ .footer-content a {
+ color: #f05537 !important;
+ text-decoration: none;
+ }
+ .grid_event_card .event_information .event_description_container .event_title, .list-event-card__title {
+ color: #363A43 !important;
+ font-size: 17px;
+ font-weight: 300;
+ padding-bottom: 4px;
+ }
+ .list-event-card__body {
+ vertical-align: top;
+ padding-left: 20px;
+ }
+ .list-event-card__image {
+ width: 210px;
+ height: 105px;
+ border-radius: 3px;
+ }
+ .list-event-card__image-container {
+ overflow: hidden;
+ width: 210px;
+ height: 105px;
+ border-radius: 3px;
+ }
+ .list-event-card__image-wrapper {
+ width: 210px;
+ height: 105px;
+ line-height: 0;
+ }
+ .list-event-card__date, .list-event-card__info {
+ color: #666A73;
+ font-size: 14px;
+ line-height: 18px;
+ font-weight: 300;
+ }
+ /* Social */
+ .social-logo-container {
+ display: inline-block;
+ height: auto;
+ margin: 0px;
+ }
+
+
+ .content {
+ width: 600px;
+ }
+
+ .user-generated-content img {
+ max-width: 100%;
+ }
+
+
+ /* Media Queries */
+ @media all and (max-width: 600px) {
+ .content {
+ /* slight space on each side */
+ width: 97% !important;
+ }
+
+ *[class="gmail-fix"] {
+ display: none !important;
+ }
+
+ td[class="grid__col"] {
+ padding-left: 0px !important;
+ padding-right: 0px !important;
+ max-width: 90% !important;
+ }
+ .grid__col {
+ padding-left: 0px !important;
+ padding-right: 0px !important;
+ max-width: 90% !important;
+ }
+ .social-logo-container {
+ display: inline-block !important;
+ }
+ .btn {
+ font-size: 15px !important;
+ padding: 12px 28px 14px !important;
+ margin-bottom: 18px;
+ }
+ .hide {display:none;}
+ }
+
+ @media all and (max-width: 480px) {
+ td[class="row-section-content-header padding-side"] {
+ /* slight space on each side */
+ width: 0px !important;
+ }
+
+ .heading_epic {
+ font-size: 24px !important;
+ line-height: 25px !important;
+ font-style: normal;
+ font-weight: bold;
+ }
+ .list-event-card__body {
+ padding-left: 16px !important;
+ }
+ .list-event-card__image {
+ position: relative !important;
+ width: 156px !important;
+ height: 78px !important;
+ left: -32px !important;
+ }
+ .list-event-card__image-container {
+ width: 78px !important;
+ height: 78px !important;
+ }
+ .list-event-card__image-wrapper {
+ width: 78px !important;
+ height: 78px !important;
+ display: inline-block !important;
+ }
+ .list-event-card-image {
+ vertical-align: top;
+ padding-top: 8px;
+ }
+ }
+
+
+</style>
+
+
+ </head>
+
+ <!-- Global container with background styles. Gmail converts BODY to DIV so we lose properties like BGCOLOR. -->
+
+ <body style="padding:0px !important; margin:0px !important;">
+<div style="color:transparent;visibility:hidden;opacity:0;font-size:0px;border:0;max-height:1px;width:1px;margin:0px;padding:0px;border-width:0px!important;display:none!important;line-height:0px!important;"><img border="0" width="1" height="1" src="https://clicks.eventbrite.com/q/H2-mQVRZcLJrW1h1q8Vy-w~~/AAQxAQA~/RgRlVkmJPVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA" alt=""/></div>
+
+ <div class="hide" style="display:none;line-height:0;mso-hide:all">
+</div>
+ <!-- Outermost Wrapper Table -->
+ <table style="min-width:100%;" width="100%" bgcolor="#EEEDF2">
+ <tr>
+ <td>
+ <!--[if (gte mso 9)|(IE)]>
+ <table class="container-table" width="600" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#EEEDF2">
+ <![endif]-->
+ <!--[if !((gte mso 9)|(IE))]>
+ <table class="container-table" style="margin-left:auto; margin-right:auto;
+ border-collapse:collapse;
+ border-spacing:0;
+ mso-table-lspace:0pt;
+ mso-table-rspace:0pt;
+ border:0;
+ padding:0;
+ " cellpadding="0" cellspacing="0" border="0" >
+ <![endif]-->
+ <tr>
+ <!-- Centered 600px Email Table -->
+ <td style="margin-left:auto; margin-right:auto;" align="center" bgcolor="#EEEDF2">
+ <table class="content" style="border: none;">
+ <tr>
+ <td align="center" bgcolor="#EEEDF2">
+ <table cellpadding="0" cellspacing="0" border="0" bgcolor="#EEEDF2">
+ <tbody>
+ <!-- Header Section -->
+ 
+ 
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:32px;font-size:32px;background-color:#EEEDF2;"
+ width="600" height="32">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='32'
+ style='mso-line-height-rule:exactly;line-height:32px;font-size:32px;height:32px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:64px;font-size:64px;height:64px;"
+ height="64" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ <div class="row-logo-header-legacy" style="width: 140px; height: 25px; margin: 0 auto; text-align: center;">
+ <a href="https://clicks.eventbrite.com/f/a/m1HuxeGbcBBb_j_80mVfEQ~~/AAQxAQA~/RgRlVkmJP0RuaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vP3V0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV90ZXJtPWViX2xvZ29XA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~">
+ 
+ <img src='https://cdn.evbstatic.com/s3-build/perm_001/de0b06/django/images/emails_2018_rebrand/EB-logo@2x.png' title='' alt='Eventbrite' style='' border="0" width='140' height='25' class=""/>
+
+ </a>
+ </div>
+ 
+ </td>
+ </tr>
+
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:10px;font-size:10px;background-color:#EEEDF2;"
+ width="600" height="10">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='10'
+ style='mso-line-height-rule:exactly;line-height:10px;font-size:10px;height:10px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:20px;font-size:20px;height:20px;"
+ height="20" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ <!-- Body Section -->
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+
+<tr bgcolor="#EEEDF2" class="row_section-legacy-header-content">
+ <td style="background-color:#EEEDF2;" bgcolor="#EEEDF2" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#EEEDF2">
+ <td width="30" bgcolor="#EEEDF2" align="center"></td>
+ <td class="" style="text-align:center;background-color:#EEEDF2;"
+ align="center">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ bgcolor='#EEEDF2'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ >
+ <tbody>
+ 
+ 
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ 
+<h1 style="padding: 0; margin: 12px 0 0 0;font-size: 30px;line-height: 42px;font-weight: bold;font-weight: 800;letter-spacing: -0.2px;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;color: #1E0A3C; margin-top:0;" class="h1-header">
+ 
+ Erica Joy , <br />you've got tickets!
+ 
+</h1>
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ 
+ <img src='https://cdn.evbstatic.com/s3-build/perm_001/4c3492/django/images/emails_2018_rebrand/header-icon@2x.png' title='' alt='Eventbrite' style='' border="0" width='115' height='115' class=""/>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#EEEDF2;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:16px;font-size:16px;height:16px;"
+ height="16" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="30" bgcolor="#EEEDF2"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+
+<tr bgcolor="#EEEDF2" class="row_section-legacy-header-content">
+ <td style="background-color:#EEEDF2;" bgcolor="#EEEDF2" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#EEEDF2">
+ <td width="30" bgcolor="#EEEDF2" align="center"></td>
+ <td class="" style="text-align:center;background-color:#EEEDF2;"
+ align="center">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ bgcolor='#EEEDF2'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ >
+ <tbody>
+ 
+ 
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="js-cta-data-text" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ 
+<h1 style="padding: 0; margin: 12px 0 0 0;font-size: 23px;line-height: 32px;font-weight: normal;font-weight: 500;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;color: #1E0A3C; margin-top:0; font-weight: bold;" class="h1-header">
+ 
+ 
+ 
+</h1>
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#EEEDF2;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="js-cta-data-btn" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ <!--[if (mso)|(ie)]>
+ <table align="center" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+ <td width="100%">
+ <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.eventbrite.com/mytickets/5185069699?ref=eemailordconf&utm_campaign=order_confirm&utm_medium=email&utm_source=eventbrite&app_cta_src=order_conf_email&utm_term=viewtickets" style="height:40px;v-text-anchor:middle;width:225px;" arcsize="10%" strokeweight="1px" strokecolor="#f05537" fillcolor="#f05537">
+ <w:anchorlock/>
+ <center style="color:#FFFFFF;font-family:sans-serif;font-size:16px;font-weight:normal;">
+ Go to My Tickets
+ </center>
+ </v:roundrect>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ <!--[if !((mso)|(ie))]><!-- -->
+ <div style="text-align:center;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 0;">
+ <a
+ href="https://clicks.eventbrite.com/f/a/hcUUL60ZbSlhHErYvU501Q~~/AAQxAQA~/RgRlVkmJP0S1aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmYXBwX2N0YV9zcmM9b3JkZXJfY29uZl9lbWFpbCZ1dG1fdGVybT12aWV3dGlja2V0c1cDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA"
+ target="_blank"
+ style="
+ background-color:#f05537;
+ color:#FFFFFF;
+ border-color:#f05537;
+ 
+ display: inline-block;
+ line-height: 22px;
+ font-weight: normal;
+ font-weight: 500;
+ font-size: 15px;
+ text-align: center;
+ text-decoration: none;
+ padding: 8px 28px 12px;
+ border-radius: 4px;
+ border-style: solid;
+ border-width: 2px;
+ 
+ 
+ "
+ class="btn "
+ >
+ Go to My Tickets
+ </a>
+ </div>
+ <!--<![endif]-->
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="30" bgcolor="#EEEDF2"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-top">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0;border-bottom-left-radius:0;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+
+<tr bgcolor="#FFFFFF" class="row_section-article-content">
+ <td style="background-color:#FFFFFF;" bgcolor="#FFFFFF" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#FFFFFF">
+ <td width="20" bgcolor="#FFFFFF" align="left"></td>
+ <td class="" style="text-align:left;background-color:#FFFFFF;"
+ align="left">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ bgcolor='#FFFFFF'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ >
+ <tbody>
+ 
+ 
+ 
+ 
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+<h2 style="padding: 0; margin: 12px 0 0 0;font-size: 23px;line-height: 32px;font-weight: normal;font-weight: 500;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;margin-top: 0;" class="default-heading">
+ 
+ Women in AI - Engage USA - Artificial Intelligence and Gender Bias
+ 
+</h2>
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="js-event-image-url" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ <img src='https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F387214089%2F1016355844663%2F1%2Foriginal.20221104-175528?h=400&w=800&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C140%2C2240%2C1120&s=c0e06e6f92d79bb5196174c9b801760c' title='Women in AI - Engage USA - Artificial Intelligence and Gender Bias' alt='Women in AI - Engage USA - Artificial Intelligence and Gender Bias' style='' border="0" width='100%' height='auto' class=""/>
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ <table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;">
+ <tr class="row_section" style="">
+ <td width="26" style="vertical-align: top;">
+ 
+ 
+ <img src='https://cdn.evbstatic.com/s3-build/perm_001/3a25e5/django/images/emails_2018_rebrand/ticket-icon@2x.png' title='' alt='' style='padding-top: 4px;' border="0" width='12' height='16' class=""/>
+
+
+ </td>
+ <td style="">
+ <table>
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="22px">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 17px; line-height: 24px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:normal;"
+ class="">
+ 
+ 
+ 1 x Ticket
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="22px">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="no_text_resize">
+ 
+ 
+ Order total: Free
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ </table>
+ </td>
+ </tr>
+ </table>
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ <table style="border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;">
+ <tr class="row_section" style="">
+ <td width="26" style="vertical-align: top;">
+ 
+ 
+ <img src='https://cdn.evbstatic.com/s3-build/perm_001/17c084/django/images/emails_2018_rebrand/date-icon@2x.png' title='' alt='' style='padding-top: 4px;' border="0" width='18' height='18' class=""/>
+
+
+ </td>
+ <td style="">
+ <table>
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="js-calendar-row-date" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="22px">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 17px; line-height: 24px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:normal;text-decoration:none !important;cursor:text;"
+ class="">
+ 
+ 
+ Thursday, November 17, 2022 from 6:00 PM to 7:00 PM (ET)
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="js-add-calendar-links" style="padding: 0; font-size: 15px; line-height: 21px; text-align:left;" align="left" bgcolor="" width="100%" height="22px">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="no_text_resize">
+ 
+ 
+ Add to
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/tqglTparPYswPAKgdMHRMA~~/AAQxAQA~/RgRlVkmJP0SvaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY2FsZW5kYXIuaWNzP3JlZj1lZW1haWxvcmRjb25mJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1ldmVudGJyaXRlJmVpZD00NjE4NzczMDY0NTcmdXRtX3Rlcm09Z29vZ2xlY2FsJmNhbGVuZGFyPWdvb2dsZVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA"
+ class="js-add-google-link"
+ >Google</a>
+ 
+ <span style='font-weight:bold;' class=''>&middot;</span>
+
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/Stq4kvUQtKA-ny4mKHZU8A~~/AAQxAQA~/RgRlVkmJP0SuaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY2FsZW5kYXIuaWNzP3JlZj1lZW1haWxvcmRjb25mJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1ldmVudGJyaXRlJmVpZD00NjE4NzczMDY0NTcmdXRtX3Rlcm09b3V0bG9vayZjYWxlbmRhcj1vdXRsb29rVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~"
+ class="js-add-outlook-link"
+ >Outlook</a>
+ 
+ <span style='font-weight:bold;' class=''>&middot;</span>
+
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/YzEwDgO87GfGZXm2h_wetQ~~/AAQxAQA~/RgRlVkmJP0SoaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY2FsZW5kYXIuaWNzP3JlZj1lZW1haWxvcmRjb25mJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1ldmVudGJyaXRlJmVpZD00NjE4NzczMDY0NTcmdXRtX3Rlcm09aWNhbCZjYWxlbmRhcj1pY2FsVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~"
+ class="js-add-ical-link"
+ >iCal</a>
+ 
+ <span style='font-weight:bold;' class=''>&middot;</span>
+
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/pMbfxZz4URS0te7IqJwTVg~~/AAQxAQA~/RgRlVkmJP0StaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY2FsZW5kYXIuaWNzP3JlZj1lZW1haWxvcmRjb25mJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV9tZWRpdW09ZW1haWwmdXRtX3NvdXJjZT1ldmVudGJyaXRlJmVpZD00NjE4NzczMDY0NTcmdXRtX3Rlcm09eWFob29jYWwmY2FsZW5kYXI9eWFob29XA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~"
+ class="js-add-yahoo-link"
+ >Yahoo</a>
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ </table>
+ </td>
+ </tr>
+ </table>
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="js-event-link" style="padding: 0; text-align:center;" align="center" bgcolor="" width="100%" height="">
+ 
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/open-in-app/gCsYHbz_6LpQmp72kWwEIg~~/AAQxAQA~/RgRlVkmJP0TpaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vZS93b21lbi1pbi1haS1lbmdhZ2UtdXNhLWFydGlmaWNpYWwtaW50ZWxsaWdlbmNlLWFuZC1nZW5kZXItYmlhcy10aWNrZXRzLTQ2MTg3NzMwNjQ1Nz9hZmY9ZWVtYWlsb3JkY29uZiZyZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT12aWV3ZXZlbnRXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~"
+ class=""
+ 
+ >View event details</a>
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+ 
+<tr class="row_divider-line">
+ <td style="mso-line-height-rule:exactly;line-height:1px;font-size:1px;background-color:#FFFFFF;"
+ width="600" height="1">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='1'
+ style='mso-line-height-rule:exactly;line-height:1px;font-size:1px;height:1px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:1px;font-size:1px;height:1px;"
+ height="1" bgcolor="#EEEDF2">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#FFFFFF;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="js-follow-organizer-title" style="padding: 0; text-align:center;" align="center" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:normal;"
+ class="">
+ 
+ 
+ Women in AI
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#FFFFFF;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:16px;font-size:16px;height:16px;"
+ height="16" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="js-follow-organizer-btn" style="padding: 0; text-align:center;" align="center" bgcolor="" width="100%" height="">
+ 
+ 
+ <!--[if (mso)|(ie)]>
+ <table align="center" border="0" cellspacing="0" cellpadding="0">
+ <tr>
+ <td width="100%">
+ <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="https://www.eventbrite.com/o/women-in-ai-16510599803?ref=eemailordconf&utm_campaign=order_confirm&utm_medium=email&utm_source=eventbrite&utm_term=followorg" style="height:40px;v-text-anchor:middle;width:135px;" arcsize="10%" strokeweight="1px" strokecolor="#EEEDF2" fillcolor="#FFFFFF">
+ <w:anchorlock/>
+ <center style="color:#1E0A3C;font-family:sans-serif;font-size:16px;font-weight:normal;">
+ Follow
+ </center>
+ </v:roundrect>
+ </td>
+ </tr>
+ </table>
+ <![endif]-->
+ <!--[if !((mso)|(ie))]><!-- -->
+ <div style="text-align:center;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; padding: 0;">
+ <a
+ href="https://clicks.eventbrite.com/f/open-in-app/zi-pCrYlByjME8fiR7lYAw~~/AAQxAQA~/RgRlVkmJP0SbaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vby93b21lbi1pbi1haS0xNjUxMDU5OTgwMz9yZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT1mb2xsb3dvcmdXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~"
+ target="_blank"
+ style="
+ background-color:#FFFFFF;
+ color:#1E0A3C;
+ border-color:#EEEDF2;
+ 
+ display: inline-block;
+ line-height: 22px;
+ font-weight: normal;
+ font-weight: 500;
+ font-size: 15px;
+ text-align: center;
+ text-decoration: none;
+ padding: 8px 28px 12px;
+ border-radius: 4px;
+ border-style: solid;
+ border-width: 2px;
+ 
+ 
+ "
+ class="btn "
+ 
+ >
+ Follow
+ </a>
+ </div>
+ <!--<![endif]-->
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#FFFFFF;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:16px;font-size:16px;height:16px;"
+ height="16" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="js-event-questions-title" style="padding: 0; text-align:center;" align="center" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+<h2 style="padding: 0; margin: 12px 0 0 0;font-size: 17px;line-height: 23px;font-weight: normal;font-weight: 500;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;margin-top: 0;" class="default-heading">
+ 
+ Questions about this event?
+ 
+</h2>
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ 
+<tr class="row_divider-top">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#FFFFFF;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0;border-bottom-left-radius:0;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="js-contact-organizer-cta" style="padding: 0; text-align:center;" align="center" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="">
+ 
+ 
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/open-in-app/HppEsmDCQm4JtYOfkVhaqQ~~/AAQxAQA~/RgRlVkmJP0SraHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmY29udGFjdF9vcmdhbml6ZXI9MSZ1dG1fdGVybT1jb250YWN0b3JnVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~"
+ class=""
+ 
+ >Contact the organizer</a>
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+
+
+ 
+ 
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="20" bgcolor="#FFFFFF"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ 
+<tr class="row_divider-bottom">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0px;border-bottom-left-radius:0px;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#EEEDF2;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-top">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0;border-bottom-left-radius:0;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+
+<tr bgcolor="#FFFFFF" class="row_section-article-content">
+ <td style="background-color:#FFFFFF;" bgcolor="#FFFFFF" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#FFFFFF">
+ <td width="20" bgcolor="#FFFFFF" align="left"></td>
+ <td class="" style="text-align:left;background-color:#FFFFFF;"
+ align="left">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ bgcolor='#FFFFFF'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ >
+ <tbody>
+ 
+ 
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ <table cellpadding="0" cellspacing="0" border="0" class="no_text_resize" width="100%" style="border-spacing: 0; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt;">
+ <tr>
+ <td colspan="3">
+ 
+ 
+<h2 style="padding: 0; margin: 12px 0 0 0;font-size: 23px;line-height: 32px;font-weight: normal;font-weight: 500;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;margin-top: 0;" class="">
+ 
+ Order Summary
+ 
+</h2>
+
+ </td>
+ </tr>
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#FFFFFF;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ <tr>
+ <td colspan="3">
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #1E0A3C;"
+ class="">
+ 
+ 
+ Order 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/1vM8SLDA5yFtoDogA8vjUg~~/AAQxAQA~/RgRlVkmJP0SUaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09b3JkZXJpZFcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA"
+ class=""
+ >#5185069699</a> - November 16, 2022
+ 
+</span>
+
+ </td>
+ </tr>
+ <tr>
+ <td colspan="3">
+ </td>
+ </tr>
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#FFFFFF;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:16px;font-size:16px;height:16px;"
+ height="16" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ <tr>
+ <td colspan="3">
+ <table cellpadding="0" cellspacing="0" border="0" width="100%">
+ <tbody>
+ <tr>
+ <td width="25%" valign="top">
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #1E0A3C;"
+ class="">
+ 
+ Erica Joy Cavaneyro
+ 
+</span>
+
+ </td>
+ <td width="50%" valign="top">
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #1E0A3C;"
+ class="">
+ 
+ 1 x
+ 
+</span>
+
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:600;font-size: 14px;"
+ class="">
+ 
+ 
+ General Admission - Free
+ 
+ 
+</span>
+
+
+ </td>
+ <td width="20%" align="right" valign="top" style="text-align: right;">
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; color: #1E0A3C;"
+ class="">
+ 
+ Free
+ 
+</span>
+
+ </td>
+ </tr>
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:6px;font-size:6px;background-color:#FFFFFF;"
+ width="600" height="6">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='6'
+ style='mso-line-height-rule:exactly;line-height:6px;font-size:6px;height:6px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;"
+ height="12" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+
+ </tbody>
+ </table>
+ </td>
+ </tr>
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#FFFFFF;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ </table>
+
+ 
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="26">
+ 
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:600;"
+ class="no_text_resize">
+ 
+ 
+ 
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; font-weight: bold;" href="https://clicks.eventbrite.com/f/a/5_SEJScxepFtPOKLMGj8qg~~/AAQxAQA~/RgRlVkmJP0SjaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09dmlld21hbmFnZW9yZGVyc3VtbWFyeVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA"
+ class=""
+ >View and manage</a> your order online
+ 
+ 
+</span>
+
+
+ 
+ 
+ </td>
+ </tr>
+
+
+
+
+
+
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="26">
+ 
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="no_text_resize">
+ 
+ 
+ 
+ <a href="https://clicks.eventbrite.com/f/a/IztvA22TnOsJJi3CknJT1Q~~/AAQxAQA~/RgRlVkmJP0S3aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vbXl0aWNrZXRzLzUxODUwNjk2OTk_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmY29udGFjdF9vcmdhbml6ZXI9MSZ1dG1fdGVybT1jb250YWN0b3Jnb3JkZXJzdW1tYXJ5VwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~" style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; font-weight:normal;">Contact the organizer</a> for any questions related to this purchase.
+ 
+ 
+</span>
+
+
+ 
+ 
+ </td>
+ </tr>
+
+
+
+
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="26">
+ 
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="">
+ 
+ 
+ 
+ This order is subject to Eventbrite 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; font-weight:normal;" href="https://clicks.eventbrite.com/f/a/zZg0_LKwjRG_SbR40bBn8g~~/AAQxAQA~/RgRlVkmJP0SAaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vdG9zLz9yZWY9ZWVtYWlsb3JkY29uZiZ1dG1fY2FtcGFpZ249b3JkZXJfY29uZmlybSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fdGVybT10b3NXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~"
+ class=""
+ >Terms of Service</a> and 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; font-weight:normal;" href="https://clicks.eventbrite.com/f/a/ND8L5i535gKkJ4mOAkv9KA~~/AAQxAQA~/RgRlVkmJP0SUaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vcHJpdmFjeXBvbGljeS8_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09cHJpdmFjeXBvbGljeVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA"
+ class=""
+ >Privacy Policy</a>, and 
+
+
+<a style="text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; text-decoration:none;color:#3F60E7; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;; font-weight:normal;" href="https://clicks.eventbrite.com/f/a/rvN08UPEISE1LPQHSVmpkQ~~/AAQxAQA~/RgRlVkmJP0SNaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vY29va2llcy8_cmVmPWVlbWFpbG9yZGNvbmYmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX21lZGl1bT1lbWFpbCZ1dG1fc291cmNlPWV2ZW50YnJpdGUmdXRtX3Rlcm09Y29va2llcG9saWN5VwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~"
+ class=""
+ >Cookie Policy</a>.
+ 
+ 
+</span>
+
+
+ 
+ 
+ </td>
+ </tr>
+
+
+ 
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="20" bgcolor="#FFFFFF"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ 
+<tr class="row_divider-bottom">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0px;border-bottom-left-radius:0px;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#EEEDF2;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-top">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0px;border-top-right-radius:0px;border-bottom-right-radius:0;border-bottom-left-radius:0;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+
+<tr bgcolor="#FFFFFF" class="row_section-article-content">
+ <td style="background-color:#FFFFFF;" bgcolor="#FFFFFF" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#FFFFFF">
+ <td width="20" bgcolor="#FFFFFF" align="left"></td>
+ <td class="" style="text-align:left;background-color:#FFFFFF;"
+ align="left">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='left'
+ bgcolor='#FFFFFF'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ >
+ <tbody>
+ 
+ 
+ 
+ 
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+<h2 style="padding: 0; margin: 12px 0 0 0;font-size: 23px;line-height: 32px;font-weight: normal;font-weight: 500;color: #1E0A3C !important;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;margin-top:0;" class="default-heading">
+ 
+ Your tickets
+ 
+</h2>
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#FFFFFF;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;background-color:#FFFFFF;"
+ width="600" height="8">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='8'
+ style='mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:16px;font-size:16px;height:16px;"
+ height="16" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#1E0A3C;font-weight:600;"
+ class="">
+ 
+ 
+ 1 eTicket
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ 
+
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:2px;font-size:2px;background-color:#FFFFFF;"
+ width="600" height="2">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='2'
+ style='mso-line-height-rule:exactly;line-height:2px;font-size:2px;height:2px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;"
+ height="4" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="">
+ <td class="" style="padding: 0; text-align:left;" align="left" bgcolor="" width="100%" height="">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 15px; line-height: 21px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#6F7287;font-weight:normal;"
+ class="">
+ 
+ 
+ The organizer will follow up with instructions on how to redeem your ticket and access the event.
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+
+ 
+ 
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="20" bgcolor="#FFFFFF"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ 
+ 
+<tr class="row_divider-bottom">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#FFFFFF;border-top-left-radius:0;border-top-right-radius:0;border-bottom-right-radius:0px;border-bottom-left-radius:0px;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr bgcolor="#FFFFFF">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18"></td>
+ </tr>
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;"
+ height="18" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:4px;font-size:4px;background-color:#EEEDF2;"
+ width="600" height="4">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='4'
+ style='mso-line-height-rule:exactly;line-height:4px;font-size:4px;height:4px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:8px;font-size:8px;height:8px;"
+ height="8" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+
+
+
+ <!-- Footer Section-->
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+
+<tr bgcolor="#EEEDF2" class="row_section-footer-content-legacy">
+ <td style="background-color:#EEEDF2;" bgcolor="#EEEDF2" class="grid__col">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ <tr class="row_section" style="" bgcolor="#EEEDF2">
+ <td width="30" bgcolor="#EEEDF2" align="center"></td>
+ <td class="" style="text-align:center;background-color:#EEEDF2;"
+ align="center">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ align='center'
+ bgcolor='#EEEDF2'
+ style='border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;width:100%;color:#1E0A3C;'
+ >
+ <tbody>
+ 
+ 
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ 
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ <div class="row-logo-footer-content-legacy" style="width: 140px; height: 25px; margin: 0 auto; text-align: center;">
+ <a href="https://clicks.eventbrite.com/f/a/m1HuxeGbcBBb_j_80mVfEQ~~/AAQxAQA~/RgRlVkmJP0RuaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vP3V0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV90ZXJtPWViX2xvZ29XA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~">
+ 
+ <img src='https://cdn.evbstatic.com/s3-build/perm_001/de0b06/django/images/emails_2018_rebrand/EB-logo@2x.png' title='' alt='Eventbrite' style='' border="0" width='140' height='25' class=""/>
+
+ </a>
+ </div>
+ 
+ </td>
+ </tr>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:12px;font-size:12px;background-color:#EEEDF2;"
+ width="600" height="12">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='12'
+ style='mso-line-height-rule:exactly;line-height:12px;font-size:12px;height:12px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:24px;font-size:24px;height:24px;"
+ height="24" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="">
+ 
+ 
+ 
+<span class="social-logo-container" style="padding:0;display:inline-block;height:auto;margin:0;width:40px;text-align:center;">
+ <a href="https://clicks.eventbrite.com/f/a/4GtfL9baQdQL5kJAngW86A~~/AAQxAQA~/RgRlVkmJP0QiaHR0cHM6Ly93d3cudHdpdHRlci5jb20vRXZlbnRicml0ZVcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA" target="_blank" aria-label="Eventbrite's Twitter">
+ <img src="https://cdn.evbstatic.com/s3-build/perm_001/c07442/django/images/emails_2018_rebrand/TW-icon-purple@2x.png" class="footer-social-logo__image" style="height:24px;padding:0;width:24px;"
+ height="24" width="24" alt="twitter" title="twitter" border="0"/>
+ </a>
+</span>
+
+ 
+ 
+<span class="social-logo-container" style="padding:0;display:inline-block;height:auto;margin:0;width:40px;text-align:center;">
+ <a href="https://clicks.eventbrite.com/f/a/8t-ov48YoJ6ZpOjDivZePA~~/AAQxAQA~/RgRlVkmJP0QjaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL0V2ZW50YnJpdGVXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~" target="_blank" aria-label="Eventbrite's Facebook">
+ <img src="https://cdn.evbstatic.com/s3-build/perm_001/ac2bf4/django/images/emails_2018_rebrand/FB-icon-purple@2x.png" class="footer-social-logo__image" style="height:24px;padding:0;width:24px;"
+ height="24" width="24" alt="facebook" title="facebook" border="0"/>
+ </a>
+</span>
+
+ 
+ 
+<span class="social-logo-container" style="padding:0;display:inline-block;height:auto;margin:0;width:40px;text-align:center;">
+ <a href="https://clicks.eventbrite.com/f/a/4GdwTS7s65uxrdXR-rYgnA~~/AAQxAQA~/RgRlVkmJP0QlaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9ldmVudGJyaXRlL1cDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA" target="_blank" aria-label="Eventbrite's Instagram">
+ <img src="https://cdn.evbstatic.com/s3-build/perm_001/009b0f/django/images/emails_2018_rebrand/IG-icon-purple@2x.png" class="footer-social-logo__image" style="height:24px;padding:0;width:24px;"
+ height="24" width="24" alt="instagram" title="instagram" border="0"/>
+ </a>
+</span>
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:10px;font-size:10px;background-color:#EEEDF2;"
+ width="600" height="10">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='10'
+ style='mso-line-height-rule:exactly;line-height:10px;font-size:10px;height:10px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:20px;font-size:20px;height:20px;"
+ height="20" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="footer-content" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="24">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#4B4D63;font-weight:normal;"
+ class="">
+ 
+ 
+ 
+ 
+ <span style='' class=''>
+ This email was sent to 
+
+
+<a style="text-decoration:none;color:#3F60E7; color:#f05537; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="mailto:************************@gmail.com"
+ class=""
+ >************************@gmail.com</a>
+ </span>
+
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="footer-content" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="24">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#4B4D63;font-weight:normal;"
+ class="">
+ 
+ 
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; color:#f05537; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/fVCIXGegSTvmxUUGOO_lVg~~/AAQxAQA~/RgRlVkmJP0R7aHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vP3V0bV9zb3VyY2U9ZXZlbnRicml0ZSZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1vcmRlcl9jb25maXJtJnV0bV90ZXJtPWVtYWlsX2Zvb3Rlcl9lYl9saW5rVwNzcGNCCmN0CRZ1Y_-WeORSImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb21YBAAAAAA~"
+ class=""
+ >Eventbrite</a> | 535 Mission Street, 8th Floor | San Francisco, CA 94105
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="footer-content" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="24">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#4B4D63;font-weight:normal;"
+ class="">
+ 
+ 
+ Copyright &copy; 2022 Eventbrite. All rights reserved.
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ <tr style="" bgcolor="#EEEDF2">
+ <td class="footer-content" style="padding: 0; text-align:center;" align="center" bgcolor="#EEEDF2" width="100%" height="24">
+ 
+ 
+ 
+ 
+
+<span style="font-weight: normal; margin: 4px 0; font-size: 12px; line-height: 18px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color:#4B4D63;font-weight:normal;"
+ class="">
+ 
+ 
+ 
+
+
+<a style="text-decoration:none;color:#3F60E7; color:#f05537; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight:normal; " href="https://clicks.eventbrite.com/f/a/Re2isqkascSoCyhixPXDgA~~/AAQxAQA~/RgRlVkmJP0SJaHR0cHM6Ly93d3cuZXZlbnRicml0ZS5jb20vcHJpdmFjeXBvbGljeS8_dXRtX3NvdXJjZT1ldmVudGJyaXRlJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPW9yZGVyX2NvbmZpcm0mdXRtX3Rlcm09ZW1haWxfZm9vdGVyX2ViX2xpbmtXA3NwY0IKY3QJFnVj_5Z45FIiY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuQGdtYWlsLmNvbVgEAAAAAA~~"
+ class=""
+ >Privacy Policy</a>
+ 
+ 
+</span>
+
+
+ 
+ </td>
+ </tr>
+
+ 
+ 
+ 
+ 
+<tr class="row_divider-spacer">
+ <td style="mso-line-height-rule:exactly;line-height:18px;font-size:18px;background-color:#EEEDF2;"
+ width="600" height="18">
+ 
+
+<table
+ ' cellpadding="0" cellspacing="0" border="0" '
+ height='18'
+ style='mso-line-height-rule:exactly;line-height:18px;font-size:18px;height:18px;border-collapse:collapse;border-spacing:0;mso-table-lspace:0pt;mso-table-rspace:0pt;border:0;padding:0;;width:100%;'
+ class='default-table'
+ >
+ <tbody>
+ 
+ 
+ <tr>
+ <td style="mso-line-height-rule:exactly;line-height:36px;font-size:36px;height:36px;"
+ height="36" bgcolor="">&nbsp;</td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+
+ 
+ </tbody>
+</table>
+
+ </td>
+ <td width="30" bgcolor="#EEEDF2"></td>
+ </tr>
+ 
+ </tbody>
+</table>
+
+ </td>
+</tr>
+
+
+
+ </tbody>
+ </table>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </table>
+ </td>
+ </tr>
+ </table>
+ 
+<img border="0" width="1" height="1" alt="" src="https://clicks.eventbrite.com/q/chMIresbXC5nsO_qdP1A0w~~/AAQxAQA~/RgRlVkmJPlcDc3BjQgpjdAkWdWP_lnjkUiJjYXZhbmV5cm9lcmljYWpveXNhcmlsYW5AZ21haWwuY29tWAQAAAAA">
+</body>
+</html>
+
+--===============3273184963107973121==--

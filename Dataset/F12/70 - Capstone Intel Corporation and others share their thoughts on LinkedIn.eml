@@ -1,0 +1,2613 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp1828137ils;
+        Mon, 6 Nov 2023 03:24:20 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IECU0rLu17IJEZy+MyBTgS7JkUkz6G58SoxVE1DXdWUYzJeabcbhTgeurXkez/eMO/Jq9eQ
+X-Received: by 2002:a05:6a00:1bc3:b0:6c2:cf23:3e21 with SMTP id o3-20020a056a001bc300b006c2cf233e21mr13916908pfw.17.1699269859891;
+        Mon, 06 Nov 2023 03:24:19 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699269859; cv=none;
+        d=google.com; s=arc-20160816;
+        b=IjAMnKQwCOYhzYTlVgCx7cDB4+jGX4LWdu99kpbYG5ZuC1a4mMBiZn5miSCf3T4+SU
+         wioPGbmmVK7FEP8YOxO/bhrqAuCNTnKha0krn1o3lbLFQcypF8gS77dAMFtzU53QZliA
+         /0b5b0euQ2PIMXaFeoJISoWOh5S5e+rqZx/EFU+cOpPSqcCWu99TSfvihcZBr6+9Oeyk
+         pWIEQu7byXq3t/JdxAoyZK1F9CQFcs7zTjX2tt+4cGGfF3q1lIjX+o+ySWqtmbXw2FN9
+         c1MfTeOC+IwL2yNG1rhfe2BXbxLuxUfDhEUjmFNjIZDDWDOBZPIQVR0tDYh/ZHsUXtz+
+         xCAQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=require-recipient-valid-since:feedback-id:list-unsubscribe:date:to
+         :mime-version:subject:message-id:from:dkim-signature:dkim-signature;
+        bh=zzbJVqf9bmLbE1XBXutmJgDatjLqzoA8Prz+0yxIoSM=;
+        fh=74h4WnJsiP/IJ+pl3PihcOD756nHWtT+EERqwgHFY84=;
+        b=T24MaMUDt5gfWAfjfWY9WglRZ/VwGnMWqvFc5nW+wF/WAIpS53lh1/ua7fPcDTLaUN
+         jLWkZ5rYVykWx/jlvb+65TDHmXPi3JMYybpeg0suOCMEcZgEOW5ZsZxCSODG8QT0SbXx
+         GW6VrdnpkL23KC1lAnG6u8BQuCSkVrZ8XRLK8A8vi7eJ4E37Ylnr8V4pOgf7lrIWVUQm
+         rlyawzwvrfTD6UqoqcjMsmYGZ2v/CYt0aRCiLusoX4ar9P7AbkTtaKMZXdaGPwheSOta
+         ASdpxwaRdrS1FH8ibdfiQcJ+VIJDyheW9okh8R6WQGn0lvLJfsGeoaVF3htJjbAB9U4B
+         6egw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@maile.linkedin.com header.s=d2048-202308-0e header.b=q+Gi2faj;
+       dkim=pass header.i=@linkedin.com header.s=d2048-202308-00 header.b=UqlHFof0;
+       spf=pass (google.com: domain of s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com designates 2620:119:50c0:207::201 as permitted sender) smtp.mailfrom=s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=linkedin.com
+Return-Path: <s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com>
+Received: from maile-ha.linkedin.com (maile-ha.linkedin.com. [2620:119:50c0:207::201])
+        by mx.google.com with ESMTPS id m3-20020a056a00080300b006c2cb9a884fsi8202407pfk.293.2023.11.06.03.24.19
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Mon, 06 Nov 2023 03:24:19 -0800 (PST)
+Received-SPF: pass (google.com: domain of s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com designates 2620:119:50c0:207::201 as permitted sender) client-ip=2620:119:50c0:207::201;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@maile.linkedin.com header.s=d2048-202308-0e header.b=q+Gi2faj;
+       dkim=pass header.i=@linkedin.com header.s=d2048-202308-00 header.b=UqlHFof0;
+       spf=pass (google.com: domain of s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com designates 2620:119:50c0:207::201 as permitted sender) smtp.mailfrom=s-4vnduk902zhnupigkyyt0wz7e6cdx6fadtufg1431n3kwayx19jdikwx@bounce.linkedin.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=linkedin.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=maile.linkedin.com;
+	s=d2048-202308-0e; t=1699269855;
+	bh=zzbJVqf9bmLbE1XBXutmJgDatjLqzoA8Prz+0yxIoSM=;
+	h=From:Subject:MIME-Version:Content-Type:To:Date:X-LinkedIn-Class:
+	 X-LinkedIn-Template:X-LinkedIn-fbl;
+	b=q+Gi2fajFnNzBNF1gxEa0LeecxanuCQPvCmYLmovZt5v/PwVsL5uRJ+JCt9idilQ+
+	 +TXO1kWsb5tkjo6KPdwA5EnJ2rV3n5Xq+3+/amgmm0wffEclltONTBkVXeS6oj5ieu
+	 qdHNJhps/6+10wgQMPssb3mKoHUSPqF8s+k7fgSYX9xUgfNm2ZdoIofqHUpadT7zEE
+	 QwSRNewN0hIJGYQrCZ9YlHibYx0m6X1PS4ab2vt7OU+BSCOebXXgBcd4QutSD4cgEf
+	 D4TQhbh5INy/AlF60D7fHS4YX5ROjIcOin1LCrmGfvTfjC5i/Q5Lsa4qi4YqbX3c+G
+	 KPbwSD4DYPcVA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linkedin.com;
+	s=d2048-202308-00; t=1699269855;
+	bh=zzbJVqf9bmLbE1XBXutmJgDatjLqzoA8Prz+0yxIoSM=;
+	h=From:Subject:MIME-Version:Content-Type:To:Date:X-LinkedIn-Class:
+	 X-LinkedIn-Template:X-LinkedIn-fbl;
+	b=UqlHFof0AUIfhK8wXCrcU6bFRGhy9MN4qqqnl9fW2EKN5ksLfNqlUcwBlndjeMtn/
+	 coapg4ojl/pv/ifhpkZTI9yEDR4ZmN/ekb5JUwGWm5VfrvN7i6YPfL3/1GRBhIGgl6
+	 dk5AQBlfqgJNZRAwbKWX9fQIRhsQw1LyrYlONt98U5nQfu5ilg8tQiBEed7g5hze+D
+	 rtBDypOgd/IxTPeRrnJ/m+2JWn690f2r/cWOc/6c2Ue/e6NSakFVnH0iA3/ucyeiEx
+	 TIKzo5J+z4vfpOpOSmyRWbXSsReTpt4xOTPc3/Vr2k2XTeLFMLOaA5tb5R/D9HTqxJ
+	 cY5cR0LsTbGZQ==
+From: LinkedIn <updates-noreply@linkedin.com>
+Message-ID: <1742893818.21074247.1699269855127@ltx1-app75810.prod.linkedin.com>
+Subject: Capstone Intel Corporation and others share their thoughts on
+ LinkedIn
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_21074245_435526440.1699269855124"
+To: Ronald Lambert Tugadi <ronaldlambertnicolastugadi@gmail.com>
+Date: Mon, 6 Nov 2023 11:24:15 +0000 (UTC)
+X-LinkedIn-Class: EMAIL-DEFAULT
+X-LinkedIn-Template: email_network_conversations_01
+X-LinkedIn-fbl: m2-clvg2358u0ejpsoke0gqy0hrux78gsrmv4p160biuo3qg7yis63524dmauh7oz4px059yuk6zuxcpswxqz2vncl3b83qz4t7wrudodidl7b5zl4iar3xeoufv5n9jn60210945fd
+X-LinkedIn-Id: j4sm2u-lomteawm-yw
+List-Unsubscribe: <https://www.linkedin.com/comm/psettings/email-unsubscribe?lipi=urn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&midToken=AQG16WF7PZyt4w&midSig=1ftlqGYayc9r01&trk=eml-email_network_conversations_01-unsub-0-unsub&trkEmail=eml-email_network_conversations_01-unsub-0-unsub-null-j4sm2u~lomteawm~yw-null-null&eid=j4sm2u-lomteawm-yw&loid=AQGpXcFjAq0TBgAAAYukYEWJOjXAkqA2syt2RKei0Ah67LYpz9FAWFTLvkpSz2vTqlSb8YPkeTpQvphENWCf1TF-cGxib2rJ8-NVZMLBKfgmQJPGhrSPYZfWgZyZnjZ7Ob0y3N_GASpsiI6P>
+Feedback-ID: email_network_conversations_01:linkedin
+Require-Recipient-Valid-Since: ronaldlambertnicolastugadi@gmail.com; Thu, 13 Jul 2023 12:40:27 +0000
+
+------=_Part_21074245_435526440.1699269855124
+Content-Type: text/plain;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: text-body
+
+----------------------------------------
+Your highlights
+----------------------------------------
+
+
+Capstone Intel Corporation shared a post: May all your dearly departed love=
+d ones rest in peace and are blessed with eternal happiness. #AllSoulsDay
+
+
+
+Read more:
+      https://www.linkedin.com/comm/feed/update/urn:li:activity:71257027728=
+46395392?lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP=
+3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&midToken=3DAQG16WF7PZyt4w&midSig=3D1ftlqGYayc9=
+r01&trk=3Deml-email_network_conversations_01-network~post~cta~text-0-read~m=
+ore&trkEmail=3Deml-email_network_conversations_01-network~post~cta~text-0-r=
+ead~more-null-j4sm2u~lomteawm~yw-null-null&eid=3Dj4sm2u-lomteawm-yw&otpToke=
+n=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA=
+2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OT=
+g4MzQzYTBlYTUzLDEsMQ%3D%3D
+
+LinkedIn News Asia shared a post: Participate in philanthropy like a ventur=
+e capitalist, says CEO Naina Subberwal Batra.
+
+=E2=80=9CI strongly encourage more of those who have the financial=E2=80=A6
+LIKE PRAISE EMPATHY 76, 8 Comments
+Read more:
+      https://www.linkedin.com/comm/feed/update/urn:li:activity:71260339625=
+43534081?lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP=
+3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&midToken=3DAQG16WF7PZyt4w&midSig=3D1ftlqGYayc9=
+r01&trk=3Deml-email_network_conversations_01-network~post~cta~text-0-read~m=
+ore&trkEmail=3Deml-email_network_conversations_01-network~post~cta~text-0-r=
+ead~more-null-j4sm2u~lomteawm~yw-null-null&eid=3Dj4sm2u-lomteawm-yw&otpToke=
+n=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA=
+2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OT=
+g4MzQzYTBlYTUzLDEsMQ%3D%3D
+
+See more on LinkedIn:=20
+      https://www.linkedin.com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_em=
+ail_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&midToken=3DAQ=
+G16WF7PZyt4w&midSig=3D1ftlqGYayc9r01&trk=3Deml-email_network_conversations_=
+01-footer_promo-0-footer_see_all&trkEmail=3Deml-email_network_conversations=
+_01-footer_promo-0-footer_see_all-null-j4sm2u~lomteawm~yw-null-null&eid=3Dj=
+4sm2u-lomteawm-yw&otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OW=
+M3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmN=
+jFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D
+     =20
+         =20
+     =20
+
+----------------
+
+This email was intended for Ronald Lambert Tugadi (Computer Science Student=
+)
+Learn why we included this:
+      https://www.linkedin.com/help/linkedin/answer/4788?lang=3Den&lipi=3Du=
+rn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD=
+7z2OQ%3D%3D&midToken=3DAQG16WF7PZyt4w&midSig=3D1ftlqGYayc9r01&trk=3Deml-ema=
+il_network_conversations_01-SecurityHelp-0-textfooterglimmer&trkEmail=3Deml=
+-email_network_conversations_01-SecurityHelp-0-textfooterglimmer-null-j4sm2=
+u~lomteawm~yw-null-null&eid=3Dj4sm2u-lomteawm-yw&otpToken=3DMTMwNDFiZTYxYjJ=
+mYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZG=
+NkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsM=
+Q%3D%3D
+You are receiving Network Conversations emails. Some content may be automat=
+ically translated based on=20
+      <a href=3D"https://www.linkedin.com/mypreferences/d/language-for-tran=
+slation" target=3D"_blank" class=3D"link-no-visited-state" data-tracking-wi=
+ll-navigate data-tracking-control-name=3D"email_network_conversations_conte=
+nt_settings_link" style=3D"cursor: pointer; display: inline-block; text-dec=
+oration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+font-weight: 600; color: #0a66c2;">your settings</a>.
+
+         =20
+           =20
+         =20
+       =20
+Unsubscribe:
+      https://www.linkedin.com/comm/psettings/email-unsubscribe?lipi=3Durn%=
+3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2=
+OQ%3D%3D&midToken=3DAQG16WF7PZyt4w&midSig=3D1ftlqGYayc9r01&trk=3Deml-email_=
+network_conversations_01-unsubscribe-0-textfooterglimmer&trkEmail=3Deml-ema=
+il_network_conversations_01-unsubscribe-0-textfooterglimmer-null-j4sm2u~lom=
+teawm~yw-null-null&eid=3Dj4sm2u-lomteawm-yw&loid=3DAQGpXcFjAq0TBgAAAYukYEWJ=
+OjXAkqA2syt2RKei0Ah67LYpz9FAWFTLvkpSz2vTqlSb8YPkeTpQvphENWCf1TF-cGxib2rJ8-N=
+VZMLBKfgmQJPGhrSPYZfWgZyZnjZ7Ob0y3N_GASpsiI6P
+Help:
+      https://www.linkedin.com/help/linkedin/answer/67?lang=3Den&lipi=3Durn=
+%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z=
+2OQ%3D%3D&midToken=3DAQG16WF7PZyt4w&midSig=3D1ftlqGYayc9r01&trk=3Deml-email=
+_network_conversations_01-help-0-textfooterglimmer&trkEmail=3Deml-email_net=
+work_conversations_01-help-0-textfooterglimmer-null-j4sm2u~lomteawm~yw-null=
+-null&eid=3Dj4sm2u-lomteawm-yw&otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViN=
+DAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4Zjgw=
+NmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D
+
+=C2=A9 2023 LinkedIn Corporation, 1zwnj000 West Maude Avenue, Sunnyvale, CA=
+ 94085.LinkedIn and the LinkedIn logo are registered trademarks of LinkedIn=
+.
+------=_Part_21074245_435526440.1699269855124
+Content-Type: text/html;charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-ID: html-body
+
+<html xmlns=3D"http://www.w3.org/1999/xhtml" lang=3D"en" xml:lang=3D"en"> <=
+head> <meta http-equiv=3D"Content-Type" content=3D"text/html;charset=3Dutf-=
+8"> <meta name=3D"HandheldFriendly" content=3D"true"> <meta name=3D"viewpor=
+t" content=3D"width=3Ddevice-width; initial-scale=3D0.666667; user-scalable=
+=3D0"> <meta name=3D"viewport" content=3D"width=3Ddevice-width"> <title></t=
+itle> <style>
+          @media (max-width: 512px) { .mercado-container { width: 100% !imp=
+ortant; } }
+        </style> <style>
+          .full-width-button, .full-width-button table { display: none; } @=
+media (max-width: 320px) { .inline-button,
+          .inline-button table { display: none !important; } .full-width-bu=
+tton, .full-width-button table { display:
+          table !important; } }
+        </style> <style>body {font-family: -apple-system, system-ui, BlinkM=
+acSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+          'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Cantarell, 'Droid San=
+s', 'Apple Color Emoji', 'Segoe UI Emoji',
+          'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, =
+Arial, sans-serif;}</style> <!--[if mso]><style type=3D"text/css"> </style>=
+<![endif]--> <!--[if IE]><style type=3D"text/css"> </style><![endif]--> <st=
+yle>
+@media (min-width: 576px) {
+  .container {
+    max-width: 576px;
+  }
+
+  .\!container {
+    max-width: 576px !important;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+
+  .\!container {
+    max-width: 768px !important;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 992px;
+  }
+
+  .\!container {
+    max-width: 992px !important;
+  }
+}
+@media (min-width: 1128px) {
+  .container {
+    max-width: 1128px;
+  }
+
+  .\!container {
+    max-width: 1128px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .\!container {
+    max-width: 1200px !important;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .\!container {
+    max-width: 1440px !important;
+  }
+}
+@media (min-width: 1680px) {
+  .container {
+    max-width: 1680px;
+  }
+
+  .\!container {
+    max-width: 1680px !important;
+  }
+}
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
+  }
+
+  .\!container {
+    max-width: 1920px !important;
+  }
+}
+@media (min-width: 992px) {
+  .base-detail-page__header .nav {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1128px;
+  }
+}
+@media (max-width: 767px) {
+  .embedded-social-share .modal__outlet {
+    flex-direction: row;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+@media (max-width: 767px) {
+  .nav .search-bar {
+    order: 4;
+  }
+}
+@media (max-width: 767px) {
+  .nav .sign-in-card {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .nav--minified-mobile .nav__cta-container > *:not(.nav__link-person) {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .nav .search-bar--minified-mobile {
+    margin-bottom: 0px;
+    height: 100%;
+    flex-grow: 1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    order: initial;
+    width: initial;
+  }
+
+  .nav .search-bar--minified-mobile .search-bar__placeholder {
+    margin-top: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .tw-link-column-item {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .tw-link-column-item {
+    margin-bottom: 8px;
+  }
+
+  .tw-linkster .tw-link-column-item {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 767px) {
+  .member-nav-menu .collapsible-dropdown__button {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    margin-left: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .member-nav-menu .collapsible-dropdown__list {
+    right: 0px;
+    max-height: calc(100vh - 52px);
+    overflow-y: auto;
+  }
+}
+@media (max-width: 767px) {
+  .recent-searches.recent-searches--show {
+    position: fixed;
+    top: 168px;
+    left: 0px;
+    width: 100vw;
+    min-width: 100vw;
+    border-width: 0;
+  }
+}
+@media (max-width: 767px) {
+  .search-bar .dismissable-input {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0.75);
+    color: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', =
+Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Canta=
+rell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji'=
+, 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .search-bar .dismissable-input:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    border-width: 1px;
+  }
+
+  .search-bar .dismissable-input:active {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.9);
+    cursor: pointer;
+    border-width: 1px;
+  }
+
+  .search-bar .dismissable-input:disabled {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .search-bar .dismissable-input:disabled:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .search-bar .dismissable-input:disabled:focus {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .search-bar .dismissable-input:disabled:active {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .input-error .search-bar .dismissable-input {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: #cf0007;
+    color: rgba(0, 0, 0, 0.9);
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', =
+Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Oxygen, 'Oxygen Sans', Canta=
+rell, 'Droid Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Emoji'=
+, 'Segoe UI Symbol', 'Lucida Grande', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+  }
+
+  .input-error .search-bar .dismissable-input:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+    border-color: #8a0005;
+    box-shadow: 0 0 0 1px #8a0005;
+    cursor: pointer;
+    border-width: 1px;
+  }
+
+  .input-error .search-bar .dismissable-input:active {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: #8a0005;
+    cursor: pointer;
+    border-width: 1px;
+  }
+
+  .input-error .search-bar .dismissable-input:disabled {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .input-error .search-bar .dismissable-input:disabled:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .input-error .search-bar .dismissable-input:disabled:focus {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .input-error .search-bar .dismissable-input:disabled:active {
+    background-color: rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0);
+    color: rgba(0, 0, 0, 0.3);
+    cursor: not-allowed;
+    border-width: 1px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-in=
+put {
+    border-style: solid;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-in=
+put:active {
+    border-style: solid;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .base-search-bar .input-error .search-bar .dismissable-input.typeahead-in=
+put:focus-within {
+    border-style: solid;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .search-bar .dismissable-input {
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .search-bar .dismissable-input:hover {
+    border-right-color: rgba(0, 0, 0, 0.08);
+  }
+}
+@media (min-width: 992px) {
+  .search-bar .dismissable-input {
+    width: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000;
+  }
+
+  .search-bar .dismissable-input:hover {
+    border-right-color: rgba(0, 0, 0, 0.08);
+  }
+}
+@media (max-width: 767px) {
+  .search-bar:not(.isExpanded) .base-search-bar__form {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  @media (max-width: 767px) {
+    .search-bar.isExpanded .search-bar__placeholder {
+      display: none;
+    }
+
+    .search-bar.isExpanded .base-search-bar__form {
+      display: flex;
+    }
+
+    position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: 1000;
+        margin-bottom: 0px;
+        height: 100%;
+        background-color: #ffffff;
+    .search-bar.isExpanded .switcher-tabs__cancel-btn,
+.search-bar.isExpanded .switcher-tabs {
+      display: inherit;
+    }
+
+  }
+}
+@media screen and (max-width: 767px) {
+  .stuck .search-bar {
+    transition: height 0.4s, margin-bottom 0.4s ease-in-out;
+    margin-bottom: 0px;
+    height: 0px;
+  }
+
+  .stuck .search-bar--minified-mobile .search-bar__placeholder {
+    max-height: initial;
+    pointer-events: initial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.6);
+  }
+}
+@media screen and (min-width: 767px) {
+  .switcher-tabs .switcher-tabs__button:after {
+    border-bottom: none;
+  }
+}
+@media (max-width: 767px) {
+  .tabs__list {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .typeahead-input__dropdown.typeahead-input__dropdown--show {
+    position: fixed;
+    top: 158px;
+    left: 0px;
+    width: 100vw;
+    min-width: 100vw;
+  }
+}
+@media (max-width: 767px) {
+  .base-search-bar .dismissable-input {
+    max-height: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .base-main-card__media ~ .base-main-card__info {
+    margin-left: 0px;
+    margin-top: 16px;
+  }
+}
+@media (max-width: 767px) {
+  .mx-main-feed-card-no-gutter {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .mx-main-feed-card-no-gutter {
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+}
+@media (max-width: 767px) {
+  .px-main-feed-card-no-gutter {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .px-main-feed-card-no-gutter {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .filter .collapsible-dropdown__list {
+    max-height: 400px;
+  }
+}
+@media (forced-colors: active) {
+  .filter-button--selected {
+    border-width: 4px;
+  }
+}
+@media (max-width: 767px) {
+  .base-card .duration {
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
+@media (max-width: 767px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .social-action-bar__button {
+    flex-direction: row;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+@media (max-width: 767px) {
+  .social-action-bar__icon--svg {
+    margin: 0px;
+    height: 24px;
+    width: 24px;
+  }
+
+  .social-action-bar__button-text {
+    padding-left: 4px;
+  }
+}
+@media only screen and (min-width: 30.06em) {
+  .card-cta-container-mobile {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    visibility: hidden !important;
+  }
+
+  .card-cta-container-desktop {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    visibility: visible !important;
+    overflow: visible !important;
+  }
+}
+@media (min-width: 992px) {
+  .md\:overflow-x-hidden {
+    overflow-x: hidden;
+  }
+}
+@media (max-width: 767px) {
+  .babybear\:invisible {
+    visibility: hidden;
+  }
+
+  .babybear\:static {
+    position: static;
+  }
+
+  .babybear\:right-4 {
+    right: 32px;
+  }
+
+  .babybear\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .babybear\:\!-top-0\.5 {
+    top: -4px !important;
+  }
+
+  .babybear\:\!-top-0 {
+    top: -0px !important;
+  }
+
+  .babybear\:top-0\.5 {
+    top: 4px;
+  }
+
+  .babybear\:top-0 {
+    top: 0px;
+  }
+
+  .babybear\:bottom-\[120\%\] {
+    bottom: 120%;
+  }
+
+  .babybear\:left-3 {
+    left: 24px;
+  }
+
+  .babybear\:-top-1 {
+    top: -8px;
+  }
+
+  .babybear\:z-0 {
+    z-index: 0;
+  }
+
+  .babybear\:btn-sm {
+    height: min-content;
+    min-height: 32px;
+    border-radius: 24px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .babybear\:btn-sm,
+.babybear\:btn-sm:visited,
+.babybear\:btn-sm:focus {
+    cursor: pointer;
+    text-decoration-line: none;
+  }
+
+  .babybear\:btn-sm:hover,
+.babybear\:btn-sm:visited:hover {
+    text-decoration-line: none;
+  }
+
+  .babybear\:btn-sm:disabled {
+    cursor: not-allowed;
+  }
+
+  .babybear\:m-0 {
+    margin: 0px;
+  }
+
+  .babybear\:my-2 {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+
+  .babybear\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .babybear\:mx-mobile-container-padding {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+
+  .babybear\:ml-0 {
+    margin-left: 0px;
+  }
+
+  .babybear\:mr-0 {
+    margin-right: 0px;
+  }
+
+  .babybear\:mb-2 {
+    margin-bottom: 16px;
+  }
+
+  .babybear\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .babybear\:mb-0\.5 {
+    margin-bottom: 4px;
+  }
+
+  .babybear\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .babybear\:mt-0\.5 {
+    margin-top: 4px;
+  }
+
+  .babybear\:mb-1 {
+    margin-bottom: 8px;
+  }
+
+  .babybear\:mt-\[6px\] {
+    margin-top: 6px;
+  }
+
+  .babybear\:ml-\[-9999px\] {
+    margin-left: -9999px;
+  }
+
+  .babybear\:mb-1\.5 {
+    margin-bottom: 12px;
+  }
+
+  .babybear\:ml-1 {
+    margin-left: 8px;
+  }
+
+  .babybear\:btn-secondary-emphasis {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:btn-secondary-emphasis:visited {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:btn-secondary-emphasis:focus {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:flex {
+    display: flex;
+  }
+
+  .babybear\:btn-secondary-emphasis {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:btn-secondary-emphasis:visited {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:btn-secondary-emphasis:focus {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(0, 0, 0, 0);
+    color: #0a66c2;
+  }
+
+  .babybear\:btn-secondary-emphasis:hover {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(112, 181, 249, 0.1);
+    color: #004182;
+  }
+
+  .babybear\:btn-secondary-emphasis:visited:hover {
+    box-shadow: 0 0 0 1px #0a66c2;
+    background-color: rgba(112, 181, 249, 0.1);
+    color: #004182;
+  }
+
+  .babybear\:btn-secondary-emphasis:active {
+    box-shadow: 0 0 0 1px #004182;
+    background-color: rgba(112, 181, 249, 0.2);
+    color: #004182;
+  }
+
+  .babybear\:btn-secondary-emphasis:disabled {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.08);
+    color: rgba(0, 0, 0, 0.3);
+  }
+
+  .babybear\:hidden {
+    display: none;
+  }
+
+  .babybear\:h-\[360px\] {
+    height: 360px;
+  }
+
+  .babybear\:h-6 {
+    height: 48px;
+  }
+
+  .babybear\:h-\[72px\] {
+    height: 72px;
+  }
+
+  .babybear\:h-4 {
+    height: 32px;
+  }
+
+  .babybear\:h-\[27px\] {
+    height: 27px;
+  }
+
+  .babybear\:h-\[1px\] {
+    height: 1px;
+  }
+
+  .babybear\:h-\[48px\] {
+    height: 48px;
+  }
+
+  .babybear\:h-auto {
+    height: auto;
+  }
+
+  .babybear\:h-\[180px\] {
+    height: 180px;
+  }
+
+  .babybear\:max-h-\[225px\] {
+    max-height: 225px;
+  }
+
+  .babybear\:max-h-\[400px\] {
+    max-height: 400px;
+  }
+
+  .babybear\:max-h-4 {
+    max-height: 32px;
+  }
+
+  .babybear\:max-h-\[250px\] {
+    max-height: 250px;
+  }
+
+  .babybear\:min-h-\[134px\] {
+    min-height: 134px;
+  }
+
+  .babybear\:w-\[360px\] {
+    width: 360px;
+  }
+
+  .babybear\:w-full {
+    width: 100%;
+  }
+
+  .babybear\:w-11\/12 {
+    width: 91.666667%;
+  }
+
+  .babybear\:w-\[199px\] {
+    width: 199px;
+  }
+
+  .babybear\:w-6 {
+    width: 48px;
+  }
+
+  .babybear\:w-\[27px\] {
+    width: 27px;
+  }
+
+  .babybear\:w-\[1px\] {
+    width: 1px;
+  }
+
+  .babybear\:w-\[100vw\] {
+    width: 100vw;
+  }
+
+  .babybear\:w-\[calc\(100\%-68px\)\] {
+    width: calc(100% - 68px);
+  }
+
+  .babybear\:min-w-full {
+    min-width: 100%;
+  }
+
+  .babybear\:max-w-\[790px\] {
+    max-width: 790px;
+  }
+
+  .babybear\:max-w-\[32px\] {
+    max-width: 32px;
+  }
+
+  .babybear\:flex-none {
+    flex: none;
+  }
+
+  .babybear\:flex-auto {
+    flex: 1 1 auto;
+  }
+
+  .babybear\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .babybear\:basis-0 {
+    flex-basis: 0px;
+  }
+
+  .babybear\:basis-1\/2 {
+    flex-basis: 50%;
+  }
+
+  .babybear\:-translate-x-50\% {
+    transform: translate(0, 0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY=
+(1);
+  }
+
+  @media (max-width: 767px) {
+    .babybear\:-translate-x-50\% {
+      transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(=
+1) scaleY(1);
+    }
+
+    @media (max-width: 767px) {
+      .babybear\:-translate-x-50\% {
+        transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scale=
+X(1) scaleY(1);
+      }
+
+      @media (max-width: 767px) {
+        .babybear\:-translate-x-50\% {
+          transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) sca=
+leX(1) scaleY(1);
+        }
+
+        @media (max-width: 767px) {
+          .babybear\:-translate-x-50\% {
+            transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0) s=
+caleX(1) scaleY(1);
+          }
+
+          @media (max-width: 767px) {
+            .babybear\:-translate-x-50\% {
+              transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(0)=
+ scaleX(1) scaleY(1);
+            }
+
+            @media (max-width: 767px) {
+              .babybear\:-translate-x-50\% {
+                transform: translate(-50%, 0) rotate(90deg) skewX(0) skewY(=
+0) scaleX(1) scaleY(1);
+              }
+
+              @media (max-width: 767px) {
+                .babybear\:-translate-x-50\% {
+                  transform: translate(-50%, 0) rotate(90deg) skewX(0) skew=
+Y(0) scaleX(1) scaleY(1);
+                }
+
+                @media (max-width: 767px) {
+                  .babybear\:-translate-x-50\% {
+                    transform: translate(-50%, 0) rotate(90deg) skewX(0) sk=
+ewY(0) scaleX(1) scaleY(1);
+                  }
+
+                  @media (max-width: 767px) {
+                    .babybear\:-translate-x-50\% {
+                      transform: translate(-50%, 0) rotate(90deg) skewX(0) =
+skewY(0) scaleX(1) scaleY(1);
+                    }
+
+                    @media (max-width: 767px) {
+                      .babybear\:-translate-x-50\% {
+                        transform: translate(-50%, 0) rotate(90deg) skewX(0=
+) skewY(0) scaleX(1) scaleY(1);
+                      }
+
+                      @media (max-width: 767px) {
+                        .babybear\:-translate-x-50\% {
+                          transform: translate(-50%, 0) rotate(90deg) skewX=
+(0) skewY(0) scaleX(1) scaleY(1);
+                        }
+
+                        @media (max-width: 767px) {
+                          .babybear\:-translate-x-50\% {
+                            transform: translate(-50%, 0) rotate(90deg) ske=
+wX(0) skewY(0) scaleX(1) scaleY(1);
+                          }
+
+                          @media (max-width: 767px) {
+                            .babybear\:-translate-x-50\% {
+                              transform: translate(-50%, 0) rotate(90deg) s=
+kewX(0) skewY(0) scaleX(1) scaleY(1);
+                            }
+
+                            @media (max-width: 767px) {
+                              .babybear\:-translate-x-50\% {
+                                transform: translate(-50%, 0) rotate(90deg)=
+ skewX(0) skewY(0) scaleX(1) scaleY(1);
+                              }
+
+                              @media transform: translate(0, 0) rotate(0) s=
+kewX(0) skewY(0) scaleX(1) scaleY(1);
+     (max-width: 767px) {
+                                .babybear\:rotate-90 {
+                                  transform: translate(-50%, 0) rotate(90de=
+g) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                }
+
+                                @media (max-width: 767px) {
+                                  .babybear\:rotate-90 {
+                                    transform: translate(-50%, 0) rotate(90=
+deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                  }
+
+                                  @media (max-width: 767px) {
+                                    .babybear\:rotate-90 {
+                                      transform: translate(-50%, 0) rotate(=
+90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                    }
+
+                                    @media (max-width: 767px) {
+                                      .babybear\:rotate-90 {
+                                        transform: translate(-50%, 0) rotat=
+e(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                      }
+
+                                      @media (max-width: 767px) {
+                                        .babybear\:rotate-90 {
+                                          transform: translate(-50%, 0) rot=
+ate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                        }
+
+                                        @media (max-width: 767px) {
+                                          .babybear\:rotate-90 {
+                                            transform: translate(-50%, 0) r=
+otate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                          }
+
+                                          @media (max-width: 767px) {
+                                            .babybear\:rotate-90 {
+                                              transform: translate(-50%, 0)=
+ rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                            }
+
+                                            @media (max-width: 767px) {
+                                              .babybear\:rotate-90 {
+                                                transform: translate(-50%, =
+0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                              }
+
+                                              @media (max-width: 767px) {
+                                                .babybear\:rotate-90 {
+                                                  transform: translate(-50%=
+, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                }
+
+                                                @media (max-width: 767px) {
+                                                  .babybear\:rotate-90 {
+                                                    transform: translate(-5=
+0%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                  }
+
+                                                  @media (max-width: 767px)=
+ {
+                                                    .babybear\:rotate-90 {
+                                                      transform: translate(=
+-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                    }
+
+                                                    @media (max-width: 767p=
+x) {
+                                                      .babybear\:rotate-90 =
+{
+                                                        transform: translat=
+e(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                      }
+
+                                                      @media (max-width: 76=
+7px) {
+                                                        .babybear\:rotate-9=
+0 {
+                                                          transform: transl=
+ate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                        }
+
+                                                        @media (max-width: =
+767px) {
+                                                          .babybear\:rotate=
+-90 {
+                                                            transform: tran=
+slate(-50%, 0) rotate(90deg) skewX(0) skewY(0) scaleX(1) scaleY(1);
+                                                          }
+
+                                                          border-radius: 8p=
+x;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba(0,
+0,
+0,
+0.08);
+        background-color: #ffffff;
+    .babybear\:flex-row {
+                                                            flex-direction:=
+ row;
+                                                          }
+
+                                                          .babybear\:flex-c=
+ol {
+                                                            flex-direction:=
+ column;
+                                                          }
+
+                                                          .babybear\:flex-w=
+rap {
+                                                            flex-wrap: wrap=
+;
+                                                          }
+
+                                                          .babybear\:items-=
+start {
+                                                            align-items: fl=
+ex-start;
+                                                          }
+
+                                                          .babybear\:items-=
+center {
+                                                            align-items: ce=
+nter;
+                                                          }
+
+                                                          .babybear\:justif=
+y-start {
+                                                            justify-content=
+: flex-start;
+                                                          }
+
+                                                          .babybear\:justif=
+y-end {
+                                                            justify-content=
+: flex-end;
+                                                          }
+
+                                                          .babybear\:justif=
+y-center {
+                                                            justify-content=
+: center;
+                                                          }
+
+                                                          .babybear\:justif=
+y-around {
+                                                            justify-content=
+: space-around;
+                                                          }
+
+                                                          .babybear\:self-s=
+tart {
+                                                            align-self: fle=
+x-start;
+                                                          }
+
+                                                          .babybear\:self-c=
+enter {
+                                                            align-self: cen=
+ter;
+                                                          }
+
+                                                          .babybear\:overfl=
+ow-y-auto {
+                                                            overflow-y: aut=
+o;
+                                                          }
+
+                                                          .babybear\:rounde=
+d-\[0px\] {
+                                                            border-radius: =
+0px;
+                                                          }
+
+                                                          .babybear\:border=
+-b-1 {
+                                                            border-bottom-w=
+idth: 1px;
+                                                          }
+
+                                                          .babybear\:border=
+-solid {
+                                                            border-style: s=
+olid;
+                                                          }
+
+                                                          .babybear\:border=
+-color-border-low-emphasis {
+                                                            border-color: r=
+gba(0, 0, 0, 0.3);
+                                                          }
+
+                                                          .babybear\:bg-col=
+or-transparent {
+                                                            background-colo=
+r: rgba(0, 0, 0, 0);
+                                                          }
+
+                                                          .babybear\:bg-col=
+or-brand {
+                                                            background-colo=
+r: #0a66c2;
+                                                          }
+
+                                                          .babybear\:p-2 {
+                                                            padding: 16px;
+                                                          }
+
+                                                          .babybear\:p-0 {
+                                                            padding: 0px;
+                                                          }
+
+                                                          .babybear\:py-1 {
+                                                            padding-top: 8p=
+x;
+                                                            padding-bottom:=
+ 8px;
+                                                          }
+
+                                                          .babybear\:px-0 {
+                                                            padding-left: 0=
+px;
+                                                            padding-right: =
+0px;
+                                                          }
+
+                                                          .babybear\:px-2 {
+                                                            padding-left: 1=
+6px;
+                                                            padding-right: =
+16px;
+                                                          }
+
+                                                          .babybear\:px-mob=
+ile-container-padding {
+                                                            padding-left: 1=
+6px;
+                                                            padding-right: =
+16px;
+                                                          }
+
+                                                          .babybear\:py-3 {
+                                                            padding-top: 24=
+px;
+                                                            padding-bottom:=
+ 24px;
+                                                          }
+
+                                                          .babybear\:py-1\.=
+5 {
+                                                            padding-top: 12=
+px;
+                                                            padding-bottom:=
+ 12px;
+                                                          }
+
+                                                          .babybear\:pr-0\.=
+5 {
+                                                            padding-right: =
+4px;
+                                                          }
+
+                                                          .babybear\:pr-0 {
+                                                            padding-right: =
+0px;
+                                                          }
+
+                                                          .babybear\:pl-0\.=
+5 {
+                                                            padding-left: 4=
+px;
+                                                          }
+
+                                                          .babybear\:pl-0 {
+                                                            padding-left: 0=
+px;
+                                                          }
+
+                                                          .babybear\:pt-0\.=
+5 {
+                                                            padding-top: 4p=
+x;
+                                                          }
+
+                                                          .babybear\:pb-0 {
+                                                            padding-bottom:=
+ 0px;
+                                                          }
+
+                                                          .babybear\:pt-0 {
+                                                            padding-top: 0p=
+x;
+                                                          }
+
+                                                          .babybear\:pb-2 {
+                                                            padding-bottom:=
+ 16px;
+                                                          }
+
+                                                          .babybear\:text-x=
+s {
+                                                            font-size: 12px=
+;
+                                                          }
+
+                                                          .babybear\:text-s=
+m {
+                                                            font-size: 14px=
+;
+                                                          }
+
+                                                          .babybear\:font-b=
+old {
+                                                            font-weight: 60=
+0;
+                                                          }
+
+                                                          .babybear\:leadin=
+g-\[150px\] {
+                                                            line-height: 15=
+0px;
+                                                          }
+
+                                                          .babybear\:last\:=
+border-b-0:last-child {
+                                                            border-bottom-w=
+idth: 0;
+                                                          }
+
+                                                        }
+
+                                                      }
+
+                                                    }
+
+                                                  }
+
+                                                }
+
+                                              }
+
+                                            }
+
+                                          }
+
+                                        }
+
+                                      }
+
+                                    }
+
+                                  }
+
+                                }
+
+                              }
+
+                            }
+
+                          }
+
+                        }
+
+                      }
+
+                    }
+
+                  }
+
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .mamabear\:absolute {
+    position: absolute;
+  }
+
+  .mamabear\:right-4 {
+    right: 32px;
+  }
+
+  .mamabear\:-top-0\.5 {
+    top: -4px;
+  }
+
+  .mamabear\:-top-0 {
+    top: -0px;
+  }
+
+  .mamabear\:top-\[58px\] {
+    top: 58px;
+  }
+
+  .mamabear\:-top-1 {
+    top: -8px;
+  }
+
+  .mamabear\:flex {
+    display: flex;
+  }
+
+  .mamabear\:hidden {
+    display: none;
+  }
+
+  .mamabear\:\!h-4 {
+    height: 32px !important;
+  }
+
+  .mamabear\:h-\[100\%\] {
+    height: 100%;
+  }
+
+  .mamabear\:\!min-h-\[32px\] {
+    min-height: 32px !important;
+  }
+
+  .mamabear\:w-\[744px\] {
+    width: 744px;
+  }
+
+  .mamabear\:w-full {
+    width: 100%;
+  }
+
+  .mamabear\:w-\[calc\(100\%-97px\)\] {
+    width: calc(100% - 97px);
+  }
+
+  .mamabear\:min-w-0 {
+    min-width: 0px;
+  }
+
+  .mamabear\:max-w-\[790px\] {
+    max-width: 790px;
+  }
+
+  .mamabear\:container-lined {
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+  }
+
+  .mamabear\:container-raised {
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .mamabear\:flex-row {
+    flex-direction: row;
+  }
+
+  .mamabear\:flex-col {
+    flex-direction: column;
+  }
+
+  .mamabear\:flex-wrap {
+    flex-wrap: wrap;
+  }
+
+  .mamabear\:items-start {
+    align-items: flex-start;
+  }
+
+  .mamabear\:items-center {
+    align-items: center;
+  }
+
+  .mamabear\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .mamabear\:gap-y-1 {
+    row-gap: 8px;
+  }
+
+  .mamabear\:self-center {
+    align-self: center;
+  }
+
+  .mamabear\:tab-vertical.tab-sm,
+.mamabear\:tab-vertical .tab-md,
+.mamabear\:tab-vertical .tab-lg {
+    justify-content: flex-start;
+  }
+
+  .mamabear\:tab-vertical.tab-selected {
+    box-shadow: inset 4px 0 rgba(0, 0, 0, 0.9);
+  }
+
+  .mamabear\:rounded-tr-none {
+    border-top-right-radius: 0px;
+  }
+
+  .mamabear\:px-3 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .mamabear\:px-mobile-container-padding {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mamabear\:py-3 {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+  .mamabear\:px-2 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .mamabear\:pt-desktop-content-top-margin {
+    padding-top: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .papabear\:absolute {
+    position: absolute;
+  }
+
+  .papabear\:top-\[58px\] {
+    top: 58px;
+  }
+
+  .papabear\:-top-1 {
+    top: -8px;
+  }
+
+  .papabear\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .papabear\:\!mx-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+  }
+
+  .papabear\:mt-\[-100px\] {
+    margin-top: -100px;
+  }
+
+  .papabear\:mb-\[18px\] {
+    margin-bottom: 18px;
+  }
+
+  .papabear\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .papabear\:mt-0\.5 {
+    margin-top: 4px;
+  }
+
+  .papabear\:mr-2 {
+    margin-right: 16px;
+  }
+
+  .papabear\:ml-column-gutter {
+    margin-left: 24px;
+  }
+
+  .papabear\:inline-block {
+    display: inline-block;
+  }
+
+  .papabear\:flex {
+    display: flex;
+  }
+
+  .papabear\:hidden {
+    display: none;
+  }
+
+  .papabear\:\!h-4 {
+    height: 32px !important;
+  }
+
+  .papabear\:h-6 {
+    height: 48px;
+  }
+
+  .papabear\:h-\[34px\] {
+    height: 34px;
+  }
+
+  .papabear\:h-\[100\%\] {
+    height: 100%;
+  }
+
+  .papabear\:min-h-\[96px\] {
+    min-height: 96px;
+  }
+
+  .papabear\:\!min-h-\[32px\] {
+    min-height: 32px !important;
+  }
+
+  .papabear\:w-\[400px\] {
+    width: 400px;
+  }
+
+  .papabear\:w-content-max-w {
+    width: 1128px;
+  }
+
+  .papabear\:w-core-rail-width {
+    width: 784px;
+  }
+
+  .papabear\:w-right-rail-width {
+    width: calc(1128px - 24px - 784px);
+  }
+
+  .papabear\:w-auto {
+    width: auto;
+  }
+
+  .papabear\:w-\[1128px\] {
+    width: 1128px;
+  }
+
+  .papabear\:w-\[135px\] {
+    width: 135px;
+  }
+
+  .papabear\:w-\[calc\(100\%-97px\)\] {
+    width: calc(100% - 97px);
+  }
+
+  .papabear\:min-w-0 {
+    min-width: 0px;
+  }
+
+  .papabear\:max-w-\[550px\] {
+    max-width: 550px;
+  }
+
+  .papabear\:container-lined {
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+  }
+
+  .papabear\:container-raised {
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .papabear\:flex-col {
+    flex-direction: column;
+  }
+
+  .papabear\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+
+  .papabear\:items-start {
+    align-items: flex-start;
+  }
+
+  .papabear\:justify-start {
+    justify-content: flex-start;
+  }
+
+  .papabear\:justify-center {
+    justify-content: center;
+  }
+
+  .papabear\:self-start {
+    align-self: flex-start;
+  }
+
+  .papabear\:tab-vertical.tab-sm,
+.papabear\:tab-vertical .tab-md,
+.papabear\:tab-vertical .tab-lg {
+    justify-content: flex-start;
+  }
+
+  .papabear\:tab-vertical.tab-selected {
+    box-shadow: inset 4px 0 rgba(0, 0, 0, 0.9);
+  }
+
+  .papabear\:rounded-tr-none {
+    border-top-right-radius: 0px;
+  }
+
+  .papabear\:border-4 {
+    border-width: 4px;
+  }
+
+  .papabear\:p-details-container-padding {
+    padding: 24px;
+  }
+
+  .papabear\:p-0 {
+    padding: 0px;
+  }
+
+  .papabear\:py-2 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .papabear\:pt-desktop-content-top-margin {
+    padding-top: 16px;
+  }
+
+  .papabear\:text-xl {
+    font-size: 24px;
+  }
+}
+</style></head> <body dir=3D"ltr" class=3D"font-sans bg-color-background-ca=
+nvas w-full m-0 p-0 pt-1" style=3D"-webkit-text-size-adjust: 100%; -ms-text=
+-size-adjust: 100%; margin: 0px; width: 100%; background-color: #f3f2f0; pa=
+dding: 0px; padding-top: 8px; font-family: -apple-system, system-ui, BlinkM=
+acSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', 'Fira Sans', Ubuntu, Ox=
+ygen, 'Oxygen Sans', Cantarell, 'Droid Sans', 'Apple Color Emoji', 'Segoe U=
+I Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Lucida Grande', Helvetica, =
+Arial, sans-serif;"> <div class=3D"h-0 opacity-0 text-transparent invisible=
+ overflow-hidden w-0 max-h-[0]" style=3D"visibility: hidden; height: 0px; m=
+ax-height: 0; width: 0px; overflow: hidden; opacity: 0; mso-hide: all;" dat=
+a-email-preheader=3D"true">May all your dearly departed loved ones rest=E2=
+=80=A6</div> <div class=3D"h-0 opacity-0 text-transparent invisible overflo=
+w-hidden w-0 max-h-[0]" style=3D"visibility: hidden; height: 0px; max-heigh=
+t: 0; width: 0px; overflow: hidden; opacity: 0; mso-hide: all;"> =CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=
+=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=
+=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=
+=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0 =CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=
+=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=C2=A0=CD=8F=
+=C2=A0 </div> <table role=3D"presentation" valign=3D"top" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" width=3D"512" align=3D"center" class=3D"mer=
+cado-container w-[512px] max-w-[512px] mx-auto my-0 p-0 bg-color-background=
+-container" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin-top: 0px; margin=
+-bottom: 0px; margin-left: auto; margin-right: auto; width: 512px; max-widt=
+h: 512px; background-color: #ffffff; padding: 0px;"> <tbody> <tr> <td class=
+=3D"text-center p-3" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size=
+-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 24px;=
+ text-align: center;"> <table role=3D"presentation" valign=3D"top" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"min-w-fu=
+ll" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; min-width: 100%;"> <tbody> <tr>=
+ <td align=3D"left" valign=3D"middle" style=3D"-webkit-text-size-adjust: 10=
+0%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0p=
+t;"> <a href=3D"https://www.linkedin.com/comm/feed/?lipi=3Durn%3Ali%3Apage%=
+3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp=
+;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_=
+network_conversations_01-header-0-home_glimmer&amp;trkEmail=3Deml-email_net=
+work_conversations_01-header-0-home_glimmer-null-j4sm2u~lomteawm~yw-null-nu=
+ll&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUw=
+ZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM=
+4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" targ=
+et=3D"_blank" class=3D"w-[84px]" style=3D"color: #0a66c2; cursor: pointer; =
+display: inline-block; text-decoration: none; -webkit-text-size-adjust: 100=
+%; -ms-text-size-adjust: 100%; width: 84px;"> <img class=3D"block" alt=3D"L=
+inkedIn" src=3D"https://www.linkedin.com/comm/dms/logo?badgeTheme=3Dmercado=
+&amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%=
+2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midSig=3D1ftlqGYayc9r01&amp;midToken=3DAQG16WF=
+7PZyt4w&amp;trkEmail=3Deml-email_network_conversations_01-null-0-comms%7Eba=
+dging%7Edynamic%7Eglimmer-null-j4sm2u%7Elomteawm%7Eyw-null-null&amp;trk=3De=
+ml-email_network_conversations_01-null-0-comms%7Ebadging%7Edynamic%7Eglimme=
+r&amp;_sig=3D3YpHhur_ac9r01" data-test-header-dynamic-badging-img style=3D"=
+outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; disp=
+lay: block;"> </a> </td> <td valign=3D"middle" align=3D"right" style=3D"-we=
+bkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: =
+0pt; mso-table-rspace: 0pt;"> <table role=3D"presentation" valign=3D"top" b=
+order=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" data-test-he=
+ader-profile style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td ali=
+gn=3D"right" valign=3D"middle" class=3D"w-[32px]" style=3D"-webkit-text-siz=
+e-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; width: 32px;" width=3D"32"> <a href=3D"https://ph.linkedin.c=
+om/comm/in/ronald-lambert-tugadi-686544283?lipi=3Durn%3Ali%3Apage%3Aemail_e=
+mail_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=
+=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_c=
+onversations_01-header-0-profile_glimmer&amp;trkEmail=3Deml-email_network_c=
+onversations_01-header-0-profile_glimmer-null-j4sm2u~lomteawm~yw-null-null&=
+amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmV=
+iNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4Zj=
+gwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=
+=3D"_blank" style=3D"color: #0a66c2; cursor: pointer; display: inline-block=
+; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st: 100%;"> <img alt=3D"Ronald Lambert Tugadi" src=3D"https://media.licdn.c=
+om/dms/image/D5603AQFzd9128VXU6g/profile-displayphoto-shrink_200_200/0/1694=
+682033701?e=3D2147483647&amp;v=3Dbeta&amp;t=3Dzg4kLJEGspbn-unvKkmG_FtXepjGe=
+MWtdxn3L9Yqto4" class=3D"rounded-[100%] w-[32px] h-[32px]" style=3D"outline=
+: none; text-decoration: none; -ms-interpolation-mode: bicubic; height: 32p=
+x; width: 32px; border-radius: 100%;" width=3D"32" height=3D"32"> </a> </td=
+> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> <tr> <t=
+d class=3D"p-0 !pb-0 pb-3" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding:=
+ 0px; padding-bottom: 0px !important;"> <div> <table role=3D"presentation" =
+valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"10=
+0%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"pt-=
+1 px-3 pb-3 border-0 border-b-1 border-solid border-system-gray-30" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; border-width: 0; border-bottom-width: 1p=
+x; border-style: solid; border-color: #e6e6e6; padding-left: 24px; padding-=
+right: 24px; padding-top: 8px; padding-bottom: 24px;"> <a href=3D"https://w=
+ww.linkedin.com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_email_network_con=
+versations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4=
+w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_conversations_01-=
+hero-0-headline&amp;trkEmail=3Deml-email_network_conversations_01-hero-0-he=
+adline-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;o=
+tpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN=
+2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2Fk=
+MzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" class=3D"w-full" style=
+=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decoration=
+: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; width: =
+100%;"> <h1 class=3D"text-center text-system-gray-90 font-bold text-xl lead=
+ing-regular tracking-wide" data-test-id=3D"hero-headline" style=3D"margin: =
+0; text-align: center; font-size: 24px; font-weight: 600; line-height: 1.25=
+; letter-spacing: 0.025em; color: #282828;"> Your highlights </h1> </a> </t=
+d> </tr> <tr> <td class=3D"p-3 border-0 border-b-1 border-solid border-syst=
+em-gray-30" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; border-width: 0; border=
+-bottom-width: 1px; border-style: solid; border-color: #e6e6e6; padding: 24=
+px;"> <a href=3D"https://www.linkedin.com/comm/feed/update/urn:li:activity:=
+7125702772846395392?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apa=
+ge%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&=
+amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-ema=
+il_network_conversations_01-network~post-0-wrapper~link&amp;trkEmail=3Deml-=
+email_network_conversations_01-network~post-0-wrapper~link-null-j4sm2u~lomt=
+eawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxY=
+jJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3=
+ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDE=
+sMQ%3D%3D" target=3D"_blank" class=3D"w-full" data-test-id=3D"network-post-=
+link" style=3D"color: #0a66c2; cursor: pointer; display: inline-block; text=
+-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%; width: 100%;"> <table role=3D"presentation" valign=3D"top" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-ta=
+ble-rspace: 0pt;"> <tbody> <tr> <td style=3D"-webkit-text-size-adjust: 100%=
+; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"=
+0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%=
+; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+"> <tbody> <tr> <td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-=
+adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a href=3D"ht=
+tps://www.linkedin.com/comm/feed/update/urn:li:activity:7125702772846395392=
+?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_ne=
+twork_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG1=
+6WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_conversa=
+tions_01-network_post-0-actor_card&amp;trkEmail=3Deml-email_network_convers=
+ations_01-network_post-0-actor_card-null-j4sm2u~lomteawm~yw-null-null&amp;e=
+id=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAx=
+N2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmE=
+xZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_b=
+lank" class=3D"block" style=3D"color: #0a66c2; cursor: pointer; text-decora=
+tion: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; dis=
+play: block;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-size-=
+adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-=
+rspace: 0pt;"> <tbody> <tr> <td class=3D"w-[72px]" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; width: 72px;" width=3D"72"> <img class=3D"inline-block rela=
+tive bg-color-entity-ghost-background w-6 h-6 !w-[72px] !h-[72px] !block" s=
+rc=3D"https://media.licdn.com/dms/image/D4E0BAQGs0QSjVSUNjw/company-logo_10=
+0_100/0/1686283214969?e=3D2147483647&amp;v=3Dbeta&amp;t=3D8WhTB1AMiroU3leVW=
+x4p1YPZFIfrcO3CRu1dKCZBFZQ" alt=3D"Capstone Intel Corporation" style=3D"out=
+line: none; text-decoration: none; -ms-interpolation-mode: bicubic; positio=
+n: relative; background-color: #eae6df; display: block !important; height: =
+72px !important; width: 72px !important;" width=3D"72" height=3D"72"> </td>=
+ <td class=3D"pl-1" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-=
+adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 8=
+px;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: =
+100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt;"> <tbody> <tr> <td class=3D"font-bold text-md leading-regular text-sys=
+tem-gray-90" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:=
+ 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 16px; font-=
+weight: 600; line-height: 1.25; color: #282828;"> Capstone Intel Corporatio=
+n </td> </tr> <tr data-test-id=3D"actor-card-headline"> <td class=3D"text-s=
+m leading-[16px] text-color-text-solid-secondary" style=3D"-webkit-text-siz=
+e-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; font-size: 14px; line-height: 16px; color: #666666;"> 104 fo=
+llowers </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </a> </=
+td> </tr> <tr> <td class=3D"pt-2 text-md leading-regular text-system-gray-9=
+0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; padding-top: 16px; font-size: 16=
+px; line-height: 1.25; color: #282828;"> <span data-test-id=3D"truncated-me=
+ssage-text"> May all your dearly departed loved ones rest in peace and are =
+blessed with eternal happiness. #AllSoulsDay </span> </td> </tr> <tr data-t=
+est-id=3D"network-post-social-metadata"> <td class=3D"pt-2" style=3D"-webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; padding-top: 16px;"> </td> </tr> <tr data-test-id=
+=3D"read-more-cta-block"> <td class=3D"pt-3" style=3D"-webkit-text-size-adj=
+ust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rsp=
+ace: 0pt; padding-top: 24px;"> <table role=3D"presentation" valign=3D"top" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" data-test-i=
+d=3D"email-button" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-a=
+djust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <=
+td valign=3D"middle" align=3D"left" style=3D"-webkit-text-size-adjust: 100%=
+; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;=
+"> <a href=3D"https://www.linkedin.com/comm/feed/update/urn:li:activity:712=
+5702772846395392?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%=
+3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp=
+;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_=
+network_conversations_01-network~post~cta-0-read~more&amp;trkEmail=3Deml-em=
+ail_network_conversations_01-network~post~cta-0-read~more-null-j4sm2u~lomte=
+awm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYj=
+JmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3Z=
+GNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEs=
+MQ%3D%3D" target=3D"_blank" aria-label=3D"Read more" class=3D"align-top" st=
+yle=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decorat=
+ion: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; vert=
+ical-align: top;"> <table role=3D"presentation" valign=3D"top" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"auto" class=3D"border-separat=
+e" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: separate;"> <tb=
+ody> <tr> <td class=3D"btn-md btn-secondary-emphasis border-color-brand but=
+ton-link leading-regular !min-h-[auto] !shadow-none border-1 border-solid" =
+data-test-id=3D"read-more-cta-above" style=3D"-webkit-text-size-adjust: 100=
+%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt=
+; height: min-content; border-radius: 24px; padding-top: 12px; padding-bott=
+om: 12px; padding-left: 24px; padding-right: 24px; text-align: center; font=
+-size: 16px; font-weight: 600; cursor: pointer; text-decoration-line: none;=
+ background-color: rgba(0, 0, 0, 0); color: #0a66c2; border-width: 1px; bor=
+der-style: solid; border-color: #0a66c2; line-height: 1.25; min-height: aut=
+o !important; box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000 !important;"> <a =
+href=3D"https://www.linkedin.com/comm/feed/update/urn:li:activity:712570277=
+2846395392?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%3Aemai=
+l_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midTo=
+ken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_networ=
+k_conversations_01-network~post~cta-0-read~more&amp;trkEmail=3Deml-email_ne=
+twork_conversations_01-network~post~cta-0-read~more-null-j4sm2u~lomteawm~yw=
+-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzlj=
+M2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U=
+5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%=
+3D" target=3D"_blank" tabindex=3D"-1" aria-hidden=3D"true" style=3D"color: =
+#0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -we=
+bkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <span class=3D"n=
+o-underline text-color-brand" style=3D"color: #0a66c2; text-decoration-line=
+: none;"> Read more </span> </a> </td> </tr> </tbody> </table> </a> </td> <=
+/tr> </tbody> </table> </td> </tr> <tr><td class=3D"h-2" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; height: 16px;" height=3D"16"></td></tr> <tr> <td clas=
+s=3D"rounded-md overflow-hidden" data-test-id=3D"network-post-update-card" =
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; overflow: hidden; border-radius: 8p=
+x;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: =
+100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt;"> <tbody> <tr> <td class=3D"bg-cool-gray-20" style=3D"-webkit-text-siz=
+e-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tabl=
+e-rspace: 0pt; background-color: #edf3f8;"> <table role=3D"presentation" va=
+lign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%=
+" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"h-[25=
+2px] bg-center bg-no-repeat bg-cover bg-system-gray-40 " align=3D"center" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt; mso-table-rspace: 0pt; height: 252px; background-color: #cf=
+cfcf; background-size: cover; background-position: center; background-repea=
+t: no-repeat; background-image: url(&quot;https://media.licdn.com/dms/image=
+/D4D22AQE17aM8NBhvZg/feedshare-shrink_800/0/1698899928975?e=3D1701907200&am=
+p;v=3Dbeta&amp;t=3DeS0W6QtTkuxrCZPK2BJ2B0BuYiB6sNnyDC6FlLjr-fI&quot;);" hei=
+ght=3D"252"> <a href=3D"https://www.linkedin.com/comm/feed/update/urn:li:ac=
+tivity:7125702772846395392?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3A=
+li%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ=
+%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3D=
+eml-email_network_conversations_01-update~card-0-thumbnail~overlay~image&am=
+p;trkEmail=3Deml-email_network_conversations_01-update~card-0-thumbnail~ove=
+rlay~image-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&a=
+mp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4Z=
+DZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1=
+M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" aria-label=3D"Read =
+more" class=3D"w-full" style=3D"color: #0a66c2; cursor: pointer; display: i=
+nline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; width: 100%;"> <img class=3D"w-[448px] h-[252px] hidde=
+n" src=3D"https://media.licdn.com/dms/image/D4D22AQE17aM8NBhvZg/feedshare-s=
+hrink_800/0/1698899928975?e=3D1701907200&amp;v=3Dbeta&amp;t=3DeS0W6QtTkuxrC=
+ZPK2BJ2B0BuYiB6sNnyDC6FlLjr-fI" alt=3D"View image" style=3D"outline: none; =
+text-decoration: none; -ms-interpolation-mode: bicubic; display: none; heig=
+ht: 252px; width: 448px;" width=3D"448" height=3D"252"> </a> </td> </tr> </=
+tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table>=
+ </td> </tr> </tbody> </table> </a> </td> </tr> <tr> <td class=3D"p-3 borde=
+r-0 border-b-1 border-solid border-system-gray-30" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; border-width: 0; border-bottom-width: 1px; border-style: so=
+lid; border-color: #e6e6e6; padding: 24px;"> <a href=3D"https://www.linkedi=
+n.com/comm/feed/update/urn:li:activity:7126033962543534081?origin=3DNETWORK=
+_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversatio=
+ns_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;mi=
+dSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_conversations_01-network~=
+post-0-wrapper~link&amp;trkEmail=3Deml-email_network_conversations_01-netwo=
+rk~post-0-wrapper~link-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-l=
+omteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3Z=
+Dg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFj=
+MWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" class=
+=3D"w-full" data-test-id=3D"network-post-link" style=3D"color: #0a66c2; cur=
+sor: pointer; display: inline-block; text-decoration: none; -webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; width: 100%;"> <table role=3D"=
+presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"=
+0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-ad=
+just: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <t=
+d style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"> <table role=3D"presentation" va=
+lign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%=
+" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td style=3D"-webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt;"> <a href=3D"https://www.linkedin.com/comm/feed/u=
+pdate/urn:li:activity:7126033962543534081?origin=3DNETWORK_CONVERSATIONS&am=
+p;lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2Bg=
+DQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc=
+9r01&amp;trk=3Deml-email_network_conversations_01-network_post-0-actor_card=
+&amp;trkEmail=3Deml-email_network_conversations_01-network_post-0-actor_car=
+d-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpTok=
+en=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZj=
+A2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2O=
+Tg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" class=3D"block" style=3D"col=
+or: #0a66c2; cursor: pointer; text-decoration: none; -webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; display: block;"> <table role=3D"pres=
+entation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" w=
+idth=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td cl=
+ass=3D"w-[72px]" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adj=
+ust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 72px;" widt=
+h=3D"72"> <img class=3D"inline-block relative bg-color-entity-ghost-backgro=
+und w-6 h-6 !w-[72px] !h-[72px] !block" src=3D"https://media.licdn.com/dms/=
+image/C4E0BAQFyLTndQ0dnpw/company-logo_100_100/0/1630626717359/linkedin_new=
+s_asia_logo?e=3D2147483647&amp;v=3Dbeta&amp;t=3DphXxyfg39sqQ106QIcWqbmpox80=
+PhBR0nuyjFzZWm4s" alt=3D"LinkedIn News Asia" style=3D"outline: none; text-d=
+ecoration: none; -ms-interpolation-mode: bicubic; position: relative; backg=
+round-color: #eae6df; display: block !important; height: 72px !important; w=
+idth: 72px !important;" width=3D"72" height=3D"72"> </td> <td class=3D"pl-1=
+" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 8px;"> <table role=
+=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr=
+> <td class=3D"font-bold text-md leading-regular text-system-gray-90" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; font-size: 16px; font-weight: 600; line-=
+height: 1.25; color: #282828;"> LinkedIn News Asia </td> </tr> <tr data-tes=
+t-id=3D"actor-card-headline"> <td class=3D"text-sm leading-[16px] text-colo=
+r-text-solid-secondary" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: =
+14px; line-height: 16px; color: #666666;"> 4,231,300 followers </td> </tr> =
+</tbody> </table> </td> </tr> </tbody> </table> </a> </td> </tr> <tr> <td c=
+lass=3D"pt-2 text-md leading-regular text-system-gray-90" style=3D"-webkit-=
+text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; =
+mso-table-rspace: 0pt; padding-top: 16px; font-size: 16px; line-height: 1.2=
+5; color: #282828;"> <span data-test-id=3D"truncated-message-text"> Partici=
+pate in philanthropy like a venture capitalist, says CEO Naina Subberwal Ba=
+tra. =E2=80=9CI strongly encourage=E2=80=A6 </span> <span data-test-id=3D"t=
+runcated-message-see-more" class=3D"text-color-link font-bold" style=3D"fon=
+t-weight: 600; color: #0a66c2;"> see more </span> </td> </tr> <tr data-test=
+-id=3D"network-post-social-metadata"> <td class=3D"pt-2" style=3D"-webkit-t=
+ext-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; m=
+so-table-rspace: 0pt; padding-top: 16px;"> <table role=3D"presentation" val=
+ign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"auto"=
+ class=3D"w-auto" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-ad=
+just: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: auto;"> <t=
+body> <tr> <td class=3D"pr-0.5" data-test-reaction=3D"LIKE" style=3D"-webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt=
+; mso-table-rspace: 0pt; padding-right: 4px;"> <img class=3D"block w-2 h-2"=
+ src=3D"https://static.licdn.com/sc/h/91tdscn0h1aaoefui9crf11j6" alt=3D"LIK=
+E" style=3D"outline: none; text-decoration: none; -ms-interpolation-mode: b=
+icubic; display: block; height: 16px; width: 16px;" width=3D"16" height=3D"=
+16"> </td> <td class=3D"pr-0.5" data-test-reaction=3D"PRAISE" style=3D"-web=
+kit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0=
+pt; mso-table-rspace: 0pt; padding-right: 4px;"> <img class=3D"block w-2 h-=
+2" src=3D"https://static.licdn.com/sc/h/adig5urqxi03qzuy6iyjfm1b5" alt=3D"P=
+RAISE" style=3D"outline: none; text-decoration: none; -ms-interpolation-mod=
+e: bicubic; display: block; height: 16px; width: 16px;" width=3D"16" height=
+=3D"16"> </td> <td class=3D"pr-0.5" data-test-reaction=3D"EMPATHY" style=3D=
+"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspa=
+ce: 0pt; mso-table-rspace: 0pt; padding-right: 4px;"> <img class=3D"block w=
+-2 h-2" src=3D"https://static.licdn.com/sc/h/evs2x5zfnz5g0xrc6u22treq2" alt=
+=3D"EMPATHY" style=3D"outline: none; text-decoration: none; -ms-interpolati=
+on-mode: bicubic; display: block; height: 16px; width: 16px;" width=3D"16" =
+height=3D"16"> </td> <td class=3D"text-sm leading-regular font-normal text-=
+system-gray-70" data-test-id=3D"reactions-count" style=3D"-webkit-text-size=
+-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; font-size: 14px; font-weight: 400; line-height: 1.25; color: =
+#666666;"> 76 </td> <td class=3D"px-0.5" data-test-id=3D"separator" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; padding-left: 4px; padding-right: 4px;">=
+=C2=B7</td> <td class=3D"text-sm leading-regular font-normal text-system-gr=
+ay-70" data-test-id=3D"comments-count" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; font-size: 14px; font-weight: 400; line-height: 1.25; color: #666666;">=
+ 8 Comments </td> </tr> </tbody> </table> </td> </tr> <tr data-test-id=3D"r=
+ead-more-cta-block"> <td class=3D"pt-3" style=3D"-webkit-text-size-adjust: =
+100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: =
+0pt; padding-top: 24px;"> <table role=3D"presentation" valign=3D"top" borde=
+r=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" data-test-id=3D"=
+email-button" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust=
+: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td va=
+lign=3D"middle" align=3D"left" style=3D"-webkit-text-size-adjust: 100%; -ms=
+-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <a=
+ href=3D"https://www.linkedin.com/comm/feed/update/urn:li:activity:71260339=
+62543534081?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%3Aema=
+il_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midT=
+oken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_netwo=
+rk_conversations_01-network~post~cta-0-read~more&amp;trkEmail=3Deml-email_n=
+etwork_conversations_01-network~post~cta-0-read~more-null-j4sm2u~lomteawm~y=
+w-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzl=
+jM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2=
+U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D=
+%3D" target=3D"_blank" aria-label=3D"Read more" class=3D"align-top" style=
+=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decoration=
+: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; vertica=
+l-align: top;"> <table role=3D"presentation" valign=3D"top" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0" width=3D"auto" class=3D"border-separate" =
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt; mso-table-rspace: 0pt; border-collapse: separate;"> <tbody=
+> <tr> <td class=3D"btn-md btn-secondary-emphasis border-color-brand button=
+-link leading-regular !min-h-[auto] !shadow-none border-1 border-solid" dat=
+a-test-id=3D"read-more-cta-above" style=3D"-webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; h=
+eight: min-content; border-radius: 24px; padding-top: 12px; padding-bottom:=
+ 12px; padding-left: 24px; padding-right: 24px; text-align: center; font-si=
+ze: 16px; font-weight: 600; cursor: pointer; text-decoration-line: none; ba=
+ckground-color: rgba(0, 0, 0, 0); color: #0a66c2; border-width: 1px; border=
+-style: solid; border-color: #0a66c2; line-height: 1.25; min-height: auto !=
+important; box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000 !important;"> <a hre=
+f=3D"https://www.linkedin.com/comm/feed/update/urn:li:activity:712603396254=
+3534081?origin=3DNETWORK_CONVERSATIONS&amp;lipi=3Durn%3Ali%3Apage%3Aemail_e=
+mail_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=
+=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_c=
+onversations_01-network~post~cta-0-read~more&amp;trkEmail=3Deml-email_netwo=
+rk_conversations_01-network~post~cta-0-read~more-null-j4sm2u~lomteawm~yw-nu=
+ll-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2J=
+kMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5ND=
+ZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D"=
+ target=3D"_blank" tabindex=3D"-1" aria-hidden=3D"true" style=3D"color: #0a=
+66c2; cursor: pointer; display: inline-block; text-decoration: none; -webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <span class=3D"no-u=
+nderline text-color-brand" style=3D"color: #0a66c2; text-decoration-line: n=
+one;"> Read more </span> </a> </td> </tr> </tbody> </table> </a> </td> </tr=
+> </tbody> </table> </td> </tr> <tr><td class=3D"h-2" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; height: 16px;" height=3D"16"></td></tr> <tr> <td class=
+=3D"reshare-root-post rounded-md overflow-hidden border-1 border-solid bord=
+er-system-gray-30" data-test-id=3D"reshare-root-post" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; overflow: hidden; border-radius: 8px; border-width: 1px;=
+ border-style: solid; border-color: #e6e6e6;"> <table role=3D"presentation"=
+ valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"1=
+00%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; m=
+so-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"pt=
+-2 px-2" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 16px; paddin=
+g-right: 16px; padding-top: 16px;"> <a href=3D"https://www.linkedin.com/com=
+m/feed/update/urn:li:activity:7124560554253328384?origin=3DNETWORK_CONVERSA=
+TIONS&amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3Bw=
+P3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1f=
+tlqGYayc9r01&amp;trk=3Deml-email_network_conversations_01-network_post-0-ac=
+tor_card&amp;trkEmail=3Deml-email_network_conversations_01-network_post-0-a=
+ctor_card-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&am=
+p;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZD=
+ZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M=
+2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" class=3D"block" styl=
+e=3D"color: #0a66c2; cursor: pointer; text-decoration: none; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; display: block;"> <table role=
+=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr=
+> <td class=3D"w-[72px]" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 72p=
+x;" width=3D"72"> <img class=3D"inline-block relative bg-color-entity-ghost=
+-background clip-path-circle-50 rounded-full w-6 h-6 !w-[72px] !h-[72px] !b=
+lock" src=3D"https://media.licdn.com/dms/image/D5603AQH2vegYGvP_2w/profile-=
+displayphoto-shrink_400_400/0/1675408922489?e=3D2147483647&amp;v=3Dbeta&amp=
+;t=3DorRy1nVfSePKrCVCD6wFM1YWVhwyBzlHTmN85vrF6Sk" alt=3D"Naina Subberwal Ba=
+tra" style=3D"outline: none; text-decoration: none; -ms-interpolation-mode:=
+ bicubic; position: relative; border-radius: 9999px; background-color: #eae=
+6df; clip-path: circle(50%); display: block !important; height: 72px !impor=
+tant; width: 72px !important;" width=3D"72" height=3D"72"> </td> <td class=
+=3D"pl-1" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-left: 8px;"> <tab=
+le role=3D"presentation" valign=3D"top" border=3D"0" cellspacing=3D"0" cell=
+padding=3D"0" width=3D"100%" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbo=
+dy> <tr> <td class=3D"font-bold text-md leading-regular text-system-gray-90=
+" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-=
+table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 16px; font-weight: 600=
+; line-height: 1.25; color: #282828;"> Naina Subberwal Batra </td> </tr> <t=
+r data-test-id=3D"actor-card-headline"> <td class=3D"text-sm leading-[16px]=
+ text-color-text-solid-secondary" style=3D"-webkit-text-size-adjust: 100%; =
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; f=
+ont-size: 14px; line-height: 16px; color: #666666;"> CEO at AVPN </td> </tr=
+> </tbody> </table> </td> </tr> </tbody> </table> </a> </td> </tr> <tr> <td=
+ class=3D"p-2 text-md leading-regular text-system-gray-90" style=3D"-webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt;=
+ mso-table-rspace: 0pt; padding: 16px; font-size: 16px; line-height: 1.25; =
+color: #282828;"> <span data-test-id=3D"truncated-message-text"> The =E2=80=
+=9Cmoonshot=E2=80=9D approach to #philanthropy has the potential to bring a=
+bout substantial change when it comes to=E2=80=A6 </span> <span data-test-i=
+d=3D"truncated-message-see-more" class=3D"text-color-link font-bold" style=
+=3D"font-weight: 600; color: #0a66c2;"> see more </span> </td> </tr> <tr> <=
+td class=3D"overflow-hidden rounded-md rounded-t-none" data-test-id=3D"netw=
+ork-post-update-card" style=3D"-webkit-text-size-adjust: 100%; -ms-text-siz=
+e-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; overflow: hid=
+den; border-radius: 8px; border-top-left-radius: 0px; border-top-right-radi=
+us: 0px;"> <table role=3D"presentation" valign=3D"top" border=3D"0" cellspa=
+cing=3D"0" cellpadding=3D"0" width=3D"100%" style=3D"-webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt;"> <tbody> <tr> <td class=3D"bg-cool-gray-20" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-=
+table-rspace: 0pt; background-color: #edf3f8;"> <table role=3D"presentation=
+" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"=
+100%" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+mso-table-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"h=
+-[252px] bg-center bg-no-repeat bg-cover bg-system-gray-40 " align=3D"cente=
+r" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; height: 252px; background-color:=
+ #cfcfcf; background-size: cover; background-position: center; background-r=
+epeat: no-repeat; background-image: url(&quot;https://media.licdn.com/dms/i=
+mage/sync/D5627AQG_6nUg7Xvlaw/articleshare-shrink_1280_800/0/1698978782997?=
+e=3D1699876800&amp;v=3Dbeta&amp;t=3Dfynj0-vAERRcXM94sDm8pgECeNlr2yY4-UriBFf=
+oOXo&quot;);" height=3D"252"> <a href=3D"https://www.linkedin.com/comm/feed=
+/update/urn:li:activity:7124560554253328384?origin=3DNETWORK_CONVERSATIONS&=
+amp;lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2=
+BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYa=
+yc9r01&amp;trk=3Deml-email_network_conversations_01-update~card-0-thumbnail=
+~overlay~image&amp;trkEmail=3Deml-email_network_conversations_01-update~car=
+d-0-thumbnail~overlay~image-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4s=
+m2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4=
+OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJ=
+mNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" ar=
+ia-label=3D"Read more" class=3D"w-full" style=3D"color: #0a66c2; cursor: po=
+inter; display: inline-block; text-decoration: none; -webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; width: 100%;"> <img class=3D"w-[448px=
+] h-[252px] hidden" src=3D"https://media.licdn.com/dms/image/sync/D5627AQG_=
+6nUg7Xvlaw/articleshare-shrink_1280_800/0/1698978782997?e=3D1699876800&amp;=
+v=3Dbeta&amp;t=3Dfynj0-vAERRcXM94sDm8pgECeNlr2yY4-UriBFfoOXo" alt=3D"View i=
+mage" style=3D"outline: none; text-decoration: none; -ms-interpolation-mode=
+: bicubic; display: none; height: 252px; width: 448px;" width=3D"448" heigh=
+t=3D"252"> </a> </td> </tr> <tr> <td class=3D"p-2" style=3D"-webkit-text-si=
+ze-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-tab=
+le-rspace: 0pt; padding: 16px;"> <p class=3D"text-md font-bold leading-regu=
+lar text-black" style=3D"margin: 0; font-size: 16px; font-weight: 600; line=
+-height: 1.25; color: #000000;"> Chen Yet-Sen Family Foundation urges VC ap=
+proach to philanthropy | ESG | AsianInvestor </p> </td> </tr> </tbody> </ta=
+ble> </td> </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr=
+> </tbody> </table> </td> </tr> </tbody> </table> </a> </td> </tr> <tr> <td=
+ class=3D"pt-4 pb-2 px-3 bg-color-background-canvas" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-t=
+able-rspace: 0pt; background-color: #f3f2f0; padding-left: 24px; padding-ri=
+ght: 24px; padding-bottom: 16px; padding-top: 32px;"> <table role=3D"presen=
+tation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wid=
+th=3D"100%" data-test-id=3D"email-button" style=3D"-webkit-text-size-adjust=
+: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace=
+: 0pt;"> <tbody> <tr> <td valign=3D"middle" align=3D"middle" style=3D"-webk=
+it-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0p=
+t; mso-table-rspace: 0pt;"> <a href=3D"https://www.linkedin.com/comm/feed/?=
+lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQ=
+lOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r=
+01&amp;trk=3Deml-email_network_conversations_01-footer_promo-0-footer_see_a=
+ll&amp;trkEmail=3Deml-email_network_conversations_01-footer_promo-0-footer_=
+see_all-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;=
+otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZi=
+N2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2F=
+kMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" aria-label=3D"See more=
+ on LinkedIn" class=3D"align-top" style=3D"color: #0a66c2; cursor: pointer;=
+ display: inline-block; text-decoration: none; -webkit-text-size-adjust: 10=
+0%; -ms-text-size-adjust: 100%; vertical-align: top;"> <table role=3D"prese=
+ntation" valign=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" wi=
+dth=3D"auto" class=3D"border-separate" style=3D"-webkit-text-size-adjust: 1=
+00%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0=
+pt; border-collapse: separate;"> <tbody> <tr> <td class=3D"btn-md btn-prima=
+ry border-color-brand button-link leading-regular !min-h-[auto] !shadow-non=
+e border-1 border-solid" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; height: mi=
+n-content; border-radius: 24px; padding-top: 12px; padding-bottom: 12px; pa=
+dding-left: 24px; padding-right: 24px; text-align: center; font-size: 16px;=
+ font-weight: 600; cursor: pointer; text-decoration-line: none; background-=
+color: #0a66c2; color: #ffffff; border-width: 1px; border-style: solid; bor=
+der-color: #0a66c2; line-height: 1.25; min-height: auto !important; box-sha=
+dow: 0 0 #0000, 0 0 #0000, 0 0 #0000 !important;"> <a href=3D"https://www.l=
+inkedin.com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_email_network_convers=
+ations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&am=
+p;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_conversations_01-foot=
+er_promo-0-footer_see_all&amp;trkEmail=3Deml-email_network_conversations_01=
+-footer_promo-0-footer_see_all-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3D=
+j4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlY=
+jY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFi=
+YjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank"=
+ tabindex=3D"-1" aria-hidden=3D"true" style=3D"color: #0a66c2; cursor: poin=
+ter; display: inline-block; text-decoration: none; -webkit-text-size-adjust=
+: 100%; -ms-text-size-adjust: 100%;"> <span class=3D"no-underline text-whit=
+e" style=3D"color: #ffffff; text-decoration-line: none;"> See more on Linke=
+dIn </span> </a> </td> </tr> </tbody> </table> </a> </td> </tr> </tbody> </=
+table> </td> </tr> </tbody> </table> </div> </td> </tr> <tr> <td class=3D"b=
+g-color-background-canvas p-3" style=3D"-webkit-text-size-adjust: 100%; -ms=
+-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; back=
+ground-color: #f3f2f0; padding: 24px;"> <table role=3D"presentation" valign=
+=3D"top" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" st=
+yle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt;"> <tbody> <tr> <td class=3D"text-cent=
+er pb-2" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100=
+%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 16px; text=
+-align: center;"> <h2 class=3D"text-lg text-teal-80" style=3D"margin: 0; fo=
+nt-weight: 500; font-size: 20px; color: #104e58;"> Get the new LinkedIn des=
+ktop app </h2> </td> </tr> <tr> <td class=3D"text-center pb-2" data-test-id=
+=3D"footer-app-store-icon" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-=
+bottom: 16px; text-align: center;"> <a href=3D"https://apps.microsoft.com/s=
+tore/detail/9WZDNCRFJ4Q7?launch=3Dtrue&amp;cid=3Dlinkedin_email_upsell&amp;=
+mode=3Dfull" target=3D"_blank" rel=3D"noopener noreferrer" style=3D"color: =
+#0a66c2; cursor: pointer; display: inline-block; text-decoration: none; -we=
+bkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img alt=3D"Get =
+it from Microsoft" src=3D"https://static.licdn.com/sc/h/1pmuh3ckvwqmgzobmu6=
+aq1aax" class=3D"h-[40px] w-[112px]" style=3D"outline: none; text-decoratio=
+n: none; -ms-interpolation-mode: bicubic; height: 40px; width: 112px;" widt=
+h=3D"112" height=3D"40"> </a> </td> </tr> <tr> <td class=3D"text-center pb-=
+2" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso=
+-table-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 16px; text-align=
+: center;"> <h2 class=3D"text-md text-teal-80" style=3D"margin: 0; font-wei=
+ght: 500; font-size: 16px; color: #104e58;"> Also available on mobile </h2>=
+ </td> </tr> <tr> <td class=3D"text-center" data-test-id=3D"footer-app-stor=
+e-icon" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; text-align: center;"> <a hr=
+ef=3D"https://itunes.apple.com/us/app/linkedin/id288429040?pt=3D10746&amp;c=
+t=3Dst_appsite_flagship&amp;mt=3D8" target=3D"_blank" rel=3D"noopener noref=
+errer" style=3D"color: #0a66c2; cursor: pointer; display: inline-block; tex=
+t-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 1=
+00%;"> <img alt=3D"Download on the App Store" src=3D"https://static.licdn.c=
+om/sc/h/76yzkd0h5kiv27lrd4yaenylk" class=3D"h-[40px] w-[120px] pr-1" style=
+=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; =
+height: 40px; width: 120px; padding-right: 8px;" width=3D"120" height=3D"40=
+"> </a> <a href=3D"https://play.google.com/store/apps/details?id=3Dcom.link=
+edin.android&amp;referrer=3Dst_appsite_flagship" target=3D"_blank" rel=3D"n=
+oopener noreferrer" style=3D"color: #0a66c2; cursor: pointer; display: inli=
+ne-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%;"> <img alt=3D"Get it on Google Play" src=3D"https://stati=
+c.licdn.com/sc/h/142qudwblp58zwmc9vkqfplug" class=3D"h-[40px] w-[134px]" st=
+yle=3D"outline: none; text-decoration: none; -ms-interpolation-mode: bicubi=
+c; height: 40px; width: 134px;" width=3D"134" height=3D"40"> </a> </td> </t=
+r> <tr> <td class=3D"py-2" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding-=
+top: 16px; padding-bottom: 16px;"><hr class=3D"border-none bg-[#e0dfdd] h-[=
+1px]" style=3D"height: 1px; border-style: none; background-color: #e0dfdd;"=
+></td> </tr> </tbody> </table> <table role=3D"presentation" valign=3D"top" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" width=3D"100%" class=3D"te=
+xt-xs" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;=
+ mso-table-lspace: 0pt; mso-table-rspace: 0pt; font-size: 12px;"> <tbody> <=
+tr> <td class=3D"pb-1 m-0" style=3D"-webkit-text-size-adjust: 100%; -ms-tex=
+t-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: =
+0px; padding-bottom: 8px;"> This email was intended for Ronald Lambert Tuga=
+di (Computer Science Student) </td> </tr> <tr> <td class=3D"pb-1 m-0" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom: 8px;"> <a h=
+ref=3D"https://www.linkedin.com/help/linkedin/answer/4788?lang=3Den&amp;lip=
+i=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJ=
+zP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&=
+amp;trk=3Deml-email_network_conversations_01-SecurityHelp-0-footerglimmer&a=
+mp;trkEmail=3Deml-email_network_conversations_01-SecurityHelp-0-footerglimm=
+er-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpTo=
+ken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZ=
+jA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2=
+OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" style=3D"color: #0a66c2; cu=
+rsor: pointer; display: inline-block; text-decoration: none; -webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%;">Learn why we included this.<=
+/a> </td> </tr> <tr> <td class=3D"pb-1 m-0" style=3D"-webkit-text-size-adju=
+st: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspa=
+ce: 0pt; margin: 0px; padding-bottom: 8px;">You are receiving Network Conve=
+rsations emails. Some content may be automatically translated based on <a h=
+ref=3D"https://www.linkedin.com/mypreferences/d/language-for-translation" t=
+arget=3D"_blank" class=3D"link-no-visited-state" data-tracking-will-navigat=
+e data-tracking-control-name=3D"email_network_conversations_content_setting=
+s_link" style=3D"cursor: pointer; display: inline-block; text-decoration: n=
+one; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; font-weigh=
+t: 600; color: #0a66c2;">your settings</a>.</td> </tr> <tr> <td class=3D"pb=
+-1 m-0" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%=
+; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0px; padding-bottom=
+: 8px;"> <a href=3D"https://www.linkedin.com/comm/psettings/email-unsubscri=
+be?lipi=3Durn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2B=
+gDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYay=
+c9r01&amp;trk=3Deml-email_network_conversations_01-unsubscribe-0-footerGlim=
+mer&amp;trkEmail=3Deml-email_network_conversations_01-unsubscribe-0-footerG=
+limmer-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;l=
+oid=3DAQGpXcFjAq0TBgAAAYukYEWJOjXAkqA2syt2RKei0Ah67LYpz9FAWFTLvkpSz2vTqlSb8=
+YPkeTpQvphENWCf1TF-cGxib2rJ8-NVZMLBKfgmQJPGhrSPYZfWgZyZnjZ7Ob0y3N_GASpsiI6P=
+" target=3D"_blank" style=3D"color: #0a66c2; cursor: pointer; display: inli=
+ne-block; text-decoration: none; -webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%;">Unsubscribe</a> =C2=A0=C2=A0=C2=B7=C2=A0=C2=A0 <a href=
+=3D"https://www.linkedin.com/help/linkedin/answer/67?lang=3Den&amp;lipi=3Du=
+rn%3Ali%3Apage%3Aemail_email_network_conversations_01%3BwP3f0%2BgDQlOJzP1zD=
+7z2OQ%3D%3D&amp;midToken=3DAQG16WF7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;t=
+rk=3Deml-email_network_conversations_01-help-0-footerglimmer&amp;trkEmail=
+=3Deml-email_network_conversations_01-help-0-footerglimmer-null-j4sm2u~lomt=
+eawm~yw-null-null&amp;eid=3Dj4sm2u-lomteawm-yw&amp;otpToken=3DMTMwNDFiZTYxY=
+jJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3ZDg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3=
+ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFjMWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDE=
+sMQ%3D%3D" target=3D"_blank" style=3D"color: #0a66c2; cursor: pointer; disp=
+lay: inline-block; text-decoration: none; -webkit-text-size-adjust: 100%; -=
+ms-text-size-adjust: 100%;">Help</a> </td> </tr> <tr> <td class=3D"pb-1" st=
+yle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-tabl=
+e-lspace: 0pt; mso-table-rspace: 0pt; padding-bottom: 8px;"> <a href=3D"htt=
+ps://www.linkedin.com/comm/feed/?lipi=3Durn%3Ali%3Apage%3Aemail_email_netwo=
+rk_conversations_01%3BwP3f0%2BgDQlOJzP1zD7z2OQ%3D%3D&amp;midToken=3DAQG16WF=
+7PZyt4w&amp;midSig=3D1ftlqGYayc9r01&amp;trk=3Deml-email_network_conversatio=
+ns_01-footer-0-logoGlimmer&amp;trkEmail=3Deml-email_network_conversations_0=
+1-footer-0-logoGlimmer-null-j4sm2u~lomteawm~yw-null-null&amp;eid=3Dj4sm2u-l=
+omteawm-yw&amp;otpToken=3DMTMwNDFiZTYxYjJmYzljM2JkMmUwZmViNDAxN2VlYjY4OWM3Z=
+Dg0NDlkYTg4ZDZiN2JjZjA2Njk0ZDUzNWRmN2Y3ZGNkY2U5NDZiOWM4ZjgwNmExZDFiYjJmNjFj=
+MWU1ZWU5NGM1M2FkMzI2OTg4MzQzYTBlYTUzLDEsMQ%3D%3D" target=3D"_blank" style=
+=3D"color: #0a66c2; cursor: pointer; display: inline-block; text-decoration=
+: none; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;"> <img =
+src=3D"https://static.licdn.com/sc/h/9ehe6n39fa07dc5edzv0rla4e" alt=3D"Link=
+edIn" class=3D"block h-[14px] w-[56px] image-rendering-crisp" style=3D"outl=
+ine: none; text-decoration: none; image-rendering: -moz-crisp-edges; image-=
+rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; imag=
+e-rendering: crisp-edges; -ms-interpolation-mode: nearest-neighbor; display=
+: block; height: 14px; width: 56px;" width=3D"56" height=3D"14"> </a> </td>=
+ </tr> <tr> <td data-test-copyright-text style=3D"-webkit-text-size-adjust:=
+ 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:=
+ 0pt;"> =C2=A9 2023 LinkedIn Corporation, 1&zwnj;000 West Maude Avenue, Sun=
+nyvale, CA 94085. <span data-test-trademarks-text> LinkedIn and the LinkedI=
+n logo are registered trademarks of LinkedIn. </span> </td> </tr> </tbody> =
+</table> </td> </tr> </tbody> </table> <img alt role=3D"presentation" src=
+=3D"https://www.linkedin.com/emimp/ip_YWpSemJUSjFMV3h2YlhSbFlYZHRMWGwzOlpXM=
+WhhV3hmYm1WMGQyOXlhMTlqYjI1MlpYSnpZWFJwYjI1elh6QXg6.gif" style=3D"outline: =
+none; text-decoration: none; -ms-interpolation-mode: bicubic; width: 1px; h=
+eight: 1px;" width=3D"1" height=3D"1"> </body> </html>
+------=_Part_21074245_435526440.1699269855124--
+

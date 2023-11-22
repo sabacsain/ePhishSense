@@ -1,0 +1,475 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:805:b0:350:f1df:6bf4 with SMTP id u5csp477954ilm;
+        Thu, 26 Oct 2023 04:30:37 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFLm7B8Kw7LiZuQ2VioYTrt9FcEAWSsNRHP2bnHTnLSMPTwur4Qgnk5h12iW8W8Cb2ofdJB
+X-Received: by 2002:a17:90a:440d:b0:27f:fa7a:a7b with SMTP id s13-20020a17090a440d00b0027ffa7a0a7bmr833628pjg.33.1698319836956;
+        Thu, 26 Oct 2023 04:30:36 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698319836; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wpw+V9zWynOokU8M2g/jsTLL6KCx7LoWBgEFHlV8HYVGJaHUtTlyRNXVT67SSrwCOU
+         p65cpWJdM2xZ0Fna5DaZTvM7rl2WuhbHca4+C/coXUlNEd/ahu8YI6pq7dpac+FvS61S
+         v4pwhQewGB2/DqfWu7tbJLZ6AsiRAc1TbYz2HU+wi0TUN+O9FSRL0PaEV6Nz/qdQvHJ6
+         71aEL6FMSGf0LNiJGmjSJDGzH3R8PVVRri0S3mH9lYzt4FgDcZmWKEmfa5Q6yE4wgTv8
+         b2CStSYWi/aMznN6PD2YEKsGrQsFvmm9XQhZNyFjxmEsjcWRdNfxYQTeuHiQcsgnhSTC
+         OYiA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:mime-version:subject:to:from
+         :dkim-signature:dkim-signature;
+        bh=+AJ55pDdubLXROZ7R4vmXVNEwBna0Gbes0e5ORWvgC4=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=X5/XQIFfz2X8urf3OzLGzM8FD6bWPtgtz/AX739z3bdOG5Wfc16BUd75iTNpXS7YGi
+         bTC/jQ2aaR50btctED4Eu0HBrvDD/L4XNvm8FqEoQJ3Q+6wntVZRivmWg6hXDYSuljFm
+         nTlP54AltsFm/Xvt99c1fCBgMYs1L/8EDgkSCzQoLwWFM0M26RG4lAWuQAiM6Mt28TfO
+         SkwN4RJ0sP0OddGM4AsG4K9YcGjcRMQK2iiw9IcewTA/kbJa4v02XMDFhVZ+P2W3veSP
+         TOGFSBs2aefhgm/wuzscsobJWTRXHKZZAVnYEIThcM7ZgN8lHBWwg3JljAzpAdvfzU5A
+         rghQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.farlightgames.com header.s=reh5ik56ytdtz35qjqjlcli3t325aksy header.b=IsLls1WA;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=OqcDbFpB;
+       spf=pass (google.com: domain of 0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com designates 76.223.180.101 as permitted sender) smtp.mailfrom=0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.farlightgames.com
+Return-Path: <0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com>
+Received: from c180-101.smtp-out.ap-south-1.amazonses.com (c180-101.smtp-out.ap-south-1.amazonses.com. [76.223.180.101])
+        by mx.google.com with ESMTPS id c10-20020a170902c1ca00b001c72dbaf7b9si11517828plc.415.2023.10.26.04.30.35
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Thu, 26 Oct 2023 04:30:36 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com designates 76.223.180.101 as permitted sender) client-ip=76.223.180.101;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.farlightgames.com header.s=reh5ik56ytdtz35qjqjlcli3t325aksy header.b=IsLls1WA;
+       dkim=pass header.i=@amazonses.com header.s=rlntogby6xsxlfnvyxwnvvhttakdsqto header.b=OqcDbFpB;
+       spf=pass (google.com: domain of 0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com designates 76.223.180.101 as permitted sender) smtp.mailfrom=0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.farlightgames.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=reh5ik56ytdtz35qjqjlcli3t325aksy; d=email.farlightgames.com;
+	t=1698319835;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date;
+	bh=+AJ55pDdubLXROZ7R4vmXVNEwBna0Gbes0e5ORWvgC4=;
+	b=IsLls1WANyT/8B9lF6IYxlOv1cj3/Le+muGTTEt2Nm5wNMiJMvl5EUNT10kezYSJ
+	YNf+34mnbCq+y4Tzpfu38H7oTizXOrX4A/VutQqJAR8sQm9RIjgYSz0IRFepz1dUZQp
+	flOlmCqKzQGejrl2S2Yse2HREkgauwWNlKzN+mM7LjvQsOZyT8sqvy6HIZ+LLn3zqrN
+	1Ge5vVnOUdRKlZfe5ngcux2F+ea5ZLMRs6wLb/EfsR7qbU2ouBOgbESV6dcL9z8QBON
+	FvvhxhShIL71FnaF8kyEQaqsdSR+eQMoz5p0X3x4h2B+vfseJqUMWD3oUOVtb5dwwxS
+	BQ/UoqBtpg==
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple;
+	s=rlntogby6xsxlfnvyxwnvvhttakdsqto; d=amazonses.com; t=1698319835;
+	h=From:To:Subject:MIME-Version:Content-Type:Message-ID:Date:Feedback-ID;
+	bh=+AJ55pDdubLXROZ7R4vmXVNEwBna0Gbes0e5ORWvgC4=;
+	b=OqcDbFpBMKkClxbzmZqfFFe/Ym5Z8anFXoRbG5aWionyMOq4Lx6yR7YQQXPppcv0
+	zXo7g17kEFj/RGh+XVo6pEi5ornwpGAB0lZw0buHNaOR6+DyiuDw/W4/RCVKmJmhSaH
+	tuEwvgmbuqg3Y9X+9dzwFrLHQgbtLfdxtRiLY0e0=
+From: Farlight 84 <service-ama@email.farlightgames.com>
+To: ronaldlambertnicolastugadi@gmail.com
+Subject: =?utf-8?q?Ron=EF=BC=8CMajor_Update_Released_-_Dive_Back_into_Farlight_84!?=
+MIME-Version: 1.0
+Content-Type: multipart/alternative; 
+	boundary="----=_Part_3054074_2055527795.1698319834538"
+Message-ID: <0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000@ap-south-1.amazonses.com>
+Date: Thu, 26 Oct 2023 11:30:34 +0000
+Feedback-ID: 1.ap-south-1.xvzlOBxXLhLpbmCFlf40kVqNlvE5p4GfBnMmSCoPefM=:AmazonSES
+X-SES-Outgoing: 2023.10.26-76.223.180.101
+
+------=_Part_3054074_2055527795.1698319834538
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+------=_Part_3054074_2055527795.1698319834538
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<html lang=3D"en" xmlns=3D"http://www.w3.org/1999/xhtml"><head><meta http-e=
+quiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><meta name=3D"=
+viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.0"><title>Emai=
+l</title></head><body style=3D"width: 100%; margin: 0px; padding: 0px; text=
+-size-adjust: 100%;"><span class=3D"preheader" style=3D"color: transparent;=
+ display: none; height: 0px; max-height: 0px; max-width: 0px; opacity: 0; o=
+verflow: hidden; visibility: hidden; width: 0px;"></span><table width=3D"10=
+0%" height=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"><tbody=
+><tr><td align=3D"center" valign=3D"top"><table width=3D"750" align=3D"cent=
+er" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" valign=3D"top" style=
+=3D"table-layout: fixed; background-image: url(&quot;https://d1s9fa96v0yqzs=
+.cloudfront.net/PROD_PSPINTERNAL/NcsHqaQvVWjIEFGu5j5U2Q=3D=3D.jpeg&quot;); =
+background-size: 100% 100%;"><tbody><tr><td><div><table width=3D"100%" heig=
+ht=3D"607px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left=
+" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height: 607px;"><div=
+><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" ali=
+gn=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-a=
+lign: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPIN=
+TERNAL/cKYEZHvRmT3mXYOGYeYyYw=3D=3D.gif" alt=3D"" width=3D"750px" height=3D=
+"607px" style=3D"display: block; outline: none; border: none; text-decorati=
+on: none;"></div></td></tr></tbody></table></div></td></tr></tbody></table>=
+</div><div><table width=3D"100%" height=3D"82px" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=
+=3D"width: 194px; height: 82px;"><div><table width=3D"100%" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr>=
+<td><div style=3D"width: 100%; text-align: center;"><img src=3D"https://d1s=
+9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/lYg4yFZyi1swINc_cZT3ZA=3D=3D.gi=
+f" alt=3D"" width=3D"194px" height=3D"82px" style=3D"display: block; outlin=
+e: none; border: none; text-decoration: none;"></div></td></tr></tbody></ta=
+ble></div></td><td style=3D"width: 259px; height: 82px;"><div><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" v=
+align=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: center;=
+"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:%2F%2Fplay.=
+google.com%2Fstore%2Fapps%2Fdetails%3Fid=3Dcom.miraclegames.farlight84/1/01=
+09018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/7LXs8fEIobnyozO0=
+A2wMySnh0wI=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"=
+https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/Th5au5TeKHjfwpuKID0V=
+FQ=3D=3D.gif" alt=3D"" width=3D"259px" height=3D"82px" style=3D"display: bl=
+ock; outline: none; border: none; text-decoration: none;"></a></div></td></=
+tr></tbody></table></div></td><td style=3D"width: 297px; height: 82px;"><di=
+v><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" al=
+ign=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-=
+align: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/htt=
+ps:%2F%2Fapps.apple.com%2Fus%2Fapp%2Ffarlight-84%2Fid1673713581/1/0109018b6=
+bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/6C7HF2jpg_ABCT-GclaEj9Q=
+pynQ=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"https:/=
+/d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/zqlfZNfOQn2LHuYG32twBg=3D=
+=3D.gif" alt=3D"" width=3D"297px" height=3D"82px" style=3D"display: block; =
+outline: none; border: none; text-decoration: none;"></a></div></td></tr></=
+tbody></table></div></td></tr></tbody></table></div><div><table width=3D"10=
+0%" height=3D"77px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 194px; height: 77px=
+;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D=
+"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%;=
+ text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PRO=
+D_PSPINTERNAL/c_ITvb5b5EKYjc7aTi1D8Q=3D=3D.gif" alt=3D"" width=3D"194px" he=
+ight=3D"77px" style=3D"display: block; outline: none; border: none; text-de=
+coration: none;"></div></td></tr></tbody></table></div></td><td style=3D"wi=
+dth: 259px; height: 77px;"><div><table width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><d=
+iv style=3D"width: 100%; text-align: center;"><a href=3D"https://x58zfrzf.r=
+.ap-south-1.awstrack.me/L0/https:%2F%2Ffarlight84.farlightgames.com%2Fdownl=
+oad%2Findex.html/1/0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-00=
+0000/d4v9JRy-gtpTTblWLSPnyZfEtPI=3D126" target=3D"_blank" style=3D"display:=
+ block;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL=
+/mn8he_YMRrCTWRPjOWBP9g=3D=3D.gif" alt=3D"" width=3D"259px" height=3D"77px"=
+ style=3D"display: block; outline: none; border: none; text-decoration: non=
+e;"></a></div></td></tr></tbody></table></div></td><td style=3D"width: 297p=
+x; height: 77px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=
+=3D"width: 100%; text-align: center;"><a href=3D"https://x58zfrzf.r.ap-sout=
+h-1.awstrack.me/L0/https:%2F%2Fstore.steampowered.com%2Fapp%2F1928420%2FFar=
+light_84%2F/1/0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/=
+hE--7m23k_-z7sKwNGInIS4IGtk=3D126" target=3D"_blank" style=3D"display: bloc=
+k;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/iTRL=
+rRoLg278P4ar60aBdQ=3D=3D.gif" alt=3D"" width=3D"297px" height=3D"77px" styl=
+e=3D"display: block; outline: none; border: none; text-decoration: none;"><=
+/a></div></td></tr></tbody></table></div></td></tr></tbody></table></div><d=
+iv><table width=3D"100%" height=3D"611px" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width=
+: 750px; height: 611px;"><div><table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div=
+ style=3D"width: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0y=
+qzs.cloudfront.net/PROD_PSPINTERNAL/V5cCqsFJR_UFM6kfxj_Vfw=3D=3D.gif" alt=
+=3D"" width=3D"750px" height=3D"611px" style=3D"display: block; outline: no=
+ne; border: none; text-decoration: none;"></div></td></tr></tbody></table><=
+/div></td></tr></tbody></table></div><div><table width=3D"100%" height=3D"8=
+25px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valig=
+n=3D"top"><tbody><tr><td style=3D"width: 750px; height: 825px;"><div><table=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"l=
+eft" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: c=
+enter;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/=
+E4hxMlN_CWUJc1mfv2tqRg=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"825px"=
+ style=3D"display: block; outline: none; border: none; text-decoration: non=
+e;"></div></td></tr></tbody></table></div></td></tr></tbody></table></div><=
+div><table width=3D"100%" height=3D"972px" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D"widt=
+h: 750px; height: 972px;"><div><table width=3D"100%" cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><di=
+v style=3D"width: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0=
+yqzs.cloudfront.net/PROD_PSPINTERNAL/e6tE_4o6hhFvQqw_r5DCvg=3D=3D.gif" alt=
+=3D"" width=3D"750px" height=3D"972px" style=3D"display: block; outline: no=
+ne; border: none; text-decoration: none;"></div></td></tr></tbody></table><=
+/div></td></tr></tbody></table></div><div><table width=3D"100%" height=3D"1=
+10px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valig=
+n=3D"top"><tbody><tr><td style=3D"width: 205px; height: 110px;"><div><table=
+ width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"l=
+eft" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: c=
+enter;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/=
+TZ6MXL4fLUGy8FVMFj5Zhw=3D=3D.gif" alt=3D"" width=3D"205px" height=3D"110px"=
+ style=3D"display: block; outline: none; border: none; text-decoration: non=
+e;"></div></td></tr></tbody></table></div></td><td style=3D"width: 341px; h=
+eight: 110px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"=
+width: 100%; text-align: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.=
+awstrack.me/L0/https:%2F%2Freturn-farlight84.farlightgames.com%2F/1/0109018=
+b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/FgMNI2A1ZnD8e17Mq8FhT=
+9sfhVs=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"https=
+://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/IrI8gklvLpsO0gBFzXXw1A=3D=
+=3D.gif" alt=3D"" width=3D"341px" height=3D"110px" style=3D"display: block;=
+ outline: none; border: none; text-decoration: none;"></a></div></td></tr><=
+/tbody></table></div></td><td style=3D"width: 204px; height: 110px;"><div><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-ali=
+gn: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTE=
+RNAL/pNiMuxSI8m05IoUyR2wHmQ=3D=3D.gif" alt=3D"" width=3D"204px" height=3D"1=
+10px" style=3D"display: block; outline: none; border: none; text-decoration=
+: none;"></div></td></tr></tbody></table></div></td></tr></tbody></table></=
+div><div><table width=3D"100%" height=3D"910px" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D=
+"width: 750px; height: 910px;"><div><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><t=
+d><div style=3D"width: 100%; text-align: center;"><img src=3D"https://d1s9f=
+a96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/lG0XgQeoL5WPIoWTXDJP7Q=3D=3D.gif"=
+ alt=3D"" width=3D"750px" height=3D"910px" style=3D"display: block; outline=
+: none; border: none; text-decoration: none;"></div></td></tr></tbody></tab=
+le></div></td></tr></tbody></table></div><div><table width=3D"100%" height=
+=3D"949px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" =
+valign=3D"top"><tbody><tr><td style=3D"width: 302px; height: 949px;"><div><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-ali=
+gn: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:=
+%2F%2Fwww.youtube.com%2Fwatch%3Fv=3DEzNVwEE6tNo/1/0109018b6bc01daa-805b6ccc=
+-48a3-43f7-a9cd-3d3c106d5645-000000/DKUQVHnZpAeV2lbpZvjYEWTnXLc=3D126" targ=
+et=3D"_blank" style=3D"display: block;"><img src=3D"https://d1s9fa96v0yqzs.=
+cloudfront.net/PROD_PSPINTERNAL/7nEaJkhIu6nT3Pmg7wH3Qg=3D=3D.gif" alt=3D"" =
+width=3D"302px" height=3D"949px" style=3D"display: block; outline: none; bo=
+rder: none; text-decoration: none;"></a></div></td></tr></tbody></table></d=
+iv></td><td style=3D"width: 448px; height: 949px;"><div><table width=3D"100=
+%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=
+=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><im=
+g src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/yMEd8iVWNTL=
+Ny5sFnXdFnA=3D=3D.gif" alt=3D"" width=3D"448px" height=3D"949px" style=3D"d=
+isplay: block; outline: none; border: none; text-decoration: none;"></div><=
+/td></tr></tbody></table></div></td></tr></tbody></table></div><div><table =
+width=3D"100%" height=3D"184px" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; =
+height: 184px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D=
+"width: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloud=
+front.net/PROD_PSPINTERNAL/xpSprpeMx3T0jEmB9k9BOw=3D=3D.gif" alt=3D"" width=
+=3D"750px" height=3D"184px" style=3D"display: block; outline: none; border:=
+ none; text-decoration: none;"></div></td></tr></tbody></table></div></td><=
+/tr></tbody></table></div><div><table width=3D"100%" height=3D"250px" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><=
+tbody><tr><td style=3D"width: 750px; height: 250px;"><div><table width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=
+=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><a =
+href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:%2F%2Fwww.youtub=
+e.com%2Fwatch%3Fv=3Dcr2ZV_HNRMM/1/0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-=
+3d3c106d5645-000000/S8MlL6_EzBlNPZ1Ia07cSfE-X8s=3D126" target=3D"_blank" st=
+yle=3D"display: block;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/P=
+ROD_PSPINTERNAL/281vL40iad8c0Z_qt6U_9w=3D=3D.gif" alt=3D"" width=3D"750px" =
+height=3D"250px" style=3D"display: block; outline: none; border: none; text=
+-decoration: none;"></a></div></td></tr></tbody></table></div></td></tr></t=
+body></table></div><div><table width=3D"100%" height=3D"966px" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody>=
+<tr><td style=3D"width: 750px; height: 966px;"><div><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"to=
+p"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><img src=
+=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/gBTnNDSW1hfkirUz=
+Bz6big=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"966px" style=3D"displa=
+y: block; outline: none; border: none; text-decoration: none;"></div></td><=
+/tr></tbody></table></div></td></tr></tbody></table></div><div><table width=
+=3D"100%" height=3D"860px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height=
+: 860px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width=
+: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.=
+net/PROD_PSPINTERNAL/DJP1_y8nPWZC_AEkEkwpdA=3D=3D.gif" alt=3D"" width=3D"75=
+0px" height=3D"860px" style=3D"display: block; outline: none; border: none;=
+ text-decoration: none;"></div></td></tr></tbody></table></div></td></tr></=
+tbody></table></div><div><table width=3D"100%" height=3D"643px" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody>=
+<tr><td style=3D"width: 750px; height: 643px;"><div><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"to=
+p"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><img src=
+=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/yLyQ4Eri2BFZ2L45=
+dhBw_w=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"643px" style=3D"displa=
+y: block; outline: none; border: none; text-decoration: none;"></div></td><=
+/tr></tbody></table></div></td></tr></tbody></table></div><div><table width=
+=3D"100%" height=3D"672px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height=
+: 672px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width=
+: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.=
+net/PROD_PSPINTERNAL/b9V_ht_wNlIJg84p1Q_QlA=3D=3D.gif" alt=3D"" width=3D"75=
+0px" height=3D"672px" style=3D"display: block; outline: none; border: none;=
+ text-decoration: none;"></div></td></tr></tbody></table></div></td></tr></=
+tbody></table></div><div><table width=3D"100%" height=3D"699px" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody>=
+<tr><td style=3D"width: 750px; height: 699px;"><div><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"to=
+p"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><img src=
+=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/9Fa_aohKPGXu2vaj=
+OK4Etg=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"699px" style=3D"displa=
+y: block; outline: none; border: none; text-decoration: none;"></div></td><=
+/tr></tbody></table></div></td></tr></tbody></table></div><div><table width=
+=3D"100%" height=3D"565px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height=
+: 565px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width=
+: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.=
+net/PROD_PSPINTERNAL/_aXBki3Ri4DVDITtqRfZeA=3D=3D.gif" alt=3D"" width=3D"75=
+0px" height=3D"565px" style=3D"display: block; outline: none; border: none;=
+ text-decoration: none;"></div></td></tr></tbody></table></div></td></tr></=
+tbody></table></div><div><table width=3D"100%" height=3D"954px" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody>=
+<tr><td style=3D"width: 750px; height: 954px;"><div><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"to=
+p"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><img src=
+=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/M8sR4qrwmr0VQSLq=
+jtWqQg=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"954px" style=3D"displa=
+y: block; outline: none; border: none; text-decoration: none;"></div></td><=
+/tr></tbody></table></div></td></tr></tbody></table></div><div><table width=
+=3D"100%" height=3D"59px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height:=
+ 59px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: =
+100%; text-align: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrac=
+k.me/L0/https:%2F%2Ffl84.creator-zone.com%2F/1/0109018b6bc01daa-805b6ccc-48=
+a3-43f7-a9cd-3d3c106d5645-000000/qRiljkdfRM8gFdCoRkPXIC1B-G4=3D126" target=
+=3D"_blank" style=3D"display: block;"><img src=3D"https://d1s9fa96v0yqzs.cl=
+oudfront.net/PROD_PSPINTERNAL/eu0y_DOLBmyNbvs76QjKNQ=3D=3D.gif" alt=3D"" wi=
+dth=3D"750px" height=3D"59px" style=3D"display: block; outline: none; borde=
+r: none; text-decoration: none;"></a></div></td></tr></tbody></table></div>=
+</td></tr></tbody></table></div><div><table width=3D"100%" height=3D"151px"=
+ cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"=
+top"><tbody><tr><td style=3D"width: 750px; height: 151px;"><div><table widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" =
+valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: center=
+;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/5FzYd=
+lqGlQWgyZfKW0c8pQ=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"151px" styl=
+e=3D"display: block; outline: none; border: none; text-decoration: none;"><=
+/div></td></tr></tbody></table></div></td></tr></tbody></table></div><div><=
+table width=3D"100%" height=3D"62px" cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750=
+px; height: 62px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=
+=3D"width: 100%; text-align: center;"><a href=3D"http://x58zfrzf.r.ap-south=
+-1.awstrack.me/L0/http:%2F%2Fdiscord.gg%2F9xPvwkrVSm/1/0109018b6bc01daa-805=
+b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/pC6iqNIgXZ-OxCy_wQb4LF7uAxo=3D126"=
+ target=3D"_blank" style=3D"display: block;"><img src=3D"https://d1s9fa96v0=
+yqzs.cloudfront.net/PROD_PSPINTERNAL/ttVHZb5nfy7T8KlR1yBVFQ=3D=3D.gif" alt=
+=3D"" width=3D"750px" height=3D"62px" style=3D"display: block; outline: non=
+e; border: none; text-decoration: none;"></a></div></td></tr></tbody></tabl=
+e></div></td></tr></tbody></table></div><div><table width=3D"100%" height=
+=3D"912px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" =
+valign=3D"top"><tbody><tr><td style=3D"width: 750px; height: 912px;"><div><=
+table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-ali=
+gn: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTE=
+RNAL/pEUxfNZglOCHgsnLrHcoIg=3D=3D.gif" alt=3D"" width=3D"750px" height=3D"9=
+12px" style=3D"display: block; outline: none; border: none; text-decoration=
+: none;"></div></td></tr></tbody></table></div></td></tr></tbody></table></=
+div><div><table width=3D"100%" height=3D"686px" cellpadding=3D"0" cellspaci=
+ng=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D=
+"width: 750px; height: 686px;"><div><table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><t=
+d><div style=3D"width: 100%; text-align: center;"><img src=3D"https://d1s9f=
+a96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/L9_2Hj8gRqHkTmQwKsqfFg=3D=3D.gif"=
+ alt=3D"" width=3D"750px" height=3D"686px" style=3D"display: block; outline=
+: none; border: none; text-decoration: none;"></div></td></tr></tbody></tab=
+le></div></td></tr></tbody></table></div><div><table width=3D"100%" height=
+=3D"91px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" v=
+align=3D"top"><tbody><tr><td style=3D"width: 258px; height: 91px;"><div><ta=
+ble width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-ali=
+gn: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:=
+%2F%2Fapps.apple.com%2Fus%2Fapp%2Ffarlight-84%2Fid1673713581/2/0109018b6bc0=
+1daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/j0urXdO1x2VHNcdITI7jYu8FYJ=
+4=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"https://d1=
+s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/vf5Jb4rhe05GD_Qz_qraEA=3D=3D.g=
+if" alt=3D"" width=3D"258px" height=3D"91px" style=3D"display: block; outli=
+ne: none; border: none; text-decoration: none;"></a></div></td></tr></tbody=
+></table></div></td><td style=3D"width: 238px; height: 91px;"><div><table w=
+idth=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"lef=
+t" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: cen=
+ter;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:%2F%2Fp=
+lay.google.com%2Fstore%2Fapps%2Fdetails%3Fid=3Dcom.miraclegames.farlight84/=
+2/0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/_YDE8OkpfwW4=
+zwgwhPClNEPxOps=3D126" target=3D"_blank" style=3D"display: block;"><img src=
+=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/0XL_WL3bQb_SIB1h=
+HHAlOw=3D=3D.gif" alt=3D"" width=3D"238px" height=3D"91px" style=3D"display=
+: block; outline: none; border: none; text-decoration: none;"></a></div></t=
+d></tr></tbody></table></div></td><td style=3D"width: 254px; height: 91px;"=
+><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; t=
+ext-align: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0=
+/https:%2F%2Fstore.steampowered.com%2Fapp%2F1928420%2FFarlight_84%2F/2/0109=
+018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/BYnS2ViwK5PNbPnr9B=
+FE6tsgd7s=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"ht=
+tps://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/C_KQHSQLPtaRExhC4EW0YQ=
+=3D=3D.gif" alt=3D"" width=3D"254px" height=3D"91px" style=3D"display: bloc=
+k; outline: none; border: none; text-decoration: none;"></a></div></td></tr=
+></tbody></table></div></td></tr></tbody></table></div><div><table width=3D=
+"100%" height=3D"137px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" al=
+ign=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height: 1=
+37px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 1=
+00%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net=
+/PROD_PSPINTERNAL/v7Oqr2zn9JTBVfjRCo71PQ=3D=3D.gif" alt=3D"" width=3D"750px=
+" height=3D"137px" style=3D"display: block; outline: none; border: none; te=
+xt-decoration: none;"></div></td></tr></tbody></table></div></td></tr></tbo=
+dy></table></div><div><table width=3D"100%" height=3D"46px" cellpadding=3D"=
+0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr>=
+<td style=3D"width: 375px; height: 46px;"><div><table width=3D"100%" cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><t=
+body><tr><td><div style=3D"width: 100%; text-align: center;"><a href=3D"htt=
+ps://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:%2F%2Fwww.farlightgames.com=
+%2Fprivacy/1/0109018b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/b=
+-sop6RVhkspeGbs6oW-Y5ze8Bw=3D126" target=3D"_blank" style=3D"display: block=
+;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/k0WDS=
+7SZqVUWGJSZS0p0lg=3D=3D.gif" alt=3D"" width=3D"375px" height=3D"46px" style=
+=3D"display: block; outline: none; border: none; text-decoration: none;"></=
+a></div></td></tr></tbody></table></div></td><td style=3D"width: 375px; hei=
+ght: 46px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"wid=
+th: 100%; text-align: center;"><a href=3D"https://x58zfrzf.r.ap-south-1.aws=
+track.me/L0/https:%2F%2Fwww.farlightgames.com%2Ftermsofservice/1/0109018b6b=
+c01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/vpVfw0lwRMmWdl8Yite-qYSh=
+3s8=3D126" target=3D"_blank" style=3D"display: block;"><img src=3D"https://=
+d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/IXDGgfNG3bBGafCb0hbRGA=3D=3D=
+.gif" alt=3D"" width=3D"375px" height=3D"46px" style=3D"display: block; out=
+line: none; border: none; text-decoration: none;"></a></div></td></tr></tbo=
+dy></table></div></td></tr></tbody></table></div><div><table width=3D"100%"=
+ height=3D"101px" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D=
+"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; height: 101px;"=
+><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; t=
+ext-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_=
+PSPINTERNAL/Su4vlbgiFQSRe1svkMurvw=3D=3D.gif" alt=3D"" width=3D"750px" heig=
+ht=3D"101px" style=3D"display: block; outline: none; border: none; text-dec=
+oration: none;"></div></td></tr></tbody></table></div></td></tr></tbody></t=
+able></div><div><table width=3D"100%" height=3D"38px" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td st=
+yle=3D"width: 402px; height: 38px;"><div><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" valign=3D"top"><tbody>=
+<tr><td><div style=3D"width: 100%; text-align: center;"><img src=3D"https:/=
+/d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/vD5EsccmqeCB5oEkJX2pNw=3D=
+=3D.gif" alt=3D"" width=3D"402px" height=3D"38px" style=3D"display: block; =
+outline: none; border: none; text-decoration: none;"></div></td></tr></tbod=
+y></table></div></td><td style=3D"width: 144px; height: 38px;"><div><table =
+width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"le=
+ft" valign=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: ce=
+nter;"><a href=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/L0/https:%2F%2F=
+webstatic.farlightgames.com%2Fmail-common%2Funsubscribe%3Ftoken=3DVmWm1e9qX=
+H9eGKuXlRZftZa13HkVPnSD5F5XCpEed3p5xkEl1vDEhHCpcf8oVpQFRVml5FmhEQtCv4PwDlT6=
+MkzAnbyCuieaYjUFYHjXStJ91PGfa9aBg9b5R4ypxjaj0Ht0hQHJ/1/0109018b6bc01daa-805=
+b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/qGAVwp0-ZRmH4eV7JiRwlFz6piI=3D126"=
+ target=3D"_blank" style=3D"display: block;"><img src=3D"https://d1s9fa96v0=
+yqzs.cloudfront.net/PROD_PSPINTERNAL/TzWu7uhiqBbo0hj8pbXbYQ=3D=3D.gif" alt=
+=3D"" width=3D"144px" height=3D"38px" style=3D"display: block; outline: non=
+e; border: none; text-decoration: none;"></a></div></td></tr></tbody></tabl=
+e></div></td><td style=3D"width: 204px; height: 38px;"><div><table width=3D=
+"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"left" vali=
+gn=3D"top"><tbody><tr><td><div style=3D"width: 100%; text-align: center;"><=
+img src=3D"https://d1s9fa96v0yqzs.cloudfront.net/PROD_PSPINTERNAL/XuGUiy3xc=
+MEi4bksiXQmOQ=3D=3D.gif" alt=3D"" width=3D"204px" height=3D"38px" style=3D"=
+display: block; outline: none; border: none; text-decoration: none;"></div>=
+</td></tr></tbody></table></div></td></tr></tbody></table></div><div><table=
+ width=3D"100%" height=3D"86px" cellpadding=3D"0" cellspacing=3D"0" border=
+=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td style=3D"width: 750px; =
+height: 86px;"><div><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" align=3D"left" valign=3D"top"><tbody><tr><td><div style=3D"=
+width: 100%; text-align: center;"><img src=3D"https://d1s9fa96v0yqzs.cloudf=
+ront.net/PROD_PSPINTERNAL/w1ME4FoVcJbrJaS8DgNOUg=3D=3D.gif" alt=3D"" width=
+=3D"750px" height=3D"86px" style=3D"display: block; outline: none; border: =
+none; text-decoration: none;"></div></td></tr></tbody></table></div></td></=
+tr></tbody></table></div></td></tr></tbody></table></td></tr></tbody></tabl=
+e><img alt=3D"" src=3D"https://x58zfrzf.r.ap-south-1.awstrack.me/I0/0109018=
+b6bc01daa-805b6ccc-48a3-43f7-a9cd-3d3c106d5645-000000/Vy9stStZos61tYvihOlar=
+fW_5pc=3D126" style=3D"display: none; width: 1px; height: 1px;">
+</body></html>
+------=_Part_3054074_2055527795.1698319834538--
