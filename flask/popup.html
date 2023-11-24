@@ -1,25 +1,13 @@
+<!-- popup.html -->
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ePhishSense</title>
-  <link rel="stylesheet" type="text/css" href="popup.css">
+  <title>Gmail API Connector</title>
+  <script src="popup.js"></script>
 </head>
 <body>
-  <div id="main-container">
-    <h1>ePhishSense</h1>
-    <!-- LOGIN GMAIL -->
-    <input type="text" id="input-email" placeholder="Type email here..."/>
-    <input type="text" id="input-appPassword" placeholder="Type app password here..."/>
-    <button id="loginButton">Login</button>
-    <div id="loginCheck"></div>
-
-    <!-- SCAN GMAIL -->
-    <input type="text" id="input-subject" placeholder="Type subject here..."/>
-    <div id="buttonCheck"></div>
-    <button id="scanButton">Scan Email</button>
-  </div>
-  <!-- Connect HTML TO JS -->
-  <script src="popup.js"></script>
-  
+  <button id="connectButton">Connect to Gmail API</button>
+  <p id="statusMessage"></p>
 </body>
 </html>

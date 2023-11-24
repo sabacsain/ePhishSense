@@ -3,6 +3,8 @@
 # REQUIREMENTS
     # Install Flask
         pip install flask
+        pip install google-auth google-auth-oauthlib google-auth-httplib2 google-api-python-client
+
 
 # HOW TO RUN THE APP
     # Go to Google Chrome -> Extensions -> Enable Developer Mode
@@ -24,3 +26,5 @@
 
     # FRONT-END
         #
+
+
