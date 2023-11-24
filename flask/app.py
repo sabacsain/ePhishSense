@@ -1,14 +1,8 @@
-<<<<<<< Updated upstream
-from flask import Flask, jsonify
-from extractor import GMAIL_EXTRACTOR
-from extension_dt_model import DT_MODEL
-=======
+
 from flask import Flask, jsonify, request, session
 from extractor import GMAIL_EXTRACTOR
 from extension_dt_model import DT_MODEL
-from login import LOGIN
 from flask_sqlalchemy import SQLAlchemy
->>>>>>> Stashed changes
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Change this to a random secret key
@@ -28,8 +22,6 @@ g_password = None
 is_authenticated = False
 input_subject = None
 
-<<<<<<< Updated upstream
-=======
 @app.route('/api/login', methods=['POST'])
 def login():
     global g_email, g_password, is_authenticated
@@ -90,7 +82,6 @@ def subject():
     return jsonify({'message': 'Input Subject Received Successfully'})
 
 
->>>>>>> Stashed changes
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
     run = GMAIL_EXTRACTOR()
