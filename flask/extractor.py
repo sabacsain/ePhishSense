@@ -20,22 +20,22 @@ class GMAIL_EXTRACTOR():
         self.valueList = []
 
     # Get Gmail credentials
-    def getLogin(self):
+    # def getLogin(self):
         # print("\nPlease enter your Gmail login details below.")
         # self.usr = input("Email: ")
         # self.pwd = input("Password: ")
-        self.usr = 'senderephishsense@gmail.com'
-        self.pwd = 'sjbsxjfgyssynixo'
+        # self.usr = 'senderephishsense@gmail.com'
+        # self.pwd = 'sjbsxjfgyssynixo'
 
     # Login to the Gmail account
-    def attemptLogin(self):
-        self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        if self.mail.login(self.usr, self.pwd):
-            print("\nLogon SUCCESSFUL")
-            return True
-        else:
-            print("\nLogon FAILED")
-            return False
+    # def attemptLogin(self):
+    #     self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+    #     if self.mail.login(self.usr, self.pwd):
+    #         print("\nLogon SUCCESSFUL")
+    #         return True
+    #     else:
+    #         print("\nLogon FAILED")
+    #         return False
         
     # Choose which mailbox to be used
     def selectMailbox(self):
@@ -136,11 +136,11 @@ class GMAIL_EXTRACTOR():
         # Intialize all the global variables to be used
         self.initializeVariables(input_subject, mail)
 
-        # Get Gmail credentials
-        self.getLogin()
+        # # Get Gmail credentials
+        # self.getLogin()
 
         # Login to the Gmail account
-        if not self.attemptLogin(): exit(0)
+        # if not self.attemptLogin(): exit(0)
 
         # Select which Mailbox to be used
         self.selectMailbox()

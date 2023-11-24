@@ -11,7 +11,7 @@ g_mail = None
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global is_authenticated
+    global is_authenticated, g_mail
     print("origin")
     
     try:
