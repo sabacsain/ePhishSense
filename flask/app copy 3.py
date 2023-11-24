@@ -2,18 +2,44 @@ from flask import Flask, jsonify, request
 from extractor import GMAIL_EXTRACTOR
 from extension_dt_model import DT_MODEL
 from login import LOGIN
+from models import User 
+from flask_sqlalchemy import SQLAlchemy
+from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(255), unique=True, nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
+
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+    def __repr__(self):
+        return f'<User {self.email}>'
+
+# Create the initial database schema
+with app.app_context():
+    db.create_all()
 
 # Initialize global variables
+g_email = None
+g_password = None
 is_authenticated = False
 g_mail = None
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global is_authenticated
+    global g_email, g_password, is_authenticated
     print("origin")
-    
     try:
         # Check if the user exists in the database
         # user = User.query.first()
@@ -46,9 +72,9 @@ def login():
 
         print('norman1')
 
-        # # Authentication is Successful
-        # g_email = email_input
-        # g_password = pass_input
+        # Authentication is Successful
+        g_email = email_input
+        g_password = pass_input
 
         # Save the credentials to the database (assuming User is the model)
         # new_user = User(email=g_email)
@@ -77,6 +103,9 @@ def login():
         print('Error processing login:', str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
 
+# ... (rest of your code remains unchanged)
+
+
 
 @app.route('/api/subject', methods=['POST'])
 def subject():
@@ -91,15 +120,16 @@ def subject():
     # Send a response back to GUI
     return jsonify({'message': 'Input Subject Received Successfully'})
 
+
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
-    global input_subject, g_mail,  is_authenticated
+    global input_subject, g_email, g_password, is_authenticated
 
     if not is_authenticated:
         return jsonify({'message': 'Not Authenticated'})
 
     # Extract Email
-    run = GMAIL_EXTRACTOR(input_subject, g_mail)
+    run = GMAIL_EXTRACTOR(input_subject, g_email, g_password)
 
     # Clear data
     # input_subject = ''

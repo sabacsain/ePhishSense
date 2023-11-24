@@ -6,9 +6,8 @@ class LOGIN():
     def initializeVariables(self):
         self.usr = ""
         self.pwd = ""
+        self.mail = None
        
-        self.value = False
-
     # Get Gmail credentials
     def getLogin(self, email, password):
         self.usr = email
@@ -28,6 +27,10 @@ class LOGIN():
     def isAuthenticated(self):
         return self.value
 
+    # Store Mail Object
+    def storeMail(self):
+        return self.mail
+
     # Function to be executed when the Class has been called
     def __init__(self, email, password):
         # Intialize all the global variables to be used
@@ -38,6 +41,9 @@ class LOGIN():
 
         # Login to the Gmail account
         self.value = self.attemptLogin()
+
+        # Store Mail Object 
+        self.storeMail()
 
 if __name__ == "__main__":
     # Dummy Data

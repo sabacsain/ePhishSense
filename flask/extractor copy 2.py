@@ -5,11 +5,11 @@ from extension_dt_model import DT_MODEL
 class GMAIL_EXTRACTOR():
 
     # Intialize all the global variables to be used
-    def initializeVariables(self, input_subject, mail):
+    def initializeVariables(self, input_subject, email, password):
         self.subject = input_subject
-        self.usr = ""
-        self.pwd = ""
-        self.mail = mail
+        self.usr = email
+        self.pwd = password
+        self.mail = object
         self.mailbox = ""
         self.mailCount = 0
         self.destFolder = ""
@@ -24,19 +24,22 @@ class GMAIL_EXTRACTOR():
         # print("\nPlease enter your Gmail login details below.")
         # self.usr = input("Email: ")
         # self.pwd = input("Password: ")
-        self.usr = 'senderephishsense@gmail.com'
-        self.pwd = 'sjbsxjfgyssynixo'
+        self.usr = self.usr
+        self.pwd = self.pwd
 
     # Login to the Gmail account
     def attemptLogin(self):
         self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
         if self.mail.login(self.usr, self.pwd):
             print("\nLogon SUCCESSFUL")
+            # Clear data
+            self.usr = ''
+            self.pwd = ''
             return True
         else:
             print("\nLogon FAILED")
             return False
-        
+
     # Choose which mailbox to be used
     def selectMailbox(self):
         # self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
@@ -132,9 +135,9 @@ class GMAIL_EXTRACTOR():
         return self.valueList
 
     # Function to be executed when the Class has been called
-    def __init__(self, input_subject, mail):
+    def __init__(self, input_subject, email, password):
         # Intialize all the global variables to be used
-        self.initializeVariables(input_subject, mail)
+        self.initializeVariables(input_subject,email, password)
 
         # Get Gmail credentials
         self.getLogin()
@@ -152,7 +155,7 @@ class GMAIL_EXTRACTOR():
         self.parseEmails()
 
 if __name__ == "__main__":
-    run = GMAIL_EXTRACTOR('Random')
+    run = GMAIL_EXTRACTOR('Random', 'senderephishsense@gmail.com', 'sjbsxjfgyssynixo')
     input = run.value()
 
     predict = DT_MODEL(input)

@@ -5,69 +5,35 @@ from login import LOGIN
 
 app = Flask(__name__)
 
-# Initialize global variables
-is_authenticated = False
-g_mail = None
-
 @app.route('/api/login', methods=['POST'])
 def login():
-    global is_authenticated
-    print("origin")
-    
+    global g_email, g_password, is_authenticated
+    is_authenticated = False
+
     try:
-        # Check if the user exists in the database
-        # user = User.query.first()
-
-        # if user:
-        #     # print("norman")
-        #     # User exists in the database, use credentials from the database
-        #     g_email = user.email
-        #     g_password = user.password
-
-        #     print(g_email)
-        #     print(g_password)
-        # else:
-            # print("norman2")
-            # User does not exist in the database, authenticate using the provided credentials
-            # Get JSON data from the request body
+        # Get JSON data from the request body
         data = request.get_json()
 
         # Access emailInput and passInput from the JSON data
         email_input = data.get('email', '')
         pass_input = data.get('password', '')
 
+        # Authenticate using the credentials
         run = LOGIN(email_input, pass_input)
 
-        if not (run.isAuthenticated()):
+        if not (run.isAuthenticated()): 
             return jsonify({'message': 'Login FAILED'})
 
-        # Get Mail Object
-        g_mail = run.storeMail()
-
-        print('norman1')
-
-        # # Authentication is Successful
-        # g_email = email_input
-        # g_password = pass_input
-
-        # Save the credentials to the database (assuming User is the model)
-        # new_user = User(email=g_email)
-        # new_user.set_password(g_password)  # Set the password using the set_password method
-        # db.session.add(new_user)
-        # db.session.commit()
-        
-
-        # Set authentication flag
+        # Authentication is Successful
         is_authenticated = True
+
+        # Transfer authenticated credentials to a global variable
+        g_email = email_input
+        g_password = pass_input
 
         # Clear data
         email_input = ''
         pass_input = ''
-
-        # print(g_email)
-        # print(g_password)
-        # print(email_input)
-        # print(pass_input)
 
         # Send a response back to the client
         return jsonify({'message': 'Login SUCCESSFUL'})
@@ -91,15 +57,16 @@ def subject():
     # Send a response back to GUI
     return jsonify({'message': 'Input Subject Received Successfully'})
 
+
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
-    global input_subject, g_mail,  is_authenticated
+    global input_subject, g_email, g_password, is_authenticated
 
     if not is_authenticated:
         return jsonify({'message': 'Not Authenticated'})
 
     # Extract Email
-    run = GMAIL_EXTRACTOR(input_subject, g_mail)
+    run = GMAIL_EXTRACTOR(input_subject, g_email, g_password)
 
     # Clear data
     # input_subject = ''

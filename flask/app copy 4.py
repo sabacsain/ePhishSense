@@ -11,7 +11,7 @@ g_mail = None
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global is_authenticated
+    # global is_authenticated
     print("origin")
     
     try:
@@ -95,7 +95,7 @@ def subject():
 def main():
     global input_subject, g_mail,  is_authenticated
 
-    if not is_authenticated:
+    if not g_mail:
         return jsonify({'message': 'Not Authenticated'})
 
     # Extract Email
@@ -118,6 +118,8 @@ def main():
     
     # Send the prediction to GUI
     return jsonify({'message': prediction})
+
+
 
     
     
