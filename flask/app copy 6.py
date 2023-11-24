@@ -8,7 +8,6 @@ import tempfile, os, imaplib
 
 app = Flask(__name__)
 
-
 # Initialize global variables
 # is_authenticated = False
 g_mail = None
@@ -122,17 +121,7 @@ def subject():
 def main():
     global input_subject, g_mail, key, temp_path
 
-    def check_temp():
-        temp_dir = tempfile.gettempdir()
-        temp_file_path = os.path.join(temp_dir, "encrypted_data.txt")
-        if not os.path.exists(temp_file_path):
-           return False
-        return True
-    
-    if not check_temp():
-        return jsonify({'message': 'Not Authenticated'})
-        # note go to login html too
-
+    print("MAIN")
     run_decrypt = DECRYPT(key, temp_path)
     deserialized_info = run_decrypt.get_decrypted()
 

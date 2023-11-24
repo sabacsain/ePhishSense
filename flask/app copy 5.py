@@ -2,22 +2,16 @@ from flask import Flask, jsonify, request
 from extractor import GMAIL_EXTRACTOR
 from extension_dt_model import DT_MODEL
 from login import LOGIN
-from encrypt import ENCRYPT
-from decrypt import DECRYPT
-import tempfile, os, imaplib
 
 app = Flask(__name__)
 
-
 # Initialize global variables
-# is_authenticated = False
+is_authenticated = False
 g_mail = None
-key = ''
-temp_path = ''
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global g_mail, key, temp_path
+    global is_authenticated, g_mail
     print("origin")
     
     try:
@@ -50,26 +44,6 @@ def login():
         # Get Mail Object
         g_mail = run.storeMail()
 
-        print('BEFORE')
-        run_encrypt = ENCRYPT(g_mail, email_input, pass_input)
-        print('AFTER')
-        # # Store mail object as string
-        # connection_info = {
-        # 'server': 'imap.gmail.com',
-        # 'port': g_mail.port,
-        # 'username': email_input,
-        # 'password': pass_input
-        # } 
-
-        # str_g_mail = pickle.dumps(connection_info)
-
-        # # Write mail object
-        # run_encrypt = ENCRYPT(str_g_mail)
-
-        # Get encryption key
-        key = run_encrypt.get_key()
-        temp_path = run_encrypt.get_path()
-
         print('norman1')
 
         # # Authentication is Successful
@@ -84,12 +58,11 @@ def login():
         
 
         # Set authentication flag
-        # is_authenticated = True
+        is_authenticated = True
 
         # Clear data
         email_input = ''
-        pass_input = '' 
-        g_mail = ''
+        pass_input = ''
 
         # print(g_email)
         # print(g_password)
@@ -120,47 +93,10 @@ def subject():
 
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
-    global input_subject, g_mail, key, temp_path
+    global input_subject, g_mail,  is_authenticated
 
-    def check_temp():
-        temp_dir = tempfile.gettempdir()
-        temp_file_path = os.path.join(temp_dir, "encrypted_data.txt")
-        if not os.path.exists(temp_file_path):
-           return False
-        return True
-    
-    if not check_temp():
+    if not is_authenticated:
         return jsonify({'message': 'Not Authenticated'})
-        # note go to login html too
-
-    run_decrypt = DECRYPT(key, temp_path)
-    deserialized_info = run_decrypt.get_decrypted()
-
-    g_mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-    print('norman')
-    g_mail.login(deserialized_info['username'], deserialized_info['password'])
-
-    # def read_from_temp_folder(temp_file_path):
-    #     with open(temp_file_path, 'rb') as temp_file:
-    #         data = temp_file.read()
-    #     return data
-
-    # g_mail = read_from_temp_folder(temp_path)
-
-    print(g_mail)
-    print("A-MAIN")
-
-    # run_decrypt = DECRYPT(key, temp_path)
-    # decrypted_g_mail = run_decrypt
-
-    # print(decrypted_g_mail)
-    # exit(0)
-
-    ##decrypt
-
-    if not g_mail:
-        return jsonify({'message': 'Not Authenticated'})
-
 
     # Extract Email
     run = GMAIL_EXTRACTOR(input_subject, g_mail)
