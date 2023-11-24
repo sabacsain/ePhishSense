@@ -140,7 +140,11 @@ class GMAIL_EXTRACTOR():
         self.parseEmails()
 
 if __name__ == "__main__":
+<<<<<<< Updated upstream
     run = GMAIL_EXTRACTOR()
+=======
+    run = GMAIL_EXTRACTOR('', 'sachristopher925@gmail.com', 'sefyrzaynrpilqsm')
+>>>>>>> Stashed changes
     input = run.value()
 
     predict = DT_MODEL(input)
