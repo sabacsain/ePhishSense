@@ -3,11 +3,10 @@ import pickle
 
 class DECRYPT():
 
-    def initialize_variables(self, key, path):
+    def initialize_variables(self, key, encrypted_data):
         self.key = key
-        self.path = path
-        self.encrypted_data = ''
-        self.deserialized_data = ''
+        # self.path = path
+        self.encrypted_data = encrypted_data
 
         self.decrypted_value = ''
 
@@ -16,23 +15,23 @@ class DECRYPT():
         decrypted_data = cipher_suite.decrypt(encrypted_data)
         return decrypted_data
 
-    def read_from_temp_folder(self, temp_file_path):
-        with open(temp_file_path, 'rb') as temp_file:
-            data = temp_file.read()
-        return data
+    # def read_from_temp_folder(self, temp_file_path):
+    #     with open(temp_file_path, 'rb') as temp_file:
+    #         data = temp_file.read()
+    #     return data
 
     def get_decrypted(self):
-        return self.deserialized_data
+        return self.decrypted_value
 
-    def __init__(self, key, path):
+    def __init__(self, key, encrypted_data):
         
-        self.initialize_variables(key, path)
+        self.initialize_variables(key, encrypted_data)
 
-        self.encrypted_data = self.read_from_temp_folder(self.path)
+        # self.encrypted_data = self.read_from_temp_folder(self.path)
 
         self.decrypted_value = self.decrypt_data(self.encrypted_data, self.key)
 
-        self.deserialized_data = pickle.loads(self.decrypted_value)
+        self.decrypted_value = pickle.loads(self.decrypted_value)
 
 
         

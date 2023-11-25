@@ -8,7 +8,7 @@ class ENCRYPT():
         self.mail_object = mail_object
         self.email = email
         self.password = password
-        # self.temp_path = ''
+        self.temp_path = ''
         self.key = ''
         self.connection_info = {}
         self.serialized_data = ''
@@ -28,14 +28,14 @@ class ENCRYPT():
         'password': self.password
         }
 
-    # def write_to_temp_folder(self, data):
-    #     temp_dir = tempfile.gettempdir()
-    #     temp_file_path = os.path.join(temp_dir, "encrypted_data.txt")
+    def write_to_temp_folder(self, data):
+        temp_dir = tempfile.gettempdir()
+        temp_file_path = os.path.join(temp_dir, "encrypted_data.txt")
 
-    #     with open(temp_file_path, 'wb') as temp_file:
-    #         temp_file.write(data)
+        with open(temp_file_path, 'wb') as temp_file:
+            temp_file.write(data)
 
-    #     return temp_file_path
+        return temp_file_path
 
     def get_encrypted(self):
         return self.encrypted_value
@@ -62,9 +62,9 @@ class ENCRYPT():
         self.encrypted_value = self.encrypt_data(self.serialized_data, self.key)
 
         # Write the encrypted data to the temporary folder
-        # self.temp_path = self.write_to_temp_folder(self.encrypted_value)
+        self.temp_path = self.write_to_temp_folder(self.encrypted_value)
 
-        # print(f"ENCRYPTED PATH: {self.temp_path}")
+        print(f"ENCRYPTED PATH: {self.temp_path}")
 
         print('ENCRYPTION done')
 

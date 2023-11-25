@@ -12,12 +12,11 @@ app = Flask(__name__)
 # is_authenticated = False
 g_mail = None
 key = ''
-# temp_path = ''
-encrypted_data = ''
+temp_path = ''
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global g_mail, key, encrypted_data
+    global g_mail, key, temp_path
     print("origin")
     
     try:
@@ -68,9 +67,7 @@ def login():
 
         # Get encryption key
         key = run_encrypt.get_key()
-        # temp_path = run_encrypt.get_path()
-        encrypted_data = run_encrypt.get_encrypted()
-
+        temp_path = run_encrypt.get_path()
 
         print('norman1')
 
@@ -122,15 +119,15 @@ def subject():
 
 @app.route('/api/ephishsense', methods=['GET'])
 def main():
-    global input_subject, g_mail, key
+    global input_subject, g_mail, key, temp_path
 
     print("MAIN")
-    run_decrypt = DECRYPT(key, encrypted_data)
-    decrypted_data = run_decrypt.get_decrypted()
+    run_decrypt = DECRYPT(key, temp_path)
+    deserialized_info = run_decrypt.get_decrypted()
 
-    g_mail = imaplib.IMAP4_SSL(decrypted_data['server'], decrypted_data['port'])
+    g_mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
     print('norman')
-    g_mail.login(decrypted_data['username'], decrypted_data['password'])
+    g_mail.login(deserialized_info['username'], deserialized_info['password'])
 
     # def read_from_temp_folder(temp_file_path):
     #     with open(temp_file_path, 'rb') as temp_file:
