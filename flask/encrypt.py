@@ -24,7 +24,7 @@ class ENCRYPT():
         self.connection_info = {
         'server': 'imap.gmail.com',
         'port': self.mail_object.port,
-        'username': self.email,
+        'email': self.email,
         'password': self.password
         }
 

@@ -10,102 +10,58 @@ app = Flask(__name__)
 
 # Initialize global variables
 # is_authenticated = False
-g_mail = None
-key = ''
+# g_mail = None
+# key = ''
 # temp_path = ''
-encrypted_data = ''
+# encrypted_data = ''
 
 @app.route('/api/login', methods=['POST'])
 def login():
-    global g_mail, key, encrypted_data
-    print("origin")
+    global g_mail, key, encrypted_data, is_authenticated
+    is_authenticated = False
     
     try:
-        # Check if the user exists in the database
-        # user = User.query.first()
-
-        # if user:
-        #     # print("norman")
-        #     # User exists in the database, use credentials from the database
-        #     g_email = user.email
-        #     g_password = user.password
-
-        #     print(g_email)
-        #     print(g_password)
-        # else:
-            # print("norman2")
-            # User does not exist in the database, authenticate using the provided credentials
-            # Get JSON data from the request body
+        # Get value from login text fields in js
         data = request.get_json()
 
         # Access emailInput and passInput from the JSON data
         email_input = data.get('email', '')
         pass_input = data.get('password', '')
 
+        # Execute login.py
         run = LOGIN(email_input, pass_input)
 
-        if not (run.isAuthenticated()):
+        # Return if not authenticated
+        if not (run.get_authentication()):
             return jsonify({'message': 'Login FAILED'})
 
-        # Get Mail Object
-        g_mail = run.storeMail()
+        # Set True since given creds is authenticated
+        is_authenticated = True
 
-        print('BEFORE')
-        run_encrypt = ENCRYPT(g_mail, email_input, pass_input)
-        print('AFTER')
-        # # Store mail object as string
-        # connection_info = {
-        # 'server': 'imap.gmail.com',
-        # 'port': g_mail.port,
-        # 'username': email_input,
-        # 'password': pass_input
-        # } 
+        # Get mail object
+        g_mail = run.get_mail()
 
-        # str_g_mail = pickle.dumps(connection_info)
+        if not func_encrypt(g_mail, email_input, pass_input):
+            return jsonify({'message' : 'Error in Encryption'})
+        # # Encrypt mail object
+        # run_encrypt = ENCRYPT(g_mail, email_input, pass_input)
 
-        # # Write mail object
-        # run_encrypt = ENCRYPT(str_g_mail)
-
-        # Get encryption key
-        key = run_encrypt.get_key()
-        # temp_path = run_encrypt.get_path()
-        encrypted_data = run_encrypt.get_encrypted()
-
-
-        print('norman1')
-
-        # # Authentication is Successful
-        # g_email = email_input
-        # g_password = pass_input
-
-        # Save the credentials to the database (assuming User is the model)
-        # new_user = User(email=g_email)
-        # new_user.set_password(g_password)  # Set the password using the set_password method
-        # db.session.add(new_user)
-        # db.session.commit()
-        
-
-        # Set authentication flag
-        # is_authenticated = True
+        # # Get encryption key and encrypted data
+        # key = run_encrypt.get_key()
+        # # temp_path = run_encrypt.get_path()
+        # encrypted_data = run_encrypt.get_encrypted()
 
         # Clear data
         email_input = ''
         pass_input = '' 
         g_mail = ''
 
-        # print(g_email)
-        # print(g_password)
-        # print(email_input)
-        # print(pass_input)
-
-        # Send a response back to the client
         return jsonify({'message': 'Login SUCCESSFUL'})
 
     except Exception as e:
         # Handle exceptions appropriately
         print('Error processing login:', str(e))
         return jsonify({'error': 'Internal Server Error'}), 500
-
 
 @app.route('/api/subject', methods=['POST'])
 def subject():
@@ -120,50 +76,44 @@ def subject():
     # Send a response back to GUI
     return jsonify({'message': 'Input Subject Received Successfully'})
 
-@app.route('/api/ephishsense', methods=['GET'])
-def main():
-    global input_subject, g_mail, key
+@app.route('/api/scan', methods=['GET'])
+def scan():
+    global input_subject, g_mail, key, encrypted_data, is_authenticated, decrypted_data
 
-    print("MAIN")
-    run_decrypt = DECRYPT(key, encrypted_data)
-    decrypted_data = run_decrypt.get_decrypted()
+    # Check if authenticated
+    if not is_authenticated:
+        return jsonify({'message': 'Not authenticated'})
 
+    # Decrypt login credentials
+    if not func_decrypt(key, encrypted_data):
+        return jsonify({'message': 'Error in Decryption'})
+    # run_decrypt = DECRYPT(key, encrypted_data)
+    # decrypted_data = run_decrypt.get_decrypted()
+
+    # Login using the decrypted credentials
     g_mail = imaplib.IMAP4_SSL(decrypted_data['server'], decrypted_data['port'])
-    print('norman')
-    g_mail.login(decrypted_data['username'], decrypted_data['password'])
+    g_mail.login(decrypted_data['email'], decrypted_data['password'])
 
-    # def read_from_temp_folder(temp_file_path):
-    #     with open(temp_file_path, 'rb') as temp_file:
-    #         data = temp_file.read()
-    #     return data
-
-    # g_mail = read_from_temp_folder(temp_path)
-
-    print(g_mail)
-    print("A-MAIN")
-
-    # run_decrypt = DECRYPT(key, temp_path)
-    # decrypted_g_mail = run_decrypt
-
-    # print(decrypted_g_mail)
-    # exit(0)
-
-    ##decrypt
-
+    # Check login credentials
     if not g_mail:
-        return jsonify({'message': 'Not Authenticated'})
-
+        return jsonify({'message': 'Error logging in'})
 
     # Extract Email
     run = GMAIL_EXTRACTOR(input_subject, g_mail)
 
-    # Clear data
-    # input_subject = ''
-    # g_email = ''
-    # g_password = ''
+    if not run.get_is_mailbox_empty():
+        return jsonify({'message': 'Inbox is empty'})
 
     # Store numeric email value
     input = run.value()
+
+    # Encrypt back again the login credentials
+    if not func_encrypt(g_mail, decrypted_data['email'], decrypted_data['password']):
+            return jsonify({'message' : 'Error in Encryption'})
+
+    # Clear data
+    decrypted_data = ''
+    g_mail = ''
 
     # Compare Email to the Model
     predict = DT_MODEL(input)
@@ -175,8 +125,39 @@ def main():
     # Send the prediction to GUI
     return jsonify({'message': prediction})
 
-    
+@app.route('/api/main', methods=['GET'])
+def main():
+
+    return 
     
 
+def func_encrypt(g_mail, email_input, pass_input):
+    global key, encrypted_data
+    try: 
+        # Encrypt mail object
+        run_encrypt = ENCRYPT(g_mail, email_input, pass_input)
+
+        # Get encryption key and encrypted data
+        key = run_encrypt.get_key()
+        # temp_path = run_encrypt.get_path()
+        encrypted_data = run_encrypt.get_encrypted()
+        return True
+    
+    except Exception as e:
+        print(f'ERROR: in func_encrypt \n{e}')
+        return False
+
+
+def func_decrypt(key, encrypted_data):
+    global decrypted_data
+    try:
+        # Decrypt login credentials
+        run_decrypt = DECRYPT(key, encrypted_data)
+        decrypted_data = run_decrypt.get_decrypted()
+        return True
+    except Exception as e:
+        print(f'ERROR: in func_encrypt \n{e}')
+        return False
+   
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,38 +1,32 @@
 
 function clickLogin(){
-  // Get input email and app password
-  var emailInput = document.getElementById('input-email').value;
-  var passInput = document.getElementById('input-appPassword').value;
-  var isAuthenticated = false;
-  var temp = '';
+    document.getElementById('loginCheck').textContent = 'Processing';
+    // Get input email and app password
+    var emailInput = document.getElementById('input-email').value;
+    var passInput = document.getElementById('input-appPassword').value;
 
-  // // Hash the password
-  // var hashedPass = bcrypt.hashSync(passInput, 10);
+    // Send email and password input to the Python Backend
+    fetch('http://localhost:5000/api/login', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: emailInput, password: passInput }),
+    })
+    .then()
+    .then(response => response.json())
+    .then(data => {
+        console.log('Response from Flask:', data);
+        // Show login successful in GUI
+        document.getElementById('loginCheck').textContent = data.message;
+    })
+    .catch(error => {
+        console.error('Error sending data to Flask:', error);
+    });
 
-  // Show login successful in GUI
-  document.getElementById('loginCheck').textContent = 'Login Successful';
-
-  // Send email and password input to the Python Backend
-  fetch('http://localhost:5000/api/login', {
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email: emailInput, password: passInput }),
-  })
-  .then()
-  .then(response => response.json())
-  .then(data => {
-      console.log('Response from Flask:', data);
-  })
-  .catch(error => {
-      console.error('Error sending data to Flask:', error);
-  });
-
-  // Clear Password
-    var emailInput = 'None'
-    var passInput = 'None'
-
+    // Clear Password
+      var emailInput = 'None'
+      var passInput = 'None'
 }
 
 function clickScan(){
@@ -59,7 +53,7 @@ function clickScan(){
     });
 
     // Receive email prediction from the Python Backend
-    fetch('http://localhost:5000/api/ephishsense')
+    fetch('http://localhost:5000/api/scan')
       .then(response => response.json())
       .then(data => {
         // Display the response

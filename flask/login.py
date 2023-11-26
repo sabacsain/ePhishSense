@@ -3,47 +3,46 @@ import imaplib
 class LOGIN():
 
     # Intialize all the global variables to be used
-    def initializeVariables(self):
-        self.usr = ""
-        self.pwd = ""
-        self.mail = None
-       
-    # Get Gmail credentials
-    def getLogin(self, email, password):
+    def initializeVariables(self,  email, password):
         self.usr = email
         self.pwd = password
+        self.mail = None
+        self.is_authenticated = False
 
     # Login to the Gmail account
     def attemptLogin(self):
-        self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        if self.mail.login(self.usr, self.pwd):
+        try:
+            self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+            self.mail.login(self.usr, self.pwd)
             print("\nLogin SUCCESSFUL")
             return True
-        else:
+        except Exception as e:
             print("\nLogin FAILED")
-            return False
+            print(f"ERROR: {e}")
+            return False         
         
     # Store numerical value of the email  
-    def isAuthenticated(self):
-        return self.value
+    def get_authentication(self):
+        return self.is_authenticated
 
     # Store Mail Object
-    def storeMail(self):
+    def get_mail(self):
         return self.mail
 
     # Function to be executed when the Class has been called
     def __init__(self, email, password):
         # Intialize all the global variables to be used
-        self.initializeVariables()
-
-        # Get Gmail credentials
-        self.getLogin(email, password)
+        self.initializeVariables(email, password)
 
         # Login to the Gmail account
-        self.value = self.attemptLogin()
+        self.is_authenticated = self.attemptLogin()
 
-        # Store Mail Object 
-        self.storeMail()
+        # Clear data
+        self.usr = ''
+        self.pwd = ''
+
+        # # Store Mail Object 
+        # self.get_mail()
 
 if __name__ == "__main__":
     # Dummy Data
@@ -52,6 +51,6 @@ if __name__ == "__main__":
 
     # Test Login
     run = LOGIN(email, password)
-    input = run.isAuthenticated()
+    input = run.get_authentication()
 
   

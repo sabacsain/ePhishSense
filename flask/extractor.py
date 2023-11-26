@@ -1,4 +1,4 @@
-import imaplib, email, re
+import email, re
 from extension_dt_model import DT_MODEL
 
 
@@ -18,6 +18,7 @@ class GMAIL_EXTRACTOR():
         self.idsList = []
 
         self.valueList = []
+        self.search_mailbox = True
 
     # Get Gmail credentials
     # def getLogin(self):
@@ -39,7 +40,6 @@ class GMAIL_EXTRACTOR():
         
     # Choose which mailbox to be used
     def selectMailbox(self):
-        # self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
         self.mailbox = 'Inbox'
         bin_count = self.mail.select(self.mailbox)[1]
         self.mailCount = int(bin_count[0].decode("utf-8"))
@@ -47,16 +47,38 @@ class GMAIL_EXTRACTOR():
 
     def searchThroughMailbox(self):
         # type, self.data = self.mail.search(None, "ALL")
-        subject = f'SUBJECT "{self.subject}"'            # change the SUBJECT as necessary
+        subject = f'SUBJECT "{self.subject}"'           
         type, self.data = self.mail.search(None, subject)
+        print(f'TYPE: {type}')
+        print(f'SELF.DATA: {self.data}')
+        
+        # Check if no subject matches
+        if not self.data[0]:
+            print('EMPTY')
+            return False
+
         self.ids = self.data[0]
         self.idsList = self.ids.split()
+
+        # NOTE: UNCOMMENT IF THERE IS A WAY FOR MORE THAN TWO EMAIL SUBJ.
+        # Check if subjects are more than 1
+        # if len(self.idsList) > 1:
+        #     print('subject more thatn 1')
+        #     # DO SOMETHING
+        #     # return True
+
+        #     # FOR TESTING PURPOSES
+        #     raise Exception
+        #     return False
+        return True
+
+        
 
     # Parse Raw Email to get Sender, DKIM, URL
     def parseEmails(self):
         jsonOutput = {}
 
-        type, self.data = self.mail.fetch(self.data[0], '(UID RFC822)')
+        type, self.data = self.mail.fetch(self.idsList[-1], '(UID RFC822)')
         raw = self.data[0][1]
        
         # Convert Raw Email to Standard Email Encoding
@@ -104,10 +126,6 @@ class GMAIL_EXTRACTOR():
                 if partType == "text/html" and "attachment" not in part:
                     jsonOutput['body'] = part.get_payload()
             
-        # print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
-        # print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
-        # print(f"BODY: \n     {jsonOutput['body']}")
-
         # Check if URL exists in Body
         def is_url_exists_in_body(html_data):
             # Regular expression to find all URLs in the HTML content
@@ -131,6 +149,10 @@ class GMAIL_EXTRACTOR():
     def value(self):
         return self.valueList
 
+    # Get mailbox value
+    def get_is_mailbox_empty(self):
+        return self.search_mailbox
+
     # Function to be executed when the Class has been called
     def __init__(self, input_subject, mail):
         # Intialize all the global variables to be used
@@ -146,7 +168,9 @@ class GMAIL_EXTRACTOR():
         self.selectMailbox()
 
         # Search the email to be scanned
-        self.searchThroughMailbox()
+        if not self.searchThroughMailbox():
+            self.search_mailbox == False
+            return 
 
         # Extract Sender, DKIM, and URL
         self.parseEmails()
