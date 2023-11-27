@@ -1,0 +1,1133 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp1910968ils;
+        Mon, 6 Nov 2023 06:11:31 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IETyjNAyksJsI8Tuj4/qN62zLaP89Q3wqMR2HqVYOv94weuCI2uSVdYpJ4BcQs7DiInJ1fD
+X-Received: by 2002:a17:903:230b:b0:1cc:589d:e584 with SMTP id d11-20020a170903230b00b001cc589de584mr21554911plh.16.1699279890937;
+        Mon, 06 Nov 2023 06:11:30 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699279890; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0J8HkSInXh704EwWgvO/Hixt0G/JWVk//+Jg6ex8yDBrnPb5C1xjMbFeHFLzYB8E3b
+         d07tC2G59wW3sXi6PdwEExDVACYJa6X6cLECZbfYYAn47HkX8VGEg8q3Y+h4hin/XohB
+         hsMwHOoYAR2sqHmN5tgNTTz3IcMPy2xoOEqgBIaCgERdWiVoF3InqtAjLz5xDSbNLb14
+         GOZbwtLC1XGycPJIMtjuTb9/ueBhjNx7PCk+rHLzxW8OLC9VEgd/KyxX1IjM4qeV18A9
+         meKzyJy/I1dBXeFJTmj0vYf6zNCXK7dHUjSGGa/oHp6MRJdTDCph9t7IRH/r84/+LXOi
+         33bg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe-post:list-unsubscribe:message-id:sender
+         :feedback-id:to:from:subject:mime-version:date:dkim-signature
+         :dkim-signature:dkim-signature;
+        bh=o1zI1I7cnDgRBogALv0nyf5L3MH/oYUikvFXxYzipgE=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=064gvaa1kr0Cl/WMa2t5HyHQ2dcEzCIhhMsQebe+NnLHWtVAuKa5JfJoAxkVitBnbA
+         RLZcgtDmy4bOzhGrnzDUKO7RB1SFUgCD1Wo1PsIZyFP28oZYpim/m4n6UaE2EME8WpSz
+         qCYsI9zULbX7CdPP+/gnNzxzaztGzN4GWfbOp6OuNsFL3C+kw5cveeKvNwmWYV3ceTG7
+         RKPBbEeMA45HQHvTAeDMRnTKEnTEJaPsv4eNeH24l+7d023x9o8Hg5MaNonKeazsuvu0
+         9wBZUCufuZ4TneHZvsdQqOOWyV1+vhwbGW2Yy1gUzKHaIn9RmL0R0EA+a3S265ysJ3C/
+         CsdQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@klevermailer.com header.s=squarespace header.b=k9mQMgWb;
+       dkim=pass header.i=@mgcp02.squarespace-mail.com header.s=squarespace-mg header.b=iX78WHOl;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=F+2yal2i;
+       spf=pass (google.com: domain of bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com designates 161.38.201.93 as permitted sender) smtp.mailfrom="bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=klevermailer.com
+Return-Path: <bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com>
+Received: from m201-93.mailgun.net (m201-93.mailgun.net. [161.38.201.93])
+        by mx.google.com with UTF8SMTPS id o13-20020a17090323cd00b001b025aba9f2si7680976plh.22.2023.11.06.06.11.30
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Nov 2023 06:11:30 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com designates 161.38.201.93 as permitted sender) client-ip=161.38.201.93;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@klevermailer.com header.s=squarespace header.b=k9mQMgWb;
+       dkim=pass header.i=@mgcp02.squarespace-mail.com header.s=squarespace-mg header.b=iX78WHOl;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=F+2yal2i;
+       spf=pass (google.com: domain of bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com designates 161.38.201.93 as permitted sender) smtp.mailfrom="bounce+7954c9.c73c88-ronaldlambertnicolastugadi=gmail.com@mgcp02.squarespace-mail.com";
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=klevermailer.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=klevermailer.com;
+ q=dns/txt; s=squarespace; t=1699279890; x=1699287090; h=List-Unsubscribe:
+ message-id: sender: sender: To: To: From: From: Subject: Subject:
+ Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=o1zI1I7cnDgRBogALv0nyf5L3MH/oYUikvFXxYzipgE=;
+ b=k9mQMgWbD/p4aQ1946M4cZwCNqlgbkfirv3VLzJXMjlaoxh4N+Nfs3S/TIzM7c7acSNOA30M2xArNaJC4gaEcA2IcHBSk5ZjscuBFjhve0BfUQCfTIMi2icMr/kMLjNZzFV3QM8w/xvoJ6C/r8zv9euabVfw8iFMfRZdU68vPfKHitL9BP+e0x/ZjNaLeVPlRyrP5K30AbsX9lJwGkw2x/x66ugQlRnoOMWzcGJMQeoV3VSe+SXrnjjHJPOOnybU/xRlybnFACS8lg2V2LJeqaLsVW/I5KpG3mo8kW9ooJf/Ekb2XrweRJk3loIylgCWr5ZHW8fe8s28U4aWsymKHg==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed;
+ d=mgcp02.squarespace-mail.com; q=dns/txt; s=squarespace-mg; t=1699279890;
+ x=1699287090; h=List-Unsubscribe: message-id: sender: sender: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: X-Feedback-Id;
+ bh=o1zI1I7cnDgRBogALv0nyf5L3MH/oYUikvFXxYzipgE=;
+ b=iX78WHOlt6A3OysoShvY7Wg2PgUUJ2XthWAkA914SIdKWVJkWQt6gypXYLX3mSaWg5RclUSFFjKC5soNxKiAy2x78XDYQQ71Je3WmZP9CwjM+aSnt/xvQMUcCX5Ps62RrkguPYqVNXIPgfD6NFXJaChFavTdP28x7dD8ZWvExfuVMQMFaa510Ym1k9/dj7l77SEv+fdsmCP4RZvUIFUt1Z7mfy7WBRV/hIwdp/9vbdOV8/fDIgrz3nNplSUmzJtKUxonMXwNv4Uz3xQXobK9RWKE5gBEP0F8b3KQy+3meXDHtMjU9+SQEMLudvv8RVbAQrmdUXP6tiqOiALz6eo2vQ==
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1699279890; x=1699287090; h=List-Unsubscribe: message-id:
+ sender: sender: To: To: From: From: Subject: Subject: Content-Type:
+ Mime-Version: Date: X-Feedback-Id;
+ bh=o1zI1I7cnDgRBogALv0nyf5L3MH/oYUikvFXxYzipgE=;
+ b=F+2yal2io9U7n3YDiUCZHrv+dJIQmlnyM0VohaglExlkeoWkRGI27OniLOa1YrHAlONNF+f42JDvw5cvUaZaL3abGENHyw3mW67G7Envd/kj4Lr6plezaYW8DiMJWVW1A/ZFDC34TV8bWMPsqC7JvqkMmFgpF1YrEZphG3Vv+HQ=
+X-Feedback-Id: postmaster@mgcp02.squarespace-mail.com::610aa2e8ff6448d88f93470b:mailgun
+X-Mailgun-Sending-Ip: 161.38.201.93
+X-Mailgun-Sid: WyI5Y2FlOCIsInJvbmFsZGxhbWJlcnRuaWNvbGFzdHVnYWRpQGdtYWlsLmNvbSIsImM3M2M4OCJd
+Received: from <unknown> (<unknown> []) by 80c666e84e6e with HTTP id
+ 6548e35157c07c168f48e545; Mon, 06 Nov 2023 13:00:01 GMT
+Date: Mon, 06 Nov 2023 13:00:01 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="83cf5b0a3af3956d304062c073d67e9734d94cb10c28c91d6cff186a8506"
+Subject: Latest Weekly News from Klever
+From: Klever <no-reply@klevermailer.com>
+To: ronaldlambertnicolastugadi@gmail.com
+X-Mailgun-Secondary-Dkim-Public: klevermailer.com,squarespace
+X-Mailgun-Secondary-Dkim: mgcp02.squarespace-mail.com,squarespace
+Feedback-ID: b_6548dc68a18b8c4beb135d01:6387a86cf6a0e955eea76d2e:mailgun
+sender: Klever <no-reply@klevermailer.com>
+message-id: <6548e292a6792d296a870320.6387a86cf6a0e955eea76d2e@mgcp02.squarespace-mail.com>
+List-Unsubscribe: <https://campaign-preferences.com/unsubscribe/Fm-CcawhoSKEBxYQv3ffaiJEY369-LL98M7_09y4i0YAWJNJjdBhdEi6qG0WlKRJwmU5V-k_cnJnPWBsCFx5uXj52oI8fuXUtIi_COnvgzSs0M3_EbsBKY98AQeuCh71jyFleeZHIO-oYxR-EHdpzu4iaAuoRH7Sw7S3RhRHhr2SXVTJOsC3-LD2oZXsUFM3FK-REqvs2lf6h4TjJ90KujZ9W5BUvvsKjIzN5d64Sz91nvEeYhDQOu1A0nLUX81ikcYUCnfL5xaB_N9IdTheDi8hgmiQxtWCjeJ3bNVPBLXgcLFsO0TWfw-KvnhgBn_OFfGltb87vCaS90q2RjBVKtPfbrI8NacCbeoRk7-GMade3HEF1sqxUYY=>
+X-Website-Id: 6387a86cf6a0e955eea76d2e
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-Mailgun-Variables: {"emailMessageId": "6548e292a6792d296a870320", "mailingId":
+ "b_6548dc68a18b8c4beb135d01", "websiteId": "6387a86cf6a0e955eea76d2e"}
+
+--83cf5b0a3af3956d304062c073d67e9734d94cb10c28c91d6cff186a8506
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=ascii
+
+View in Browser <https://klever.org/campaigns/view-email/a3el7P7ZmTQqBWhX4K=
+WIvDTwDtyPT5Vt_ftDfksl0QPl_O4JH3TCGNtAlogcFA4BeGXGB97SjAAjmSNB-s9AcEfHOs1j0=
+xyEib5Cah05emMYAqzY4ciQYsrGt3bTTGzcfPH-52VJb-1FvWOvSec69JDwcT9qhIC3xXnWtQ=
+=3D=3D?ss_source=3Dsscampaigns&ss_campaign_id=3D6548dc68a18b8c4beb135d01&ss=
+_email_id=3D6548e292a6792d296a870320&ss_campaign_name=3DLatest+Weekly+News+=
+from+Klever&ss_campaign_sent_date=3D2023-11-06T13%3A00%3A01Z>  <https://kle=
+ver.org/?ss_source=3Dsscampaigns&ss_campaign_id=3D6548dc68a18b8c4beb135d01&=
+ss_email_id=3D6548e292a6792d296a870320&ss_campaign_name=3DLatest+Weekly+New=
+s+from+Klever&ss_campaign_sent_date=3D2023-11-06T13%3A00%3A01Z>  <https://k=
+lever.io> Did you know you can convert your crypto to fiat in Klever Wallet=
+? Klever Wallet  <https://x.com/klever_io/status/1721410200786092116?s=3D20=
+> Klever Wallet continues to improve, with recent updates fixing known bugs=
+ and expanding language options, including Ukrainian. The development team =
+is setting their sights on further translations, with Arabic, Swedish, and =
+Japanese on the horizon. Quality testing of the Cardano network, user exper=
+ience enhancements, and gamification elements are also in the pipeline. Loo=
+king ahead, the wallet will support additional networks like Acala, Karura,=
+ and more, revamp its user interface, and introduce new staking options for=
+ various cryptocurrencies. KleverChain & KleverScan  <https://kleverscan.or=
+g> KleverScan's recent update has enhanced the user experience by introduci=
+ng mobile tooltips and automatic user notifications for server issues. It's=
+ set to improve its interface further, with a focus on mobile compatibility=
+ and the addition of a KDA filter in the transactions chart. The platform's=
+ roadmap includes an overhaul of the MultiContract feature and a comprehens=
+ive guide to help users navigate main contracts and signature pages. Klever=
+ Electronics  <https://kleversafe.io> KleverSafe has achieved significant m=
+ilestones, successfully integrating support for ADA and the Celestia mainne=
+t (New Device Update coming soon). The FIDO U2F feature is now entering the=
+ quality assurance phase. The team is focusing on releasing a new firmware =
+update that incorporates this security feature. The upcoming period will se=
+e a new batch of KleverSafe products ready for sale. Future plans include d=
+eveloping a new crypto payment system that supports multiple chains and lau=
+nching a revamped landing page for KleverSafe. Bitcoin.me  <https://klever.=
+org/en/blog/buy-and-hodl-klv-rewards-campaign?ss_source=3Dsscampaigns&ss_ca=
+mpaign_id=3D6548dc68a18b8c4beb135d01&ss_email_id=3D6548e292a6792d296a870320=
+&ss_campaign_name=3DLatest+Weekly+News+from+Klever&ss_campaign_sent_date=3D=
+2023-11-06T13%3A00%3A01Z> Bitcoin.me has made significant strides in improv=
+ing its web interface for mobile users and tightening its operational contr=
+ols. The platform is preparing to launch new tokens like XRP, Aura, and Dot=
+, and integrate new features such as a swap function, a more streamlined lo=
+gin process, internal transfers, and a referral program. These updates are =
+expected to roll out gradually over the coming months, enhancing user exper=
+ience and expanding functionality. Web & Design The Web and Design team has=
+ been industrious, rolling out new designs for Wallet Developers and Indivi=
+dual landing pages, improving post previews, and introducing a new Sitemap =
+navigator. The design of Klever Hub has been finalized, along with adjustme=
+nts to wallet creation workflows. Efforts have also been directed at enhanc=
+ing the brand's SEO standing and preparing for marketing pushes with influe=
+ncers.  <https://klever.org/?ss_source=3Dsscampaigns&ss_campaign_id=3D6548d=
+c68a18b8c4beb135d01&ss_email_id=3D6548e292a6792d296a870320&ss_campaign_name=
+=3DLatest+Weekly+News+from+Klever&ss_campaign_sent_date=3D2023-11-06T13%3A0=
+0%3A01Z>  <https://www.youtube.com/@KleverFinance>  <https://twitter.com/kl=
+ever_io>  <https://www.instagram.com/klever.io/>  <https://www.facebook.com=
+/klever.io>  <https://discord.gg/klever-io> Crypto Made Simple Klever, 24 Z=
+ollikerstrasse, Zollikon, ZH, 8702, Switzerland Powered by Squarespace <htt=
+ps://www.squarespace.com?channel=3Dproduct_refer&subchannel=3Dcustomer&sour=
+ce=3Demail_campaigns_button&campaign=3D6387a86cf6a0e955eea76d2e&utm_medium=
+=3Dproduct_refer&utm_source=3Demail_campaigns_button&ss_source=3Dsscampaign=
+s&ss_campaign_id=3D6548dc68a18b8c4beb135d01&ss_email_id=3D6548e292a6792d296=
+a870320&ss_campaign_name=3DLatest+Weekly+News+from+Klever&ss_campaign_sent_=
+date=3D2023-11-06T13%3A00%3A01Z> Unsubscribe  <https://campaign-preferences=
+=2Ecom/unsubscribe/ny4cj2kaat7ybDwlXP7B=
+whtFE91Kn8dtdeuftCTVx6_b42q4DIurxUA_g3=
+xaZpvXQr5JlUg2uyhmQmdqSHKH3NNhIceMhRE05dvkYjvMn_cbyGtJMC5lxhodhRM8cMH69ZvJG=
+n6hDGcaFdwF-a6ZrasubGdp8MgNANheWyc-Op1A8hmxoRO-ZJ0ua_Bi1AP_IgH_0OPZZwH2hNZ1=
+qxKrw8aY1u5IcPOmNb7nGFDExyFmYREew1SywHEJZvdSMizSCx6s5axkZkhqN5JGP1gi7lOA29o=
+cxIyO18IOXf1dNrgVy9kYP0Z0ahHGxH7eBZ5QCoCwGeF-I1TtOPk7k21dPwxGejOs3l3xOzJJwX=
+99cQt-O4tfA3Q3QbY=3D>
+--83cf5b0a3af3956d304062c073d67e9734d94cb10c28c91d6cff186a8506
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3D"http://www.w3.org/1999/xhtml" xmlns:v=3D"urn:schemas-microso=
+ft-com:vml" xmlns:o=3D"urn:schemas-microsoft-com:office:office" lang=3D"en-=
+US" xml:lang=3D"en-US">
+ <head>=20
+  <title data-ignore-plain-text>Latest Weekly News from Klever</title>=20
+  <meta http-equiv=3D"content-type" content=3D"text/html; charset=3Dutf-8">=
+=20
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1, maximum-scale=3D1">=20
+  <meta name=3D"format-detection" content=3D"address=3Dno">=20
+  <!--[if (gte mso 9)|(IE)]>
+    <style type=3D"text/css" media=3D"screen">
+      li {
+        text-indent: -1em;
+      }
+    </style>
+    <![endif]-->=20
+  <style type=3D"text/css" media=3D"all">
+      body,
+=2Esection-text-area,
+=2Esection-text-area-wrapper,
+=2Esection-text-cell {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-word;
+}
+body {
+    width: 100% !important;
+    min-width: 100% !important;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    mso-line-height-rule: exactly;
+}
+p {
+    margin-block: 0;
+}
+@media only screen and (max-width:  593px ) {
+    table#newsletter-table {
+        border: 0 !important;
+    }
+    table#newsletter-email {
+        width: 100% !important;
+    }
+    img.section-scaleable-image,
+    img.section-empty-img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    .bg-none {
+        background: none !important;
+    }
+    .hauto {
+        height: auto !important;
+    }
+    .show-desktop-only {
+        display: none !important;
+    }
+    .show-mobile-only {
+        display: block !important;
+        float: none !important;
+        line-height: auto !important;
+        max-height: inherit !important;
+        max-width: inherit !important;
+        margin-top: 0px !important;
+        overflow: visible !important;
+        visibility: inherit !important;
+        width: auto !important;
+    }
+    .stack-cell-wrap {
+        display: block !important;
+    }
+    .stack-cell-up {
+        display: table-header-group !important;
+    }
+    .stack-cell-down {
+        display: table-footer-group !important;
+    }
+    .mw100p {
+        max-width: 100% !important;
+    }
+    .section-horizontal-padding,
+    .padding-mobile-both {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+    .padding-mobile-left {
+        padding-left: 22px !important;
+    }
+    .padding-mobile-right {
+        padding-right: 22px !important;
+    }
+    .text-left {
+        text-align: left !important;
+    }
+    .text-right {
+        text-align: right !important;
+    }
+    .w100p {
+        width: 100% !important;
+    }
+}
+=2Ebutton-style-solid:hover,
+=2Ebutton-style-rounded:hover {
+    opacity: .8 !important;
+}
+a:hover {
+    text-decoration: none !important;
+}
+span.mail-merge-preview {
+    border-bottom: 2px dotted currentColor;
+    display: inline-block;
+    line-height: 1em !important;
+    margin-bottom: .125em !important;
+}
+table#newsletter-section-body .linked-site-title-link {
+    color: #fff !important;
+}
+#header-header-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .brand-name .linked-site-title-link {
+    color: #fff;
+    text-decoration: none;
+}
+#footer-footer-section-stacked-top-0 .footer-text .linked-site-title-link {
+    color: #fff;
+}
+body.renderedPreview #line-line-section-1 div.basic-line[data-line=3D"dashe=
+d"] {
+    border-width: .5px 0 !important;
+}
+
+    </style>=20
+  <!--[if mso]>
+    <noscript>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    </noscript>
+    <![endif]-->=20
+  <!--[if (mso)|(mso 16)]>
+      <style type=3D"text/css">
+        a {text-decoration: none;}
+      </style>
+    <![endif]-->=20
+ </head>=20
+ <body style=3D"padding:0;margin:0;text-align:center;background-color:#1714=
+14;">=20
+  <table role=3D"article" aria-label=3D"Latest Weekly News from Klever" lan=
+g=3D"en-US" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=3D"cente=
+r" id=3D"newsletter-table" style=3D"font-size:16px;font-weight:normal;width=
+:100%;padding:0px;background-color:#171414;border-top:44px solid #171414;bo=
+rder-bottom:44px solid #171414;margin:0 auto;text-align:center;table-layout=
+:fixed;">=20
+   <tbody>
+    <tr>=20
+     <td align=3D"center" valign=3D"top" bgcolor=3D"#171414" id=3D"newslett=
+er-cell" style=3D"font-size:.9375em;">=20
+      <div data-ignore-plain-text class=3D"newsletter-preview-text" style=
+=3D"color:transparent;display:none !important;height:0;max-height:0;max-wid=
+th:0;opacity:0;overflow:hidden;mso-hide:all;visibility:hidden;width:0;">
+        Updates from the Klever Ecosystem=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=20
+      </div>=20
+      <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"594"=
+ bgcolor=3D"#000000" id=3D"newsletter-email">=20
+       <tbody>
+        <tr>=20
+         <td align=3D"center" valign=3D"top" id=3D"newsletter-email-wrapper=
+" class=3D"modern-sans">=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-header">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"middle" id=3D"newsletter-sectio=
+n-header-cell">=20
+              <div id=3D"header-header-section-stacked-top-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" class=3D"view-in-browser-table" style=3D"b=
+ackground-color:#171414;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"right" valign=3D"middle" class=3D"section-te=
+xt-area section-header-view-in-browser section-content-cell"> <p class=3D"v=
+iew-in-browser" style=3D"color:inherit;line-height:1.618em;margin:0 0 1.25e=
+m 0;font-weight:normal;margin-top:0;font-family:'DejaVu Sans Condensed', 'L=
+iberation Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-=
+serif;letter-spacing:-.01em;font-size:11px;margin-bottom:11px;"><a href=3D"=
+https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870320&a=
+mp;u=3Dhttps%3A%2F%2Fklever.org%2Fcampaigns%2Fview-email%2Fa3el7P7ZmTQqBWhX=
+4KWIvDTwDtyPT5Vt_ftDfksl0QPl_O4JH3TCGNtAlogcFA4BeGXGB97SjAAjmSNB-s9AcEfHOs1=
+j0xyEib5Cah05emMYAqzY4ciQYsrGt3bTTGzcfPH-52VJb-1FvWOvSec69JDwcT9qhIC3xXnWtQ=
+%3D%3D%3Fss_source%3Dsscampaigns%26ss_campaign_id%3D6548dc68a18b8c4beb135d0=
+1%26ss_email_id%3D6548e292a6792d296a870320%26ss_campaign_name%3DLatest%2BWe=
+ekly%2BNews%2Bfrom%2BKlever%26ss_campaign_sent_date%3D2023-11-06T13%253A00%=
+253A01Z&amp;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01=
+&amp;l=3Den-US&amp;s=3DzV6fV_JM6Sra_sai12tIxq6DV2w%3D" class=3D"view-in-bro=
+wser-link" style=3D"color:#fff !important;text-decoration-line:underline;te=
+xt-decoration-color:#FFFFFF;"><span class=3D"view-in-browser-link-text" sty=
+le=3D"font-size:inherit;font-weight:inherit;line-height:inherit;margin:0;co=
+lor:#FFFFFF;">View in Browser</span></a></p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"section-c=
+ontent header-section header-section-stacked" style=3D"background-color:tra=
+nsparent;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-t=
+ext-area section-content-cell" style=3D"padding-top:22px;padding-right:22px=
+;padding-bottom:22px;padding-left:22px;"> <a class=3D"brand-logo-link" href=
+=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a8703=
+20&amp;u=3Dhttps%3A%2F%2Fklever.org%2F%3Fss_source%3Dsscampaigns%26ss_campa=
+ign_id%3D6548dc68a18b8c4beb135d01%26ss_email_id%3D6548e292a6792d296a870320%=
+26ss_campaign_name%3DLatest%2BWeekly%2BNews%2Bfrom%2BKlever%26ss_campaign_s=
+ent_date%3D2023-11-06T13%253A00%253A01Z&amp;w=3D6387a86cf6a0e955eea76d2e&am=
+p;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3D_heE-kWY_NXLd2VyIMkU=
+eGUnhK0%3D" style=3D"color:#fff !important;"><img class=3D"brand-logo" src=
+=3D"https://images.squarespace-cdn.com/content/v1/6387a86cf6a0e955eea76d2e/=
+951e7786-7ed8-451b-a8df-014b6b9c5d7c/LogoCarreiras.png" height=3D"66" alt=
+=3D"Klever" style=3D"font-size:.6630127298444131em;display:block;border:0;t=
+ext-decoration:none;line-height:0;font-weight:normal;font-family:'DejaVu Sa=
+ns Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvet=
+ica, Arial, sans-serif;color:#fff;height:auto;max-height:66px;max-width:100=
+%;width:auto;"></a> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-body">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" width=3D"100%" id=3D"newsl=
+etter-section-body-cell">=20
+              <div id=3D"image-image-section-below-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <a href=3D"https://mgcp02.engage.squarespace-=
+mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhttps%3A%2F%2Fklever.io&amp=
+;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den=
+-US&amp;s=3D7_s95EEavZvdWbLH2if6VJRVuf4%3D" style=3D"color:#fff !important;=
+"><img class=3D"section-scaleable-image" src=3D"https://images.squarespace-=
+cdn.com/content/6387a86cf6a0e955eea76d2e/c4292b21-c481-4886-a065-ca36af7a04=
+35/Crypto_to_Fiat+%284%29.png?content-type=3Dimage%2Fpng&amp;format=3D750w"=
+ width=3D"594" alt=3D"" style=3D"font-size:.6630127298444131em;display:bloc=
+k;border:0;text-decoration:none;line-height:0;background-color:transparent;=
+font-weight:normal;height:auto;width:100%;max-width:100%;font-family:'DejaV=
+u Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', He=
+lvetica, Arial, sans-serif;"></a> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td valign=3D"top" class=3D"section-text-cell section=
+-content-cell" style=3D"padding-top:22px;padding-right:22px;padding-bottom:=
+22px;padding-left:22px;">=20
+                       <div class=3D"section-caption-text" style=3D"positio=
+n:relative;">
+                        <p style=3D"font-size:.9375em;line-height:1.618em;m=
+argin:0 0 1.25em 0;font-weight:normal;margin-top:0;margin-bottom:0;font-fam=
+ily:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica=
+ Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;color:#fff;text-=
+align:center;" class=3D"">Did you know you can convert your crypto to fiat =
+in Klever Wallet? </p>
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"line-line-section-1">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"line-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" width=3D"100%">=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" class=3D"line-section-table section-c=
+ontent" style=3D"width:50%;min-width:50%;">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"center" valign=3D"middle" class=3D"secti=
+on-content-cell" width=3D"100%" style=3D"padding-top:22px;padding-right:0;p=
+adding-bottom:22px;padding-left:0;">=20
+                       <div class=3D"basic-line" data-line=3D"solid" style=
+=3D"background:none;font-size:0;margin:0;line-height:0;height:0;width:100%;=
+border-style:solid none;border-width:1px 0 0px;border-color:#c517f2;">
+                        &nbsp;
+                       </div> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-2">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-3">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"text-section =
+section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:19px;padding-right:44px=
+;padding-bottom:0px;padding-left:44px;color:#fff;background-color:#060606;"=
+> <h3 style=3D"color:inherit;margin:1.414em 0 .5em;font-weight:400;line-hei=
+ght:1.25em;font-size:1.8744337499999997em;mso-line-height-alt:1.87443374999=
+99997em;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus San=
+s L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:0em;mar=
+gin-top:0px;margin-bottom:2rem;"><strong>Klever Wallet</strong></h3> </td>=
+=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-4">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <a href=3D"https://mgcp02.engage.squarespace-=
+mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhttps%3A%2F%2Fx.com%2Fkleve=
+r_io%2Fstatus%2F1721410200786092116%3Fs%3D20&amp;w=3D6387a86cf6a0e955eea76d=
+2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3DUGfMVT0LMMK386w=
+Guxgz04AeeII%3D" style=3D"color:#fff !important;"><img class=3D"section-sca=
+leable-image" src=3D"https://images.squarespace-cdn.com/content/6387a86cf6a=
+0e955eea76d2e/d7b5dce1-8fe7-440b-8b7b-c621150ab3fc/ALL_SWAP_PAIRS_02-11-202=
+3.png?content-type=3Dimage%2Fpng&amp;format=3D750w" width=3D"594" alt=3D"" =
+style=3D"font-size:.6630127298444131em;display:block;border:0;text-decorati=
+on:none;line-height:0;background-color:transparent;font-weight:normal;heigh=
+t:auto;width:100%;max-width:100%;font-family:'DejaVu Sans Condensed', 'Libe=
+ration Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-ser=
+if;"></a> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-5">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:20px;padding-left:44px;color:#fff;background-color:transpar=
+ent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;">Klever=
+ Wallet continues to improve, with recent updates fixing known bugs and exp=
+anding language options, including Ukrainian. The development team is setti=
+ng their sights on further translations, with Arabic, Swedish, and Japanese=
+ on the horizon. Quality testing of the Cardano network, user experience en=
+hancements, and gamification elements are also in the pipeline. Looking ahe=
+ad, the wallet will support additional networks like Acala, Karura, and mor=
+e, revamp its user interface, and introduce new staking options for various=
+ cryptocurrencies.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-6">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"text-section =
+section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:0px;padding-left:44px;color:#fff;background-color:#060606;"=
+> <h3 style=3D"color:inherit;margin:1.414em 0 .5em;font-weight:400;line-hei=
+ght:1.25em;font-size:1.8744337499999997em;mso-line-height-alt:1.87443374999=
+99997em;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus San=
+s L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:0em;mar=
+gin-top:0px;margin-bottom:2rem;"><strong>KleverChain &amp; KleverScan</stro=
+ng></h3> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-7">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <a href=3D"https://mgcp02.engage.squarespace-=
+mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhttps%3A%2F%2Fkleverscan.or=
+g&amp;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=
+=3Den-US&amp;s=3DoLuJtk4_hb8fJ7_6mf2o5mDchv8%3D" style=3D"color:#fff !impor=
+tant;"><img class=3D"section-scaleable-image" src=3D"https://images.squares=
+pace-cdn.com/content/6387a86cf6a0e955eea76d2e/eb61d1cd-a5c5-418f-9a63-0a133=
+5b95ee0/KFI_token+%282%29.png?content-type=3Dimage%2Fpng&amp;format=3D750w"=
+ width=3D"594" alt=3D"" style=3D"font-size:.6630127298444131em;display:bloc=
+k;border:0;text-decoration:none;line-height:0;background-color:transparent;=
+font-weight:normal;height:auto;width:100%;max-width:100%;font-family:'DejaV=
+u Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', He=
+lvetica, Arial, sans-serif;"></a> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-8">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:20px;padding-left:44px;color:#fff;background-color:transpar=
+ent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;">Klever=
+Scan's recent update has enhanced the user experience by introducing mobile=
+ tooltips and automatic user notifications for server issues. It's set to i=
+mprove its interface further, with a focus on mobile compatibility and the =
+addition of a KDA filter in the transactions chart. The platform's roadmap =
+includes an overhaul of the MultiContract feature and a comprehensive guide=
+ to help users navigate main contracts and signature pages.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"spacer-spacer-section-9">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"spacer-se=
+ction section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"middle" class=3D"section-c=
+ontent-cell" height=3D"22" style=3D"height:22px;"> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-10">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"text-section =
+section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:0px;padding-left:44px;color:#fff;background-color:#060606;"=
+> <h3 style=3D"color:inherit;margin:1.414em 0 .5em;font-weight:400;line-hei=
+ght:1.25em;font-size:1.8744337499999997em;mso-line-height-alt:1.87443374999=
+99997em;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus San=
+s L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:0em;mar=
+gin-top:0px;margin-bottom:2rem;"><strong>Klever Electronics</strong></h3> <=
+/td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-11">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <a href=3D"https://mgcp02.engage.squarespace-=
+mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhttps%3A%2F%2Fkleversafe.io=
+&amp;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=
+=3Den-US&amp;s=3DoOlxE6d1V3by0g46uK4-mEqRkO4%3D" style=3D"color:#fff !impor=
+tant;"><img class=3D"section-scaleable-image" src=3D"https://images.squares=
+pace-cdn.com/content/6387a86cf6a0e955eea76d2e/41889167-69f9-4d4c-9503-ee8ea=
+ad64aa8/KleverSafe_TrueRNG-%282%29.png?content-type=3Dimage%2Fpng&amp;forma=
+t=3D750w" width=3D"594" alt=3D"" style=3D"font-size:.6630127298444131em;dis=
+play:block;border:0;text-decoration:none;line-height:0;background-color:tra=
+nsparent;font-weight:normal;height:auto;width:100%;max-width:100%;font-fami=
+ly:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica =
+Neue', Helvetica, Arial, sans-serif;"></a> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-12">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:20px;padding-left:44px;color:#fff;background-color:transpar=
+ent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;">Klever=
+Safe has achieved significant milestones, successfully integrating support =
+for ADA and the Celestia mainnet (New Device Update coming soon). The FIDO =
+U2F feature is now entering the quality assurance phase. The team is focusi=
+ng on releasing a new firmware update that incorporates this security featu=
+re. The upcoming period will see a new batch of KleverSafe products ready f=
+or sale. Future plans include developing a new crypto payment system that s=
+upports multiple chains and launching a revamped landing page for KleverSaf=
+e.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-13">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"text-section =
+section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:0px;padding-left:44px;color:#fff;background-color:#060606;"=
+> <h3 style=3D"color:inherit;margin:1.414em 0 .5em;font-weight:400;line-hei=
+ght:1.25em;font-size:1.8744337499999997em;mso-line-height-alt:1.87443374999=
+99997em;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus San=
+s L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:0em;mar=
+gin-top:0px;margin-bottom:2rem;"><strong>Bitcoin.me</strong></h3> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-14">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <a href=3D"https://mgcp02.engage.squarespace-=
+mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhttps%3A%2F%2Fklever.org%2F=
+en%2Fblog%2Fbuy-and-hodl-klv-rewards-campaign%3Fss_source%3Dsscampaigns%26s=
+s_campaign_id%3D6548dc68a18b8c4beb135d01%26ss_email_id%3D6548e292a6792d296a=
+870320%26ss_campaign_name%3DLatest%2BWeekly%2BNews%2Bfrom%2BKlever%26ss_cam=
+paign_sent_date%3D2023-11-06T13%253A00%253A01Z&amp;w=3D6387a86cf6a0e955eea7=
+6d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3DPYan07RJ0Ek0E=
+JHfbeJf2jDzoAI%3D" style=3D"color:#fff !important;"><img class=3D"section-s=
+caleable-image" src=3D"https://images.squarespace-cdn.com/content/6387a86cf=
+6a0e955eea76d2e/17573033-055c-418d-b891-4079c70a3e58/Buy-%26-Hold-%28KLV%29=
+-16x9.png?content-type=3Dimage%2Fpng&amp;format=3D750w" width=3D"594" alt=
+=3D"" style=3D"font-size:.6630127298444131em;display:block;border:0;text-de=
+coration:none;line-height:0;background-color:transparent;font-weight:normal=
+;height:auto;width:100%;max-width:100%;font-family:'DejaVu Sans Condensed',=
+ 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sa=
+ns-serif;"></a> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-15">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:20px;padding-left:44px;color:#fff;background-color:transpar=
+ent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;">Bitcoi=
+n.me has made significant strides in improving its web interface for mobile=
+ users and tightening its operational controls. The platform is preparing t=
+o launch new tokens like XRP, Aura, and Dot, and integrate new features suc=
+h as a swap function, a more streamlined login process, internal transfers,=
+ and a referral program. These updates are expected to roll out gradually o=
+ver the coming months, enhancing user experience and expanding functionalit=
+y.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-16">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"text-section =
+section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:0px;padding-left:44px;color:#fff;background-color:#060606;"=
+> <h3 style=3D"color:inherit;margin:1.414em 0 .5em;font-weight:400;line-hei=
+ght:1.25em;font-size:1.8744337499999997em;mso-line-height-alt:1.87443374999=
+99997em;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus San=
+s L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:0em;mar=
+gin-top:0px;margin-bottom:2rem;"><strong>Web &amp; Design</strong></h3> </t=
+d>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"image-image-section-below-17">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"image-sec=
+tion below-layout section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td>=20
+                   <table role=3D"presentation" width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td align=3D"left" valign=3D"middle" class=3D"section=
+-image-cell section-content-cell section-hoverable-image" data-aspect=3D"OR=
+IGINAL" style=3D"padding:0;"> <img class=3D"section-scaleable-image" src=3D=
+"https://images.squarespace-cdn.com/content/6387a86cf6a0e955eea76d2e/ccf590=
+3f-56d9-4f5b-a89c-fa9a13e49ead/Screenshot+2023-11-06+111446.png?content-typ=
+e=3Dimage%2Fpng&amp;format=3D750w" width=3D"594" alt=3D"" style=3D"font-siz=
+e:.6630127298444131em;display:block;border:0;text-decoration:none;line-heig=
+ht:0;background-color:transparent;font-weight:normal;height:auto;width:100%=
+;max-width:100%;font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Ni=
+mbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif;"> </td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div>=20
+              <div id=3D"text-text-section-18">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"transparent" class=3D"text-sect=
+ion section-content">=20
+                <tbody>
+                 <tr>=20
+                  <td valign=3D"top" class=3D"section-text-area section-con=
+tent-cell padding-mobile-both" style=3D"padding-top:20px;padding-right:44px=
+;padding-bottom:20px;padding-left:44px;color:#fff;background-color:transpar=
+ent;"> <p class=3D"" style=3D"color:inherit;font-size:.9375em;line-height:1=
+=2E618em;margin:0 0 1.25em 0;font-weigh=
+t:normal;margin-top:0;margin-bottom:0;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;">The We=
+b and Design team has been industrious, rolling out new designs for Wallet =
+Developers and Individual landing pages, improving post previews, and intro=
+ducing a new Sitemap navigator. The design of Klever Hub has been finalized=
+, along with adjustments to wallet creation workflows. Efforts have also be=
+en directed at enhancing the brand's SEO standing and preparing for marketi=
+ng pushes with influencers.</p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table>=20
+          <table role=3D"presentation" width=3D"100%" cellpadding=3D"0" cel=
+lspacing=3D"0" border=3D"0" id=3D"newsletter-section-footer">=20
+           <tbody>
+            <tr>=20
+             <td align=3D"center" valign=3D"top" id=3D"newsletter-section-f=
+ooter-cell">=20
+              <div id=3D"footer-footer-section-stacked-top-0">=20
+               <table role=3D"presentation" width=3D"100%" cellpadding=3D"0=
+" cellspacing=3D"0" border=3D"0" bgcolor=3D"#060606" class=3D"footer-sectio=
+n footer-section-stacked section-content" style=3D"background-color:#060606=
+;">=20
+                <tbody>
+                 <tr>=20
+                  <td align=3D"center" valign=3D"top" class=3D"section-text=
+-area section-content-cell" style=3D"padding-top:22px;padding-right:22px;pa=
+dding-bottom:22px;padding-left:22px;"> <a class=3D"brand-logo-link" href=3D=
+"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870320&=
+amp;u=3Dhttps%3A%2F%2Fklever.org%2F%3Fss_source%3Dsscampaigns%26ss_campaign=
+_id%3D6548dc68a18b8c4beb135d01%26ss_email_id%3D6548e292a6792d296a870320%26s=
+s_campaign_name%3DLatest%2BWeekly%2BNews%2Bfrom%2BKlever%26ss_campaign_sent=
+_date%3D2023-11-06T13%253A00%253A01Z&amp;w=3D6387a86cf6a0e955eea76d2e&amp;c=
+=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3D_heE-kWY_NXLd2VyIMkUeGU=
+nhK0%3D" style=3D"color:#fff !important;"><img class=3D"brand-logo" src=3D"=
+https://images.squarespace-cdn.com/content/v1/6387a86cf6a0e955eea76d2e/951e=
+7786-7ed8-451b-a8df-014b6b9c5d7c/LogoCarreiras.png" height=3D"22" alt=3D"Kl=
+ever" style=3D"font-size:.6630127298444131em;border:0;text-decoration:none;=
+line-height:0;font-weight:normal;font-family:'DejaVu Sans Condensed', 'Libe=
+ration Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-ser=
+if;margin-bottom:13.75px;color:#fff;display:inline;height:auto;max-height:2=
+2px;max-width:100%;width:auto;"></a>=20
+                   <table role=3D"presentation" class=3D"social-links" cell=
+padding=3D"0" cellspacing=3D"0" border=3D"0">=20
+                    <tbody>
+                     <tr>=20
+                      <td valign=3D"top" width=3D"30" height=3D"52"> <a hre=
+f=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870=
+320&amp;u=3Dhttps%3A%2F%2Fwww.youtube.com%2F%40KleverFinance&amp;w=3D6387a8=
+6cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=
+=3Dwr15KBjnQzFhkr5q8lk6WUkzdd4%3D" style=3D"color:#fff !important;text-deco=
+ration:none;"> <img class=3D"social-link-icon" src=3D"https://assets.square=
+space.com/composer/assets/images/email/social-icons/youtube+light.png" widt=
+h=3D"22" height=3D"22" max-width=3D"22" alt=3D"youtube" style=3D"font-size:=
+=2E6630127298444131em;text-decoration:n=
+one;line-height:0;font-weight:normal;f=
+ont-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'He=
+lvetica Neue', Helvetica, Arial, sans-serif;display:block;margin:0 auto;bor=
+der:0;"> </a> </td>=20
+                      <td class=3D"" width=3D"20"></td>=20
+                      <td valign=3D"top" width=3D"30" height=3D"52"> <a hre=
+f=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870=
+320&amp;u=3Dhttps%3A%2F%2Ftwitter.com%2Fklever_io&amp;w=3D6387a86cf6a0e955e=
+ea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3D5FWH0xu5Ty=
+5ROFeY3Zxzy5V1SQw%3D" style=3D"color:#fff !important;text-decoration:none;"=
+> <img class=3D"social-link-icon" src=3D"https://assets.squarespace.com/com=
+poser/assets/images/email/social-icons/twitter+light.png" width=3D"22" heig=
+ht=3D"22" max-width=3D"22" alt=3D"twitter" style=3D"font-size:.663012729844=
+4131em;text-decoration:none;line-height:0;font-weight:normal;font-family:'D=
+ejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue'=
+, Helvetica, Arial, sans-serif;display:block;margin:0 auto;border:0;"> </a>=
+ </td>=20
+                      <td class=3D"" width=3D"20"></td>=20
+                      <td valign=3D"top" width=3D"30" height=3D"52"> <a hre=
+f=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870=
+320&amp;u=3Dhttps%3A%2F%2Fwww.instagram.com%2Fklever.io%2F&amp;w=3D6387a86c=
+f6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3Dd=
+oE5i8Urhdv-S25qKp7CoW5a1JE%3D" style=3D"color:#fff !important;text-decorati=
+on:none;"> <img class=3D"social-link-icon" src=3D"https://assets.squarespac=
+e.com/composer/assets/images/email/social-icons/instagram+light.png" width=
+=3D"22" height=3D"22" max-width=3D"22" alt=3D"instagram" style=3D"font-size=
+:.6630127298444131em;text-decoration:none;line-height:0;font-weight:normal;=
+font-family:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'H=
+elvetica Neue', Helvetica, Arial, sans-serif;display:block;margin:0 auto;bo=
+rder:0;"> </a> </td>=20
+                      <td class=3D"" width=3D"20"></td>=20
+                      <td valign=3D"top" width=3D"30" height=3D"52"> <a hre=
+f=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870=
+320&amp;u=3Dhttps%3A%2F%2Fwww.facebook.com%2Fklever.io&amp;w=3D6387a86cf6a0=
+e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3D60sZy=
+3jpMI53JnCxdxoI24i-Vu8%3D" style=3D"color:#fff !important;text-decoration:n=
+one;"> <img class=3D"social-link-icon" src=3D"https://assets.squarespace.co=
+m/composer/assets/images/email/social-icons/facebook+light.png" width=3D"22=
+" height=3D"22" max-width=3D"22" alt=3D"facebook" style=3D"font-size:.66301=
+27298444131em;text-decoration:none;line-height:0;font-weight:normal;font-fa=
+mily:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetic=
+a Neue', Helvetica, Arial, sans-serif;display:block;margin:0 auto;border:0;=
+"> </a> </td>=20
+                      <td class=3D"" width=3D"20"></td>=20
+                      <td valign=3D"top" width=3D"30" height=3D"52"> <a hre=
+f=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870=
+320&amp;u=3Dhttps%3A%2F%2Fdiscord.gg%2Fklever-io&amp;w=3D6387a86cf6a0e955ee=
+a76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-US&amp;s=3DnL6aBMgby71=
+GpQfsa1F6oEwyMzE%3D" style=3D"color:#fff !important;text-decoration:none;">=
+ <img class=3D"social-link-icon" src=3D"https://assets.squarespace.com/comp=
+oser/assets/images/email/social-icons/discord+light.png" width=3D"22" heigh=
+t=3D"22" max-width=3D"22" alt=3D"discord" style=3D"font-size:.6630127298444=
+131em;text-decoration:none;line-height:0;font-weight:normal;font-family:'De=
+jaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica Neue',=
+ Helvetica, Arial, sans-serif;display:block;margin:0 auto;border:0;"> </a> =
+</td>=20
+                     </tr>=20
+                    </tbody>
+                   </table> <p class=3D"footer-text" style=3D"line-height:1=
+=2E618em;font-weight:normal;font-family=
+:'DejaVu Sans Condensed', 'Liberation=20=
+Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif;lett=
+er-spacing:-.01em;color:#fff;font-size:11px;margin:0 0 13.75px 0;padding:0;=
+">Crypto Made Simple</p> <p class=3D"footer-company-info" style=3D"line-hei=
+ght:1.618em;font-weight:normal;font-family:'DejaVu Sans Condensed', 'Libera=
+tion Sans', 'Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif=
+;letter-spacing:-.01em;color:#fff;font-size:11px;margin:0 0 13.75px 0;paddi=
+ng:0;"> <a style=3D"color:#fff;text-decoration:none;font-size:inherit;font-=
+family:inherit;font-weight:inherit;line-height:inherit;cursor:default;">Kle=
+ver, 24 Zollikerstrasse, Zollikon, ZH, 8702, Switzerland</a> </p> <p class=
+=3D"footer-links" style=3D"line-height:1.618em;font-weight:normal;font-fami=
+ly:'DejaVu Sans Condensed', 'Liberation Sans', 'Nimbus Sans L', 'Helvetica =
+Neue', Helvetica, Arial, sans-serif;letter-spacing:-.01em;font-size:11px;co=
+lor:#fff;margin:0 0 13.75px 0;padding:0;"> Powered by <a href=3D"https://mg=
+cp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a870320&amp;u=3Dhtt=
+ps%3A%2F%2Fwww.squarespace.com%3Fchannel%3Dproduct_refer%26subchannel%3Dcus=
+tomer%26source%3Demail_campaigns_button%26campaign%3D6387a86cf6a0e955eea76d=
+2e%26utm_medium%3Dproduct_refer%26utm_source%3Demail_campaigns_button%26ss_=
+source%3Dsscampaigns%26ss_campaign_id%3D6548dc68a18b8c4beb135d01%26ss_email=
+_id%3D6548e292a6792d296a870320%26ss_campaign_name%3DLatest%2BWeekly%2BNews%=
+2Bfrom%2BKlever%26ss_campaign_sent_date%3D2023-11-06T13%253A00%253A01Z&amp;=
+w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den-=
+US&amp;s=3DhXVFouHcG7QITF9NBRwR2Y5s0B8%3D" class=3D"sqsp-link" style=3D"col=
+or:#fff;text-decoration:underline;display:inline-block;">Squarespace</a> </=
+p> <p class=3D"footer-links" style=3D"line-height:1.618em;font-weight:norma=
+l;margin-bottom:0;font-family:'DejaVu Sans Condensed', 'Liberation Sans', '=
+Nimbus Sans L', 'Helvetica Neue', Helvetica, Arial, sans-serif;letter-spaci=
+ng:-.01em;font-size:11px;color:#fff;margin:0 0 13.75px 0;padding:0;"> <a hr=
+ef=3D"https://mgcp02.engage.squarespace-mail.com/r?m=3D6548e292a6792d296a87=
+0320&amp;u=3Dhttps%3A%2F%2Fcampaign-preferences.com%2Funsubscribe%2Fny4cj2k=
+aat7ybDwlXP7BwhtFE91Kn8dtdeuftCTVx6_b42q4DIurxUA_g3xaZpvXQr5JlUg2uyhmQmdqSH=
+KH3NNhIceMhRE05dvkYjvMn_cbyGtJMC5lxhodhRM8cMH69ZvJGn6hDGcaFdwF-a6ZrasubGdp8=
+MgNANheWyc-Op1A8hmxoRO-ZJ0ua_Bi1AP_IgH_0OPZZwH2hNZ1qxKrw8aY1u5IcPOmNb7nGFDE=
+xyFmYREew1SywHEJZvdSMizSCx6s5axkZkhqN5JGP1gi7lOA29ocxIyO18IOXf1dNrgVy9kYP0Z=
+0ahHGxH7eBZ5QCoCwGeF-I1TtOPk7k21dPwxGejOs3l3xOzJJwX99cQt-O4tfA3Q3QbY%3D&amp=
+;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b8c4beb135d01&amp;l=3Den=
+-US&amp;s=3DVL5Q5yXXv_3iinNfHEA8pP7-5Hw%3D" class=3D"unsubscribe-link" styl=
+e=3D"color:#fff;text-decoration:underline;"> <span class=3D"unsubscribe-lin=
+k-text" style=3D"font-size:inherit;font-weight:inherit;line-height:inherit;=
+margin:0;">Unsubscribe</span> </a> </p> </td>=20
+                 </tr>=20
+                </tbody>
+               </table>=20
+              </div> </td>=20
+            </tr>=20
+           </tbody>
+          </table> </td>=20
+        </tr>=20
+       </tbody>
+      </table> </td>=20
+    </tr>=20
+   </tbody>
+  </table> =20
+  <img src=3D"https://mgcp02.engage.squarespace-mail.com/v2/a.gif?m=3D6548e=
+292a6792d296a870320&amp;w=3D6387a86cf6a0e955eea76d2e&amp;c=3Db_6548dc68a18b=
+8c4beb135d01&amp;s=3DktfqYp8yM28ybKytMInFypFiaRQ%3D" alt=3D"" width=3D"0" h=
+eight=3D"0">
+ <img width=3D"1px" height=3D"1px" alt=3D"" src=3D"https://email.mgcp02.squ=
+arespace-mail.com/o/eJx0jztu6zAQRVdjdk_gnzMFF-DirSGYGY4VAvo4ooxsP1CKdO5ucw_=
+OaVVKEACj1WVEXxDQGl2pL_91DJr13mpOEdSjp1zQN4-ZoNjgrfmsMUbLDt1Dg3MUYyAvTFw0gU=
+eb2PS37ykHKARZHpmsYkqqVHLzeot2neVp_TS-XnToeJLov0tpkn011-jbfG-VPy52kwzkgEEiK=
+7uQmnXmqMe-0dIWWlmPc-uyLzTO10yt36Kd_2jfyqOfv5VvdH4CAAD__1wqV78"></body>
+</html>
+--83cf5b0a3af3956d304062c073d67e9734d94cb10c28c91d6cff186a8506--

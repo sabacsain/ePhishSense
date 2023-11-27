@@ -1,0 +1,1317 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:547:b0:350:f1df:6bf4 with SMTP id i7csp1366612ils;
+        Fri, 22 Sep 2023 22:05:51 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEiex+UAxDLkWXrJwjkOTsP8Rabcsp7yF8ImXx7PEfeJ6J5L/xNf3H1oEc6el/UgUon3YhZ
+X-Received: by 2002:a25:e713:0:b0:d81:817c:580 with SMTP id e19-20020a25e713000000b00d81817c0580mr1265123ybh.25.1695445551641;
+        Fri, 22 Sep 2023 22:05:51 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1695445551; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YhGGUnqngmq2zu9OSJ8pJAV/3+B/L+l/QioIGFNbSj+TIE4V7mCkb/ujKcuLX/lpSb
+         9gW+D8Ra//BefbXhW69NvUsGL/8ENUL8bPCE0wa5y5YHVtdV35clvooT2LVd1UMaju0H
+         qP+ULPlbf/9DSq5XEpX021WCLcKTQ2sM/atxVG3JeRJ6R/h1rfO1L+gwgxtImuoM2gBE
+         ZFgUAywLTRVdt5Plqnjz6mgSPJK/TnHBmwqiOkYodk+kUZjwD/i+CbMC/pPrB2fFpqMW
+         L5c+KXj5k1t58fvKFbym9eGU7afd64/gYvhei3tgNagcA0DtIW7cCfZtwyoC3FlzKGN/
+         yH0g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-unsubscribe:to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=b3NKRTouwyZ3Bo2xU7XEV37GPWwrncw1fBwRdvvE5Jo=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=0TM7Mi1yMEOc1+0O1R3caoI0s8FR4+T7o5Pt/UPgIgHLxpI83jeGmYUBuhv549HGBF
+         m6Vx9Wiff9ItaaYdfhRJ5ia0IAeejaVXODdjnJSCqDZJBkws2TXjJq7tRQuyu6f5W1Qp
+         xpWfuS7EGaSABbqD9dOgPvxIjYTvINBcLKmRxOUf9KixwP9F36Zxqe+PsqTKYAMHs7lH
+         EWrUw70P8hjZDpMZXDeT8xpYycacGtKeqvXR/Pc+vy5XTNalXJBd2O5N2k6Ij/PohqrO
+         mPywWxxedd9r33oxFuvwxpZgKN8vLLqduOWFvvaNsPP7AtAEHt2bJsszTQctFyA0GeXX
+         a2Aw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=fail header.i=@lalamove.com header.s=s1 header.b=WnohFE5P;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iSpMVKC3;
+       spf=pass (google.com: domain of bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com designates 149.72.29.95 as permitted sender) smtp.mailfrom="bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=lalamove.com
+Return-Path: <bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com>
+Received: from o2.sendgrid.lalamove.com (o2.sendgrid.lalamove.com. [149.72.29.95])
+        by mx.google.com with ESMTPS id s3-20020a637703000000b00578bb009dd1si5241592pgc.809.2023.09.22.22.05.51
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Fri, 22 Sep 2023 22:05:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com designates 149.72.29.95 as permitted sender) client-ip=149.72.29.95;
+Authentication-Results: mx.google.com;
+       dkim=fail header.i=@lalamove.com header.s=s1 header.b=WnohFE5P;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=iSpMVKC3;
+       spf=pass (google.com: domain of bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com designates 149.72.29.95 as permitted sender) smtp.mailfrom="bounces+16687471-fa18-ronaldlambertnicolastugadi=gmail.com@em1498.lalamove.com";
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=lalamove.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lalamove.com;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=s1; bh=b3NKRTouwyZ3Bo2xU7XEV37GPWwrncw1fBwRdvvE5Jo=;
+	b=WnohFE5PXy8rycx/cRkCvl0BCkxW3tF9gOQ8ug2goddljjSie38g45k0hzcrs/issZXA
+	z6UUPq6Sxe/X4ZZUS1OQciWQ6AVgCfrLum/TQqkgse6EocewIreK7E1WQGmqtUkv7tF3Tv
+	W2+HMyXZiH6rPQ6xKy/4Hju6/s2GFtjL+ClLzTEVx5CY34aJ6nA2NCU6NfUlcGTOmCjwsa
+	y9+ckr7LNXDfQYDEiGEQ3dOsQnjZV3roynZEonuAcV/GntDjjmzhIMY3/cswDnsoIRVnxY
+	DXlR6xddcMAa+eO0pIh5AvIxZ8wti6JDGgLZFPrCA6mdcTPZqyI0eeUe8QqcTeSA==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:x-feedback-id:to:
+	list-unsubscribe:cc:content-type:from:subject:to;
+	s=smtpapi; bh=b3NKRTouwyZ3Bo2xU7XEV37GPWwrncw1fBwRdvvE5Jo=;
+	b=iSpMVKC3Z4XKZWspaAcZzuxSNZQHHwyL0U5JYjP0X30DbVaY7cuNzU/2yyAE2qeMWZRD
+	qRQMjeAJpiecQhs4rTKmSgc4lKB0lm2scnIHncC1tug2kLzps/uGV4fCEX1RK+tMIdd9lC
+	ngSo406bKw6c6H/yG0EyrMzSbou+Fwz0M=
+Received: by filterdrecv-567b479f9-8qm2t with SMTP id filterdrecv-567b479f9-8qm2t-1-650E722D-18
+        2023-09-23 05:05:49.70267079 +0000 UTC m=+11683639.968625036
+Received: from MTY2ODc0NzE (unknown)
+	by geopod-ismtpd-7 (SG) with HTTP
+	id 8m2-qGXuS-ecHoQWK3hrqA
+	Sat, 23 Sep 2023 05:05:49.508 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=b4eb90d7f605abaeec5bb8101316d65ff67ca46f0e6b842abc219d2d4cb7
+Date: Sat, 23 Sep 2023 05:05:50 +0000 (UTC)
+From: Lalamove <hello@lalamove.com>
+Mime-Version: 1.0
+Message-ID: <8m2-qGXuS-ecHoQWK3hrqA@geopod-ismtpd-7>
+Subject: More 4-Wheel coupons here =?UTF-8?B?8J+OgQ==?=
+X-Feedback-ID: 16687471:SG
+X-SG-EID: 
+ =?us-ascii?Q?VWVqLJMCzGAwH94V0Qg+uq5J6p4LWdoDlRkKlkZSjJf9xehzYEnRgrd7QbI4aL?=
+ =?us-ascii?Q?Ujl5n5zynvtZY3bPFVEFAKrzCx2k+okelspJvT+?=
+ =?us-ascii?Q?lEWgox+gNOdnmf=2Fn5AAUKn8E9l2FIYPjQp0u0vI?=
+ =?us-ascii?Q?Qlu4qUVNsgDEd=2FmMEg+ZsOS3onJiq2yf0QK9re8?=
+ =?us-ascii?Q?cN8ABTdpaoFg9LSOqIYYkOpgtJ0JfklVpFthJWz?=
+ =?us-ascii?Q?RL0mgrZK40AYofvnKvnaB30hhImO6gnJBsOWLfF?=
+ =?us-ascii?Q?DXscW1q=2FGLvgpfOep8idg=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKG7JrWt4vgUzrFUoqKgx?=
+ =?us-ascii?Q?=2FvQTN9I=2Fqi7umvRYFIUkHHxy7ssDG1XIOdTXcmB?=
+ =?us-ascii?Q?SEz0l2IMoes922VUXOepufdlU91GUyTNGrJJ50=2F?=
+ =?us-ascii?Q?=2FfIrFxblgyLmC85Z+c90Exx4z0JU0podlE7LtSQ?=
+ =?us-ascii?Q?qzA0=2FOznpEjS=2FYZba=2F2WsDJGPVnI4OkltIO9dK7?=
+ =?us-ascii?Q?TRh=2FUy9nBRZYTmG+ggLiXF+kdEPsRbNFQle2R8O?=
+ =?us-ascii?Q?Qartg6SH2lw7cyWcuSgNMXgOdR0Qfv+cLxsc+U6?=
+ =?us-ascii?Q?EJIsySZudhC3D6emkAU6kUMHTtwo1wdt2zmjlkd?=
+ =?us-ascii?Q?vuOn5Ox2mWICS7=2FxEzSn+ZfCpeudifMmjn=2Fc5uM?=
+ =?us-ascii?Q?ndQcYpBIpmrVadXwSavptM0VRiesGDtJ94MsJjM?=
+ =?us-ascii?Q?M2mdua5rDFHalsSbTFzFZmP=2FcoyA=2F2w49BqowNA?=
+ =?us-ascii?Q?rURP3+1yedh1atFiai0QGEwxAtG0B8YWfL3iOD8?=
+ =?us-ascii?Q?d4N9xK0w9pEkRxboSIM38i2RAnoKiLB5yTHzWKP?=
+ =?us-ascii?Q?EdirdSfMH8KxYULUh+3+ZjAV7UeH2iGJ9m=2FJfAR?=
+ =?us-ascii?Q?bgQI2J3?=
+To: ronaldlambertnicolastugadi@gmail.com
+X-Entity-ID: prVQZNvLfiuvZIvG2Pz+BQ==
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3Aunsubscribe=40em1498=2Elalamove=2Ecom=3Fsubject=3D16687471=2Egmef8?=
+ =?us-ascii?Q?N3FAAL8iVpOG7tycB0GE89YsQkVm9L2Q0DaLV5o?=
+ =?us-ascii?Q?MDAwdTAwMKwjeEnb7v69w09n-XW8QkY9uRr1QUK?=
+ =?us-ascii?Q?4tEZdkZZWBZyIanASkXYuW82vPVtlbQKEDnPcPM?=
+ =?us-ascii?Q?-hT8N39PJAmbciEWu4ZHPi4Xww2Eu9SLTRQtdPA?=
+ =?us-ascii?Q?dWZQ2lmEgbnIZhGwn=5Fk=5F2FVqEnUyNzUsEJJg6CD?=
+ =?us-ascii?Q?KeI=3D=2EYpOerJKL9x7e3kVCS4jVUYmX9fBiQ1NAEe?=
+ =?us-ascii?Q?BQTSMaYcxoMDAwdTAwMInwlCuHfbw8pdq6ciiBy?=
+ =?us-ascii?Q?ZWomsSCxGrIEzaNo8-j3XAtye1hEgHRZ=5FLFhT0u?=
+ =?us-ascii?Q?VOkUyv5TLehlduvNXez08wmiyCbbQgmFCOpad5C?=
+ =?us-ascii?Q?ccWvqLr2a0fXGiN1Go7Laheh9mCqC6SvSwPnJS1?=
+ =?us-ascii?Q?UQUZSkX=5F9J51N2VdJ0Q1SuQvnogtocymx=5F5xP1l?=
+ =?us-ascii?Q?cBXO=5F3QLs4W8-G8noIobltK2Ct6Q8KAM=5Fd1hqpb?=
+ =?us-ascii?Q?JcIhLvbSx23BVPX8JuuoISuGm4pwffkad3W-zK4?=
+ =?us-ascii?Q?1c03zc3SjHtTCWpF0qPCopO1DFaYn4zk16JUspo?=
+ =?us-ascii?Q?8rIQybPNboYgvBgRfyPuGto3kkYBA4dymALKGKu?=
+ =?us-ascii?Q?byoMNC-YJzWcNxGNYzgu5nJPoA6-tK6yh7Qo68y?=
+ =?us-ascii?Q?CQKQmX=5FvwRT7-Y7pwCMcClt9PbkVjX2qmokvR0T?=
+ =?us-ascii?Q?2RPGjjpj4wDJONRUkDV=5FGVUl94daI4meAVtZI5E?=
+ =?us-ascii?Q?APJmWJkmtW=5FieOlI=5F-9SSl0C2MDt2daAxZIyTJv?=
+ =?us-ascii?Q?DIiSSFoB8nVZiLvYYxQ2zG3dagT7rmqugXw1STf?=
+ =?us-ascii?Q?GJPZtM4jKOrD6tBsJ21ixlslYQVMtpr4-cimSnv?=
+ =?us-ascii?Q?bnbqE22iiUcbmwqz3LER9uoAEPeNjTxCy7aDwgP?=
+ =?us-ascii?Q?IqQvxEk81nHVFFUI1MxRed9Pm=5Ff-nb0JgaNz2AJ?=
+ =?us-ascii?Q?KTCHRDU4b9mNcjMGwqNUbxFLNfy33ZGS4xPWz3a?=
+ =?us-ascii?Q?p-q-r1nntYkU5mIK4P29QT=5FsFQReanK=5FN1faAou?=
+ =?us-ascii?Q?RBq8=3D=3E?=
+
+--b4eb90d7f605abaeec5bb8101316d65ff67ca46f0e6b842abc219d2d4cb7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+Click here to claim!
+
+( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8Wzcinwivb7OFstu-2F=
+7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTKqkyyT2JZywcGwoC03A-2FAxjzII=
+O9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2FPLzDvOeQUrYfJ4p2y4jdJCd7Obt=
+M4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN0Zve45Og20GDZlkxBIpQpK0-3Dc=
+hYE_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOv=
+hkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAb=
+aae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ=
+2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2=
+Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNY=
+xGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2F=
+bxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6Sz=
+Qi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4j=
+IPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix6=
+laBeKZ-2FCuQeKvuwBOlaLdv4btK8XgcfrfFCeOtQZyGn0uTaIoilio-2FikndduO6SWCoVgWni=
+Qfvth9RmRpGSeMHfaEuBuXdfSMLHeCh7kO-2Fjx0q0eHHeMXS0bZYSYySUDWU0i4FNuIIdZTzUU=
+OUKQQZ2JbSVCZAFCMeye5haAjZw-3D-3D )
+
+Get =E2=82=B1575 worth of 4-wheel coupons *!* **
+*Just click* *Refer a Friend.*
+
+Share the convenience of Lalamove's affordable and reliable delivery servic=
+es
+with your friends and *get rewarded* *with 4-wheel discount vouchers* !
+
+Not sure how it's done?
+Check out the steps below.
+
+( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8Wzcinwivb7OFstu-2F=
+7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTKqkyyT2JZywcGwoC03A-2FAxjzII=
+O9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2FPLzDvOeQUrYfJ4p2y4jdJCd7Obt=
+M4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN0Zve45Og20GDZlkxBIpQpK0-3Dk=
+evX_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOv=
+hkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAb=
+aae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ=
+2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2=
+Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNY=
+xGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2F=
+bxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6Sz=
+Qi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4j=
+IPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix5=
+QVg2rZZ2axFSrPQ84BI3LWJocBUO-2BT8fz8kLovNTrnPKtPuF2C9KRFii00FPW7zWcHasEj7ur=
+F2wczJPGoj7rbnpVZ6GToRg9ILbZDiwK-2Fi-2F5IPz3rtSUCS1Ns9zkddkIOGHLnwtxdKKS0ag=
+MNiin-2BrSCKlM2Q5g19n6HuhaaQA-3D-3D )
+
+After your friend successfully creates an account and places their order,
+the amount earned and number of successful referrals will appear
+in the " *Refer a Friend* " page.
+
+Simply send your friends a *referral code* through your Lalamove app
+and enjoy the discount once your friend signs up and makes their first orde=
+r with us.
+Your friend will receive the discount after signing up.
+
+Refer a Friend now! ( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1=
+S8Wzcinwivb7OFstu-2F7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTKqkyyT2J=
+ZywcGwoC03A-2FAxjzIIO9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2FPLzDvOe=
+QUrYfJ4p2y4jdJCd7ObtM4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN0Zve45O=
+g20GDZlkxBIpQpK0-3DcIAx_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY=
+-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsI=
+pZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliD=
+tMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqT=
+RMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIU=
+N0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbX=
+Y3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FX=
+NNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr=
+9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJ=
+txWbjFXm4st9lpNMyix6CnXlX3BZSZul2ueiczlReZQYW15c5vxErSiOerxDwnzD-2F-2F0z0x9=
+Y-2FT-2FnOkS-2FhTnNrWb-2FfOCTXCUJRJdYieh4Tl4DauouR8mpsMvRasgvXP6Bbuo5n-2Bjr=
+Vwt-2FjZ-2FWFJEtSZSO-2BAWYuqToAFUp-2BGzP1EomnmPBBbiVe62QRjfK97g-3D-3D )
+
+Got questions?
+Please refer to the Terms and Conditions here.
+
+Terms & Conditions ( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S=
+8Wzcinwivb5NTf8Zh7G-2Boc-2FZacZ9xmpRewFHooh-2BT5CraOLBHws3-2BAEVHm1Fm-2Fbnp=
+2OgEAefICQ-3D-3DAbIh_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZh=
+nUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMR=
+LvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMS=
+yI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0S=
+u136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3I=
+lrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV=
+0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BO=
+AK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxW=
+bjFXm4st9lpNMyix47qsV1VZjjBNKcWzXY-2BK-2FRvvvsFlb6EjTxXUNryBEeEdbnjQe1KzD1R=
+aOQrM1ua48SG4393eRWrLtEq-2Fra83WZ1jBJ9TNXYF5IoCsycPkZjhz-2Bk3vsrjtyWu4HCQJz=
+1qgOz0VlLa82UCewP-2FZ9VMxTjn2rKpztNpzEuJ9mgkkGgg-3D-3D )
+
+Follow us on: Facebook ( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXR=
+UL1S8Wzcinwivb-2BR7L-2B7UDi-2FyN4Sytai4QlzdVIgGNDQgDzM0cnsF68EAZMet_HPC5-2B=
+lCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lr=
+cR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3p=
+ExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puP=
+mV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-=
+2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kIt=
+BzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw=
+-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rv=
+TL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGV=
+I0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix6wQ2UXymnols=
+PC5HW5Loirijag2uq2nuwsiIFT2ABch1tsY2a3FeNrmfDZupsojJ507B6oj-2BkpOK7Z8OS2iMf=
+qiLdfIubUdvwLg1b4YVfP57i1u5W1SFieMMNR3uGB-2Fp1ffAtVeazmKbpCwFwHfQH2bNGLIoL6=
+Uz0L3mog2i5Bng-3D-3D ) Instagram ( http://url1725.lalamove.com/ls/click?upn=
+=3Dem0JkXRUL1S8Wzcinwivb68vC2A6EB0qzybwVn4SG-2By8yDv-2FhFZWCyi53bEF4k-2Bj1q=
+Hq_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvh=
+kL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAba=
+ae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2=
+ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2N=
+a4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYx=
+GNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2Fb=
+xFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQ=
+i-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jI=
+PkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix7p=
+XTzj-2Bp8nvIdt6lTDOzYvPf9qEa1fcLau-2BbHX6G6o-2FOCO5ySa996GzTYMBHVUTo5jnrp5I=
+E1l1jIYfEDnX4ty7oVgv9Kom3JMcsVsvsdshBBfsck2Ix5dP0q6VYQ7wuzthsMrfS6MDAy13-2B=
+GJmQLPDntcfeRZUxPSks5I-2BOCwyg-3D-3D ) Youtube ( http://url1725.lalamove.co=
+m/ls/click?upn=3Dem0JkXRUL1S8Wzcinwivb9uzoVgP4sn15ERNsJNZKX1ekY7emxvmcEHo7F=
+MCaar-2B-2By48pegnuEQsK4MaAiI1OJGhi2k7O93b3MOYTbGHRhA-3DnveS_HPC5-2BlCj2pcW=
+YfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqE=
+iV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pN=
+saiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbk=
+ye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j=
+2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-=
+2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2K=
+pZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o=
+0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvq=
+GBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix6eSX2-2Fd6x-2F0C0A2=
+DQpHQqYp-2BKJCXTa1dj3fhp1dZ6kdHrqudSo6ExP7s-2F-2FHAxQOTzPWnWT9rYnBgWJZM-2B8=
+u-2FK4pjkOXjpf-2FmmYICnd8M-2Fsrm9Tij9nYheb7dy1XYo6nDwETvwQVIAMv7ARhVIB1d6H0=
+W13GSG6pWMgX3f3FZcdLw-3D-3D ) Linkedin ( http://url1725.lalamove.com/ls/cli=
+ck?upn=3Dem0JkXRUL1S8Wzcinwivb3dCLBmo2R8-2FMmGC6rD7nvoHIFm5l5PaQThoHn3vnBn1=
+fRJ1Bo6F-2FaCI7pgGCyqgsg-3D-3D0DJl_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFX=
+yGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm=
+28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJ=
+e7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQm=
+S915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV=
+-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iy=
+i-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaML=
+UMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1D=
+OnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRN=
+Oj8GY9tKSrJtxWbjFXm4st9lpNMyix4Eu0WXR4uSyJogQ-2BLKJCnjm4TUHnjMCkSA4QqXtQoiF=
+Yv7IpGq02Y38avQ67nNtxtpfN4UBJ-2BsAUEjYZt9JGQAXchU6XECGbNyeaX45PGub5Lnwk8Wf8=
+WaTrqOVKwnI4a4zVnzloGc2li0vaLTpiRQVbhizlc935rjZbsOTR1uDw-3D-3D )
+
+Facebook ( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8Wzcinwivb=
+-2BMU0RzaJTQ5xwoqsKnMjV49FZc28HfRArTm7s7pRyCrLE6T_HPC5-2BlCj2pcWYfPYIAuwPPJ=
+2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxl=
+olNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2Bm=
+FzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D=
+8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2F=
+zVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1=
+-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aK=
+oyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO=
+6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl=
+5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix5KOGVx4OqWyS7YimihOLIs-2FGlP6u=
+ziMptKbJzjjprWfyNv4BTT6kFKTzluZU8SB0WxZCMxz6ktZ8d4LiQmt5D-2FFkfX4HPzlj5Vggo=
+bMhafHyNEILmB4omVBWTzsXQpJXRKwVKVsZV1FxC8SV-2BV3hL6funNBrJ1ET42SO9WQDleLw-3=
+D-3D ) App Store ( http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8W=
+zcinwivb-2BMU0RzaJTQ5xwoqsKnMjV49FZc28HfRArTm7s7pRyCrWfGF_HPC5-2BlCj2pcWYfP=
+YIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8=
+jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsai=
+uilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9=
+-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2Dk=
+ZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-=
+2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQ=
+FeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0Am=
+EV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBv=
+S8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix5yhgwwJNAWamqUaN-2BB95=
+vkytxhSy9RBx7BC5dmfng5JRKNqcukKQiO-2BgEE9gWdHlwM4N9-2BIYdZGtRTloGl-2BDHMEWq=
+pegYnCqCyk8-2BI6IQdG14-2BOF8WBlbCKK1w6iIdCIcT-2FrAeuPezqegHd2uAxbBH-2F2a4sW=
+EZV-2BRhVKhnhzU98Q-3D-3D )
+
+2023 =C2=A9 All rights reserved.
+
+Unsubscribe ( http://url1725.lalamove.com/asm/unsubscribe/?user_id=3D166874=
+71&data=3DTpilBtgoag-_Z9fT4voynZ9Gf2nYLgzaPuHvznxXdTVoMDAwdTAwMO2JroZwPtwLP=
+bClPfKZLi6rHhovwp7HaikNOuXVtXNLR9w7m8610E4jsatri5SktUjt7azVMwTteR-BVge3Qw27=
+KJyrI2Szjy1yTOoshOh7JAvogaldKkcTvnQOAsbAclzT74dcMxIQ-aymgWDNeg6ousV4s9quUcG=
+MJvhfxZwnWzzYHQHhSGiJkm56pdglYeBiogzJDL4RnsiNEWC-CQIgc5sM3xu-eRRArSimtcXWbI=
+pKbE3O_14PWku2akWL8RjIEUhZ9ZlqgMe0IkoTXiq_CdUl49VJLaDOoRiiPLU2Z3q2kpAcv55AH=
+Bkg1cBFeHfoUaJUPca12MqTj0rraUJTzNelKDRfOBFADWwbPZ0Xl0rksL-fg1NdAbn7g2tTD0_b=
+yQtyz9LtipzHA2vcvDCvpU789VrcO8LNyQBRgKvqzVWiNeHAovSwFgncF5fS--w11JhTGpsuqjl=
+ZYCj6-ObReIhh8tyfCTfvgswEPbuJz2OTNNu064o0YfuchZ28WTu_Yi6RsuKR1J6VxgG6Ht4i0G=
+GWK9gBS5ehOKy_6EA7kVYWC36nwnpB3SewPoqMmpBYa4PARgTEUXOHvt9I9WzQybLvthGKOY7Nn=
+1ZcMo0LfeiiIvdMOomDafavitkNnOtJ2rKxkigjFmDa0ldK7XguMZe721esOJJTsPBNSOgQuA7h=
+twYuQJVp1PcAe6MExhO98nuXKwY1HR3p0D_-3cenAQsnWkL7fjOfnbzswZgBvHWtwipvq3ksekP=
+-RMUi826m-kRZq8jCu8OVeky0UN4-Zf-H16yCMltmtzdp-fxVfrIIN8WmKi4C9HxPHRcBry6bBz=
+oLL0A9F2FuhOFDACjhEedtszToqmtVmf7e9XMSZAs88N6XwIWmc2U4C8dmzKGXmQnL_tKIUoDkF=
+3yZqK0=3D ) - Unsubscribe Preferences ( http://url1725.lalamove.com/asm/?us=
+er_id=3D16687471&data=3DEebxYYRYh3w_X2t-pVSJX1J4x5g_oqbY58ckMCL1HIFoMDAwdTA=
+wMOfZZ2NxxnTYtHymIFB5ISHDICm-WfZP6x9HPMo0r_5a3dIaap4I7Y1mBGZDozK5ZxFNp0-wzI=
+VXShZmr1UIQqCqsgVI7FsFCwO0BwEZKsg75q4rtIVaZuuUvBmdlP9UHY8virjHhxcYcW0AZUkRu=
+JMhpkoJ6Zna-LTJg7tNNniYOBPf2cWot0DvV-MOcwi9zeupHPgZHYYtSSiz5ZvEjNEXjM6HX-C3=
+8irXLYjSGyIE00R3ZSA8RVB_3t50zvu5w9gmjLK6OhdREvh5-E8p3YJKpgO9mnONkyu_Y2xgSAv=
+CIBJyTVeyqZNlbAvQNC2InRUcU-9L9rQpYPAB_5nP9Bb3MXaTCeHOp-LF9FZcO4Ylt3xvIJKL8m=
+LdIl68cB4mZn5aTlBo_Bgzsd25fsFqeDp_BJ9j2vCJI8DElcNenufzU7N_0mtym8SGGRQQu-tQ3=
+F0oaPA3e1cebG8GMUI_q2klOt0xgB2aHonKUfaoho2_StXctXzY_PNdQGDL44qpQbbYn4vOcqlF=
+Xk6erz8WZCDs5FMoed09Ja-czmwWspzkZQtH0p0GM0va0xmu98uv0z4R633jeN7uODn4p-6DWY0=
+0cCEhWUmQ7uFN-cjrt5xUz8pv33u7jkbQdEP3lMFMySS-ULMXq_INq3tVmfD6ZPPDXNBp0r-gCh=
+Az9GxQREqGYgdqLwOENkzuWBKc05a0zSz6cJPYZzRfI84QlLdf3d1-mFiJ0UNrioey9sd5sy2xx=
+Xmliyw1zFDRcxN2hPJv--7pW90GiloLZez8SyxkWC1NHHkOYPfWSklg4ZnnqBc4N7vyVlYkR22B=
+Da94O0WF2reIKhj1XxwjarIfK7B4I1wJ1IFshoAT-E3AFdmqS4RiH1MbZrohiwMEwD-LlT03jg=
+=3D=3D )
+--b4eb90d7f605abaeec5bb8101316d65ff67ca46f0e6b842abc219d2d4cb7
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html data-editor-version=3D"2" class=3D"sg-campaigns" xmlns=3D"http://www.=
+w3.org/1999/xhtml">
+    <head>
+      <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8">
+      <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scal=
+e=3D1, minimum-scale=3D1, maximum-scale=3D1">
+      <!--[if !mso]><!-->
+      <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge">
+      <!--<![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG/>
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <!--[if (gte mso 9)|(IE)]>
+  <style type=3D"text/css">
+    body {width: 600px;margin: 0 auto;}
+    table {border-collapse: collapse;}
+    table, td {mso-table-lspace: 0pt;mso-table-rspace: 0pt;}
+    img {-ms-interpolation-mode: bicubic;}
+  </style>
+<![endif]-->
+      <style type=3D"text/css">
+    body, p, div {
+      font-family: arial,helvetica,sans-serif;
+      font-size: 14px;
+    }
+    body {
+      color: #000000;
+    }
+    body a {
+      color: #1188E6;
+      text-decoration: none;
+    }
+    p { margin: 0; padding: 0; }
+    table.wrapper {
+      width:100% !important;
+      table-layout: fixed;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    img.max-width {
+      max-width: 100% !important;
+    }
+    .column.of-2 {
+      width: 50%;
+    }
+    .column.of-3 {
+      width: 33.333%;
+    }
+    .column.of-4 {
+      width: 25%;
+    }
+    ul ul ul ul  {
+      list-style-type: disc !important;
+    }
+    ol ol {
+      list-style-type: lower-roman !important;
+    }
+    ol ol ol {
+      list-style-type: lower-latin !important;
+    }
+    ol ol ol ol {
+      list-style-type: decimal !important;
+    }
+    @media screen and (max-width:480px) {
+      .preheader .rightColumnContent,
+      .footer .rightColumnContent {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent div,
+      .preheader .rightColumnContent span,
+      .footer .rightColumnContent div,
+      .footer .rightColumnContent span {
+        text-align: left !important;
+      }
+      .preheader .rightColumnContent,
+      .preheader .leftColumnContent {
+        font-size: 80% !important;
+        padding: 5px 0;
+      }
+      table.wrapper-mobile {
+        width: 100% !important;
+        table-layout: fixed;
+      }
+      img.max-width {
+        height: auto !important;
+        max-width: 100% !important;
+      }
+      a.bulletproof-button {
+        display: block !important;
+        width: auto !important;
+        font-size: 80%;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .columns {
+        width: 100% !important;
+      }
+      .column {
+        display: block !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+      .social-icon-column {
+        display: inline-block !important;
+      }
+    }
+  </style>
+      <!--user entered Head Start--><!--End Head user entered-->
+    </head>
+    <body>
+      <center class=3D"wrapper" data-link-color=3D"#1188E6" data-body-style=
+=3D"font-size:14px; font-family:arial,helvetica,sans-serif; color:#000000; =
+background-color:#FFFFFF;">
+        <div class=3D"webkit">
+          <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"=
+100%" class=3D"wrapper" bgcolor=3D"#FFFFFF">
+            <tr>
+              <td valign=3D"top" bgcolor=3D"#FFFFFF" width=3D"100%">
+                <table width=3D"100%" role=3D"content-container" class=3D"o=
+uter" align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                  <tr>
+                    <td width=3D"100%">
+                      <table width=3D"100%" cellpadding=3D"0" cellspacing=
+=3D"0" border=3D"0">
+                        <tr>
+                          <td>
+                            <!--[if mso]>
+    <center>
+    <table><tr><td width=3D"600">
+  <![endif]-->
+                                    <table width=3D"100%" cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" style=3D"width:100%; max-width:600px;" alig=
+n=3D"center">
+                                      <tr>
+                                        <td role=3D"modules-container" styl=
+e=3D"padding:0px 0px 0px 0px; color:#000000; text-align:left;" bgcolor=3D"#=
+ffffff" width=3D"100%" align=3D"left"><table class=3D"module preheader preh=
+eader-hide" role=3D"module" data-type=3D"preheader" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"display: none !important;=
+ mso-hide: all; visibility: hidden; opacity: 0; color: transparent; height:=
+ 0; width: 0;">
+    <tr>
+      <td role=3D"module-content">
+        <p>Click here to claim!</p>
+      </td>
+    </tr>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"be64d978-56f7-4860-98f0-64fe35304b9a.1">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:1px 10px 1px =
+10px;" valign=3D"top" align=3D"center">
+         =20
+        <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8W=
+zcinwivb7OFstu-2F7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTKqkyyT2JZyw=
+cGwoC03A-2FAxjzIIO9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2FPLzDvOeQUr=
+YfJ4p2y4jdJCd7ObtM4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN0Zve45Og20=
+GDZlkxBIpQpK0-3DE2u9_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZh=
+nUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMR=
+LvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMS=
+yI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0S=
+u136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3I=
+lrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV=
+0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BO=
+AK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxW=
+bjFXm4st9lpNMyix4aaRGEHmQCAXjJcq9Sp0ynD5Colaav2clA2MMEd6vAJvZWcSAUS43REwOOu=
+9wjkU7ja8hZVKYC4BjbOnI36-2BSnICyKquSz3vloPPQQSIBU-2BsXiLrVjVIi12TnUundVH51l=
+-2B40Q2YuqWnIToWHm7DISSt-2F-2BmC99TXadCZ-2FXZOTwGw-3D-3D"><img class=3D"max=
+-width" border=3D"0" style=3D"display:block; color:#000000; text-decoration=
+:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max-width:=
+100% !important; width:100%; height:auto !important;" width=3D"600" alt=3D"=
+" data-proportionally-constrained=3D"true" data-responsive=3D"true" src=3D"=
+http://cdn.mcauto-images-production.sendgrid.net/3aa6fb08b969e6a9/909f351a-=
+1b0b-42ca-8e4c-8c56dae00947/1200x628.jpg"></a></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"879ff7e9-7c77-4fff-83a9-bf08687fa028" data-mc-mo=
+dule-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:1px 0px 15px 0px; line-height:25px; text-align=
+:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-conte=
+nt"><div><div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"font=
+-size: 20px; color: #f16722">Get </span><span style=3D"background-color: rg=
+b(255, 255, 255); font-weight: 400; font-style: normal; font-variant-ligatu=
+res: normal; font-variant-caps: normal; font-variant-numeric: normal; font-=
+variant-east-asian: normal; font-variant-alternates: normal; text-decoratio=
+n-line: none; text-decoration-thickness: initial; text-decoration-style: in=
+itial; text-decoration-color: initial; vertical-align: baseline; white-spac=
+e-collapse: preserve; text-wrap: wrap; font-family: arial, helvetica, sans-=
+serif; font-size: 20px; color: #f16722">=E2=82=B1575 worth of 4-wheel coupo=
+ns</span><span style=3D"background-color: rgb(255, 255, 255); font-weight: =
+400; font-style: normal; font-variant-ligatures: normal; font-variant-caps:=
+ normal; font-variant-numeric: normal; font-variant-east-asian: normal; fon=
+t-variant-alternates: normal; text-decoration-line: none; text-decoration-t=
+hickness: initial; text-decoration-style: initial; text-decoration-color: i=
+nitial; vertical-align: baseline; white-space-collapse: preserve; text-wrap=
+: wrap; font-family: arial, helvetica, sans-serif; font-size: 20px; color: =
+#f16722"><strong>!</strong></span><span style=3D"font-size: 20px; color: #f=
+16722"><strong>&nbsp;</strong></span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"font=
+-size: 20px; color: #f16722"><strong>Just click </strong></span><span style=
+=3D"font-size: 20px; color: #6508b9"><strong>Refer a Friend.</strong></span=
+></div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b">Share the convenience of Lalamove's affordable and reliable del=
+ivery services</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b">with your friends and </span><span style=3D"color: #58585b"><st=
+rong>get rewarded</strong></span><span style=3D"color: #58585b"> </span><sp=
+an style=3D"color: #58585b"><strong>with 4-wheel discount vouchers</strong>=
+</span><span style=3D"color: #58585b">!</span></div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b; font-family: arial, helvetica, sans-serif; font-size: 14px; fon=
+t-style: normal; font-variant-ligatures: normal; font-variant-caps: normal;=
+ font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; =
+text-indent: 0px; text-transform: none; white-space-collapse: preserve; tex=
+t-wrap: wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;=
+ background-color: rgb(255, 255, 255); text-decoration-thickness: initial; =
+text-decoration-style: initial; text-decoration-color: initial; float: none=
+; display: inline">Not sure how it's done?</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b; font-family: arial, helvetica, sans-serif; font-size: 14px; fon=
+t-style: normal; font-variant-ligatures: normal; font-variant-caps: normal;=
+ font-weight: 400; letter-spacing: normal; orphans: 2; text-align: center; =
+text-indent: 0px; text-transform: none; white-space-collapse: preserve; tex=
+t-wrap: wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px;=
+ background-color: rgb(255, 255, 255); text-decoration-thickness: initial; =
+text-decoration-style: initial; text-decoration-color: initial; float: none=
+; display: inline">Check out the steps below.</span></div><div></div></div>=
+</td>
+      </tr>
+    </tbody>
+  </table><table class=3D"wrapper" role=3D"module" data-type=3D"image" bord=
+er=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-=
+layout: fixed;" data-muid=3D"be64d978-56f7-4860-98f0-64fe35304b9a.1.1">
+    <tbody>
+      <tr>
+        <td style=3D"font-size:6px; line-height:10px; padding:1px 10px 1px =
+10px;" valign=3D"top" align=3D"center">
+         =20
+        <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8W=
+zcinwivb7OFstu-2F7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTKqkyyT2JZyw=
+cGwoC03A-2FAxjzIIO9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2FPLzDvOeQUr=
+YfJ4p2y4jdJCd7ObtM4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN0Zve45Og20=
+GDZlkxBIpQpK0-3DG0kK_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZh=
+nUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMR=
+LvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMS=
+yI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0S=
+u136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3I=
+lrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV=
+0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BO=
+AK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxW=
+bjFXm4st9lpNMyix6KUCLne6sypz9u1Myg-2BmY88QdzZvKe6-2FbcWK0goeT57yySo8VPdbhzF=
+KpW2Fwe-2FYj2pu3WpZh9E-2BJ8c1aIXhqSgm-2FhReJbY3Vum0QS6Nwo-2BLtb-2F0tyDPDTn-=
+2FrT8-2Fz1CBPgzlJQ8Y1rDXDYFtKWcIX5xbY7RMvwbPypjBFz05IIxQ-3D-3D"><img class=
+=3D"max-width" border=3D"0" style=3D"display:block; color:#000000; text-dec=
+oration:none; font-family:Helvetica, arial, sans-serif; font-size:16px; max=
+-width:100% !important; width:100%; height:auto !important;" width=3D"600" =
+alt=3D"" data-proportionally-constrained=3D"true" data-responsive=3D"true" =
+src=3D"http://cdn.mcauto-images-production.sendgrid.net/3aa6fb08b969e6a9/87=
+9525d2-cdda-4584-b423-a43b88772871/1200x910.jpg"></a></td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"879ff7e9-7c77-4fff-83a9-bf08687fa028.3" data-mc-=
+module-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:1px 0px 15px 0px; line-height:25px; text-align=
+:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-conte=
+nt"><div><div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-weight: inherit; font-stretch: inherit; line-height=
+: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline;=
+ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; =
+border-left-width: 0px; border-top-style: initial; border-right-style: init=
+ial; border-bottom-style: initial; border-left-style: initial; border-top-c=
+olor: initial; border-right-color: initial; border-bottom-color: initial; b=
+order-left-color: initial; border-image-source: initial; border-image-slice=
+: initial; border-image-width: initial; border-image-outset: initial; borde=
+r-image-repeat: initial; text-align: center; text-size-adjust: none; color:=
+ #58585b; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; white-space-collapse: preserve; text-wrap: wrap; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 2=
+55, 255); text-decoration-thickness: initial; text-decoration-style: initia=
+l; text-decoration-color: initial">After your friend successfully creates a=
+n account and places their order,&nbsp;</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-weight: inherit; font-stretch: inherit; line-height=
+: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline;=
+ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; =
+border-left-width: 0px; border-top-style: initial; border-right-style: init=
+ial; border-bottom-style: initial; border-left-style: initial; border-top-c=
+olor: initial; border-right-color: initial; border-bottom-color: initial; b=
+order-left-color: initial; border-image-source: initial; border-image-slice=
+: initial; border-image-width: initial; border-image-outset: initial; borde=
+r-image-repeat: initial; text-align: center; text-size-adjust: none; color:=
+ #58585b; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; white-space-collapse: preserve; text-wrap: wrap; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 2=
+55, 255); text-decoration-thickness: initial; text-decoration-style: initia=
+l; text-decoration-color: initial">the amount earned and number of successf=
+ul referrals will appear</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"box-=
+sizing: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0=
+px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0=
+px; margin-left: 0px; font-style: inherit; font-variant-ligatures: inherit;=
+ font-variant-caps: inherit; font-variant-numeric: inherit; font-variant-ea=
+st-asian: inherit; font-weight: inherit; font-stretch: inherit; line-height=
+: inherit; font-family: inherit; font-size: 14px; vertical-align: baseline;=
+ border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; =
+border-left-width: 0px; border-top-style: initial; border-right-style: init=
+ial; border-bottom-style: initial; border-left-style: initial; border-top-c=
+olor: initial; border-right-color: initial; border-bottom-color: initial; b=
+order-left-color: initial; border-image-source: initial; border-image-slice=
+: initial; border-image-width: initial; border-image-outset: initial; borde=
+r-image-repeat: initial; text-align: center; text-size-adjust: none; color:=
+ #58585b; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transf=
+orm: none; white-space-collapse: preserve; text-wrap: wrap; widows: 2; word=
+-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 2=
+55, 255); text-decoration-thickness: initial; text-decoration-style: initia=
+l; text-decoration-color: initial">in the "</span><span style=3D"box-sizing=
+: border-box; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; pa=
+dding-left: 0px; margin-top: 0px; margin-right: 0px; margin-bottom: 0px; ma=
+rgin-left: 0px; font-style: inherit; font-variant-ligatures: inherit; font-=
+variant-caps: inherit; font-variant-numeric: inherit; font-variant-east-asi=
+an: inherit; font-weight: inherit; font-stretch: inherit; line-height: inhe=
+rit; font-family: inherit; font-size: 14px; vertical-align: baseline; borde=
+r-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border=
+-left-width: 0px; border-top-style: initial; border-right-style: initial; b=
+order-bottom-style: initial; border-left-style: initial; border-top-color: =
+initial; border-right-color: initial; border-bottom-color: initial; border-=
+left-color: initial; border-image-source: initial; border-image-slice: init=
+ial; border-image-width: initial; border-image-outset: initial; border-imag=
+e-repeat: initial; text-align: center; text-size-adjust: none; color: #5858=
+5b; letter-spacing: normal; orphans: 2; text-indent: 0px; text-transform: n=
+one; white-space-collapse: preserve; text-wrap: wrap; widows: 2; word-spaci=
+ng: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 25=
+5); text-decoration-thickness: initial; text-decoration-style: initial; tex=
+t-decoration-color: initial"><strong>Refer a Friend</strong></span><span st=
+yle=3D"box-sizing: border-box; padding-top: 0px; padding-right: 0px; paddin=
+g-bottom: 0px; padding-left: 0px; margin-top: 0px; margin-right: 0px; margi=
+n-bottom: 0px; margin-left: 0px; font-style: inherit; font-variant-ligature=
+s: inherit; font-variant-caps: inherit; font-variant-numeric: inherit; font=
+-variant-east-asian: inherit; font-weight: inherit; font-stretch: inherit; =
+line-height: inherit; font-family: inherit; font-size: 14px; vertical-align=
+: baseline; border-top-width: 0px; border-right-width: 0px; border-bottom-w=
+idth: 0px; border-left-width: 0px; border-top-style: initial; border-right-=
+style: initial; border-bottom-style: initial; border-left-style: initial; b=
+order-top-color: initial; border-right-color: initial; border-bottom-color:=
+ initial; border-left-color: initial; border-image-source: initial; border-=
+image-slice: initial; border-image-width: initial; border-image-outset: ini=
+tial; border-image-repeat: initial; text-align: center; text-size-adjust: n=
+one; color: #58585b; letter-spacing: normal; orphans: 2; text-indent: 0px; =
+text-transform: none; white-space-collapse: preserve; text-wrap: wrap; wido=
+ws: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color:=
+ rgb(255, 255, 255); text-decoration-thickness: initial; text-decoration-st=
+yle: initial; text-decoration-color: initial">" page.</span>&nbsp;</div>
+<div style=3D"font-family: inherit; text-align: center"><br></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b">Simply send your friends a </span><span style=3D"color: #58585b=
+"><strong>referral code </strong></span><span style=3D"color: #58585b">thro=
+ugh your Lalamove app</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b">and enjoy the discount once your friend signs up and makes thei=
+r first order with us.&nbsp;</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"colo=
+r: #58585b">Your friend will receive the discount after signing up.</span><=
+/div>
+<div style=3D"font-family: inherit; text-align: center">&nbsp;</div><div></=
+div></div></td>
+      </tr>
+    </tbody>
+  </table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+module" data-role=3D"module-button" data-type=3D"button" role=3D"module" st=
+yle=3D"table-layout:fixed;" width=3D"100%" data-muid=3D"ddd22c00-e873-455a-=
+8277-ac80ef102c93.2">
+      <tbody>
+        <tr>
+          <td align=3D"center" bgcolor=3D"" class=3D"outer-td" style=3D"pad=
+ding:0px 10px 0px 10px;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"wrapper-mobile" style=3D"text-align:center;">
+              <tbody>
+                <tr>
+                <td align=3D"center" bgcolor=3D"#f26522" class=3D"inner-td"=
+ style=3D"border-radius:6px; font-size:16px; text-align:center; background-=
+color:inherit;">
+                  <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0=
+JkXRUL1S8Wzcinwivb7OFstu-2F7gKYfDESCtBh9mSsMXflJlTOVVScp7tTUtjytgv4kmuV8HTK=
+qkyyT2JZywcGwoC03A-2FAxjzIIO9JSDcZK0PZb4tk-2FwBUCcvLTK0MqRagjq9-2FtROZ51-2F=
+PLzDvOeQUrYfJ4p2y4jdJCd7ObtM4Y0SF0jnnml4-2FeMR-2BsftFyjRD-2F1LPVGxZNUpONjSN=
+0Zve45Og20GDZlkxBIpQpK0-3DhBRz_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZ=
+WerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wV=
+bD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KV=
+mKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915=
+UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4=
+-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2B=
+dOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-=
+2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs=
+4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8G=
+Y9tKSrJtxWbjFXm4st9lpNMyix5BVd1Bftpxtsxlb4VUc9tqNx7Jf7VJBOeeXvSpTO6sk1f1T49=
+njeaveqenE-2FqzSlp-2FSqxAndkbzLTXXo-2FKru7v801S557DoSwmFwrQhtwEQ21LrGS7vdYL=
+2wYwvkFIXC0NeQ4sjdKwuJoePYSYPuTPTCciacH8yEDhEvwEv9tXcA-3D-3D" style=3D"back=
+ground-color:#f26522; border:1px solid #f26522; border-color:#f26522; borde=
+r-radius:5px; border-width:1px; color:#ffffff; display:inline-block; font-s=
+ize:14px; font-weight:bold; letter-spacing:0px; line-height:normal; padding=
+:12px 18px 12px 18px; text-align:center; text-decoration:none; border-style=
+:solid; font-family:arial,helvetica,sans-serif; width:150px;" target=3D"_bl=
+ank">Refer a Friend now!</a>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table><table class=3D"module" role=3D"module" data-type=3D"divider" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"tab=
+le-layout: fixed;" data-muid=3D"03805839-7de6-49d5-8148-8acc2dab0a8e.1">
+    <tbody>
+      <tr>
+        <td style=3D"padding:10px 0px 10px 0px;" role=3D"module-content" he=
+ight=3D"100%" valign=3D"top" bgcolor=3D"">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" width=3D"100%" height=3D"1px" style=3D"line-height:1px; font-size:1=
+px;">
+            <tbody>
+              <tr>
+                <td style=3D"padding:0px 0px 1px 0px;" bgcolor=3D"#E6E6E6">=
+</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"text" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"879ff7e9-7c77-4fff-83a9-bf08687fa028.1.1.1" data=
+-mc-module-version=3D"2019-10-22">
+    <tbody>
+      <tr>
+        <td style=3D"padding:18px 0px 18px 0px; line-height:20px; text-alig=
+n:inherit;" height=3D"100%" valign=3D"top" bgcolor=3D"" role=3D"module-cont=
+ent"><div><div style=3D"font-family: inherit; text-align: center"><span sty=
+le=3D"font-family: Arial; font-style: normal; font-variant-ligatures: norma=
+l; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orp=
+hans: 2; text-indent: 0px; text-transform: none; white-space-collapse: pres=
+erve; text-wrap: wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-wi=
+dth: 0px; background-color: transparent; text-decoration-thickness: initial=
+; text-decoration-style: initial; text-decoration-color: initial; text-alig=
+n: center; line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt; font-vari=
+ant-numeric: normal; font-variant-east-asian: normal; text-decoration-line:=
+ none; vertical-align: baseline; color: #595959; font-size: 14px">Got quest=
+ions?</span></div>
+<div style=3D"font-family: inherit; text-align: center"><span style=3D"font=
+-family: Arial; font-style: normal; font-variant-ligatures: normal; font-va=
+riant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; t=
+ext-indent: 0px; text-transform: none; white-space-collapse: preserve; text=
+-wrap: wrap; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; =
+background-color: transparent; text-decoration-thickness: initial; text-dec=
+oration-style: initial; text-decoration-color: initial; text-align: center;=
+ line-height: 1.2; margin-top: 0pt; margin-bottom: 0pt; font-variant-numeri=
+c: normal; font-variant-east-asian: normal; text-decoration-line: none; ver=
+tical-align: baseline; color: #595959; font-size: 14px">Please refer to the=
+ Terms and Conditions here.</span></div><div></div></div></td>
+      </tr>
+    </tbody>
+  </table><table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"=
+module" data-role=3D"module-button" data-type=3D"button" role=3D"module" st=
+yle=3D"table-layout:fixed;" width=3D"100%" data-muid=3D"ddd22c00-e873-455a-=
+8277-ac80ef102c93">
+      <tbody>
+        <tr>
+          <td align=3D"center" bgcolor=3D"" class=3D"outer-td" style=3D"pad=
+ding:0px 10px 0px 10px;">
+            <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=
+=3D"wrapper-mobile" style=3D"text-align:center;">
+              <tbody>
+                <tr>
+                <td align=3D"center" bgcolor=3D"#f26522" class=3D"inner-td"=
+ style=3D"border-radius:6px; font-size:16px; text-align:center; background-=
+color:inherit;">
+                  <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0=
+JkXRUL1S8Wzcinwivb5NTf8Zh7G-2Boc-2FZacZ9xmpRewFHooh-2BT5CraOLBHws3-2BAEVHm1=
+Fm-2Fbnp2OgEAefICQ-3D-3DHkbi_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWe=
+rWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD=
+-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmK=
+TkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJ=
+FAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2=
+FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdO=
+lOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2F=
+t-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4O=
+jrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9=
+tKSrJtxWbjFXm4st9lpNMyix6zrHFrwXn56gh5m4GXxfF88asGYM-2F-2FH1bulsy612nOnRUos=
+UedBmSgLpAGY3YElPMFLehI2-2BZrMTOp-2BSSMndeTnUnvfWKkv5jokMXDi8fExhTumz2dqzA4=
+fItLcW11HwVpYGyVW-2FE2FQnapif9cZGXvBGn-2BvMtekgUSGJBNAsqFw-3D-3D" style=3D"=
+background-color:#f26522; border:1px solid #f26522; border-color:#f26522; b=
+order-radius:5px; border-width:1px; color:#ffffff; display:inline-block; fo=
+nt-size:14px; font-weight:bold; letter-spacing:0px; line-height:normal; pad=
+ding:12px 18px 12px 18px; text-align:center; text-decoration:none; border-s=
+tyle:solid; font-family:arial,helvetica,sans-serif; width:150px;" target=3D=
+"_blank">Terms & Conditions</a>
+                </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table><table class=3D"module" role=3D"module" data-type=3D"divider" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"tab=
+le-layout: fixed;" data-muid=3D"03805839-7de6-49d5-8148-8acc2dab0a8e.1.1.1"=
+>
+    <tbody>
+      <tr>
+        <td style=3D"padding:20px 0px 15px 0px;" role=3D"module-content" he=
+ight=3D"100%" valign=3D"top" bgcolor=3D"">
+          <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" align=3D"=
+center" width=3D"100%" height=3D"1px" style=3D"line-height:1px; font-size:1=
+px;">
+            <tbody>
+              <tr>
+                <td style=3D"padding:0px 0px 1px 0px;" bgcolor=3D"#E6E6E6">=
+</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table><table class=3D"module" role=3D"module" data-type=3D"code" border=
+=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"table-la=
+yout: fixed;" data-muid=3D"b063e557-5a6a-4775-a414-39c5acef7eeb">
+    <tbody>
+      <tr>
+        <td height=3D"100%" valign=3D"top" role=3D"module-content"><!DOCTYP=
+E html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+  <head></head><head>
+    <!--[if gte mso 9]><xml>
+        <o:OfficeDocumentSettings>
+        <o:AllowPNG/>
+        <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+        </xml><![endif]-->
+   =20
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=
+=3D1.0">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <style type=3D"text/css">
+   =20
+    @import url('https://fonts.googleapis.com/css?family=3DNoto+Sans:400,40=
+0i,700,700i');
+
+    * {
+    -webkit-text-size-adjust: none;
+    }
+
+    body, .body {
+    width: 100% !important;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    margin: 0;
+    padding: 0;
+    mso-line-height-rule: exactly;
+    }
+
+    .body table td {
+    border-collapse: collapse;
+    }
+
+    .body table {
+    border-collapse: collapse;
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+    }
+
+    td.pattern table {
+    width: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+    .body table.content {
+        width: 100% !important;
+        max-width: 600px !important;
+    }
+    .body .full-width {
+        width: 100% !important;
+    }
+
+    .body .text-sm-center {
+        text-align: center !important;
+    }
+
+    td.pattern .col {
+        width: 100% !important;
+        display: block;
+    }
+
+    td.pattern .col-left,
+    td.pattern .col-mid {
+        margin-bottom: 20px;
+    }
+
+    td.pattern .col-kv,
+    td.pattern .col-inner {
+        width: 100% !important;
+        padding: 0 20px !important;
+    }
+    td.pattern .pad {
+        width: 0 !important;
+    }
+
+    td.pattern .content-text h1 {
+        margin-top: 30px !important;
+        margin-bottom: 20px !important;
+    }
+    td.pattern .content-text h2 {
+        margin-top: 20px !important;
+        margin-bottom: 20px !important;
+    }
+    }
+   =20
+    </style>
+  </head>
+  <body class=3D"body" style=3D"margin: 0; padding: 0; background-color: #f=
+4f4f7; color: #4e5f70;">
+    <table class=3D"content-wrap" border=3D"0" cellpadding=3D"0" cellspacin=
+g=3D"0" style=3D"border-collapse: collapse; font-size: 14px; line-height: 1=
+8px; background-color: #f4f4f7; color: #4e5f70; width: 100%;" width=3D"100%=
+" bgcolor=3D"#F4F4F7">
+      <tr>
+        <td>
+          <!--[if (gte mso 9)|(IE)]>
+                                <table width=3D"600" align=3D"center" cellp=
+adding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tr>
+                                <td>
+                                <![endif]-->
+          <table class=3D"content" align=3D"center" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" style=3D"width: 600px; background-color: #ffffff;=
+" width=3D"600" bgcolor=3D"#FFFFFF">
+		 =20
+			=20
+            <tr>
+              <td class=3D"space full-width h55" style=3D"color: #ffffff; h=
+eight: 55px; width: 600px;" width=3D"600" height=3D"55">
+                <img src=3D"https://appboy-images.com/appboy/communication/=
+assets/image_assets/images/5e605fa5d21f7945e3b240d7/original.gif?1583374245=
+" class=3D"full-width h55" style=3D"display: block; margin: 0 auto; border:=
+ 0; padding: 0; height: 55px; width: 600px;" width=3D"600" height=3D"55">
+              </td>
+            </tr>
+			<!-- Start Footer-->
+            <tr>
+              <td class=3D"pattern" width=3D"600">
+                <table cellpadding=3D"0" cellspacing=3D"0">
+                  <tr>
+                    <td class=3D"footer" style=3D"background-color: #FFFFFF=
+;" bgcolor=3D"#FFFFFF">
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr style=3D"background-color: #f2682a;" bgcolor=3D"#f2682a">
+              <td class=3D"pattern" width=3D"600" style=3D"background-color=
+: #f2682a; padding-top: 35px;" bgcolor=3D"#f2682a">
+                <table cellspacing=3D"0" style=3D"background-color: #f2682a=
+;" bgcolor=3D"#f2682a">
+                  <tr style=3D"background-color: #f2682a;" bgcolor=3D"#f268=
+2a">
+                    <td class=3D"col-inner footer text-center" style=3D"wid=
+th: 510px; text-align: center; background-color: #f2682a; font-family: 'Not=
+o Sans', Arial, sans-serif; color: #ffffff !important; font-size: 12px; lin=
+e-height: 20px;" width=3D"510" align=3D"center" bgcolor=3D"#f2682a">
+					  <table cellpadding=3D"0" cellspacing=3D"0" style=3D"background-color=
+: #f2682a;">
+                        <tr>
+                          <td align=3D"center" style=3D"text-align: center;=
+ background-color: #f2682a; font-family: 'Noto Sans', Arial, sans-serif; co=
+lor: #ffffff; font-size: 12px; line-height: 20px;">
+							Follow us on:
+                          </td>
+						</tr>
+                        <tr>
+                          <td align=3D"center" style=3D"text-align: center;=
+">
+							<span style=3D"display: inline-block; margin: 0 7px;"><a href=3D"htt=
+p://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8Wzcinwivb-2BR7L-2B7UDi-=
+2FyN4Sytai4QlzdVIgGNDQgDzM0cnsF68EATanG_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2=
+FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl=
+17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJ=
+zpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854=
+-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUa=
+uhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0n=
+qn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQ=
+WWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-=
+2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71E=
+lhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix6XeTvHpJOOCqirqCHV9Q9tInyvSkObnShC0T7Q0G=
+t6vtdNrmAU54q6XoOg6hDZRhI24oA00tbIrLdwNhPcojH2YGz2xiY7rk61RjZSzwMWcVsI7aQqn=
+eOylifNzPVpnQMoK0iBIuO98fQ1PaINKb3C1Z0rwgWBo-2F0WHNof5sBhow-3D-3D" target=
+=3D"blank" style=3D"color: #ffffff; text-decoration: none; display: block; =
+width: 35px; height: 35px; text-align: center;"><img width=3D"35" height=3D=
+"35" alt=3D"Facebook" src=3D"https://appboy-images.com/appboy/communication=
+/assets/image_assets/images/5bf372a67dea0d46e3bdf818/original.png?154268125=
+4" style=3D"margin: 0 auto; border: 0; padding: 0; display: block; width: 3=
+5px; height: 35px; text-align: center;"></a></span>  <span style=3D"display=
+: inline-block; margin: 0 7px;"><a href=3D"http://url1725.lalamove.com/ls/c=
+lick?upn=3Dem0JkXRUL1S8Wzcinwivb68vC2A6EB0qzybwVn4SG-2By8yDv-2FhFZWCyi53bEF=
+4k-2BjdjTV_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd53=
+6KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFO=
+PbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQF=
+qgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipb=
+j0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2B=
+agzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuK=
+KlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2=
+PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5p=
+Rzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9l=
+pNMyix4LlE9njM36Z-2FHTkUIJtjEg0B26eM68mwBu7IzUztwcYQCx7PWKaYYlT5SUzIWJYXyDk=
+Z4Jb5Df14GxIWrqVTQ5nvG9jutsJjhCga8s-2BdhygcJgFTQH8Y2JbefOWHHW-2FKlRPBfnsinI=
+XunDyVcD-2BvfUBBHLTyS8ywc2Tmg0zwSK-2BQ-3D-3D" target=3D"blank" style=3D"col=
+or: #ffffff; text-decoration: none; display: block; width: 35px; height: 35=
+px; text-align: center;"><img width=3D"35" height=3D"35" alt=3D"Instagram" =
+src=3D"https://appboy-images.com/appboy/communication/assets/image_assets/i=
+mages/5bf372a67dea0d2494be0e5d/original.png?1542681254" style=3D"margin: 0 =
+auto; border: 0; padding: 0; display: block; width: 35px; height: 35px; tex=
+t-align: center;"></a></span> <span style=3D"display: inline-block; margin:=
+ 0 7px;"><a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0JkXRUL1S8=
+Wzcinwivb9uzoVgP4sn15ERNsJNZKX1ekY7emxvmcEHo7FMCaar-2B-2By48pegnuEQsK4MaAiI=
+1OJGhi2k7O93b3MOYTbGHRhA-3D4hpW_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGt=
+ZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28w=
+VbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7K=
+VmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-2BQmS91=
+5UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F=
+4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2=
+BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR=
+-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnP=
+s4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8=
+GY9tKSrJtxWbjFXm4st9lpNMyix6xf1RBZlmDq020hbUPGH711G-2Bpd5kJwswCmVKvIfMnmY0P=
+PedqdnQPffjJRlgSZk8tEFmu1wpNfTZT-2B3-2FFu3grkzr-2F4B-2BLjW4cXTQlA4S9m6wQlZN=
+rbbE-2F7FwNj7fYzyEVRteRkjJ-2FyrqpZADCq-2Bm522tOP9CG4bZKhMrXr8oDfg-3D-3D" ta=
+rget=3D"blank" style=3D"color: #ffffff; text-decoration: none; display: blo=
+ck; width: 35px; height: 35px; text-align: center;"><img width=3D"35" heigh=
+t=3D"35" alt=3D"Youtube" src=3D"https://appboy-images.com/appboy/communicat=
+ion/assets/image_assets/images/5bf372a67dea0d2398be10c0/original.png?154268=
+1254" style=3D"margin: 0 auto; border: 0; padding: 0; display: block; width=
+: 35px; height: 35px; text-align: center;"></a></span> <span style=3D"displ=
+ay: inline-block; margin: 0 7px;"><a href=3D"http://url1725.lalamove.com/ls=
+/click?upn=3Dem0JkXRUL1S8Wzcinwivb3dCLBmo2R8-2FMmGC6rD7nvoHIFm5l5PaQThoHn3v=
+nBn1fRJ1Bo6F-2FaCI7pgGCyqgsg-3D-3Dx_RT_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2F=
+ijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8nhqEiV8jJDWjDxlolNVE-2Bwl1=
+7Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExvU5pNsaiuilo-2BmFzUSN-2BQJz=
+pjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8HVbkye9-2F8UL8D8lT3MHH854-=
+2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN9x7j2DkZLlf6-2FzVzRDeWbUau=
+hdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzkQrZ-2F-2BYAxJW1-2F6lcNW0nq=
+n6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2Fga2KpZQFeaVN5aKoyEi7phngQW=
+WaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7gT8o0AmEV570kgO6lsPS08e4-2=
+Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0zoHvqGBvS8BP58kl5Q9QoWi71El=
+hKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix54Y0D2cbZrbFWLaJdg-2FNhQ08CD-2FaBdZZoxCQ-=
+2BbvaDh1rsHxNCHsFFXPZcy-2BNvUPXbUlhY6YdI2SlCxGI77-2BM5BqXV57ClSsoVuuX202e-2=
+BQRbFWzQ1pi0tqTCS-2BwcASeqNk-2Bowu5-2BZIu4OAV69e7P3M3jCl48tjp7mQ4TBImY-2BtC=
+Q-3D-3D" target=3D"blank" style=3D"color: #ffffff; text-decoration: none; d=
+isplay: block; width: 35px; height: 35px; text-align: center;"><img width=
+=3D"35" height=3D"35" alt=3D"Linkedin" src=3D"https://appboy-images.com/app=
+boy/communication/assets/image_assets/images/5bf372a67dea0d2573be10e6/origi=
+nal.png?1542681254" style=3D"margin: 0 auto; border: 0; padding: 0; display=
+: block; width: 35px; height: 35px; text-align: center;"></a></span>
+                          </td>
+						</tr>
+                        <tr>
+                          <td height=3D"39">
+							 <table cellpadding=3D"0" cellspacing=3D"0">
+                                <tr>
+                                  <td align=3D"right" style=3D"background-c=
+olor: #f2682a;">
+							        <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0JkX=
+RUL1S8Wzcinwivb-2BMU0RzaJTQ5xwoqsKnMjV49FZc28HfRArTm7s7pRyCrcYey_HPC5-2BlCj=
+2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8=
+nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExv=
+U5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8=
+HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN=
+9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzk=
+QrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2F=
+ga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7=
+gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0z=
+oHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix7J8PgfhVDmpJKkh=
+LWNpQcvlP0ZF5jRIDIO-2F7JJSlntzqiFI-2B1DI2K4rmwOfbWf-2Bt3St7UhCnE1veg36ZPpH6=
+LGOpHksCbYdlUPEF3GrwX6ZBKYSQyuSZeaRoMynw-2FNY-2Fpruh58muAAn3GbB6a25V2xC376j=
+IqOPUI4z8xI3WcKvA-3D-3D" target=3D"blank" style=3D"color: #ffffff; text-dec=
+oration: none; display: block; width: 115px; height: 39px; text-align: righ=
+t;"><img width=3D"115" height=3D"39" alt=3D"Facebook" src=3D"https://appboy=
+-images.com/appboy/communication/assets/image_assets/images/5bfcfbf37dea0d3=
+1e7eb36bf/original.png?1543306227" style=3D"border: 0; padding: 0; display:=
+ block; width: 115px; height: 39px;"></a>
+                                  </td>
+                                  <td style=3D"text-align: left; background=
+-color: #f2682a; ">
+							        <a href=3D"http://url1725.lalamove.com/ls/click?upn=3Dem0JkX=
+RUL1S8Wzcinwivb-2BMU0RzaJTQ5xwoqsKnMjV49FZc28HfRArTm7s7pRyCrEuHN_HPC5-2BlCj=
+2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOvhkL6LAwi9lrcR8=
+nhqEiV8jJDWjDxlolNVE-2Bwl17Bdm28wVbD-2FsIpZhnUi4fxmvFOPbP7KAbaae1uHIRD3pExv=
+U5pNsaiuilo-2BmFzUSN-2BQJzpjPJe7KVmKTkliDtMRLvxnRnIsQFqgB-2BJ2ykp7gO4puPmV8=
+HVbkye9-2F8UL8D8lT3MHH854-2BQmS915UJFAtqTRMSyI0Y3K0ipbj0nXNB2Na4wV969om-2BN=
+9x7j2DkZLlf6-2FzVzRDeWbUauhdMV-2F4-2FetIUN0Su136a19-2BagzqxNYxGNXsSQ3kItBzk=
+QrZ-2F-2BYAxJW1-2F6lcNW0nqn6iyi-2BdOlOhbXY3IlrYW3ymWuKKlkP-2FbxFHbxyufFw-2F=
+ga2KpZQFeaVN5aKoyEi7phngQWWaMLUMR-2Ft-2FXNNV0N-2BUelK2PVBv6SzQi-2FbOU4rvTL7=
+gT8o0AmEV570kgO6lsPS08e4-2Fm1DOnPs4OjrLpr9BOAK2fDE8Y5pRzb6h4jIPkjkZf7UGVI0z=
+oHvqGBvS8BP58kl5Q9QoWi71ElhKRNOj8GY9tKSrJtxWbjFXm4st9lpNMyix6bK8wzAqeX-2F35=
+W1Neb63RxzY7vnaNJjawiultdsdiNXmYtKkHXrUsX2CD2QPXRCE9gpisCoSTzoybzI30ExtX808=
+AmkSVlJ4rizGfNqB1zI82cbTPEs3prFQV96x2IEqOyEbH21y14wQ0M-2FNUdpbCCuJe4PXOCj1w=
+wb6Q-2BD2K2kA-3D-3D" target=3D"blank" style=3D"color: #ffffff; text-decorat=
+ion: none; display: block; width: 115px; height: 39px; text-align: left; ">=
+<img width=3D"115" height=3D"39" alt=3D"App Store" src=3D"https://appboy-im=
+ages.com/appboy/communication/assets/image_assets/images/5bfcfbf3d5b6825a88=
+cbb23e/original.png?1543306227" style=3D"border: 0; padding: 0; display: bl=
+ock; width: 115px; height: 39px;"></a>
+                                  </td>
+						        </tr>
+							 </table>
+                          </td>
+						</tr>
+                        <tr>
+                          <td>
+							<br>
+                          </td>
+						</tr>
+                        <tr>
+                          <td style=3D"text-align: center; background-color=
+: #f2682a; font-family: 'Noto Sans', Arial, sans-serif; color: #ffffff; fon=
+t-size: 12px; line-height: 20px;">
+							2023 =C2=A9 All rights reserved.
+</td></tr></table><div data-role=3D"module-unsubscribe" class=3D"module" ro=
+le=3D"module" data-type=3D"unsubscribe" style=3D"background-color:#f26522; =
+color:#ffffff; font-size:12px; line-height:20px; padding:16px 16px 16px 16p=
+x; text-align:center;" data-muid=3D"3edc78d5-33ca-40f1-8a1d-ae13ed0926d6"><=
+div class=3D"Unsubscribe--addressLine"></div><p style=3D"font-size:12px; li=
+ne-height:20px;"><a class=3D"Unsubscribe--unsubscribeLink" href=3D"http://u=
+rl1725.lalamove.com/asm/unsubscribe/?user_id=3D16687471&amp;data=3DTpilBtgo=
+ag-_Z9fT4voynZ9Gf2nYLgzaPuHvznxXdTVoMDAwdTAwMO2JroZwPtwLPbClPfKZLi6rHhovwp7=
+HaikNOuXVtXNLR9w7m8610E4jsatri5SktUjt7azVMwTteR-BVge3Qw27KJyrI2Szjy1yTOoshO=
+h7JAvogaldKkcTvnQOAsbAclzT74dcMxIQ-aymgWDNeg6ousV4s9quUcGMJvhfxZwnWzzYHQHhS=
+GiJkm56pdglYeBiogzJDL4RnsiNEWC-CQIgc5sM3xu-eRRArSimtcXWbIpKbE3O_14PWku2akWL=
+8RjIEUhZ9ZlqgMe0IkoTXiq_CdUl49VJLaDOoRiiPLU2Z3q2kpAcv55AHBkg1cBFeHfoUaJUPca=
+12MqTj0rraUJTzNelKDRfOBFADWwbPZ0Xl0rksL-fg1NdAbn7g2tTD0_byQtyz9LtipzHA2vcvD=
+CvpU789VrcO8LNyQBRgKvqzVWiNeHAovSwFgncF5fS--w11JhTGpsuqjlZYCj6-ObReIhh8tyfC=
+TfvgswEPbuJz2OTNNu064o0YfuchZ28WTu_Yi6RsuKR1J6VxgG6Ht4i0GGWK9gBS5ehOKy_6EA7=
+kVYWC36nwnpB3SewPoqMmpBYa4PARgTEUXOHvt9I9WzQybLvthGKOY7Nn1ZcMo0LfeiiIvdMOom=
+DafavitkNnOtJ2rKxkigjFmDa0ldK7XguMZe721esOJJTsPBNSOgQuA7htwYuQJVp1PcAe6MExh=
+O98nuXKwY1HR3p0D_-3cenAQsnWkL7fjOfnbzswZgBvHWtwipvq3ksekP-RMUi826m-kRZq8jCu=
+8OVeky0UN4-Zf-H16yCMltmtzdp-fxVfrIIN8WmKi4C9HxPHRcBry6bBzoLL0A9F2FuhOFDACjh=
+EedtszToqmtVmf7e9XMSZAs88N6XwIWmc2U4C8dmzKGXmQnL_tKIUoDkF3yZqK0=3D" target=
+=3D"_blank" style=3D"color:#ffffff;">Unsubscribe</a> - <a href=3D"http://ur=
+l1725.lalamove.com/asm/?user_id=3D16687471&amp;data=3DEebxYYRYh3w_X2t-pVSJX=
+1J4x5g_oqbY58ckMCL1HIFoMDAwdTAwMOfZZ2NxxnTYtHymIFB5ISHDICm-WfZP6x9HPMo0r_5a=
+3dIaap4I7Y1mBGZDozK5ZxFNp0-wzIVXShZmr1UIQqCqsgVI7FsFCwO0BwEZKsg75q4rtIVaZuu=
+UvBmdlP9UHY8virjHhxcYcW0AZUkRuJMhpkoJ6Zna-LTJg7tNNniYOBPf2cWot0DvV-MOcwi9ze=
+upHPgZHYYtSSiz5ZvEjNEXjM6HX-C38irXLYjSGyIE00R3ZSA8RVB_3t50zvu5w9gmjLK6OhdRE=
+vh5-E8p3YJKpgO9mnONkyu_Y2xgSAvCIBJyTVeyqZNlbAvQNC2InRUcU-9L9rQpYPAB_5nP9Bb3=
+MXaTCeHOp-LF9FZcO4Ylt3xvIJKL8mLdIl68cB4mZn5aTlBo_Bgzsd25fsFqeDp_BJ9j2vCJI8D=
+ElcNenufzU7N_0mtym8SGGRQQu-tQ3F0oaPA3e1cebG8GMUI_q2klOt0xgB2aHonKUfaoho2_St=
+XctXzY_PNdQGDL44qpQbbYn4vOcqlFXk6erz8WZCDs5FMoed09Ja-czmwWspzkZQtH0p0GM0va0=
+xmu98uv0z4R633jeN7uODn4p-6DWY00cCEhWUmQ7uFN-cjrt5xUz8pv33u7jkbQdEP3lMFMySS-=
+ULMXq_INq3tVmfD6ZPPDXNBp0r-gChAz9GxQREqGYgdqLwOENkzuWBKc05a0zSz6cJPYZzRfI84=
+QlLdf3d1-mFiJ0UNrioey9sd5sy2xxXmliyw1zFDRcxN2hPJv--7pW90GiloLZez8SyxkWC1NHH=
+kOYPfWSklg4ZnnqBc4N7vyVlYkR22BDa94O0WF2reIKhj1XxwjarIfK7B4I1wJ1IFshoAT-E3AF=
+dmqS4RiH1MbZrohiwMEwD-LlT03jg=3D=3D" target=3D"_blank" class=3D"Unsubscribe=
+--unsubscribePreferences" style=3D"color:#ffffff;">Unsubscribe Preferences<=
+/a></p></div></td>
+                                      </tr>
+                                    </table>
+                          </td>
+						</tr>
+                       =20
+                        <tr>
+                          <td style=3D"text-align: center; background-color=
+: #f2682a; font-family: 'Noto Sans', Arial, sans-serif; color: #ffffff; fon=
+t-size: 12px; line-height: 20px;">
+							&nbsp;
+                          </td>
+						</tr>
+
+					  </table>
+                    </td>
+                  </tr>
+                </table>
+             =20
+           =20
+
+			<!-- End Footer-->
+          <!--[if (gte mso 9)|(IE)]>
+                                </td>
+                                </tr>
+                                </table>
+                                <![endif]-->
+       =20
+     =20
+   =20
+  </body>
+</html></td>
+      </tr>
+    </tbody>
+  </table></td>
+                                      </tr>
+                                    </table>
+                                    <!--[if mso]>
+                                  </td>
+                                </tr>
+                              </table>
+                            </center>
+                            <![endif]-->
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </center>
+    <img src=3D"http://url1725.lalamove.com/wf/open?upn=3DDW-2BSrACj4wfqwIA=
+NcjvCqOMsRXaCKicfEInkXFEUAT3on7On2OxLC79EYg1ibXZD3Xqg2KrKJahvYjGlfj3ypW9An4=
+eKyIsKENWU0RyCzllmePySzj4aZieLa76f1CPruaaHmhvfmhT3dl2rsopAU33AtVInoBq3PsmW4=
+8dx-2BGsqm-2F4kHbf22pBGjLJnvffsP72DKftAcul9vqxL07g8sxjI28OXvdd-2BMQk0dtJD5-=
+2F-2BO96lgI99LGB9apOygv4Wr54u7YU903umUXyE1VjkE0WKmjLyg87MnKTrM4SzehS2yVSSkl=
+EnxVKE6xYvv76HoceUhZlZakVZLKeyjEWr1nvi4ZD1t4PuckAromRsFmQluwW5MelgtQuz5ErtG=
+3ARiWt69T-2FRRXfX8TdEzDu-2BhNVDQxNkAzE80ORubzxr3yjpSxXtoNJeda21loOn7YNftRmo=
+Y6BAlfwKAU54kPBO4yJl6T65JAC5CaSk1xG-2F3c8o7Y9b302D-2FEGgmd7XzNtMWAUKG9I-2BT=
+pTHv4eJ7Tqf-2BWKqk6SSb-2BjgVvVnEjRZxoFTHMikttK-2Bn4w2CKwNqUwLQtoyFEIVLwHIjp=
+M-2BnMrNX7gnHHQDmYe9ikRyiXqz0SsavIxYJJKXwY7uaowYQ5NDX1hjO-2FIZn-2FE0eT-2F1f=
+8aJzNTbyP9JP2ES62klf8anCnXfTWFhxkcoh4NwApS8JJ0idsNt7UHxe9hiLhG-2FhpHLaPyoWh=
+2FOQqkfHa0GLZz-2B3Dt-2BUS40dtycEzVpVtpXj8dF37EJVcmOQyMz0aB8cRU3pw-3D-3D" al=
+t=3D"" width=3D"1" height=3D"1" border=3D"0" style=3D"height:1px !important=
+;width:1px !important;border-width:0 !important;margin-top:0 !important;mar=
+gin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;=
+padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !impor=
+tant;padding-left:0 !important;"/></body>
+  </html>
+--b4eb90d7f605abaeec5bb8101316d65ff67ca46f0e6b842abc219d2d4cb7--

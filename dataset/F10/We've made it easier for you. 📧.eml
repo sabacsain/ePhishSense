@@ -1,0 +1,422 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:9b48:b0:51c:3591:c489 with SMTP id b8csp965323max;
+        Thu, 12 Oct 2023 19:28:53 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGoV5gxETAAKEbzUHwPyWCJjuJQoqmyOLZf7YXIzqmeqZDt384lndTpapkJAVy3A/vn9dP7
+X-Received: by 2002:a05:622a:4cb:b0:414:68a7:9d98 with SMTP id q11-20020a05622a04cb00b0041468a79d98mr30050569qtx.67.1697164132910;
+        Thu, 12 Oct 2023 19:28:52 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697164132; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0F+uHHpON4CVOk7TF1xy7H4u6TOHVti6Ae9oYm4xjulQ8iXvHPQa/pgHoZHAI+or/b
+         8chgx2XTi8vnmSY8qx6E/5noQzxrbUf1wkXL9iYzJ14pp26CPp1oydHteCh+P90C1g9V
+         VKgLMBydTsg2uWMX9VVQzDYhvZqHVqm7OgATARbw6VKzm+8yB3PvVckCLhQlZzalLtXE
+         m/lqelBpx1Qn1OjYG+1rZqTiJwOeUOpyEwwmjqZ7jffqCFPmytV/+L1TZm9SA0EUBz74
+         JCal9O5F6gg8L0qL6jBxJ7pDmebAkBShaqq/SwFZS3+SDQ43e7IXnQ1qX1K93nJ1Uv6T
+         chkg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature;
+        bh=/NykhJgbmHJrQLdfSw68EnlFl+hjucXJwUGV+0qJG8w=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=KyMlJGz5asyS7yjwKfQqKBfUWvdD/iGIkiWTRVR4lRtiwbmvFGO9YYZrjNFNSu2U64
+         LX+DdgWgJ+e6GvUQm16PLWTOQuJqCLIJXoBZib8RBJo5aQDPKtLfOjATPfaNCQLEX6Ir
+         vHYu+JKws0MZoAvfsqw9+E/NcrZU9bn9Tmb4Bild3POSpoN7pDbykT8Qu35nQIGner9w
+         HYodBl1KpfT0NdE9K5ZfRcpGU+TkFaoGs/vvDGFQ9Mvm3ggb6lpJK6cY26KI6ZscET6P
+         fyugqvulVMi5oEElekU2adeSzpl017EXejC7hT3RWUd0NMwsQ/zKZOy1yUGdhSgw4nSz
+         XtIA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b="E87pBz1/";
+       spf=pass (google.com: domain of bounces+15644104-11cf-************************=gmail.com@sendgrid.net designates 149.72.203.193 as permitted sender) smtp.mailfrom="bounces+15644104-11cf-************************=gmail.com@sendgrid.net";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=starbucks.ph
+Return-Path: <bounces+15644104-11cf-************************=gmail.com@sendgrid.net>
+Received: from o17.ptr2892.starbucks.ph (o17.ptr2892.starbucks.ph. [149.72.203.193])
+        by mx.google.com with ESMTPS id y9-20020a05622a004900b00419765598cfsi555983qtw.389.2023.10.12.19.28.41
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 12 Oct 2023 19:28:52 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+15644104-11cf-************************=gmail.com@sendgrid.net designates 149.72.203.193 as permitted sender) client-ip=149.72.203.193;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@sendgrid.net header.s=smtpapi header.b="E87pBz1/";
+       spf=pass (google.com: domain of bounces+15644104-11cf-************************=gmail.com@sendgrid.net designates 149.72.203.193 as permitted sender) smtp.mailfrom="bounces+15644104-11cf-************************=gmail.com@sendgrid.net";
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=starbucks.ph
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.net;
+	h=content-transfer-encoding:content-type:from:mime-version:subject:
+	reply-to:x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=/NykhJgbmHJrQLdfSw68EnlFl+hjucXJwUGV+0qJG8w=;
+	b=E87pBz1/UPVMntSP91ONfJWfarII+ImSq2oSEsJCZbfEPmjdm05bqbwkSY2kdwWhbTKQ
+	2feXtn9f9KmJhq9/DVN+A+M0ZDWeSn7Zr1+sf8M400OIrOfDt8ZCmRjk5Ef0/JT2jYDj1o
+	myeRJ8AYGYhE8PTss/hU6mFSWoqOBAH+k=
+Received: by filterdrecv-7f6fb47f58-d4rhd with SMTP id filterdrecv-7f6fb47f58-d4rhd-1-6528AB58-4A
+        2023-10-13 02:28:41.057566488 +0000 UTC m=+194750.061905512
+Received: from MTU2NDQxMDQ (unknown)
+	by geopod-ismtpd-11 (SG) with HTTP
+	id 3kXsNkvDRxuOV3zqW25bYg
+	Fri, 13 Oct 2023 02:28:40.736 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Date: Fri, 13 Oct 2023 02:28:41 +0000 (UTC)
+From: Starbucks Rewards Philippines <info@starbucks.ph>
+Mime-Version: 1.0
+Message-ID: <3kXsNkvDRxuOV3zqW25bYg@geopod-ismtpd-11>
+Subject: We've made it easier for you. =?UTF-8?B?8J+Tpw==?=
+Reply-To: info@starbucks.ph
+X-Feedback-ID: 15644104:SG
+X-SG-EID: 
+ =?us-ascii?Q?JiIqOtusqKVu7vK=2FsJpzjH8f977abP6FZW=2Fnj9+=2FkXK9iAwcqRxzRPSE6jSYfe?=
+ =?us-ascii?Q?T+3E7B3pouXNWXNogm0kZ1fjbderN2B9JT8rolK?=
+ =?us-ascii?Q?9smzGw1t6Tafhl6C57FBSydt7Rr6KPO8Bm0JLA9?=
+ =?us-ascii?Q?fr1677BPJqyZYNbziOt4C7AvCmWiXXSM6lytqwF?=
+ =?us-ascii?Q?QVTbKpYzEouEdjo0dSG4dB5u4jlfeRS9=2FwqMMDz?=
+ =?us-ascii?Q?JV9t7IVoGYo4Qt1OANFxKYc3bUpCT+bC47Ubhd6?=
+ =?us-ascii?Q?kUEBYQUugiHUlYmSy8b8M9U1DCVuCJ3tYLcvgE5?= =?us-ascii?Q?gSY=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FLoiDN6KdiqyNtgrBrlEo?=
+ =?us-ascii?Q?P2gaBtugx7ZWDRDeD8q+DQfrHrf52aSdVTUuBDe?=
+ =?us-ascii?Q?wCQaKloK21s6OVzfX8FemKDpGfK4D=2FfgzK+gnev?=
+ =?us-ascii?Q?v33NOjVHxrLajTbxiV7VgmyU2WuNH=2Fkjn=2F7fTfZ?=
+ =?us-ascii?Q?spw0Q3KhHN=2FBYtFYarSa=2FOww62qr=2Fs6LJzVVeH3?=
+ =?us-ascii?Q?vXGW8EtXfqmvIiQcqA2clcOejxamO80eWOTpRWW?=
+ =?us-ascii?Q?OkngUv=2FmAc9eny4McjyISYrVOHQoLXv6a6kJvo6?=
+ =?us-ascii?Q?ydJtj5ZTW+tuw1J82I1iFwV0+Kz+AllgVkVv99g?=
+ =?us-ascii?Q?JhLUx5WEv5D2N=2F5XZKRKGp+cLbFc8TWt8ckMHnH?=
+ =?us-ascii?Q?PwyAG87CfoM1SaSTvds5c5al0skio9Mw5ohI5Ey?=
+ =?us-ascii?Q?YxyXYPj6Ak1fRmJLGMXg1kYJTh3GhzXKUVtYTQT?=
+ =?us-ascii?Q?wJz8AhPkgvweyrnyNfEntBQs8q8koyzdsdpp005?=
+ =?us-ascii?Q?46TovIuEN3MuEOvHB3s8M0gzp2b7U8lU6s6t8k7?=
+ =?us-ascii?Q?4GBlAoAf74h2JL326Pr8GNBbkB+lxykQni+uYDV?=
+ =?us-ascii?Q?Ojd6vGXbH+WgFtgfqOGZFdXNCL38VDJNrMq7cbN?=
+ =?us-ascii?Q?60sJj4MdgkdKgwEY8E729cOyt+4njN894bdoTzJ?=
+ =?us-ascii?Q?B6ehirQmu=2Fw0MVeyNckrhpQatHmrSXILYpOysUf?=
+ =?us-ascii?Q?ipGCwcxdrcZm9EX6bXNRxftIi+7byC=2FX51UvfCq?=
+ =?us-ascii?Q?l=2FL9ogOu6IrnEIu2y7SFR9PYdozkXe0wCwGxWOo?=
+ =?us-ascii?Q?R2sZ4k2VnO=2FOLkMDxipxnhKBCyFM5VKtBoL4P8S?=
+ =?us-ascii?Q?Yv=2Fo8N8nuWtsTwnxmdJrl=2FNlleV4KGRb6q6HeEc?=
+ =?us-ascii?Q?cME72w0nOzn76g=2F=2FAtiTtFxuPgpPMsTOLq203=2FN?=
+ =?us-ascii?Q?UgOj+3D=2FSdeEeDuxDPNPUVwN2e9jav5FXZQPzsk?=
+ =?us-ascii?Q?uk5ub69UY4zo1qQAgTAyqK+Yj0BEoLR7Ju4A3MI?=
+ =?us-ascii?Q?oCVcx7oHMlwoSHRykbh2ToQ=3D=3D?=
+To: ************************@gmail.com
+X-Entity-ID: rVUURiPFFVfirxmnaZZrKw==
+
+<!DOCTYPE html><html xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"u=
+rn:schemas-microsoft-com:office:office" lang=3D"en"><head><title></title><m=
+eta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8"><met=
+a name=3D"viewport" content=3D"width=3Ddevice-width,initial-scale=3D1"><!--=
+[if mso]><xml><o:OfficeDocumentSettings><o:PixelsPerInch>96</o:PixelsPerInc=
+h><o:AllowPNG/></o:OfficeDocumentSettings></xml><![endif]--><style>*{box-si=
+zing:border-box}body{margin:0;padding:0}a[x-apple-data-detectors]{color:inh=
+erit!important;text-decoration:inherit!important}#MessageViewBody a{color:i=
+nherit;text-decoration:none}p{line-height:inherit}.desktop_hide,.desktop_hi=
+de table{mso-hide:all;display:none;max-height:0;overflow:hidden}.image_bloc=
+k img+div{display:none} @media (max-width:620px){.mobile_hide{display:none}=
+.row-content{width:100%!important}.stack .column{width:100%;display:block}.=
+mobile_hide{min-height:0;max-height:0;max-width:0;overflow:hidden;font-size=
+:0}.desktop_hide,.desktop_hide table{display:table!important;max-height:non=
+e!important}}</style></head><body style=3D"background-color:#fff;margin:0;p=
+adding:0;-webkit-text-size-adjust:none;text-size-adjust:none"><table class=
+=3D"nl-container" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" role=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0=
+;background-color:#fff"><tbody><tr><td><table class=3D"row row-1" align=3D"=
+center" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" rol=
+e=3D"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tbody><=
+tr><td><table class=3D"row-content stack" align=3D"center" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation" style=3D"mso-table-l=
+space:0;mso-table-rspace:0;border-radius:0;color:#000;width:600px;margin:0 =
+auto" width=3D"600"><tbody><tr><td class=3D"column column-1" width=3D"100%"=
+ style=3D"mso-table-lspace:0;mso-table-rspace:0;font-weight:400;text-align:=
+left;padding-bottom:5px;padding-top:5px;vertical-align:top;border-top:0;bor=
+der-right:0;border-bottom:0;border-left:0"><table class=3D"html_block block=
+-1" width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" role=3D=
+"presentation" style=3D"mso-table-lspace:0;mso-table-rspace:0"><tr><td clas=
+s=3D"pad"><div style=3D"font-family:Arial,'Helvetica Neue',Helvetica,sans-s=
+erif;text-align:center" align=3D"center">            <meta content=3D"text/=
+html; charset=3DUTF-8" />        <meta content=3D"initial-scale=3D1.0" />  =
+          <meta content=3D"telephone=3Dno" />                   <style>				=
+	@media screen and (-webkit-min-device-pixel-ratio: 0) {				img[class=3D"wk=
+Ani"] {					width: 100% !important;					height: auto !important;					displa=
+y: block !important;					float: none !important;				}				img[class=3D"wkSta=
+tic"] {					width: 0 !important;					height: 0 !important;					display: non=
+e !important;				}			}            @media only screen and (min-width: 768px)=
+ {}            @media only screen and (min-width: 480px) and (max-width: 76=
+7px) {}            @media only screen and (max-width: 479px) {             =
+   body { padding: 0 !important; }                table[id=3D'stage'] { wid=
+th: 100% !important; }                td[class*=3D'unit'] { display:inline-=
+block; width: 100% !important; }                table[id=3D'footer'] td[cla=
+ss=3D'textcontent'] { text-align: center !important; }                td[cl=
+ass*=3D'imghide'] { display:none !important; }                }            =
+#impright p {                margin: 3px 0 10px 11px !important;           =
+ }            #pull{               margin: 0 0 -4px 0 !important;          =
+  }        </style>                                    <table id=3D"body" b=
+order=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%" style=3D"bor=
+der-collapse: collapse;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rs=
+pace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;backgro=
+und-color: #ffffff;">			<tr>				<td align=3D"left" valign=3D"top" style=3D"=
+color:#006241; font-family: Arial, Helvetica, sans-serif; font-size:12px; l=
+ine-height: 1.5; display: none; height: 0; max-height: 0; max-width: 0; opa=
+city: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">		=
+			Joining just got easier. Coming soon. For more of our newsletters in the=
+ future, please add info@starbucks.ph in your contacts folder.             =
+   </td>            </tr>            <tr bgcolor=3D"#ffffff">              =
+  <td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-ad=
+just: 100%;-webkit-text-size-adjust: 100%;">=C2=A0</td>                <td =
+width=3D"600" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text=
+-size-adjust: 100%;-webkit-text-size-adjust: 100%;">                    <ta=
+ble id=3D"stage" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+600" style=3D"border-collapse: collapse;border-spacing: 0;mso-table-lspace:=
+ 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adj=
+ust: 100%;background-color: #0a5032;">                        <tr>         =
+                   <td valign=3D"top" align=3D"left" style=3D"mso-table-lsp=
+ace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size=
+-adjust: 100%;">                                 <table border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" width=3D"600" style=3D"border-collapse: colla=
+pse;border-spacing: 0;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;">																								=
+											                                    <tr bgcolor=3D"#0a5032">    =
+                                    <td valign=3D"top" align=3D"left" style=
+=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;=
+-webkit-text-size-adjust: 100%;">                                          =
+   <div id=3D"desktopflexhot">																								<img src=3D"https://g=
+en-pub-ent-sessionm-com.s3.amazonaws.com/email/images/bbca84e6-09a9-4aec-97=
+50-640660d1aa21/FY23%20Cardless%20Registration%20Teaser%203/Cardless-Regist=
+ration-Teaser-2-EDM_03.jpg" alt class=3D"fleximage" style=3D"border: 0;outl=
+ine: none;text-decoration: none;-ms-interpolation-mode: bicubic;display: bl=
+ock;width: 100%;min-width: 600px;max-width: 100%;padding:0 0 0 0;" />						=
+																	</div>											                                        <=
+/td>                                    </tr>																											<tr=
+ bgcolor=3D"#0a5032">                                        <td valign=3D"=
+top" align=3D"left" style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-m=
+s-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">                 =
+                            <div id=3D"desktopflexhot">																				=
+				<img src=3D"https://gen-pub-ent-sessionm-com.s3.amazonaws.com/email/ima=
+ges/bbca84e6-09a9-4aec-9750-640660d1aa21/FY23%20Cardless%20Registration%20T=
+easer%203/Cardless-Registration-Teaser-2-EDM_04.jpg" alt class=3D"fleximage=
+" style=3D"border: 0;outline: none;text-decoration: none;-ms-interpolation-=
+mode: bicubic;display: block;width: 100%;min-width: 600px;max-width: 100%;p=
+adding:0 0 0 0;" usemap=3D"#reserve-now-map" />																							</div=
+>                                        </td>                             =
+       </tr>																																				<tr bgcolor=3D"#ffffff">			=
+							<td align=3D"left" bgcolor=3D"#ffffff" valign=3D"top">											<ta=
+ble border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%">							=
+					<tbody>													<tr>														<td align=3D"left" class=3D"widt=
+h-mob" valign=3D"top" width=3D"20"></td>														<td align=3D"left" va=
+lign=3D"top">															<table border=3D"0" cellpadding=3D"0" cellspaci=
+ng=3D"0" width=3D"100%">																<tbody>																	<tr>							=
+											<td align=3D"left" class=3D"innercontainer2" valign=3D"top" widt=
+h=3D"56%">																			<table border=3D"0" cellpadding=3D"0" cellspac=
+ing=3D"0" width=3D"100%">																				<tbody>																					<t=
+r>																						<td align=3D"left" style=3D"padding: 20px 0;" valig=
+n=3D"top"><img alt=3D"Starbucks" border=3D"0" class=3D"sb-logo" src=3D"http=
+s://gen-pub-ent-sessionm-com.s3.amazonaws.com/email/images/bbca84e6-09a9-4a=
+ec-9750-640660d1aa21/FY23%20BP%20SR%20Exclusive/BP-SR-Exclusive-EDM_10.png"=
+ style=3D"display: inline-block; border: 0;" width=3D"223" /></td>									=
+												</tr>																				</tbody>																			</table>			=
+															</td>																		<td align=3D"left" valign=3D"top" wid=
+th=3D"2%"></td>																		<td align=3D"left" class=3D"innercontainer=
+2" valign=3D"top" width=3D"42%">																			<table border=3D"0" cell=
+padding=3D"0" cellspacing=3D"0" width=3D"100%">																				<tbody>	=
+																				<tr>																						<td align=3D"right" valign=3D=
+"middle" style=3D"padding: 45px 0;">																																							=
+							<a href=3D"https://u15644104.ct.sendgrid.net/ls/click?upn=3DGIKc3HRN=
+oFtfyPMjno1xxVIbIk3rPa-2FwUtzsOyXaatYmQvrrdwrJseLUyREovy2Ha9MhiGSC3QcJfD1fi=
+8FAtg-3D-3D_fid_Pb3SDflcdKjMCSvnwApnneDKl3mVOrcDuxbB2QYsxy8KV2uLwBhMM3Nm4uF=
+jgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcViuapoV06ahaQvAEsaUKcxjjFy89j9x5f=
+tmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr0jBMYuuQ0RWfjPKWYSiInnbOpOmpapKk=
+vaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5BrQhi-2BsISWAS1g3jYFE1d7wGfS1TLJ=
+t5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQsCmRPX6-2F4BdhilZznjrcFm4KBBk8-2=
+FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF70pNaZQsegx-2BC7JCuR5hyNsGs0EZHi=
+FkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ouA49Imop42Ome9NEKid7ywMilA-2FNqMN=
+JY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj3BIiiCD4f6NH2q6-2BfCQzK-2BQoP8v5=
+51gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2BszQdo7ppkprCOgI0dDZLfux05S4aDxwH6R=
+hZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd3393bw6tMyAQQ5Ncj5LhbBQP0wV9w6cV=
+0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7Yp-2B6ffdc34hkkH4vIV7lNJILOTuFn8=
+YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Qc3OPHAHRAoHHZ6lx1Ch-2FnqwgzawAh4=
+ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf3xIABUS8rkamQGfNd7LuK4lc6ZMKmiyB=
+eMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTdJg9glk-2F-2BmDHkEgrLih6UDKvxtvEE=
+GJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ-2FUwMhLrH2PiM3qu7fYG-2BRyiC6vWV=
+qzbq8lBbQi3MVqqmuzQ8XgaBm340Uld8ru07dtOadaiR1YPN7VNnePNAfV-2BsBVj7QTfMnyh46=
+ExkJ2YbAH9dlex1Biie-2B1hELNsuRRG9FHI4yfHcHOyx8biX0WJbm9K5g-3D-3D" target=3D=
+"_blank"><img alt=3D"Facebook" height=3D"30" src=3D"https://gen-pub-ent-ses=
+sionm-com.s3.amazonaws.com/email/images/bbca84e6-09a9-4aec-9750-640660d1aa2=
+1/FY23%20BP%20SR%20Exclusive/BP-SR-Exclusive-EDM_11.png" style=3D"display: =
+inline-block;" width=3D"30" /></a>=C2=A0=C2=A0																													=
+																																								<a href=3D"https://u15644104.ct.sen=
+dgrid.net/ls/click?upn=3DGIKc3HRNoFtfyPMjno1xxdcRoEsrag-2FWojm-2FoW5KOMfgYJ=
+VHmGWtdvqSpIiFLEgXk3l4_Pb3SDflcdKjMCSvnwApnneDKl3mVOrcDuxbB2QYsxy8KV2uLwBhM=
+M3Nm4uFjgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcViuapoV06ahaQvAEsaUKcxjjFy=
+89j9x5ftmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr0jBMYuuQ0RWfjPKWYSiInnbOp=
+OmpapKkvaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5BrQhi-2BsISWAS1g3jYFE1d7w=
+GfS1TLJt5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQsCmRPX6-2F4BdhilZznjrcFm4=
+KBBk8-2FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF70pNaZQsegx-2BC7JCuR5hyNs=
+Gs0EZHiFkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ouA49Imop42Ome9NEKid7ywMilA=
+-2FNqMNJY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj3BIiiCD4f6NH2q6-2BfCQzK-2=
+BQoP8v551gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2BszQdo7ppkprCOgI0dDZLfux05S4=
+aDxwH6RhZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd3393bw6tMyAQQ5Ncj5LhbBQP0=
+wV9w6cV0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7Yp-2B6ffdc34hkkH4vIV7lNJI=
+LOTuFn8YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Qc3OPHAHRAoHHZ6lx1Ch-2Fnqw=
+gzawAh4ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf3xIABUS8rkamQGfNd7LuK4lc6=
+ZMKmiyBeMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTdJg9glk-2F-2BmDHkEgrLih6UD=
+KvxtvEEGJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ-2FUwMhLrIs2OJ5HqPrn1e40c=
+nUFkPf-2FZtxenJztvqHQfAwDECrzjTEURbseOw-2BVGEIDNLang2PdiqBLANUzto9gt1ex7jBC=
+TPqxt3iVSbWbvOgLZ9PrwUbLKHLWzvm9zoinPWWqONZeKSkE30ZiXGrqpbvX6Yw-3D-3D" targ=
+et=3D"_blank"><img id=3D"padleft10" alt=3D"Instagram" height=3D"30" src=3D"=
+https://gen-pub-ent-sessionm-com.s3.amazonaws.com/email/images/bbca84e6-09a=
+9-4aec-9750-640660d1aa21/FY23%20BP%20SR%20Exclusive/BP-SR-Exclusive-EDM_12.=
+png" style=3D"display: inline-block;margin-left: 10px;" width=3D"30" /></a>=
+=C2=A0=C2=A0																						</td>																					</tr>										=
+										</tbody>																			</table>																		</td>							=
+										</tr>																</tbody>															</table>													=
+	</td>														<td align=3D"left" class=3D"width-mob" valign=3D"top" w=
+idth=3D"20"></td>													</tr>												</tbody>											</table>	=
+									</td>									</tr>																											<tr bgcolor=3D"#ffff=
+ff">										<td align=3D"center" bgcolor=3D"#ffffff" valign=3D"top">					=
+						<table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"90%"=
+>												<tbody>													<tr>														<div id=3D"linemin">				=
+											<tr bgcolor=3D"#cccccc">																<td valign=3D"top" align=
+=3D"center" style=3D"color: #cccccc;font-family: 'Segoe UI Semibold','Segoe=
+ UI',Arial,sans-serif;font-size: 5px;line-height:2px;text-align: left;font-=
+weight: 200;">																	.																</td>															</tr>		=
+												</div>													</tr>												</tbody>											</table>=
+										</td>									</tr>																											<tr bgcolor=3D"#fff=
+fff">										<td align=3D"left" bgcolor=3D"#ffffff" valign=3D"top" style=
+=3D"padding: 20px 10px">											<table border=3D"0" cellpadding=3D"0" ce=
+llspacing=3D"0" width=3D"90%">												<tbody>													<tr>									=
+					<td valign=3D"top" align=3D"center" class=3D"textcontent" style=3D"pad=
+ding: 8px 15px 8px 15px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-tex=
+t-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Arial,Helve=
+tica,sans-serif;font-size: 14px;line-height: 20px;color: #006241;">								=
+							<a href=3D"https://u15644104.ct.sendgrid.net/ls/click?upn=3DGIKc3HRN=
+oFtfyPMjno1xxV0RI8gN-2FvZoOkerKtzUBb5sSq3DzTrSpIxywqHTWi3sWO3OlyjwJGONXj-2F=
+XNXHHdg-3D-3DY2xH_Pb3SDflcdKjMCSvnwApnneDKl3mVOrcDuxbB2QYsxy8KV2uLwBhMM3Nm4=
+uFjgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcViuapoV06ahaQvAEsaUKcxjjFy89j9x=
+5ftmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr0jBMYuuQ0RWfjPKWYSiInnbOpOmpap=
+Kkvaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5BrQhi-2BsISWAS1g3jYFE1d7wGfS1T=
+LJt5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQsCmRPX6-2F4BdhilZznjrcFm4KBBk8=
+-2FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF70pNaZQsegx-2BC7JCuR5hyNsGs0EZ=
+HiFkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ouA49Imop42Ome9NEKid7ywMilA-2FNq=
+MNJY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj3BIiiCD4f6NH2q6-2BfCQzK-2BQoP8=
+v551gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2BszQdo7ppkprCOgI0dDZLfux05S4aDxwH=
+6RhZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd3393bw6tMyAQQ5Ncj5LhbBQP0wV9w6=
+cV0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7Yp-2B6ffdc34hkkH4vIV7lNJILOTuF=
+n8YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Qc3OPHAHRAoHHZ6lx1Ch-2FnqwgzawA=
+h4ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf3xIABUS8rkamQGfNd7LuK4lc6ZMKmi=
+yBeMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTdJg9glk-2F-2BmDHkEgrLih6UDKvxtv=
+EEGJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ-2FUwMhLr-2F0KmOfWJTJiTvQwqjtH=
+SydDGQRkqjmYrKiuFor5CezFz7kutmufMpv-2BOMunkf9w2hNXGcYnGzuWOoGrFYC17Ftkk9sJY=
+VxUNz0rpART2KW-2BYT-2BW1XCdrvwDaCN0QQxjWdZ5tsu-2Bi0KN-2Bfe4o4H7NUA-3D-3D" s=
+tyle=3D"color:#006241;text-decoration:none;">Starbucks Stores</a>										=
+				</td>																												<td valign=3D"top" align=3D"center" cl=
+ass=3D"textcontent" style=3D"padding: 8px 15px 8px 15px;mso-table-lspace: 0=
+pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjus=
+t: 100%;font-family: Arial,Helvetica,sans-serif;font-size: 14px;line-height=
+: 20px;color: #006241;">															<a href=3D"https://u15644104.ct.send=
+grid.net/ls/click?upn=3DGIKc3HRNoFtfyPMjno1xxQMtrBcqgFIeFTXmpToG3e8ORPp5Z7f=
+5d4LOOFuW6-2BRly43O99ZpSAgaUt2IOqP07g-3D-3D2R_u_Pb3SDflcdKjMCSvnwApnneDKl3m=
+VOrcDuxbB2QYsxy8KV2uLwBhMM3Nm4uFjgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcV=
+iuapoV06ahaQvAEsaUKcxjjFy89j9x5ftmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr=
+0jBMYuuQ0RWfjPKWYSiInnbOpOmpapKkvaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5=
+BrQhi-2BsISWAS1g3jYFE1d7wGfS1TLJt5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQ=
+sCmRPX6-2F4BdhilZznjrcFm4KBBk8-2FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF=
+70pNaZQsegx-2BC7JCuR5hyNsGs0EZHiFkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ou=
+A49Imop42Ome9NEKid7ywMilA-2FNqMNJY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj=
+3BIiiCD4f6NH2q6-2BfCQzK-2BQoP8v551gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2Bsz=
+Qdo7ppkprCOgI0dDZLfux05S4aDxwH6RhZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd=
+3393bw6tMyAQQ5Ncj5LhbBQP0wV9w6cV0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7=
+Yp-2B6ffdc34hkkH4vIV7lNJILOTuFn8YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Q=
+c3OPHAHRAoHHZ6lx1Ch-2FnqwgzawAh4ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf=
+3xIABUS8rkamQGfNd7LuK4lc6ZMKmiyBeMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTd=
+Jg9glk-2F-2BmDHkEgrLih6UDKvxtvEEGJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ=
+-2FUwMhLr2xhfccjZ6mEIt2V0-2FECWh33eEOpjhEbIdiHqzdop5IA5FL7nNPOLhFRGKI6jufdn=
+-2Fn8fKRQuHjlIhWO18dChOiO56WR3wvNjB-2B6Kdsas-2Fa-2BBj1a2iEk62cCcfrTf6KyneBy=
+l-2FALBvUcj3OJjKpjLLQ-3D-3D" style=3D"color:#006241;text-decoration:none;">=
+Starbucks Card Terms of Use</a>														</td>																									=
+			<td valign=3D"top" align=3D"center" class=3D"textcontent" style=3D"paddi=
+ng: 8px 15px 8px 15px;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-=
+size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Arial,Helveti=
+ca,sans-serif;font-size: 14px;line-height: 20px;color: #006241;">										=
+					<a href=3D"https://u15644104.ct.sendgrid.net/ls/click?upn=3DGIKc3HRNoF=
+tfyPMjno1xxQMtrBcqgFIeFTXmpToG3e-2BOBMayuhiWBriPAhG8oZcY-2BPdAdlS890zJ0QXet=
+GfGEg-3D-3DKbm3_Pb3SDflcdKjMCSvnwApnneDKl3mVOrcDuxbB2QYsxy8KV2uLwBhMM3Nm4uF=
+jgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcViuapoV06ahaQvAEsaUKcxjjFy89j9x5f=
+tmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr0jBMYuuQ0RWfjPKWYSiInnbOpOmpapKk=
+vaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5BrQhi-2BsISWAS1g3jYFE1d7wGfS1TLJ=
+t5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQsCmRPX6-2F4BdhilZznjrcFm4KBBk8-2=
+FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF70pNaZQsegx-2BC7JCuR5hyNsGs0EZHi=
+FkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ouA49Imop42Ome9NEKid7ywMilA-2FNqMN=
+JY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj3BIiiCD4f6NH2q6-2BfCQzK-2BQoP8v5=
+51gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2BszQdo7ppkprCOgI0dDZLfux05S4aDxwH6R=
+hZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd3393bw6tMyAQQ5Ncj5LhbBQP0wV9w6cV=
+0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7Yp-2B6ffdc34hkkH4vIV7lNJILOTuFn8=
+YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Qc3OPHAHRAoHHZ6lx1Ch-2FnqwgzawAh4=
+ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf3xIABUS8rkamQGfNd7LuK4lc6ZMKmiyB=
+eMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTdJg9glk-2F-2BmDHkEgrLih6UDKvxtvEE=
+GJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ-2FUwMhLrzFQP8lOpgaXG1cdqBIdswAP=
+IYnRVNs-2FphCoThst6AMTwwahhFU7RaAURfZmUJ7Zj-2FalS3UikWmbMSVbaD8d1MXewWMocfz=
+Ru99wug-2FeqOXE-2BMNRwXLFCacX-2B1NNPYacNeYS622H-2BBZ2gxaJOf0ZOBQ-3D-3D" sty=
+le=3D"color:#006241;text-decoration:none;">Privacy Policy</a>														=
+</td>													</tr>												</tbody>											</table>										</t=
+d>									</tr>																		<tr bgcolor=3D"#ffffff">                 =
+                       <td valign=3D"top" align=3D"left" class=3D"textconte=
+nt" width=3D"600" style=3D"padding: 20px 15px 8px 30px;mso-table-lspace: 0p=
+t;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust=
+: 100%;font-family: Arial,Helvetica,sans-serif;font-size: 14px;line-height:=
+ 20px;color: #5f5f5f;">                                            Your add=
+ress is listed as <a href=3D"mailto: ************************@gmail.com" st=
+yle=3D"color:#5f5f5f;text-decoration:none;"> ************************@gmail=
+.com</a>. Please let us know at <a href=3D"mailto:info@starbucks.ph" style=
+=3D"color:#5f5f5f;text-decoration:none;">info@starbucks.ph</a> if you wish =
+to unsubscribe from this list.											<br /><br />											This email =
+is sent from an account we use for sending messages only. If you wish to co=
+ntact us, don=E2=80=99t reply to this email - we won=E2=80=99t receive your=
+ response. Please use this <a href=3D"https://u15644104.ct.sendgrid.net/ls/=
+click?upn=3DGIKc3HRNoFtfyPMjno1xxQMtrBcqgFIeFTXmpToG3e8ORPp5Z7f5d4LOOFuW6-2=
+BRly43O99ZpSAgaUt2IOqP07g-3D-3D_gx7_Pb3SDflcdKjMCSvnwApnneDKl3mVOrcDuxbB2QY=
+sxy8KV2uLwBhMM3Nm4uFjgbnRmw5TaDV00L0hVACSXk-2Bb9anXLA1Mys-2BtcViuapoV06ahaQ=
+vAEsaUKcxjjFy89j9x5ftmNbhj9myBsLr-2Fv6OkcMYz7QR00qlQ-2F14AtT0nr0jBMYuuQ0RWf=
+jPKWYSiInnbOpOmpapKkvaf1BZKSKfMeB8XACP-2BH6otVZLSU2fvETj8qiCtK5BrQhi-2BsISW=
+AS1g3jYFE1d7wGfS1TLJt5C-2BFqzJeg0-2Fy8JjnF7A4VCw5OM4wi-2BTJQSuQsCmRPX6-2F4B=
+dhilZznjrcFm4KBBk8-2FoRPI99iYwgnHJ7x2yqE9smSwiTQTHHdsNMwa6TuXiF70pNaZQsegx-=
+2BC7JCuR5hyNsGs0EZHiFkHlx3vhC3a-2B-2BpPzCrh8B7dHjdcJz8OK63vt1ouA49Imop42Ome=
+9NEKid7ywMilA-2FNqMNJY0YBIEk67HW1hXEGD29JDPXiR8nQSkXlRCC8-2B9vj3BIiiCD4f6NH=
+2q6-2BfCQzK-2BQoP8v551gBkdimrBEljM4vczqfqT4Ukw1FJSQeJEtlvE-2BszQdo7ppkprCOg=
+I0dDZLfux05S4aDxwH6RhZJLBNKphfxNfv6HyG-2FpuEeKoE7qKMjGRH4jUMwwd3393bw6tMyAQ=
+Q5Ncj5LhbBQP0wV9w6cV0BYqxdIOHq0nLDFzx-2Bub7MKZ4ovp8xIUYcbUYqgj7Yp-2B6ffdc34=
+hkkH4vIV7lNJILOTuFn8YWnU-2BSMqTJFAf3GTHLc2DHqddtDO7-2FtEymEeh7Qc3OPHAHRAoHH=
+Z6lx1Ch-2FnqwgzawAh4ipjhAEJBX1N6zZbjCQpduDKz8SFGHcz6MUVTeVN5gKf3xIABUS8rkam=
+QGfNd7LuK4lc6ZMKmiyBeMPUZNxC23Z9zmVtIqL8i-2B7ESSIeVW73lZFHUJjTdJg9glk-2F-2B=
+mDHkEgrLih6UDKvxtvEEGJkARCWuKly-2FMnsavhhvqEI3A-2FleYd4PWm5rOrZ-2FUwMhLre6f=
+SmFo5-2FtBzP8PQcsU3h-2BjdNzkM2CcztlXinysoT5Y0M6JcnuTopMXRbbLrJ8Z2F77qVy5sT-=
+2F1-2Bo9Ketd4wGFbqOGTgIM1uVcBhR38WOFvwiVplfXxHiJF-2B0HojRvdOcOTyyKoQyySq1YC=
+3-2FJVB8A-3D-3D" style=3D"color:#006241;text-decoration:none;">web form</a>=
+ or call our customer care contact center at (02) 8-462-6262 (Metro Manila)=
+ or 1800-10-4626262 (PLDT domestic toll-free).											<br /><br />						=
+					Copyright =C2=A9 Starbucks Coffee Corporation. All rights reserved.   =
+                                         <br /><br />                      =
+                  </td>                                    </tr>									  =
+                              </table>                            </td>    =
+                    </tr>                    </table>                </td> =
+               <td style=3D"mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms=
+-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">=C2=A0</td>       =
+     </tr>        </table>                    </div></td></tr></table></td>=
+</tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><!=
+-- End --><img src=3D"https://u15644104.ct.sendgrid.net/wf/open?upn=3DOCb5G=
+CKOynI-2B6ls2dHdEIrtmsrG0mfd9P3xmxYEcK4gLlne7HdRNYn4s6CIux8sIN6DgwFgucDTHXc=
+MqJbdNO5Nqx8vI4-2Ff6xgSlyKK4MQOsyAGfB6oA6fFAUIi7jTWGaKBiDeN3f74IzOPY6zBalgR=
+2AyzDN4IXv2piQmzmrQOnsIfyAXropUxsCG445LWE2GghFzNeWW7oNviQtDWcpwVAFIeV4TR4S8=
+ETK3oB96YK54zfvcUK50Ud6CbNGE3wMTwkPGRwT-2BXiwe4izNC5qQL4356uh7ThCCKHSmdH1nT=
+a-2BnusT1Pu7zbjwwHmnbkfdpcx9pBpyMTytIaqSgdaWcThOWH-2BuPC3N1PUrPt1kyBC3ZakYQ=
+MgG90zv0ovQVj6GFPb8QjwYNbYAVphzBY6eousYGst8IgE0TO60Isue35SjxJu1OQLBvUNSEoaU=
+mu5L5eOC19BwbnMZtSxSOzVIyXN-2FIK5uHy9c5gdk0GgUUSAOnpxts5HTRKtEcgeTyyT59HkFf=
+qeRKa8sYPwckrcMgFrHX2htiEvqKgOrffVaJs9rKJnyk0TQcQjdwlOPtnwgFLJpPvTP45BMXrBz=
+l4P-2BxOLlJ9ydA5HAnBRjGp-2FpxXU4urytyiZue1vqMF-2FnC5aloSCCUaZN6rDcDZQbrTV7p=
+W8ZX0Q7oS5MCYbber4lrlYtBAcKPbLOqZHM6Z8i4Fc-2BC0A3oecwdOQQfHSIte1qGZdJJgvavP=
+mbEqVYfSttZg1FXCEXkYXAK8ipoGMAW4RzmtZEXFjSZukHO3f5BZ5YDVZQfaYrYCp4S6o5QXKJM=
+IICO363D8Ko0oeRgXJ8uhWSaFl2MUUdR1oAXyK4Oqa6mV9DVb-2FwrLODQJqdxKw13KwIJ0OBYH=
+ZB7w5dOFVAEbegH3XXe0k-2F1CCP2edg6sXRculc2pSAzF-2BZD-2FoYbjf0Lxt3CQEb8s7Ab3e=
+f-2FG7SMejFS7AgxDfLuKgpUKtKMx3XfQV5x1s069TfZUIRIWgXj8wZ5-2BSO5uQBjfOzg1q5v-=
+2FLLke-2Bpsmcj15WoO-2BuciVLRmpWbLpoIST9sYuBv5dSD5U2sj6I2MLGMECfO-2B-2F6imHx=
+KjWnA8O7seTehMk-2Fga3elICNsq42pJVKxP8OilqzihYE0sELT-2BrYXLWFk-2Byxa-2Fw8mhT=
+VD-2BSnWbu-2FFVeucBKLqA-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=3D"=
+0" style=3D"height:1px !important;width:1px !important;border-width:0 !impo=
+rtant;margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !im=
+portant;margin-left:0 !important;padding-top:0 !important;padding-bottom:0 =
+!important;padding-right:0 !important;padding-left:0 !important;"/></body><=
+/html>

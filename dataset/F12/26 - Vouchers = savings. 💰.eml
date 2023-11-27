@@ -1,0 +1,4245 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a05:6e02:6ce:b0:350:f1df:6bf4 with SMTP id p14csp1823666ils;
+        Mon, 6 Nov 2023 03:12:29 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IEbuWRD+pkJ8WLcAZtkbsq5lg7MPhyPi4g1s5Ae+Khs5/kUhQtv+ekv1srF6Il7GJ09dVeO
+X-Received: by 2002:a05:6a00:181d:b0:6c3:47cb:7074 with SMTP id y29-20020a056a00181d00b006c347cb7074mr8658011pfa.25.1699269148682;
+        Mon, 06 Nov 2023 03:12:28 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699269148; cv=none;
+        d=google.com; s=arc-20160816;
+        b=isH30glI/Cj0puRgxv8OPRayPw3zhnDYh4mWMQGITrof4QBQDo3Z/ARNioJCPvFRKk
+         eioj2AcWoM8NyJ0xk7vpYD3JqRVBXC4Ll0KRvVv/9N31mT1f/BWbHobJnIrkcn1A4qJj
+         yBqKUy7uflP4euW9rrnrPHyha9HeQM9mBDTqBgjv1cLDB65lrH6ygye1kHfbFsXUdVWC
+         sR13XZ26Yu7gtrbY4nGwAZyuoC/n7cK3pl6f1YDttmLm/WvirIEjqsv/O94W/Mpaqxgn
+         CqchHVqfzDa/FKlw8y99aqwIcM9Ak3GAFou8zDpIIbU/g0ZxgwvVE8+maivTf2J2s/g2
+         BlJg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:list-unsubscribe:reply-to:subject:message-id:mime-version:from
+         :date:dkim-signature:dkim-signature;
+        bh=qMYBQkflh5KH1pmimCNVxLrVDMQItlwdKevYox1Z2RQ=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=sYSHsW3vQz2ShcpCJIKtr0tXMUDxaCwbdy7TEmYZzTQ1baGaMVReYNKBJRqhSUKYUX
+         nKyDxT1pYqEHK03KE8XZgmZVmcSqkzmoBuWFHNFmn6Fz7BqSPpMuk2btd8fKuJwTje/Y
+         +F1V3Tj1/wdw25OrrGnjiSwrzyj7GBnOVi2hL8tYq9RMiOprvltTmr3WoqXVTarHBjYm
+         n99Ad9qhn6nlL/gp9fqeUSTqZ2x30E27rPQkBnjvzDzH7iunOBsGXY5o9XbK3qPXUIhE
+         vti50ChUe+ZjYSAj3AnzWXZfQr1ebqIlPooUqpf7vzWmRAAREg8yqBOz1oajfVPyrQ6l
+         MOHQ==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@info.foodpanda.ph header.s=s1 header.b=1t9s3vXJ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wKDhSSw4;
+       spf=pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.122.145 as permitted sender) smtp.mailfrom="bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph"
+Return-Path: <bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph>
+Received: from o3910.abmail.info.foodpanda.bg (o3910.abmail.info.foodpanda.bg. [168.245.122.145])
+        by mx.google.com with ESMTPS id w1-20020a056a0014c100b0069d1639f09esi7928277pfu.190.2023.11.06.03.12.27
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Mon, 06 Nov 2023 03:12:28 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.122.145 as permitted sender) client-ip=168.245.122.145;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@info.foodpanda.ph header.s=s1 header.b=1t9s3vXJ;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=wKDhSSw4;
+       spf=pass (google.com: domain of bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph designates 168.245.122.145 as permitted sender) smtp.mailfrom="bounces+4640457-a2fb-ronaldlambertnicolastugadi=gmail.com@abmail.info.foodpanda.ph"
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=info.foodpanda.ph;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=s1; bh=qMYBQkflh5KH1pmimCNVxLrVDMQItlwdKevYox1Z2RQ=;
+	b=1t9s3vXJBAUBY2/4jDGMvWXNOLk+/Vw5yIx2teM8T69F45FAngpS1gAdnOMEibSf2lgl
+	d3vnQIt31qWCigMlhr80CP9QHrvsKmDhTmE+RyzAhiNhrau5Y5UkaDW3y3fOoYrkB3cKEV
+	13fueOB5CrzC/5WctObxYwezsUvzUAUQTI0qeLNTmaiQlpEWMVtV+bWgw00HfMh+mYQ0SU
+	EtVEZ0RVhE281KwSCIXf7/h1aVjOeBBHyNupcOWmTpdkXi/EgbYZDs+vCIWNO4vMH9udp4
+	GNGfyrADUqNfR9TFIKafiduNflZco6DuNIjDxFqcCYu/1WiozOCmfnbQH1jW6ipw==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:list-unsubscribe:
+	x-feedback-id:to:cc:content-type:from:subject:to;
+	s=smtpapi; bh=qMYBQkflh5KH1pmimCNVxLrVDMQItlwdKevYox1Z2RQ=;
+	b=wKDhSSw4c+MBwo/tLLJQURp2n3ByAWpid/Rxof0TAzUIs2nQlW/+ql6k5brYjbgfdoiS
+	TImIiLUw0LAWoCZZOmFepR0oKQfY7M4fAb/xwL2PSzTlbI1r33D+XfMOlqYLmOtLqjDCOT
+	p8W2UhKhRJFTgn4co14RngkZ5yKvrLGbo=
+Received: by filterdrecv-86b8f958d7-sxbm6 with SMTP id filterdrecv-86b8f958d7-sxbm6-1-6548B886-2D
+        2023-11-06 09:57:26.989164384 +0000 UTC m=+1696552.145877840
+Received: from NDY0MDQ1Nw (unknown)
+	by geopod-ismtpd-37 (SG) with HTTP
+	id ntzl9lSzRp6uS-1C5ZIlQQ
+	Mon, 06 Nov 2023 09:57:26.838 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=cb5ee49895db9edd30b23d1f0ac2f2de04416d6a56f213a1ae31ab3cc709
+Date: Mon, 06 Nov 2023 09:57:27 +0000 (UTC)
+From: foodpanda <contact@info.foodpanda.ph>
+Mime-Version: 1.0
+Message-ID: <ntzl9lSzRp6uS-1C5ZIlQQ@geopod-ismtpd-37>
+Subject: Vouchers = savings. =?UTF-8?B?8J+SsA==?=
+Reply-To: noreply@info.foodpanda.ph
+List-Unsubscribe: 
+ =?us-ascii?Q?=3Cmailto=3A4=5Fmb9cc8xq7jmrg6p9wepq06tyxcuoh1inlkqladnpbda3kj2xjnpx?=
+ =?us-ascii?Q?vu=40unsubscribe=2Eemailinboundprocessing=2Ec?=
+ =?us-ascii?Q?om=3Fsubject=3DUnsubscribe&body=3DDO=5FNOT=5FDELE?=
+ =?us-ascii?Q?TE-4pwcfixh42l2qdrwrnitrw41qn8aoatcen0x?=
+ =?us-ascii?Q?b7r1h493t99hzzam7fdaj2z70jcuvdkmc5lhtfn?=
+ =?us-ascii?Q?72ckmjam4lqisz17jks8olfpupsa3xrsz1p-DO=5F?=
+ =?us-ascii?Q?NOT=5FDELETE=3E?=
+X-Feedback-ID: 4640457:SG
+X-SG-EID: 
+ =?us-ascii?Q?Hud1Q=2FU+SZou61nZgb0AZ8QnPmZH7miSG3CQgUoiXt0xDvr8YCeOzZo1P4QWyn?=
+ =?us-ascii?Q?HEMj+rUqBK04n=2FeHJXeNFh=2FjKUgtIYugyap8gRT?=
+ =?us-ascii?Q?5sahWId7zDaVt4dNh4xt5wXqdxfL6QFqxHNWSHF?=
+ =?us-ascii?Q?d+LUD+kE96obRCXC25TwzWBRr2Yb9y+6nETxVw0?=
+ =?us-ascii?Q?yPNhMgCBPASjEeCZBV1oe+=2F96AchRkg8MTc6JNa?=
+ =?us-ascii?Q?wmLNrlxDdeepbbalPm79YNkTuLbO2NXJEJtJBMl?=
+ =?us-ascii?Q?g7sknSsgMWl96uEhFmC+g=3D=3D?=
+X-SG-ID: 
+ =?us-ascii?Q?N2C25iY2uzGMFz6rgvQsb8raWjw0ZPf1VmjsCkspi=2FKvUYPFb2vwyNNeBc9bJi?=
+ =?us-ascii?Q?ChsygT8KNzsmZhoxmAdzVtsA2fGs=2FEW1PU+tjvg?=
+ =?us-ascii?Q?mC5307MG0PlgKnujFx+8iD9namPbBgCL6QuaUg4?=
+ =?us-ascii?Q?Yx52irAVhKRnRFgLHYlga7Zw3f+hrdN6rSueCUI?=
+ =?us-ascii?Q?aPg7FIu=2FVBd=2Ft87Jp83ghtJ57eiUITLvcxEY3zx?=
+ =?us-ascii?Q?9xmLf4Z6fk=2Fv9TtZ2LZ4p=2FxATvPW7cwVV9g+ub5?=
+ =?us-ascii?Q?dxzKKF=2FYrr5ljXiHA7yJiEkFz5FwL4Me8v8xoET?=
+ =?us-ascii?Q?uPct4eCOWKqi8s69bK+aAaL4+KtUYCOuygONld7?=
+ =?us-ascii?Q?ikwVo=2FNpHqdHxQTFvM2azfla=2FxoUuTXVOLwIZKV?=
+ =?us-ascii?Q?z4v8usnW4O4fGmJdq4W5XatK=2FHXH1n2ndDQPj2l?=
+ =?us-ascii?Q?iterLUgLs2mKdOLBXha9N2RTcYf1YJb+a49dVP9?=
+ =?us-ascii?Q?2qLheU7n4F0tBBTYBM98qqCHPAFLhZjkkcLGMpv?=
+ =?us-ascii?Q?aZ0CpSNb9d0=2FTfOnhbCZFKDFiueHjQshwoarfuF?=
+ =?us-ascii?Q?ewWTXynNSsWpp0RQhwKw7qRRfWHSXPRf=2FnRnFrk?=
+ =?us-ascii?Q?zgGnxEj?=
+To: ronaldlambertnicolastugadi@gmail.com
+X-Entity-ID: L85+E/IrDWXdq9/QtqfN/w==
+
+--cb5ee49895db9edd30b23d1f0ac2f2de04416d6a56f213a1ae31ab3cc709
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ Open for the best deals &
+discounts.=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+foodpanda      * { font-family: 'Avenir Next LT Pro',
+Helvetica, Arial, 'Roboto', sans-serif; }      @font-face {
+font-family: 'Avenir Next LT Pro'; font-weight: 300; font-style:
+normal; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUbvXGI6-2FnmVZW7ZO-2FqepV-2FG-2FgVt0bPqDxYEphTF7CkYc6p6-2Fa=
+L7y5w05tGf4HELE3juYUdVn6i6agSqvedILk7p4geJ_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMO=
+U-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScB=
+UoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3Yg=
+QZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4=
+ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nN=
+BjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQ=
+A9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtn=
+eBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47=
+xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9=
+NUmOBP0-2BHIO7yttinC2B5XmiC3mtCscTg91nUOimQscUEMei98TSF5lImo0BooBEStoGwcXVd=
+KXlFK7w17iRgTz-2FF8f1v7uihdlqdHU0NCFT0NfviYMJyUdqa1dSUI8evNb9NLQ-2BP9JuF-2F=
+-2FweZ969pjGEMD1nf
+format("opentype"); } @font-face { font-family: 'Avenir Next LT
+Pro'; font-style: normal; font-weight: normal; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUab0UTP4zgts5LuRejPnVho7lNVEi4SwD48YIEAzF8cGQu7v6ENFIuwQUlE=
+uzGAjeIM51H8cn7wrW7rhEZ7uZbZUIba_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyG=
+tZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF4=
+3bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkd=
+gJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39=
+mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51=
+IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe=
+-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV=
+06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWF=
+ZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2B=
+Feo43UDqdh5PA6qLYBxVBC9p7iV-2Fm7slNYCGOOtHDqE-2FH7DpXBnutYodnOKLXeWoDqEFPHt=
+UXYhayfAehh8O4isU4hC5UKhxJQLqwpWJnsP8ZxI57HySmQa0L-2BUSFIuKnPT-2BLbFFnaSV-2=
+F3FfzlYAHX
+format("opentype"); } @font-face { font-family: 'Avenir Next LT
+Pro'; font-style: normal; font-weight: bold; src:
+url('https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg=
+5s-2FjjwUPvPB4jRyT6P4Enbi-2FjWrSr8FEwcSeXnB4kFYXVcKevnrZtymsSVjfWaKuoRt1d1X=
+x1ENaPN-2FALCH2gUZKQTxyHSaiW-2FrvyVhZv6CNbovp7F1b888gGoGIdQdpHDfESLNj-2Bndz=
+IBSDxn8XhWIWJEiew2XUC9SygcjqZwCKNncs_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2Fij=
+FXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLa=
+icF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPX=
+XEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2=
+BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2Jo=
+Jb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9Sajt=
+GTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm3=
+22JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5p=
+EqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP=
+0-2BEehu81HA6OoKVnhS2l8oHghMS-2FjbbXw-2BQJtb0S2jwALxvyDHoRf8AAlafqXwcxS5hay=
+syX-2FdmEjJm8SqaqzxoANDF6alUp5UCHfBbNExxXXX6vOM8fjmriSiynL3NjeA-2BuYPeGZ1CL=
+6l3QSpCN-2BZMB
+format("opentype"); }      html, body { margin: 0 auto
+!important; padding: 0 !important; height: 100% !important;width:
+100% !important; } * { -ms-text-size-adjust: 100%;
+-webkit-text-size-adjust: 100%; } #body a { color: inherit;
+text-decoration: none; font-size: inherit; font-family: inherit;
+font-weight: inherit; line-height: inherit; } div[style*=3D"margin:
+16px 0"] { margin:0 !important; } table, td { mso-table-lspace:
+0pt !important; mso-table-rspace: 0pt !important; } table {
+border-spacing: 0 !important; border-collapse: collapse
+!important; table-layout: fixed !important; margin: 0 auto
+!important; } table table table { table-layout: auto; } img {
+-ms-interpolation-mode:bicubic; } *[x-apple-data-detectors],
+.x-gmail-data-detectors, .x-gmail-data-detectors *, .aBn {
+border-bottom: 0 !important; cursor: default !important; color:
+inherit !important; text-decoration: none !important; font-size:
+inherit !important; font-family: inherit !important; font-weight:
+inherit !important; line-height: inherit !important; } img.g-img
++ div { display:none !important; } .button-link {
+text-decoration: none !important; } @media only screen and
+(min-device-width: 320px) and (max-device-width: 480px) { /*
+iPhone 6 and 6+ */ .email-container { min-width: 375px
+!important; } } /* Media Queries */ @media screen and (max-width:
+480px) { .fluid { width: 100% !important; max-width: 100%
+!important; height: auto !important;margin-left: auto
+!important;margin-right: auto !important; } .wrapper { width:
+100% !important; } /* Font size Rules */ .font-10 { font-size:
+10px !important; } .font-12 { font-size: 12px !important; }
+.font-13 { font-size: 13px !important; } .font-14 { font-size:
+14px !important; } .font-16 { font-size: 16px !important; }
+.font-20 { font-size: 20px !important; line-height: 25px
+!important; } .font-25 { font-size: 25px !important; line-height:
+30px !important; } .font-CTA-14 { font-size: 16px !important;
+line-height: 20px !important; } /* Hide elements and show elemets
+for specific design */ .display-none { display: none !important;
+} .display-block { display: inline-block !important; } /*
+Differnt padding and width, that is used for the deal and voucher
+form */ .mob-pad-0 { padding: 0 !important; } .mob-pad-5 {
+padding: 5 !important; } .mob-pad-10 { padding: 10px !important;
+} .mob-pad-15 { padding: 10px 0 15px 10px !important; }
+.mob-pad-25 { padding: 10px 25px 0 !important; } .mob-pad-text {
+padding: 0 48px 40px 43px !important; } .mob-pad-left { padding:
+0 75px 10px 15px !important; } .mob-pad-left-5 { padding: 0 0 0
+5px !important; } .mob-pad-left-25 { padding: 0 0 0 25px
+!important; } .mob-pad-right { padding: 0 0 10px 120px
+!important; } .mob-pad-r-0 { padding-right: 0px !important; }
+.mob-pad-r-5 { padding-right: 5px !important; } .mob-pad-r-10 {
+padding-right: 10px !important; } .mob-pad-r-20 { padding-right:
+20px !important; } .mob-pad-r-40 { padding-right: 40px
+!important; } .mob-pad-t-20 { padding-top: 20px !important; }
+.mob-pad-t-15 { padding: 15px 0px 0px 0px !important; }
+.mob-pad-b-10 { padding: 0px 0px 10px 0px !important; }
+.mob-pad-b-15 { padding: 0px 0px 15px 0px !important; }
+.mob-pad-b-20 { padding-bottom: 20px !important; } /* Banner and
+Footer specific rules */ .mob-size-banner { background-size: 100%
+!important; background-position: center center; height: 174px
+!important; } .mob-width-deal-two { width: 100% !important;
+max-width: 170px !important; } .mob-width-deal { width: 95%
+!important; } .mob-deal-width { width: 105px !important; height:
+130px !important; } .mob-deal-width-two { width: 140px
+!important; height: 140px !important; } .mob-image-width { width:
+105px !important; } .mob-image-width-two { width: 100%
+!important; display: inline-block !important; } .mob-gutter-width
+{ width: 7px !important; } .mob-height { height: 85px !important;
+} .mob-height_footer { height: 120px !important; }
+.mob-height_banner { height: 170px !important; }
+.mob-height_footer_split { height: 55px !important; }
+.mob-width-PAU { width: 100px !important; } .mob-width-PAU-2 {
+width: 170px !important; } .mob-width-PAU-3 { width: 170px
+!important; } .mob-width-PAU-4 { width: 170px !important; }
+.btn-main { width: 130px !important; line-height: 25px
+!important; font-size: 16px !important; } .btn-main-2 { width:
+115px !important; line-height: 20px !important; font-size: 14px
+!important; } .mob-cta-w { width: 120px !important; } }       96
+(=20
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml3-2BqG6ZYYsQ4TYNpqdTa3uN5HqOW-2FXmIs0CeNYNMfnNsmTl54YHvy=
+6f0CDjbWoTkXxeQWY2Nu9HkmF9Lp1Rhw5Z2dHNbtMMPAvXgS-2Fti2RY9rA2c5APnyt-2F6k-2B=
+wGZeCO-2BUdjmGFrQHJi9VqFjOZc6jig9RxGf2K5Hz9Pk2mQQl-2BkyrvpK5-2FnM7BQnjXRAu8=
+NwDmcOyWuJDgAT0SGJWr5yuLLEt77vF56uvHCXgqRqMlTCOsFlWtdTQux2lbNKNm2fZZkIl7Htg=
+ezzNQO0iMHz06rYUBpHIauZ75Tf-2FeIYALyVuGN-2BQ9kxQKN1ves-2F-2FqwX-2FgmIRQeCJM=
+rjUQkllrvzRIWtS3vj9GeiDM-2F-2Bz8ruToogXoJsqamtt49-2B6vda1ZjTB-2BwA1M0AY3wBG=
+VMb8XdvfGr6UlEBOeu-2F7cXU-2BdbK76AicEQKgIAAB0wVDKRJUb-2FcDJzlhPlBK87EIJSjHt=
+PheVJgjcsRYMiCP8-2FROa-2F3Ppgj1Cl12zV0Q8d10Qg5isJqwOk8kczPKPdOzVEEBB8cF34bZ=
+CwcAsKdMa7o4oMEU0ZOGLTubYLv2PlPvInyBwcVWql6zZs1tiwd5J8PbyWwdosHMHuAQp9WR1yF=
+C-2Bpwlg1f6qHEvNYqjhM-2FuWtbKohXKqugfVWS-2BVqKmJzkzYCqw5sGcINz0ZzvAIAXKcs1t=
+YKQ-3D-3DgBXx_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsG=
+d536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9=
+eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK=
+908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsOR=
+MJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7=
+y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwy=
+YjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtm=
+OD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-=
+2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BHMmnlUVo924KC-2Fs6j=
+f6x-2B1xjvLepRwlZoTS0K95TnbWSIJ817Id-2FUuTL1QrYifT9kPJR0DDeaYBp5hIuZMhVR-2B=
+PjNwGsnbmdXYZqPNs07BBbPNEFZhV9lNyok-2FkMIATdFo7jxu62JjlUQFtbYt0bti
+ )
+
+
+
+ vouchers just for you
+
+
+
+
+
+ Now you see
+them, next you don't.
+Use now before they're gone!=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ food delivery &
+pick-up vouchers=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ code
+
+
+EATNA
+=E2=82=B1100 off
+
+
+
+
+
+ save voucher
+
+
+
+
+
+ save voucher
+
+
+  (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml1Zrq98Do6juDEEjPJ1AyZdztKsrw3dhLVe58Qtnjq4ljBdn8QV4h0mN7=
+GPiN8t29laXznpmAAGxLUFMWz-2FjspNkfI60X79vNcBxiDxK9QXBvtDqqLMvzdrD-2FgE1Echd=
+jHrfr9k5LqCR16Mp82BDafWK-2BGEU-2FTTHDQ-2BtccnaT-2Bu2XWVFiVhWOGoLR1TRDOi1ymS=
+TWI3FZyfzPeWrh3pVtnR8Tr0gy7QTt1bd8mjLa46-2Bry6Lcsa-2B74xBKjQ1We6wcJzQ0nPaQ9=
+83r-2BMvYBDBcam9sRUJ2Fo0-2F6UnSr92LssShCVI1Gd3R08-2BabaF1nQT4H6AvfVpYlqj5-2=
+FLMoyk7C7PfHBMuv8ZuEPNO9Y-2FI1fIXIyDpC2BzdP0CjIubl6jKV1o6lRUGsv10gLHsCffzq-=
+2Fy4zo6AhKky4mgRowt10PucyLZg6Wh7axJbIkPS-2BMaG-2BOObVkk2wuEpyOjabEIsaH1Q0r9=
+yGebUVao4vtO7zTDz4VqzL9UeqZ3rHNBpEK6yGN1NXqeffO2aXTykC4caVZMsNG-2BXlykQ7DFX=
+2vxoKR76Lm7zu1tJeDPHf5-2BbmImssgleJlwG19JY7PNVwiF3iUK0wBQOz-2Fz7Dme09xMc-2F=
+omM-2B2mxvr3KT9Uv-2B8f8jcZcH5jim8bijD-2BZ2Nux-2FWZBJjRFMCFDkXtCl8vWU4Qail3R=
+3hTHfYVPN2u43Snfj0m3WXU7zPHcBp72V00RcI4tDm4p-2FAaH6j7fTdefy9B94YWZi56Lop3gg=
+1F-2BpAzVeYmwas-3D_8jg_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-=
+2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDB=
+FVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dV=
+ilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhw=
+nqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3=
+A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G=
+9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEY=
+Wf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSl=
+F14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BFZWbQYeu-2=
+FlSGJLAd7yuSegADTUEmkg-2FgwrI4z4c8zi5iyrdcvPvT4EezZRanmYEVIAo-2FU-2FBoRBzOU=
+tQ13lLeENr-2BnpIiQDdct0kBJ8tVu6rs3pH8WwEOai-2FukdHdQN74JfxhIkaII7YezJhEoN1o=
+QF
+ )
+Min. spend of up to =E2=82=B1299.
+Valid daily for select restaurants with varying durations.
+Valid for select users only.         (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml1Zrq98Do6juDEEjPJ1AyZdztKsrw3dhLVe58Qtnjq4ljBdn8QV4h0mN7=
+GPiN8t29laXznpmAAGxLUFMWz-2FjspNkfI60X79vNcBxiDxK9QXBvtDqqLMvzdrD-2FgE1Echd=
+jHrfr9k5LqCR16Mp82BDafWK-2BGEU-2FTTHDQ-2BtccnaT-2Bu2XWVFiVhWOGoLR1TRDOi1ymS=
+TWI3FZyfzPeWrh3pVtnR8Tr0gy7QTt1bd8mjLa46-2Bry6Lcsa-2B74xBKjQ1We6wcJzQ0nPaQ9=
+83r-2BMvYBDBcam9sRUJ2Fo0-2F6UnSr92LssShCVI1Gd3R08-2BabaF1nQT4H6AvfVpYlqj5-2=
+FLMoyk7C7PfHBMuv8ZuEPNO9Y-2FI1fIXIyDpC2BzdP0CjIubl6jKV1o6lRUGsv10gLHsCffzq-=
+2Fy4zo6AhKky4mgRowt10PucyLZg6Wh7axJbIkPS-2BMaG-2BOObVkk2wuEpyOjabEIsaH1Q0r9=
+yGebUVao4vtO7zTDz4VqzL9UeqZ3rHNBpEK6yGN1NXqeffO2aXTykC4caVZMsNG-2BXlykQ7DFX=
+2vxoKR76Lm7zu1tJeDPHf5-2BbmImssgleJlwG19JY7PNVwiF3iUK0wBQOz-2Fz7Dme09xMc-2F=
+omM-2B2mxvr3KT9Uv-2B8f8jcZcH5jim8bijD-2BZ2Nux-2FWZBJjRFMCFDkXtCl8vWU4Qail3R=
+3hTHfYVPN2u43Snfj0m3WXU7zPHcBp72V00RcI4tDm4p-2FAaH6j7fTdefy9B94YWZi56Lop3gg=
+1F-2BpAzVeYmwas-3DsAer_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-=
+2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDB=
+FVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dV=
+ilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhw=
+nqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3=
+A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G=
+9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEY=
+Wf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSl=
+F14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BFWEp-2BhhS=
+t1T5-2FOBntfKUv24HzMWni4l0VP1cTKHp4oqEDA-2FpDOFGPsmvORVVeuUrQ7mwjXRyThnUdRJ=
+rncRLWQlhkitySg39pXbZHbpMI3VFUTGr-2BZV7E1RzFgQLJDa1COi6V6ri5JL7SkPi9tG5Jr
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ code
+
+
+PICKUPNA
+=E2=82=B1120 off
+
+
+
+
+
+ save voucher
+
+
+
+
+
+ save voucher
+
+
+  (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml3QvAF2GbtZEONN93SRdOYIPa1IGS97VGVZrcgO6S0d7SxKK8dqHDeRz1=
+l5EeaCRVCp-2FZsdUI6EPNNdGOYtX01MjL01ODWPHgQ3l6hKHX3zLfvdVkt3-2F7cpx2Sg5zFGb=
+cPzGcN1cNJ-2BSju2hwhx0zbyzEewlwHC4X2PZDolSApXFqXdc35H9LP4u-2FTEN92VZoJPxDrS=
+bv431ysdVAp-2B1ju9WnhXTX-2FlImv-2BIUcZkrD5Jg-2Fosodwg9hj6NQs0EEuvEbTyQ5Ui6G=
+e8Wqk0ZLtRa7bV8WOUKBDvPWdB4G1nHaIEw7aN7d94vBV-2BL8QfKzVdS302tVdkpgL6yI3C6BM=
+9bBPt7Bjy-2BmUuMMRSqLW-2FV-2F3X55ScM-2BFhVnVORSVz9oHb8U-2FqXF-2BDz-2BR2N-2F=
+AUfvYSLksA7XtFK-2BLERtqkvJZO4iinrBJg-2FSl1-2BmAkcxwAGPxdOXDHEUW-2BxH9yfybEi=
+T-2F-2B9YJUDhY-2BlnjFTkxGDdJFtTgxkLUjFM7SJDhkNV2tpxFkIwMepsR76q3rEeF6aeIRgj=
+TMJYi2nvclQQSiYRHUjB8jXC7WHag5Sfe3ynTOhDSnGdovYOLp8m0QRp5SRdnbST-2FhC0mQ9oe=
+Vc6yp-2BHYOXQL6nv4t2FlfPNkDD-2BTJfPuSw9pISGRM3jkXm081cQemSBgub0ifK3F2KPw2AP=
+mVmwX2-2BdSc3ZXWWDMKmR2hFG5u2VJ34NjlAD-2BGuE30V8XrCChwNW7kjD-2F8Iu-2FBPx4NJ=
+r2ROtOKQmewfOOElof3lrGma4-3Dwteb_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyG=
+tZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF4=
+3bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkd=
+gJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39=
+mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51=
+IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe=
+-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV=
+06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWF=
+ZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2B=
+FT6gGNDROQXw1qdWGihEHYLsDa6dZid7czYUVJuT2lNKifHk-2F0Rahh-2FjFnJ-2FcWeFV8ujG=
+RllCmZSpzcfnd2WsDMIeZQ-2F3BZYdTM3or04aqBIiLjmIjcaZMM39mIqdjwijD-2Bd02KJXkSI=
+JXr86b4yQ6
+ )
+Min. spend of =E2=82=B1299 on weekdays & =E2=82=B1399 on weekends.
+Valid for select pick-up restaurants only.
+Valid for select users only.         (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml3QvAF2GbtZEONN93SRdOYIPa1IGS97VGVZrcgO6S0d7SxKK8dqHDeRz1=
+l5EeaCRVCp-2FZsdUI6EPNNdGOYtX01MjL01ODWPHgQ3l6hKHX3zLfvdVkt3-2F7cpx2Sg5zFGb=
+cPzGcN1cNJ-2BSju2hwhx0zbyzEewlwHC4X2PZDolSApXFqXdc35H9LP4u-2FTEN92VZoJPxDrS=
+bv431ysdVAp-2B1ju9WnhXTX-2FlImv-2BIUcZkrD5Jg-2Fosodwg9hj6NQs0EEuvEbTyQ5Ui6G=
+e8Wqk0ZLtRa7bV8WOUKBDvPWdB4G1nHaIEw7aN7d94vBV-2BL8QfKzVdS302tVdkpgL6yI3C6BM=
+9bBPt7Bjy-2BmUuMMRSqLW-2FV-2F3X55ScM-2BFhVnVORSVz9oHb8U-2FqXF-2BDz-2BR2N-2F=
+AUfvYSLksA7XtFK-2BLERtqkvJZO4iinrBJg-2FSl1-2BmAkcxwAGPxdOXDHEUW-2BxH9yfybEi=
+T-2F-2B9YJUDhY-2BlnjFTkxGDdJFtTgxkLUjFM7SJDhkNV2tpxFkIwMepsR76q3rEeF6aeIRgj=
+TMJYi2nvclQQSiYRHUjB8jXC7WHag5Sfe3ynTOhDSnGdovYOLp8m0QRp5SRdnbST-2FhC0mQ9oe=
+Vc6yp-2BHYOXQL6nv4t2FlfPNkDD-2BTJfPuSw9pISGRM3jkXm081cQemSBgub0ifK3F2KPw2AP=
+mVmwX2-2BdSc3ZXWWDMKmR2hFG5u2VJ34NjlAD-2BGuE30V8XrCChwNW7kjD-2F8Iu-2FBPx4NJ=
+r2ROtOKQmewfOOElof3lrGma4-3DgwiB_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyG=
+tZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF4=
+3bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkd=
+gJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39=
+mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51=
+IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe=
+-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV=
+06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWF=
+ZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2B=
+GWvxARtZB66p-2BOPvNNnsIXEMQsbURxkG8-2FPxv0WjhLkHPtHdJEe-2FLWrA5UbkIVyO3-2Bl=
+whVdvhQgyqGZdgKwTv5HMy2f1GgSgRcb75vEfxXqYHM0Lx1Pwpl2s-2BGQrh81QmQJt-2FcXp9b=
+7I0MJ-2Fioy1dM
+ )
+
+
+
+
+
+
+ pandamart & shops vouchers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ code
+
+
+
+STOCKUP
+=E2=82=B1150 off
+
+
+
+
+
+ redeem now
+
+
+
+
+
+ redeem now
+
+
+  (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml2kT2I9QTuD-2BWMpwd82MUpm16qB188LAdlny3c8cw6TeeCPGZsKSXWT=
+fs-2FBobYUa7ZvlOhe2AYirtVzW4mvHTUF1HPhWRgiAmFaRwufjj-2B-2BBEGNZumfRonZWDQxa=
+ex7qvRXJK3jqhciB-2F1yhFLLwFGFomzbTFnjtaMQ-2BjNRnP7feW3Aar9H2Xv-2BWhvXrLtU4L=
+gbggryOLfH8MlGatsPt86zqUK6wZqeAVyu63o8gq1cjIGdhoE8xv2tgcSu8zsoxIC-2BbyUxlrY=
+bPLW36JgP7yz1uJkm2I9J-2FI-2FDFdyyeoh84H8oco7q44G9EkPsZMVEgqh7uu2BxOuElFLjSa=
+EHU4-2Fs9FVHdcIFYA8syGNQFPqGFRg-2FzjhYD-2Fgdf-2BPMl3ZtozQHAlhCFXGrx6uCEQUTg=
+NhMCHqi2NCw-2BoYHh9PWERv1R3RSsVLVyUFj-2BfbRbqBTA-2F1Dxgmae5sEQN-2BBASDAof3c=
+QySFaul-2FZZ-2BLCk-2BqzVROha5YeO7UzfxyQMVRPVJpt21E2zaE1BwoMC3nPUIjHOnx2YhTL=
+GFqVRrCQadVGEZKS8mZAchZcJbLm2HoYddwCvjoETL-2B1t-2BmZiufabKF0rKbBrIfE9Omw0xr=
+UukYmQY8rdefqUey44Csac33c5Uu8YbCXIQ10Ypsyw5dAr46J0xTCK3Oqrpq3rZ3IVlghaR6mlz=
+IhL-2B4OKhhNEEob-2B1YIxQoS2Oi1ji0G1NL3T4j-2F46r9jKtP7TujYXj0yT0-2FQHT1jEKrx=
+SvoeW65bA-2BFo9c1Tk-3DwAwF_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerW=
+soY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG=
+1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5g=
+K7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KP=
+SEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4=
+lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjW=
+X10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9=
+chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j=
+1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BE-2F4Q=
+uT4v0a8i-2FlkcPY7oP0DZjR3JxNi-2BaXogYhu5mpjZAdFaXl6gx0LMeX4A6o-2F5wov5sKgBj=
+lT9Eca3pbCJfcbUIx4vm1PewdmChbEofogx8PF-2FcenCcmroS2vupaY4FbPM3NJobgAINAmtjb=
+EJ2o
+ )
+Varying min. spend.
+Valid for pandamart, Robinsons Easymart, Shopwise, and more select shops.  =
+       (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml2kT2I9QTuD-2BWMpwd82MUpm16qB188LAdlny3c8cw6TeeCPGZsKSXWT=
+fs-2FBobYUa7ZvlOhe2AYirtVzW4mvHTUF1HPhWRgiAmFaRwufjj-2B-2BBEGNZumfRonZWDQxa=
+ex7qvRXJK3jqhciB-2F1yhFLLwFGFomzbTFnjtaMQ-2BjNRnP7feW3Aar9H2Xv-2BWhvXrLtU4L=
+gbggryOLfH8MlGatsPt86zqUK6wZqeAVyu63o8gq1cjIGdhoE8xv2tgcSu8zsoxIC-2BbyUxlrY=
+bPLW36JgP7yz1uJkm2I9J-2FI-2FDFdyyeoh84H8oco7q44G9EkPsZMVEgqh7uu2BxOuElFLjSa=
+EHU4-2Fs9FVHdcIFYA8syGNQFPqGFRg-2FzjhYD-2Fgdf-2BPMl3ZtozQHAlhCFXGrx6uCEQUTg=
+NhMCHqi2NCw-2BoYHh9PWERv1R3RSsVLVyUFj-2BfbRbqBTA-2F1Dxgmae5sEQN-2BBASDAof3c=
+QySFaul-2FZZ-2BLCk-2BqzVROha5YeO7UzfxyQMVRPVJpt21E2zaE1BwoMC3nPUIjHOnx2YhTL=
+GFqVRrCQadVGEZKS8mZAchZcJbLm2HoYddwCvjoETL-2B1t-2BmZiufabKF0rKbBrIfE9Omw0xr=
+UukYmQY8rdefqUey44Csac33c5Uu8YbCXIQ10Ypsyw5dAr46J0xTCK3Oqrpq3rZ3IVlghaR6mlz=
+IhL-2B4OKhhNEEob-2B1YIxQoS2Oi1ji0G1NL3T4j-2F46r9jKtP7TujYXj0yT0-2FQHT1jEKrx=
+SvoeW65bA-2BFo9c1Tk-3DIFV-_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerW=
+soY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG=
+1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5g=
+K7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KP=
+SEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4=
+lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjW=
+X10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9=
+chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j=
+1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BGPIrvx=
+wAg8fPdsrw04zb9RZHuHvzLPLlcxwwsUmuNMfp6el39JZCGCONiiCzVbErGiBTo-2BeK8ta9Job=
+0dPcIkM56VzFZUvZR-2F4Bc8UYimRTIB9MrM7gooYi6wZtXKsCr39k-2F7FgOb2zbmFU4yXuVvj
+ )
+
+
+
+
+
+
+
+ hot vouchers this month
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ code
+
+PROPASKO
+50% off the 6-month plan.
+
+
+
+
+ redeem now
+
+
+
+ redeem now
+
+  (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml15UafW8WLHPUAYHlrXiYw13e4xQCKcDb8U7XOKK6R6G1mmtYSZq7MztW=
+GEqRBw5urgef86MzMX-2ByokqNCNT-2B9BXqvlXJEome1bXA558s6gHB3bI9YhurdTerh7Ay6Sy=
+E9XKiUvUtzfUFyrEU9GFqeF1mNeESAIU58CeycO4bUeWz9rVZW27XBvwuAlH3nh7XuyYFxrqDDq=
+28uD-2Bwtc0si6l-2BZo-2BHqi-2FRTMXMc9dd-2BK6z-2BhTUH7OKvQeRP8PhNn9aJ7i1PGdh5=
+QEiYQx2NG3idZ-2BHiOE5-2BF1lDsISM4oNfqtQzpfrkxH9s2D-2FxR9JzzaBT0QtXL9rQ2EGHv=
+5y7EsbdhtqqVdwgPVxmRn4qDJ-2BExKksVEAK64R62l-2B4csGHJ1Z6H5ZFji29XsI45-2FD81U=
+ewd2DYkaSbb9pNSeSQnSVQZEZQ4Vzdt9vf9Fumw7W25KPvuB4o2O2IhbZ0qY8VllQUqqez4KUQI=
+OSnzBQ7DP0sDit8Q8bNu59KQZYIWQq7lfbFdHjL6LGA4RMkR-2B-2BMKl8vixdSbXECloawt9cj=
+8B5D-2B9FXRckesM9rV4MZY-2BPC3PDRF1eQwRoVszWixesxkxs82F3SNZwc4kG08Qa4dh2Dq0t=
+4C52BYGSZXH4AmkKkKpSTDZF0uKrhwLs-2Bp-2FDSHwUSS-2F-2FugeXPOJKs63jPqacju31B6m=
+xZZ1HHCMSdMyr3MoFj-2Frmno9HXXsDyJS-2Fs8-2BDCSRp5v_HPC5-2BlCj2pcWYfPYIAuwPPJ=
+2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qB=
+w30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTw=
+xhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4c=
+TvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2s=
+BvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9=
+i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5E=
+sjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJn=
+fmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370t=
+YZA4di9NUmOBP0-2BHTRoeb2OQ2A5og4cCbbZY2d-2FGzvswI-2FXfmlH26Iuh6NDHOYeE-2Fuv=
+6zEAXJuPND00DqR9z8dsn-2F4WbzKOPNIdL-2Bm-2F0gr-2BrAEBrAom040Uw7WeRM-2BIbb9Zi=
+you4FHuJV6ybbd-2F3pvfhqZQZHsqne7Zrj
+ )
+         (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml15UafW8WLHPUAYHlrXiYw13e4xQCKcDb8U7XOKK6R6G1mmtYSZq7MztW=
+GEqRBw5urgef86MzMX-2ByokqNCNT-2B9BXqvlXJEome1bXA558s6gHB3bI9YhurdTerh7Ay6Sy=
+E9XKiUvUtzfUFyrEU9GFqeF1mNeESAIU58CeycO4bUeWz9rVZW27XBvwuAlH3nh7XuyYFxrqDDq=
+28uD-2Bwtc0si6l-2BZo-2BHqi-2FRTMXMc9dd-2BK6z-2BhTUH7OKvQeRP8PhNn9aJ7i1PGdh5=
+QEiYQx2NG3idZ-2BHiOE5-2BF1lDsISM4oNfqtQzpfrkxH9s2D-2FxR9JzzaBT0QtXL9rQ2EGHv=
+5y7EsbdhtqqVdwgPVxmRn4qDJ-2BExKksVEAK64R62l-2B4csGHJ1Z6H5ZFji29XsI45-2FD81U=
+ewd2DYkaSbb9pNSeSQnSVQZEZQ4Vzdt9vf9Fumw7W25KPvuB4o2O2IhbZ0qY8VllQUqqez4KUQI=
+OSnzBQ7DP0sDit8Q8bNu59KQZYIWQq7lfbFdHjL6LGA4RMkR-2B-2BMKl8vixdSbXECloawt9cj=
+8B5D-2B9FXRckesM9rV4MZY-2BPC3PDRF1eQwRoVszWixesxkxs82F3SNZwc4kG08Qa4dh2Dq0t=
+4C52BYGSZXH4AmkKkKpSTDZF0uKrhwLs-2Bp-2FDSHwUSS-2F-2FugeXPOJKs63jPqacju31B6m=
+xZZ1HHCMSdMyr3MoFj-2Frmno9HXXsDyJS-2Fs8-2BDCS-Jqk_HPC5-2BlCj2pcWYfPYIAuwPPJ=
+2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qB=
+w30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTw=
+xhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4c=
+TvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2s=
+BvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9=
+i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5E=
+sjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJn=
+fmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370t=
+YZA4di9NUmOBP0-2BF3wulY0cfq0dHV-2BuS-2BeWiB72HZzulPJ2gsAML0W2QwzW5airEHmSiV=
+c4sIiiFoTlv2Gyjxu-2BsSIK8d1cARLQq8G8tsKH45A6cLoMEI8xqj8UTtNxAi-2BgCRxgvvE4l=
+nlcDNAozoVejyPIJ5l0T9Y64E
+ )
+
+
+
+
+
+ looking for more deals?
+
+
+
+ click here
+
+ (
+
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5ifxh=
+PboWIcXG8UB-2FS78Ml3-2BqG6ZYYsQ4TYNpqdTa3uN5HqOW-2FXmIs0CeNYNMfnNsmTl54YHvy=
+6f0CDjbWoTkXxeQWY2Nu9HkmF9Lp1Rhw5Z2dHNbtMMPAvXgS-2Fti2RY9rA2c5APnyt-2F6k-2B=
+wGZeCO-2BUdjmGFrQHJi9VqFjOZc6jig9RxGf2K5Hz9Pk2mQQl-2BkyrvpK5-2FnM7BQnjXRAu8=
+NwDmcOyWuJDgAT0SGJWr5yuLLEt77vF56uvHCXgqRqMlTCOsFlWtdTQux2lbNKNm2fZSnkEA2zi=
+IQXPkJ4y2Ln777J26q3dpY1HdDgTIc230gH7SFx-2FoRtWQU0VQRdEWBVWYg2eMm2bEeK51J2Hf=
+uazIQww0SHNICadB4sUGjr9EVPjhF-2F5Kjd68n0cs2kbYz6lREzV1OzY0G6MLdZNuYmXU7V2Wi=
+V5AM1J8X7pMODtcLlzni1CQyJkoTSvegEPVow68lpYWT3S7gkNkdp-2FrrR7UDVhTOyKeRT916o=
+AROv5V6LSLLxVnYpCT1RjU02IGX8fm8F03sRQTaIlxOmTiJoJKLSENPlxc4Tdwo8C9MJq0gBIX-=
+2BJO6JUghuKsGQ-2BPJyoNCBbFzHb63DKQ4UYT6Cf00Gb2jLom1PBE-2BV0LYtBBWhzkFxxlvMe=
+q71oiqWbcdrBjvRSOopaNtZiIhxrDBC4q49BbdJLSM9DWzC4T5J0pJ-2Bw-3D-3D3HPL_HPC5-2=
+BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B=
+5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsf=
+dCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbP=
+vT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUz=
+TqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9=
+V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrG=
+VNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wG=
+gRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthi=
+rVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BF3t1H9ELKrTFpR244MKEH7bsjc3FCSDOcTOfsro=
+y1munmfJwBIqzDxyuCozFveNwHAdhlM8BmoEgIV0xE-2B5M63TYrH04NJzEyRk1wBi5r-2Fugaz=
+3NYuHT6wAPvcT2tIzGSNLQNalH1WyBtiAzb3IHQo
+ )
+
+
+
+
+
+
+
+           ios (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5gz-2=
+BYWprj4f9zKyPntMEI4CnFwOX1UhglZn3r95VgwXyCQQNEj3URVAlJdOXrJlRcAzlOHX1F6sql9=
+N4tQcCxXZOMOl7OpfKa7J1GFkY1ADIMPpp-2F-2B-2FuBuerhesVNNzyXQ-3D-3DcwND_HPC5-2=
+BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B=
+5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsf=
+dCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbP=
+vT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUz=
+TqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9=
+V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrG=
+VNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wG=
+gRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthi=
+rVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BEdGUZUw1WSErtWygqV-2FfUM9QcDjTRQV7-2FbI=
+sMrZKw7qOFoAA5ut9FpHELlQcWR9nCETzu6aEr9dBPusaaZbJAWfn7h8M2YVTcY5Y8TIggPqpkN=
+bQXktCXw16CBsP2UwuTCgGFZ8ufKDXkXDQns-2B-2Fyn )     play (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5mwTh=
+dUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2BT0QNHDWRpIeJ3WowyNNiWuP6se=
+96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrYUGJhODdQ-3D-3DOTCL_HPC5-2Bl=
+Cj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5O=
+wyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdC=
+L1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT=
+0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTq=
+aKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9=
+aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVN=
+FKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgR=
+ZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirV=
+OrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BFi8tBpSWZJpnWPepE2qXPaEhXI4S04YRzbRDp8K0t=
+2MBV0O-2BGWmaGvtTmOAToYU4tdTrPPkvNbWDXwnRI7rG8J65zzTf6OLCtLQVpoM-2F4f8rFQFr=
+9tgTbuT1nXcTjBieSM3UahE136mXqGSVNTOQI-2F )        play (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5mwTh=
+dUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2BT0QNHDWRpIeJ3WowyNNiWuP6se=
+96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrYUGJhODdQ-3D-3DPtGL_HPC5-2Bl=
+Cj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5O=
+wyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdC=
+L1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT=
+0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTq=
+aKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9=
+aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVN=
+FKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgR=
+ZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirV=
+OrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BGgjVcbmkDUufWwlQejcMJUOgflfSFlhw-2FStpTLZ=
+fgbaaXpfOAG6og-2B2MmKaFAAX8VTuMZUNxI-2B9ZRCOPv147fyaUMUhhfMfvZl-2FZaD7LWyah=
+hX4K3HV17-2FSfMUf93Jd39DZYKlvzD4io0AEETDMoWi )
+social-icons ( https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfon=
+cUR7Zm1WXg5smSW4vyJLWkGqwjVLXdJdIU1gMGmvBJLwtKP1uSS3GmlarNweEI6T1jeIUaXdirG=
+A-3D-3DASaA_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd5=
+36KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh=
+0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK90=
+8f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJ=
+jTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2=
+FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYj=
+U3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD=
+9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2F=
+G3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BHBZhNKIuJS3oq16K8oZc1=
+OJRmnOW7K9As1vKbCwRc3D68O4YeZuHyIxgL7BpI4ay545G3GHczDBXVwqJNODiTagMvj4u2RbG=
+LMPu-2Bvc38JPDebuuwgs-2Bxn9YL5-2F8pfGWhSbASTeaSZknaAiBzd0XCk )
+social-icons ( https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfon=
+cUR7Zm1WXg5mwJET83ITgF90VxuhfZ9KpncVknXLxF4uLDso3FB4dB-nxv_HPC5-2BlCj2pcWYf=
+PYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPc=
+CquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdM=
+lyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HE=
+h-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6=
+o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8=
+-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2=
+F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRY=
+DA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp=
+-2Bs9370tYZA4di9NUmOBP0-2BHUIiTMYE8427749A0EtDG8Ad43t22WU5qYx1GLrpxd0sazdiO=
+tjYQdJ-2B4mNA4zStOokhnbQNtz-2Bx4T6-2F197ioZhQbLTFVpI9MbAIAWGwzsWG9gU4y-2Fpr=
+Q9ALz2s7d13xbjZLfEzak5eVbhCyVHGXEG )
+Privacy | (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5vw0C=
+TYJvF9XDuJ8Qk6zPVHCCRnMESkP-2BGSN252YCxdJ-2FXsa5LXsgG-2Fki0JX4yxiVg-2FSr-2F=
+NvWfx-2FbpXBQLcOvJ2pmZmqByqKh6iTCIcNUfFRwageWp1fj4jToY4qTKQgFTmk-2B7A-2FT8n=
+AoxrT3-2B1ObzVPA3-2BioaXPW9GVvppMfXVR3BwptmVb6ZaWVza2O8rShhq5uAUOG3qTcLyqkM=
+NPq6iIU3VjrCP-2BEc7dabboUtzVkzBTW1hcwrB-2BrVDRG45AlRhig-2FmrDCkMPFKOcqCm4bX=
+xXaoY4XuuytjqPlCLKJA2Co6yv4QjplF0x7ogM9Mfl5EW0zTf83KDk4p9sRp-2FMCb2r-2FTH1D=
+PwTlllLnJBefUmPLiQlVFOUzrxiC-2FPKUgFwA-3D-3D1S9N_HPC5-2BlCj2pcWYfPYIAuwPPJ2=
+FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw=
+30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwx=
+hsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cT=
+vSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sB=
+vKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i=
+20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5Es=
+jwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnf=
+mVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tY=
+ZA4di9NUmOBP0-2BG0EJI1lEP-2B2TxVfmORRGC6Fi8y-2F2pnhU-2BcFc8yFlLDKILScgdjE9g=
+2ytEwYmcX0v0aqeQIPnbg9A95tvZNUHJSD7whMJFrp0Vqh1W1OehMNS5iN5nqahGB6QKItxThXi=
+rj3-2B8o-2FXsZWf5CbPOCD3f7
+) General terms and conditions | (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5vw0C=
+TYJvF9XDuJ8Qk6zPVHBKwXG-2BKhz2itgOb5N0DIESQcVW-2BmpvVG9FPXzWdwxVaEiF3qVA2mn=
+Iiq9xi6df5ccVWfSvhNVxAX2pUuDYRDKKha-2BgnI9juc6OAUTJsL-2FewNzMldjynyUm27fXzs=
+YGZxhJS8yCXHjeO4ogNXLw3EWEjPML7MDMiaY4ZKiHgNh4U3Hl6pagSvvN97-2B0-2F37swpu7o=
+ltrqmz79v-2Fz-2FXqlV-2FAhSlwSKtpPTSD94xE11K4TM-2BVZWZYdNibwMRpJ7iYJ0-2F2Db7=
+i-2FS1GILCmWWmovC4Bj7Zr7g1ZFwRgYZevw2P450I97oYZha689WU-2F2X3tFTcvZiZvAyptdu=
+b5n4j6uCEyyKra51nAfYp3eE3ndB3iXOm2BlmLtGWxTB2wRzcvIkA-3DRSZF_HPC5-2BlCj2pcW=
+YfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDB=
+PcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwD=
+dMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3=
+HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9=
+d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2N=
+o8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2=
+-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqo=
+RYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTi=
+Sp-2Bs9370tYZA4di9NUmOBP0-2BF49JvzJHXETRwgaUatqtTwSd-2BUuxy-2Bv0-2BOfwbPLYk=
+X3rBTR77OAkDwwslDPgwQPcCtkD-2FaHj18U2l0L5HRCvE9mDrbdFScz0I1Jpv8LsMPs2OwfeFu=
+470pr-2BhZ50bAv51W9B4xFX-2BXHjodAEsWmZ7R
+) Unsubscribe (
+https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2BjRkpfoncUR7Zm1WXg5qdxf=
+ciF8UkAjOVz3-2FUrSh6ZWAXRnW3uKZCuNaak2z48yAlLgYxVnugcMn1RIzRha8flRHOX1QbnXH=
+Hs-2FklvIVcpw-2FHbgKbFcHKV7hDAzm0PCLbM9HGVQMjUmFCT5x5AVXZOb8-2FnqGIxVzpuq79=
+8psrUEaLzD0qmzvwWAa8uLWz2O3Ql64Efw6rZFm-2FshDeWYwZI4vuafs8t7UtO0r5qS22rUjUz=
+-2Fvig89CTpjIC-2FbwU9CAYoQAXEtPJBjq3bcPJ5Lha0wx3CJDlYmIzhRoh-2BgSWaWTz5yKaf=
+wbyI5eWwtJJhL1pjAau4TZdscf7feOT1EsH42RCUlEE-2BqF-2F3p4oKtnhQuVFKC1bHVvrLmCA=
+tqTZpV5hXkHS8x74qfdTMZHnfyUVCjFjO0yY56J27FkCnBwhmWiz3WTIvwdt9edWgKU-2FK4YBY=
+I7Rpg8jw-2F5yL9E81-2FNUcc8SjtEAUpE9CAgn5no-2BsiE4qN0IoAOstkG7cw1eE-2FlS05Jl=
+eFHohkDz1H3FFCJRsWeIRHMekHhB76iBOcD-2BZPCR-2Fj0nCZTsaK5XucrSpulWk7rvkp-2Blq=
+ftumKkcUnh2XLeVLxkk8wgaZXqjoz8aw2PwEgz5KclQd0OOout-2BT3lrj-2FOPFExBJ0QC46Xn=
+WnsFjZtHlTUI2EFu3uyetJ5kKPjpKF9Hboz9jTNF0-2BKndmWLR5cgYZ43UWxHIJZzGQ-3D-3D3=
+Yf5_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOS=
+usYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0I=
+csDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g=
+3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyP=
+GXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRcz=
+JWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkw=
+eG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jT=
+khpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7=
+cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BHG-2FjwTyMhD8-2F9-2B4oQzrjjml=
+YwUxaVJhJFgGuLrSOsyTNXoz40wwYZHDbkigmPdt43JXLyEkstLO4BJFA3updyqIIjNE8a1lyVy=
+utcCBZ3OaFOBlr6zmljzWovDEjzzKYCYhmL8GarPZMSJHWJzDKSa )
+16/17F Milestone at Fifth Avenue, 5th Ave., Taguig City, Metro Manila, Phil=
+ippines =C2=A9
+foodpanda Philippines
+--cb5ee49895db9edd30b23d1f0ac2f2de04416d6a56f213a1ae31ab3cc709
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html>
+<html style=3D"height: 100% !important; width: 100% !important; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding: 0=
+;">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<style>@font-face {
+font-family: 'Avenir Next LT Pro'; font-weight: 300; font-style: normal; sr=
+c: url('https://appboy-images.com/appboy/communication/assets/font_assets/f=
+iles/6152f16fd61dae3f6aca35d4/original.otf?1632825711') format("opentype");
+}
+@font-face {
+font-family: 'Avenir Next LT Pro'; font-style: normal; font-weight: normal;=
+ src: url('https://appboy-images.com/appboy/communication/assets/font_asset=
+s/files/6152f16f27fb9a55799b4385/original.otf?1632825711') format("opentype=
+");
+}
+@font-face {
+font-family: 'Avenir Next LT Pro'; font-style: normal; font-weight: bold; s=
+rc: url('https://appboy-images.com/appboy/communication/assets/font_assets/=
+files/6152f16fe9502e09b418b16c/original.otf?1632825711') format("opentype")=
+;
+}
+body {
+margin: 0 auto !important; padding: 0 !important; height: 100% !important; =
+width: 100% !important;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 480=
+px) {
+  .email-container {
+    min-width: 375px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .fluid {
+    width: 100% !important; max-width: 100% !important; height: auto !impor=
+tant; margin-left: auto !important; margin-right: auto !important;
+  }
+  .wrapper {
+    width: 100% !important;
+  }
+  .font-10 {
+    font-size: 10px !important;
+  }
+  .font-12 {
+    font-size: 12px !important;
+  }
+  .font-13 {
+    font-size: 13px !important;
+  }
+  .font-14 {
+    font-size: 14px !important;
+  }
+  .font-16 {
+    font-size: 16px !important;
+  }
+  .font-20 {
+    font-size: 20px !important; line-height: 25px !important;
+  }
+  .font-25 {
+    font-size: 25px !important; line-height: 30px !important;
+  }
+  .font-CTA-14 {
+    font-size: 16px !important; line-height: 20px !important;
+  }
+  .display-none {
+    display: none !important;
+  }
+  .display-block {
+    display: inline-block !important;
+  }
+  .mob-pad-0 {
+    padding: 0 !important;
+  }
+  .mob-pad-5 {
+    padding: 5 !important;
+  }
+  .mob-pad-10 {
+    padding: 10px !important;
+  }
+  .mob-pad-15 {
+    padding: 10px 0 15px 10px !important;
+  }
+  .mob-pad-25 {
+    padding: 10px 25px 0 !important;
+  }
+  .mob-pad-text {
+    padding: 0 48px 40px 43px !important;
+  }
+  .mob-pad-left {
+    padding: 0 75px 10px 15px !important;
+  }
+  .mob-pad-left-5 {
+    padding: 0 0 0 5px !important;
+  }
+  .mob-pad-left-25 {
+    padding: 0 0 0 25px !important;
+  }
+  .mob-pad-right {
+    padding: 0 0 10px 120px !important;
+  }
+  .mob-pad-r-0 {
+    padding-right: 0px !important;
+  }
+  .mob-pad-r-5 {
+    padding-right: 5px !important;
+  }
+  .mob-pad-r-10 {
+    padding-right: 10px !important;
+  }
+  .mob-pad-r-20 {
+    padding-right: 20px !important;
+  }
+  .mob-pad-r-40 {
+    padding-right: 40px !important;
+  }
+  .mob-pad-t-20 {
+    padding-top: 20px !important;
+  }
+  .mob-pad-t-15 {
+    padding: 15px 0px 0px 0px !important;
+  }
+  .mob-pad-b-10 {
+    padding: 0px 0px 10px 0px !important;
+  }
+  .mob-pad-b-15 {
+    padding: 0px 0px 15px 0px !important;
+  }
+  .mob-pad-b-20 {
+    padding-bottom: 20px !important;
+  }
+  .mob-size-banner {
+    background-size: 100% !important; background-position: center center; h=
+eight: 174px !important;
+  }
+  .mob-width-deal-two {
+    width: 100% !important; max-width: 170px !important;
+  }
+  .mob-width-deal {
+    width: 95% !important;
+  }
+  .mob-deal-width {
+    width: 105px !important; height: 130px !important;
+  }
+  .mob-deal-width-two {
+    width: 140px !important; height: 140px !important;
+  }
+  .mob-image-width {
+    width: 105px !important;
+  }
+  .mob-image-width-two {
+    width: 100% !important; display: inline-block !important;
+  }
+  .mob-gutter-width {
+    width: 7px !important;
+  }
+  .mob-height {
+    height: 85px !important;
+  }
+  .mob-height_footer {
+    height: 120px !important;
+  }
+  .mob-height_banner {
+    height: 170px !important;
+  }
+  .mob-height_footer_split {
+    height: 55px !important;
+  }
+  .mob-width-PAU {
+    width: 100px !important;
+  }
+  .mob-width-PAU-2 {
+    width: 170px !important;
+  }
+  .mob-width-PAU-3 {
+    width: 170px !important;
+  }
+  .mob-width-PAU-4 {
+    width: 170px !important;
+  }
+  .btn-main {
+    width: 130px !important; line-height: 25px !important; font-size: 16px =
+!important;
+  }
+  .btn-main-2 {
+    width: 115px !important; line-height: 20px !important; font-size: 14px =
+!important;
+  }
+  .mob-cta-w {
+    width: 120px !important;
+  }
+}
+</style>
+</head>
+<body style=3D"height: 100% !important; width: 100% !important; -ms-text-si=
+ze-adjust: 100%; -webkit-text-size-adjust: 100%; margin: 0 auto; padding: 0=
+;">
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Open for the best deals &amp; discounts.
+
+
+
+</div>
+<p style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">=20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
+  <meta charset=3D"utf-8" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%;">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width" style=3D"-ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge" style=3D"-ms-t=
+ext-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <meta name=3D"x-apple-disable-message-reformatting" style=3D"-ms-text-siz=
+e-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <title style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">foodpanda</title>
+  <!-- Web Font / @font-face : BEGIN -->
+  <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely rem=
+oved. -->
+  <!-- Desktop Outlook chokes on web font references and defaults to Times =
+New Roman, so we force a safe fallback font. -->
+  <!--[if mso]>
+  <style>
+  * {
+  font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif=
+;
+}
+</style>
+<![endif]-->
+<!-- All other clients get the webfont reference; some will render the font=
+ and others will silently fail to the fallbacks. More on that here: http://=
+stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+
+<!--[if !mso]><!-->
+
+<!--<![endif]-->
+
+<!-- Web Font / @font-face : END -->
+
+<!-- CSS -->
+
+
+<!-- What it does: Makes background images in 72ppi Outlook render at corre=
+ct size. -->
+<!--[if gte mso 9]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+
+
+
+  <center style=3D"width: 100%; background-color: #ffffff; text-align: left=
+; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style=3D"display: none; font-size: 1px; line-height: 1px; max-heig=
+ht: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-=
+family: Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+    </div>
+    <!-- Visually Hidden Preheader Text : END -->
+
+    <div style=3D"max-width: 600px; -ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; margin: auto;" class=3D"wrapper">
+      <!--[if mso]>
+      <table role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" bord=
+er=3D"0" width=3D"600" align=3D"center">
+      <tr>
+      <th>
+      <![endif]-->
+
+      <!-- EMAIL BODY : BEGIN -->
+      <table role=3D"presentation" bgcolor=3D"" cellspacing=3D"0" cellpaddi=
+ng=3D"0" border=3D"0" align=3D"center" width=3D"600" style=3D"max-width: 60=
+0px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-=
+lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0=
+ !important; border-collapse: collapse !important; table-layout: fixed !imp=
+ortant; margin: 0 auto;" class=3D"wrapper email-container ">
+
+        <!-- ////////// LOGO FOODPANDA : BEGIN /////////// -->
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <table align=3D"left" role=3D"presentation" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; ms=
+o-table-rspace: 0pt !important; border-spacing: 0 !important; border-collap=
+se: collapse !important; table-layout: fixed !important; margin: 0 auto;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                <th align=3D"left" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; padding: 0;">
+                  <!-- FOODPANDA LOGO : BEGIN -->
+                  <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;adjust_t=3D5whn9n_sw8vui&amp;=
+adjust_campaign=3DPH_Email&amp;adjust_adgroup=3Dcrm_bra_mix_aut_MIX_AUT_230=
+6XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb72-4a9f-a434=
+-4771a7443c08&amp;adjust_creative=3Demail_logo&amp;adjust_deeplink=3Dfoodpa=
+nda%3A%2F%2F%3Fc%3DPH%26s%3Dl&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodp=
+anda.PH%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_m=
+ix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629=
+032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_logo
+              " target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;">
+                    <img src=3D"https://braze-images.com/appboy/communicati=
+on/assets/image_assets/images/63fe68f8d9a96917144611a2/original.png?1677617=
+400" width=3D"250" border=3D"0" style=3D"font-family: 'Avenir Next LT Pro',=
+ Helvetica, Arial, 'Roboto', sans-serif; font-size: 15px; line-height: 20px=
+; color: #D61F26; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%; -ms-interpolation-mode: bicubic;">
+                  </a>
+                  <!-- FOODPANDA LOGO : END -->
+                </th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+        <!-- ////////// LOGO FOODPANDA : END /////////// -->
+
+        <!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <table align=3D"left" role=3D"presentation" cellspacing=3D"0" c=
+ellpadding=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust:=
+ 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; ms=
+o-table-rspace: 0pt !important; border-spacing: 0 !important; border-collap=
+se: collapse !important; table-layout: fixed !important; margin: 0 auto;">
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; padding: 5px 0;">
+                </th>
+              </tr>
+            </table>
+          </th>
+        </tr>
+        <!-- ////////// DISTANCER FOODPANDA : END /////////// -->
+       =20
+       =20
+
+
+
+
+<!-- ////////// DYNAMIC TEXT BANNER FOODPANDA : BEGIN /////////// -->
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <table class=3D"wrapper" align=3D"center" valign=3D"bottom" role=3D=
+"presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"60=
+0" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso=
+-table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spa=
+cing: 0 !important; border-collapse: collapse !important; table-layout: fix=
+ed !important; margin: 0 auto;">
+          <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+            <td class=3D"wrapper mob-height_banner" background=3D"
+
+
+
+https://braze-images.com/appboy/communication/assets/image_assets/images/64=
+9d52c42a7f84396fabbaca/original.jpg?1688031940
+
+" valign=3D"bottom" style=3D"background-size: contain !important; backgroun=
+d-repeat: no-repeat !important; background-position: center center; -ms-tex=
+t-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt =
+!important; mso-table-rspace: 0pt !important;">
+              <!--[if gte mso 9]>
+              <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"tru=
+e" stroke=3D"false" style=3D"width:600px">
+              <v:fill type=3D"tile" src=3D"
+
+
+
+https://braze-images.com/appboy/communication/assets/image_assets/images/64=
+9d52c42a7f84396fabbaca/original.jpg?1688031940
+
+"/>
+              <v:textbox inset=3D"0,0,0,0">
+              <![endif]-->
+              <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%;">
+                <table class=3D"mob-height_banner" align=3D"left" valign=3D=
+"middle" role=3D"presentation" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" width=3D"100%" height=3D"205" style=3D"-ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-=
+rspace: 0pt !important; border-spacing: 0 !important; border-collapse: coll=
+apse !important; table-layout: fixed !important; margin: 0 auto;">
+                  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-siz=
+e-adjust: 100%;">
+                    <th width=3D"50%" class=3D"font-25 mob-pad-25" align=3D=
+"left" valign=3D"middle" style=3D"font-family: 'Avenir Next LT Pro', Helvet=
+ica, Arial, 'Roboto', sans-serif; font-size: 35px; line-height: 40px; font-=
+weight: 400; color: #FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; padding: 20px 100px 0 25px;">
+                     =20
+
+
+
+vouchers just for you
+
+
+
+
+                    </th>
+                    <th width=3D"50%" style=3D"-ms-text-size-adjust: 100%; =
+-webkit-text-size-adjust: 100%;">
+             =20
+                    </th>
+                  </tr>
+                </table>
+=20
+              </div>
+              <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </th>
+</tr>
+<!-- ////////// DYNAMIC TEXT BANNER FOODPANDA : END /////////// -->
+ =20
+ <!-- ////////// GUTTER : BEGIN ////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"colAppL" align=3D"left" border=3D"0" cellpadding=3D"0" =
+cellspacing=3D"0" width=3D"100%" style=3D"border-collapse: collapse !import=
+ant; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-=
+lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacing: 0=
+ !important; table-layout: fixed !important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <th height=3D"15" style=3D"font-size: 1px !important; line-height: =
+1px !important; color: #37454d; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;">
+          &nbsp;
+        </th>
+      </tr>
+    </table>
+  </th>
+</tr>
+<!-- ////////// GUTTER : END ////////// -->
+
+<!-- ////////// DYNAMIC TEXT BANNER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacin=
+g: 0 !important; border-collapse: collapse !important; table-layout: fixed =
+!important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td class=3D"font-16 mob-pad-b-10" align=3D"center" valign=3D"botto=
+m" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', =
+sans-serif; font-size: 25px; line-height: 30px; font-style: normal; font-we=
+ight: 500; color: #231F20; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !import=
+ant; padding: 10px 60px 30px;">
+
+
+Now you see them, next you don't.<br style=3D"-ms-text-size-adjust: 100%; -=
+webkit-text-size-adjust: 100%;">Use now before they're gone!
+
+
+</td>
+      </tr>
+    </table>
+  </th>
+</tr>
+<!-- ////////// DYNAMIC TEXT BANNER FOODPANDA : END /////////// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+    =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ////////// FOOD DELIVERY & PICKUP SUB-HEADER : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td background=3D"https://braze-images.com/appboy/communication/ass=
+ets/image_assets/images/647d6bf54fa1b947446ab400/original.png?1685941237" b=
+gcolor=3D"#fff" valign=3D"top" style=3D"background-repeat: no-repeat !impor=
+tant; background-position: center center !important; background-size: conta=
+in !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+          <!--[if gte mso 9]>
+          <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" s=
+troke=3D"false" style=3D"mso-width-percent:1000;height:130px;">
+            <v:fill type=3D"tile" src=3D"https://braze-images.com/appboy/co=
+mmunication/assets/image_assets/images/644a1b4b5d6d2b26e72dd3c2/original.pn=
+g?1682578250" color=3D"#fff" />
+            <v:textbox inset=3D"0,0,0,0">
+          <![endif]-->
+          <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+            <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tab=
+le-rspace: 0pt !important; border-spacing: 0 !important; border-collapse: c=
+ollapse !important; table-layout: fixed !important; margin: 0 auto;">
+              <th class=3D"font-20 mob-pad-r-5" align=3D"left" valign=3D"le=
+ft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto',=
+ sans-serif; font-size: 25px; line-height: 29px; font-weight: 700; color: #=
+FFFFFF; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding=
+: 0 0 0 30px;">
+              =20
+
+food delivery &amp; pick-up vouchers
+
+
+              </th>
+            </table>
+          </div>
+          <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </th>
+</tr>=20
+<!-- //////////  FOOD DELIVERY & PICKUP SUB-HEADER : END /////////// -->
+
+
+
+<!-- ////////// OTHER VOUCHERS BANNER 2: BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"wrapper" align=3D"center" valign=3D"bottom" role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" =
+height=3D"200" background=3D"https://braze-images.com/appboy/communication/=
+assets/image_assets/images/648abc915ae9db5efa3e22b5/original.png?1686813841=
+" style=3D"border-radius: 20px; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !i=
+mportant; border-spacing: 0 !important; border-collapse: collapse !importan=
+t; table-layout: fixed !important; margin: 0 auto;" bgcolor=3D"#FFE9F3">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+
+        <!-- TEXT : BEGIN -->
+       =20
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+        <th class=3D"wrapper" align=3D"left" valign=3D"middle" style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          <table align=3D"left" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"font-20 mob-pad-r-10" align=3D"left" valign=3D"l=
+eft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto'=
+, sans-serif; font-size: 28px; line-height: 34px; font-weight: 400; color: =
+#FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddin=
+g: 35px 0 8px 30px;">
+
+code
+
+ <b style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">E=
+ATNA</b>
+                 <b class=3D"font-10  mob-pad-r-10" align=3D"right" valign=
+=3D"bottom" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif; font-size: 20px; line-height: 25px; font-weight: norma=
+l; color: #FFFFF; text-align: right; -ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%; padding: 20px 30px 1px;">
+                 <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;"> =E2=82=B1100 off
+                <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">
+                </b>
+              </th>
+            </tr>
+             =20
+             =20
+             =20
+            =20
+            <!-- CTA BUTTON : BEGIN -->
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"wrapper mob-pad-r-10" valign=3D"top" style=3D"pa=
+dding-top: 8px; padding-bottom: 15px; padding-left: 30px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%;">
+                <div align=3D"left" style=3D"-ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%;">
+                  <!--[if mso]>
+                  <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xm=
+lns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Deatna&amp;ad=
+just_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3D=
+crm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EM=
+AIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&a=
+mp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Deatna&amp=
+;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3Deatna=
+%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_mix_aut_=
+MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb7=
+2-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " style=3D"height:30px;v-text-anchor:middle;width:155px;text-=
+align: center;" arcsize=3D"0%" strokecolor=3D"#000000" fill=3D"t" align=3D"=
+left">
+                  <v:fill type=3D"tile" src=3D"" color=3D"#000000" />
+                  <w:anchorlock/>
+                  <center style=3D"color:#ffffff;font-family: 'Avenir Next =
+LT Pro', Helvetica, Arial, 'Roboto', sans-serif;font-size:22px;text-align: =
+center;font-weight: 900;">
+                 =20
+
+
+save voucher
+
+
+
+                </center>
+              </v:roundrect>
+              <![endif]-->
+              <a class=3D"btn-main-2" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Deatna&amp;ad=
+just_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3D=
+crm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EM=
+AIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&a=
+mp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Deatna&amp=
+;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3Deatna=
+%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_mix_aut_=
+MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb7=
+2-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " targeft=3D"_blank" style=3D"background-color: #000000; bord=
+er-radius: 40px; color: #ffffff; display: inline-block; font-family: 'Aveni=
+r Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif; font-size: 22px; li=
+ne-height: 28px; text-align: center; text-decoration: none; width: 155px; -=
+webkit-text-size-adjust: none; mso-hide: all; font-weight: 900; -ms-text-si=
+ze-adjust: 100%; border: 4px solid #000000;"> <span style=3D"-ms-text-size-=
+adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+
+save voucher
+
+
+ </span> </a>
+            </div>
+          </th>
+        </tr>
+        <!-- CTA BUTTON : END -->
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"font-1 mob-pad-r-10" align=3D"left" valign=3D"left" =
+style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', san=
+s-serif; font-size: 8px; line-height: 10px; font-weight: normal; color: #FF=
+2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+0px 0 8px 35px;">
+          Min. spend of up to =E2=82=B1299.
+Valid daily for select restaurants with varying durations.
+Valid for select users only.
+          </th>
+        </tr>
+      </table>
+    </th>
+    <!-- TEXT : END -->
+   =20
+   =20
+    <!-- IMAGE : BEGIN -->
+    <th class=3D"mob-pad-0" width=3D"200" align=3D"right" valign=3D"center"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddi=
+ng: 0 0 0 35px;"> <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Deatna&amp;ad=
+just_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3D=
+crm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EM=
+AIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&a=
+mp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Deatna&amp=
+;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3Deatna=
+%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_mix_aut_=
+MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb7=
+2-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;"> <img class=3D"mob-width-PAU-2 mob-pad-0" src=
+=3D"https://braze-images.com/appboy/communication/assets/image_assets/image=
+s/648aac7dac28e60e78027231/original.png?1686809724" width=3D"200" border=3D=
+"0" style=3D"display: block; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; -ms-interpolation-mode: bicubic;"> </a> </th>
+    <!-- IMAGE : END -->
+  </tr>
+</table>
+</th>
+</tr>
+<!-- ////////// OTHER VOUCHERS BANNER 2: END /////////// -->
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 2px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>=20
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+
+
+<!-- ////////// OTHER VOUCHERS BANNER 2: BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"wrapper" align=3D"center" valign=3D"bottom" role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" =
+height=3D"200" background=3D"https://braze-images.com/appboy/communication/=
+assets/image_assets/images/648abc915ae9db5efa3e22b5/original.png?1686813841=
+" style=3D"border-radius: 20px; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !i=
+mportant; border-spacing: 0 !important; border-collapse: collapse !importan=
+t; table-layout: fixed !important; margin: 0 auto;" bgcolor=3D"#FFE9F3">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+
+        <!-- TEXT : BEGIN -->
+       =20
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <th class=3D"wrapper" align=3D"left" valign=3D"middle" style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          <table align=3D"left" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"font-20 mob-pad-r-10" align=3D"left" valign=3D"l=
+eft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto'=
+, sans-serif; font-size: 28px; line-height: 34px; font-weight: 400; color: =
+#FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddin=
+g: 35px 0 8px 30px;">
+
+code
+
+ <b style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">P=
+ICKUPNA</b>
+=20
+                 <b class=3D"font-10  mob-pad-r-10" align=3D"right" valign=
+=3D"bottom" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif; font-size: 20px; line-height: 25px; font-weight: norma=
+l; color: #FFFFF; text-align: right; -ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%; padding: 20px 30px 1px;"> =20
+               =20
+                 <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;"> =E2=82=B1120 off
+                <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">
+                </b>
+              </th>
+            </tr>
+           =20
+             =20
+             =20
+           =20
+           =20
+            <!-- CTA BUTTON : BEGIN -->
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"wrapper mob-pad-r-10" valign=3D"top" style=3D"pa=
+dding-top: 8px; padding-bottom: 15px; padding-left: 30px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%;">
+                <div align=3D"left" style=3D"-ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%;">
+                  <!--[if mso]>
+                  <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xm=
+lns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dpickupna&amp=
+;adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dpickup=
+na&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3=
+Dpickupna%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra=
+_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_116=
+29032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " style=3D"height:30px;v-text-anchor:middle;width:155px;text-=
+align: center;" arcsize=3D"0%" strokecolor=3D"#000000" fill=3D"t" align=3D"=
+left">
+                  <v:fill type=3D"tile" src=3D"" color=3D"#000000" />
+                  <w:anchorlock/>
+                  <center style=3D"color:#ffffff;font-family: 'Avenir Next =
+LT Pro', Helvetica, Arial, 'Roboto', sans-serif;font-size:22px;text-align: =
+center;font-weight: 900;">
+                 =20
+
+
+save voucher
+
+
+
+                </center>
+              </v:roundrect>
+              <![endif]-->
+              <a class=3D"btn-main-2" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dpickupna&amp=
+;adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dpickup=
+na&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3=
+Dpickupna%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra=
+_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_116=
+29032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " targeft=3D"_blank" style=3D"background-color: #000000; bord=
+er-radius: 40px; color: #ffffff; display: inline-block; font-family: 'Aveni=
+r Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif; font-size: 22px; li=
+ne-height: 28px; text-align: center; text-decoration: none; width: 155px; -=
+webkit-text-size-adjust: none; mso-hide: all; font-weight: 900; -ms-text-si=
+ze-adjust: 100%; border: 4px solid #000000;"> <span style=3D"-ms-text-size-=
+adjust: 100%; -webkit-text-size-adjust: 100%;">
+
+
+save voucher
+
+
+ </span> </a>
+           </div>
+          </th>
+        </tr>
+        <!-- CTA BUTTON : END -->
+       =20
+=20
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"font-1 mob-pad-r-10" align=3D"left" valign=3D"left" =
+style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', san=
+s-serif; font-size: 8px; line-height: 10px; font-weight: normal; color: #FF=
+2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+0px 0 8px 35px;">
+          Min. spend of =E2=82=B1299 on weekdays & =E2=82=B1399 on weekends=
+.
+Valid for select pick-up restaurants only.
+Valid for select users only.
+          </th>
+        </tr>
+      </table>
+    </th>
+    <!-- TEXT : END -->
+   =20
+   =20
+    <!-- IMAGE : BEGIN -->
+    <th class=3D"mob-pad-0" width=3D"200" align=3D"right" valign=3D"bottom"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddi=
+ng: 0px;"> <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dpickupna&amp=
+;adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dpickup=
+na&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3=
+Dpickupna%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra=
+_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_116=
+29032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;"> <img class=3D"mob-width-PAU-2 mob-pad-0" src=
+=3D"https://braze-images.com/appboy/communication/assets/image_assets/image=
+s/648aae01737d812a34d4fc7a/original.png?1686810113" width=3D"200" border=3D=
+"0" style=3D"display: block; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; -ms-interpolation-mode: bicubic;"> </a> </th>
+    <!-- IMAGE : END -->
+  </tr>
+</table>
+</th>
+</tr>
+<!-- ////////// OTHER VOUCHERS BANNER 2: END /////////// -->
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 15px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>=20
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+
+
+
+
+
+
+
+<!-- ////////// FOOD DELIVERY & PICKUP SUB-HEADER : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td background=3D"https://braze-images.com/appboy/communication/ass=
+ets/image_assets/images/647d83cdfdca0a7bb8a3263d/original.png?1685947341" b=
+gcolor=3D"#fff" valign=3D"top" style=3D"background-repeat: no-repeat !impor=
+tant; background-position: center center !important; background-size: conta=
+in !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+          <!--[if gte mso 9]>
+          <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" s=
+troke=3D"false" style=3D"mso-width-percent:1000;height:130px;">
+            <v:fill type=3D"tile" src=3D"https://braze-images.com/appboy/co=
+mmunication/assets/image_assets/images/644a1b4b5d6d2b26e72dd3c2/original.pn=
+g?1682578250" color=3D"#fff" />
+            <v:textbox inset=3D"0,0,0,0">
+          <![endif]-->
+          <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+            <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tab=
+le-rspace: 0pt !important; border-spacing: 0 !important; border-collapse: c=
+ollapse !important; table-layout: fixed !important; margin: 0 auto;">
+              <th class=3D"font-20 mob-pad-r-10" align=3D"left" valign=3D"l=
+eft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto'=
+, sans-serif; font-size: 25px; line-height: 29px; font-weight: 700; color: =
+#FFFFFF; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddin=
+g: 0 0 0 30px;">
+              =20
+
+pandamart &amp; shops vouchers
+
+
+              </th>
+            </table>
+          </div>
+          <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </th>
+</tr>
+
+
+<!-- //////////  QC SUB-HEADER : END /////////// -->
+
+
+
+
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+ =20
+ =20
+<!-- ////////// OTHER VOUCHERS BANNER 2: BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"wrapper" align=3D"center" valign=3D"bottom" role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" =
+height=3D"200" background=3D"https://braze-images.com/appboy/communication/=
+assets/image_assets/images/648ab9b4c0a84f0a82f1d56b/original.png?1686813108=
+" style=3D"border-radius: 20px; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !i=
+mportant; border-spacing: 0 !important; border-collapse: collapse !importan=
+t; table-layout: fixed !important; margin: 0 auto;" bgcolor=3D"#D4F2FF">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+
+        <!-- TEXT : BEGIN -->
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+        <th class=3D"wrapper" align=3D"left" valign=3D"middle" style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          <table align=3D"left" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"font-20 mob-pad-r-20" align=3D"left" valign=3D"l=
+eft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto'=
+, sans-serif; font-size: 28px; line-height: 34px; font-weight: 400; color: =
+#FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddin=
+g: 30px 0 8px 30px;">
+
+code
+
+  <b style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">=
+ STOCKUP</b>
+                 <b class=3D"font-10  mob-pad-r-20" align=3D"right" valign=
+=3D"bottom" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif; font-size: 20px; line-height: 25px; font-weight: norma=
+l; color: #FFFFF; text-align: right; -ms-text-size-adjust: 100%; -webkit-te=
+xt-size-adjust: 100%; padding: 20px 30px 1px;"> =20
+               =20
+                 <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;">=E2=82=B1150 off
+                <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%;">
+                </b>
+              </th>
+            </tr>
+           =20
+             =20
+             =20
+           =20
+           =20
+            <!-- CTA BUTTON : BEGIN -->
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"wrapper mob-pad-r-20" valign=3D"top" style=3D"pa=
+dding-top: 8px; padding-bottom: 15px; padding-left: 30px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%;">
+                <div align=3D"left" style=3D"-ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%;">
+                  <!--[if mso]>
+                  <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xm=
+lns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dstockup&amp;=
+adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dstocku=
+p&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3D=
+stockup%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_m=
+ix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629=
+032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " style=3D"height:30px;v-text-anchor:middle;width:155px;text-=
+align: center;" arcsize=3D"0%" strokecolor=3D"#000000" fill=3D"t" align=3D"=
+left">
+                  <v:fill type=3D"tile" src=3D"" color=3D"#000000" />
+                  <w:anchorlock/>
+                  <center style=3D"color:#ffffff;font-family: 'Avenir Next =
+LT Pro', Helvetica, Arial, 'Roboto', sans-serif;font-size:22px;text-align: =
+center;font-weight: 900;">
+                 =20
+
+
+redeem now
+
+
+
+                </center>
+              </v:roundrect>
+              <![endif]-->
+              <a class=3D"btn-main-2" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dstockup&amp;=
+adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dstocku=
+p&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3D=
+stockup%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_m=
+ix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629=
+032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " target=3D"_blank" style=3D"background-color: #000000; borde=
+r-radius: 40px; color: #ffffff; display: inline-block; font-family: 'Avenir=
+ Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif; font-size: 22px; lin=
+e-height: 28px; text-align: center; text-decoration: none; width: 155px; -w=
+ebkit-text-size-adjust: none; mso-hide: all; font-weight: 900; -ms-text-siz=
+e-adjust: 100%; border: 4px solid #000000;"> <span style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%;">
+
+
+redeem now
+
+
+ </span> </a>
+              </div>
+          </th>
+        </tr>
+        <!-- CTA BUTTON : END -->
+       =20
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"font-1 mob-pad-r-20" align=3D"left" valign=3D"left" =
+style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', san=
+s-serif; font-size: 8px; line-height: 10px; font-weight: normal; color: #FF=
+2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+0px 0 8px 35px;">
+           Varying min. spend.
+Valid for pandamart, Robinsons Easymart, Shopwise, and more select shops.
+          </th>
+        </tr>
+      </table>
+    </th>
+    <!-- TEXT : END -->
+   =20
+    <!-- IMAGE : BEGIN -->
+    <th class=3D"mob-pad-0" width=3D"200" align=3D"right" valign=3D"bottom"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddi=
+ng: 0 0 0 35px;"> <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Do&amp;code=3Dstockup&amp;=
+adjust_t=3D5whn9n_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=
+=3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo=
+_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_log=
+o&amp;adjust_deeplink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Do%26code%3Dstocku=
+p&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodpanda.ph%2Fvouchers%3Fcode%3D=
+stockup%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_m=
+ix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629=
+032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Demail_wallet
+              " target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;"> <img class=3D"mob-width-PAU-2 mob-pad-0" src=
+=3D"https://braze-images.com/appboy/communication/assets/image_assets/image=
+s/648aae24deb8d60d5e5ce11c/original.png?1686810148" width=3D"200" border=3D=
+"0" style=3D"display: block; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; -ms-interpolation-mode: bicubic;"> </a> </th>
+    <!-- IMAGE : END -->
+  </tr>
+</table>
+</th>
+</tr>
+<!-- ////////// OTHER VOUCHERS BANNER 2: END /////////// -->
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 15px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>=20
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+
+
+
+
+
+
+
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 5px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+
+
+
+
+<!-- ////////// FOOD DELIVERY & PICKUP SUB-HEADER : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td background=3D"https://braze-images.com/appboy/communication/ass=
+ets/image_assets/images/648af64afdca0a5affd3b275/original.png?1686828618" b=
+gcolor=3D"#fff" valign=3D"top" style=3D"background-repeat: no-repeat !impor=
+tant; background-position: center center !important; background-size: conta=
+in !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+          <!--[if gte mso 9]>
+          <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" s=
+troke=3D"false" style=3D"mso-width-percent:1000;height:130px;">
+            <v:fill type=3D"tile" src=3D"https://braze-images.com/appboy/co=
+mmunication/assets/image_assets/images/644a1b4b5d6d2b26e72dd3c2/original.pn=
+g?1682578250" color=3D"#fff" />
+            <v:textbox inset=3D"0,0,0,0">
+          <![endif]-->
+          <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+            <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" height=3D"100" width=3D"100%" style=3D"-ms-text-size-adjust: 100%=
+; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-tab=
+le-rspace: 0pt !important; border-spacing: 0 !important; border-collapse: c=
+ollapse !important; table-layout: fixed !important; margin: 0 auto;">
+              <th class=3D"font-20 mob-pad-r-5" align=3D"left" valign=3D"le=
+ft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto',=
+ sans-serif; font-size: 25px; line-height: 29px; font-weight: 700; color: #=
+FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding=
+: 0 0 0 25px;">
+            =20
+
+
+hot vouchers this month
+
+
+
+              </th>
+            </table>
+          </div>
+          <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </th>
+</tr>=20
+<!-- //////////  FOOD DELIVERY & PICKUP SUB-HEADER : END /////////// -->
+
+
+
+<!-- ////////// OTHER VOUCHERS BANNER 2: BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table class=3D"wrapper" align=3D"center" valign=3D"bottom" role=3D"pre=
+sentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"100%" =
+height=3D"200" background=3D"https://braze-images.com/appboy/communication/=
+assets/image_assets/images/648abc915ae9db66d13e2087/original.png?1686813841=
+" style=3D"border-radius: 20px; -ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !i=
+mportant; border-spacing: 0 !important; border-collapse: collapse !importan=
+t; table-layout: fixed !important; margin: 0 auto;" bgcolor=3D"#EFF2F4">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <!-- TEXT : BEGIN -->=20
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             =20
+             =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+        <th class=3D"wrapper" align=3D"left" valign=3D"middle" style=3D"-ms=
+-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+          <table align=3D"left" style=3D"-ms-text-size-adjust: 100%; -webki=
+t-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspac=
+e: 0pt !important; border-spacing: 0 !important; border-collapse: collapse =
+!important; table-layout: fixed !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"font-20 mob-pad-r-10" align=3D"left" valign=3D"l=
+eft" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto'=
+, sans-serif; font-size: 28px; line-height: 34px; font-weight: 400; color: =
+#FF2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddin=
+g: 30px 0 8px 30px;">
+
+code
+
+<b style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">PR=
+OPASKO</b>
+             =20
+              <b class=3D"font-10  mob-pad-r-10" align=3D"right" valign=3D"=
+bottom" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Robo=
+to', sans-serif; font-size: 20px; line-height: 25px; font-weight: normal; c=
+olor: #FF2B85; text-align: right; -ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; padding: 20px 30px 1px;"> =20
+
+                   <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;">50% off the 6-month plan.
+              </b>
+              </th>
+            </tr>
+           =20
+             =20
+             =20
+           =20
+            <!-- CTA BUTTON : BEGIN -->
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <th class=3D"wrapper mob-pad-r-20" valign=3D"top" style=3D"pa=
+dding-top: 8px; padding-bottom: 15px; padding-left: 30px; -ms-text-size-adj=
+ust: 100%; -webkit-text-size-adjust: 100%;">
+                <div align=3D"left" style=3D"-ms-text-size-adjust: 100%; -w=
+ebkit-text-size-adjust: 100%;">
+                  <!--[if mso]>
+                  <v:roundrect xmlns:v=3D"urn:schemas-microsoft-com:vml" xm=
+lns:w=3D"urn:schemas-microsoft-com:office:word" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Dsub&amp;adjust_t=3D5whn9n=
+_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3Dcrm_bra_mix_aut=
+_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb=
+72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&amp;adjust_deepl=
+ink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Dsub&amp;adjust_redirect=3Dhttps%3A%=
+2F%2Fwww.foodpanda.ph%2Fsubscription%26utm_source%3Demail%26utm_medium%3Dfo=
+od%26utm_campaign%3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicV=
+oucherGuide_Promo_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%=
+3Demail_wallet
+              " style=3D"height:30px;v-text-anchor:middle;width:125px;text-=
+align: center;" arcsize=3D"0%" strokecolor=3D"#000000" fill=3D"t" align=3D"=
+left">
+                  <v:fill type=3D"tile" src=3D"" color=3D"#000000" />
+                  <w:anchorlock/>
+                  <center style=3D"color:#ffffff;font-family: 'Avenir Next =
+LT Pro', Helvetica, Arial, 'Roboto', sans-serif;font-size:22px;text-align: =
+center;font-weight: 900;">
+                 =20
+
+redeem now
+
+
+                </center>
+              </v:roundrect>
+              <![endif]-->
+              <a class=3D"btn-main-2" href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Dsub&amp;adjust_t=3D5whn9n=
+_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3Dcrm_bra_mix_aut=
+_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb=
+72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&amp;adjust_deepl=
+ink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Dsub&amp;adjust_redirect=3Dhttps%3A%=
+2F%2Fwww.foodpanda.ph%2Fsubscription%26utm_source%3Demail%26utm_medium%3Dfo=
+od%26utm_campaign%3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicV=
+oucherGuide_Promo_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%=
+3Demail_wallet
+              " target=3D"_blank" style=3D"background-color: #000000; borde=
+r-radius: 40px; color: #ffffff; display: inline-block; font-family: 'Avenir=
+ Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif; font-size: 22px; lin=
+e-height: 28px; text-align: center; text-decoration: none; width: 155px; -w=
+ebkit-text-size-adjust: none; mso-hide: all; font-weight: 900; -ms-text-siz=
+e-adjust: 100%; border: 4px solid #000000;"> <span style=3D"-ms-text-size-a=
+djust: 100%; -webkit-text-size-adjust: 100%;">=20
+
+redeem now
+
+ </span> </a>
+            </div>
+          </th>
+        </tr>
+        <!-- CTA BUTTON : END -->
+        <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+          <th class=3D"font-1 mob-pad-r-10" align=3D"left" valign=3D"left" =
+style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', san=
+s-serif; font-size: 8px; line-height: 10px; font-weight: normal; color: #FF=
+2B85; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+0px 0 8px 35px;">
+            <br style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+          </th>
+        </tr>
+      </table>
+    </th>
+    <!-- TEXT : END -->
+   =20
+   =20
+    <!-- IMAGE : BEGIN -->
+    <th class=3D"mob-pad-0" width=3D"200" align=3D"right" valign=3D"bottom"=
+ style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; paddi=
+ng: 0 0 0 35px;"> <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;s=3Dsub&amp;adjust_t=3D5whn9n=
+_sw8vui&amp;adjust_campaign=3DPH_Email&amp;adjust_adgroup=3Dcrm_bra_mix_aut=
+_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb=
+72-4a9f-a434-4771a7443c08&amp;adjust_creative=3Demail_logo&amp;adjust_deepl=
+ink=3Dfoodpanda%3A%2F%2F%3Fc%3DPH%26s%3Dsub&amp;adjust_redirect=3Dhttps%3A%=
+2F%2Fwww.foodpanda.ph%2Fsubscription%26utm_source%3Demail%26utm_medium%3Dfo=
+od%26utm_campaign%3Dcrm_bra_mix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicV=
+oucherGuide_Promo_EMAIL_11629032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%=
+3Demail_wallet
+              " target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%;"> <img class=3D"mob-width-PAU-2 mob-pad-0" src=
+=3D"https://braze-images.com/appboy/communication/assets/image_assets/image=
+s/648aafb17acb6455632f1b1b/original.png?1686810545" width=3D"200" border=3D=
+"0" style=3D"display: block; -ms-text-size-adjust: 100%; -webkit-text-size-=
+adjust: 100%; -ms-interpolation-mode: bicubic;"> </a> </th>
+    <!-- IMAGE : END -->
+  </tr>
+</table>
+</th>
+</tr>=20
+<!-- ////////// OTHER VOUCHERS BANNER 2: END /////////// -->
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 5px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>
+
+
+
+<!-- ////////// FOOD DELIVERY & PICK-UP BANNER : END /////////// -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ////////// Footer: BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+>
+    <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" border=3D"0=
+" height=3D"185" width=3D"100%" class=3D"mob-height_footer" style=3D"-ms-te=
+xt-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt=
+ !important; mso-table-rspace: 0pt !important; border-spacing: 0 !important=
+; border-collapse: collapse !important; table-layout: fixed !important; mar=
+gin: 0 auto;">
+      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 10=
+0%;">
+        <td background=3D"https://braze-images.com/appboy/communication/ass=
+ets/image_assets/images/64535b8a66f0df085bbbc419/original.png?1683184522" b=
+gcolor=3D"#fff" valign=3D"top" style=3D"background-repeat: no-repeat !impor=
+tant; background-position: center center !important; background-size: conta=
+in !important; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; =
+mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !important;">
+          <!--[if gte mso 9]>
+          <v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"true" s=
+troke=3D"false" style=3D"mso-width-percent:1000;height:130px;">
+            <v:fill type=3D"tile" src=3D"https://braze-images.com/appboy/co=
+mmunication/assets/image_assets/images/644a1b4b5d6d2b26e72dd3c2/original.pn=
+g?1682578250" color=3D"#fff" />
+            <v:textbox inset=3D"0,0,0,0">
+          <![endif]-->
+          <div style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjus=
+t: 100%;">
+            <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" bor=
+der=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; border-spacing: 0 !important; border-collapse: collapse !import=
+ant; table-layout: fixed !important; margin: 0 auto;">
+            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adju=
+st: 100%;">
+              <table align=3D"center" cellpadding=3D"0" cellspacing=3D"0" b=
+order=3D"0" height=3D"93" width=3D"100%" class=3D"mob-height_footer_split" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-ta=
+ble-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spacin=
+g: 0 !important; border-collapse: collapse !important; table-layout: fixed =
+!important; margin: 0 auto;">
+              <th width=3D"30%" class=3D"font-20" align=3D"center" valign=
+=3D"middle" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif; font-size: 25px; line-height: 29px; font-weight: 600; =
+color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+">
+              </th>
+              <th width=3D"70%" class=3D"font-20" align=3D"center" valign=
+=3D"bottom" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial, '=
+Roboto', sans-serif; font-size: 25px; line-height: 29px; font-weight: 600; =
+color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;=
+">
+            =20
+
+looking for more deals?
+
+
+              </th>
+              </table>
+              <table align=3D"center" valign=3D"middle" cellpadding=3D"0" c=
+ellspacing=3D"0" border=3D"0" height=3D"93" width=3D"100%" class=3D"mob-hei=
+ght_footer_split" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !import=
+ant; border-spacing: 0 !important; border-collapse: collapse !important; ta=
+ble-layout: fixed !important; margin: 0 auto;">
+                  <th width=3D"30%" class=3D"font-20" align=3D"center" vali=
+gn=3D"middle" style=3D"font-family: 'Avenir Next LT Pro', Helvetica, Arial,=
+ 'Roboto', sans-serif; font-size: 25px; line-height: 29px; font-weight: 600=
+; color: #ffffff; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100=
+%;">
+                  </th>
+                  <th width=3D"70%" valign=3D"middle" style=3D"font-family:=
+ 'Avenir Next LT Pro', Helvetica, Arial, 'Roboto', sans-serif; color: #ffff=
+ff; text-decoration: none; border-radius: 50px; font-size: 22px; line-heigh=
+t: 33px; font-weight: 900; -ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%; margin: 0 auto;" align=3D"center">
+                    <a href=3D"
+              https://bhpz.adj.st/?c=3DPH&amp;adjust_t=3D5whn9n_sw8vui&amp;=
+adjust_campaign=3DPH_Email&amp;adjust_adgroup=3Dcrm_bra_mix_aut_MIX_AUT_230=
+6XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629032-eb72-4a9f-a434=
+-4771a7443c08&amp;adjust_creative=3Dbottom_cta&amp;adjust_deeplink=3Dfoodpa=
+nda%3A%2F%2F%3Fc%3DPH%26s%3Dl&amp;adjust_redirect=3Dhttps%3A%2F%2Fwww.foodp=
+anda.PH%26utm_source%3Demail%26utm_medium%3Dfood%26utm_campaign%3Dcrm_bra_m=
+ix_aut_MIX_AUT_2306XX_PH_AP_FP_EG_AutoDynamicVoucherGuide_Promo_EMAIL_11629=
+032-eb72-4a9f-a434-4771a7443c08%26utm_keyword%3Dbottom_cta
+              " target=3D"_blank" style=3D"font-family: 'Avenir Next LT Pro=
+', Helvetica, Arial, 'Roboto', sans-serif; color: #ffffff; width: 180px; he=
+ight: 36px; text-decoration: none; display: inline-block; text-align: cente=
+r; background-color: #000000; border-radius: 50px; font-size: 20px; line-he=
+ight: 33px; font-weight: 900; -ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%;">
+
+click here
+
+
+                    </a>
+                  </th>
+                  </table>
+                </tr>
+            </table>
+          </div>
+          <!--[if gte mso 9]>
+            </v:textbox>
+          </v:rect>
+          <![endif]-->
+        </td>
+      </tr>
+    </table>
+  </th>
+</tr>
+<!-- //////////  Footer : END /////////// -->
+
+<!-- ////////// DISTANCER FOODPANDA : BEGIN /////////// -->
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+  <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;"=
+> <table align=3D"left" role=3D"presentation" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rs=
+pace: 0pt !important; border-spacing: 0 !important; border-collapse: collap=
+se !important; table-layout: fixed !important; margin: 0 auto;">
+    <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+      <th align=3D"center" style=3D"-ms-text-size-adjust: 100%; -webkit-tex=
+t-size-adjust: 100%; padding: 15px 0;"> </th>
+    </tr>
+  </table>
+</th>
+</tr>
+<!-- ////////// DISTANCER FOODPANDA : END /////////// -->=20
+
+=09
+
+=09
+=09
+
+
+=09
+=09
+=09
+
+
+=09
+
+	  <!-- footer --><!-- wrapper:html -->
+ <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+            <!-- IOS & PLAY FOR DESKTOP : BEGIN --->
+            =20
+            <table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0" borde=
+r=3D"0" align=3D"center" valign=3D"middle" style=3D"-ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-=
+table-rspace: 0pt !important; border-spacing: 0 !important; border-collapse=
+: collapse !important; table-layout: fixed !important; margin: 0 auto;">
+          <th style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust=
+: 100%;">
+          </th>
+<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+<table width=3D"600" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" align=
+=3D"center" valign=3D"middle" class=3D"wrapper" style=3D"-ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !important;=
+ mso-table-rspace: 0pt !important; border-spacing: 0 !important; border-col=
+lapse: collapse !important; table-layout: fixed !important; margin: 0 auto;=
+">=20
+              <!-- IOS : BEGIN --->
+            =20
+              <th class=3D"mob-padd-0" width=3D"110" align=3D"right" style=
+=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: 0 =
+10px 26px 40px;">
+                <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D=
+12-2BjRkpfoncUR7Zm1WXg5gz-2BYWprj4f9zKyPntMEI4CnFwOX1UhglZn3r95VgwXyCQQNEj3=
+URVAlJdOXrJlRcAzlOHX1F6sql9N4tQcCxXZOMOl7OpfKa7J1GFkY1ADIMPpp-2F-2B-2FuBuer=
+hesVNNzyXQ-3D-3DwcLX_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2B=
+ZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFV=
+gUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVil=
+qdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnq=
+ONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5=
+zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9u=
+PkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf=
+8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF1=
+4IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BE-2BzdGyJDz1=
+6LdtYxyqcoiydwJdgqMQZY2No3JH-2F48Knljq1jWUNl268etd-2FuhuxWKZGysJTsbV01BIXu9=
+U4Qr9kZ2-2BsezGioLdSBMbMmCt9oXmu4pT8LA35l-2BhYGpPUdMKhzLjfFPyFmp3RvHNsRJW" =
+target=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+                  <img width=3D"110" src=3D"https://images.deliveryhero.io/=
+image/adcatalog/202103-FP-iOS-banner.png" style=3D"width: 110px; vertical-a=
+lign: middle; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -=
+ms-interpolation-mode: bicubic; margin: 0; padding: 0; border: none;" borde=
+r=3D"0" alt=3D"ios">
+                </a>
+             </th>=20
+              <!-- IOS : END --->
+              <!-- PLAY : BEGIN --->
+             <th class=3D"mob-padding-app" width=3D"110" align=3D"left" sty=
+le=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; padding: =
+0 40px 26px 0;">=20
+                <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D=
+12-2BjRkpfoncUR7Zm1WXg5mwThdUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2=
+BT0QNHDWRpIeJ3WowyNNiWuP6se96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrY=
+UGJhODdQ-3D-3D2Wrs_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM=
+8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgU=
+mvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqd=
+sXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqON=
+vCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zT=
+Xoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPk=
+KehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u=
+1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14I=
+auCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BGdu6dN4GTrPKio=
+bhHb6tRxQpv9IMlrSW7H4Ntj9TjuTvwQx4ZNjYCiIn1ClDk5RvtJ4DGN3S9A32ZKBiCV39uCN9T=
+gwSdYucAktSLLSHDSDu8ju-2BKeRrZOxhZxoQw0gnIa2sQxVWn5malEOlvWd4wS" target=3D"=
+_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%=
+;">
+                  <img width=3D"110" src=3D"https://images.deliveryhero.io/=
+image/adcatalog/202103-FP-play-badge.png" style=3D"width: 110; vertical-ali=
+gn: middle; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -ms=
+-interpolation-mode: bicubic; margin: 0; padding: 0; border: none;" border=
+=3D"0" alt=3D"play">
+                </a>
+              </th>=20
+              <!-- PLAY : END --->
+              </table>
+              </tr>
+              <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-ad=
+just: 100%;">
+              <table style=3D"-ms-text-size-adjust: 100%; -webkit-text-size=
+-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !imp=
+ortant; border-spacing: 0 !important; border-collapse: collapse !important;=
+ table-layout: fixed !important; margin: 0 auto;">
+                <th width=3D"100%" style=3D"-ms-text-size-adjust: 100%; -we=
+bkit-text-size-adjust: 100%;">=20
+                <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D=
+12-2BjRkpfoncUR7Zm1WXg5mwThdUycKXq2BJO-2BDHEbXXokQFzgKIca7ywesCk90cijzeaf-2=
+BT0QNHDWRpIeJ3WowyNNiWuP6se96xYEJJh-2B8I5Qo4B48qZzHu5hc0FKC7ndtvQEygIGeUOrY=
+UGJhODdQ-3D-3Dvv0I_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM=
+8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgU=
+mvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqd=
+sXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqON=
+vCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zT=
+Xoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPk=
+KehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u=
+1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14I=
+auCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BFwAcGw2lyI4DWW=
+GimEc7CzEJQYj7Ges8TbIZe6lvzKlAWr7HIQHPtp6PSwPl-2FfYZlXjfowr4Z64GVIPn5-2BBfc=
+5LuPa6PTUvDnIJY66-2F4PNESSA9PGQ7AXTkJMOy9RHsTIyvGf5OUsw4Wae1TvVmdUv" target=
+=3D"_blank" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: =
+100%;">
+                  <img width=3D"100%" src=3D"https://braze-images.com/appbo=
+y/communication/assets/image_assets/images/62a1f4d6cae64d78c771de18/origina=
+l.png?1654781142" style=3D"vertical-align: middle; -ms-text-size-adjust: 10=
+0%; -webkit-text-size-adjust: 100%; -ms-interpolation-mode: bicubic; margin=
+: 0; padding: 0; border: none;" border=3D"0" alt=3D"play">
+                </a>
+              </th>=20
+              </table>
+              </tr>
+             =20
+            </table>
+           =20
+            <!-- IOS & PLAY FOR DESKTOP : END --->
+          </tr>
+
+
+	<!-- FOOTER & SOCIAL : BEGIN -->
+	<tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+	  <td width=3D"600" class=3D"wrapper" align=3D"center" style=3D"-ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !im=
+portant; mso-table-rspace: 0pt !important;">
+	    <table bgcolor=3D"#f0eff0" align=3D"center" class=3D"wrapper" role=3D"=
+presentation" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" width=3D"600=
+" style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-=
+table-lspace: 0pt !important; mso-table-rspace: 0pt !important; border-spac=
+ing: 0 !important; border-collapse: collapse !important; table-layout: fixe=
+d !important; margin: 0 auto;">
+
+	      <!-- SOCIAL ICONS : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td width=3D"96" style=3D"-ms-text-size-adjust: 100%; -webkit-text=
+-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt=
+ !important; padding: 0px 40px 26px;" align=3D"center">
+	          <table align=3D"center" width=3D"100" border=3D"0" cellpadding=
+=3D"0" cellspacing=3D"0" style=3D"border-bottom-width: 2px; border-bottom-c=
+olor: #ffffff; border-bottom-style: solid; -ms-text-size-adjust: 100%; -web=
+kit-text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rsp=
+ace: 0pt !important; border-spacing: 0 !important; border-collapse: collaps=
+e !important; table-layout: fixed !important; margin: 0 auto;">
+	            <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adj=
+ust: 100%;">
+	              <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-a=
+djust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt !impor=
+tant; padding: 22px 5px 22px 22px;">
+	                <table width=3D"100%" align=3D"center" border=3D"0" cellpa=
+dding=3D"0" cellspacing=3D"0" style=3D"-ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace:=
+ 0pt !important; border-spacing: 0 !important; border-collapse: collapse !i=
+mportant; table-layout: fixed !important; margin: 0 auto;">
+	                  <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%;">
+	                    <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; padding: 0;">
+
+
+	                      <!-- FACEBOOK : BEGIN --->
+	                      <a href=3D"https://ablink.info.foodpanda.ph/ls/click=
+?upn=3D12-2BjRkpfoncUR7Zm1WXg5smSW4vyJLWkGqwjVLXdJdIU1gMGmvBJLwtKP1uSS3Gmla=
+rNweEI6T1jeIUaXdirGA-3D-3D6Jpw_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZ=
+WerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43b=
+olxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJ=
+pr5gK7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mv=
+E3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IG=
+jGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2=
+BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06=
+zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZt=
+zU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BG6=
+K2kF5m83BjddgV-2FlcqUIolPObA61Ggu4KEx17PBDw1X-2BrcCEJ3z9h-2FD01gFZqGuihNrEV=
+W-2BCHeLKq8-2FfbOwf-2BKhoGAGZo19FKakcYnSLkSe1c0fnrnZ-2FZFb8COh7ol05uv9UZnSm=
+LXkRch9Oe0Ja" target=3D"_blank" alias=3D"social-icons" conversion=3D"true" =
+style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
+	                        <img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/62062a645e670d1d27a93543/original.png?16=
+44571236" width=3D"25" style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; -ms-interpolation-mode: bicubic; margin: 0; padding: 0; bo=
+rder: none;" border=3D"0" alt=3D"social-icons">
+	                      </a>
+	                      <!-- FACEBOOK : END --->
+	                    </td>
+
+	                    <td style=3D"-ms-text-size-adjust: 100%; -webkit-text-=
+size-adjust: 100%; mso-table-lspace: 0pt !important; mso-table-rspace: 0pt =
+!important; padding: 0;">
+	                      <!-- INSTAGRAM : BEGIN --->
+	                      <a href=3D"https://ablink.info.foodpanda.ph/ls/click=
+?upn=3D12-2BjRkpfoncUR7Zm1WXg5mwJET83ITgF90VxuhfZ9KpncVknXLxF4uLDso3FB4dBOA=
+dQ_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSu=
+sYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0Ic=
+sDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3=
+uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPG=
+XY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJ=
+WUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkwe=
+G2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTk=
+hpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7c=
+jQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BHZ37Gky3UZZb6frLa4NV3HZKHlM6y-=
+2BmxNYaLfJA4lJj9quxanAFmjYjUwpNfwh6QkZfABiWwAcvsJSlUXQnLEOFQ4YYrj-2Bsh7CSPc=
+oiXynCy3HKST7nwvr-2B3kYSa-2BJusl040Xe-2FyMtallv9KLe8Wo3" target=3D"_blank" =
+alias=3D"social-icons" conversion=3D"true" style=3D"-ms-text-size-adjust: 1=
+00%; -webkit-text-size-adjust: 100%;">
+	                        <img src=3D"https://braze-images.com/appboy/commun=
+ication/assets/image_assets/images/62062a649432bb5897907fb4/original.png?16=
+44571235" width=3D"25" style=3D"-ms-text-size-adjust: 100%; -webkit-text-si=
+ze-adjust: 100%; -ms-interpolation-mode: bicubic; margin: 0; padding: 0; bo=
+rder: none;" border=3D"0" alt=3D"social-icons">
+	                      </a>
+	                      <!-- INSTAGRAM : END --->
+	                    </td>
+
+	                  </tr>
+	                </table>
+	              </td>
+	            </tr>
+	          </table>
+	        </td>
+	      </tr>
+	      <!-- SOCIAL ICONS : END -->
+
+	      <!-- CONTACT : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td align=3D"center" style=3D"font-family: museo-sans, Arial, sans=
+-serif; font-size: 15px; line-height: 18px; color: #888888; text-decoration=
+: none; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-tab=
+le-lspace: 0pt !important; mso-table-rspace: 0pt !important; padding: 0px 2=
+5px;">
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5vw0CTYJvF9XDuJ8Qk6zPVHCCRnMESkP-2BGSN252YCxdJ-2FXsa5LXsgG=
+-2Fki0JX4yxiVg-2FSr-2FNvWfx-2FbpXBQLcOvJ2pmZmqByqKh6iTCIcNUfFRwageWp1fj4jTo=
+Y4qTKQgFTmk-2B7A-2FT8nAoxrT3-2B1ObzVPA3-2BioaXPW9GVvppMfXVR3BwptmVb6ZaWVza2=
+O8rShhq5uAUOG3qTcLyqkMNPq6iIU3VjrCP-2BEc7dabboUtzVkzBTW1hcwrB-2BrVDRG45AlRh=
+ig-2FmrDCkMPFKOcqCm4bXxXaoY4XuuytjqPlCLKJA2Co6yv4QjplF0x7ogM9Mfl5EW0zTf83KD=
+k4p9sRp-2FMCb2r-2FTH1DPwTlllLnJBefUmPLiQlVFOUzrxiC-2FPKUgFwA-3D-3DjnOX_HPC5=
+-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KGxQOSusYUnYB-=
+2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXv=
+sfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0HGl1g3uCc2Gmf=
+bPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZmNHyPGXY2MK9x=
+UzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2FsuquRczJWUJiZw7=
+d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3TWkweG2gafRU=
+rGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6p4jTkhpzfkp2=
+wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2LIP7cjQ6c4zt=
+hirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BFm96CiA8CMW0N0HhxDnDveIyVl-2F9kHIpk5r=
+ptMo1Ps5l-2FgBi59UxXiQ0vI1u6v9uY2WIs61v9cn9SqTwgowqLhW7A9vsWo66ZhfL3aNzelBq=
+m7CBpQQkt7Fp-2F-2FQJXQJa304o4SLNXWJZio3IpOiSfA" target=3D"_blank" style=3D"=
+text-decoration: none; color: #888888; -ms-text-size-adjust: 100%; -webkit-=
+text-size-adjust: 100%;">Privacy |</a>
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5vw0CTYJvF9XDuJ8Qk6zPVHBKwXG-2BKhz2itgOb5N0DIESQcVW-2BmpvV=
+G9FPXzWdwxVaEiF3qVA2mnIiq9xi6df5ccVWfSvhNVxAX2pUuDYRDKKha-2BgnI9juc6OAUTJsL=
+-2FewNzMldjynyUm27fXzsYGZxhJS8yCXHjeO4ogNXLw3EWEjPML7MDMiaY4ZKiHgNh4U3Hl6pa=
+gSvvN97-2B0-2F37swpu7oltrqmz79v-2Fz-2FXqlV-2FAhSlwSKtpPTSD94xE11K4TM-2BVZWZ=
+YdNibwMRpJ7iYJ0-2F2Db7i-2FS1GILCmWWmovC4Bj7Zr7g1ZFwRgYZevw2P450I97oYZha689W=
+U-2F2X3tFTcvZiZvAyptdub5n4j6uCEyyKra51nAfYp3eE3ndB3iXOm2BlmLtGWxTB2wRzcvIkA=
+-3DiSkP_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWsoY-2BZM8fgsGd536KG=
+xQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1aDBFVgUmvmJ9eh0Tyg=
+5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK7dVilqdsXQOK908f0H=
+Gl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPSEhwnqONvCsORMJjTZm=
+NHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4lIX3A5zTXoel7y2Fsuq=
+uRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX10G9uPkKehwyYjU3p3=
+TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9chEYWf8u1jNtmOD9dr6=
+p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1NSlF14IauCP-2FG3s2=
+LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BEXYVdRgU7xtuTSP3fQVUYQ-2F=
+FN8oJwh6yGYHvs5XOkvw2WDW7cRVu6oenD5dxMjINMS4FX-2FTWc-2BJnKQVbkc2KwUX6duiC-2=
+FCDfKt515RxfxE8axd-2FCsgKNPOd-2FpytRXjluFbGtdLsSGYJyW7NG-2FYdAx8" target=3D=
+"_blank" style=3D"text-decoration: none; color: #888888; -ms-text-size-adju=
+st: 100%; -webkit-text-size-adjust: 100%;">General terms and conditions |</=
+a>
+	          <a href=3D"https://ablink.info.foodpanda.ph/ls/click?upn=3D12-2B=
+jRkpfoncUR7Zm1WXg5qdxfciF8UkAjOVz3-2FUrSh6ZWAXRnW3uKZCuNaak2z48yAlLgYxVnugc=
+Mn1RIzRha8flRHOX1QbnXHHs-2FklvIVcpw-2FHbgKbFcHKV7hDAzm0PCLbM9HGVQMjUmFCT5x5=
+AVXZOb8-2FnqGIxVzpuq798psrUEaLzD0qmzvwWAa8uLWz2O3Ql64Efw6rZFm-2FshDeWYwZI4v=
+uafs8t7UtO0r5qS22rUjUz-2Fvig89CTpjIC-2FbwU9CAYoQAXEtPJBjq3bcPJ5Lha0wx3CJDlY=
+mIzhRoh-2BgSWaWTz5yKafwbyI5eWwtJJhL1pjAau4TZdscf7feOT1EsH42RCUlEE-2BqF-2F3p=
+4oKtnhQuVFKC1bHVvrLmCAtqTZpV5hXkHS8x74qfdTMZHnfyUVCjFjO0yY56J27FkCnBwhmWiz3=
+WTIvwdt9edWgKU-2FK4YBYI7Rpg8jw-2F5yL9E81-2FNUcc8SjtEAUpE9CAgn5no-2BsiE4qN0I=
+oAOstkG7cw1eE-2FlS05JleFHohkDz1H3FFCJRsWeIRHMekHhB76iBOcD-2BZPCR-2Fj0nCZTsa=
+K5XucrSpulWk7rvkp-2BlqftumKkcUnh2XLeVLxkk8wgaZXqjoz8aw2PwEgz5KclQd0OOout-2B=
+T3lrj-2FOPFExBJ0QC46XnWnsFjZtHlTUI2EFu3uyetJ5kKPjpKF9Hboz9jTNF0-2BKndmWLR5c=
+gYZ43UWxHIJZzGQ-3D-3DLnFI_HPC5-2BlCj2pcWYfPYIAuwPPJ2FbrLMOU-2FijFXyGtZWerWs=
+oY-2BZM8fgsGd536KGxQOSusYUnYB-2B5OwyCxDBPcCquPbJ7qBw30aScBUoRwLaicF43bolxG1=
+aDBFVgUmvmJ9eh0Tyg5z0IcsDGpOXvsfdCL1QPwDdMlyHq4ZxTwxhsg3YgQZNwPXXEkdgJpr5gK=
+7dVilqdsXQOK908f0HGl1g3uCc2GmfbPvT0Czwy3HEh-2BjgX4cTvSj6T4ttBG-2BM39mvE3KPS=
+EhwnqONvCsORMJjTZmNHyPGXY2MK9xUzTqaKl8i9d6o7piQfr2sBvKM3nNBjB2JoJb51IGjGM4l=
+IX3A5zTXoel7y2FsuquRczJWUJiZw7d9V9aJAt2No8-2FEv8tV9i20FsrQA9SajtGTXe-2BxjWX=
+10G9uPkKehwyYjU3p3TWkweG2gafRUrGVNFKvEJ2-2F35l9KH5EsjwrDtneBOLm322JV06zqN9c=
+hEYWf8u1jNtmOD9dr6p4jTkhpzfkp2wGgRZqUIqoRYDA1ByknJnfmVSA47xFWZ5pEqWFZtzU2j1=
+NSlF14IauCP-2FG3s2LIP7cjQ6c4zthirVOrlKTiSp-2Bs9370tYZA4di9NUmOBP0-2BF9BkQIM=
+1TVxm0SjJduU33We2xcjaO0gDTqPRtRTsKm5DVpaYZJIWgfqir6pXvNB6Z310HVKcLuF5X5AHsV=
+TFzD5sjw4MOm4FpEfIrR39NAbFg75tIKd4nD9JgyNPDdAQXDM63bw-2FlXP4lXKmSt7L2-2B" t=
+arget=3D"_blank" style=3D"text-decoration: none; color: #888888; -ms-text-s=
+ize-adjust: 100%; -webkit-text-size-adjust: 100%;">Unsubscribe</a>
+	        </td>
+	      </tr>
+	      <!-- CONTACT : END -->
+
+	      <!-- CONTACT : BEGIN -->
+	      <tr style=3D"-ms-text-size-adjust: 100%; -webkit-text-size-adjust: 1=
+00%;">
+	        <td style=3D"font-family: museo-sans, Arial, sans-serif; font-size=
+: 15px; color: #888888; line-height: 20px; text-decoration: none; -ms-text-=
+size-adjust: 100%; -webkit-text-size-adjust: 100%; mso-table-lspace: 0pt !i=
+mportant; mso-table-rspace: 0pt !important; padding: 0px 40px 44px;" align=
+=3D"center">
+
+
+	          16/17F Milestone at Fifth Avenue, 5th Ave., Taguig City, Metro M=
+anila, Philippines
+	          =C2=A9 foodpanda Philippines
+
+
+
+
+	        </td>
+	      </tr>
+	      <!-- CONTACT : END -->
+	    </table>
+	  </td>
+	</tr>
+	<!-- FOOTER & SOCIAL : END -->
+
+	</table>
+	<!-- EMAIL BODY : END -->
+
+	<!--[if mso]>
+	</td>
+	</tr>
+	</table>
+	<![endif]-->
+	</div>
+
+	</center>
+ =20
+
+
+
+<img src=3D"https://ablink.info.foodpanda.ph/wf/open?upn=3DDW-2BSrACj4wfqwI=
+ANcjvCqOMsRXaCKicfEInkXFEUAT3on7On2OxLC79EYg1ibXZDp6-2BoiuhdZfsjyWTNKltNwKp=
+MveCjAde4LxjagTsSUjjFxS40nFFg28GDzjMQorVFmrp70Rx-2BWAP7quOUgWWvX0RgeG-2Bjn5=
+o7cfLsr8eaSrG5-2Fa0C1C84UMDHvZ4DYMSnczSAW7856QNJdNz-2BJtS4vnvP756k1lQPLLgrE=
+QuWWde-2Bv5VCw3DBZQRC8X7IXZLoRo6IrYPVGGDCfA5TiDGX2lW-2FxFD6ZqBmlekeILhJ9toU=
+TSCx9vHXxdozhK2-2FB2El7Y-2FmnZ2bU6n81iGyUX5TLqopZEu5qONftH-2BkGEwkBvem8bZdy=
+fr5ZvrGeI1EgBL3lh0cZdEpZzNFamBgP6lBYLse77yTslsFfkveOpbPl0-2FAjzD16EPgfsOpoB=
+iqwPczxOEGnCJjfGfBjL-2FhFC6ug6I6AoRPweWnbE2gw-2BnV9a-2FC07HG-2F-2Bk3NSyGyVA=
+SP23LZjhJRO8wiUKsG3UWDF8mu5CTlDqX8Zs3jrE32OiReeXr1rT5NhRPFgPu8v4vqz2UpBOXpB=
+hTuAXiFQJaldIdp7CD0QSaN1B3MswdDT4XGToplhsr7V-2BNnXt-2BGJPevg9W0K9UgS-2F3rxt=
+bVXaWFfRlAyB0Ae1RofhYE3dEqHc0Vco2mnE58Yj2FAMWg7aLDWotPpi4MT9LGvWlcv1YJVHvOe=
+TbUKSKOiZoE6VTV2Xu0vqGgho95R4Fcgp-2FCKnRY7xQ" alt=3D"" width=3D"1" height=
+=3D"1" border=3D"0" style=3D"height:1px !important;width:1px !important;bor=
+der-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;m=
+argin-right:0 !important;margin-left:0 !important;padding-top:0 !important;=
+padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !impo=
+rtant;"/></body>
+</html>
+
+--cb5ee49895db9edd30b23d1f0ac2f2de04416d6a56f213a1ae31ab3cc709--

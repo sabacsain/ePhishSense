@@ -1,0 +1,227 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:174a:b0:4f4:d48:a6dd with SMTP id c10csp305235maw;
+        Mon, 14 Aug 2023 18:49:25 -0700 (PDT)
+X-Received: by 2002:a05:6808:2a5a:b0:3a7:4b9b:56d0 with SMTP id fa26-20020a0568082a5a00b003a74b9b56d0mr12532289oib.43.1692064165227;
+        Mon, 14 Aug 2023 18:49:25 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1692064165; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YFIv0PTIH6A/yWvXJJKJ9uTzFj32Dev2hFgrEUh65DBJWGAOf7A3I9BGWsgdEJxC7E
+         OV59pSWQZani6po0bDgrNZnbSDfihJ5oLtD3aJNOp4qq7ME+EXhU1LKWgTi7uzUIbTiN
+         L4tuAuVRg0kZmu+sWgWJ6vwIlc93qun1X3go87RBR0HXF7gnKk8JgCsXBkXBoe8zdgLb
+         ZDqpW46hOhihiWwTHW476JSqhgDAeji50vxdj28h/orGGxWs0zJ4ERYdZKNs2wKwiCz5
+         ckxJDd5fq52k2EHK1DoeROvTdkI190gc+rlWYYv6WJwgEvPdoc4RoHwGQ+3djxdieYFy
+         g72g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=cc:to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=tBFlwbntY0gvcgiYkOVDYcrSmg0vCVpP0N8bIIhkgU0=;
+        fh=850nUmSu1cm5NDN4oXOeXy2OKb3qEN1bxXrZmWXJ1Gw=;
+        b=H4oh7Ca94VQHSsROO3bTyT8NlQ7eEsXNvsjnP+jnCooIKZQZpBiciWFzt9nsbTmFk1
+         vnBQvLNUeERtduPT0+6IGHMIFQ3XOm/E6KRimaGnAx6oqpsL7x2cp9xVDFKeIi5Iq/vv
+         LusTyG9AZBn88t+If7QYNSf9osznFOaprCmEprQ6MeO2hG0PoiZ2xj2SJHdxGqw2qg5a
+         PLjXpIhOYt6eJ0uLxgoGIeuu4Zs1GnCIRu6fj6Y7nMI7EyBkffe1VIgbRbL+22woK0qk
+         ks0QgYY5ggPFq7cyg4buZRytOvfZo9Yp5i9hXXtgsqaJ01CpeoQo3iFIX1QkBxrfC7Oo
+         kveg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@taktylstudios.com header.s=google header.b="PiEa/LQe";
+       spf=pass (google.com: domain of *********@taktylstudios.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=*********@taktylstudios.com;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=taktylstudios.com
+Return-Path: <*********@taktylstudios.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id y6-20020a056808060600b003a72d503773sor6491045oih.13.2023.08.14.18.49.25
+        for <************************@gmail.com>
+        (Google Transport Security);
+        Mon, 14 Aug 2023 18:49:25 -0700 (PDT)
+Received-SPF: pass (google.com: domain of *********@taktylstudios.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@taktylstudios.com header.s=google header.b="PiEa/LQe";
+       spf=pass (google.com: domain of *********@taktylstudios.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=*********@taktylstudios.com;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=taktylstudios.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=taktylstudios.com; s=google; t=1692064164; x=1692668964;
+        h=cc:to:subject:message-id:date:from:mime-version:from:to:cc:subject
+         :date:message-id:reply-to;
+        bh=tBFlwbntY0gvcgiYkOVDYcrSmg0vCVpP0N8bIIhkgU0=;
+        b=PiEa/LQey3j0UhSFIz4MTnNY6w7SZlZKnDcQit/cNN2VhYlcHsVZhikHqL+v8bM85e
+         vufCUGFQevFZeoWkBxZExwN4y+K2fYJDjB2SrJjK3+pZ3972LXZvUfhuZn5FU5x86Y4p
+         g8dFZu0jJXP4Z13VhEUDl/HFSpGu4iZRuvL7Fif2htaMqO7QYVxGTjU6c36x0eJ6FHnd
+         oP0V1OZrbfteySNsn0qrz3ZP8I5mkR7h4U3ugBXcP1YXe9Wm2AIZjXJUc+4rIuv7ZIry
+         yMMGKL0tsHf7ZugtRexFanKO3RYu/XhX6kls+1jZmVXshL5Z3PXYlOzUkHeVhB7mck9z
+         GaRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1692064164; x=1692668964;
+        h=cc:to:subject:message-id:date:from:mime-version:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=tBFlwbntY0gvcgiYkOVDYcrSmg0vCVpP0N8bIIhkgU0=;
+        b=Q337p+YElObPSHYXMHr8k8xlKuWywd/fTVFTehf3qA/DzwJLmkLhukdNenyns8jz5R
+         7ARD+5BOEC9e4xb2M4a5J4mQmQm+jxxR8FEqCn4rLF4Vh7pVMWMBh1a7E4SsG6T3vK3Z
+         Mo7/hPDKVc+XNEYW6l0lmdLBVSd1A8+1S5TbbdGRCSiUB0kiML2acA0RkQVNx1RTDb1/
+         pTSuEyzJ1fzaDlJUNphSL08bv2DqNn0YbVcRBnrOb/rThbhAGvREKCAJlPZ3MZIIqb1o
+         Ft7hSIe8UeWuertbYJ7QLp7QHxHs6AKLgOzPDVLSFbPHtSbQFsfLnl9wDOJx6kOFLz0F
+         DNsA==
+X-Gm-Message-State: AOJu0YzyAm1lqiRuu/EQytvPvjVyg2AbzWoW/ij4/74SwbhX8g/6Ec3O
+	tjfu/pz5PLezVQ8XMhgYCcbzJaz97IOyKqo8uoku1P/o6/vUJ3HDXhkO/Q==
+X-Google-Smtp-Source: AGHT+IGlM6LeuwOEOAqoh3h9kCb+C72pb634fWeuA8+9HgAp5AHeurx2LFbGhCtOn9K/PLk+77zOiwfRKPoBgM8qUy0=
+X-Received: by 2002:a05:6358:418b:b0:134:ece4:1e74 with SMTP id
+ w11-20020a056358418b00b00134ece41e74mr7634346rwc.21.1692064164652; Mon, 14
+ Aug 2023 18:49:24 -0700 (PDT)
+MIME-Version: 1.0
+From: Kimberlyn Flores <*********@taktylstudios.com>
+Date: Tue, 15 Aug 2023 09:48:59 +0800
+Message-ID: <CA+3u9WDU9SEckyzV5e409BZXdb5fYMvdM9kSvV91SXHk=pDc0w@mail.gmail.com>
+Subject: [Taktyl Studios, Inc.] Pre- Screening - Game Developer Intern
+To: ************************@gmail.com
+Cc: Shekinah Joy Bermejo <sjn.bermejo@taktylstudios.com>
+Content-Type: multipart/alternative; boundary="00000000000078c2fa0602ec6364"
+
+--00000000000078c2fa0602ec6364
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear *Erica Joy, *
+
+Greetings of the day!
+
+This email is to confirm that we have received your application via email.
+We appreciate you taking the time to apply for the role, as well as for
+showing your greatest interest in Taktyl Studios. In order for us to
+proceed, kindly answer the following questions below:
+
+
+   1. How many hours do you need for your internship? (We only accept a
+   minimum of 480 hours and above)
+   2. Do you have experience using Unity, C#, Java, HTML5 Unreal, and c++?
+   (Kindly rate them 1 being the lowest 10 being the highest)
+   3. When was the last time you used Unity?
+   4. Do you have your own personal machine? (Laptop, Desktop)
+   5. What is your network mbps? (kindly send a speed-test screenshot)
+   6. Are you willing to work from Monday to Friday, 8am to 5pm?
+   7. Do you have other subjects ongoing aside from your internship?
+   8. Are you ok with P150.00 daily allowance?
+   9. When can you start?
+   10. Please send us your CV and portfolio together with your questions
+   above.
+
+
+Hoping to hear from you soon.
+
+Thank you!
+
+*--*
+
+Regards,
+
+
+Kimberlyn Flores
+
+HR Generalist
+
+M: +63 9451938848
+
+E: k <mitch.galutera@taktylstudios.com>*d.flores@taktylstudios.com
+<d.flores@taktylstudios.com>*
+
+www.taktylstudios.com
+
+<http://www.taktylstudios.com/>
+
+Let=E2=80=99s Beat Boredom Together!
+
+--00000000000078c2fa0602ec6364
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><font face=3D"arial, san=
+s-serif">Dear=C2=A0<b>Erica Joy,=C2=A0</b></font></div><div dir=3D"ltr"><fo=
+nt face=3D"arial, sans-serif"><b><br></b></font><div><font face=3D"arial, s=
+ans-serif">Greetings of the day!</font></div><div><font face=3D"arial, sans=
+-serif"><br></font></div><div><font face=3D"arial, sans-serif">This email i=
+s to confirm that we have received your application=C2=A0via email. We appr=
+eciate you taking the time to apply for the role, as well as for showing yo=
+ur greatest interest=C2=A0in Taktyl Studios.=C2=A0<span style=3D"background=
+-color:transparent">In order for us to proceed, kindly answer the following=
+ questions below:=C2=A0</span><span style=3D"background-color:transparent">=
+=C2=A0</span></font></div><div><span style=3D"background-color:transparent"=
+><font face=3D"arial, sans-serif"><br></font></span></div><div><ol><li styl=
+e=3D"margin-left:15px"><font face=3D"arial, sans-serif">How many hours do y=
+ou need for your internship? (We only accept a minimum of 480 hours and abo=
+ve)</font></li><li style=3D"margin-left:15px"><font face=3D"arial, sans-ser=
+if">Do you have experience=C2=A0using Unity, C#, Java, HTML5 Unreal, and c+=
++? (Kindly rate them 1 being the lowest 10 being the highest)</font></li><l=
+i style=3D"margin-left:15px"><font face=3D"arial, sans-serif">When was the =
+last time you used Unity?</font></li><li style=3D"margin-left:15px"><font f=
+ace=3D"arial, sans-serif">Do you have your own personal machine? (Laptop, D=
+esktop)</font></li><li style=3D"margin-left:15px"><font face=3D"arial, sans=
+-serif">What is your network mbps? (kindly send a speed-test screenshot)</f=
+ont></li><li style=3D"margin-left:15px"><font face=3D"arial, sans-serif">Ar=
+e you willing to work from Monday to Friday, 8am to 5pm?</font></li><li sty=
+le=3D"margin-left:15px"><font face=3D"arial, sans-serif">Do you have other =
+subjects ongoing aside from your internship?</font></li><li style=3D"margin=
+-left:15px"><font face=3D"arial, sans-serif">Are you ok with P150.00 daily =
+allowance?</font></li><li style=3D"margin-left:15px"><font face=3D"arial, s=
+ans-serif">When can you=C2=A0start?</font></li><li style=3D"margin-left:15p=
+x"><font face=3D"arial, sans-serif">Please send us your CV and portfolio to=
+gether with your questions above.<br></font></li></ol></div><div><span styl=
+e=3D"color:rgb(80,0,80)"><font face=3D"arial, sans-serif"><div><font color=
+=3D"#000000"><br></font></div><div><font color=3D"#000000">Hoping to hear f=
+rom you soon.</font></div><div><font color=3D"#000000"><br></font></div><di=
+v><font color=3D"#000000">Thank you!</font></div></font></span></div></div>=
+</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gma=
+il_signature"><div dir=3D"ltr"><span><p dir=3D"ltr" style=3D"line-height:1.=
+38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt"><font color=
+=3D"#434343" face=3D"Arial"><span style=3D"font-size:13.3333px;white-space:=
+pre-wrap"><b>--</b></span></font></p><p dir=3D"ltr" style=3D"line-height:1.=
+38;background-color:#ffffff;margin-top:0pt;margin-bottom:0pt"><span style=
+=3D"font-size:10pt;font-family:Arial;color:#434343;background-color:transpa=
+rent;font-weight:700;font-style:normal;font-variant:normal;text-decoration:=
+none;vertical-align:baseline;white-space:pre;white-space:pre-wrap">Regards,=
+ </span><span style=3D"font-size:11pt;font-family:Arial;color:#222222;backg=
+round-color:transparent;font-weight:400;font-style:normal;font-variant:norm=
+al;text-decoration:none;vertical-align:baseline;white-space:pre;white-space=
+:pre-wrap">=C2=A0=C2=A0</span></p><p dir=3D"ltr" style=3D"line-height:1.38;=
+background-color:#ffffff;margin-top:0pt;margin-bottom:0pt"><br></p><p dir=
+=3D"ltr" style=3D"line-height:1.44;background-color:#ffffff;margin-top:0pt;=
+margin-bottom:0pt"><span style=3D"font-size:10pt;font-family:Arial;color:#4=
+34343;background-color:transparent;font-weight:700;font-style:normal;font-v=
+ariant:normal;text-decoration:none;vertical-align:baseline;white-space:pre;=
+white-space:pre-wrap">Kimberlyn Flores</span></p><p dir=3D"ltr" style=3D"co=
+lor:rgb(34,34,34);line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span =
+style=3D"color:rgb(153,153,153);font-family:Arial;font-size:10.6667px;white=
+-space:pre-wrap">HR Generalist</span><br></p><p dir=3D"ltr" style=3D"color:=
+rgb(34,34,34);line-height:1.38;margin-top:0pt;margin-bottom:0pt"><span styl=
+e=3D"color:rgb(46,51,56);vertical-align:baseline;white-space:pre-wrap"></sp=
+an></p><div><p dir=3D"ltr" style=3D"font-size:12.8px;line-height:1.2;margin=
+-top:0pt;margin-bottom:0pt"><span style=3D"color:rgb(16,160,229);background=
+-color:transparent;font-size:8pt;font-family:Arial;font-weight:700;vertical=
+-align:baseline;white-space:pre-wrap">M: </span><span style=3D"background-c=
+olor:transparent;font-size:8pt;font-family:Arial;font-weight:700;vertical-a=
+lign:baseline;white-space:pre-wrap"><font color=3D"#666666">+63 9451938848<=
+/font><font color=3D"#10a0e5"><br></font></span></p><p dir=3D"ltr" style=3D=
+"font-size:12.8px;line-height:1.2;margin-top:0pt;margin-bottom:0pt"><span s=
+tyle=3D"color:rgb(16,160,229);background-color:transparent;font-size:8pt;fo=
+nt-family:Arial;font-weight:700;vertical-align:baseline;white-space:pre-wra=
+p">E:</span><span style=3D"background-color:transparent;font-size:8pt;font-=
+family:Arial;font-weight:700;vertical-align:baseline;white-space:pre-wrap">=
+<font><font color=3D"#500050"> </font><a href=3D"mailto:mitch.galutera@takt=
+ylstudios.com" target=3D"_blank"><font color=3D"#0000ff">k</font></a><font =
+color=3D"#0000ff"><u><a href=3D"mailto:d.flores@taktylstudios.com" target=
+=3D"_blank">d.flores@taktylstudios.com</a></u></font></font></span></p><p d=
+ir=3D"ltr" style=3D"color:rgb(80,0,80);font-size:12.8px;line-height:1.2;mar=
+gin-top:0pt;margin-bottom:0pt"><a href=3D"http://www.taktylstudios.com/" st=
+yle=3D"color:rgb(17,85,204);background-color:transparent;font-size:small" t=
+arget=3D"_blank"><span style=3D"font-size:8pt;font-family:Roboto;color:rgb(=
+16,160,229);background-color:transparent;vertical-align:baseline;white-spac=
+e:pre-wrap">www.taktylstudios.com</span></a></p><p dir=3D"ltr" style=3D"col=
+or:rgb(80,0,80);font-size:12.8px;line-height:1.2;margin-top:0pt;margin-bott=
+om:0pt"><span style=3D"color:rgb(17,85,204);font-size:10pt;font-family:Aria=
+l;background-color:transparent;vertical-align:baseline;white-space:pre-wrap=
+"><a href=3D"http://www.taktylstudios.com/" style=3D"color:rgb(17,85,204)" =
+target=3D"_blank"><img src=3D"https://lh4.googleusercontent.com/qZEzjOZQBwF=
+VOSAjlDX94hbxKUuaS9BejX1lP3xKXZejME6_9RWM6m5rd5LAyc_UWh5m44mbSLZGDuOUpnSn9H=
+KBQXZ3q9UHweQkjLviGMgAxRil_dnoTtKfRJK3jUj6mNzZzbOo" width=3D"174" height=3D=
+"65" style=3D"border:none"></a></span></p><p dir=3D"ltr" style=3D"color:rgb=
+(80,0,80);font-size:12.8px;line-height:1.2;margin-top:0pt;margin-bottom:0pt=
+"><span style=3D"color:rgb(0,0,0);font-family:Roboto;font-size:13.3333px;wh=
+ite-space:pre-wrap">Let=E2=80=99s Beat Boredom Together!</span></p></div></=
+span></div></div></div></div>
+
+--00000000000078c2fa0602ec6364--

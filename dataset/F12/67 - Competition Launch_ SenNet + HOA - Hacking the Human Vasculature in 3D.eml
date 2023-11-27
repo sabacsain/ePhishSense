@@ -1,0 +1,825 @@
+Delivered-To: ronaldlambertnicolastugadi@gmail.com
+Received: by 2002:a92:cdae:0:b0:350:f1df:6bf4 with SMTP id g14csp1119607ild;
+        Fri, 10 Nov 2023 07:23:18 -0800 (PST)
+X-Received: by 2002:a05:6122:1d93:b0:4ab:cdf0:b2c7 with SMTP id gg19-20020a0561221d9300b004abcdf0b2c7mr4989509vkb.5.1699629798361;
+        Fri, 10 Nov 2023 07:23:18 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1699629798; cv=none;
+        d=google.com; s=arc-20160816;
+        b=ZfseoCYLiyaeMXZ0EM7zaTnMDpS+Qyt7J9YNGaUmmKHT23jsSoKIM8sdPh8UA5Ujea
+         AgUbOYiWRtyXcCpVGz6H1J8brjtGcUlFhkbYkWALa0M5ghc3XzMdYcsws16tR5pc2ex2
+         UfHXrKl99yGpThYv3qeqPyycoqRzkpcWwUaCvwxOOEDvbO+uXXOZ12seHUb1Pwxbtc97
+         VzwPCpidBFBDn9nNbe89C31CsghyWOUHzXsDl41q79eLLJtFaCh5xIUN8opa3lbe5Qhr
+         1SvAE9dNlA/Tq2HReUOI5IbPaP8PyR0K7x1ZAHGedWFjVNkh0B0jD6329oRQq5bE7RHE
+         LrYA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:dkim-signature;
+        bh=KbrazxARajEzI6dP4QU/7C7VamjBMnQhGX4tWxo34po=;
+        fh=PCIZTFrau8KXjNfkUvKTPxlLqUGpb/KNVLEAFgByL9s=;
+        b=pMM865Yq7Jj/RzW7aso0iYboVXBQjPTuuzaBo6GSAQ/b0l8QNxv8S43CxgtI5oXUSC
+         Bv/lVpWl4pWCJHXumYb8RjuxA7sdiaL+cG2Pij2xOTbtU2UepP03R9YuhYgSR6bA4Q42
+         f5GIL4Koy+Ki6CbsiMM8hyRYXxEVGezW3SqyKDwG7iKYvrn0wuRxKV8jmkHafIPeHmQv
+         d2aZz/+Rj2PIphyu74xcMhgMfA6IflpACpIiJCg8mQ5CnBfGZ1nyjSUmWBhHpjM91a46
+         aPpFv8RMO/pXybVDgsaU13b2cMXkVeo3osbabrqKdR3BM4TYAnxzTT6Y0mqnc7cV2Da7
+         U3Eg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@kaggle.com header.s=20230601 header.b=Ahfh4ipG;
+       spf=pass (google.com: domain of 35kpozqckaouuvylwsfrhnnsl.jvt@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=35kpOZQcKAOUUVYLWSfRHNNSL.JVT@scoutcamp.bounces.google.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kaggle.com
+Return-Path: <35kpOZQcKAOUUVYLWSfRHNNSL.JVT@scoutcamp.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id s126-20020a1ff484000000b004997121c49dsor3910639vkh.0.2023.11.10.07.23.18
+        for <ronaldlambertnicolastugadi@gmail.com>
+        (Google Transport Security);
+        Fri, 10 Nov 2023 07:23:18 -0800 (PST)
+Received-SPF: pass (google.com: domain of 35kpozqckaouuvylwsfrhnnsl.jvt@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@kaggle.com header.s=20230601 header.b=Ahfh4ipG;
+       spf=pass (google.com: domain of 35kpozqckaouuvylwsfrhnnsl.jvt@scoutcamp.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=35kpOZQcKAOUUVYLWSfRHNNSL.JVT@scoutcamp.bounces.google.com;
+       dmarc=pass (p=NONE sp=NONE dis=NONE) header.from=kaggle.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=kaggle.com; s=20230601; t=1699629798; x=1700234598; dara=google.com;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:from:to:cc:subject:date
+         :message-id:reply-to;
+        bh=KbrazxARajEzI6dP4QU/7C7VamjBMnQhGX4tWxo34po=;
+        b=Ahfh4ipGy2ux9N09m9H8eV0DuLt5iC0qqRETVpyyJ/tp2EOhJcigI0flhclAzPGGoM
+         kH9c49ymh75eXJyA1CNW01H4mdn6Nulol+xz0z1baenEqf04OrSEDK9MIAOhSKZgKCLw
+         jfv90EujOn7rezGnNk6Q0HgLlgSlh1EbJSLCclEkCGK+gQP9lHcW2tfZlf3USQdp0YD3
+         rZUz7w1mwdJVq/8nj7ZqopH2JHe76Dp9F/1R4/xhM8IiOvo55gd7muc7fckcdHTll41w
+         CJc2zmfXj/3+3f4u3KLe/So6vi59S7cRyzxw8NOErBOGUWWSvRzWF/Whg/BqVOr4GAHw
+         voAA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1699629798; x=1700234598;
+        h=to:from:subject:message-id:list-id:feedback-id:list-unsubscribe
+         :precedence:reply-to:date:mime-version:x-gm-message-state:from:to:cc
+         :subject:date:message-id:reply-to;
+        bh=KbrazxARajEzI6dP4QU/7C7VamjBMnQhGX4tWxo34po=;
+        b=wyyPxu8e9LZVZQ//Q2JnoKJ1g8KJNE9cDXmQ9SjwXDhKrq+G98b/Nn5sMSF2rMHz3H
+         E7GYeOWvbS0t5U9XKtIKrihGskuVkQLUuNzwWqzTIrc9GavXxNEnWMb2tkMWUNEyMUWE
+         sihp+XAnOj8apDslRLSZxLbMVgTPIO2KK984MIt7Zy5vyyJGZKzUzDLB8AKO04NzuI/5
+         Z/eiXxJkGIeNMtZHrH6AReKQI7h6XxzxBxQUGSr5ksKhQQvsBqz+UCr1FDeFttYE2BHD
+         62r1sRg9b23IahObRjJHhcFmD0OJ1dUysrMgagiJHzpbBIeU3ZEF0VwGJ9ypTL1XpA/U
+         DQiw==
+X-Gm-Message-State: AOJu0YzK5hIT/ZZcaqpYBWVmeQH0LOEIQmqL8VBLxmhlhVn0ymI9ovpK
+	sdIxM0uiHPdDLKs=
+X-Google-Smtp-Source: AGHT+IHL/BiW/5oepS50nHN83DnYdlqwe+n35jESj5VTnwZFd0Em2v4ohFPKwCAp/Za3AouffH0CW8g=
+MIME-Version: 1.0
+X-Received: by 2002:a05:6122:1051:b0:495:bd61:a184 with SMTP id
+ z17-20020a056122105100b00495bd61a184mr4133818vkn.2.1699629798075; Fri, 10 Nov
+ 2023 07:23:18 -0800 (PST)
+Date: Fri, 10 Nov 2023 07:23:18 -0800
+Reply-To: Kaggle <noreply@kaggle.com>
+X-Google-Id: 4190997
+Precedence: bulk
+List-Unsubscribe: <https://notifications.google.com/g/p/ANiao5otLk3W_HGlal4JDTW1qCphcYK4ttROYdgq2YOUA7Yexmb37L0YxVtWKTceFzqAMwfPYE2PuiVI0FPlL_n0ddFnQPy5aTyq8ojy0mWCdfN3dGzkOhl4QI9Co1mdio5rugl-IOvSRuU9kttZndpIkT9QOWdjaatIwjyLFWXeWvYyBy5OINy9HhHyjKsU76A0HlkRG2Cwpt7c0IBifAXvS61vkxLJaxj1Kz7Qh7msjOT352HReTa1GT3HgtlNk835eLttoUacLfuHLlTUlSH0rPHCI1g3PbotShgi9Fc>
+Feedback-ID: P2603-0:C20274304:M110719173-en-US:gamma
+List-Id: <d3d572f2a797bc005fbf0c631ac17de03856ef11.google.com>
+X-Notifications: GAMMA:<a32ab317d0379125648bd1c8da1a365962a04195-20274304-111363898@google.com>
+X-Notifications-Bounce-Info: AaJ7rEone1iZCGNVoo-MpB82I7BCF8dXOB0I9GStbur4kXKKYLQLqpTM5DXidztTeLp8wvhb4_sOGw2m4H3IBUnGn0jIhmHF80oVMLF_wsuKk0SOtZrl9EsCLgRvLu2mnwBqSnB5RM2JfSRJ0v00i800fTPWdX2zNPAY69uMBt5lJH0VWABSeLHn7FqKs48Srrcl41X8JLgvGTC2BFz8FNogCqiWGq5ZNUg4iTpD6HPtrVMmH1qZ8NBxA8u-T3QBaeiK3LbpcGVk-cAxxaYJWuZmOxHMvm3UUw0epz5_5MOGyEY2LG4aEkHHLLCiR9_vJWBO0904tVveLXMiA4XMxAAMJ5kch_-ivn2Sqqal0dK4H2A_zYMNWOQNuaGbFMX3BGxIylyD9sOjFan4ydMwuPAymSHHNFCjHVBrq4OjSBjqQ16VDdpYocnBXrcNjAwNjA0MDQxNTM1NTk2OTMzMg
+Message-ID: <a32ab317d0379125648bd1c8da1a365962a04195-20274304-111363898@google.com>
+Subject: Competition Launch: SenNet + HOA - Hacking the Human Vasculature in 3D
+From: Kaggle <noreply@kaggle.com>
+To: ronaldlambertnicolastugadi@gmail.com
+Content-Type: multipart/alternative; boundary="0000000000005d2f380609cde6b7"
+
+--0000000000005d2f380609cde6b7
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+
+Kaggle
+
+
+
+
+
+
+
+
+Hi Ronald Nicolas Tugadi,
+
+The Vasculature Common Coordinate Framework (VCCF) helps us best understand  
+how the cells in your body support organ function. However, our  
+understanding of the vasculature is incomplete, which limits the  
+effectiveness of the VCCF. We can use data-driven vasculature segmentation  
+to address this.
+
+In this competition, you'll create a semantic segmentation model trained on  
+3D data from human kidneys to segment blood vessels.
+
+
+
+
+
+Total Prizes:
+
+$80,000
+
+
+Entry Deadline:
+
+January 30, 2024
+
+
+
+
+Learn More
+
+
+
+Your work will better researchers' understanding of the size, shape,  
+branching angles, and patterning of blood vessels in human tissue.
+
+Good luck,
+
+Ryan Holbrook
+Kaggle Data Scientist
+
+
+
+Kaggle, Inc 1600 Amphitheatre Pkwy Mountain View, CA 94043
+
+This email was sent to ronaldlambertnicolastugadi@gmail.com because you  
+indicated that you'd like to receive news and updates about Kaggle. If you  
+don't want to receive these emails in the future, please unsubscribe here.  
+You can also change your preferences on your account's profile page by  
+logging in at kaggle.com.
+
+
+
+
+
+--0000000000005d2f380609cde6b7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!doctype html>
+<html xmlns=3Dhttp://www.w3.org/1999/xhtml xmlns:v=3Durn:schemas-microsoft-=
+com:vml xmlns:o=3Durn:schemas-microsoft-com:office:office lang=3Den xml:lan=
+g=3Den>
+  <head>
+    <meta http-equiv=3DContent-Type content=3D"text/html; charset=3DUTF-8">
+    <title> Competition Launch: SenNet + HOA - Hacking the Human Vasculatur=
+e in 3D
+
+</title>
+    <style type=3Dtext/css>
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2JL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa0ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa25L7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 500;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1ZL7W0Q5nw.woff2)
+          format("woff2");
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2JL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa0ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa25L7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1ZL7W0Q5nw.woff2)
+          format("woff2");
+      }
+      /* cyrillic-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2JL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* cyrillic */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa0ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2ZL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* greek */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* vietnamese */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa2pL7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa25L7W0Q5n-wU.woff2)
+          format("woff2");
+      }
+      /* latin */
+      @font-face {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/inter/v2/UcC73FwrK3iLTeHuS_fvQ=
+tMwCp50KnMa1ZL7W0Q5nw.woff2)
+          format("woff2");
+      }
+      html {
+        background: #f5f5f5;
+        font-family: "Inter", sans-serif;
+      }
+
+      /* WINDOWS 10 MAIL LINK FIX */
+      a {
+        text-decoration: none;
+      }
+
+      /* iOS GMAIL WEB FONT SIZE FIX */
+      .gmail-fix {
+        display: none;
+        display: none !important;
+      }
+
+      /* iOS GMAIL APP WIDTH FIX */
+      u + #new-gmail-fix {
+        display: block !important;
+      }
+
+      /* /////////////////// FIX */
+      .cta-hover:hover {
+        background-color: #639420 !important;
+        color: #ffffff !important;
+      }
+
+      /* /////////////////// FIX */
+      /* CTA ROLLOVER IF SUPPORTED */
+      .cta-hover:hover {
+        color: #ffffff !important;
+        background-color: #639420 !important;
+      }
+
+      .overline {
+        font-family: "Inter", sans-serif;
+        font-size: 10px;
+        padding: 0;
+        margin: 0;
+        color: #202124;
+        letter-spacing: 1px;
+        text-transform: capitalize;
+      }
+
+      h1 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        color: #202124;
+        letter-spacing: -0.02px;
+        margin: 0;
+      }
+
+      .body1 {
+        font-family: Inter-Medium;
+        font-size: 16px;
+        color: #3c4043;
+        letter-spacing: -0.02px;
+        line-height: 24px;
+      }
+
+      h2 {
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 28px;
+        color: #202124;
+        letter-spacing: -0.02px;
+        margin: 38px 0 0 0;
+      }
+
+      body {
+      }
+      .side-padding {
+          padding: 0 92px 0 92px;
+          margin: 0;
+        }
+
+      @media screen and (min-width: 600px) {
+        .side-padding {
+          padding: 0 92px 0 92px;
+          margin: 0;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        .side-padding {
+          padding: 0 24px 0 24px;
+          margin: 0;
+        }
+      }
+    </style>
+
+    <!--[if mso]>
+      <style type=3D"text/css">
+        table {
+          border-collapse: collapse;
+          mso-table-lspace: 0pt;
+          mso-table-rspace: 0pt;
+        }
+        table td {
+          border-collapse: collapse;
+        }
+        .mso-cta {
+          padding: 10px 0 10px 0 !important;
+          font-weight: bold !important;
+        }
+      </style>
+    <![endif]-->
+  </head>
+
+  <body bgcolor=3D#F5F5F5 style=3D"padding: 0; margin: 0; background: #f5f5=
+f5">
+    <center>
+      <!-- OUTER WRAPPER -->
+      <table align=3Dcenter bgcolor=3D#F5F5F5 border=3D0 cellpadding=3D0 ce=
+llspacing=3D0 width=3D100% role=3Dpresentation>
+        <tbody>
+          <tr>
+            <td align=3Dcenter style=3D"padding: 0px 0 0 0">
+              <!-- CONTENT CONTAINER -->
+              <table align=3Dcenter border=3D0 cellpadding=3D0 cellspacing=
+=3D0 width=3D600 role=3Dpresentation>
+                <tbody>
+                  <tr bgcolor=3D#F5F5F5 height=3D32>
+                    <td style=3D"padding: 0 0 0 0; height: 32px"></td>
+                  </tr>
+                  <tr bgcolor=3D#F5F5F5>
+                    <td align=3Dcenter style=3D"padding: 0 0 0 0" width=3D6=
+00px>
+                      <img alt=3DKaggle border=3D0 src=3Dhttps://storage.go=
+ogleapis.com/kaggle-media/Images/Kaggle_Blue.png alt=3D"=E2=80=9CKaggle=E2=
+=80=9D" style=3D"
+                          display: block;
+                          outline: none;
+                          height: auto;
+                          height: 40px;
+                          width: 104px;
+                        " width=3D104>
+                    </td>
+                  </tr>
+                  <tr bgcolor=3D#F5F5F5 height=3D32>
+                    <td style=3D"padding: 0 0 0 0; height: 32px"></td>
+                  </tr>
+                  <!-- TEXT CONTENT CONTAINER -->
+                  <tr bgcolor=3D#FFFFFF>
+                    <td align=3Dcenter style=3D"padding: 0 0 0 0" width=3D6=
+00px>
+                      <table align=3Dcenter border=3D0 cellpadding=3D0 cell=
+spacing=3D0 width=3D600 role=3Dpresentation>
+                        <tbody>
+                          <tr bgcolor=3D#FFFFFF height=3D36>
+                            <td style=3D"padding: 0 0 0 0; height: 36px"></=
+td>
+                          </tr>
+                          <tr bgcolor=3D#FFFFFF>
+                            <td class=3Dside-padding style=3D"padding: 0 44=
+px 0 44px">
+                             =20
+                       =20
+
+                              <p style=3D"
+                                  font-family: &#39;Inter&#39;, sans-serif;
+                                  font-weight: 500;
+                                  font-size: 16px;
+                                  color: #3c4043;
+                                  letter-spacing: -0.02px;
+                                  line-height: 24px;
+                                ">
+                                Hi Ronald Nicolas Tugadi,
+                              </p>
+                           <p style=3D"
+                                  font-family: &#39;Inter&#39;, sans-serif;
+                                  font-weight: 500;
+                                  font-size: 16px;
+                                  color: #3c4043;
+                                  letter-spacing: -0.02px;
+                                  line-height: 24px;
+                                ">The Vasculature Common Coordinate Framewo=
+rk (VCCF) helps us best understand how the cells in your body support organ=
+ function. However, our understanding of the vasculature is incomplete, whi=
+ch limits the effectiveness of the VCCF. We can use data-driven vasculature=
+ segmentation to address this.
+
+<br>
+<br>
+In this competition, you=E2=80=99ll create a semantic segmentation model tr=
+ained on 3D data from human kidneys to segment blood vessels.
+</p>
+      =20
+                 =20
+   =20
+                           =20
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+
+             =20
+   =20
+            =20
+               =20
+
+
+
+
+
+
+
+                  <tr bgcolor=3D#FFFFFF align=3Dcenter>
+                    <td align=3Dcenter style=3D"padding: 10px 0 0 0">
+                      <!--[if (gte mso 9)|(IE)]>
+                    <table align=3D"left" border=3D"0" cellspacing=3D"0" ce=
+llpadding=3D"0" width=3D"100%">
+                      <tr>
+                        <td align=3D"left" valign=3D"top" width=3D"50%">
+                        <![endif]-->
+                      <div class=3Dspan-3 style=3D"
+                          display: inline-block;
+                          vertical-align: top;
+                          width: 100%;
+                          max-width: 278px;
+                        ">
+                       <h3 style=3D"
+                            font-family: &#39;Inter&#39;, sans-serif;
+                            font-weight: 700;
+                            font-size: 16px;
+                            color: #202124;
+                            letter-spacing: -0.01px;
+                            text-align: center;
+                            margin: 20px 0 0 0;
+                            line-height: 20px;
+                          ">
+                          Total Prizes:
+                        </h3>
+                        <p style=3D"
+                            font-family: &#39;Inter&#39;, sans-serif;
+                            font-weight: 500;
+                            font-size: 16px;
+                            color: #3c4043;
+                            letter-spacing: -0.02px;
+                            line-height: 24px;
+                          ">
+$80,000
+
+                      </p>
+                      </div>
+                      <!--[if (gte mso 9)|(IE)]>
+                      </td>
+                      <td align=3D"left" valign=3D"top" width=3D"50%">
+                      <![endif]-->
+                      <div class=3Dspan-3 style=3D"
+                          display: inline-block;
+                          vertical-align: top;
+                          width: 100%;
+                          max-width: 278px;
+                        ">
+                        <h3 style=3D"
+                            font-family: &#39;Inter&#39;, sans-serif;
+                            font-weight: 700;
+                            font-size: 16px;
+                            color: #202124;
+                            letter-spacing: -0.01px;
+                            text-align: center;
+                            margin: 20px 0 0 0;
+                            line-height: 20px;
+                          ">
+                          Entry Deadline:
+                        </h3>
+                        <p style=3D"
+                            font-family: &#39;Inter&#39;, sans-serif;
+                            font-weight: 500;
+                            font-size: 16px;
+                            color: #3c4043;
+                            letter-spacing: -0.02px;
+                            line-height: 24px;
+                          ">January 30, 2024
+
+
+
+                        </p>
+                      </div>
+                      <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                      </tr>
+                    </table>
+                    <![endif]-->
+                    </td>
+                  </tr>
+
+
+
+             =20
+                  <tr bgcolor=3D#FFFFFF>
+                    <td align=3Dcenter>
+                      <div>
+                        <!--[if mso]>
+                          <v:roundrect
+                            xmlns:v=3D"urn:schemas-microsoft-com:vml"
+                            xmlns:w=3D"urn:schemas-microsoft-com:office:wor=
+d"
+                            href=3D"https://www.kaggle.com/competitions/blo=
+od-vessel-segmentation?utm_medium=3Demail&utm_source=3Dgamma&utm_campaign=
+=3Dcomp-hubmap4-2024"=20
+                            style=3D"
+                              height: 36px;
+                              v-text-anchor: middle;
+                              width: 200px;
+                            "
+                            arcsize=3D"50%"
+                            strokecolor=3D"#e6e6e8"
+                            fillcolor=3D"#fafafb"
+                          >
+                            <w:anchorlock />
+                            <center
+                              style=3D"
+                                color: #2f353e;
+                                font-family: sans-serif;
+                                font-size: 13px;
+                                font-weight: bold;
+                              "
+                            >
+Learn More                            </center>
+                          </v:roundrect> <!
+                        [endif]--><a href=3Dhttps://notifications.google.co=
+m/g/p/ANiao5rfdMqK9SYnn-px4Q0vLYkShfcwhxbtlI6CKcUWovMPemZpDdyrygJHe7zW6dnw-=
+E98bW1k571w7h6z5FB1VreeBjEzOxLfwzRtemuWjVMEGG_QBu5erHg9xDv0mOxoanxOooUc53-x=
+avfMVITT7NoFc1rG1Cyo3ZEuUkQIfo6Y6i5YjVA5OF1a4iQpa89yEEBIY-b1xmQlh0iGvILCFUU=
+xAU9cv4yufJ5a0WdhkcDhQ2FG80AF1NuMPrxukvB2NM6_jM5E1XxDuS4iW2cIHv6vHv6n80OfCV=
+SpSQWZr3X_P53s9bxQKJqm3tgjaPzb_CWQ2xiBZG84NA style=3D"
+                            background-color: #000000;
+                            padding: 11px 24px 11px 24px;
+                            margin: 10px 0 0px 0;
+                            border-radius: 20px;
+                            font-family: &#39;Inter&#39;, sans-serif;
+                            font-weight: 600;
+                            font-size: 14px;
+                            color: #ffffff;
+                            letter-spacing: 0;
+                            display: inline-block;
+                            text-align: center;
+                            text-decoration: none;
+                            -webkit-text-size-adjust: none;
+                            mso-hide: all;
+                          " title=3D"Learn More">     Learn More=20
+</a>
+                      </div>
+                    </td>
+                  </tr>
+
+
+
+            =20
+                  <tr bgcolor=3D#FFFFFF>
+                    <td class=3Dside-padding style=3D"padding: 0 44px 0 44p=
+x">
+ <p style=3D"
+                          font-family: &#39;Inter&#39;, sans-serif;
+                          font-weight: 500;
+                          font-size: 16px;
+                          padding-bottom: 40px;
+                          color: #3c4043;
+                          letter-spacing: -0.02px;
+                          line-height: 24px;
+                        ">
+
+Your work will better researchers&#39; understanding of the size, shape, br=
+anching angles, and patterning of blood vessels in human tissue.
+
+<br>
+<br>
+Good luck, <br><br>Ryan Holbrook=20
+
+
+
+
+
+
+<br>
+Kaggle Data Scientist
+
+
+
+                      </p>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td class=3Dside-padding style=3D"padding: 0 24px 0 24p=
+x">
+                      <p style=3D"
+                          font-family: &#39;Inter&#39;, sans-serif;
+                          font-weight: 500;
+                          font-size: 12px;
+                          color: #5f6368;
+                          padding-top: 30px;
+                          letter-spacing: 0;
+                          text-align: center;
+                          line-height: 20px;
+                        ">
+                        Kaggle, Inc 1600 Amphitheatre Pkwy Mountain View, C=
+A
+                        94043
+                      </p>
+                      <p style=3D"
+                          font-family: &#39;Inter&#39;, sans-serif;
+                          font-weight: 500;
+                          font-size: 12px;
+                          color: #5f6368;
+                          letter-spacing: 0;
+                          text-align: center;
+                          line-height: 20px;
+                        ">
+                        This email was sent to ronaldlambertnicolastugadi@g=
+mail.com because you
+                        indicated that you&#39;d like to receive news and u=
+pdates
+                        about Kaggle. If you don&#39;t want to receive thes=
+e emails
+                        in the future, please
+                        <a href=3Dhttps://notifications.google.com/g/p/ANia=
+o5otLk3W_HGlal4JDTW1qCphcYK4ttROYdgq2YOUA7Yexmb37L0YxVtWKTceFzqAMwfPYE2PuiV=
+I0FPlL_n0ddFnQPy5aTyq8ojy0mWCdfN3dGzkOhl4QI9Co1mdio5rugl-IOvSRuU9kttZndpIkT=
+9QOWdjaatIwjyLFWXeWvYyBy5OINy9HhHyjKsU76A0HlkRG2Cwpt7c0IBifAXvS61vkxLJaxj1K=
+z7Qh7msjOT352HReTa1GT3HgtlNk835eLttoUacLfuHLlTUlSH0rPHCI1g3PbotShgi9Fc styl=
+e=3D"color: #000000; text-decoration: underline" title=3D"Unsubscribe here"=
+>unsubscribe here</a>. You can also change your preferences on your
+                        account&#39;s profile page by logging in at
+                        <a href=3Dhttps://notifications.google.com/g/p/ANia=
+o5qrGciLobg9PbHz3qwHETw2y4yWWPKgO44wccEMwE1I3jxRf76jzTv5r_1zVj57tqtHTfC_mG_=
+yvpHrn7X7WTNn48w2mTiEaF1xvIwYhLB0AQmxb1d6Lzm4C_8topgxrHvD6Mf5Yft_cGMN0nl7ki=
+BQn5MROggPbTL4ciBmTjnbU46LYNszmVWy_Nnsza6BtpQ style=3D"color: #000000; text=
+-decoration: underline" title=3DKaggle.com>kaggle.com.</a>
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  <img alt=3D"" height=3D1 width=3D3 src=3Dhttps://notifications.google.com=
+/g/img/ANiao5pIY9G0jRT7trkcK44wYZXJo6GBCMtuN3dMNk4uvSnSM0Fz3I-F1vHa6hS3Jnx1=
+gzfBifiqQf6985F3ZXt8HG0UQnFP0Vy8uzJ8PGR0YprRiRhOYK_7qMAqJgY5wDgKdYwx-sWxWDf=
+tThFz7H_dzI8KEeWtCPZKOUc.gif></body>
+</html>
+--0000000000005d2f380609cde6b7--

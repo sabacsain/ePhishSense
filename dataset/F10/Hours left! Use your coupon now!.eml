@@ -1,0 +1,2688 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:6a42:b0:533:785:174b with SMTP id v2csp258679mat;
+        Wed, 1 Nov 2023 20:28:38 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IGvxKc6d1O2UW7tp8lPKRWiPMTkHvbvFB9S8A+TpVPqi+oX858jC+cqzw6OQb0W5p6W+OpA
+X-Received: by 2002:a17:906:7305:b0:9bd:931e:30d8 with SMTP id di5-20020a170906730500b009bd931e30d8mr3470209ejc.14.1698895717887;
+        Wed, 01 Nov 2023 20:28:37 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1698895717; cv=none;
+        d=google.com; s=arc-20160816;
+        b=IkZrlmr1AIDUpIdh9ioKPu7lkPacPvqBUyKpkT17yKIHI+M1G+jAcFEHi2w7j4O4h+
+         hjF7D8CwvYwpsI6nPVrJ3s5GqT5W2U1h1zMAO6NXarqdFXUoGBE8rIJhtZsCHoCzBoPH
+         Acnt2QtTYWjtkyiRG1tDRM2OKU4Fm5hK7BF5wgf1qyqOPvlbJBv1Xvz8WjgW5D67KHjR
+         z9YdHAVCVY26OFbf+dDldtR5VZjn93PR0V7AXHcbjuX+2h5MC5U0xPE6aloiO1NKWNJu
+         IPsJDaodI4J4Wz5NVPaZpSqF0lkIriiw2fz9ZIlBBXnHFintrMRgkU2F9NZitGm0fxLs
+         9DAQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=date:message-id:list-unsubscribe-post:list-unsubscribe:list-id
+         :mime-version:from:subject:to:dkim-signature:dkim-signature;
+        bh=SqDCGb2qzOpOCFFvxL3GkB7WV/yeoxMzWKXNS7iVJI8=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=e/zbWUlsRLnvFxlPsYK98geM39cRfXcChFW8wgcaqWrUAsN7DtYanie2jBS2NpLjXJ
+         kPFnWP9FuREwwm6gDcARC4Wds9f/KgoqVOp2x4KXaeGkKBC1KrQ5yUX9ZEXFy+J2TRyu
+         SMrXGI8i7CVI3on431ihm7a3gjIEOrbNhxrUuLc21qez1EDbdXGjU9NyQ2FIncJnWTGK
+         c3VEgPefE3SGpa8mP1C+vVN+r/1ZmALTJqz6t97rCLKo5z4SR4wlSzC2fAYRwkrNiPOY
+         dV1B18qWH8AtdqZEGZVCPzXNzVkhqao7DmpayzE07f2J/MGzDY5ZeZ2CtZsmRqK9uTxd
+         n5jg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@edm.ph.sheinemail.com header.s=key2 header.b=PjkGZqY2;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=FfuLqo1l;
+       spf=pass (google.com: domain of suite49@edm.ph.sheinemail.com designates 45.86.117.185 as permitted sender) smtp.mailfrom=suite49@edm.ph.sheinemail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=edm.ph.sheinemail.com
+Return-Path: <suite49@edm.ph.sheinemail.com>
+Received: from mta-2d5675b9.ip4.emsmtp.us (mta-2d5675b9.ip4.emsmtp.us. [45.86.117.185])
+        by mx.google.com with ESMTPS id 23-20020a17090601d700b0099bcde0f1b1si518178ejj.152.2023.11.01.20.28.37
+        for <************************@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Wed, 01 Nov 2023 20:28:37 -0700 (PDT)
+Received-SPF: pass (google.com: domain of suite49@edm.ph.sheinemail.com designates 45.86.117.185 as permitted sender) client-ip=45.86.117.185;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@edm.ph.sheinemail.com header.s=key2 header.b=PjkGZqY2;
+       dkim=pass header.i=@emarsys.net header.s=key2 header.b=FfuLqo1l;
+       spf=pass (google.com: domain of suite49@edm.ph.sheinemail.com designates 45.86.117.185 as permitted sender) smtp.mailfrom=suite49@edm.ph.sheinemail.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=edm.ph.sheinemail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=edm.ph.sheinemail.com;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:
+ Content-Type:Message-ID:Date; i=shein@edm.ph.sheinemail.com;
+ bh=SqDCGb2qzOpOCFFvxL3GkB7WV/yeoxMzWKXNS7iVJI8=;
+ b=PjkGZqY2Wn0VJH7ABLnik18ddtb2Eym/Yp3k5PSxPSWY1ENg7/Ehjfk99Ax8IeZOcUbXKwUlfaAl
+   59TFDgrgB81htGDnMJk1EI1vieAXcmOp1pD1uBxI0TNEGyqhHHReL2I2EX//5nHvz8xigRmjZ5zq
+   gsnpybGxVVakkbWaHI8=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=key2; d=emarsys.net;
+ h=To:Subject:From:MIME-Version:List-Id:List-Unsubscribe:List-Unsubscribe-Post:
+ Content-Type:Message-ID:Date;
+ bh=SqDCGb2qzOpOCFFvxL3GkB7WV/yeoxMzWKXNS7iVJI8=;
+ b=FfuLqo1l03d9z+qGjFyP56ByQEkJ7fhZQXxMH/t6t8HeIq+PG3hhpSzoxkbnbUPjEzue79Fky3AO
+   F9X5t/5DxUhKrR6pRr4Brni0plbR4MQDHRWaTHTClDYX7hbyBtQqAMSevRmawjTJr77js+WvUYRO
+   rOC2E4t9x5T/hdEFHwk=
+To: ************************@gmail.com
+Subject: Hours left! Use your coupon now!
+X-Mailer: class SMTPMail
+From: "SHEIN" <shein@edm.ph.sheinemail.com>
+MIME-Version: 1.0
+List-Id: 914622850 <SHEIN>
+X-EMarSys-Identify: 914622850_4700604_548448
+X-EMarSys-Environment: suite49
+X-Report-Abuse: Please report abuse here: abuse-report@emarsys.com
+List-Unsubscribe: <mailto:list-unsubscribe+914622850_4700604_548448_A5J4ihkHlw@emarsys.net>, <https://list-unsubscribe.eservice.emarsys.net/api/unsubscribe/914622850_4700604_548448_A5J4ihkHlw>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+Content-Type: multipart/alternative;
+ boundary="--=_---NextPart--=_-19ZYWTIOzz"
+Message-ID: <0.0.183.945.1DA0D3BA0C97D80.0@mta-2d5675b9.ip4.emsmtp.us>
+Date: Thu, 2 Nov 2023 04:21:11 +0100
+
+
+----=_---NextPart--=_-19ZYWTIOzz
+Content-Type: text/plain; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns:v=3D"urn:schemas-microsoft-com:vml"
+xmlns:o=3D"urn:schemas-microsoft-com:office:office">
+<head>
+<meta charset=3D"utf-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge, chrome=3D1">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0,
+maximum-scale=3D1.0, user-scalable=3Dno">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta name=3D"format-detection" content=3D"date=3Dno">
+<meta name=3D"format-detection" content=3D"address=3Dno">
+<meta name=3D"format-detection" content=3D"email=3Dno">
+<meta name=3D"x-apple-disable-message-reformatting">
+
+<meta name=3D"color-scheme" content=3D"light dark">
+<meta name=3D"supported-color-schemes" content=3D"light dark">
+
+<title>SHEIN</title>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>=20
+
+/* CLIENT-SPECIFIC STYLES */
+=09:root {
+color-scheme: light dark;
+supported-color-schemes: light dark;
+}
+=09@media (prefers-color-scheme: dark ) {
+=09=09body{background:#111111 !important;}
+     .darkModeHack1{
+           background:#4C8FF7 !important;
+     }
+=09=09 .darkModeHack2{
+           color:#ffffff !important;
+     }
+=09=09.darkModeHack3{
+           border-bottom-color:#ffffff !important;
+     }
+    =20
+}
+
+/* ANDROID CENTER FIX */
+div[style*=3D"margin: 16px 0;"] {
+margin: 0 !important;
+}
+body, table, td, a {
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+table, td {
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+/*Forces Outlook.com to display normal line spacing*/
+
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass
+font, .ExternalClass td, .ExternalClass div {
+line-height: 100%;
+}
+/* RESET STYLES */
+
+img {
+border: 0;
+height: auto;
+line-height: 100%;
+outline: none;
+text-decoration: none;
+}
+table {
+border-collapse: collapse !important;
+}
+body {
+height: 100% !important;
+width: 100% !important;
+}
+th {
+padding: 0 !important;
+margin: 0 !important;
+border: 0 !important;
+}
+/* iOS BLUE LINKS */
+
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 480px) {
+.mobile-hide {
+display: none !important;
+}
+.mobile-center {
+text-align: center !important;
+}
+}
+
+
+@media print{ #_two50 {
+background-image:url('https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4i=
+hkHlw_548448_4700604_1_44&ems_l=3D5905329&i=3D1&d=3DY2F2YW5leXJvZXJpY2Fqb3l=
+zYXJpbGFuJTQwZ21haWwuY29t%7CNDgyOTMzNDU5%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkN=
+mQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_30be50ac26c7b915646b8c82a31cff15c0eacb3dc7=
+b04c274555ae1f566bb1ed
+} } blockquote #_two50, #mailContainerBody #_two50,
+div.OutlookMessageHeader, table.moz-email-headers-table {
+background-image:url('https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4i=
+hkHlw_548448_4700604_1_45&ems_l=3D5905329&i=3D1&d=3DY2F2YW5leXJvZXJpY2Fqb3l=
+zYXJpbGFuJTQwZ21haWwuY29t%7CNDgyOTMzNDYw%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkN=
+mQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_9325f66e66ecade42df46a04ef68279951c37fd134=
+f72b156a8ff27261866a0a
+}=20
+
+</style>
+=09=09
+</head>
+<body class=3D"body" style=3D"margin:0; padding:0; width:100% !important;">=
+=09
+
+<div style=3D"display: none; margin: 0; padding: 0; width: 0px;
+max-height: 0px; overflow: hidden; font-size: 0; line-height: 0;">
+=09<table class=3D"hidden" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" width=3D"100%"
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size:
+0; mso-line-height-rule: exactly; line-height: 1;" valign=3D"top"
+align=3D"left">*Adds Everything To Basket*</td>
+=09=09</tr>
+=09=09<tr>
+=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; font-family: Arial, Helvetica, sans-serif; color: #ffffff; font-size:
+0; mso-line-height-rule: exactly; line-height: 1;" valign=3D"top"
+align=3D"left">&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nb=
+sp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;=
+&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zw=
+nj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;=
+&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;
+</td>
+=09=09</tr>
+=09</tbody></table>
+</div>=20
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" width=3D"100%"
+cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 10=
+0%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; font-size: 0; line-height: 0;
+border-collapse: collapse;" width=3D"620" cellspacing=3D"0" cellpadding=3D"=
+0"
+border=3D"0" align=3D"center">
+
+
+
+
+
+<tbody style=3D"padding: 0; margin: 0;">
+<tr>
+=09<td valign=3D"top" align=3D"center">
+<div id=3D"_two50"></div> <img id=3D"_two50_img"
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_46&ems_l=3D5905329&i=3D1&d=3DY2F2YW5leXJvZXJpY2Fqb3lzYXJpbGFuJTQwZ2=
+1haWwuY29t%7CNDgyOTMzNDYx%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%=
+3D%7C&_esuh=3D_11_f087df6fe6142aa9037b639eacc77fc19449035f073d6698a632b4b22=
+ca600ad
+width=3D"1" height=3D"1" style=3D"margin:0 !important; padding:0 !important=
+;
+border:0 !important; height:1px !important; width:1px !important;">
+=09</td>
+</tr>
+
+   =20
+ =20
+<tr>=20
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; border-collapse: collapse;"
+width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; font-size: 12px; line-height: 16px; color: #423f40; text-align: left;
+font-family: Arial;">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_47&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDYy%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_47b0b6419a85a0f7671846941550485f=
+cd8dbebe366d33e27018788f9f2ef72d
+title=3D"Adds Everything To Basket" target=3D"_blank"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+padding: 0; margin: 0; outline: none; color: #423f40; text-decoration:
+none; font-family: Arial;" class=3D"darkModeHack2">*Adds Everything To
+Basket*</a>
+=09=09=09=09</td>
+=09=09=09</tr>
+=09=09</tbody></table>
+=09</td>
+</tr>
+           =20
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; border-collapse: collapse;"
+width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding:
+18px 0;" valign=3D"top" align=3D"center">
+=09=09=09=09=09
+=09=09
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_48&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDYz%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7d0810782c00461254a5b1446f2f1e77=
+4b333348ea46be0b3fa04db1257003d7
+title=3D"SHEIN" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;">
+=09=09=09=09=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_49&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY0%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_c30b222e783b0120ff3da70938d6c6c4e=
+d821b07ed3dc776bd46e253cb0aff38
+width=3D"620" alt=3D"SHEIN" style=3D"display: block; border: 0; width: 100%=
+;">
+=09=09=09=09=09</a>
+=09=09=09=09
+=09</td>
+</tr>      =20
+     <tr>
+
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+font-size: 14px; color: #000000; padding-right: 10px; text-align: right;
+line-height: 20px; font-family: Arial;" class=3D"darkModeHack2"
+height=3D"20">
+=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/un.php?par=3DA5J4ihkHlw_4700604=
+_548448_$sid$&_esuh=3D_11_3243f8125c030338ed989a5b781bf92bd3e80e65bf29a1939=
+19674e0a2247f08"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+padding: 0; margin: 0; text-decoration: none; color: #000000; outline:
+none;" target=3D"_blank" class=3D"darkModeHack2">Unsubscribe</a> | <a
+href=3D"https://link-edmph.sheinemail.com/u/gm.php?prm=3DA5J4ihkHlw_9146228=
+50_4700604_548448&_esuh=3D_11_f98a2ec6793bf7b4d0ac47b40e882e1d9e78602036c7a=
+89567db56c223475ef6"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+padding: 0; margin: 0; text-decoration: none; color: #000000; outline:
+none;" target=3D"_blank" class=3D"darkModeHack2">View in Browser</a>
+=09</td>
+</tr>
+      =20
+=09=09</tbody></table>
+=09</td>
+</tr>
+      =20
+      =20
+      =20
+      =20
+
+      =20
+      =20
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 10px;" valign=3D"top" align=3D"center">
+=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; border-collapse: collapse;"
+width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"cen=
+ter">
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr style=3D"padding: 0; m=
+argin:
+0;" align=3D"center">
+
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0;
+font-family: Arial; font-weight: 600; font-size: 16px; line-height:
+20px; text-transform: uppercase; padding: 10px 0;" width=3D"25%">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_50&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY1%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_b2f80e4845db2b19ef5274775ecb97a4=
+1862d9e857158a66eba028f3a6857039
+title=3D"WOMEN" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; color: #000000; font-family: Arial; text-transform: uppercase;"
+class=3D"darkModeHack2">WOMEN</a>
+=09=09=09=09</td>
+
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0;
+font-family: Arial; font-weight: 600; font-size: 16px; line-height:
+20px; text-transform: uppercase; padding: 10px 0;" width=3D"25%">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_51&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY2%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_a709d7bc511a4666a91a139ce0e06a74=
+a406c99d6e5968be616e2d615ae5e1f9
+title=3D"PLUS" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; color: #000000; font-family: Arial; text-transform: uppercase;"
+class=3D"darkModeHack2">PLUS</a>
+=09=09=09=09</td>
+
+
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0;
+font-family: Arial; font-weight: 600; font-size: 16px; line-height:
+20px; text-transform: uppercase; padding: 10px 0;" width=3D"20%">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_52&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY3%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_b6b61e7e583e95a5851b8fa9ce4104e1=
+8b154bd77544bfa5f83beed5c5a95b5c
+title=3D"MEN" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; color: #000000; font-family: Arial; text-transform: uppercase;"
+class=3D"darkModeHack2">MEN</a>
+=09=09=09=09</td>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0;
+font-family: Arial; font-weight: 600; font-size: 16px; line-height:
+20px; text-transform: uppercase; padding: 10px 0;" width=3D"30%">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_53&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY4%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_99f820de362935dcc9d6d96579cd9332=
+05575b8e0c4437cfe59e87916fd4a654
+title=3D"KIDS" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; color: #000000; font-family: Arial; text-transform: uppercase;"
+class=3D"darkModeHack2">KIDS</a>
+=09=09=09=09</td>
+=09=09=09=09
+=09=09=09</tr>
+=09=09</tbody></table>=09=09=20
+=09</td>
+</tr>
+
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 10px;" valign=3D"top" align=3D"center">
+=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_54&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDY5%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_9bd39ad567e7a648b4ec0d8abd2984cb=
+1e05f390e5788b2ac1d4199f340d83b7
+title=3D"Treat yourself" target=3D"_blank" style=3D"-webkit-text-size-adjus=
+t:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">=09
+       =20
+        <img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_55&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDcw%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_f60ed3be590f7c39e810edad09d3dba03=
+46cf0f6b0c1a825bfb3cbe63324e1dc
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 100%;" alt=3D"Treat yourself" width=3D"620"
+border=3D"0">
+       </a>
+=09</td>
+</tr>
+      =20
+
+=09
+=09
+=09<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 20px 0
+0;" valign=3D"top" align=3D"center">
+=09
+=09=09
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; border-collapse: collapse;"
+width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"
+align=3D"center"><tbody style=3D"padding: 0; margin: 0;">
+=09
+=09
+=09<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"left">=09
+=09=09<!--[if !mso]><!-->=20
+=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_71&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDg3%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_ffa587761f3e858734e14bfdb86f1ee8=
+cb1a81bc4d31fcc5b41be4f003e944ba
+title=3D"Treat yourself" target=3D"_blank" style=3D"-webkit-text-size-adjus=
+t:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<div style=3D"padding: 0; margin: 0;">=20
+=09<!--<![endif]-->
+=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"ce=
+nter">
+=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+background:
+url(https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47006=
+04_1_57&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDcy%7CQTVKNGloa0hsdw%3D%3D%7CY2Y=
+yNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_f71fdc96e05f0cc48f36c6bbc1e82404dd1d=
+a43a2e3e384de28b176c7e296bea
+100% 100% no-repeat; width: 620px; height: 132px;" width=3D"620"
+valign=3D"top" height=3D"132"
+background=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54=
+8448_4700604_1_58&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDcz%7CQTVKNGloa0hsdw%3=
+D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_d5292c3e97def925f6c2f675ea=
+c19db164a7ff88afe2de2dd2a06b592af6626e
+align=3D"left">=20
+=09=09=09<!--[if mso]>
+=09=09=09 <img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_59&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDc0%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7bf5856bb3d8cd71b955582af3b94bfc7=
+825a1cd20a071943f5f9285caeae5c0
+alt=3D"coupon" width=3D"620" height=3D"132"  border=3D"0" style=3D"display:
+block;width:620px; height:132px;" />
+=09=09=09=09=09=09=09<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=
+=3D"false"
+stroke=3D"false" style=3D"position:relative;top:0;left:0;width:620px;
+height:132px;"
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_60&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDc1%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_5bea4e589387008f6daaf3df5f6cb521=
+8fa6dea6267424bca832de60d7c47ffc
+
+=09=09=09=09=09=09=09<v:textbox inset=3D"0,0,0,0">
+=09=09=09=09=09=09=09<![endif]-->
+=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 10=
+0%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"cen=
+ter">
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding:
+16px 30px 0;" valign=3D"top" align=3D"center">
+=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust:=
+ 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"ce=
+nter">=09
+=09=09=09=09=09
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09
+=09=09=09
+=09=09=09
+=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; width: 49%;" width=3D"49%" valign=3D"top" align=3D"center">
+=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust:=
+ 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-right: 1px dashed
+#ffffff; border-collapse: collapse;" width=3D"100%" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0" align=3D"center">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #ffffff; font-family: Arial, Helvetica, sans-serif;
+text-align: center; font-size: 20px; mso-line-height-rule: exactly;
+line-height: 24px;" valign=3D"top" align=3D"center">
+=09=09=09=09=09Available Offer:=09=09=09=09
+=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09=09<tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; color:
+#ffffff; font-family: Arial, Helvetica, sans-serif; text-align: center;
+font-size: 24px; mso-line-height-rule: exactly; line-height: 28px;
+font-weight: 600; padding: 6px 0;" valign=3D"top" align=3D"center">
+=09=09=09=09=09=E2=82=B188.00 off =09=09=09=09
+=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09=09<tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #ffffff; font-family: Arial, Helvetica, sans-serif;
+text-align: center; font-size: 14px; mso-line-height-rule: exactly;
+line-height: 18px;" valign=3D"top" align=3D"center">
+=09=09=09=09=09 Minimum Spending: =E2=82=B1880.00=09=09
+=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09=09</tbody></table>
+=09=09=09</td>=09
+=09=09=09=09=09=09
+=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; width: 49%;" width=3D"49%" valign=3D"top" align=3D"center">
+=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust:=
+ 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"ce=
+nter">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; color:
+#ffffff; font-family: Arial, Helvetica, sans-serif; text-align: center;
+font-size: 24px; mso-line-height-rule: exactly; line-height: 28px;
+padding: 18px 0;" valign=3D"top" align=3D"center">
+=09=09=09=09=09Code: phcsn=09=09
+=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09=09<tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #ffffff; font-family: Arial, Helvetica, sans-serif;
+text-align: center; font-size: 14px; mso-line-height-rule: exactly;
+line-height: 18px;" valign=3D"top" align=3D"center">
+=09=09=09=09=09 Expired time: 2023-11-05 (UTC +8:00)=09=09=09=09
+=09=09=09=09</td>
+=09=09=09=09</tr>
+=09=09=09=09</tbody></table>
+=09=09=09=09
+=09=09=09=09
+=09=09=09</td>
+=09=09=09
+=09=09=09</tr>
+=09=09=09</tbody></table>
+=09=09=09</td>
+=09=09=09</tr>
+=09=09=09</tbody></table>
+=09=09=09
+=09=09=09<!--[if mso]>
+=09=09=09=09=09=09=09</v:textbox>
+=09=09=09=09=09=09=09</v:rect>
+=09=09=09=09=09=09=09<![endif]-->
+=09=09</td>
+=09=09</tr>
+=09</tbody></table>
+=09=09
+=09=09<!--[if !mso]><!-->=20
+=09</div>
+=09</a>=20
+=09<!--<![endif]-->=09=09=20
+=09</td>
+=09</tr>
+=09
+=09
+=09=09=09
+=09=09
+=09=09
+=09=09
+=09=09</tbody></table>=09
+=09</td>
+=09</tr>
+=09=09=09=09
+=09=09=09=09
+=09<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 30px; color: #000000; font-family: Arial, Helvetica,
+sans-serif; text-align: center; font-size: 20px; mso-line-height-rule:
+exactly; line-height: 24px; text-transform: uppercase;"
+class=3D"darkModeHack2" valign=3D"top" align=3D"center">
+=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_86&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTE5%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_cac15b4eee7419a70e8936330ca9dc9b=
+4c9325d208156fa77e3c5a2df30fbcbd
+title=3D"Treat yourself" target=3D"_blank" style=3D"-webkit-text-size-adjus=
+t:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: underline; color: #000000;" class=3D"darkModeHack2">=09   =
+=20
+  =20
+       Treat yourself >
+       </a>
+=09</td>
+</tr>=09=09=09
+=09=09=09=09
+=09=09=09=09
+=09=09=09=09
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 40px;" valign=3D"middle" align=3D"center">
+=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0" align=3D"center">=09=09=09=09
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_87&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTIx%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_291d07854d94da063c87dc8028ba83d8=
+5c7bddcb3231c62e4fa7d3e8e3da7b52
+title=3D"Shop Now" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100=
+%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">=09
+       =20
+        <img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_88&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTIz%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7e14724d3c325cf9aa13a58b744966eef=
+faaa4a71c97875cacc34c35b7d04916
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 620px;" alt=3D"Shop Now" width=3D"620" border=3D"0=
+">
+       </a>
+=09</td>
+=09</tr>
+=09</tbody></table>=09=09=09=09=09
+=09</td>
+</tr>
+=09=09=09=09=09=09
+
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 40px;" valign=3D"top" align=3D"center">
+=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0" align=3D"center">=09=09=09=09
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_89&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTI2%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_945734eee342a46fcf0fdc77fa378f4f=
+1b562b79379d7b412fa571ce2a6e0070
+title=3D"Flash sale" target=3D"_blank" style=3D"-webkit-text-size-adjust:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">=09
+       =20
+        <img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_90&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTI4%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_33062361b3a58c77abdf7ccb3b7378dd1=
+05b6e739d1b89e060c35b50fe4fb993
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 620px;" alt=3D"Flash sale" width=3D"620"
+border=3D"0">
+       </a>
+=09</td>
+=09</tr>=09
+=09</tbody></table>=09=09=09=09=09
+=09</td>
+</tr>
+=09=09=09=09
+<tr>
+
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 45px 0
+0; color: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif;
+font-size: 30px; mso-line-height-rule: exactly; line-height: 34px;
+font-weight: 600;" class=3D"darkModeHack2" valign=3D"top"
+align=3D"center">SHOP BY CATEGORY</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 40px
+24px 20px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09
+=09
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 15px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"top" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_91&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTMw%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_613d855f22650e91f15e3d94917a6ba7=
+63b5ab7a7c2ab88ada696e425e69d4ef
+title=3D"TOPS" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none; color: #ffffff;">TOPS</a></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 3%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 15px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"top" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_92&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTMy%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_662b5058236497a58c0bda0043b6d3a6=
+75193cea3cbcf82c5902cf610b9fa07c
+title=3D"BOTTOMS" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%=
+;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none; color: #ffffff;">BOTTOMS</a></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 3%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 15px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"top" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_93&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTM0%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_603bb51ae390a560cd260d8fa6f0ddeb=
+2902d28e9eaa26137d5f638f1879e2bb
+title=3D"DRESSES" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%=
+;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none; color: #ffffff;">DRESSES</a></td>
+=09</tr>
+</tbody></table>
+</td>
+</tr>=09
+=09
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0 24px
+40px;" valign=3D"middle" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">=09
+=09
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 16px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"middle" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_94&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTM2%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_86a39bdcf0e2be39628bd1336c0fd5ab=
+8dc062db268eae03b00a433ee64de84f
+title=3D"DENIM" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none; color: #ffffff;">DENIM</a></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 3%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 5px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"middle" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_95&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTM5%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_153a4179748e6ebdd6a9e46ef1749c86=
+8ad98288e1c5a03c3eaf82434883e676
+title=3D"LINGERIE & LOUNGEWEAR" target=3D"_blank"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+padding: 0; margin: 0; outline: none; text-decoration: none; color:
+#ffffff;">LINGERIE & LOUNGEWEAR</a></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 3%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 10=
+0%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%;
+padding: 16px 0; background: #f06292; color: #ffffff; font-family:
+Tahoma, Arial, Helvetica, sans-serif; font-size: 18px;
+mso-line-height-rule: exactly; line-height: 22px;" width=3D"31%"
+valign=3D"middle" align=3D"center"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_96&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTQx%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_0b330196615026984045894e19e4c52d=
+5734c2cfe863593723a5b4b6da4cb9b0
+title=3D"SHOES & BAGS" target=3D"_blank" style=3D"-webkit-text-size-adjust:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none; color: #ffffff;">SHOES & BAGS</a></td>
+=09</tr>
+=09
+
+</tbody></table>
+</td>
+</tr>
+=09=09=09=09
+
+
+
+=09=09=09=09
+=09=09=09=09
+
+=09
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 30px;" valign=3D"top" align=3D"center">
+=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 620px; border-collapse: collapse;"
+width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0;" valign=3D"top" align=3D"center">
+=09=09=09=09=09
+    =09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_97&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTQz%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7cb367d463d1465d8f4a4fc187818022=
+90cb4a01e7b2811d038c008115ee5ce6
+title=3D"Women" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+=09=09=09=09=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_98&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTQ1%7CQTVKNGloa0hsdw%3D%3D%7C=
+Y2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_105de3bfa3038a4c25a118b9910a27a59=
+e3b4584a2d5fe00b8fb4870b47a401b
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 100%;" alt=3D"Women" width=3D"144" border=3D"0"></=
+a>
+=09=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adju=
+st: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif;
+font-size: 14px; mso-line-height-rule: exactly; line-height: 22px;
+text-transform: uppercase; padding-top: 12px;" valign=3D"top"
+align=3D"center">=09
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_99&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTQ3%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_58166eb9ee14a6096ef45e9edecdb482=
+98f09483e0a43913d8591451dc06e4e5
+title=3D"Women" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;"
+class=3D"darkModeHack2">shop now></a>=09
+=09=09=09=09</td>
+=09=09=09=09</tr>=09=09
+=09=09=09=09</tbody></table>
+=09
+=09=09=09=09</td>
+=09=09=09=09
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding:
+0 14px;" valign=3D"top" align=3D"center">
+=09=09=09=09=09
+    =09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_100&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTQ5%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_81ea44e442fd21ccaf31de98bf936ba=
+c4cc372bfcc0b05d16e1c6640779204ac
+title=3D"Plus" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+=09=09=09=09=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_101&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTUx%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_1a818e886af6aa110b9745c3bfb902d6=
+cb35ca6199b70a497b9633f0435517af
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 100%;" alt=3D"Plus" width=3D"144" border=3D"0"></a=
+>
+=09=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-adju=
+st: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif;
+font-size: 14px; mso-line-height-rule: exactly; line-height: 22px;
+text-transform: uppercase; padding-top: 12px;" valign=3D"top"
+align=3D"center">=09
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_102&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTUz%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_51dc2c90ff675b890f2aa0109c5279b=
+81a1d736290ab6e67fbd69b5d601a81d6
+title=3D"Plus" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;"
+class=3D"darkModeHack2">=09
+=09=09=09=09=09shop now>
+=09=09=09=09=09</a>
+=09=09=09=09=09</td>
+=09=09=09=09</tr>=09=09
+=09=09=09=09</tbody></table>
+=09=09=09=09</td>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; padding-right: 14px;" valign=3D"top" align=3D"center">
+=09=09=09=09=09
+    =09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_103&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTU2%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_e0ce64624e54be524489f1eec91cd0b=
+03d2305a9dca8c9a7a9d11bc453770d40
+title=3D"Men" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+=09=09=09=09=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_104&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTU4%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_69b6574a8efad5a26b96634cbdc3c282=
+cc015ed9b1152b26392573f223b8c01d
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 100%;" alt=3D"Men" width=3D"144" border=3D"0">=09<=
+/a>
+=09=09=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-a=
+djust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif;
+font-size: 14px; mso-line-height-rule: exactly; line-height: 22px;
+text-transform: uppercase; padding-top: 12px;" valign=3D"top"
+align=3D"center">=09=09
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_105&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTYw%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_9cdbff67e66fbecd1d5d6d14094ee3a=
+bbd20072121044c4496ccc7b6f05a294a
+title=3D"Men" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;"
+class=3D"darkModeHack2">=09
+=09=09=09=09=09shop now>
+=09=09=09=09=09</a>
+=09=09=09=09=09</td>
+=09=09=09=09</tr>=09=09
+=09=09=09=09</tbody></table>
+=09=09=09=09</td>
+=09=09=09=09
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0;" valign=3D"top" align=3D"center">
+=09=09=09=09=09
+    =09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_106&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTYy%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7751ffa694268cecfdbecdd53b2982f=
+a0bf5d5d1ce2735c74a0754990a28e675
+title=3D"Kids" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+=09=09=09=09=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_107&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTY0%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_aff63e3856db0052c13bbe709fa2c0c7=
+580902dcdc07f2d7933c155183f73fe8
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; display:
+block; border: 0; width: 100%;" alt=3D"Kids" width=3D"144" border=3D"0"></a=
+>
+=09=09=09=09=09=09<table role=3D"presentation" style=3D"-webkit-text-size-a=
+djust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09=09=09=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09=09=09=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st:
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin:
+0; color: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif;
+font-size: 14px; mso-line-height-rule: exactly; line-height: 22px;
+text-transform: uppercase; padding-top: 12px;" valign=3D"top"
+align=3D"center">
+=09=09=09=09=09<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_108&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTY2%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_ade25840388b347f11fbb0d1358278a=
+3440a36d9756ac00623e337f998404f71
+title=3D"Kids" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;"
+class=3D"darkModeHack2">
+=09=09=09=09=09shop now>
+=09=09=09=09=09</a>
+=09=09=09=09</td>
+=09=09=09=09</tr>=09=09
+=09=09=09=09</tbody></table>
+=09=09=09=09</td>
+=09=09=09</tr>
+=09=09</tbody></table>=09=09
+=09</td>
+</tr>             =09 =20
+=09 =20
+
+
+
+
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 40px
+10px 30px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tbody style=3D"padding: 0; margin: 0;"><tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_109&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTY4%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_20e0090a038a2771f274e54d1c245c2=
+cd0a0ff7bebc2eb486cb719cc35257076
+title=3D"giftcard" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100=
+%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_110&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTcw%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_8fd8dff4b0f773b09f2972edae8f643c=
+bc42cd33aa5412006e180565c0da0221
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; border: 0;
+display: block; width: 100%;" alt=3D"giftcard" width=3D"192" border=3D"0">
+</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 12px;">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_111&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTcy%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_f48593295d773cab0b53e03577babe2=
+24b390eb559f170b409a8b69e8fb43eb6
+title=3D"Shipping-Info" target=3D"_blank" style=3D"-webkit-text-size-adjust=
+:
+100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0;
+text-decoration: none; display: block; color: #000000; outline: none;">
+<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_112&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTc0%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_4b684fb90d4e41e8307b7392dfac1d15=
+b3d369e21c25330a1d61eaa5c3a31892
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; border: 0;
+display: block; width: 100%;" alt=3D"Shipping-Info" width=3D"192"
+border=3D"0">
+</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 12px;">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+<a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_113&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTc3%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_b6cb218e0a8910014fca078e9eb9fa7=
+a577de0467b4fd3969f9deb00eb513ce1
+title=3D"points" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+none; display: block; color: #000000; outline: none;">
+<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_114&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTc5%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7fcf0fa820a3d410a4102e03ea8d0979=
+a6043d493fd22a884e1a6eae4092cd76
+style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 100%;
+outline: none; text-decoration: none; padding: 0; margin: 0; border: 0;
+display: block; width: 100%;" alt=3D"points" width=3D"192" border=3D"0">
+</a>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+             =09 =20
+
+
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+background: #000000;" valign=3D"top" bgcolor=3D"#000000" align=3D"center">
+<table role=3D"presentation" class=3D"width100p"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 620px; border-collapse: collapse;" width=3D"620" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+<tbody style=3D"padding: 0; margin: 0;"><tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; background: #000000; border-collapse:
+collapse;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0"
+bgcolor=3D"#000000">
+<tbody style=3D"padding: 0; margin: 0;"><tr>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0;" width=3D"60" valign=3D"top"
+align=3D"left">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+width=3D"65%" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 70%; border-collapse: collapse;"
+width=3D"70%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 20px; font-family: Arial; font-size: 15px; line-height:
+20px; color: #ffffff; text-align: left; font-weight: bold;
+text-transform: uppercase; padding-bottom: 8px;" valign=3D"top"
+align=3D"left">
+=09Find us on
+=09</td>
+=09</tr>
+=09
+=09<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"center">
+=09<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0; width: 100%; border-collapse: collapse;"
+width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 5px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_115&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTgx%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_fe6984ed700a08e5f302aa8574c2040=
+a01a6974f56fbbf0d44fb6e18daa2535f
+title=3D"facebook" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_116&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTgz%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_595988748bcd5ec289bb14d2d15997ad=
+d94fd26d9a46c94d3540c88454fbf54f
+title=3D"facebook" alt=3D"facebook" style=3D"-ms-interpolation-mode: bicubi=
+c;
+height: auto; line-height: 100%; outline: none; text-decoration: none;
+padding: 0; margin: 0; padding-right: 0px; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 5px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_117&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTg1%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_b0f584e36620aad6affe65f59d38c66=
+cca441dc25c2df9799b419b9960abae74
+title=3D"instagram" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_118&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTg3%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_0d095b6b721da4637a448b82bd0ccae8=
+9342ff04c25627b1916415215420b927
+title=3D"instagram" alt=3D"instagram" style=3D"-ms-interpolation-mode:
+bicubic; height: auto; line-height: 100%; outline: none;
+text-decoration: none; padding: 0; margin: 0; padding-right: 0px;
+display: block; border: 0; width: 38px;" width=3D"38" height=3D"38"
+border=3D"0"></a></td>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 5px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_119&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTg5%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_392ba39b89a9f26c90da6a721b05ebc=
+3d192f18badfe9ed68302922e6892aeba
+title=3D"twitter" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_120&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTky%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_cbcc6527ebf6b6b9159b89cb196f4d2c=
+0050d9a0acda28f73cbfe2f724ea2c5a
+title=3D"twitter" alt=3D"twitter" style=3D"-ms-interpolation-mode: bicubic;
+height: auto; line-height: 100%; outline: none; text-decoration: none;
+padding: 0; margin: 0; padding-right: 0px; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 5px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_121&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTk0%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_fbef2cf3f4f1ebdec6269411e45443b=
+e59dd1e950c0ffaf4ff0372f96d2c0ea7
+title=3D"youtube" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_122&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTk2%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_c0ebd9e5b2b736406b438d651b98c8e4=
+d3581d84d1767449b9f4bf3a6dc3e322
+title=3D"youtube" alt=3D"youtube" style=3D"-ms-interpolation-mode: bicubic;
+height: auto; line-height: 100%; outline: none; text-decoration: none;
+padding: 0; margin: 0; padding-right: 0px; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_123&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNTk4%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_0bf2eb44413b62d6731098afbc527a5=
+7bc1cedd736f29f90995136746f6ae5b8
+title=3D"pinterest" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_124&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjAw%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_d86cee0b6b6707907bb9c10617c14306=
+ae2ff341581eaeef06af6bf100b70add
+title=3D"pinterest" alt=3D"pinterest" style=3D"-ms-interpolation-mode:
+bicubic; height: auto; line-height: 100%; outline: none;
+text-decoration: none; padding: 0; margin: 0; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09</tr>
+=09</tbody></table>
+=09</td>
+=09</tr>
+</tbody></table>
+</td>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0;" width=3D"60" valign=3D"top"
+align=3D"left">&nbsp;</td>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0;" width=3D"60" valign=3D"top"
+align=3D"left">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+width=3D"35%" valign=3D"top" align=3D"center"><table role=3D"presentation"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 40%; border-collapse: collapse;" width=3D"40%" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-top: 20px; font-family: Arial; font-size: 15px; line-height:
+20px; color: #ffffff; text-align: left; font-weight: bold;
+text-transform: uppercase; padding-bottom: 8px;" valign=3D"top"
+align=3D"left">
+=09APP
+=09</td>
+=09</tr>
+=09
+=09<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;"
+valign=3D"top" align=3D"left"><table role=3D"presentation"
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+width: 100%; border-collapse: collapse;" width=3D"100%" cellspacing=3D"0"
+cellpadding=3D"0" border=3D"0">
+=09<tbody style=3D"padding: 0; margin: 0;"><tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 10px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_125&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjAz%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_8d3b3978d2e2e29d8fc930f77fd692b=
+d9c04ceaa1a6ec8874ce37bcc976f5481
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_126&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjA3%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_7bff58a8dd8154ff6385d031267fe162=
+ca2637caee9086b8dffe6ffb07ec2ffd
+title=3D"apple store" alt=3D"apple store" style=3D"-ms-interpolation-mode:
+bicubic; height: auto; line-height: 100%; outline: none;
+text-decoration: none; padding: 0; margin: 0; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;
+padding-right: 10px;" valign=3D"top" align=3D"left"><a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_127&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjEx%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_870d315e04e3f9eeba6024752382421=
+8685fd39943881c82193c8f99b708a1f0
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; outline: none;
+text-decoration: none;">
+=09<img
+src=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_47=
+00604_1_128&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjE0%7CQTVKNGloa0hsdw%3D%3D%7=
+CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_1fc23440b00aad1fc360fa6ed1477abc=
+7e4cac9300c158be5c9922f4c8b15f45
+title=3D"Google store" alt=3D"Google store" style=3D"-ms-interpolation-mode=
+:
+bicubic; height: auto; line-height: 100%; outline: none;
+text-decoration: none; padding: 0; margin: 0; display: block; border: 0;
+width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+=09</tr>
+=09</tbody></table>
+=09</td>
+=09</tr>
+
+</tbody></table>
+</td>
+
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace:
+0pt; padding: 0; margin: 0;" width=3D"60" valign=3D"top"
+align=3D"left">&nbsp;</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+  =20
+  =20
+<tr>
+=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;
+mso-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-size:
+12px; line-height: 20px; color: #ffffff; font-family: Arial, Helvetica,
+sans-serif; padding: 14px 15px 4px;" valign=3D"top" height=3D"162"
+bgcolor=3D"#000000" align=3D"center">
+=09=09
+=09=09=09You received this message because you've registered or accepted ou=
+r
+invitation to receive emails from SHEIN, or you've made a purchase from
+&#65279;S&#65279;H&#65279;E&#65279;I&#65279;N&#65279;.&#65279;c&#65279;o&#6=
+5279;m&#65279;.&#65279;<br
+style=3D"padding: 0; margin: 0;">
+
+=09=09=09Please note: to stop receiving emails, click on the <a
+href=3D"https://link-edmph.sheinemail.com/u/un.php?par=3DA5J4ihkHlw_4700604=
+_548448_$sid$&_esuh=3D_11_3243f8125c030338ed989a5b781bf92bd3e80e65bf29a1939=
+19674e0a2247f08"
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+underline; color: #ffffff; font-weight: 0;">UNSUBSCRIBE</a> button, and
+do not directly reply to this email, as this email was generated
+automatically and thus your unsubscription request will not be
+processed.<br style=3D"padding: 0; margin: 0;">
+
+=09=09=09Please contact our <a
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_129&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjE3%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_a4605c650d93ca9b708c2e0f227ce9e=
+c4dd2f1ece80126377486f0c77d99e5fc
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; text-decoration:
+underline; color: #ffffff; outline: none; font-weight: 0;">customer
+service</a> if you have any questions.<br style=3D"padding: 0; margin:
+0;">
+=09=09=09
+=09=09=091&#65279;1&#65279;2&#65279;
+R&#65279;o&#65279;b&#65279;i&#65279;n&#65279;s&#65279;o&#65279;n
+R&#65279;o&#65279;a&#65279;d #0&#65279;3&#65279;-&#65279;0&#65279;1
+R&#65279;o&#65279;b&#65279;i&#65279;n&#65279;s&#65279;o&#65279;n
+1&#65279;1&#65279;2
+S&#65279;i&#65279;n&#65279;g&#65279;a&#65279;p&#65279;o&#65279;r&#65279;e<b=
+r
+style=3D"padding: 0; margin: 0;">
+
+=09=09=09<a title=3D"Privacy POLICY"
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_130&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjIx%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_fce20310f66361fcfd4b3d99f03dd03=
+766990e068dedab2543a90a8a7376abfe
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; color: #ffffff;
+text-transform: uppercase; text-decoration: underline;">Privacy
+POLICY</a> | <a title=3D"Conditions & Terms"
+href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4=
+700604_1_131&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNjI0%7CQTVKNGloa0hsdw%3D%3D%=
+7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_9362584ce6596714eb8a5e0e1f5d9cd=
+9619f6d926229da816e3740804588c0d8
+target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%; padding: 0; margin: 0; color: #ffffff;
+text-transform: uppercase; text-decoration: underline;">Conditions &
+Terms</a><br style=3D"padding: 0; margin: 0;">&nbsp;
+=09</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+
+
+=20
+=09=09=09</tbody></table> =20
+=09=09</td>
+=09</tr>
+</tbody></table>
+   =20
+</body>
+</html>
+
+----=_---NextPart--=_-19ZYWTIOzz
+Content-Type: text/html; charset=utf-8
+Content-transfer-encoding: quoted-printable
+
+<!DOCTYPE html>
+<html lang=3D"en" xmlns:v=3D"urn:schemas-microsoft-com:vml" xmlns:o=3D"urn:=
+schemas-microsoft-com:office:office">
+<head>
+<meta charset=3D"utf-8">
+<meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3DEdge, chrome=3D1">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0, maximum-scale=3D1.0, user-scalable=3Dno">
+<meta name=3D"format-detection" content=3D"telephone=3Dno">
+<meta name=3D"format-detection" content=3D"date=3Dno">
+<meta name=3D"format-detection" content=3D"address=3Dno">
+<meta name=3D"format-detection" content=3D"email=3Dno">
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"color-scheme" content=3D"light dark">
+<meta name=3D"supported-color-schemes" content=3D"light dark">
+<title>SHEIN</title>
+<!--[if mso]>
+<xml>
+<o:OfficeDocumentSettings>
+<o:AllowPNG/>
+<o:PixelsPerInch>96</o:PixelsPerInch>
+</o:OfficeDocumentSettings>
+</xml>
+<![endif]-->
+<style>
+
+:root {
+color-scheme: light dark;
+supported-color-schemes: light dark;
+}
+@media (prefers-color-scheme: dark ) {
+body{background:#111111 !important;}
+.darkModeHack1{
+background:#4C8FF7 !important;
+}
+.darkModeHack2{
+color:#ffffff !important;
+}
+.darkModeHack3{
+border-bottom-color:#ffffff !important;
+}
+}
+
+div[style*=3D"margin: 16px 0;"] {
+margin: 0 !important;
+}
+body, table, td, a {
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;
+}
+table, td {
+mso-table-lspace: 0pt;
+mso-table-rspace: 0pt;
+}
+img {
+-ms-interpolation-mode: bicubic;
+}
+
+.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font,=
+ .ExternalClass td, .ExternalClass div {
+line-height: 100%;
+}
+
+img {
+border: 0;
+height: auto;
+line-height: 100%;
+outline: none;
+text-decoration: none;
+}
+table {
+border-collapse: collapse !important;
+}
+body {
+height: 100% !important;
+width: 100% !important;
+}
+th {
+padding: 0 !important;
+margin: 0 !important;
+border: 0 !important;
+}
+
+a[x-apple-data-detectors] {
+color: inherit !important;
+text-decoration: none !important;
+font-size: inherit !important;
+font-family: inherit !important;
+font-weight: inherit !important;
+line-height: inherit !important;
+}
+
+@media screen and (max-width: 480px) {
+.mobile-hide {
+display: none !important;
+}
+.mobile-center {
+text-align: center !important;
+}
+}
+@media print{ #_two50 { background-image:url('http://analytics.shein.com/ea=
+/UUSBmwKLkx/?t=3Dp&e=3D************************@gmail.com&c=3D4700604&langu=
+age=3DEN&origincountry=3DPH'); } } blockquote #_two50, #mailContainerBody #=
+_two50, div.OutlookMessageHeader, table.moz-email-headers-table { backgroun=
+d-image:url('http://analytics.shein.com/ea/UUSBmwKLkx/?t=3Df&e=3Dcavaneyroe=
+ricajoysarilan@gmail.com&c=3D4700604&language=3DEN&origincountry=3DPH'); }
+</style>
+</head>
+<body class=3D"body" style=3D"margin:0; padding:0; width:100% !important;">
+<div style=3D"display: none; margin: 0; padding: 0; width: 0px; max-height:=
+ 0px; overflow: hidden; font-size: 0; line-height: 0;">
+<table class=3D"hidden" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0;=
+ margin: 0; border-collapse: collapse;" width=3D"100%" cellspacing=3D"0" ce=
+llpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; font-fam=
+ily: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 0; mso-line-h=
+eight-rule: exactly; line-height: 1;" valign=3D"top" align=3D"left">*Adds E=
+verything To Basket*</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; font-fam=
+ily: Arial, Helvetica, sans-serif; color: #ffffff; font-size: 0; mso-line-h=
+eight-rule: exactly; line-height: 1;" valign=3D"top" align=3D"left">&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&=
+nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbs=
+p;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&=
+zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwn=
+j;&nbsp;&zwnj;&nbsp;&zwnj; </td>
+</tr>
+</table>
+</div>
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" width=3D"100%" cellspacing=3D"=
+0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; font-size: 0; line-height: 0; border-collaps=
+e: collapse;" width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0=
+" align=3D"center">
+<tr>
+<td valign=3D"top" align=3D"center">
+<div id=3D"_two50"></div> <img id=3D"_two50_img" src=3D"http://analytics.sh=
+ein.com/ea/UUSBmwKLkx/?e=3D************************%40gmail.com&c=3D4700604=
+&language=3DEN&origincountry=3DPH" width=3D"1" height=3D"1" style=3D"margin=
+:0 !important; padding:0 !important; border:0 !important; height:1px !impor=
+tant; width:1px !important;">
+</td>
+</tr>
+<tr>=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 1=
+00%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" =
+valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; border-collapse: collapse;" width=3D"620" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; font-siz=
+e: 12px; line-height: 16px; color: #423f40; text-align: left; font-family: =
+Arial;">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_1&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzcz%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_cbaaab6e374157b77e2e8aff3854e6=
+ff3a9e27238bf3cc9c8928abc4f709fa5e" title=3D"Adds Everything To Basket" tar=
+get=3D"_blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjus=
+t: 100%; padding: 0; margin: 0; outline: none; color: #423f40; text-decorat=
+ion: none; font-family: Arial;" class=3D"darkModeHack2">*Adds Everything To=
+ Basket*</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; border-collapse: collapse;" width=3D"620" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 18px 0;" va=
+lign=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_2&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc0%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_919d8ef97faee85341b81bc9734256=
+d3b37038dbab6bfc08a9ae7fcc4be19058" title=3D"SHEIN" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; outline: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/lo=
+go_new.jpg" width=3D"620" alt=3D"SHEIN" style=3D"display: block; border: 0;=
+ width: 100%;">
+</a>
+</td>
+</tr> <tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; font-siz=
+e: 14px; color: #000000; padding-right: 10px; text-align: right; line-heigh=
+t: 20px; font-family: Arial;" class=3D"darkModeHack2" height=3D"20">
+<a href=3D"https://link-edmph.sheinemail.com/u/un.php?par=3DA5J4ihkHlw_4700=
+604_548448_$sid$&_esuh=3D_11_3243f8125c030338ed989a5b781bf92bd3e80e65bf29a1=
+93919674e0a2247f08" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-=
+adjust: 100%; padding: 0; margin: 0; text-decoration: none; color: #000000;=
+ outline: none;" target=3D"_blank" class=3D"darkModeHack2">Unsubscribe</a> =
+| <a href=3D"https://link-edmph.sheinemail.com/u/gm.php?prm=3DA5J4ihkHlw_91=
+4622850_4700604_548448&_esuh=3D_11_f98a2ec6793bf7b4d0ac47b40e882e1d9e786020=
+36c7a89567db56c223475ef6" style=3D"-webkit-text-size-adjust: 100%; -ms-text=
+-size-adjust: 100%; padding: 0; margin: 0; text-decoration: none; color: #0=
+00000; outline: none;" target=3D"_blank" class=3D"darkModeHack2">View in Br=
+owser</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 10px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; border-collapse: collapse;" width=3D"620" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tr style=3D"padding: 0; margin: 0;" align=3D"center">
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-family: Arial; =
+font-weight: 600; font-size: 16px; line-height: 20px; text-transform: upper=
+case; padding: 10px 0;" width=3D"25%">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_3&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc1%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_247a3d69ba3f74dd966ca0a1bfe343=
+151d9a492dc8c23bfec3e6ba17a8642a2b" title=3D"WOMEN" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; color: #000000; font-family: Arial; text=
+-transform: uppercase;" class=3D"darkModeHack2">WOMEN</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-family: Arial; =
+font-weight: 600; font-size: 16px; line-height: 20px; text-transform: upper=
+case; padding: 10px 0;" width=3D"25%">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_4&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc2%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_a529dbcee6e0021f3eaec03d0a86da=
+8d6369849dd9ee828ba81d20fb01072ef8" title=3D"PLUS" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; color: #000000; font-family: Arial; text=
+-transform: uppercase;" class=3D"darkModeHack2">PLUS</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-family: Arial; =
+font-weight: 600; font-size: 16px; line-height: 20px; text-transform: upper=
+case; padding: 10px 0;" width=3D"20%">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_5&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc3%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_423d542c9e624994dd4116920bd164=
+406752f7f8788edbf7f261b638400fef80" title=3D"MEN" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; color: #000000; font-family: Arial; text=
+-transform: uppercase;" class=3D"darkModeHack2">MEN</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-family: Arial; =
+font-weight: 600; font-size: 16px; line-height: 20px; text-transform: upper=
+case; padding: 10px 0;" width=3D"30%">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_6&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc4%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_f2c7a1e19bceb16defecabadcdfef3=
+804564e7ce23f805e1c5fe78d6ce348349" title=3D"KIDS" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; color: #000000; font-family: Arial; text=
+-transform: uppercase;" class=3D"darkModeHack2">KIDS</a>
+</td>
+</tr>
+</table>=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 10px;" valign=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_7&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzc5%7CQTVKNGloa0hsdw%3D%3D=
+%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_8891886b98136248b58b203f87882e=
+a31b337cbd25f5de1a0f4b0ebf06d87e61" title=3D"Treat yourself" target=3D"_bla=
+nk" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; pa=
+dding: 0; margin: 0; outline: none; text-decoration: none;"> <img src=3D"ht=
+tps://shein.ltwebstatic.com/edm_email/shein/us/images_A_one_one_us-couponex=
+pire/edm_02.jpg" style=3D"-ms-interpolation-mode: bicubic; height: auto; li=
+ne-height: 100%; outline: none; text-decoration: none; padding: 0; margin: =
+0; display: block; border: 0; width: 100%;" alt=3D"Treat yourself" width=3D=
+"620" border=3D"0">
+</a>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 20px 0 0;" =
+valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; border-collapse: collapse;" width=3D"620" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"left">=09<!--[if !mso]><!-->=09<a href=3D"https://link-ed=
+mph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_8&ems_l=3D5905=
+329&i=3D1&d=3DNDgyOTMzMzgw%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE=
+%3D%7C&_esuh=3D_11_038f3fbcf33bfcf95714e3083d8b68f06cf0f61715aa4c90e6b83781=
+cd0c171a" title=3D"Treat yourself" target=3D"_blank" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; outli=
+ne: none; text-decoration: none;">
+<div style=3D"padding: 0; margin: 0;">=09<!--<![endif]-->
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; backgrou=
+nd: url(https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_one1_=
+ph_yhq/edm_02.png) 100% 100% no-repeat; width: 620px; height: 132px;" width=
+=3D"620" valign=3D"top" height=3D"132" background=3D"https://shein.ltwebsta=
+tic.com/edm_email/shein/ph/images_A_one_one1_ph_yhq/edm_02.png" align=3D"le=
+ft">=09<!--[if mso]>
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne1_ph_yhq/edm_02.png" alt=3D"coupon" width=3D"620" height=3D"132" border=
+=3D"0" style=3D"display: block;width:620px; height:132px;" />
+<v:rect xmlns:v=3D"urn:schemas-microsoft-com:vml" fill=3D"false" stroke=3D"=
+false" style=3D"position:relative;top:0;left:0;width:620px; height:132px;" =
+href=3D"https://app.shein.com/7/33oxsf3vc5fq">=09<v:textbox inset=3D"0,0,0,=
+0">
+<![endif]-->
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100" cel=
+lspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 16px 30px 0=
+;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center"> <tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 4=
+9%;" width=3D"49%" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-right: 1px dashed #ffffff; border-coll=
+apse: collapse;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=
+=3D"0" align=3D"center">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+ffffff; font-family: Arial, Helvetica, sans-serif; text-align: center; font=
+-size: 20px; mso-line-height-rule: exactly; line-height: 24px;" valign=3D"t=
+op" align=3D"center">
+Available Offer:=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; color: #ffffff; font=
+-family: Arial, Helvetica, sans-serif; text-align: center; font-size: 24px;=
+ mso-line-height-rule: exactly; line-height: 28px; font-weight: 600; paddin=
+g: 6px 0;" valign=3D"top" align=3D"center">
+=E2=82=B188.00 off =09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+ffffff; font-family: Arial, Helvetica, sans-serif; text-align: center; font=
+-size: 14px; mso-line-height-rule: exactly; line-height: 18px;" valign=3D"t=
+op" align=3D"center">
+Minimum Spending: =E2=82=B1880.00=09</td>
+</tr>
+</table>
+</td>=09<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: =
+100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; =
+width: 49%;" width=3D"49%" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0" align=3D"center">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; color: #ffffff; font=
+-family: Arial, Helvetica, sans-serif; text-align: center; font-size: 24px;=
+ mso-line-height-rule: exactly; line-height: 28px; padding: 18px 0;" valign=
+=3D"top" align=3D"center">
+Code: phcsn=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+ffffff; font-family: Arial, Helvetica, sans-serif; text-align: center; font=
+-size: 14px; mso-line-height-rule: exactly; line-height: 18px;" valign=3D"t=
+op" align=3D"center">
+Expired time: 2023-11-05 (UTC +8:00)=09</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+<!--[if mso]>
+</v:textbox>
+</v:rect>
+<![endif]-->
+</td>
+</tr>
+</table>
+<!--[if !mso]><!-->=09</div>
+</a>=09<!--<![endif]-->=09</td>
+</tr>
+=09=09=09=09</table>=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 30px; color: #000000; font-family: Arial, Helvetica, sans-serif; text-=
+align: center; font-size: 20px; mso-line-height-rule: exactly; line-height:=
+ 24px; text-transform: uppercase;" class=3D"darkModeHack2" valign=3D"top" a=
+lign=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_14&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzg2%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_299dbefed56e5f36fc19b904ca10d=
+ed788d0181c98a02bec93716f7f4b5ea05d" title=3D"Treat yourself" target=3D"_bl=
+ank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; p=
+adding: 0; margin: 0; outline: none; text-decoration: underline; color: #00=
+0000;" class=3D"darkModeHack2"> Treat yourself >
+</a>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 40px;" valign=3D"middle" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" align=3D"center"> <tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_15&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzg3%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_8acda27c791509d09e7bc01cd6306=
+c21f0d55b5fe9c3074ea0e9977d0e81f5aa" title=3D"Shop Now" target=3D"_blank" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding=
+: 0; margin: 0; outline: none; text-decoration: none;"> <img src=3D"https:/=
+/shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_one1_ph_yhq/edm_14.p=
+ng" style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height: 10=
+0%; outline: none; text-decoration: none; padding: 0; margin: 0; display: b=
+lock; border: 0; width: 620px;" alt=3D"Shop Now" width=3D"620" border=3D"0"=
+>
+</a>
+</td>
+</tr>
+</table>=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 40px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0" align=3D"center"> <tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_16&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzg4%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_68a2215019386fe3041bbfb98eeae=
+3946607a84e0a906ee1830965062105b6cf" title=3D"Flash sale" target=3D"_blank"=
+ style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; paddi=
+ng: 0; margin: 0; outline: none; text-decoration: none;"> <img src=3D"https=
+://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_one1_ph_yhq/edm3_1=
+6.png" style=3D"-ms-interpolation-mode: bicubic; height: auto; line-height:=
+ 100%; outline: none; text-decoration: none; padding: 0; margin: 0; display=
+: block; border: 0; width: 620px;" alt=3D"Flash sale" width=3D"620" border=
+=3D"0">
+</a>
+</td>
+</tr> </table>=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 45px 0 0; c=
+olor: #000000; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size=
+: 30px; mso-line-height-rule: exactly; line-height: 34px; font-weight: 600;=
+" class=3D"darkModeHack2" valign=3D"top" align=3D"center">SHOP BY CATEGORY<=
+/td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 40px 24px 2=
+0px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 15px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, H=
+elvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-=
+height: 22px;" width=3D"31%" valign=3D"top" align=3D"center"><a href=3D"htt=
+ps://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_17=
+&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzg5%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNm=
+Q1MjBmZTkyOTE%3D%7C&_esuh=3D_11_203dcabe34f451af0e1fbed60b47ce17cc9007c31e6=
+8a55fda5270d6b86da784" title=3D"TOPS" target=3D"_blank" style=3D"-webkit-te=
+xt-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; ou=
+tline: none; text-decoration: none; color: #ffffff;">TOPS</a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 3=
+%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 15px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, H=
+elvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-=
+height: 22px;" width=3D"31%" valign=3D"top" align=3D"center"><a href=3D"htt=
+ps://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_18=
+&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzkw%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNm=
+Q1MjBmZTkyOTE%3D%7C&_esuh=3D_11_9eaa459fc0b861415db63f3ff553f1ec88ccc6bc2ab=
+1ea786dff605372aad923" title=3D"BOTTOMS" target=3D"_blank" style=3D"-webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0;=
+ outline: none; text-decoration: none; color: #ffffff;">BOTTOMS</a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 3=
+%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 15px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, H=
+elvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-=
+height: 22px;" width=3D"31%" valign=3D"top" align=3D"center"><a href=3D"htt=
+ps://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_19=
+&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzkx%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNm=
+Q1MjBmZTkyOTE%3D%7C&_esuh=3D_11_ec5074f785e35dae659fcf6b074808a0462dcaacae1=
+37f01b24b9c6df7b2cb05" title=3D"DRESSES" target=3D"_blank" style=3D"-webkit=
+-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0;=
+ outline: none; text-decoration: none; color: #ffffff;">DRESSES</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0 24px 40px=
+;" valign=3D"middle" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0"> <tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 16px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, H=
+elvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-=
+height: 22px;" width=3D"31%" valign=3D"middle" align=3D"center"><a href=3D"=
+https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1=
+_20&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzky%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDR=
+kNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_a38871a50012e08fee109a38f68d2fa75a3bfefe=
+f662efb298a856f7f5ecbd5b" title=3D"DENIM" target=3D"_blank" style=3D"-webki=
+t-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0=
+; outline: none; text-decoration: none; color: #ffffff;">DENIM</a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 3=
+%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 5px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, He=
+lvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-h=
+eight: 22px;" width=3D"31%" valign=3D"middle" align=3D"center"><a href=3D"h=
+ttps://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_=
+21&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzkz%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRk=
+NmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_ad6662c7e463516f41beb67c7dd81b87e1a940310=
+321c8fe42170011d6b386f2" title=3D"LINGERIE & LOUNGEWEAR" target=3D"_blank" =
+style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; paddin=
+g: 0; margin: 0; outline: none; text-decoration: none; color: #ffffff;">LIN=
+GERIE & LOUNGEWEAR</a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 3=
+%;" width=3D"3%" valign=3D"top" align=3D"center"></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; width: 31%; padding:=
+ 16px 0; background: #f06292; color: #ffffff; font-family: Tahoma, Arial, H=
+elvetica, sans-serif; font-size: 18px; mso-line-height-rule: exactly; line-=
+height: 22px;" width=3D"31%" valign=3D"middle" align=3D"center"><a href=3D"=
+https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1=
+_22&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk0%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDR=
+kNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_cf4ec8017fbd337f94d9b5a5041251c53e99c6dd=
+33cadb70519cae7c8d8b4694" title=3D"SHOES & BAGS" target=3D"_blank" style=3D=
+"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; ma=
+rgin: 0; outline: none; text-decoration: none; color: #ffffff;">SHOES & BAG=
+S</a></td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 30px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 620px; border-collapse: collapse;" width=3D"620" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_23&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk1%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_60f0f2047a6b942b60e92b45959fd=
+327cc29d24204b46f84bde0017de78cb8d0" title=3D"Women" target=3D"_blank" styl=
+e=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0=
+; margin: 0; text-decoration: none; display: block; color: #000000; outline=
+: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne2_ph_point/edm_09.jpg" style=3D"-ms-interpolation-mode: bicubic; height: =
+auto; line-height: 100%; outline: none; text-decoration: none; padding: 0; =
+margin: 0; display: block; border: 0; width: 100%;" alt=3D"Women" width=3D"=
+144" border=3D"0"></a>
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+000000; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 14px;=
+ mso-line-height-rule: exactly; line-height: 22px; text-transform: uppercas=
+e; padding-top: 12px;" valign=3D"top" align=3D"center">=09<a href=3D"https:=
+//link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_24&em=
+s_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk2%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1M=
+jBmZTkyOTE%3D%7C&_esuh=3D_11_ad76bda6edd0a3f8a5d83a89893fed38b482d45ed5e9ac=
+bbd70016bcea501fdf" title=3D"Women" target=3D"_blank" style=3D"-webkit-text=
+-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; text=
+-decoration: none; display: block; color: #000000; outline: none;" class=3D=
+"darkModeHack2">shop now></a>=09</td>
+</tr> </table>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 0 14px;" va=
+lign=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_25&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk3%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_4954c5fe3949975c5f667fdf71848=
+3d5eb09ab8c8e6685555f198aa7c8b026f7" title=3D"Plus" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; display: block; color: #000000; outline:=
+ none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne2_ph_point/edm_11.jpg" style=3D"-ms-interpolation-mode: bicubic; height: =
+auto; line-height: 100%; outline: none; text-decoration: none; padding: 0; =
+margin: 0; display: block; border: 0; width: 100%;" alt=3D"Plus" width=3D"1=
+44" border=3D"0"></a>
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+000000; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 14px;=
+ mso-line-height-rule: exactly; line-height: 22px; text-transform: uppercas=
+e; padding-top: 12px;" valign=3D"top" align=3D"center">=09<a href=3D"https:=
+//link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_26&em=
+s_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk4%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1M=
+jBmZTkyOTE%3D%7C&_esuh=3D_11_b1ca1f0509a214f5138c06fd4d265f14631226ab4606cd=
+e8db4835416f673cbc" title=3D"Plus" target=3D"_blank" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; text-=
+decoration: none; display: block; color: #000000; outline: none;" class=3D"=
+darkModeHack2">=09shop now>
+</a>
+</td>
+</tr> </table>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 14px;" valign=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_27&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzMzk5%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_cf8bd9088696482a367288f5acbe9=
+8e549b68d5cabda2e55d27776e401993b2f" title=3D"Men" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; display: block; color: #000000; outline:=
+ none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne2_ph_point/edm_13.jpg" style=3D"-ms-interpolation-mode: bicubic; height: =
+auto; line-height: 100%; outline: none; text-decoration: none; padding: 0; =
+margin: 0; display: block; border: 0; width: 100%;" alt=3D"Men" width=3D"14=
+4" border=3D"0">=09</a>
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+000000; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 14px;=
+ mso-line-height-rule: exactly; line-height: 22px; text-transform: uppercas=
+e; padding-top: 12px;" valign=3D"top" align=3D"center">=09<a href=3D"https:=
+//link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_28&em=
+s_l=3D5905329&i=3D1&d=3DNDgyOTMzNDAw%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1M=
+jBmZTkyOTE%3D%7C&_esuh=3D_11_9e6f7aecf3ef9a3f131ab3126a4ec587da6f16510220ba=
+5665bd0bacef3f3b3e" title=3D"Men" target=3D"_blank" style=3D"-webkit-text-s=
+ize-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; text-d=
+ecoration: none; display: block; color: #000000; outline: none;" class=3D"d=
+arkModeHack2">=09shop now>
+</a>
+</td>
+</tr> </table>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_29&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDAx%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_ca45fe368cac2ea9c4188b2231c3f=
+7074ca13b1924b7c14422306cb5284a2854" title=3D"Kids" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; display: block; color: #000000; outline:=
+ none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne2_ph_point/edm_15.jpg" style=3D"-ms-interpolation-mode: bicubic; height: =
+auto; line-height: 100%; outline: none; text-decoration: none; padding: 0; =
+margin: 0; display: block; border: 0; width: 100%;" alt=3D"Kids" width=3D"1=
+44" border=3D"0"></a>
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; border-collapse: collapse;" cellspacing=3D"0" cellpadding=
+=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; color: #=
+000000; font-family: Tahoma, Arial, Helvetica, sans-serif; font-size: 14px;=
+ mso-line-height-rule: exactly; line-height: 22px; text-transform: uppercas=
+e; padding-top: 12px;" valign=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_30&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDAy%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_e6ead1329bf0bbe4ccdf9fd646778=
+05310e5ce1b00e615636d5058d447d3fdf2" title=3D"Kids" target=3D"_blank" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0;=
+ margin: 0; text-decoration: none; display: block; color: #000000; outline:=
+ none;" class=3D"darkModeHack2">
+shop now>
+</a>
+</td>
+</tr> </table>
+</td>
+</tr>
+</table>=09</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; padding: 40px 10px 3=
+0px;" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_31&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDAz%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_6126a504091723f6e0d81f26a6837=
+a1e3cd43e13485e6bbdd9cac3a8bd0e8e5e" title=3D"giftcard" target=3D"_blank" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding=
+: 0; margin: 0; text-decoration: none; display: block; color: #000000; outl=
+ine: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne_ph_point/edm_22.jpg" style=3D"-ms-interpolation-mode: bicubic; height: a=
+uto; line-height: 100%; outline: none; text-decoration: none; padding: 0; m=
+argin: 0; border: 0; display: block; width: 100%;" alt=3D"giftcard" width=
+=3D"192" border=3D"0">
+</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 1=
+2px;">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_32&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDA0%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_c8fc51964017dd0034287ff80414f=
+48121f2ec997345a640b40a9308dee42a70" title=3D"Shipping-Info" target=3D"_bla=
+nk" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; pa=
+dding: 0; margin: 0; text-decoration: none; display: block; color: #000000;=
+ outline: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne_ph_point/edm_24.jpg" style=3D"-ms-interpolation-mode: bicubic; height: a=
+uto; line-height: 100%; outline: none; text-decoration: none; padding: 0; m=
+argin: 0; border: 0; display: block; width: 100%;" alt=3D"Shipping-Info" wi=
+dth=3D"192" border=3D"0">
+</a>
+</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 1=
+2px;">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_54844=
+8_4700604_1_33&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDA1%7CQTVKNGloa0hsdw%3D%3=
+D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_0c850ba28d350375325a53399b7d7=
+0bf5749974609b0d55fb122384135f30988" title=3D"points" target=3D"_blank" sty=
+le=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding: =
+0; margin: 0; text-decoration: none; display: block; color: #000000; outlin=
+e: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/ph/images_A_one_o=
+ne_ph_point/edm_26.jpg" style=3D"-ms-interpolation-mode: bicubic; height: a=
+uto; line-height: 100%; outline: none; text-decoration: none; padding: 0; m=
+argin: 0; border: 0; display: block; width: 100%;" alt=3D"points" width=3D"=
+192" border=3D"0">
+</a>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; backgrou=
+nd: #000000;" valign=3D"top" bgcolor=3D"#000000" align=3D"center">
+<table role=3D"presentation" class=3D"width100p" style=3D"-webkit-text-size=
+-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-table=
+-rspace: 0pt; padding: 0; margin: 0; width: 620px; border-collapse: collaps=
+e;" width=3D"620" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; background: #000000; border-collapse: collapse;" width=3D"=
+100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0" bgcolor=3D"#000000">
+<tr>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%; -ms-te=
+xt-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding=
+: 0; margin: 0;" width=3D"60" valign=3D"top" align=3D"left">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" width=
+=3D"65%" valign=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 70%; border-collapse: collapse;" width=3D"70%" cell=
+spacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 20px; font-family: Arial; font-size: 15px; line-height: 20px; color: #=
+ffffff; text-align: left; font-weight: bold; text-transform: uppercase; pad=
+ding-bottom: 8px;" valign=3D"top" align=3D"left">
+Find us on
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"center">
+<table role=3D"presentation" style=3D"-webkit-text-size-adjust: 100%; -ms-t=
+ext-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; paddin=
+g: 0; margin: 0; width: 100%; border-collapse: collapse;" width=3D"100%" ce=
+llspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 5px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.sh=
+einemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_34&ems_l=3D5905329&i=
+=3D1&d=3DNDgyOTMzNDA2%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7=
+C&_esuh=3D_11_359e7b56fce416847a92291046aad6070b6e880060a6374ae4f0970a3ffd2=
+40b" title=3D"facebook" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: no=
+ne;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-01.jpg" title=3D"facebook" alt=3D"facebook" style=3D"-ms-interpolation-=
+mode: bicubic; height: auto; line-height: 100%; outline: none; text-decorat=
+ion: none; padding: 0; margin: 0; padding-right: 0px; display: block; borde=
+r: 0; width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 5px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.sh=
+einemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_35&ems_l=3D5905329&i=
+=3D1&d=3DNDgyOTMzNDA3%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7=
+C&_esuh=3D_11_9d97ab6d0429f90dfefc9610de437f9d364f2c01c90ae89d45e6714cdb7fd=
+e63" title=3D"instagram" style=3D"-webkit-text-size-adjust: 100%; -ms-text-=
+size-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: n=
+one;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-02.jpg" title=3D"instagram" alt=3D"instagram" style=3D"-ms-interpolatio=
+n-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decor=
+ation: none; padding: 0; margin: 0; padding-right: 0px; display: block; bor=
+der: 0; width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 5px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.sh=
+einemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_36&ems_l=3D5905329&i=
+=3D1&d=3DNDgyOTMzNDA4%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7=
+C&_esuh=3D_11_2f39f51fd122b80428d130c064ca982d107a9fe484520fab39188be288f41=
+b6f" title=3D"twitter" style=3D"-webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: non=
+e;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-03.jpg" title=3D"twitter" alt=3D"twitter" style=3D"-ms-interpolation-mo=
+de: bicubic; height: auto; line-height: 100%; outline: none; text-decoratio=
+n: none; padding: 0; margin: 0; padding-right: 0px; display: block; border:=
+ 0; width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 5px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.sh=
+einemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_37&ems_l=3D5905329&i=
+=3D1&d=3DNDgyOTMzNDA5%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7=
+C&_esuh=3D_11_7138da6c813317b991449b7ad51232cb39216bcce119ee46c83f1354f1c3e=
+e53" title=3D"youtube" style=3D"-webkit-text-size-adjust: 100%; -ms-text-si=
+ze-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: non=
+e;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-04.jpg" title=3D"youtube" alt=3D"youtube" style=3D"-ms-interpolation-mo=
+de: bicubic; height: auto; line-height: 100%; outline: none; text-decoratio=
+n: none; padding: 0; margin: 0; padding-right: 0px; display: block; border:=
+ 0; width: 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"left"><a href=3D"https://link-edmph.sheinemail.com/u/nrd.=
+php?p=3DA5J4ihkHlw_548448_4700604_1_38&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzND=
+Ew%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_b9d90=
+e63e3cc325bbe6dcb4cc48317036094a02e0ea7ecf731af775c9a4964e1" title=3D"pinte=
+rest" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; =
+padding: 0; margin: 0; outline: none; text-decoration: none;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-05.jpg" title=3D"pinterest" alt=3D"pinterest" style=3D"-ms-interpolatio=
+n-mode: bicubic; height: auto; line-height: 100%; outline: none; text-decor=
+ation: none; padding: 0; margin: 0; display: block; border: 0; width: 38px;=
+" width=3D"38" height=3D"38" border=3D"0"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%; -ms-te=
+xt-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding=
+: 0; margin: 0;" width=3D"60" valign=3D"top" align=3D"left">&nbsp;</td>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%; -ms-te=
+xt-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding=
+: 0; margin: 0;" width=3D"60" valign=3D"top" align=3D"left">&nbsp;</td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" width=
+=3D"35%" valign=3D"top" align=3D"center"><table role=3D"presentation" style=
+=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-l=
+space: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; width: 40%; borde=
+r-collapse: collapse;" width=3D"40%" cellspacing=3D"0" cellpadding=3D"0" bo=
+rder=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+top: 20px; font-family: Arial; font-size: 15px; line-height: 20px; color: #=
+ffffff; text-align: left; font-weight: bold; text-transform: uppercase; pad=
+ding-bottom: 8px;" valign=3D"top" align=3D"left">
+APP
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0;" valign=
+=3D"top" align=3D"left"><table role=3D"presentation" style=3D"-webkit-text-=
+size-adjust: 100%; -ms-text-size-adjust: 100%; mso-table-lspace: 0pt; mso-t=
+able-rspace: 0pt; padding: 0; margin: 0; width: 100%; border-collapse: coll=
+apse;" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" border=3D"0">
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 10px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.s=
+heinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_39&ems_l=3D5905329&=
+i=3D1&d=3DNDgyOTMzNDEy%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%=
+7C&_esuh=3D_11_b4e658917a7f39f7c0342ae51ea6742ca0dbf382cf568163949ad90a2eb4=
+ba5e" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: no=
+ne;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-09.jpg" title=3D"apple store" alt=3D"apple store" style=3D"-ms-interpol=
+ation-mode: bicubic; height: auto; line-height: 100%; outline: none; text-d=
+ecoration: none; padding: 0; margin: 0; display: block; border: 0; width: 3=
+8px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; padding: 0; margin: 0; padding-=
+right: 10px;" valign=3D"top" align=3D"left"><a href=3D"https://link-edmph.s=
+heinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700604_1_40&ems_l=3D5905329&=
+i=3D1&d=3DNDgyOTMzNDE0%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%=
+7C&_esuh=3D_11_09a2b3088b5e62cfa22de2c24019dee2129b752183abf461d225b7db9f58=
+dbd9" target=3D"_blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-s=
+ize-adjust: 100%; padding: 0; margin: 0; outline: none; text-decoration: no=
+ne;">
+<img src=3D"https://shein.ltwebstatic.com/edm_email/shein/www/icon_SHEIN/sn=
+s-w-10.jpg" title=3D"Google store" alt=3D"Google store" style=3D"-ms-interp=
+olation-mode: bicubic; height: auto; line-height: 100%; outline: none; text=
+-decoration: none; padding: 0; margin: 0; display: block; border: 0; width:=
+ 38px;" width=3D"38" height=3D"38" border=3D"0"></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</td>
+<td class=3D"mobile_hidden" style=3D"-webkit-text-size-adjust: 100%; -ms-te=
+xt-size-adjust: 100%; mso-table-lspace: 0pt; mso-table-rspace: 0pt; padding=
+: 0; margin: 0;" width=3D"60" valign=3D"top" align=3D"left">&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; ms=
+o-table-lspace: 0pt; mso-table-rspace: 0pt; margin: 0; font-size: 12px; lin=
+e-height: 20px; color: #ffffff; font-family: Arial, Helvetica, sans-serif; =
+padding: 14px 15px 4px;" valign=3D"top" height=3D"162" bgcolor=3D"#000000" =
+align=3D"center">
+You received this message because you've registered or accepted our invitat=
+ion to receive emails from SHEIN, or you've made a purchase from &#65279;S&=
+#65279;H&#65279;E&#65279;I&#65279;N&#65279;.&#65279;c&#65279;o&#65279;m&#65=
+279;.&#65279;<br style=3D"padding: 0; margin: 0;">
+Please note: to stop receiving emails, click on the <a href=3D"https://link=
+-edmph.sheinemail.com/u/un.php?par=3DA5J4ihkHlw_4700604_548448_$sid$&_esuh=
+=3D_11_3243f8125c030338ed989a5b781bf92bd3e80e65bf29a193919674e0a2247f08" ta=
+rget=3D"_blank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adju=
+st: 100%; padding: 0; margin: 0; text-decoration: underline; color: #ffffff=
+; font-weight: 0;">UNSUBSCRIBE</a> button, and do not directly reply to thi=
+s email, as this email was generated automatically and thus your unsubscrip=
+tion request will not be processed.<br style=3D"padding: 0; margin: 0;">
+Please contact our <a href=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=
+=3DA5J4ihkHlw_548448_4700604_1_41&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDE2%7C=
+QTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_acc377df64=
+231b369af0eecaac6876289142eb447812815c541ecc6671d8513e" target=3D"_blank" s=
+tyle=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; padding=
+: 0; margin: 0; text-decoration: underline; color: #ffffff; outline: none; =
+font-weight: 0;">customer service</a> if you have any questions.<br style=
+=3D"padding: 0; margin: 0;">
+1&#65279;1&#65279;2&#65279; R&#65279;o&#65279;b&#65279;i&#65279;n&#65279;s&=
+#65279;o&#65279;n R&#65279;o&#65279;a&#65279;d #0&#65279;3&#65279;-&#65279;=
+0&#65279;1 R&#65279;o&#65279;b&#65279;i&#65279;n&#65279;s&#65279;o&#65279;n=
+ 1&#65279;1&#65279;2 S&#65279;i&#65279;n&#65279;g&#65279;a&#65279;p&#65279;=
+o&#65279;r&#65279;e<br style=3D"padding: 0; margin: 0;">
+<a title=3D"Privacy POLICY" href=3D"https://link-edmph.sheinemail.com/u/nrd=
+.php?p=3DA5J4ihkHlw_548448_4700604_1_42&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzN=
+DE4%7CQTVKNGloa0hsdw%3D%3D%7CY2YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_6730=
+a4dce4b51590eff3bae980ea72a80442c5a579d85a7a723f14f865138213" target=3D"_bl=
+ank" style=3D"-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; p=
+adding: 0; margin: 0; color: #ffffff; text-transform: uppercase; text-decor=
+ation: underline;">Privacy POLICY</a> | <a title=3D"Conditions & Terms" hre=
+f=3D"https://link-edmph.sheinemail.com/u/nrd.php?p=3DA5J4ihkHlw_548448_4700=
+604_1_43&ems_l=3D5905329&i=3D1&d=3DNDgyOTMzNDIx%7CQTVKNGloa0hsdw%3D%3D%7CY2=
+YyNDRkNmQ1MjBmZTkyOTE%3D%7C&_esuh=3D_11_f11473df5343a97dd86722ee5a8283584ee=
+5335543c74a800325af70bb6f58c0" target=3D"_blank" style=3D"-webkit-text-size=
+-adjust: 100%; -ms-text-size-adjust: 100%; padding: 0; margin: 0; color: #f=
+fffff; text-transform: uppercase; text-decoration: underline;">Conditions &=
+ Terms</a><br style=3D"padding: 0; margin: 0;">&nbsp;
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>=09</td>
+</tr>
+</table>
+<img src=3D"https://link-edmph.sheinemail.com/mo/A5J4ihkHlw_914622850_47006=
+04_548448_5905329.gif" height=3D"2" width=3D"2" border=3D"0" alt=3D""></bod=
+y>
+</html>
+----=_---NextPart--=_-19ZYWTIOzz--

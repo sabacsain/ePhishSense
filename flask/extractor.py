@@ -1,19 +1,15 @@
-import imaplib
-import os
-import email
-import sys
-import re
+import email, re
 from extension_dt_model import DT_MODEL
 
-# ISSUE/S:
-# - CAN'T HANDLE MULTIPLE SIMILAR SUBJECTS
 
 class GMAIL_EXTRACTOR():
 
-    def initializeVariables(self):
+    # Intialize all the global variables to be used
+    def initializeVariables(self, input_subject, mail):
+        self.subject = input_subject
         self.usr = ""
         self.pwd = ""
-        self.mail = object
+        self.mail = mail
         self.mailbox = ""
         self.mailCount = 0
         self.destFolder = ""
@@ -22,130 +18,171 @@ class GMAIL_EXTRACTOR():
         self.idsList = []
 
         self.valueList = []
+        self.is_subject_found = True
 
-    def getLogin(self):
+    # Get Gmail credentials
+    # def getLogin(self):
         # print("\nPlease enter your Gmail login details below.")
         # self.usr = input("Email: ")
         # self.pwd = input("Password: ")
-        self.usr = 'senderephishsense@gmail.com'
-        self.pwd = 'sjbsxjfgyssynixo'
+        # self.usr = 'senderephishsense@gmail.com'
+        # self.pwd = 'sjbsxjfgyssynixo'
 
-    def attemptLogin(self):
-        self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
-        if self.mail.login(self.usr, self.pwd):
-            print("\nLogon SUCCESSFUL")
-            return True
-        else:
-            print("\nLogon FAILED")
-            return False
-
-    def checkIfUsersWantsToContinue(self):
-        # print(f"\n {self.mailbox}: {self.mailCount} emails")
-        return True 
+    # Login to the Gmail account
+    # def attemptLogin(self):
+    #     self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
+    #     if self.mail.login(self.usr, self.pwd):
+    #         print("\nLogon SUCCESSFUL")
+    #         return True
+    #     else:
+    #         print("\nLogon FAILED")
+    #         return False
         
+    # Choose which mailbox to be used
     def selectMailbox(self):
-        # self.mailbox = input("\nPlease type the name of the mailbox you want to extract, e.g. Inbox: ")
         self.mailbox = 'Inbox'
         bin_count = self.mail.select(self.mailbox)[1]
         self.mailCount = int(bin_count[0].decode("utf-8"))
         return True if self.mailCount > 0 else False
 
     def searchThroughMailbox(self):
+
         # type, self.data = self.mail.search(None, "ALL")
-        subject = 'SUBJECT "Test with URL"'            # change the SUBJECT as necessary
+        subject = f'SUBJECT "{self.subject}"'         
         type, self.data = self.mail.search(None, subject)
+     
+        # Check if no subject matches
+        if not type == 'OK' or not self.data[0]:
+            print('EMPTY')
+            return False
+
         self.ids = self.data[0]
         self.idsList = self.ids.split()
 
+        # NOTE: UNCOMMENT IF THERE IS A WAY FOR MORE THAN TWO EMAIL SUBJ.
+        # Check if subjects are more than 1
+        # if len(self.idsList) > 1:
+        #     print('subject more thatn 1')
+        #     # DO SOMETHING
+        #     # return True
+
+        #     # FOR TESTING PURPOSES
+        #     raise Exception
+        #     return False
+        return True      
+
+    # Parse Raw Email to get Sender, DKIM, URL
     def parseEmails(self):
         jsonOutput = {}
-        for anEmail in self.data[0].split():
-            type, self.data = self.mail.fetch(anEmail, '(UID RFC822)')
-            raw = self.data[0][1]
-            try:
-                raw_str = raw.decode("utf-8")
-            except UnicodeDecodeError:
-                try:
-                    raw_str = raw.decode("ISO-8859-1") # ANSI support
-                except UnicodeDecodeError:
-                    try:
-                        raw_str = raw.decode("ascii") # ASCII ?
-                    except UnicodeDecodeError:
-                        pass
-						
-            msg = email.message_from_string(raw_str)
 
-            
-            # jsonOutput['subject'] = msg['subject']
-            # jsonOutput['date'] = msg['date']
+        type, self.data = self.mail.fetch(self.idsList[-1], '(UID RFC822)')
+        raw = self.data[0][1]
 
-            # Get Sender
-            jsonOutput['from'] = msg['from']
-            # Get DKIM
-            jsonOutput['dkim-signature'] = msg['dkim-signature']
-            
-            raw = self.data[0][0]
+        # Convert Raw Email to Standard Email Encoding
+        try:
             raw_str = raw.decode("utf-8")
+        except UnicodeDecodeError as utf_err:
+            try:
+                raw_str = raw.decode("ISO-8859-1") # ANSI support
+            except UnicodeDecodeError as iso_err:
+                try:
+                    raw_str = raw.decode("ascii") # ASCII ?
+                except UnicodeDecodeError as ascii_err:
+                    print(f"Error decoding as UTF-8: {utf_err}")
+                    print(f"Error decoding as ISO-8859-1: {iso_err}")
+                    print(f"Error decoding as ASCII: {ascii_err}")
+          
+        msg = email.message_from_string(raw_str)
 
-            # Get Body 
-            if msg.is_multipart():
-                for part in msg.walk():
-                    partType = part.get_content_type()
-                    if partType == "text/html" and "attachment" not in part:
-                        jsonOutput['body'] = part.get_payload()
-            else:
-                jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") # Non-multipart email, no attachments or just text.
+        # Get Sender
+        jsonOutput['from'] = msg['from']
 
-            print(f"SENDER EMAIL: \n    {jsonOutput['from']}")
-            print(f"DKIM: \n    {jsonOutput['dkim-signature']}")
-            print(f"BODY: \n     {jsonOutput['body']}")
+        # Convert Sender's String Value to Numerical Value
+        self.valueList.append(0) if jsonOutput['from'] == 'Null' else self.valueList.append(1)
 
-            def is_url_exists_in_html(html_data):
-                # Regular expression to find all URLs in the HTML content
-                url_pattern = re.compile(r'href=["\'](https?://\S+?)["\']', re.IGNORECASE)
-                urls_exist = url_pattern.findall(html_data)
-                
-                return True if urls_exist else False
+        # Clear Sender's Value
+        print(f"SENDER:\n       {jsonOutput['from']}")
+        jsonOutput['from'] = None
+
+        # Get DKIM
+        jsonOutput['dkim-signature'] = msg['dkim-signature']
+
+        # Convert DKIM's String Value to Numerical Value
+        self.valueList.append(0) if jsonOutput['dkim-signature'] == 'Null' else self.valueList.append(1)
+
+        # Clear DKIM's Value
+        print(f"DKIM:\n     {jsonOutput['dkim-signature']}")
+        jsonOutput['dkim-signature'] = None
+        
+        # Get Body 
+            # Non-multipart email, no attachments or just text
+        if not msg.is_multipart():
+            jsonOutput['body'] = msg.get_payload(decode=True).decode("utf-8") 
+        else:
+            # For Multi-part email.
+            for part in msg.walk():
+                partType = part.get_content_type()
+                if partType == "text/html" and "attachment" not in part:
+                    jsonOutput['body'] = part.get_payload()
             
-            jsonOutput['body'] = is_url_exists_in_html(jsonOutput["body"])
 
-            # Converting Email Data to Numerical Value
-            # Sender Email Address
-            self.valueList.append(0) if jsonOutput['from'] == 'Null' else self.valueList.append(1)
+        # Check if URL exists in Body
+        def is_url_exists_in_body(html_data):
+            # Regular expression to find all URLs in the HTML content
+            url_pattern = re.compile(r'(https?://\S+)', re.IGNORECASE)
+            # Store all the URLS
+            urls_exist = url_pattern.findall(html_data)
 
-            # DKIM
-            self.valueList.append(0) if jsonOutput['dkim-signature'] == 'Null' else self.valueList.append(1)
+            return True if urls_exist else False
+        
+        # Return True or False if URL exists
+        jsonOutput['body'] = is_url_exists_in_body(jsonOutput['body'])
 
-            # URL
-            self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
-            
-            # print(jsonOutput['from'])
-            # print(jsonOutput['dkim-signature'])
-            # print(jsonOutput['body'])
-            # print(self.valueList)
-            # exit(0)
-                
+        # Convert URL's String Value to Numerical Value
+        self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
+
+        # Clear URL's Value
+        print(f"URL:\n      {jsonOutput['body']}")
+        jsonOutput['body'] = None
+        
+    # Store numerical value of the email  
     def value(self):
         return self.valueList
 
-    def __init__(self):
-        self.initializeVariables()
-        self.getLogin()
-        if self.attemptLogin():
-            not self.selectMailbox() and sys.exit()
-        else:
-            sys.exit()
-        not self.checkIfUsersWantsToContinue() and sys.exit()
-        self.searchThroughMailbox()
+    # Get mailbox value
+    def get_is_subject_found(self):
+        return self.is_subject_found
+
+    # Function to be executed when the Class has been called
+    def __init__(self, input_subject, mail):
+        # Intialize all the global variables to be used
+        self.initializeVariables(input_subject, mail)
+
+        # # Get Gmail credentials
+        # self.getLogin()
+
+        # Login to the Gmail account
+        # if not self.attemptLogin(): exit(0)
+
+        # Select which Mailbox to be used
+        self.selectMailbox()
+
+        # Search the email to be scanned
+        if not self.searchThroughMailbox():
+            self.is_subject_found = False
+            print('Subject not found')
+            return 
+
+        # Extract Sender, DKIM, and URL
         self.parseEmails()
 
 if __name__ == "__main__":
-    run = GMAIL_EXTRACTOR()
+    run = GMAIL_EXTRACTOR('Random')
     input = run.value()
 
     predict = DT_MODEL(input)
     prediction = predict.result()
     
-    print(input)
-    print(prediction)
+    print(f"Numerical Value: {input}")
+    print(f"Result: {prediction}")
     

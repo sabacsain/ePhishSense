@@ -1,0 +1,1121 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:9b48:b0:51c:3591:c489 with SMTP id b8csp1572444max;
+        Fri, 13 Oct 2023 17:01:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IF2i7Jhp+UEYxV88bRbJ1umabytFO+8rYE/Bqx9YzAi9dQmmnMkrUUPhDFS0e6gATv8Ajkh
+X-Received: by 2002:a2e:8241:0:b0:2c1:6b9c:48d6 with SMTP id j1-20020a2e8241000000b002c16b9c48d6mr22653417ljh.16.1697241699722;
+        Fri, 13 Oct 2023 17:01:39 -0700 (PDT)
+ARC-Seal: i=2; a=rsa-sha256; t=1697241699; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=s1Ou/JNQStdOixoHdx0h/VR95OOVDqnmqxto4FbEgCCssNQNdQnOe51znFnDt2lkap
+         wv5WORNNqd1pQtyrqnYqaTt6j0e/51qjuAY2Sc8wosuf/AXheKvhCIDjIpJ/Dgp0y9+7
+         hADzXedsnkczdhtJcHVRS0QD8rumyZtO+ONLTDG0Ph2t++eUW8ui1+Qfbyru2ZdShj3g
+         aSAuAyDo1mGHbySu2qOXtMu5a5B3n4z7UM9VTtoQC0v3UOQ0sPA0eHDPRBzMQEyfL3Ku
+         wO1bnszodlZYaqYlG99owTOC1s3kd0waBSEcThVg5Lw0uAFyJBIXJ56McdQc3UoAFxKF
+         LRGQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=mime-version:msip_labels:content-language:accept-language
+         :message-id:date:thread-index:thread-topic:subject:from
+         :dkim-signature;
+        bh=gTs0yK0dVYq5L9QFXoMVoFKoeJNQVB0ZPkv7rYBRDEE=;
+        fh=47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=;
+        b=oBwbKt8jP8V2/xBdLPvleHRpv5DT4yIaMDfyvkC7QU+GoSgn6ySiCJwqHKOiypT3pZ
+         VnhJm9XzzNFBcDc8qBWt4se8LYJU+EFeWSVW7uHlEUKEtFMWfpEoKEoaka2ZOowZ/jME
+         OKTY/nwSB94LqPvzj5GqDO7HSzADJAGWplIRl0CX4FUtUZxmOZrwbYbKW3HgbvGpHSOL
+         qZVsY+E3+vEtWka5eBHLvsV0P+Lhb8ay24ClDeIlcs1996jZMJfbt5XEBVCNT9Nzel5d
+         AWx/EvvAElu+p6xc2MB05rMuQhlGUotpruSZ6Op9UtrUtVBNJtFgsYC/d3JgPuvCOtTM
+         qvHQ==
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@techmahindra.com header.s=selector1 header.b=ZAbviv7E;
+       arc=pass (i=1 spf=pass spfdomain=techmahindra.com dkim=pass dkdomain=techmahindra.com dmarc=pass fromdomain=techmahindra.com);
+       spf=pass (google.com: domain of ******************@techmahindra.com designates 2a01:111:f403:7011::71a as permitted sender) smtp.mailfrom=******************@techmahindra.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techmahindra.com
+Return-Path: <******************@techmahindra.com>
+Received: from IND01-BMX-obe.outbound.protection.outlook.com (mail-bmxind01on2071a.outbound.protection.outlook.com. [2a01:111:f403:7011::71a])
+        by mx.google.com with ESMTPS id u7-20020a2e2e07000000b002bb9beadbffsi265291lju.405.2023.10.13.17.01.32
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Fri, 13 Oct 2023 17:01:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of ******************@techmahindra.com designates 2a01:111:f403:7011::71a as permitted sender) client-ip=2a01:111:f403:7011::71a;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@techmahindra.com header.s=selector1 header.b=ZAbviv7E;
+       arc=pass (i=1 spf=pass spfdomain=techmahindra.com dkim=pass dkdomain=techmahindra.com dmarc=pass fromdomain=techmahindra.com);
+       spf=pass (google.com: domain of ******************@techmahindra.com designates 2a01:111:f403:7011::71a as permitted sender) smtp.mailfrom=******************@techmahindra.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=techmahindra.com
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=E5O/g1HtkUKA45hypd150F963Txu3vxJk8ylsVnMWBNKNjQnz+xSsHSS06AUE7Jq8ocVIl61WiJPdbUTxO8CbhIVJ9GJPzvruDcv8atKhJIo3JLB/D2+B5d0k081KB/Nsv0NELifTiHzHcg3FgOhDzOBAxrMESjcywVaYZNf9UIkI295ouaDmQBfXVdNCmG4EsHsi43n13lPq/Atw+140qU3OICUTX7cG1SmyihD6CdL9bkdqAnxmayHr26THx6z4xRdozXzbOqamoTiouzuRBrbWvDHZcDfJgENBm16TC3vYEJsHRvHOPb2iugE8IsqbFAzPdOYeJ47Tixv2Bkv/Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-AntiSpam-MessageData-ChunkCount:X-MS-Exchange-AntiSpam-MessageData-0:X-MS-Exchange-AntiSpam-MessageData-1;
+ bh=gTs0yK0dVYq5L9QFXoMVoFKoeJNQVB0ZPkv7rYBRDEE=;
+ b=jrI1slH2ijipjAzV9OCuW/d4P3izbPudC/YtZkgmpSnbaGGa4OyHxeySfAfAmQfuLOVqAdmZBD5rP3n9WevYQ8yxng6jdsvH5B7/DMvf9b2FodxLW7VmHqoNB5Sc0VKPyA2tJozMAx5ljDVn0ZrEWWUuJm9g8O/a4Mp6M8BAzozXBrWeMW80fp6lP5ed43RK5sa4zpavut+Q2H1ylX7aVyDqATkVb2axu2sbHonWnW2I680xX08EqHB3EI3Q531X5PUZCFTfGFCTKtf8ryLPRVxj3BpdEIiQ9W7kHwqS5bxiDRNP3n1cPEUQc7QuFKjhnc3ii/oPwE07sLiTERwhnQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=techmahindra.com; dmarc=pass action=none
+ header.from=techmahindra.com; dkim=pass header.d=techmahindra.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=techmahindra.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=gTs0yK0dVYq5L9QFXoMVoFKoeJNQVB0ZPkv7rYBRDEE=;
+ b=ZAbviv7ETJOer98G6WCG7D/6XgDg+5ZIgoBBI8xk6tHXV8XW6fjXSlfBdTT4tYMObz5ERW9vxMelBaehiJws0iDk6h/eizVMFEIf/MczUdvotZhlz6pJ/1Ga9ZDq0Af/qw4Pjpwmui9tfjvcXWWA5xMvJVhePTBflWAiCE5PvJL/FTFQ+0+lBaM/LWaywGA9QjTVI+3NMX/l4x02wMz/Gy7cJdRSnwKsrXXPl8UUaq9hF2vNJ7zMiii0+Mayx9/M/eRrieMfUsW6tY213BiieW60wCRKwCvexnt3jL3svcreoVSY+rfpdnNOmSFaZxCFkqe5ghH0kTAB9ebozh7Gqw==
+Received: from MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM (2603:1096:a01:d1::15)
+ by PN0PR01MB9818.INDPRD01.PROD.OUTLOOK.COM (2603:1096:c01:14c::7) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.6863.46; Sat, 14 Oct
+ 2023 00:00:42 +0000
+Received: from MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM
+ ([fe80::bbf5:78cd:d2ee:f847]) by MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM
+ ([fe80::bbf5:78cd:d2ee:f847%4]) with mapi id 15.20.6863.032; Sat, 14 Oct 2023
+ 00:00:42 +0000
+From: RMGManila Sourcing <******************@TechMahindra.com>
+Subject: Don't Miss the Chance: Job Opportunities at Tech Mahindra
+Thread-Topic: Don't Miss the Chance: Job Opportunities at Tech Mahindra
+Thread-Index: AQHZ/CFSGFeNAEyCtkuWI8sQhJqdnQ==
+Date: Sat, 14 Oct 2023 00:00:00 +0000
+Message-ID:
+ <MAZPR01MB8918CE0101FE4A4C65288DAEF3CCA@MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: yes
+X-MS-TNEF-Correlator:
+msip_labels:
+authentication-results: dkim=none (message not signed)
+ header.d=none;dmarc=none action=none header.from=TechMahindra.com;
+x-ms-publictraffictype: Email
+x-ms-traffictypediagnostic: MAZPR01MB8918:EE_|PN0PR01MB9818:EE_
+x-ms-office365-filtering-correlation-id: a224c348-583b-4689-6287-08dbcc489a67
+x-ms-exchange-senderadcheck: 1
+x-ms-exchange-antispam-relay: 0
+x-microsoft-antispam: BCL:0;
+x-microsoft-antispam-message-info:
+ EqmQxbp1BT9KUJEQC4DpnYzo+ZTpNmkIhG3cH0jt8i1g2My2+4tMeFxlEJYbxkmYnTacAVkBgCtAyGC7yrIaPWcmO+egO1m52X4RQ7l4kpF2+d7GFuiZM6hC1SDGc3BZvIDS5kIPRWOB+M5XA+qI2h5RHou/VARhwze8Z/UP2XjcM1A0I2+kUNbklC8K6fK3evOv1ax37NfulXXnEZVSXcvi7chpRUmJTBnmrIzNDaaEGbjGrw7uhuV/aLtJNH64QZlHk3ugx9L4tHLdxShmKb8kwcSCmH12d+lXg9Zhq9WgtGxE6x0SjQeuymivm7340PpYNnGW7KG6ZFI3fKUed3AO5cyo2ZL4qjd2lhPmNWl/EIvd58bd1DnjPaaMYAyA4JX8R4IxCGX+b1ky/5lBSXPffUYs9by4NIlrG7VMWcUGMy99v7oAgoDSrMtpL1He1CVn63xkfep3jwKvYn+f4hoUQr9fLGLhXS372OhWHYSxNYG0Fg42t2lwJMKyezVLlMiJa7hSLY34Y/hYZbcrzkXW8wCnFyXVmg1t3pnclsILxRnmMxw29Owyz1sYha05Tm5rs+vv1SWwegCgHdrqh6M8GJ3t8py/46wovjYN4v4wnOjQYktuxEzRUe0obhwKjixLmzVkz3mYz8PkQJsifL1w68OD4UuPCi7IGDHjFz96ExwSTARR8VK+b+7ByfMAfm0cV+zY803S8If3kReBHc31idQa1eKaD4/8kf4pNML5+sb4aK1PZZdP4exEdyk7
+x-forefront-antispam-report:
+ CIP:255.255.255.255;CTRY:;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM;PTR:;CAT:NONE;SFS:(13230031)(136003)(366004)(376002)(39860400002)(346002)(396003)(230922051799003)(64100799003)(186009)(1800799009)(109986022)(451199024)(5660300002)(83380400001)(26005)(7406005)(7336002)(7366002)(7416002)(2906002)(7276002)(8936002)(41300700001)(52536014)(19273905006)(33656002)(8676002)(71200400001)(19627405001)(86362001)(166002)(122000001)(99936003)(88732003)(55016003)(66899024)(7696005)(19625735003)(9686003)(76576003)(6506007)(6666004)(966005)(64756008)(66556008)(91956017)(66446008)(66946007)(66476007)(76116006)(316002)(45080400002)(478600001)(38070700005)(89122003)(90282003)(38100700002)(32033001)(85282002)(562404015)(563064011);DIR:OUT;SFP:1102;
+x-ms-exchange-antispam-messagedata-chunkcount: 1
+x-ms-exchange-antispam-messagedata-0:
+ =?iso-8859-1?Q?OotufI5xCu0fjiGZZrx/eHEdCvJhMSU0F47DbRn4Qj3CvVSQhPn7Zk2bca?=
+ =?iso-8859-1?Q?NaS/MVtgLSkpY+If4c56hEeBJy4up7giz/0by20UHakIhmFbyRTNUPiH4x?=
+ =?iso-8859-1?Q?tEUASbKeZLeVNeZY0bOqZ14zND9WxXaeU6stnHteJk+A88ISOYZzURMMTv?=
+ =?iso-8859-1?Q?iuTWt6EiwBD/VelRq9RoyHZLpI3oQeZVUxt/oVblfiNHCJS3G2nleKO/fx?=
+ =?iso-8859-1?Q?j1LAhU1GJfcrIArjw+IbBd1U6l+L1l6oApyBm6WpJJdGhFU4xCYknmOnPp?=
+ =?iso-8859-1?Q?8lHJA20CTpd6GX6QtNtboL8zoCRElsGa2/zxN/YoJAGzPXq4+rny+eAbZE?=
+ =?iso-8859-1?Q?JDV/RauMeMkmG6qjPsoKIkpcbaLCeI4gCk1C+LUHFmC9vsbdOYH3Rfc5R4?=
+ =?iso-8859-1?Q?ZCFO0cc7QKf6sXRI9KUnYKR8MeBrHXNrz5Lp8FVzJpLp0UdlYEaWizIpAv?=
+ =?iso-8859-1?Q?JC43y0j3G+/5P2gh0zsNOS1gxZyfgYqfsUIocnsFZO0thK8l5Bf8xcgnlO?=
+ =?iso-8859-1?Q?Z9CyHPY7i/wWguBPucB2O5K7yah3MCglI9kJWm/SQbW0QrR1VitmNXp1CF?=
+ =?iso-8859-1?Q?RHOc/15HqGQ4adns2FCnUnsIqs4lZtZPvRbzz4JcgO5KMrAG7GVeRy8yTK?=
+ =?iso-8859-1?Q?k2T/dMojzu/arX8QBi+d+8005geJuZritMQhYy3lEeo4nkZ608Zq/QlmIL?=
+ =?iso-8859-1?Q?zdk5qZx+DHOWGYJZ9ZZMqNXa2VWvnLkBCSslLjj1Bn3ShJOLT2rTQch4Pb?=
+ =?iso-8859-1?Q?wrtcboqhkmb1ibFoRLNFC1dzKN2k1aiNhH8OB5eWGzZMzJYuiIqJWNJEqo?=
+ =?iso-8859-1?Q?xYI2cFWQOnLFRsIZW7+rVBiKyaAra8uRZ3htCKNpnXmSDT6uXXGaMdks63?=
+ =?iso-8859-1?Q?nWOkJSnXWGljjmwZ4e6ZDn/hlL23D6+zya1ys/RcvUzsVWzIHF+KOqiMK3?=
+ =?iso-8859-1?Q?qNQCc5+Vt+LlENwLfkTfCCLwzqkLzXe58cGZstEhIoRNwh1n28+SzaIJON?=
+ =?iso-8859-1?Q?e01Z22/N087RzcuHmy4PgvxvNB2/DIhsb8Ett6KlQJM8mExk6sKxnfAvgU?=
+ =?iso-8859-1?Q?wyDvXpXy3LrKv0ocoaCeidiJXtsHgMsTXx4ndMQw1gIrFOhooCmja0+tSV?=
+ =?iso-8859-1?Q?BCxnGTZ0AGdeuxQnATX0Cuc23UTDv+IsPO5WWoUT+Sol4bKU0RogrIofU4?=
+ =?iso-8859-1?Q?vVdqq+z2VOyYQ8D+wt+S9w/W/E9koRdbRw5tZppXX3vh8oSz5XcOf6RSLM?=
+ =?iso-8859-1?Q?A0NVLxH7ohiCEagicveuP+RW79/VzkxosEx8cheBR1Lpie12ueJrNkxcli?=
+ =?iso-8859-1?Q?DlzHFOIRRJ1iLy6Vi6h3WApZNdoVwVEsJcPEMTgcFDZPvEzTva1VxcwUUa?=
+ =?iso-8859-1?Q?TEmCvdj1Z3ULa3Yu4uET20Iy8V8SSJxym68oluy0agVqhFRGYLk4MkRZMK?=
+ =?iso-8859-1?Q?zAfyWCWhO1avft9L9zTLEien/Ze+QR/Gzp133Ul71vKo2rO4p54EmrgKqR?=
+ =?iso-8859-1?Q?yvVRGZkMPvPPRelRN6sLalMAn/fMQX9B44r1Fd+Ethvai3JcuLCw5ttUrQ?=
+ =?iso-8859-1?Q?S0RGXmupyJACyLQygAVzQTEEO8MpYUuxwfHKsG1UlL2ALXnU50lbfrP42G?=
+ =?iso-8859-1?Q?kXJr3QoAwt8VuxpR/1SEqgOdRkdasgN0YDBmJTVs+SgaoFfHN32Hv45g?=
+ =?iso-8859-1?Q?=3D=3D?=
+Content-Type: multipart/related;
+	boundary="_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_";
+	type="multipart/alternative"
+MIME-Version: 1.0
+X-OriginatorOrg: techmahindra.com
+X-MS-Exchange-CrossTenant-AuthAs: Internal
+X-MS-Exchange-CrossTenant-AuthSource: MAZPR01MB8918.INDPRD01.PROD.OUTLOOK.COM
+X-MS-Exchange-CrossTenant-Network-Message-Id: a224c348-583b-4689-6287-08dbcc489a67
+X-MS-Exchange-CrossTenant-originalarrivaltime: 14 Oct 2023 00:00:29.4530
+ (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: edf442f5-b994-4c86-a131-b42b03a16c95
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 4PNsNdvDTyN14mi5CupW/YEIChhyEkukEuVfteMqY+EQ0bNth4zc1XlHQHvxqlcfIGQ92YD/CgxirITsZtzg31HVBSpHKrut92eHx/sNV3o=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: PN0PR01MB9818
+
+--_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: multipart/alternative;
+	boundary="_000_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_"
+
+--_000_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+Greetings from Tech Mahindra!.
+
+
+We are thrilled to announce that TECH MAHINDRA is still actively seeking ta=
+lented individuals to join our team!
+
+If you want to be part of a dynamic and innovative company that values crea=
+tivity, teamwork, and growth, then we'd love to hear from you.
+
+
+Here's a glimpse of what we're currently offering:
+
+
+ Customer Service Representative [Healthcare Account] - Up to 26,500 Packag=
+e
+
+  *
+
+Has BPO Experience for at least 1 year
+
+  *   Excellent in English Communication Skills
+
+  *   Quick learner and adaptable
+
+  *   Ability to work well under pressure
+
+  *   Willing to work on a shifting schedule
+
+  *   Amenable to work onsite (Eastwood Libis, Quezon City)
+
+Customer Service Representative [Local Financial Account] - Up to 16,700 Pa=
+ckage
+
+  *   Has BPO Experience for at least 1 year
+
+  *   Good in English Communication Skills
+
+  *   Quick learner and adaptable
+
+  *   Ability to work well under pressure
+
+  *   Willing to work on a shifting schedule
+
+  *   Amenable to work onsite (Eastwood Libis, Quezon City)
+
+Budget and Activity Planning Specialist (Back Office Role) - Up to 26,500 P=
+ackage
+
+  *   preferably with experience in Accounting/Financial management
+
+  *   Familiarity in Initiative Management, Activity Management, or PO Mana=
+gement
+
+  *   Has excellent skills in Microsoft Excel/Spreadsheet
+
+  *   Willing to work on a shifting schedule
+
+  *   Office based set-up (Eastwood Libis, Quezon City)
+
+  *   Can start ASAP
+
+Email Marketing Specialist (Back Office Role) - Up to 27,500 Package
+
+  *   Preferably has experience working in the field of Marketing, Advertis=
+ing or equivalent.
+
+  *   Familiarity and good understanding of HTML
+
+  *   Good communication skills, good organization & planning skills, excel=
+lent eye for details required
+
+  *   Amenable to work in Eastwood, Quezon City
+
+  *   Office based set-up (Eastwood Libis, Quezon City)
+
+  *   Can start ASAP
+
+Digital Events Management Specialist (Back Office Role) - Up to 27,500 Pack=
+age
+
+  *   Preferably with experience working in the field of Marketing, Adverti=
+sing or any related course.
+
+  *   Good communication skills, good organization & planning skills, excel=
+lent eye for details required
+
+  *   Amenable to work in Eastwood, Quezon City
+
+  *   Office based set-up (Eastwood Libis, Quezon City)
+
+  *   Can start ASAP
+
+
+Feel free to share this email with anyone you believe would be a great fit =
+for our team.
+
+We look forward to reviewing your applications and discovering how your exp=
+ertise can help us achieve our goals.
+
+
+ For faster processing, please complete our online application by using the=
+ link below: https://forms.gle/NyztMYQZo3gtMQeu9
+
+
+P.S. Follow us on Facebook  www.Facebook.com/TechMahindraPH<http://www.face=
+book.com/TechMahindraPH> and watch out to our exciting company updates and =
+job opportunities #StayConnected
+
+
+
+Kind Regards,
+
+
+[A red book cover  Description automatically generated with low confidence]
+
+[cid:7d12209f-715f-4b78-8d57-2b59bbce7f7a]
+
+[cid:7a12e2cb-9374-485d-9b71-799217a3c1c0]
+
+Tech Mahindra Manila Sourcing Team
+
+Resource Management Group | BPS Manila
+
+GF Felina Corporate Plaza,
+
+Eastwood City, Quezon City  |  PH-Manila
+
+******************@techmahindra.com
+
+
+<mailto:RP00802844@techmahindra.com>
+
+
+Like and Follow us on Facebook @TechMahindraPH
+
+www.facebook.com/TechMahindraPH
+
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Di=
+sclaimer: This message and the information contained herein is proprietary =
+and confidential and subject to the Tech Mahindra policy statement, you may=
+ review the policy at http://www.techmahindra.com/Disclaimer.html externall=
+y http://tim.techmahindra.com/tim/disclaimer.html internally within TechMah=
+indra. =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D
+
+--_000_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-8859-=
+1">
+<style type=3D"text/css" style=3D"display:none;"> P {margin-top:0;margin-bo=
+ttom:0;} </style>
+</head>
+<body dir=3D"ltr">
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; color: black;"></span></di=
+v>
+<span style=3D"font-weight:400;font-size:12pt;font-family:Aptos, Aptos_Embe=
+ddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif;margin:0px"><=
+span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; f=
+ont-size: 11pt; font-family: Arial, sans-serif; margin: 0px; color: black;"=
+>Greetings
+ from Tech Mahindra!</span><span class=3D"x_ContentPasted0 ContentPasted0" =
+style=3D"font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; colo=
+r: black;">.&nbsp;</span></span>
+<div style=3D"font-weight:400;font-size:12pt;font-family:Aptos, Aptos_Embed=
+dedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif;margin:0px">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div style=3D"margin:0px">
+<div style=3D"margin:0px">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div style=3D"margin: 0px; background-color: rgb(255, 255, 255);">
+<div class=3D"x_elementToProof" style=3D"margin:0px">
+<div style=3D"font-size:12px;margin:0px">
+<div style=3D"font-size:12pt;margin:0px"><br class=3D"x_ContentPasted0 Cont=
+entPasted0" style=3D"background-color: rgb(255, 255, 255);">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.9872; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 400; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; background-color: white;">We are thrilled to announce that<span c=
+lass=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px">&nbsp;</span>=
+</span><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight=
+: 700; font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-d=
+ecoration: none; background-color: white;">TECH
+ MAHINDRA</span><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"fo=
+nt-weight: 400; font-size: 11pt; font-family: Arial, sans-serif; margin: 0p=
+x; text-decoration: none; background-color: white;">&nbsp;is still actively=
+ seeking talented individuals to join our
+ team!&nbsp;</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.9872; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 400; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; background-color: white;">If you want to be part of a dynamic and=
+ innovative company that values creativity,
+ teamwork, and growth, then we'd love to hear from you.</span></p>
+<br class=3D"x_ContentPasted0 ContentPasted0" style=3D"background-color: rg=
+b(255, 255, 255);">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.9872; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; background-color: white;">Here's a glimpse of what we're currentl=
+y offering:</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<br>
+</p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 400; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; color: blue;">&nbsp;</span><span class=3D"x_ContentPasted0 Conten=
+tPasted0" style=3D"font-weight: 700; font-size: 11pt; font-family: Arial, s=
+ans-serif; margin: 0px; text-decoration: none; color: blue;">Customer
+ Service Representative [Healthcare Account] -<span class=3D"x_ContentPaste=
+d0 ContentPasted0" style=3D"margin:0px">&nbsp;</span></span><span class=3D"=
+x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;font-size:11pt;fo=
+nt-family:Arial, sans-serif;margin:0px;text-decoration:none">Up
+ to 26,500 Package</span></p>
+<ul style=3D"font-weight: normal; font-size: 15px; margin-top: 0px; margin-=
+bottom: 0px; background-color: white;">
+<li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;font-=
+weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span style=3D"margin:0px;text-decoration:none"></span></p>
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-d=
+ecoration:none">Has BPO Experience for at least 1 year</span></p>
+<p class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin-top:0px;margin=
+-bottom:0px">
+</p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Excellent in English Communication Skills</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Quick learner and adaptable</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Ability to work well under pressure</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Willing to work on a shifting schedule</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:10pt;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;m=
+argin:0px;text-decoration:none">Amenable to work onsite (Eastwood Libis, Qu=
+ezon City)</span></p>
+</li></ul>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; color: blue;">Customer Service Representative [Local Financial Ac=
+count] -<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px=
+">&nbsp;</span></span><span class=3D"x_ContentPasted0 ContentPasted0" style=
+=3D"font-weight:700;font-size:11pt;font-family:Arial, sans-serif;margin:0px=
+;text-decoration:none">Up
+ to 16,700 Package</span></p>
+<ul style=3D"font-weight: normal; font-size: 15px; margin-top: 0px; margin-=
+bottom: 0px; background-color: white;">
+<li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;font-=
+weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-d=
+ecoration:none">Has BPO Experience for at least 1 year</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Good in English Communication Skills</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Quick learner and adaptable</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Ability to work well under pressure</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Willing to work on a shifting schedule</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:10pt;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;m=
+argin:0px;text-decoration:none">Amenable to work onsite (Eastwood Libis, Qu=
+ezon City)</span></p>
+</li></ul>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; color: blue;">Budget and Activity Planning Specialist (Back Offic=
+e Role) -<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0p=
+x">&nbsp;</span></span><span class=3D"x_ContentPasted0 ContentPasted0" styl=
+e=3D"font-weight:700;font-size:11pt;font-family:Arial, sans-serif;margin:0p=
+x;text-decoration:none">Up
+ to 26,500 Package</span></p>
+<ul style=3D"font-weight: normal; font-size: 15px; margin-top: 0px; margin-=
+bottom: 0px; background-color: white;">
+<li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;font-=
+weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-d=
+ecoration:none">preferably with experience in Accounting/Financial manageme=
+nt</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Familiarity in Initiative Management, Activity Management, o=
+r PO Management</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Has excellent skills in Microsoft Excel/Spreadsheet</span></=
+p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Willing to work on a shifting schedule</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;ma=
+rgin:0px;text-decoration:none">Office based set-up (Eastwood Libis, Quezon =
+City)</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:10pt;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;m=
+argin:0px;text-decoration:none">Can start ASAP</span></p>
+</li></ul>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; color: blue;">Email Marketing Specialist (Back Office Role) -<spa=
+n class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px">&nbsp;</sp=
+an></span><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-wei=
+ght:700;font-size:11pt;font-family:Arial, sans-serif;margin:0px;text-decora=
+tion:none">Up
+ to 27,500 Package</span></p>
+<ul style=3D"font-weight: normal; font-size: 15px; margin-top: 0px; margin-=
+bottom: 0px; background-color: white;">
+<li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;font-=
+weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-d=
+ecoration:none">Preferably has experience working in the field of Marketing=
+, Advertising or equivalent.</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Familiarity and good understanding of HTML</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Good communication skills, good organization &amp; planning =
+skills, excellent eye for details required</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Amenable to work in Eastwood, Quezon City</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:700;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Office based set-up (Eastwood Libis, Quezon City)</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:10pt;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;m=
+argin:0px;text-decoration:none">Can start ASAP</span></p>
+</li></ul>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.38; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight: 700; =
+font-size: 11pt; font-family: Arial, sans-serif; margin: 0px; text-decorati=
+on: none; color: blue;">Digital Events Management Specialist (Back Office R=
+ole) -<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px">=
+&nbsp;</span></span><span class=3D"x_ContentPasted0 ContentPasted0" style=
+=3D"font-weight:700;font-size:11pt;font-family:Arial, sans-serif;margin:0px=
+;text-decoration:none">Up
+ to 27,500 Package</span></p>
+<ul style=3D"font-weight: normal; font-size: 15px; margin-top: 0px; margin-=
+bottom: 0px; background-color: white;">
+<li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;font-=
+weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:10pt;margin-bottom:0px;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-d=
+ecoration:none">Preferably with experience working in the field of Marketin=
+g, Advertising or any related course.</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Good communication skills, good organization &amp; planning =
+skills, excellent eye for details required</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-de=
+coration:none">Amenable to work in Eastwood, Quezon City</span></p>
+</li><li dir=3D"ltr" style=3D"font-size: 11pt; font-family: Arial, sans-ser=
+if; font-weight: 700; text-decoration: none; margin-left: 11pt; color: rgb(=
+34, 34, 34);">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:0px;line-height:1.38">=
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin: 0px; text-=
+decoration: none; color: black;">Office based set-up (Eastwood Libis, Quezo=
+n City)</span></p>
+</li><li dir=3D"ltr" style=3D"font-size:11pt;font-family:Arial, sans-serif;=
+font-weight:400;text-decoration:none;margin-left:11pt">
+<p dir=3D"ltr" style=3D"margin-top:0px;margin-bottom:10pt;line-height:1.38"=
+><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:700;m=
+argin:0px;text-decoration:none">Can start ASAP</span></p>
+</li></ul>
+<br class=3D"x_ContentPasted0 ContentPasted0" style=3D"background-color: rg=
+b(255, 255, 255);">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 2.38464; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:400;fo=
+nt-size:11pt;font-family:Arial, sans-serif;margin:0px;text-decoration:none"=
+>Feel free to share this email with anyone you believe would be a great fit=
+ for our team.</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 2.38464; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:400;fo=
+nt-size:11pt;font-family:Arial, sans-serif;margin:0px;text-decoration:none"=
+>We look forward to reviewing your applications and discovering how your ex=
+pertise can help us achieve our goals.</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 2.38464; background-color: white;">
+<span style=3D"font-weight:400;font-size:11pt;font-family:Arial, sans-serif=
+;margin:0px;text-decoration:none"><br class=3D"x_ContentPasted0 ContentPast=
+ed0">
+</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-size: 15p=
+x; font-weight: 700; line-height: 2.38464; background-color: white;">
+<span style=3D"font-size:11pt;font-family:Arial, sans-serif;margin:0px;text=
+-decoration:none"><span class=3D"x_ContentPasted0 ContentPasted0" style=3D"=
+font-weight:normal;font-size:12pt;line-height:normal;font-family:Aptos, Apt=
+os_EmbeddedFont, Aptos_MSFontService, Calibri, Helvetica, sans-serif;margin=
+:0px;text-align:left;text-decoration:none">&nbsp;For
+ faster processing, please complete our online application by using the lin=
+k below:<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"margin:0px=
+">&nbsp;</span></span><a href=3D"https://forms.gle/NyztMYQZo3gtMQeu9" data-=
+auth=3D"NotApplicable" id=3D"OWA999c9e75-7162-8ea1-bf60-a8ff964b3494" data-=
+linkindex=3D"0" class=3D"x_OWAAutoLink x_ContentPasted0 ContentPasted0" sty=
+le=3D"font-size: 15px; font-family: docs-Calibri; margin: 0px; text-align: =
+left; text-decoration: underline; color: rgb(17, 85, 204);"><span style=3D"=
+font-size:12pt;line-height:normal;font-family:Aptos, Aptos_EmbeddedFont, Ap=
+tos_MSFontService, Calibri, Helvetica, sans-serif;margin:0px">https://forms=
+.gle/NyztMYQZo3gtMQeu9</span></a></span><span class=3D"x_ContentPasted0 Con=
+tentPasted0" style=3D"font-size:12pt;line-height:normal;margin:0px;text-dec=
+oration:none">&nbsp;</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 2.38464; background-color: white;">
+<span style=3D"font-weight:400;font-size:11pt;font-family:Arial, sans-serif=
+;margin:0px;text-decoration:none"><br class=3D"x_ContentPasted0 ContentPast=
+ed0">
+</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px; font-weight: n=
+ormal; font-size: 15px; line-height: 1.656; background-color: white;">
+<span class=3D"x_ContentPasted0 ContentPasted0" style=3D"font-weight:400;fo=
+nt-size:11pt;font-family:Arial, sans-serif;margin:0px;text-decoration:none"=
+>P.S. Follow us on Facebook<span class=3D"x_ContentPasted0 ContentPasted0" =
+style=3D"margin:0px">&nbsp;</span></span><span class=3D"x_ContentPasted0 Co=
+ntentPasted0" style=3D"font-weight:700;font-size:11pt;font-family:Arial, sa=
+ns-serif;margin:0px;text-decoration:none">&nbsp;</span><a href=3D"http://ww=
+w.facebook.com/TechMahindraPH" data-auth=3D"NotApplicable" id=3D"OWA173aa30=
+a-fbc5-bf93-e466-2642f7241817" data-linkindex=3D"1" class=3D"x_OWAAutoLink =
+x_ContentPasted0 ContentPasted0" style=3D"margin:0px;text-decoration:none">=
+<span style=3D"font-weight: 700; font-size: 11pt; font-family: Arial, sans-=
+serif; margin: 0px; text-decoration: underline; color: rgb(17, 85, 204);">w=
+ww.Facebook.com/TechMahindraPH</span></a><span class=3D"x_ContentPasted0 Co=
+ntentPasted0" style=3D"font-weight:400;font-size:11pt;font-family:Arial, sa=
+ns-serif;margin:0px;text-decoration:none">&nbsp;and
+ watch out to our exciting company updates and job opportunities #StayConne=
+cted</span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class=3D"elementToProof" style=3D"font-family: Aptos, Aptos_EmbeddedFo=
+nt, Aptos_MSFontService, Calibri, Helvetica, sans-serif; font-size: 12pt; c=
+olor: rgb(0, 0, 0);">
+<br>
+</div>
+<div class=3D"elementToProof">
+<div style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, =
+Calibri, Helvetica, sans-serif; font-size: 12pt; color: rgb(0, 0, 0);">
+<br>
+</div>
+<div id=3D"Signature">
+<div>
+<p style=3D"text-align: start; font-size: 11pt; font-family: Calibri, sans-=
+serif; margin: 0px; background-color: rgb(255, 255, 255);">
+<span style=3D"font-size: 18pt; margin: 0px; font-family: &quot;Lucida Hand=
+writing&quot;, &quot;Apple Chancery&quot;, cursive; color: black;"><b></b><=
+/span></p>
+<b style=3D"font-size:12px; font-weight:normal">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.2; margin-t=
+op:0pt; margin-bottom:0pt">
+<span class=3D"ContentPasted2" style=3D"font-weight:400; font-size:11pt; fo=
+nt-family:Calibri,sans-serif; margin:0px; text-decoration:none">Kind Regard=
+s,</span></p>
+<br class=3D"ContentPasted2">
+<div dir=3D"ltr" align=3D"left" style=3D"margin:0px 0px 0px 0pt">
+<table id=3D"tableSelected1" style=3D"border:none; border-collapse:collapse=
+; box-sizing:border-box; width:763px">
+<tbody>
+<tr>
+<td style=3D"vertical-align:top; overflow:hidden; box-sizing:border-box; wi=
+dth:93.7812px">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.2; margin-t=
+op:0pt; margin-bottom:0pt">
+<span style=3D"font-weight:400; font-size:9pt; font-family:Calibri,sans-ser=
+if; margin:0px; text-decoration:none"><span style=3D"border:none; margin:0p=
+x; display:inline-block; overflow:hidden; width:91px; height:127px"><img al=
+t=3D"A red book cover=0A=
+=0A=
+Description automatically generated with low confidence" width=3D"91" heigh=
+t=3D"127" class=3D"ContentPasted2" style=3D"margin:0px" data-outlook-trace=
+=3D"F:2|T:2" src=3D"cid:c401cc06-33a2-430b-94e4-8e7c2db65d88"></span></span=
+></p>
+</td>
+<td style=3D"vertical-align:top; padding:0pt 5.4pt; overflow:hidden; box-si=
+zing:border-box; width:341.375px">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.2; margin-t=
+op:0pt; margin-bottom:0pt">
+<span style=3D"font-weight:400; font-size:9pt; font-family:Calibri,sans-ser=
+if; margin:0px; text-decoration:none"><span style=3D"border:none; margin:0p=
+x; display:inline-block; overflow:hidden; width:150px; height:127px"><img w=
+idth=3D"150" height=3D"127" class=3D"ContentPasted2" style=3D"margin:0px" d=
+ata-outlook-trace=3D"F:2|T:2" src=3D"cid:7d12209f-715f-4b78-8d57-2b59bbce7f=
+7a"></span></span></p>
+<br class=3D"ContentPasted2">
+<span style=3D"border:none; margin:0px; display:inline-block; overflow:hidd=
+en; width:327px; height:35px"><img width=3D"327" height=3D"35" class=3D"Con=
+tentPasted2" style=3D"margin:0px" data-outlook-trace=3D"F:2|T:2" src=3D"cid=
+:7a12e2cb-9374-485d-9b71-799217a3c1c0"></span></td>
+<td style=3D"vertical-align:top; padding:0pt 5.4pt; overflow:hidden; box-si=
+zing:border-box; width:327.844px; height:190.391px">
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.8; margin-t=
+op:0pt; margin-bottom:0pt">
+<font face=3D"Arial, sans-serif" style=3D"color: rgb(227, 24, 55);"><span s=
+tyle=3D"font-size:13.3333px"><b>Tech Mahindra Manila Sourcing Team</b></spa=
+n></font></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.8; margin-t=
+op:0pt; margin-bottom:0pt">
+<span class=3D"ContentPasted2" style=3D"font-weight:400; font-size:10pt; fo=
+nt-family:Arial,sans-serif; margin:0px">Resource Management Group | BPS Man=
+ila</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.8; margin-t=
+op:0pt; margin-bottom:0pt">
+<span class=3D"ContentPasted2" style=3D"font-weight:400; font-size:10pt; fo=
+nt-family:Arial,sans-serif; margin:0px; text-decoration:none">GF Felina Cor=
+porate Plaza,&nbsp;</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.8; margin-t=
+op:0pt; margin-bottom:0pt">
+<span class=3D"ContentPasted2" style=3D"font-weight:400; font-size:10pt; fo=
+nt-family:Arial,sans-serif; margin:0px; text-decoration:none">Eastwood City=
+, Quezon City&nbsp; |&nbsp; PH-Manila</span></p>
+<p dir=3D"ltr" style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px;=
+ margin-bottom:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; marg=
+in-bottom:0px; margin-top:0px; margin-bottom:0px; line-height:1.8; margin-t=
+op:0pt; margin-bottom:0pt">
+<font face=3D"Calibri, sans-serif" style=3D"color: rgb(5, 99, 193);"><span =
+style=3D"font-size:14.6667px; margin:0px"><u class=3D"ContentPasted2"><b>RM=
+GManila.Sourcing@techmahindra.com</b></u></span></font></p>
+<font face=3D"Calibri, sans-serif" style=3D""><br>
+</font>
+<p style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px; margin-bott=
+om:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; margin-bottom:0p=
+x; margin-top:0px; margin-bottom:0px">
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</b>
+<div style=3D"margin: 0px; text-align: start; background-color: rgb(255, 25=
+5, 255);">
+<div dir=3D"ltr" style=3D"margin:0px">
+<div dir=3D"ltr" style=3D"margin:0px">
+<p style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px; margin-bott=
+om:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; margin-bottom:0p=
+x; margin-top:0px; margin-bottom:0px; font-family:Aptos,Aptos_EmbeddedFont,=
+Aptos_MSFontService,Calibri,Helvetica,sans-serif; margin:0px">
+<a href=3D"mailto:RP00802844@techmahindra.com" data-linkindex=3D"0" id=3D"O=
+WAa8fc6705-d79b-36cb-de6c-b9b3db41ce9a" class=3D"OWAAutoLink" style=3D"font=
+-size: 9pt; font-family: arial, sans-serif; margin: 0px; color: rgb(17, 85,=
+ 204);"><span style=3D"font-size: 11pt; font-family: Aptos, Aptos_EmbeddedF=
+ont, Aptos_MSFontService, Calibri, Helvetica, sans-serif; color: rgb(0, 36,=
+ 81);"><b></b></span></a></p>
+<p style=3D"margin-top: 0px; margin-bottom: 0px;margin-top:0px; margin-bott=
+om:0px; margin-top:0px; margin-bottom:0px; margin-top:0px; margin-bottom:0p=
+x; margin-top:0px; margin-bottom:0px; font-family:Aptos,Aptos_EmbeddedFont,=
+Aptos_MSFontService,Calibri,Helvetica,sans-serif; margin:0px">
+<br>
+</p>
+<div style=3D"margin:0px">
+<p style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Ca=
+libri, Helvetica, sans-serif; font-size: 12px; margin: 0px; background-colo=
+r: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt; font-family: Calibri, Helvetica, sans-serif=
+; margin: 0px; color: rgb(0, 36, 81);"><b>Like and Follow us on Facebook @T=
+echMahindraPH</b></span></p>
+<p style=3D"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, Ca=
+libri, Helvetica, sans-serif; font-size: 12px; margin: 0px; background-colo=
+r: rgb(255, 255, 255);">
+<span style=3D"font-size: 11pt; font-family: Calibri, Helvetica, sans-serif=
+; margin: 0px; color: rgb(134, 17, 6);"><b></b></span></p>
+<p style=3D"margin: 0px; line-height: 16.8667px; background-color: rgb(255,=
+ 255, 255);">
+<font face=3D"arial, sans-serif" style=3D"color: rgb(227, 24, 55);"><span s=
+tyle=3D"font-size:11pt; line-height:normal"><b style=3D"line-height:normal"=
+>www.facebook.com/TechMahindraPH</b></span></font></p>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D Di=
+sclaimer: This message and the information contained herein is proprietary =
+and confidential and subject to the Tech Mahindra policy
+ statement, you may review the policy at http://www.techmahindra.com/Discla=
+imer.html externally http://tim.techmahindra.com/tim/disclaimer.html intern=
+ally within TechMahindra. =3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=3D=
+=3D=3D=3D=3D=3D=3D=3D=3D
+</body>
+</html>
+
+--_000_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_--
+
+--_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: image/png; name="Outlook-A red book.png"
+Content-Description: Outlook-A red book.png
+Content-Disposition: inline; filename="Outlook-A red book.png"; size=8425;
+	creation-date="Wed, 11 Oct 2023 09:01:08 GMT";
+	modification-date="Wed, 11 Oct 2023 09:01:08 GMT"
+Content-ID: <c401cc06-33a2-430b-94e4-8e7c2db65d88>
+Content-Transfer-Encoding: base64
+
+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
+
+--_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: image/jpeg; name="Outlook-brxtlmqg.jpg"
+Content-Description: Outlook-brxtlmqg.jpg
+Content-Disposition: inline; filename="Outlook-brxtlmqg.jpg"; size=1975;
+	creation-date="Wed, 11 Oct 2023 09:01:08 GMT";
+	modification-date="Wed, 11 Oct 2023 09:01:08 GMT"
+Content-ID: <7d12209f-715f-4b78-8d57-2b59bbce7f7a>
+Content-Transfer-Encoding: base64
+
+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
+
+--_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_
+Content-Type: image/png; name="Outlook-5fjhvp4c.png"
+Content-Description: Outlook-5fjhvp4c.png
+Content-Disposition: inline; filename="Outlook-5fjhvp4c.png"; size=3057;
+	creation-date="Wed, 11 Oct 2023 09:01:08 GMT";
+	modification-date="Wed, 11 Oct 2023 09:01:08 GMT"
+Content-ID: <7a12e2cb-9374-485d-9b71-799217a3c1c0>
+Content-Transfer-Encoding: base64
+
+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
+
+--_006_MAZPR01MB8918CE0101FE4A4C65288DAEF3CCAMAZPR01MB8918INDP_--

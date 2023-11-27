@@ -1,0 +1,232 @@
+Delivered-To: ************************@gmail.com
+Received: by 2002:a05:7000:bb20:b0:460:b4c3:ac26 with SMTP id jd32csp1618438mab;
+        Sat, 4 Feb 2023 00:32:06 -0800 (PST)
+X-Google-Smtp-Source: AK7set/W5ABHuUegjpXxiiIOKxYHazV9sv59Bij4A2nFqNm/W/bs/PMwxORltvTjaY+oU4MuM7uA
+X-Received: by 2002:ac8:5acb:0:b0:3af:55cb:8761 with SMTP id d11-20020ac85acb000000b003af55cb8761mr24781512qtd.47.1675499526280;
+        Sat, 04 Feb 2023 00:32:06 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1675499526; cv=none;
+        d=google.com; s=arc-20160816;
+        b=0kWw5qoiTEdpQ8yH1NerJltZhGeV6rmsFGGpxwQ7vSrM6Df5PEIyah9BfuVTSaTaxv
+         ouXH6rw7x20mqy5vqtMTFBHkagLVZo2iKar42z9sRH5p7yXfBdwvwhyIZ3FoofZyySUH
+         +B7R8qrZyqqAo4OgCHUl8cvcsOzNXVvZ0Y04ulZd3rlGC0V0S2VPaDpc63FD5rIU8qcI
+         WwSmi1U+j25xGC7saEo3j1pNXjkHnI8Wmhc0GFhOhbN8qmTVBaQ/bODBT8XHD+34xE8v
+         nq+R4Bs60HRk2yGQxjXhf1KoRwF74R3A45eG5H1wratYNEozCWeWNHMvorHkJw6MGZ7P
+         2YJA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:mime-version:subject:date:message-id:to
+         :from:reply-to:feedback-id:dkim-signature;
+        bh=naJkTAT+QeRJ7lN6FNRKX4vMoOkN4Nq//bGeTWHWS1U=;
+        b=Pd7bcZniYwNOwAQ6wfD/IEINlp3ICmUaESeegtN+2tzJxlZoUzWApHftXvGCtdbRhy
+         JkSW2IBSqRYy/kF3KbI4+nJ6CU2kMmbw2wiH2XKzJfnLAHmYXKj6bpC4IgV8tDjcOf5e
+         U9la0jEaAblQGdcj2LzpbSFhCApnnARsrkUQDwjy8SA4qmZPz0XNhGre9KxUxaZ6gm7l
+         C7GT4QJ0iJ599PQGxbJO47JPD1AX0GURFH2HZ6zFcv0xLWcsvdJjmcMZCmsBnYpDXgCv
+         EfF1Y8UzGfTn8HT3GR3QRlKFeJiJ7EFBOm4n6KK9ECKwF3FmShbeAUqG4z3os8lunEdg
+         n1Lw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email-od.com header.s=dkim header.b=XrX42RG5;
+       spf=pass (google.com: domain of 8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com designates 142.0.180.130 as permitted sender) smtp.mailfrom=8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=starbucks.ph
+Return-Path: <8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com>
+Received: from s1-b482.socketlabs.email-od.com (s1-b482.socketlabs.email-od.com. [142.0.180.130])
+        by mx.google.com with ESMTPS id t129-20020a37aa87000000b0072c922d2a50si3558402qke.103.2023.02.04.00.32.05
+        for <************************@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 04 Feb 2023 00:32:06 -0800 (PST)
+Received-SPF: pass (google.com: domain of 8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com designates 142.0.180.130 as permitted sender) client-ip=142.0.180.130;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email-od.com header.s=dkim header.b=XrX42RG5;
+       spf=pass (google.com: domain of 8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com designates 142.0.180.130 as permitted sender) smtp.mailfrom=8199.82.ea9c0001d93279.398ad327ac444a793e97bdddc0f4640b@email-od.com;
+       dmarc=fail (p=NONE sp=NONE dis=NONE) header.from=starbucks.ph
+DKIM-Signature: v=1; a=rsa-sha256; d=email-od.com;i=@email-od.com;s=dkim;
+	c=relaxed/relaxed; q=dns/txt; t=1675499526; x=1678091526;
+	h=content-transfer-encoding:content-type:mime-version:subject:date:message-id:to:from:reply-to:feedback-id:x-thread-info:subject:to:from:cc:reply-to;
+	bh=naJkTAT+QeRJ7lN6FNRKX4vMoOkN4Nq//bGeTWHWS1U=;
+	b=XrX42RG5JyHaQMUw9EX5D+euGjtdJ/lrPZ//SOmgD2FjJQ6TJMh6etGKPdibPm05ugmq0WtY4N5mVC37jADOly+UaUTRIg2vndv3pK8xX7Son9PbQ9yK01KZ0JdmFqp3vCgsyN56T0Ecxhn3xHZAuzYQLXkav7Jd+0cxQvR5kZE=
+X-Thread-Info: ODE5OS4xMi5lYTljMDAwMWQ5MzI3OS5jYXZhbmV5cm9lcmljYWpveXNhcmlsYW49Z21haWwuY29t
+Feedback-ID: 33177:socketlabs
+Received: from r3.us-east-2.aws.in.socketlabs.com (r3.us-east-2.aws.in.socketlabs.com [142.0.189.3]) by mxh2.email-od.com
+	with ESMTP(version=Tls12 cipher=Aes256 bits=256); Sat, 4 Feb 2023 03:32:05 -0500
+Received: from 13.94.56.127 by r3.us-east-2.aws.in.socketlabs.com
+	via HTTP; Sat, 4 Feb 2023 08:32:04 UTC
+Reply-To: 
+From: "Starbucks Philippines" <notify@starbucks.ph>
+To: ************************@gmail.com
+Message-ID: <4b46660eb7c8430780c1de928c882e77@starbucks.ph>
+Date: Sat, 04 Feb 2023 03:32:04 -0500
+Subject: Starbucks Registration Verification
+MIME-Version: 1.0
+Content-type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=3D"UTF-8">
+
+</head>
+
+<body style=3D"margin:0px;padding:0px;font-family:'Lato', Helvetica, Ar=
+ial, sans-serif;color:#333;font-size:12px;">
+    <div
+        style=3D"margin:0px;padding:0px;font-family:'Lato', Helvetica, =
+Arial, sans-serif;color:#333;font-size:12px;width:640px;margin:auto;tex=
+t-align:center;">
+        <table width=3D"640px" cellspacing=3D"0" cellpadding=3D"0"
+            style=3D"margin:0px;padding:0px;font-family:'Lato', Helveti=
+ca, Arial, sans-serif;color:#333;font-size:12px;width:100%;line-height:=
+20px;padding:15px 15px;">
+            <tr valign=3D"top"
+                style=3D"margin:0px;padding:0px;font-family:'Lato', Hel=
+vetica, Arial, sans-serif;color:#333;font-size:12px;">
+                <td valign=3D"top" class=3D"dear"
+                    style=3D"margin:0px;padding:0px;font-family:'Lato',=
+ Helvetica, Arial, sans-serif;color:#333;font-size:12px;text-align:left=
+;">
+                    Hi, </td>
+            </tr>
+            <tr valign=3D"top"
+                style=3D"margin:0px;padding:0px;font-family:'Lato', Hel=
+vetica, Arial, sans-serif;color:#333;font-size:12px;">
+                <td valign=3D"top"
+                    style=3D"margin:0px;padding:0px;font-family:'Lato',=
+ Helvetica, Arial, sans-serif;color:#333;font-size:12px;text-align:left=
+;">
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    You're almost in=2E
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <b
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;">What's
+                        next </b>
+                </td>
+            </tr>
+            <tr valign=3D"top"
+                style=3D"margin:0px;padding:0px;font-family:'Lato', Hel=
+vetica, Arial, sans-serif;color:#333;font-size:12px;">
+                <td valign=3D"top"
+                    style=3D"margin:0px;padding:0px;font-family:'Lato',=
+ Helvetica, Arial, sans-serif;color:#333;font-size:12px;text-align:left=
+;">
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    Click <a
+                        href=3D"https://srapp=2Estarbucks=2Eph/restv4/r=
+egistration/DeepLink?token=3D9tJmwRBy2mIGhoP4F2QkA3HZqNE303aB5rACk3b79N=
+kz20TKEUOStE8Tz7R5ug8guz9t01VXyI6hSErXliE/2A=3D=3D"
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;color:#3289=
+00;">here</a>
+                    within 48 hours to complete your registration=2E Lo=
+g on using your registered email address and
+                    password, then you're good to go=2E
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    Otherwise, you will need to register again to acces=
+s your online account=2E
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <img src=3D"https://sbphuat=2Emtel=2Ews/restv1/temp=
+late/logo=2Epng"
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                </td>
+            </tr>
+            <tr valign=3D"top"
+                style=3D"margin:0px;padding:0px;font-family:'Lato', Hel=
+vetica, Arial, sans-serif;color:#333;font-size:12px;">
+                <td valign=3D"top"
+                    style=3D"margin:0px;padding:0px;font-family:'Lato',=
+ Helvetica, Arial, sans-serif;color:#333;font-size:12px;text-align:left=
+;">
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+
+                    <table
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;width:100%;=
+line-height:20px;padding:15px 15px;width: 300px;padding: 0px;">
+                        <tr
+                            style=3D"margin:0px;padding:0px;font-family=
+:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px;">
+                            <td
+                                style=3D"margin:0px;padding:0px;font-fa=
+mily:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px;tex=
+t-align:left;">
+                                <a href=3D"http://philippines=2Estarbuc=
+ks=2Ecom/en-US/"
+                                    style=3D"margin:0px;padding:0px;fon=
+t-family:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px=
+;color:#328900;">Starbucks=2Eph</a>
+                            </td>
+                            <td
+                                style=3D"margin:0px;padding:0px;font-fa=
+mily:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px;tex=
+t-align:left;">
+                                <a href=3D"https://starbuckscard=2Eph"
+                                    style=3D"margin:0px;padding:0px;fon=
+t-family:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px=
+;color:#328900;">Starbucks
+                                    Card</a></td>
+                            <td
+                                style=3D"margin:0px;padding:0px;font-fa=
+mily:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px;tex=
+t-align:left;">
+                                <a href=3D"http://philippines=2Estarbuc=
+ks=2Ecom/en-US/_Our+Stores/"
+                                    style=3D"margin:0px;padding:0px;fon=
+t-family:'Lato', Helvetica, Arial, sans-serif;color:#333;font-size:12px=
+;color:#328900;">Find
+                                    a Store</a></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr valign=3D"top"
+                style=3D"margin:0px;padding:0px;font-family:'Lato', Hel=
+vetica, Arial, sans-serif;color:#333;font-size:12px;">
+                <td valign=3D"top"
+                    style=3D"margin:0px;padding:0px;font-family:'Lato',=
+ Helvetica, Arial, sans-serif;color:#333;font-size:12px;text-align:left=
+;">
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    Use of the Starbucks Card constitutes acceptance of=
+ the complete terms and conditions available on
+                    our website=2E The Starbucks Card is issued by Rust=
+an Coffee Corporation, an authorized licensee of
+                    Starbucks Corporation=2E
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    <br
+                        style=3D"margin:0px;padding:0px;font-family:'La=
+to', Helvetica, Arial, sans-serif;color:#333;font-size:12px;" />
+                    =C2=A92013 Starbucks Coffee Company=2E All rights r=
+eserved=2E
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
+

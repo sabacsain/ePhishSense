@@ -1,20 +1,25 @@
-<!-- popup.html -->
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Phishing Detection Popup</title>
+  <title>ePhishSense</title>
   <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
   <div id="main-container">
-    <h1>Phishing Detection</h1>
-    <div id="buttonCheck">Button: N/A</div>
-    <!-- <div id="scanCheck">Scan: N/A</div> -->
-    <!-- <div id="emailCheck">Email Status: N/A</div>
-    <div id="senderCheck">Sender: N/A</div>
-    <div id="emlCheck">EML: N/A</div> -->
+    <h1>ePhishSense</h1>
+    <!-- LOGIN GMAIL -->
+    <input type="text" id="input-email" placeholder="Type email here..."/>
+    <input type="text" id="input-appPassword" placeholder="Type app password here..."/>
+    <button id="loginButton">Login</button>
+    <div id="loginCheck"></div>
+
+    <!-- SCAN GMAIL -->
+    <input type="text" id="input-subject" placeholder="Type subject here..."/>
+    <div id="buttonCheck"></div>
     <button id="scanButton">Scan Email</button>
   </div>
-  <script defer src="popup.js"></script>
+  <!-- Connect HTML TO JS -->
+  <script src="popup.js"></script>
+  
 </body>
 </html>

@@ -1,0 +1,266 @@
+Delivered-To: cavaneyroericajoysarilan@gmail.com
+Received: by 2002:a05:7000:9b48:b0:51c:3591:c489 with SMTP id b8csp3947720max;
+        Tue, 17 Oct 2023 22:07:02 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFMrKeHK7/UD3CoBOdzK1XOU5vOFCeAWNuEG3ydWeziJpx9EEmQqaImccKS1Ko/ams2rAlg
+X-Received: by 2002:ad4:5b8d:0:b0:66d:1b4c:e85e with SMTP id 13-20020ad45b8d000000b0066d1b4ce85emr5301212qvp.4.1697605622751;
+        Tue, 17 Oct 2023 22:07:02 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1697605622; cv=none;
+        d=google.com; s=arc-20160816;
+        b=YWQ53y2t0AZKGEyTlqogWPH1cN/V72c626zRKl1ybZB32riY4bqDV0M1bDgFlA5RJN
+         PoDZx2Ha6rFd4/EdDvAab+N3gTZMAkjfTvje5MREewilYdtKC2+M93m1Hd43EI/dl59P
+         6Qn5BXxKVA34vrsgEuZHOHFFdLNUSiRNsKs5LpBjX+J7cppasbjHXgWUP5nlgQXvRkxq
+         xDgfluu6Lg7+x8gZgR2Qbjr/hKegibDhZFTK5Dt9nEXkCqHN2rz9aktBDZ06SKGmW5Yc
+         VliPA2qRMST/dgZ2RFIj7Qe/cydUymJDGoE18oAeKqdiYs4b7QYG+LN2zgBjKydU07fH
+         tcaw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=message-id:to:from:subject:mime-version:date:sender:dkim-signature
+         :dkim-signature;
+        bh=NfXVztJAl8Mq6CzGsLrNZC71QIrj3jlooBnJBOGvmMc=;
+        fh=vDJEAz71kERyorseEOLA61HklgYh7ccGpRq5UcG4w0A=;
+        b=g1XiaDS7iXI4w4o4mUMVqmE4jhOH+8kbzN7GovGnWretaPKj1XPjXcf9/26A48Gqhl
+         YMvlRxoF2GWa1eH7VLhzOaY4Rg509CMacHTydabBQMXO7lzhP0iZ/5EHBlYgguDdUuaS
+         L9pI8dvoPzY5bGmiuzjFQZM4Kd/u9U4FO3MWFbJhc9UxuAGERG3qz6NCSMXCLG5WCr3N
+         42Rldil1U/UxeuTbGRAwOm9H8VDP6GJr4yncH/WSx6H+2pthJjpGYUwLWU+CMh85ge4I
+         l9nBk8JLftTL/XrG1nbx24Gp0kU8SpLoc+zTAHi3nrquOVDqmWkXfKMWhJbLLJsyV23x
+         PN4Q==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg.upwork.com header.s=k1 header.b=kfYN12Ax;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=G6+AHIrf;
+       spf=pass (google.com: domain of bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com designates 192.237.158.66 as permitted sender) smtp.mailfrom="bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=upwork.com
+Return-Path: <bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com>
+Received: from mail2.static.mg.upwork.com (mail2.static.mg.upwork.com. [192.237.158.66])
+        by mx.google.com with UTF8SMTPS id na1-20020a0562142d4100b0066cffad1e9bsi2287256qvb.44.2023.10.17.22.07.02
+        for <cavaneyroericajoysarilan@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 17 Oct 2023 22:07:02 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com designates 192.237.158.66 as permitted sender) client-ip=192.237.158.66;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg.upwork.com header.s=k1 header.b=kfYN12Ax;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=G6+AHIrf;
+       spf=pass (google.com: domain of bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com designates 192.237.158.66 as permitted sender) smtp.mailfrom="bounce+c0ebec.010a37-cavaneyroericajoysarilan=gmail.com@mg.upwork.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=upwork.com
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg.upwork.com;
+ q=dns/txt; s=k1; t=1697605622; x=1697612822; h=Message-Id: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender:
+ X-Feedback-Id; bh=NfXVztJAl8Mq6CzGsLrNZC71QIrj3jlooBnJBOGvmMc=;
+ b=kfYN12Axtctz4F7BjFliftZSJPn9I5yDoGuJgazjRSXeMLvZrJjPfHN8kPW+nS3dOMY8SjBDZF3DIHv3JVZ0jxWl5FWdDuCe4meqtc9jOzMiRqWYb8OdURlv+ptsXU+9wOL9cFOBWUDMPNWaoMibGJocIJBEvTPv1vrqbtVly2I=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org;
+ q=dns/txt; s=mg; t=1697605622; x=1697612822; h=Message-Id: To: To: From:
+ From: Subject: Subject: Content-Type: Mime-Version: Date: Sender: Sender:
+ X-Feedback-Id; bh=NfXVztJAl8Mq6CzGsLrNZC71QIrj3jlooBnJBOGvmMc=;
+ b=G6+AHIrfAixi0PfcfLQb37NCaDwqQHuqUrrpAZNw23yREVw75MeUWGkcYi5g8gjPtajsU6vx+0nbNMDD0N8c5+uQ9h9kKMk8blALJfz8DLDzdGdlyzzVbOv0gKwV3OeSwigBpe9iIGW0uxQC0/f6tXklOYbEmZUpcrwr0hjooxM=
+X-Feedback-Id: postmaster@mg.upwork.com:template:monetization/connects_expiring_soon:550b37b963badc4cf8629b40:mailgun
+X-Mailgun-Sending-Ip: 192.237.158.66
+X-Mailgun-Sid: WyI1MDU4YiIsImNhdmFuZXlyb2VyaWNham95c2FyaWxhbkBnbWFpbC5jb20iLCIwMTBhMzciXQ==
+Received: from <unknown> (<unknown> []) by 4eb78761c2c6 with HTTP id
+ 652f67f60659a03e5637939a; Wed, 18 Oct 2023 05:07:02 GMT
+Sender: donotreply=upwork.com@mg.upwork.com
+Date: Wed, 18 Oct 2023 05:07:02 +0000
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="f42605a4e3f2c0862294a9fff5d1c8455b2f01220978ef03aeeb70a0214b"
+Subject: You have Connects expiring in 1 month
+From: Upwork Notification <donotreply@upwork.com>
+To: cavaneyroericajoysarilan@gmail.com
+X-Mailgun-Tag: template:monetization/connects_expiring_soon
+X-Mailgun-Drop-Message: false
+X-Mailgun-Variables: {"x-eo-mailgun-id": "1714508362657595392"}
+Message-Id: <20231018050702.77b976268a27ade1@mg.upwork.com>
+
+--f42605a4e3f2c0862294a9fff5d1c8455b2f01220978ef03aeeb70a0214b
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+
+
+
+Use your expiring Connects soon
+
+Hi Erica Joy,
+
+You have Connects expiring soon, but you can still use them to submit a pro=
+posal to land your next job.
+
+Once your Connects expire, they are non-refundable and you will no longer b=
+e able to use them.
+View your Connects balance: https://www.upwork.com/nx/plans/membership/inde=
+x?frkscc=3DXbDM615E5Tux.
+
+Find Work: https://www.upwork.com/nx/find-work/?frkscc=3DOk4LYHpdlaZA
+
+Thanks for your time,
+The Upwork Team
+
+Unsubscribe: https://www.upwork.com/ab/notification-settings/?utm_source=3D=
+monetization%2Fconnects_expiring_soon&frkscc=3DLqZx4dRsRPdU
+Privacy Policy: https://www.upwork.com/legal/privacy?frkscc=3DBWPJqUv6JcJU
+Contact Support: https://support.upwork.com/home?frkscc=3Do1j3ZYTOjSuV
+655 Montgomery Street, Suite 490, Dpt 17022, San Francisco, CA 94111
+=C2=A9 2023 Upwork Inc.
+
+--f42605a4e3f2c0862294a9fff5d1c8455b2f01220978ef03aeeb70a0214b
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> <html lang=
+=3D"en" xml:lang=3D"en">
+<head> <meta charset=3D"utf-8" /> <meta name=3D"x-apple-disable-message-ref=
+ormatting"> <meta name=3D"viewport" content=3D"width=3Ddevice-width, initia=
+l-scale=3D1" /> <link href=3D"https://fonts.googleapis.com/css?family=3DHel=
+vetica:400,700" rel=3D"stylesheet"> <title>You have Connects expiring in 1 =
+month</title> <style type=3D"text/css"> body { background-color: #F2F2F2; c=
+olor: #001E00; font-family: Helvetica, Arial, sans-serif !important; margin=
+: 0; } table { line-height: inherit; font-size: inherit; } img { border-sty=
+le: none; } .p-0-top { padding-top: 0 !important; } .p-30-left { padding-le=
+ft: 30px !important; } .p-30-right { padding-right: 30px !important; } .p-1=
+0-left { padding-left: 10px !important; } .p-10-right { padding-right: 10px=
+ !important; } .card-box.next { margin-top: 40px; } .paragraph { margin-top=
+: 20px; } .paragraph.is-small { margin-top: 10px; } .full-width-divider { m=
+argin-left: -20px; margin-right: -20px; } .parent-full-width { margin: 0 -2=
+0px; } a { text-decoration: none; color: inherit; } a[x-apple-data-detector=
+s] { color: inherit !important; text-decoration: none !important; font-size=
+: inherit !important; font-family: inherit !important; font-weight: inherit=
+ !important; line-height: inherit !important; } .row { overflow: hidden; } =
+=2Eaddress-link a { color: #65735B !imp=
+ortant; text-decoration: none !importa=
+nt; } .mso-hidden { display: block; } @media (min-width: 600px) { .p-30-lef=
+t-md { padding-left: 30px !important; } .p-30-right-md { padding-right: 30p=
+x !important; } .p-20-left-md { padding-left: 20px !important; } .p-20-righ=
+t-md { padding-right: 20px !important; } .p-10-left-md { padding-left: 10px=
+ !important; } .p-10-right-md { padding-right: 10px !important; } .p-0-top-=
+md { padding-top: 0 !important; } .card-box.first { margin-top: 30px; } .ca=
+rd-row { padding-left: 30px !important; padding-right: 30px !important; } .=
+card-row-banner { padding-left: 50px !important; padding-right: 50px !impor=
+tant; } .split-details-row > span:last-child { float: right; } .banner { pa=
+dding: 55px 58px 66px 50px !important; } .full-width-divider { margin-left:=
+ -30px; margin-right: -30px; } .p-xl-left-md { padding-left: 80px; } .m-0-t=
+op-md { margin-top: 0 !important; } .d-md-none { display: block !important;=
+ } .d-md-inline-bl { display: inline-block !important; } .parent-full-width=
+ { margin: 0 !important; } .button-holder { max-width: 280px !important; } =
+=2Ecol-md-9 { width: 66%; float: left;=20=
+} .col-md-6 { width: 50%; float: left;=
+ } .col-md-3 { width: 34%; float: left; } .align-right-desktop { text-align=
+: right; } .desktop-hidden { display: none; } .desktop-visible { display: b=
+lock; } } @media (max-width: 599px) { .m--xs-left-sm { margin-left: -5px; }=
+ .m--xs-right-sm { margin-right: -5px; } .d-md-none { display: none !import=
+ant; } .p-0-left-md { padding-left: 0 !important; } .p-0-right-md { padding=
+-right: 0 !important; } .w100percent { width: 100% !important; min-width: 1=
+00% !important; height: auto !important; } .mobile-display { display: block=
+ !important; width: auto !important; height: auto !important; overflow: vis=
+ible !important; visibility: visible !important; float: none !important; ma=
+x-height: inherit !important; line-height: normal !important; } .mobile-hid=
+den { display: none; } .mobile-visible { display: block; } .ac { text-align=
+: center !important; } .dn { display: none !important; } .db { display: blo=
+ck !important; } .plr0 { padding-left: 0px !important; padding-right: 0px !=
+important; } .plr20{ padding-left: 20px !important; padding-right: 20px !im=
+portant; } .pt0{ padding-top: 0px !important; } .pt10{ padding-top:10px !im=
+portant; } .pt20{ padding-top:20px !important; } .pt30{ padding-top: 30px !=
+important; } .pb0{ padding-bottom: 0px !important; } .pb10{ padding-bottom:=
+ 10px !important; } .pb20{ padding-bottom: 10px !important; } .pb30{ paddin=
+g-bottom: 10px !important; } .split-details-row > span:first-child:after { =
+content: "\a"; white-space: pre; } } </style> <!--[if (mso)|(IE)]> <xml:nam=
+espace ns=3D"urn:schemas-microsoft-com:vml" prefix=3D"v" /> <style>v\: * { =
+behavior: url(#default#VML); display: inline-block }</style> <!<![endif]-->=
+ <!--[if (gte mso 9)|(IE)]> <style> .mso-hidden { display: none; } .parent-=
+full-width { margin: 0 !important; } .d-md-none { display: block !important=
+; float: right; margin-left: 10px; } </style> <![endif]-->
+</head> <body> <!--[if mso]> <style type=3D"text/css"> body, table, td, str=
+ong, h1, h2, h3, h4, h5, b {font-family: Arial, Helvetica, sans-serif !impo=
+rtant;} </style> <![endif]--> <div style=3D"display: none;">Use your Connec=
+ts to submit proposals now</div> <table bgcolor=3D"#F2F2F2" border=3D"0" ce=
+llpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tbody> <tr> <!--[if (gte=
+ mso 9)|(IE)]> <td><table cellspacing=3D"0" cellpadding=3D"0" width=3D"600"=
+ border=3D"0" align=3D"center"><tr> <![endif]--> <td> <div style=3D"max-wid=
+th: 600px; margin: 0 auto; font-size: 16px; line-height: 24px;"> <table bor=
+der=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"> <tbody> <tr> =
+<td> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" class=3D"card-=
+box first" width=3D"100%"> <tbody> <tr> <td> <table border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" class=3D"card-box" width=3D"100%"> <tbody> <tr> <=
+td style=3D"background-color: white; padding-top: 30px; padding-bottom: 30p=
+x;" class=3D"card"> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0"=
+ width=3D"100%"> <tbody> <tr> <td align=3D"left" style=3D"padding-top: 0; p=
+adding-bottom: 20px; padding-left:30px"> <a href=3D"https://www.upwork.com?=
+frkscc=3DiS1kiZxrYMMc"> <img src=3D"https://www.upwork.com/s/emails/upwork-=
+logo@2x.png" alt=3D"Upwork" width=3D"104" height=3D"30" style=3D" vertical-=
+align: middle; "
+> </a> </td> </tr> <tr> <td class=3D"card-row" style=3D"font-family: Helvet=
+ica, Arial, sans-serif; font-size: 16px; line-height: 24px; word-break: bre=
+ak-word; padding-left: 20px; padding-right: 20px; padding-top: 20px; paddin=
+g-bottom: 20px; margin-left: px; margin-right: px; "> <h3 style=3D"margin-t=
+op: 0; margin-bottom: 0; font-family: Helvetica, sans-serif; font-weight:
+normal; font-size: 20px; line-height: 26px; color: #001E00;">Use your expir=
+ing Connects soon</h3> </td> </tr> <tr> <td class=3D"card-row" style=3D"fon=
+t-family: Helvetica, Arial, sans-serif; font-size: 16px; line-height: 24px;=
+ word-break: break-word; padding-left: 20px; padding-right: 20px; padding-t=
+op: 20px; margin-left: px; margin-right: px; "> Hi Erica Joy, </td> </tr> <=
+tr> <td class=3D"card-row" style=3D"font-family: Helvetica, Arial, sans-ser=
+if; font-size: 16px; line-height: 24px; word-break: break-word; padding-lef=
+t: 20px; padding-right: 20px; padding-top: 20px; margin-left: px; margin-ri=
+ght: px; "> You have Connects expiring soon, but you can still use them to =
+submit a proposal to land your next job. </td> </tr> <tr> <td class=3D"card=
+-row" style=3D"font-family: Helvetica, Arial, sans-serif; font-size: 16px; =
+line-height: 24px; word-break: break-word; padding-left: 20px; padding-righ=
+t: 20px; padding-top: 20px; margin-left: px; margin-right: px; "> Once your=
+ Connects expire, they are non-refundable and you will no longer be able to=
+ use them.
+View your <a href=3D"https://www.upwork.com/nx/plans/membership/index?frksc=
+c=3DUQ69KthvikZm" target=3D"_blank" style=3D"color: #14A800; text-decoratio=
+n: underline; word-break: break-word;">Connects balance</a>. </td> </tr> <t=
+r> <td class=3D"card-row" style=3D"font-family: Helvetica, Arial, sans-seri=
+f; font-size: 16px; line-height: 24px; word-break: break-word; padding-left=
+: 20px; padding-right: 20px; padding-top: 10px; margin-left: px; margin-rig=
+ht: px; "> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D=
+"100%"> <tr><td style=3D"font-size: 0; line-height: 0;">&nbsp;</td></tr>
+</table> </td> </tr> <tr> <td class=3D"card-row" style=3D"font-family: Helv=
+etica, Arial, sans-serif; font-size: 16px; line-height: 24px; word-break: b=
+reak-word; padding-left: 20px; padding-right: 20px; padding-top: 30px; marg=
+in-left: px; margin-right: px; "> <table style=3D"text-align: center;" widt=
+h=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"> <tr> <td> <div=
+ class=3D"button-holder" style=3D"text-align: center; margin: 0 auto;"> <!-=
+-[if mso]> <v:roundrect xmlns:v =3D "urn:schemas-microsoft-com:vml" xmlns:w=
+ =3D "urn:schemas-microsoft-com:office:word" href =3D "https://www.upwork.c=
+om/nx/find-work/?frkscc=3D6iMfoHPIshZT" style=3D" white-space: nowrap; heig=
+ht: 40px; v-text-anchor: middle; width: 230px;" arcsize =3D "5%" strokecolo=
+r =3D "#14A800" fillcolor =3D "#14A800"> <w:anchorlock/> <center style=3D"c=
+olor: #FFFFFF; font-family: Helvetica, Arial,sans-serif; font-size: 16px; f=
+ont-weight: normal;">Find Work</center> </v:roundrect> <![endif]--> <a targ=
+et=3D"_blank" style=3D" background-color: #14A800; border: 2px solid #14A80=
+0; border-radius: 100px; min-width: 230px; color: #FFFFFF; white-space: now=
+rap; font-weight: normal; display: block; font-family: Helvetica, Arial, sa=
+ns-serif; font-size: 16px; line-height: 40px; text-align: center; text-deco=
+ration: none; -webkit-text-size-adjust: none; mso-hide: all; " href=3D"http=
+s://www.upwork.com/nx/find-work/?frkscc=3DedXQqjGHh8Ml">Find Work</a> </div=
+> </td> </tr>
+</table> </td> </tr> <tr> <td class=3D"card-row" style=3D"font-family: Helv=
+etica, Arial, sans-serif; font-size: 16px; line-height: 24px; word-break: b=
+reak-word; padding-left: 20px; padding-right: 20px; padding-top: 30px; marg=
+in-left: px; margin-right: px; "> <div style=3D"padding-top: 10px;">Thanks =
+for your time,<br>The Upwork Team</div> </td> </tr> </tbody> </table> </td>=
+ </tr> </tbody> </table> </td> </tr> </tbody> </table> </td> </tr> </tbody>=
+ </table> <table border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"=
+100%"> <tbody> <tr> <td align=3D"center" width=3D"100%" style=3D"color: #65=
+735B; font-size: 12px; line-height: 24px; padding-bottom: 30px; padding-top=
+: 30px;"> <a href=3D"https://www.upwork.com/ab/notification-settings/?utm_s=
+ource=3Dmonetization%2Fconnects_expiring_soon&amp;frkscc=3DDSSfisSSRAL8" st=
+yle=3D"color: #65735B; text-decoration: underline;">Unsubscribe</a> &nbsp; =
+| &nbsp; <a href=3D"https://www.upwork.com/legal/privacy/?frkscc=3DxIlKtbFq=
+iSKl" style=3D"color: #65735B; text-decoration: underline;">Privacy Policy<=
+/a> &nbsp; | &nbsp; <a href=3D"https://support.upwork.com/home?frkscc=3DqNi=
+JKJrRofeh" style=3D"color: #65735B; text-decoration: underline;">Contact Su=
+pport</a> <div style=3D"font-family: Helvetica, Arial, sans-serif; word-bre=
+ak: normal;
+" class=3D"address-link">
+655 Montgomery Street, Suite 490, Dpt 17022, San Francisco, CA 94111
+</div> <div style=3D"font-family: Helvetica, Arial, sans-serif; word-break:=
+ normal;
+" >
+&copy; 2023 Upwork Inc.
+</div> </td> </tr> </tbody> </table> </div> </td> <!--[if (gte mso 9)|(IE)]=
+> </tr></table></td> <![endif]--> </tr> </tbody> </table>
+<img width=3D"1px" height=3D"1px" alt=3D"" src=3D"http://email.mg.upwork.co=
+m/o/eJwczE1yqzAMAODTwC4ZSf4RLLx4m3eNjLAV6hZsxjht0tN32v03XwqAIIZHDehn9uA80fg=
+WFiveLsKezWTQaTIxIafJ3pEA433MgYAMAk7ggIGuzMvMnvwkxJIUBwv7en0cX7V9XGPdxxaifE=
+rRV6vacpT3-jql5U3KYGHdJW9_rIeu-7FJ18H822vRnr-l51oG-h9rKRr7edPnkVsu6-2stYzPi=
+9bLb7A-yiWngIzWwWQ8ecdudmamnwAAAP__AutIag"></body>
+</html>
+--f42605a4e3f2c0862294a9fff5d1c8455b2f01220978ef03aeeb70a0214b--

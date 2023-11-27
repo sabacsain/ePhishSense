@@ -1,0 +1,289 @@
+Delivered-To: cavaneyroericajoysarilan@gmail.com
+Received: by 2002:a05:7001:360a:b0:4f4:d48:a6dd with SMTP id su10csp2183585mab;
+        Mon, 24 Jul 2023 18:07:06 -0700 (PDT)
+X-Received: by 2002:a67:fdcc:0:b0:443:8b27:6dac with SMTP id l12-20020a67fdcc000000b004438b276dacmr3817404vsq.9.1690247226110;
+        Mon, 24 Jul 2023 18:07:06 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1690247226; cv=none;
+        d=google.com; s=arc-20160816;
+        b=lvL0xr19SEvzL6JRA29WkW33XAOLgCJdwcZZ5kflSTlnaa0seDNjhZG2aNrLUcTzaE
+         aCUSXokktXBckTcKKLYXV1qt3hJ1lE3xvngSLWVd5cXmQG+UDXKP9u+4MfbZDi3CTgzY
+         0kFer/6jvsu3xh+CJ+u7OCUU1DpqRc8l2ERkUsrAwLD0Lp5KPyUH/eNxaeoInA7k5dGV
+         J2T6latPgTBBT0U/qvFFilHEjOm3Wc8xXgEgUG1sFSMWAZ/ELAC9Ba0Y7muU33F4onUa
+         51aBwGlq2eGpyLf06OixfG5qbUM7aW3A4N0gLYHpqByLUXazhPi8826wyGUhA19MliYf
+         KPaA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :dkim-signature;
+        bh=lOBMk+2Dpt4ywJODO0EaYEf7M+IuSBDS45BqtIXGYYc=;
+        fh=yyWQ3XeWU9VnEd0j2ASsDEcsK9GO2DXwSVIyQfg4bxU=;
+        b=uzGgPrbXJG6DC9dqXVfhVFOIvIQ41Fnt10LnrIcSNI2Qw1fr3Jj+6bANdk4lnxZSBg
+         Ay9iojgtxwAkDYtICcd86oSH7hXICEzziYsvONLkoOHRRjiSqcHdNxxljxxYWIOWnloJ
+         qEYZgYuApWKO/7GEICNOaVoD3AqoOJL0VGf1pc/ftgmucOBFSUBi/p4fDrDUfbzieYJf
+         3UWwIvwKlmB7bZ6S0mo9LQZXxyG3ggglMIHzuRgrC4R2eOCBZeP87EXPYzUSZ/xf+t/v
+         1tqZbp5GL12YscocuuB52BSTg+nUob5gatrr1eXFPCcmVjGI39PAhDQKms9XAGtfRgJV
+         px1A==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@convergeict.com header.s=google header.b=OqTrYt2X;
+       spf=pass (google.com: domain of louie.marasigan@convergeict.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=louie.marasigan@convergeict.com
+Return-Path: <louie.marasigan@convergeict.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id n30-20020a67d61e000000b00443710cdf05sor938170vsj.2.2023.07.24.18.07.05
+        for <cavaneyroericajoysarilan@gmail.com>
+        (Google Transport Security);
+        Mon, 24 Jul 2023 18:07:06 -0700 (PDT)
+Received-SPF: pass (google.com: domain of louie.marasigan@convergeict.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@convergeict.com header.s=google header.b=OqTrYt2X;
+       spf=pass (google.com: domain of louie.marasigan@convergeict.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=louie.marasigan@convergeict.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=convergeict.com; s=google; t=1690247225; x=1690852025;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=lOBMk+2Dpt4ywJODO0EaYEf7M+IuSBDS45BqtIXGYYc=;
+        b=OqTrYt2XjX49wz34nJAfuP5cKZ41F9Npvr/bBV+QQGXe4TYjyiImlRPc05+2OLjUJL
+         08jKgbgs9XdoMyuQtV5bq6HaZFko1/ITmgMNAqC/waq+LSjqRgtEwy8Y3l+y1Nq5Tq/K
+         VcHEgovtOo0ZHf+NoYyv4HWmo421H1vEySwK0=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20221208; t=1690247225; x=1690852025;
+        h=to:subject:message-id:date:from:in-reply-to:references:mime-version
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=lOBMk+2Dpt4ywJODO0EaYEf7M+IuSBDS45BqtIXGYYc=;
+        b=ZR2/apF7bIIXsw4KpHAcZMpKK0KS9vmCqA7PybRdwCHAdxR78pPmSba4RPgXpJ6yXh
+         6aaoKAZjP78NkXIYQ2z8nxAUL9jJwOfZL3K32Rq2ZOd/yFAik2P0OvaNJqxq5cuOwhIx
+         19tA5gcitXqEExHhFn9WYA/cx9ANmr81JN9VmIBFzuLe0IDxUb8w/KBKT2Ubz0DsummR
+         h+FJWniIdyLMXM5+84QRLJIkQHqqUnCuEMfFaYcaBq/TBgADW5V/Yn47zCoZoonqgZrT
+         ZBZlGL70aXxIq9gn4BK/fkjuWT+9f9v5sCz5peQFW5QkD1VQ2wXl9SIL6Nl87ifIJvmp
+         Lsqw==
+X-Gm-Message-State: ABy/qLbtsezLAIzFf2GOu/p3h8haptoQSl1DjyLXBPhIBRzwysnkRQQL
+	wEXTRkDWrXt1qRkzK1QnbZbiN16JkxULjs3awSkR0wwJytdBDLerYuMHSur/Qy+vuHfxez17M53
+	yvGxUSJ01KEIai2FE26KsObJy7EOyKgjpreC40K/pXRQ6zi+IkZEKDgAa8g==
+X-Google-Smtp-Source: APBJJlGTryYPPkLu4BDhnm9TCiqLhsPmiE/EYl8tnlFQWoQkTzH6YwWC2MPf8X5I4vEqkl74dTj6joHZitRBtt1NtLM=
+X-Received: by 2002:a67:eb4e:0:b0:443:6457:112 with SMTP id
+ x14-20020a67eb4e000000b0044364570112mr4007629vso.2.1690247225303; Mon, 24 Jul
+ 2023 18:07:05 -0700 (PDT)
+MIME-Version: 1.0
+References: <CAFNb-L3GVjU0hFRVErew-CBC4pzuV=ONpYetkTD6o9PjixEqSQ@mail.gmail.com>
+ <CAEfnPuqxGW0turuL_nynZ0kjYvnVUXogcj=QJL-tYTaFyO+Mvw@mail.gmail.com> <CAEfnPuo5NZDYbVmZ6LWdi4m9CtBKn2CWU0_K1o+CTBQ8GAG_UA@mail.gmail.com>
+In-Reply-To: <CAEfnPuo5NZDYbVmZ6LWdi4m9CtBKn2CWU0_K1o+CTBQ8GAG_UA@mail.gmail.com>
+From: Louie Brian Marasigan <louie.marasigan@convergeict.com>
+Date: Tue, 25 Jul 2023 09:06:29 +0800
+Message-ID: <CAFNb-L0YDHn5=sJgMgJi3o1mCvbtCRxFNCKHLynQWiEnZ1vXLA@mail.gmail.com>
+Subject: =?UTF-8?Q?Re=3A_Let=E2=80=99s_FIBER=2DFASTRACK_YOUR_APPLICATION?=
+To: Erica Joy Cavaneyro <cavaneyroericajoysarilan@gmail.com>
+Content-Type: multipart/alternative; boundary="000000000000727c7a060145597b"
+
+--000000000000727c7a060145597b
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Ma'am Erica,
+
+Good day!
+
+Installation is within 2 to 3 days upon approved application. Expect to
+received a call or txt from our installer for site visit confirmation.
+
+
+Thank you.
+Best Regards,
+Louie Brian F. Marasigan
+Digital Sales Agent |Emerging-Online Sales-National
+09682906388 |lbfmrasigan@convergeict.com
+www.convergeict.com | https://www.facebook.com/ConvergeICT
+<https://www.facebook.com/ConvergeICTOfficial>
+Reliance IT Center, #99 E. Rodriguez Jr. Avenue, Ugong, Pasig City
+
+
+
+
+
+
+On Mon, Jul 24, 2023 at 6:40=E2=80=AFPM Erica Joy Cavaneyro <
+cavaneyroericajoysarilan@gmail.com> wrote:
+
+> I mean, my account number is  1680000284031 and the reference number is
+> OO3143577. We were waiting earlier for installation but nothing happened
+> thank you
+>
+> On Mon, Jul 24, 2023 at 6:37=E2=80=AFPM Erica Joy Cavaneyro <
+> cavaneyroericajoysarilan@gmail.com> wrote:
+>
+>> Hello, we did not receive any installation today. My reference number is
+>> 1680000284031. We need it urgently as we have exam tomorrow
+>>
+>> On Mon, Jul 24, 2023 at 2:41=E2=80=AFPM <louie.marasigan@convergeict.com=
+> wrote:
+>>
+>>> Dear Customer,
+>>>
+>>>
+>>>
+>>> Thank you for your interest in getting a new Converge fiber internet
+>>> plan via GOFIBER.PH <https://gofiber.ph/>.
+>>>
+>>>
+>>> To further assist you with your application, we may reach out to you vi=
+a
+>>> phone call so kindly keep your line open. Furthermore, should you have
+>>> questions or concerns regarding your application, you can e-mail us at
+>>> digisales@convergeict.com or send a direct message to Converge ICT
+>>> Digital Sales <https://www.facebook.com/ConvergeICTDigitalSales> on
+>>> Facebook.
+>>>
+>>>
+>>> Kindly disregard if you have already successfully applied for a plan.
+>>>
+>>>
+>>> Thank you and we look forward to you being of the Purple Nation soon!
+>>>
+>>>
+>>>
+>>> Team Converge
+>>> Louie Brian F. Marasigan
+>>> Digital Sales Agent |Emerging-Online Sales-National
+>>> 09682906388 |lbfmrasigan@convergeict.com
+>>> www.convergeict.com | https://www.facebook.com/ConvergeICT
+>>> <https://www.facebook.com/ConvergeICTOfficial>
+>>> Reliance IT Center, #99 E. Rodriguez Jr. Avenue, Ugong, Pasig City
+>>>
+>>>
+>>>
+>>>
+>>>
+>>> IMPORTANT NOTICE: The information and/or attachments contained in this
+>>> email are strictly confidential and are for intended recipient/s only. =
+Any
+>>> unauthorized use, dissemination, or copying of this message or the
+>>> information it contains is prohibited. If you are not the intended
+>>> recipient or received this email by mistake, please notify the sender
+>>> immediately, delete this email and all its attachments from your system=
+ and
+>>> do not disclose the contents to anyone
+>>>
+>>
+
+--=20
+IMPORTANT NOTICE: The information and/or attachments contained in this=20
+email are strictly confidential and are for intended recipient/s only.=C2=
+=A0Any=20
+unauthorized use, dissemination, or copying of this message or the=20
+information it contains is prohibited.=C2=A0If you are not the intended=20
+recipient or received this email by mistake, please notify the sender=20
+immediately, delete this email and all its attachments from your system and=
+=20
+do not disclose the contents to anyone
+
+--000000000000727c7a060145597b
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div class=3D"gmail_default" style=3D"font-family:monospac=
+e">Dear Ma&#39;am Erica,</div><div class=3D"gmail_default" style=3D"font-fa=
+mily:monospace"><br></div><div class=3D"gmail_default" style=3D"font-family=
+:monospace">Good day!</div><div class=3D"gmail_default" style=3D"font-famil=
+y:monospace"><br></div><div class=3D"gmail_default" style=3D"font-family:mo=
+nospace">Installation=C2=A0is within 2 to 3 days upon approved application.=
+ Expect to received a call or txt from our installer for site visit confirm=
+ation.</div><div class=3D"gmail_default" style=3D"font-family:monospace"><b=
+r></div><div class=3D"gmail_default" style=3D"font-family:monospace"><br></=
+div><div class=3D"gmail_default" style=3D"font-family:monospace">Thank you.=
+</div><div class=3D"gmail_default" style=3D"font-family:monospace">Best Reg=
+ards,</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=
+=3D"gmail_signature"><div dir=3D"ltr"><font face=3D"monospace">Louie Brian =
+F. Marasigan</font><div><font face=3D"monospace">Digital Sales Agent |Emerg=
+ing-Online Sales-National=C2=A0</font></div><div><font face=3D"monospace">0=
+9682906388 |</font><a href=3D"mailto:lbfmrasigan@convergeict.com" style=3D"=
+font-family:monospace" target=3D"_blank">lbfmrasigan@convergeict.com</a></d=
+iv><div><div style=3D"color:rgb(34,34,34)"><font face=3D"arial, sans-serif"=
+><a href=3D"http://www.convergeict.com/" style=3D"color:rgb(17,85,204)" tar=
+get=3D"_blank">www.convergeict.com</a>=C2=A0|=C2=A0</font><a href=3D"https:=
+//www.facebook.com/ConvergeICTOfficial" style=3D"color:rgb(17,85,204)" targ=
+et=3D"_blank">https://www.facebook.com/ConvergeICT</a></div><div style=3D"c=
+olor:rgb(34,34,34)"><font color=3D"#444444" face=3D"arial, sans-serif">Reli=
+ance IT Center, #</font><span style=3D"color:rgb(68,68,68);font-family:aria=
+l,sans-serif">99 E. Rodriguez Jr. Avenue, Ugong, Pasig City</span></div></d=
+iv><div><br></div><div><br></div><div><font face=3D"monospace"><br></font><=
+div><font face=3D"monospace"><br></font></div></div></div></div></div><br><=
+/div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">O=
+n Mon, Jul 24, 2023 at 6:40=E2=80=AFPM Erica Joy Cavaneyro &lt;<a href=3D"m=
+ailto:cavaneyroericajoysarilan@gmail.com">cavaneyroericajoysarilan@gmail.co=
+m</a>&gt; wrote:<br></div><blockquote class=3D"gmail_quote" style=3D"margin=
+:0px 0px 0px 0.8ex;border-left:1px solid rgb(204,204,204);padding-left:1ex"=
+><div dir=3D"ltr">I mean, my account number is=C2=A0
+
+1680000284031 and the reference number is=C2=A0
+
+OO3143577. We were waiting earlier for installation but nothing happened<br=
+>thank you</div><br><div class=3D"gmail_quote"><div dir=3D"ltr" class=3D"gm=
+ail_attr">On Mon, Jul 24, 2023 at 6:37=E2=80=AFPM Erica Joy Cavaneyro &lt;<=
+a href=3D"mailto:cavaneyroericajoysarilan@gmail.com" target=3D"_blank">cava=
+neyroericajoysarilan@gmail.com</a>&gt; wrote:<br></div><blockquote class=3D=
+"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;border-left:1px solid rgb(2=
+04,204,204);padding-left:1ex"><div dir=3D"ltr">Hello, we did not receive an=
+y installation today. My reference number is=C2=A0
+
+1680000284031. We need it urgently as we have exam tomorrow</div><br><div c=
+lass=3D"gmail_quote"><div dir=3D"ltr" class=3D"gmail_attr">On Mon, Jul 24, =
+2023 at 2:41=E2=80=AFPM &lt;<a href=3D"mailto:louie.marasigan@convergeict.c=
+om" target=3D"_blank">louie.marasigan@convergeict.com</a>&gt; wrote:<br></d=
+iv><blockquote class=3D"gmail_quote" style=3D"margin:0px 0px 0px 0.8ex;bord=
+er-left:1px solid rgb(204,204,204);padding-left:1ex"><div dir=3D"ltr"><div =
+class=3D"gmail_default" style=3D"font-family:monospace"><span style=3D"font=
+-family:Arial;font-size:10pt;text-align:justify">Dear Customer,<br><br><br>=
+<br>Thank you for your interest in getting a new Converge fiber internet pl=
+an via=C2=A0</span><span style=3D"font-family:Arial;font-size:10pt;text-ali=
+gn:justify;text-decoration-line:underline;color:rgb(17,85,204)"><a href=3D"=
+https://gofiber.ph/" target=3D"_blank">GOFIBER.PH</a></span><span style=3D"=
+font-family:Arial;font-size:10pt;text-align:justify">.<br><br><br>To furthe=
+r assist you with your application, we may reach out to you via phone call =
+so kindly keep your line open. Furthermore, should you have questions or co=
+ncerns regarding your application, you can e-mail us at=C2=A0</span><span s=
+tyle=3D"font-family:Arial;font-size:10pt;text-align:justify;text-decoration=
+-line:underline;color:rgb(17,85,204)"><a href=3D"mailto:digisales@convergei=
+ct.com" target=3D"_blank">digisales@convergeict.com</a></span><span style=
+=3D"font-family:Arial;font-size:10pt;text-align:justify">=C2=A0or send a di=
+rect message to=C2=A0</span><span style=3D"font-family:Arial;font-size:10pt=
+;text-align:justify;text-decoration-line:underline;color:rgb(17,85,204)"><a=
+ href=3D"https://www.facebook.com/ConvergeICTDigitalSales" target=3D"_blank=
+">Converge ICT Digital Sales</a></span><span style=3D"font-family:Arial;fon=
+t-size:10pt;text-align:justify">=C2=A0on Facebook.<br><br><br>Kindly disreg=
+ard if you have already successfully applied for a plan.<br><br><br>Thank y=
+ou and we look forward to you being of the Purple Nation soon!<br><br><br><=
+br>Team Converge</span><br clear=3D"all"></div><div><div dir=3D"ltr" class=
+=3D"gmail_signature"><div dir=3D"ltr"><font face=3D"monospace">Louie Brian =
+F. Marasigan</font><div><font face=3D"monospace">Digital Sales Agent |Emerg=
+ing-Online Sales-National=C2=A0</font></div><div><font face=3D"monospace">0=
+9682906388 |</font><a href=3D"mailto:lbfmrasigan@convergeict.com" style=3D"=
+font-family:monospace" target=3D"_blank">lbfmrasigan@convergeict.com</a></d=
+iv><div><div style=3D"color:rgb(34,34,34)"><font face=3D"arial, sans-serif"=
+><a href=3D"http://www.convergeict.com/" style=3D"color:rgb(17,85,204)" tar=
+get=3D"_blank">www.convergeict.com</a>=C2=A0|=C2=A0</font><a href=3D"https:=
+//www.facebook.com/ConvergeICTOfficial" style=3D"color:rgb(17,85,204)" targ=
+et=3D"_blank">https://www.facebook.com/ConvergeICT</a></div><div style=3D"c=
+olor:rgb(34,34,34)"><font color=3D"#444444" face=3D"arial, sans-serif">Reli=
+ance IT Center, #</font><span style=3D"color:rgb(68,68,68);font-family:aria=
+l,sans-serif">99 E. Rodriguez Jr. Avenue, Ugong, Pasig City</span></div></d=
+iv><div><br></div><div><br></div><div><font face=3D"monospace"><br></font><=
+div><font face=3D"monospace"><br></font></div></div></div></div></div></div=
+>
+
+<br>
+IMPORTANT NOTICE: The information and/or attachments contained in this emai=
+l are strictly confidential and are for intended recipient/s only.=C2=A0Any=
+ unauthorized use, dissemination, or copying of this message or the informa=
+tion it contains is prohibited.=C2=A0If you are not the intended recipient =
+or received this email by mistake, please notify the sender immediately, de=
+lete this email and all its attachments from your system and do not disclos=
+e the contents to anyone<br></blockquote></div>
+</blockquote></div>
+</blockquote></div>
+
+<br>
+IMPORTANT NOTICE: The information and/or attachments contained in this emai=
+l are strictly confidential and are for intended recipient/s only.=C2=A0Any=
+ unauthorized use, dissemination, or copying of this message or the informa=
+tion it contains is prohibited.=C2=A0If you are not the intended recipient =
+or received this email by mistake, please notify the sender immediately, de=
+lete this email and all its attachments from your system and do not disclos=
+e the contents to anyone<br>
+--000000000000727c7a060145597b--

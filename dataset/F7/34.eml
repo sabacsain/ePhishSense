@@ -1,0 +1,18 @@
+Bcc: tsukilamb@gmail.com
+Return-Path: <tsukilamb@gmail.com>
+Received: from sendoff-PC.. ([112.201.129.58])
+        by smtp.gmail.com with ESMTPSA id k12-20020a170902760c00b001b246dcffb7sm1347251pll.300.2023.06.24.08.32.54
+        for <tsukilamb@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 24 Jun 2023 08:32:55 -0700 (PDT)
+Message-ID: <64970ca7.170a0220.6d792.1e6a@mx.google.com>
+Date: Sat, 24 Jun 2023 08:32:55 -0700 (PDT)
+From: Author <tsukilamb@gmail.com>
+X-Google-Original-From: Author <author@example.com>
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+To: Recipient <example%%%@gmail.com>
+Subject: Simple test message
+
+This is the body of the message.
