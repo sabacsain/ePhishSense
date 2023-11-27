@@ -14,7 +14,7 @@ slash = '\\' if which_os == 'Windows' else '/'
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # Concatenate directory path and dataset location
-filepath = current_path + slash + 'temp.csv'
+filepath = current_path + slash + 'dataset.csv'
 
 # Load the dataset
 df = pd.read_csv(filepath)
@@ -46,9 +46,11 @@ recall = recall_score(y_test, predictions)
 print(f'Recall: {recall}')
 
 # Save the model to a file using pickle
-with open('dt_model.pkl', 'wb') as model_file:
+save_path = current_path + slash + 'dt_model.pkl'
+with open(save_path, 'wb') as model_file:
     pickle.dump(dt_model, model_file)
 
 # Print the model path
 print("Model: 'dt_model.pkl' has been saved.")
+print(f"Saved at {save_path}")
 
