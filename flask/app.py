@@ -104,6 +104,7 @@ def scan():
         decrypted_data = ''
 
         # Extract Email
+
         run = GMAIL_EXTRACTOR(input_subject, g_mail)
 
         # Check if no subject found
@@ -120,8 +121,8 @@ def scan():
         predict = DT_MODEL(input)
         prediction = predict.result()
 
-        # print(input)
-        # print(prediction)
+        print(input)
+        print(prediction)
         
         # Send the prediction to GUI
         return jsonify({'message': prediction})

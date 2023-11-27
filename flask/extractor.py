@@ -46,14 +46,13 @@ class GMAIL_EXTRACTOR():
         return True if self.mailCount > 0 else False
 
     def searchThroughMailbox(self):
+
         # type, self.data = self.mail.search(None, "ALL")
-        subject = f'SUBJECT "{self.subject}"'           
+        subject = f'SUBJECT "{self.subject}"'         
         type, self.data = self.mail.search(None, subject)
-        # print(f'TYPE: {type}')
-        # print(f'SELF.DATA: {self.data}')
-        
+     
         # Check if no subject matches
-        if type == 'NO' or not self.data[0]:
+        if not type == 'OK' or not self.data[0]:
             print('EMPTY')
             return False
 
@@ -70,9 +69,7 @@ class GMAIL_EXTRACTOR():
         #     # FOR TESTING PURPOSES
         #     raise Exception
         #     return False
-        return True
-
-        
+        return True      
 
     # Parse Raw Email to get Sender, DKIM, URL
     def parseEmails(self):
@@ -80,19 +77,21 @@ class GMAIL_EXTRACTOR():
 
         type, self.data = self.mail.fetch(self.idsList[-1], '(UID RFC822)')
         raw = self.data[0][1]
-       
+
         # Convert Raw Email to Standard Email Encoding
         try:
             raw_str = raw.decode("utf-8")
-        except UnicodeDecodeError:
+        except UnicodeDecodeError as utf_err:
             try:
                 raw_str = raw.decode("ISO-8859-1") # ANSI support
-            except UnicodeDecodeError:
+            except UnicodeDecodeError as iso_err:
                 try:
                     raw_str = raw.decode("ascii") # ASCII ?
-                except UnicodeDecodeError:
-                    pass
-                    
+                except UnicodeDecodeError as ascii_err:
+                    print(f"Error decoding as UTF-8: {utf_err}")
+                    print(f"Error decoding as ISO-8859-1: {iso_err}")
+                    print(f"Error decoding as ASCII: {ascii_err}")
+          
         msg = email.message_from_string(raw_str)
 
         # Get Sender
@@ -126,13 +125,14 @@ class GMAIL_EXTRACTOR():
                 if partType == "text/html" and "attachment" not in part:
                     jsonOutput['body'] = part.get_payload()
             
+
         # Check if URL exists in Body
         def is_url_exists_in_body(html_data):
             # Regular expression to find all URLs in the HTML content
-            url_pattern = re.compile(r'href=["\'](https?://\S+?)["\']', re.IGNORECASE)
+            url_pattern = re.compile(r'(https?://\S+)', re.IGNORECASE)
             # Store all the URLS
             urls_exist = url_pattern.findall(html_data)
-            
+
             return True if urls_exist else False
         
         # Return True or False if URL exists

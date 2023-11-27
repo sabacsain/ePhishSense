@@ -66,6 +66,4 @@ class ENCRYPT():
 
         # print(f"ENCRYPTED PATH: {self.temp_path}")
 
-        print('ENCRYPTION done')
-
 
