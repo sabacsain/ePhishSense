@@ -18,7 +18,7 @@ class GMAIL_EXTRACTOR():
         self.idsList = []
 
         self.valueList = []
-        self.is_subject_found = True
+        self.search_mailbox = True
 
     # Get Gmail credentials
     # def getLogin(self):
@@ -49,11 +49,11 @@ class GMAIL_EXTRACTOR():
         # type, self.data = self.mail.search(None, "ALL")
         subject = f'SUBJECT "{self.subject}"'           
         type, self.data = self.mail.search(None, subject)
-        # print(f'TYPE: {type}')
-        # print(f'SELF.DATA: {self.data}')
+        print(f'TYPE: {type}')
+        print(f'SELF.DATA: {self.data}')
         
         # Check if no subject matches
-        if type == 'NO' or not self.data[0]:
+        if not self.data[0]:
             print('EMPTY')
             return False
 
@@ -150,8 +150,8 @@ class GMAIL_EXTRACTOR():
         return self.valueList
 
     # Get mailbox value
-    def get_is_subject_found(self):
-        return self.is_subject_found
+    def get_is_mailbox_not_empty(self):
+        return self.search_mailbox
 
     # Function to be executed when the Class has been called
     def __init__(self, input_subject, mail):
@@ -169,8 +169,7 @@ class GMAIL_EXTRACTOR():
 
         # Search the email to be scanned
         if not self.searchThroughMailbox():
-            self.is_subject_found = False
-            print('Subject not found')
+            self.search_mailbox == False
             return 
 
         # Extract Sender, DKIM, and URL

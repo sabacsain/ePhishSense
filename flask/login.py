@@ -18,7 +18,7 @@ class LOGIN():
             return True
         except Exception as e:
             print("\nLogin FAILED")
-            print(f"ERROR: {e}")
+            print(f"ERROR: in login.py \n{e}")
             return False         
         
     # Store numerical value of the email  

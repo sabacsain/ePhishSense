@@ -4,7 +4,7 @@ from extension_dt_model import DT_MODEL
 from login import LOGIN
 from encrypt import ENCRYPT
 from decrypt import DECRYPT
-import imaplib, secrets
+import imaplib, secrets, traceback
 
 app = Flask(__name__)
 # Generate random key
@@ -66,9 +66,6 @@ def subject():
 @app.route('/api/scan', methods=['GET'])
 def scan():
     try:
-        # Randomize app session key again
-        app.secret_key = secrets.token_hex(16)
-
         # Check if authenticated
         if not session.get('is_authenticated', True):
             return jsonify({'message': 'Not authenticated'})
@@ -96,26 +93,27 @@ def scan():
         if not g_mail:
             return jsonify({'message': 'Error logging in'})
 
+        # print('beoifre')
+        # Extract Email
+        run = GMAIL_EXTRACTOR(input_subject, g_mail)
+        # print('after')
+        # print(run.get_is_subject_found())
+        # exit(0)
+        # Check if no subject found
+        if not run.get_is_subject_found():
+            return jsonify({'message': 'No subject found in the mailbox'})
+
+        # Store numeric email value
+        input = run.value()
+
         # Encrypt back again the login credentials
         if not func_encrypt(g_mail, decrypted_data['email'], decrypted_data['password']):
                 return jsonify({'message' : 'Error in Encryption'})
 
         # Clear data
-        decrypted_data = ''
-
-        # Extract Email
-        run = GMAIL_EXTRACTOR(input_subject, g_mail)
-
-        # Check if no subject found
-        if not run.get_is_subject_found():
-            return jsonify({'message': 'No subject found in the mailbox'})
-
-        # Clear data
         g_mail = ''
-
-        # Store numeric email value
-        input = run.value()
-
+        decrypted_data = ''
+        
         # Compare Email to the Model
         predict = DT_MODEL(input)
         prediction = predict.result()

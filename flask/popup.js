@@ -58,7 +58,7 @@ function clickScan(){
       .then(data => {
         // Display the response
         document.getElementById('buttonCheck').textContent = data.message;
-        console.log('Response from Flask:', {'message' : 'Prediction Sent Successfully'});
+        console.log('Response from Flask:', {'message' : 'Scan result has been SENT'});
       })
       .catch(error => {
         console.error('Error:', error);
