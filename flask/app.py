@@ -85,13 +85,14 @@ def scan():
         if not session.get('is_authenticated', True):
             return jsonify({'message': 'Not authenticated'})
 
-        print('NORMAN')
         # Store data in temp variables
         if not session.get('key', True):
             return jsonify({'message': 'No key'})
         key = session.get('key')
         encrypted_data = session.get('encrypted_data')
-        print('NORMAN2')
+
+        print(f"key: {key}")
+        print(f"DaTA: {encrypted_data}")
 
         # Decrypt login credentials
         if not func_decrypt(key, encrypted_data):
@@ -180,7 +181,10 @@ def func_encrypt(g_mail, email_input, pass_input):
 def func_decrypt(key, encrypted_data):
     try:
         # Decrypt login credentials
+        print(key)
+        print(encrypted_data)
         run_decrypt = DECRYPT(key, encrypted_data)
+        print('nromans')
         session['decrypted_data'] = run_decrypt.get_decrypted()
         return True
     except Exception as e:
