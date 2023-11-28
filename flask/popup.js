@@ -66,7 +66,12 @@ function clickScan(){
 
     // Receive email prediction from the Python Backend
     fetch(apiScan)
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
       .then(data => {
         // Display the response
         document.getElementById('buttonCheck').textContent = data.message;

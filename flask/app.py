@@ -8,7 +8,7 @@ from decrypt import DECRYPT
 import imaplib, secrets
 
 app = Flask(__name__)
-
+CORS(app)
 # Generate random key
 app.secret_key = secrets.token_hex(16)
 # Set the session to only be transmitted via HTTPS
@@ -18,7 +18,7 @@ app.config['SESSION_COOKIE_HTTPONLY'] = True
 # Protect against XSS/CSRF attacks
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
-CORS(app)
+
 
 
 @app.route('/api/login', methods=['POST'])
@@ -75,7 +75,7 @@ def subject():
 
 @app.route('/api/scan', methods=['GET'])
 def scan():
-    # try:
+    try:
         # Randomize app session key again
         # app.secret_key = secrets.token_hex(16)
 
@@ -139,15 +139,15 @@ def scan():
         # Send the prediction to GUI
         return jsonify({'message': prediction})
     
-    # except Exception as e:
+    except Exception as e:
         
-    #     print('ERROR_PATH: app.py in scan()')
-    #     print(f'ERROR: {e}')
+        print('ERROR_PATH: app.py in scan()')
+        print(f'ERROR: {e}')
 
-    #     if 'is_authenticated' or 'key' in str(e):
-    #         return jsonify({'message': 'Authentication error'})
+        if 'is_authenticated' or 'key' in str(e):
+            return jsonify({'message': 'Authentication error'})
 
-    #     return jsonify({'message': 'Error'})
+        return jsonify({'message': 'Error'})
 
 @app.route('/api/main', methods=['GET'])
 def main():

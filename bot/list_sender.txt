@@ -1,4 +1,0 @@
-{
-    "senderephishsense@gmail.com": "sjbsxjfgyssynixo",
-    "killuadummy2000@gmail.com": "afmgchkeaeadtvjt"
-}
