@@ -17,6 +17,8 @@ app.config['SESSION_COOKIE_SECURE'] = True
 app.config['SESSION_COOKIE_HTTPONLY'] = True
 # Protect against XSS/CSRF attacks
 app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+# Configure session to use a filesystem backend
+app.config['SESSION_TYPE'] = 'filesystem'
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
