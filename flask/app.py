@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, session
-# from flask_cors import CORS
+from flask_cors import CORS
 from extractor import GMAIL_EXTRACTOR
 from extension_dt_model import DT_MODEL
 from login import LOGIN
@@ -11,14 +11,14 @@ app = Flask(__name__)
 
 # Generate random key
 app.secret_key = secrets.token_hex(16)
-# # Set the session to only be transmitted via HTTPS
-# app.config['SESSION_COOKIE_SECURE'] = True
-# # Set the session to prevent client-side Javascript access
-# app.config['SESSION_COOKIE_HTTPONLY'] = True
-# # Protect against XSS/CSRF attacks
-# app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+# Set the session to only be transmitted via HTTPS
+app.config['SESSION_COOKIE_SECURE'] = True
+# Set the session to prevent client-side Javascript access
+app.config['SESSION_COOKIE_HTTPONLY'] = True
+# Protect against XSS/CSRF attacks
+app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
-# CORS(app)
+CORS(app)
 
 
 @app.route('/api/login', methods=['POST'])
