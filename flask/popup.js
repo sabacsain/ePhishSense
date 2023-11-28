@@ -4,6 +4,7 @@
 function clickLogin(){
   const proxyUrl = 'https://api.allorigins.win/raw?url=';
   const apiLogin = 'https://ephishsense.onrender.com/api/login';
+  const localLogin = 'http://127.0.0.1:5000/api/login'
 
     document.getElementById('loginCheck').textContent = 'Processing';
     // Get input email and app password
@@ -11,7 +12,7 @@ function clickLogin(){
     var passInput = document.getElementById('input-appPassword').value;
 
     // Send email and password input to the Python Backend
-    fetch(apiLogin, {
+    fetch(localLogin, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -38,6 +39,9 @@ function clickScan(){
   const proxyUrl = 'https://api.allorigins.win/raw?url=';
   const apiSubject = 'https://ephishsense.onrender.com/api/subject';
   const apiScan = 'https://ephishsense.onrender.com/api/scan';
+  const localSubject = 'http://127.0.0.1:5000/api/subject'
+  const localScan = 'http://127.0.0.1:5000/api/scan'
+
     // Get the input element by its ID
     var subjectInput = document.getElementById('input-subject').value;
 
@@ -45,7 +49,7 @@ function clickScan(){
     document.getElementById('buttonCheck').textContent = 'Processing';
 
     // Send Subject input to the Python Backend
-    fetch(apiSubject, {
+    fetch(localSubject, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -61,7 +65,7 @@ function clickScan(){
     });
 
     // Receive email prediction from the Python Backend
-    fetch(apiScan)
+    fetch(localScan)
       .then(response => response.json())
       .then(data => {
         // Display the response

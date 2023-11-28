@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request, session
-from flask_cors import CORS
+# from flask_cors import CORS
 from extractor import GMAIL_EXTRACTOR
 from extension_dt_model import DT_MODEL
 from login import LOGIN
@@ -18,7 +18,7 @@ app.secret_key = secrets.token_hex(16)
 # # Protect against XSS/CSRF attacks
 # app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 # CORS(app, resources={r"/api/*": {"origins": "*"}})
-CORS(app)
+# CORS(app)
 
 
 @app.route('/api/login', methods=['POST'])
@@ -83,9 +83,11 @@ def scan():
         if not session.get('is_authenticated', True):
             return jsonify({'message': 'Not authenticated'})
 
+        print('NORMAN')
         # Store data in temp variables
         key = session['key']
         encrypted_data = session['encrypted_data']
+        print('NORMAN2')
 
         # Decrypt login credentials
         if not func_decrypt(key, encrypted_data):

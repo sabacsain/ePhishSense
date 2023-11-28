@@ -6,8 +6,9 @@
   "permissions": [
     "activeTab",
     "storage", 
-    "https://ephishsense.onrender.com/"],
-  "host_permissions": ["https://ephishsense.onrender.com/" ] ,
+    "https://ephishsense.onrender.com/",
+    "http://127.0.0.1:5000/"],
+  "host_permissions": ["https://ephishsense.onrender.com/", "http://127.0.0.1:5000/"] ,
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
