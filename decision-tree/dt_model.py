@@ -19,7 +19,7 @@ with open(filepath, 'rb') as model_file:
 # Code of Feature Extraction from EML file here
 
 # Predict new input email
-input_email = [1,1,1]       # random numeric value - phishing
+input_email = [1,0,1]       # random numeric value - phishing
 predicted_label = loaded_model.predict([input_email])
 
 # Print if malicious or non-malicious

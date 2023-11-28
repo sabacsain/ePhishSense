@@ -14,7 +14,11 @@ slash = '\\' if which_os == 'Windows' else '/'
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # Concatenate directory path and dataset location
+<<<<<<< Updated upstream
 filepath = current_path + slash + 'temp.csv'
+=======
+filepath = current_path + slash + 'new_dataset.csv'
+>>>>>>> Stashed changes
 
 # Load the dataset
 df = pd.read_csv(filepath)
