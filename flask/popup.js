@@ -6,7 +6,7 @@ function clickLogin(){
     var passInput = document.getElementById('input-appPassword').value;
 
     // Send email and password input to the Python Backend
-    fetch('http://localhost:5000/api/login', {
+    fetch('https://ephishsense.onrender.com/api/login', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function clickScan(){
     document.getElementById('buttonCheck').textContent = 'Processing';
 
     // Send Subject input to the Python Backend
-    fetch('http://localhost:5000/api/subject', {
+    fetch('https://ephishsense.onrender.com/api/subject', {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ function clickScan(){
     });
 
     // Receive email prediction from the Python Backend
-    fetch('http://localhost:5000/api/scan')
+    fetch('https://ephishsense.onrender.com/api/scan')
       .then(response => response.json())
       .then(data => {
         // Display the response
