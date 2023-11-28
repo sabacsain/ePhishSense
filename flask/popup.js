@@ -1,12 +1,17 @@
 
+
+
 function clickLogin(){
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const apiLogin = 'https://ephishsense.onrender.com/api/login';
+
     document.getElementById('loginCheck').textContent = 'Processing';
     // Get input email and app password
     var emailInput = document.getElementById('input-email').value;
     var passInput = document.getElementById('input-appPassword').value;
 
     // Send email and password input to the Python Backend
-    fetch('https://ephishsense.onrender.com/api/login', {
+    fetch(proxyUrl + apiLogin, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -30,6 +35,9 @@ function clickLogin(){
 }
 
 function clickScan(){
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const apiSubject = 'https://ephishsense.onrender.com/api/subject';
+  const apiScan = 'https://ephishsense.onrender.com/api/scan';
     // Get the input element by its ID
     var subjectInput = document.getElementById('input-subject').value;
 
@@ -37,7 +45,7 @@ function clickScan(){
     document.getElementById('buttonCheck').textContent = 'Processing';
 
     // Send Subject input to the Python Backend
-    fetch('https://ephishsense.onrender.com/api/subject', {
+    fetch(proxyUrl + apiSubject, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -53,7 +61,7 @@ function clickScan(){
     });
 
     // Receive email prediction from the Python Backend
-    fetch('https://ephishsense.onrender.com/api/scan')
+    fetch(proxyUrl + apiScan)
       .then(response => response.json())
       .then(data => {
         // Display the response
