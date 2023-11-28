@@ -85,6 +85,9 @@ def scan():
 
         print('NORMAN')
         # Store data in temp variables
+        if not session['key']:
+            return jsonify({'message': 'No key'})
+        print(session['key'])
         key = session['key']
         encrypted_data = session['encrypted_data']
         print('NORMAN2')
