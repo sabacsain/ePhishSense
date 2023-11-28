@@ -11,7 +11,7 @@ function clickLogin(){
     var passInput = document.getElementById('input-appPassword').value;
 
     // Send email and password input to the Python Backend
-    fetch(proxyUrl + apiLogin, {
+    fetch(apiLogin, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ function clickScan(){
     document.getElementById('buttonCheck').textContent = 'Processing';
 
     // Send Subject input to the Python Backend
-    fetch(proxyUrl + apiSubject, {
+    fetch(apiSubject, {
       method: 'POST',
       headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@ function clickScan(){
     });
 
     // Receive email prediction from the Python Backend
-    fetch(proxyUrl + apiScan)
+    fetch(apiScan)
       .then(response => response.json())
       .then(data => {
         // Display the response

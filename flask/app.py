@@ -17,7 +17,8 @@ app.secret_key = secrets.token_hex(16)
 # app.config['SESSION_COOKIE_HTTPONLY'] = True
 # # Protect against XSS/CSRF attacks
 # app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+# CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app)
 
 
 @app.route('/api/login', methods=['POST'])
