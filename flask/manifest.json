@@ -5,8 +5,9 @@
   "description": "Detect phishing emails",
   "permissions": [
     "activeTab",
-    "storage"],
-  "host_permissions": ["http://localhost:5000/*" ] ,
+    "storage", 
+    "https://ephishsense.onrender.com/"],
+  "host_permissions": ["https://ephishsense.onrender.com/" ] ,
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
