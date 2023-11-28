@@ -87,11 +87,10 @@ def scan():
 
         print('NORMAN')
         # Store data in temp variables
-        if not session['key']:
+        if not session.get('key', True):
             return jsonify({'message': 'No key'})
-        print(session['key'])
-        key = session['key']
-        encrypted_data = session['encrypted_data']
+        key = session.get('key')
+        encrypted_data = session.get('encrypted_data')
         print('NORMAN2')
 
         # Decrypt login credentials
@@ -103,7 +102,7 @@ def scan():
         encrypted_data = ''
 
         # Store data in temp variables
-        decrypted_data = session['decrypted_data']
+        decrypted_data = session.get('decrypted_data')
 
         # Login using the decrypted credentials
         g_mail = imaplib.IMAP4_SSL(decrypted_data['server'], decrypted_data['port'])
