@@ -7,8 +7,15 @@ from decrypt import DECRYPT
 import imaplib, secrets
 
 app = Flask(__name__)
+
 # Generate random key
 app.secret_key = secrets.token_hex(16)
+# # Set the session to only be transmitted via HTTPS
+# app.config['SESSION_COOKIE_SECURE'] = True
+# # Set the session to prevent client-side Javascript access
+# app.config['SESSION_COOKIE_HTTPONLY'] = True
+# # Protect against XSS/CSRF attacks
+# app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
 
 @app.route('/api/login', methods=['POST'])
