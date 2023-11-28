@@ -35,7 +35,7 @@ function clickLogin(){
 }
 
 function clickScan(){
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const proxyUrl = 'https://api.allorigins.win/raw?url=';
   const apiSubject = 'https://ephishsense.onrender.com/api/subject';
   const apiScan = 'https://ephishsense.onrender.com/api/scan';
     // Get the input element by its ID
