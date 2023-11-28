@@ -75,9 +75,9 @@ def subject():
 
 @app.route('/api/scan', methods=['GET'])
 def scan():
-    try:
+    # try:
         # Randomize app session key again
-        app.secret_key = secrets.token_hex(16)
+        # app.secret_key = secrets.token_hex(16)
 
         # Check if authenticated
         if not session.get('is_authenticated', True):
@@ -137,15 +137,15 @@ def scan():
         # Send the prediction to GUI
         return jsonify({'message': prediction})
     
-    except Exception as e:
+    # except Exception as e:
         
-        print('ERROR_PATH: app.py in scan()')
-        print(f'ERROR: {e}')
+    #     print('ERROR_PATH: app.py in scan()')
+    #     print(f'ERROR: {e}')
 
-        if 'is_authenticated' or 'key' in str(e):
-            return jsonify({'message': 'Authentication error'})
+    #     if 'is_authenticated' or 'key' in str(e):
+    #         return jsonify({'message': 'Authentication error'})
 
-        return jsonify({'message': 'Error'})
+    #     return jsonify({'message': 'Error'})
 
 @app.route('/api/main', methods=['GET'])
 def main():
