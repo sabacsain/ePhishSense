@@ -2,7 +2,7 @@
 
 
 function clickLogin(){
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const proxyUrl = 'https://api.allorigins.win/raw?url=';
   const apiLogin = 'https://ephishsense.onrender.com/api/login';
 
     document.getElementById('loginCheck').textContent = 'Processing';
