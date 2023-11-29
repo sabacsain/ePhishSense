@@ -91,6 +91,7 @@ def scan():
         key = session.get('key')
         encrypted_data = session.get('encrypted_data')
 
+        # CURRENT VALUE IS NONE
         print(f"key: {key}")
         print(f"DaTA: {encrypted_data}")
 
