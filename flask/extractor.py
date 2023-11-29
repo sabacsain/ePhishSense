@@ -139,7 +139,7 @@ class GMAIL_EXTRACTOR():
             current_path = os.path.dirname(os.path.abspath(__file__))
 
             # Concatenate directory path and dataset location
-            filepath = current_path + slash + 'phishtank-online-valid.csv'
+            filepath = current_path + slash + 'blacklisted_urls.csv'
 
             # Open the CSV file and read its content
             with open(filepath, 'r') as csv_file:
