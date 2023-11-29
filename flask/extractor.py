@@ -139,7 +139,7 @@ class GMAIL_EXTRACTOR():
             current_path = os.path.dirname(os.path.abspath(__file__))
 
             # Concatenate directory path and dataset location
-            filepath = current_path + slash + 'phishtank-online-valid.csv'
+            filepath = current_path + slash + 'blacklisted_urls.csv'
 
             # Open the CSV file and read its content
             with open(filepath, 'r') as csv_file:
@@ -150,7 +150,7 @@ class GMAIL_EXTRACTOR():
                 next(csv_reader, None)
 
                 # Store only the URLs column and saved it as a list
-                blacklist = [row[1].lower() for row in csv_reader]
+                blacklist = [row[0].lower() for row in csv_reader]
 
             # Regular expression to find all URLs in the HTML content
             url_pattern = re.compile(r'(https?://\S+)', re.IGNORECASE)
@@ -158,20 +158,24 @@ class GMAIL_EXTRACTOR():
             urls_exist = url_pattern.findall(html_data)
 
             if not urls_exist:
-                return 0 # No URLs Found
+                return None # No URLs Found
 
             for url in urls_exist:
                 if any(blacklisted_url.lower() in url.lower() for blacklisted_url in blacklist):
-                    return -1 # Blacklisted URL matches
+                    return True # Blacklisted URL matches
 
-            return 1 # No Blacklisted URL matches
+            return False # No Blacklisted URL matches
         
         # Return True or False if URL exists
         jsonOutput['body'] = is_url_exists_in_body(jsonOutput['body'])
 
         # Convert URL's String Value to Numerical Value
-        self.valueList.append(jsonOutput['body'])
-
+        if jsonOutput['body'] is True:
+            self.valueList.append(-1) # if url found as blacklisted
+        elif jsonOutput['body'] is False:
+            self.valueList.append(1) # if url found as not in the list of blacklisted
+        elif jsonOutput['body'] is None:
+            self.valueList.append(0) # if there's no url found
         # Clear URL's Value
         print(f"URL:\n      {jsonOutput['body']}")
         jsonOutput['body'] = None

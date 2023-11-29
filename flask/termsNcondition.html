@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
     <title>ePhishSense - Terms and Conditions</title>
     <link rel="stylesheet" href="popup.css">
 </head>
-
 <body>
     <div id="main-container">
-        <h2>Terms and Conditions</h2>
-        <p>
-            Please read these Terms and Conditions carefully before using ePhishSense designed to scan emails in Gmail to detect Phishing Emails. These Terms constitute a legally binding agreement between the User and ePhishSense Inc. By installing and using the Extension, you acknowledge and agree to be bound by these Terms. If you do not agree with any part of these Terms, do not install or use the Extension.
-        </p>
-        <label>
-            <input type="checkbox" id="acceptTermsCheckbox"> I have read and accept the Terms and Conditions
+
+        <div class="navbar">
+            <img alt="ePhishSense logo" src="images/Logo.png" class="logo">
+            <p>ePhishSense | Phishing Guard</p>
+        </div>
+
+        <div class="welcome-container">
+            <h2>WELCOME</h2>
+        </div>
+
+        <div class="description">
+            <h2>Terms and Conditions</h2>
+            <div class="terms-scroll">
+            <p>
+                Please read these Terms and Conditions carefully before using the ePhishSense which is designed to scan emails in Gmail to detect Phishing Emails. These Terms constitute a legally binding agreement between the User and the developers of ePhishSense.
+            <br><br>
+                By installing and using the Extension, you acknowledge and agree to be bounded by these Terms. 
+                If you do not agree with any part of these Terms, do not install or use the Extension.
+                <br><br>
+                Scope of Service<br>
+                <br>1. The extension is designed to improve the security of your email by scanning emails obtained via Gmail to identify potential phishing links or websites.<br>
+                <br>2. To execute this service, the extension will need access to your email account and password as well as the subject of selected emails for scanning purposes.<br>
+                <br>3. It is important to note that we do not store or have access to your email password.<br>
+                <br>4. We prioritize the protection of your personal information and adhere to all applicable data privacy laws.<br>
+                <br>For more details, please refer to our privacy policy.<br>
+            </p>
+            </div>
+        </div>
+
+        <label for="acceptTermsCheckbox" class="terms-checkbox">
+            <input type="checkbox" id="acceptTermsCheckbox"> By checking this box, you acknowledge that you have read and agree to the Terms and Conditions stated above.
         </label>
+
         <button id="nextButton">Next</button>
+
     </div>
 
-    <!-- Connect HTML TO JS -->
-    <script src="terms_and_conditions.js"></script>
+    <script src="popup.js"></script>
 </body>
-
 </html>

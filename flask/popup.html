@@ -1,20 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>ePhishSense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 <body>
   <div id="main-container">
-    <h1>ePhishSense</h1>
+
+    <div class="navbar">
+      <img alt="ePhishSense logo" src="images/Logo.png" class="logo">
+      <p>ePhishSense | Phishing Guard</p>
+      <p class="tagline">
+        Stay Secure, Stay Informed: Your Gmail Guardian
+    </p>
+    </div>
+    
     <!-- LOGIN GMAIL -->
-    <input type="text" id="input-email" placeholder="Type email here..."/>
-    <input type="text" id="input-appPassword" placeholder="Type app password here..."/>
+    <input class="typehere" type="text" id="input-email" placeholder="Type email here..."/>
+    <input class="typehere" type="text" id="input-appPassword" placeholder="Type app password here..."/>
+
+    <p class="Tutorial"><a href="https://support.google.com/mail/answer/185833?hl=en" target="_blank" rel="noopener"> App Password?</a></p>
+
     <button id="loginButton">Login</button>
     <div id="loginCheck"></div>
 
     <!-- SCAN GMAIL -->
-    <input type="text" id="input-subject" placeholder="Type subject here..."/>
+    <input class="typehere" type="text" id="input-subject" placeholder="Type subject here..."/>
     <div id="buttonCheck"></div>
     <button id="scanButton">Scan Email</button>
   </div>
