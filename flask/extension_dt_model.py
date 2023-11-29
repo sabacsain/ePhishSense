@@ -1,4 +1,4 @@
-import pickle, os, platform
+import pickle, os, platform, joblib
 
 class DT_MODEL():
     
@@ -36,7 +36,7 @@ class DT_MODEL():
     def loadModel(self):
         print("start LOAD MODEL")
         with open(self.filepath, 'rb') as model_file:
-            model = pickle.load(model_file)
+            model = joblib.load(model_file)
         print("end LOAD MODEL")
         return model
 
