@@ -1,5 +1,6 @@
-import email, re
+import email, re, csv, os, platform
 from extension_dt_model import DT_MODEL
+import imaplib
 
 
 class GMAIL_EXTRACTOR():
@@ -20,15 +21,15 @@ class GMAIL_EXTRACTOR():
         self.valueList = []
         self.is_subject_found = True
 
-    # Get Gmail credentials
+    # # Get Gmail credentials
     # def getLogin(self):
-        # print("\nPlease enter your Gmail login details below.")
-        # self.usr = input("Email: ")
-        # self.pwd = input("Password: ")
-        # self.usr = 'senderephishsense@gmail.com'
-        # self.pwd = 'sjbsxjfgyssynixo'
+    #     # print("\nPlease enter your Gmail login details below.")
+    #     # self.usr = input("Email: ")
+    #     # self.pwd = input("Password: ")
+    #     self.usr = 'senderephishsense@gmail.com'
+    #     self.pwd = 'sjbsxjfgyssynixo'
 
-    # Login to the Gmail account
+    # # Login to the Gmail account
     # def attemptLogin(self):
     #     self.mail = imaplib.IMAP4_SSL("imap.gmail.com", 993)
     #     if self.mail.login(self.usr, self.pwd):
@@ -128,18 +129,48 @@ class GMAIL_EXTRACTOR():
 
         # Check if URL exists in Body
         def is_url_exists_in_body(html_data):
+            # Get the OS 
+            which_os = platform.system()
+
+            # Perform forward/backward slash depending on the OS
+            slash = '\\' if which_os == 'Windows' else '/'
+
+            # Get the current directory
+            current_path = os.path.dirname(os.path.abspath(__file__))
+
+            # Concatenate directory path and dataset location
+            filepath = current_path + slash + 'phishtank-online-valid.csv'
+
+            # Open the CSV file and read its content
+            with open(filepath, 'r') as csv_file:
+                # Use the csv.reader to read the file
+                csv_reader = csv.reader(csv_file)
+
+                # Skip the header
+                next(csv_reader, None)
+
+                # Store only the URLs column and saved it as a list
+                blacklist = [row[1].lower() for row in csv_reader]
+
             # Regular expression to find all URLs in the HTML content
             url_pattern = re.compile(r'(https?://\S+)', re.IGNORECASE)
             # Store all the URLS
             urls_exist = url_pattern.findall(html_data)
 
-            return True if urls_exist else False
+            if not urls_exist:
+                return 0 # No URLs Found
+
+            for url in urls_exist:
+                if any(blacklisted_url.lower() in url.lower() for blacklisted_url in blacklist):
+                    return -1 # Blacklisted URL matches
+
+            return 1 # No Blacklisted URL matches
         
         # Return True or False if URL exists
         jsonOutput['body'] = is_url_exists_in_body(jsonOutput['body'])
 
         # Convert URL's String Value to Numerical Value
-        self.valueList.append(0) if jsonOutput['body'] == False else self.valueList.append(1)
+        self.valueList.append(jsonOutput['body'])
 
         # Clear URL's Value
         print(f"URL:\n      {jsonOutput['body']}")
@@ -158,10 +189,10 @@ class GMAIL_EXTRACTOR():
         # Intialize all the global variables to be used
         self.initializeVariables(input_subject, mail)
 
-        # # Get Gmail credentials
+        ## Get Gmail credentials
         # self.getLogin()
 
-        # Login to the Gmail account
+        ## Login to the Gmail account
         # if not self.attemptLogin(): exit(0)
 
         # Select which Mailbox to be used
@@ -177,7 +208,7 @@ class GMAIL_EXTRACTOR():
         self.parseEmails()
 
 if __name__ == "__main__":
-    run = GMAIL_EXTRACTOR('Random')
+    run = GMAIL_EXTRACTOR('Random','mail')
     input = run.value()
 
     predict = DT_MODEL(input)

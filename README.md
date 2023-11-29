@@ -16,18 +16,15 @@
 
 # ISSUES
     # DATASET
-        #
-                
+                    
     # BACK-END
         # Subject as input for searching the email.
         # Multiple Subjects with similar names will cause an error.
             # Quick Fix: Automatically uses the latest email.
         # Persistent Login 
-            # Quick Fix: In-memory encryption and saved in a session object.
-        # Tested on:
-	    # Chrome [WORKING]
-	    # Edge [WORKING]
-	    # Firefoz [NOT YET TESTED]
+            # Quick Fix: Encrypted Login Credentials at runtime or saved in global variable.
+        # Currently only tested in chrome browser.
 
     # FRONT-END
-        # Connecting HTML files to the back-end
+        # Currently have sample GUI
+        # Routing of html files
