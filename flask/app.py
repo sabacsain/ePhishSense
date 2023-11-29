@@ -43,12 +43,16 @@ def login():
 
         # Set True since given creds are authenticated
         session['is_authenticated'] = True
+        print(f'LOGIS_AUTH: {session["is_authenticated"]}')
 
         # Get mail object
         g_mail = run.get_mail()
 
         if not func_encrypt(g_mail, email_input, pass_input):
             return jsonify({'message' : 'Error in Encryption'})
+
+        print(f'LOGkey: {session["key"]}')
+        print(f'LOGdata: {session["encyrpted_Data"]}')
 
         # Clear data
         email_input = ''
@@ -85,6 +89,8 @@ def scan():
         if not session.get('is_authenticated', True):
             return jsonify({'message': 'Not authenticated'})
 
+        print(f'IS_AUTH: {session["is_authenticated"]}')
+        
         # Store data in temp variables
         if not session.get('key', True):
             return jsonify({'message': 'No key'})
