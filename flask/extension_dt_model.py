@@ -16,6 +16,7 @@ class DT_MODEL():
 
     # Get DT Model Filepath
     def get_filepath(self):
+        print("start FILEPATH")
         # Get the OS 
         which_os = platform.system()
 
@@ -28,22 +29,29 @@ class DT_MODEL():
         # Concatenate directory path and dataset location
         filepath = current_path + slash + 'dt_model.pkl'
 
+        print("end FILEPATH")
+
         return filepath
 
     # Load the model from the file
     def loadModel(self):
+        print("start LOAD MODEL")
         with open(self.get_filepath(), 'rb') as model_file:
             self.loaded_model = pickle.load(model_file)
+        print("end LOAD MODEL")
 
     # Predict new input email
     def predict(self):
+        print("start PREDICT")
         predicted_label = self.loaded_model.predict([self.input])
+        print("end PREDICT")
         if predicted_label == 0:
             return 'Safe'
         elif predicted_label == 1:
             return 'Malicious'
         else: 
             return 'System Error!'
+
 
 
 

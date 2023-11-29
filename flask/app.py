@@ -82,7 +82,7 @@ def subject():
 @app.route('/api/scan', methods=['GET'])
 def scan():
     global input_subject
-    
+
     try:
         # Randomize app session key again
         # app.secret_key = secrets.token_hex(16)
@@ -143,9 +143,11 @@ def scan():
         # Store numeric email value
         input = run.value()
 
+        print("START DT")
         # Compare Email to the Model
         predict = DT_MODEL(input)
         prediction = predict.result()
+        print("END DT")
 
         print(input)
         print(prediction)
