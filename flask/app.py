@@ -52,7 +52,7 @@ def login():
             return jsonify({'message' : 'Error in Encryption'})
 
         print(f'LOGkey: {session["key"]}')
-        print(f'LOGdata: {session["encyrpted_Data"]}')
+        print(f'LOGdata: {session["encrypted_data"]}')
 
         # Clear data
         email_input = ''
