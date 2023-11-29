@@ -17,6 +17,9 @@ app.secret_key = secrets.token_hex(16)
 # # Protect against XSS/CSRF attacks
 # app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
 
+# lqua wrkw zydr hlej
+# sachristopher925@gmail.com
+
 
 @app.route('/api/login', methods=['POST'])
 def login():    
