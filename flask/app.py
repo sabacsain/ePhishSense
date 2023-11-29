@@ -81,6 +81,8 @@ def subject():
 
 @app.route('/api/scan', methods=['GET'])
 def scan():
+    global input_subject
+    
     try:
         # Randomize app session key again
         # app.secret_key = secrets.token_hex(16)
