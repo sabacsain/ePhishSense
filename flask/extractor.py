@@ -150,7 +150,7 @@ class GMAIL_EXTRACTOR():
                 next(csv_reader, None)
 
                 # Store only the URLs column and saved it as a list
-                blacklist = [row[1].lower() for row in csv_reader]
+                blacklist = [row[0].lower() for row in csv_reader]
 
             # Regular expression to find all URLs in the HTML content
             url_pattern = re.compile(r'(https?://\S+)', re.IGNORECASE)
