@@ -17,15 +17,23 @@ body {
 }
 
 .navbar {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .navbar p {
   font-size: 14px;
   font-weight: bold;
+}
+
+.navbar .tagline {
+  font-size: 10px;
+  padding: 0px 0px 0px 0px;
+  opacity: 0.8;
+  margin-left: 30px;
 }
 
 .logo {
@@ -99,11 +107,31 @@ h2 {
 input[type="checkbox"] {
   margin-right: 10px;
 }
+/* */
+.input-container {
+  margin-bottom: 15px;
+}
 
+.typehere {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+/* */
 a button {
   text-decoration: none;
   color: white;
   opacity: 0.8;
+
 }
 
 button {
@@ -114,6 +142,7 @@ button {
   background-color: #3498db;
   cursor: pointer;
   margin-bottom: 20px;
+  color: #FFFFFF;
 }
 
 button:hover {
@@ -165,4 +194,18 @@ img{
 #buttonCheck {
   margin-top: 10px;
   color: #e74c3c;
+}
+
+/*===================== */
+.Tutorial{
+  font-size: 10px;
+  opacity: 0.7;
+  float: left;
+  margin-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+.Tutorial a{
+  color: white;
 }
