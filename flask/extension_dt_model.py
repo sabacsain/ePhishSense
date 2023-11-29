@@ -26,7 +26,7 @@ class DT_MODEL():
         current_path = os.path.dirname(os.path.abspath(__file__))
 
         # Concatenate directory path and dataset location
-        filepath = current_path + slash + 'dt_model.pkl'
+        filepath = current_path + slash + 'dt_model.joblib'
 
         print("end FILEPATH")
 
@@ -35,10 +35,9 @@ class DT_MODEL():
     # Load the model from the file
     def loadModel(self):
         print("start LOAD MODEL")
-        with open(self.filepath, 'rb') as model_file:
-            model = joblib.load(model_file)
+        loaded_model = joblib.load(self.filepath)
         print("end LOAD MODEL")
-        return model
+        return loaded_model
 
     # Predict new input email
     def predict(self):
