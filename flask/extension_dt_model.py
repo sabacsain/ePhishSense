@@ -27,6 +27,7 @@ class DT_MODEL():
 
         # Concatenate directory path and dataset location
         filepath = current_path + slash + 'dt_model.joblib'
+        print(f'FILEPATH{filepath}')
 
         print("end FILEPATH")
 
