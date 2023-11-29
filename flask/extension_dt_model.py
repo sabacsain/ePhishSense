@@ -5,13 +5,12 @@ class DT_MODEL():
     def __init__(self, input):
         self.loaded_model = None
         self.input = input
-        self.get_filepath()
-        self.loadModel()
+        self.filepath = self.get_filepath()
+        self.loaded_model = self.loadModel()
         self.label = self.predict()
 
 
     def result(self):
-
         return self.label
 
     # Get DT Model Filepath
@@ -36,9 +35,10 @@ class DT_MODEL():
     # Load the model from the file
     def loadModel(self):
         print("start LOAD MODEL")
-        with open(self.get_filepath(), 'rb') as model_file:
-            self.loaded_model = pickle.load(model_file)
+        with open(self.filepath, 'rb') as model_file:
+            model = pickle.load(model_file)
         print("end LOAD MODEL")
+        return model
 
     # Predict new input email
     def predict(self):
