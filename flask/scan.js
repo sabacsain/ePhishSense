@@ -27,14 +27,21 @@ function clickScan(){
     .then(response => response.json())
     .then(data => {
       // Display the response
-      document.getElementById('buttonCheck').textContent = data.message;
       console.log('Response from Flask:', {'message' : 'Scan result has been SENT'});
+      if (data.message == 'Safe'){
+        window.location.href = "safe.html";
+      }
+      else if(data.message == 'Malicious'){
+        window.location.href = "malicious.html";
+      }
+      document.getElementById('buttonCheck').textContent = data.message;
     })
     .catch(error => {
       console.error('Error:', error);
     });
   console.log('SCAN END')
 }
+
 
 
 document.addEventListener('DOMContentLoaded', function () {

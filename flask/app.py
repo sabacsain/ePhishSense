@@ -31,6 +31,10 @@ def check_login():
     
     return jsonify({'message': 'Authenticated'})
      
+@app.route('/api/get_result', methods=['GET'])
+def get_result():
+    global prediction
+    return jsonify({'message': prediction})
 
 @app.route('/api/login', methods=['POST'])
 def login():    
@@ -86,6 +90,7 @@ def subject():
 
 @app.route('/api/scan', methods=['GET'])
 def scan():
+    global prediction
     try:
         # Randomize app session key again
         app.secret_key = secrets.token_hex(16)
