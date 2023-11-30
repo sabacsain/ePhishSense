@@ -195,7 +195,9 @@ button:hover {
 #loginCheck,
 #buttonCheck {
   margin-top: 10px;
-  color: #e74c3c;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: white;
 }
 
 /*===================== */

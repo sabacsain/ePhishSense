@@ -34,7 +34,7 @@ function clickScan(){
       else if(data.message == 'Malicious'){
         window.location.href = "malicious.html";
       }
-      // document.getElementById('buttonCheck').textContent = data.message;
+       document.getElementById('buttonCheck').textContent = data.message;
     })
     .catch(error => {
       console.error('Error:', error);
