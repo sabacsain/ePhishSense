@@ -19,19 +19,7 @@ app.secret_key = secrets.token_hex(16)
 
 # sachristopher925@gmail.com
 # hefr okff otgo wayz
-
-
-@app.route('/api/check_login', methods=['GET'])
-def check_login():
-    try:
-        if not session['is_authenticated']:
-            return jsonify({'message': 'Not Authenticated'})
-    except Exception as e:
-        return jsonify({'message': 'Not Authenticated'})
-    
-    return jsonify({'message': 'Authenticated'})
-     
-
+ 
 @app.route('/api/login', methods=['POST'])
 def login():    
     try:
