@@ -273,7 +273,7 @@ button:hover {
 .scan-again .scan-again-button {
   display: inline-block;
   text-decoration: none;
-  background-color: #2980B9; /* Blue background for the button */
+  background-color: #3498DB; /* Blue background for the button */
   color: #FFF;
   padding: 10px 20px;
   border-radius: 5px;
@@ -285,5 +285,5 @@ button:hover {
 
 }
 .scan-again .scan-again-button:hover {
-  background-color: #3498DB; /* Lighter blue on hover */
+  background-color: #2980b9; /* Lighter blue on hover */
 }

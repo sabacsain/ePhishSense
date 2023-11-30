@@ -14,7 +14,7 @@ slash = '\\' if which_os == 'Windows' else '/'
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # Concatenate directory path and dataset location
-filepath = current_path + slash + 'new_dataset_copy.csv'
+filepath = current_path + slash + 'new_dataset.csv'
 
 # Load the dataset
 df = pd.read_csv(filepath)

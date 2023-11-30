@@ -180,7 +180,7 @@ class GMAIL_EXTRACTOR():
         print(f"URL:\n      {jsonOutput['body']}")
         jsonOutput['body'] = None
         
-    # Store numerical value of the email  
+    # Store numerical value of the email
     def value(self):
         return self.valueList
 
