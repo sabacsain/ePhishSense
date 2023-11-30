@@ -1,27 +1,3 @@
-function checkLogin(){
-  // Receive email prediction from the Python Backend
-  fetch('http://localhost:5000/api/check_login')
-    .then(response => response.json())
-    .then(data => {
-      console.log(data.message);
-      if (data.message == 'Authenticated'){
-        var emailTextField = document.getElementById("input-email");
-        var passTextField = document.getElementById("input-appPassword");
-        var loginButton = document.getElementById("loginButton");
-        // Disable the input field
-        emailTextField.disabled = true;
-        passTextField.disabled = true;
-        loginButton.disabled = true;
-        // Display already authenticated
-        document.getElementById('loginCheck').textContent = 'Already logged in';
-      }
-      // Display the flask response
-      console.log('Response from Flask:', data.message);
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
-}
 
 function clickLogin(){
   document.getElementById('loginCheck').textContent = 'Processing';
@@ -92,23 +68,25 @@ function clickScan(){
 document.addEventListener('DOMContentLoaded', function () {
 
 // Call checkLogin function
-checkLogin();
+// checkLogin();
 // Call clickLogin function
 document.getElementById('loginButton').addEventListener('click', clickLogin);
 
 // Call clickScan function
 document.getElementById('scanButton').addEventListener('click', clickScan);
 
-
-});
-
 // Error handling for checkbox
 document.getElementById("nextButton").addEventListener("click", function () {
-// Check if the checkbox is checked
-if (!document.getElementById("acceptTermsCheckbox").checked) {
-    alert("Please accept the Terms and Conditions before proceeding.");
-} else {
-    // If checked, navigate to the next page
-    window.location.href = "popup.html";
-}
+  // Check if the checkbox is checked
+  if (!document.getElementById("acceptTermsCheckbox").checked) {
+      alert("Please accept the Terms and Conditions before proceeding.");
+  } else {
+      // If checked, navigate to the next page
+      window.location.href = "popup.html";
+  }
+  });
+
 });
+
+
+
