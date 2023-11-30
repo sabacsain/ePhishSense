@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ePhishSense - Get Started</title>
     <link rel="stylesheet" href="popup.css">
 </head>
-
 <body>
-    <div id="main-container">
-        <div id="get-result">
+    <div class="safe-container">
+        <!-- <div class="safe-header">
+            <img src="images/logo.png" alt="ePhishSense Logo" class="safe-logo">
+            <h1>ePhishSense | Phishing Guard</h1>
+            <p class="tagline">Stay Secure, Stay Informed: Your Email Guardian</p>
+        </div> -->
+        <div class="navbar">
+            <img alt="ePhishSense logo" src="images/logo.png" class="logo">
+            <p>ePhishSense | Phishing Guard</p>
+            <p class="tagline">
+                Stay Secure, Stay Informed: Your Gmail Guardian
+            </p>
         </div>
-        <p> -------------------- </p>
-        
+
+        <div class="safe-status">
+            <div class="status-icon">
+                <img src="images/check_icon.png" alt="Safe Check Icon">
+            </div>
+            <p class="status-text">SAFE</p>
+        </div>
+        <div class="scan-again">
+            <a href="scan.html" class="scan-again-button">Scan Again?</a>
+        </div>
     </div>
-    <a href="scan.html">
-        <button>Scan Again?</button>
-    </a>
-    <!-- Connect HTML TO JS -->
     <script src="result.js"></script>
 </body>
-
 </html>

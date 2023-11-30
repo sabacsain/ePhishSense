@@ -24,6 +24,13 @@ body {
   padding-bottom: 10px;
 }
 
+.navbar img{
+  width: 12%;
+  padding: 0px;
+  position: fixed;
+  left: 20px;
+}
+
 .navbar p {
   font-size: 14px;
   font-weight: bold;
@@ -127,12 +134,6 @@ h1 {
   color: #ffffff;
 }
 /* */
-a button {
-  text-decoration: none;
-  color: white;
-  opacity: 0.8;
-
-}
 
 button {
   width: 100%;
@@ -169,6 +170,14 @@ button:hover {
   justify-content: center;
 }
 
+.getnavbar img{
+  width: 12%;
+  padding: 0px;
+  position: fixed;
+  left: 20px;
+}
+
+
 .getnavbar p {
   margin-left: 15px;
   font-size: 15px;
@@ -180,13 +189,6 @@ button:hover {
   padding: 0px 0px 0px 0px;
   opacity: 0.8;
   margin-left: 30px;
-}
-
-img{
-  width: 12%;
-  padding: 0px;
-  position: fixed;
-  left: 20px;
 }
 
 /* =====================*/
@@ -208,4 +210,80 @@ img{
 
 .Tutorial a{
   color: white;
+}
+
+/* ====== malicious/safe containers ========= */
+.safe-container {
+  background-color: #0E1869; /* Dark background color */
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+/* .safe-header img.safe-logo {
+  width: 50px; 
+}
+.safe-header h1 {
+  font-size: 18px;
+  color: #FFF;
+  margin: 5px 0; /* Spacing around the title
+}
+*/
+.safe-header .tagline {
+  font-size: 14px;
+  color: #7F8C8D; /* Lighter text for the tagline */
+  margin-bottom: 20px;
+}
+
+.safe-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+.status-icon {
+  margin: 20px 0; /* Add space around the icon */
+
+
+/* .safe-status .status-icon {
+  background-color: #27AE60;
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 10px;
+} */
+
+.safe-status .status-icon img {
+  width: 50%; /* Size of the check icon */
+}
+
+.safe-status .status-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: #2ECC71; /* Green text for SAFE status */
+}
+
+.safe-status .malicious-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(230, 105, 105)/* Green text for SAFE status */
+}
+
+.scan-again .scan-again-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #2980B9; /* Blue background for the button */
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.scan-again {
+  text-align: center; /* Center the button horizontally */
+
+}
+.scan-again .scan-again-button:hover {
+  background-color: #3498DB; /* Lighter blue on hover */
 }
