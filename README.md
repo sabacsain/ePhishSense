@@ -14,8 +14,14 @@
     # Enter the email credentials then click Login
     # Enter email subject
 
+# HOW TO UPDATE THE DECISION TREE MODEL
+    # Download the latest dataset in csv format
+    # a
+
 # ISSUES
     # DATASET
+        # Value '111' returns MALICIOUS. It should return SAFE.
+        # The decision tree model still only uses 600 emails.
                     
     # BACK-END
         # Subject as input for searching the email.
@@ -26,5 +32,4 @@
         # Currently only tested in chrome browser.
 
     # FRONT-END
-        # Currently have sample GUI
-        # Routing of html files
+        #

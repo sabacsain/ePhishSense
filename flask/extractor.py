@@ -176,8 +176,6 @@ class GMAIL_EXTRACTOR():
             self.valueList.append(1) # if url found as not in the list of blacklisted
         elif jsonOutput['body'] is None:
             self.valueList.append(0) # if there's no url found
-        #self.valueList.append(jsonOutput['body'])
-
         # Clear URL's Value
         print(f"URL:\n      {jsonOutput['body']}")
         jsonOutput['body'] = None
