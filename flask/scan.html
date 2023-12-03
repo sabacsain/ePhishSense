@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ePhishSense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <div id="main-container">
+
+    <div class="navbar">
+      <img alt="ePhishSense logo" src="images/logo.png" class="logo">
+      <p>ePhishSense | Phishing Guard</p>
+      <p class="tagline">
+        Stay Secure, Stay Informed: Your Gmail Guardian
+    </p>
+    </div>
+  
+    <!-- SCAN GMAIL -->
+    <input class="typehere" type="text" id="input-subject" placeholder="Type subject here..."/>
+    <div id="buttonCheck"></div>
+    <button id="scanButton">Scan Email</button>
+  </div>
+  <!-- Connect HTML TO JS -->
+  <script src="scan.js"></script>
+  
+</body>
+</html>

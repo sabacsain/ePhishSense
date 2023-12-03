@@ -1,0 +1,291 @@
+/* popup.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0E1869; /* Assuming this is the main background color */
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+#main-container {
+  height: 200px;
+  width: 300px;
+  max-width: 400px; /* Adjust as needed */
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.navbar img{
+  width: 12%;
+  padding: 0px;
+  position: fixed;
+  left: 20px;
+}
+
+.navbar p {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.navbar .tagline {
+  font-size: 10px;
+  padding: 0px 0px 0px 0px;
+  opacity: 0.8;
+  margin-left: 30px;
+}
+
+.logo {
+  width: 12%; /* Adjust as needed */
+  margin-right: 10px;
+}
+
+.welcome-container {
+  background-color: #5653A8; /* Adjust as needed */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.description {
+  background-color: #5653A8;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative; /* Position relative for absolute positioning of the scroll button if needed */
+}
+
+.description h2{
+  font-size: 15px;
+  font-style: italic;
+}
+
+.description p {
+ font-style: italic;
+ text-align: justify;
+}
+
+.terms-scroll {
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 10px;
+  margin-right: -10px;
+}
+
+.terms-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terms-scroll::-webkit-scrollbar-thumb {
+  background-color: #a0a0a088;
+  border-radius: 4px;
+}
+
+.terms-scroll::-webkit-scrollbar-track {
+  background-color: #5653A8;
+}
+
+.terms-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #ffffff;
+}
+
+h2 {
+  margin: 0;
+  padding: 10px 0;
+  color: #FFFFFF;
+}
+
+.terms-checkbox {
+  display: block;
+  margin-bottom: 20px;
+  font-style: italic;
+  text-align: justify;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+/* */
+.input-container {
+  margin-bottom: 15px;
+}
+
+.typehere {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-bottom: 5px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+/* */
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Additional styles if needed */
+
+/* jenjen get started css */
+
+#get-container {
+  height: 200px;
+  width: 300px;
+  max-width: 400px; /* Adjust as needed */
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.getnavbar {
+  /* display: flex; */
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.getnavbar img{
+  width: 12%;
+  padding: 0px;
+  position: fixed;
+  left: 20px;
+}
+
+
+.getnavbar p {
+  margin-left: 15px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.getnavbar .tagline {
+  font-size: 10px;
+  padding: 0px 0px 0px 0px;
+  opacity: 0.8;
+  margin-left: 30px;
+}
+
+/* =====================*/
+#loginCheck,
+#buttonCheck {
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-size: 15px;
+  color: white;
+}
+
+/*===================== */
+.Tutorial{
+  font-size: 10px;
+  opacity: 0.7;
+  float: left;
+  margin-left: 10px;
+  margin-top: 2px;
+  margin-bottom: 3px;
+}
+
+.Tutorial a{
+  color: white;
+}
+
+/* ====== malicious/safe containers ========= */
+.safe-container {
+  background-color: #0E1869; /* Dark background color */
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+/* .safe-header img.safe-logo {
+  width: 50px; 
+}
+.safe-header h1 {
+  font-size: 18px;
+  color: #FFF;
+  margin: 5px 0; /* Spacing around the title
+}
+*/
+.safe-header .tagline {
+  font-size: 14px;
+  color: #7F8C8D; /* Lighter text for the tagline */
+  margin-bottom: 20px;
+}
+
+.safe-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* 
+.status-icon {
+  margin: 20px 0; /* Add space around the icon */
+
+
+/* .safe-status .status-icon {
+  background-color: #27AE60;
+  display: inline-block;
+  padding: 15px;
+  margin-bottom: 10px;
+} */
+
+.safe-status .status-icon img {
+  width: 50%; /* Size of the check icon */
+}
+
+.safe-status .status-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: #2ECC71; /* Green text for SAFE status */
+}
+
+.safe-status .malicious-text {
+  font-weight: bold;
+  font-size: 24px;
+  color: rgb(230, 105, 105)/* Green text for SAFE status */
+}
+
+.scan-again .scan-again-button {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #3498DB; /* Blue background for the button */
+  color: #FFF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.scan-again {
+  text-align: center; /* Center the button horizontally */
+
+}
+.scan-again .scan-again-button:hover {
+  background-color: #2980b9; /* Lighter blue on hover */
+}

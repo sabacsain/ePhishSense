@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>ePhishSense</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="popup.css">
+</head>
+<body>
+  <div id="main-container">
+
+    <div class="navbar">
+      <img alt="ePhishSense logo" src="images/logo.png" class="logo">
+      <p>ePhishSense | Phishing Guard</p>
+      <p class="tagline">
+        Stay Secure, Stay Informed: Your Gmail Guardian
+    </p>
+    </div>
+    
+    <!-- LOGIN GMAIL -->
+    <input class="typehere" type="text" id="input-email" placeholder="Type email here..."/>
+    <input class="typehere" type="password" id="input-appPassword" placeholder="Type app password here..."/>
+
+    <p class="Tutorial"><a href="https://support.google.com/mail/answer/185833?hl=en" target="_blank" rel="noopener"> App Password?</a></p>
+
+    <button id="loginButton">Login</button>
+    <div id="loginCheck"></div>
+
+  </div>
+  <!-- Connect HTML TO JS -->
+  <script src="login.js"></script>
+  
+</body>
+</html>
