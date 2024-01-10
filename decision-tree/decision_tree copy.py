@@ -14,7 +14,7 @@ slash = '\\' if which_os == 'Windows' else '/'
 current_path = os.path.dirname(os.path.abspath(__file__))
 
 # Concatenate directory path and dataset location
-filepath = current_path + slash + 'new_dataset2.csv'
+filepath = current_path + slash + 'new_dataset.csv'
 
 # Load the dataset
 df = pd.read_csv(filepath)
@@ -33,6 +33,10 @@ dt_model.fit(X_train.values, y_train.values)
 # Make predictions on the test data
 predictions = dt_model.predict(X_test.values)
 
+##################################################################
+# CALCULATING PERFORMANCE MATRIX
+##################################################################
+
 # Calculate accuracy
 accuracy = accuracy_score(y_test, predictions)
 print(f'Accuracy: {accuracy}')
@@ -48,20 +52,38 @@ print(f'Recall: {recall}')
 # Create a confusion matrix
 conf_matrix = confusion_matrix(y_test, predictions)
 
-# Extract True Negatives (TN), True Positives (TP), False Negatives (FN), False Positives (FP)
-TN, FP, FN, TP = conf_matrix.ravel()
+# Extract True Negative (TN), True Positive (TP), False Negative (FN), False Positive (FP)
+tn, fp, fn, tp = conf_matrix.ravel()
 
-print(f"True Positives: {TP}")
-print(f"True Negatives: {TN}")
-print(f"False Positives: {FP}")
-print(f"False Negatives: {FN}")
+print(f"True Positive: {tp}")
+print(f"True Negative: {tn}")
+print(f"False Positive: {fp}")
+print(f"False Negative: {fn}")
 
-# # Save the model to a file using pickle
-# save_path = current_path + slash + 'dt_model.pkl'
-# with open(save_path, 'wb') as model_file:
-#     pickle.dump(dt_model, model_file)
 
-# # Print the model path
-# print("Model: 'dt_model.pkl' has been saved.")
-# print(f"Saved at {save_path}")
+##################################################################
+# EXPORTING TESTING AND TRAINING DATASET
+##################################################################
+
+# Create DataFrames for the training and testing sets
+train_df = pd.concat([X_train, y_train], axis=1)
+test_df = pd.concat([X_test, y_test], axis=1)
+
+# Export the training and testing sets to separate CSV files
+train_df.to_csv(current_path + slash + 'training_data.csv', index=False)
+test_df.to_csv(current_path + slash + 'testing_data.csv', index=False)
+
+
+##################################################################
+# EXPORTING THE DECISION TREE MODEL
+##################################################################
+
+# Save the model to a file using pickle
+save_path = current_path + slash + 'dt_model.pkl'
+with open(save_path, 'wb') as model_file:
+    pickle.dump(dt_model, model_file)
+
+# Print the model path
+print("Model: 'dt_model.pkl' has been saved.")
+print(f"Saved at {save_path}")
 
