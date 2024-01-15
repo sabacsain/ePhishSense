@@ -117,12 +117,12 @@ result_df.to_csv(current_path + slash + 'testing_data.csv', index=False)
 # EXPORTING THE DECISION TREE MODEL
 ##################################################################
 
-# # Save the model to a file using pickle
-# save_path = current_path + slash + 'dt_model.pkl'
-# with open(save_path, 'wb') as model_file:
-#     pickle.dump(dt_model, model_file)
+# Save the model to a file using pickle
+save_path = current_path + slash + 'dt_model.pkl'
+with open(save_path, 'wb') as model_file:
+    pickle.dump(dt_model, model_file)
 
-# # Print the model path
-# print("Model: 'dt_model.pkl' has been saved.")
-# print(f"Saved at {save_path}")
+# Print the model path
+print("Model: 'dt_model.pkl' has been saved.")
+print(f"Saved at {save_path}")
 

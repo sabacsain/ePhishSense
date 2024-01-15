@@ -59,7 +59,7 @@ ID,Email,Actual Label,Predicted Label,Evaluation
 56,F6 - phishing2 - 1022.eml,1,1,TP
 57,"F7-11, Just A Few Easy Steps to Score Your Dream Overseas Job",0,0,TN
 58,F5 - 1095. Compliment of the season (Can you handle USD$87M?),1,1,TP
-59,F5 - 1100. update your KYC on your profile,1,0,FN
+59,F5 - 1100. update your KYC on your profile,0,0,TN
 60,"F9 -38, phishing0 - 134.eml",1,1,TP
 61,"F7-55, Tech Talk",0,0,TN
 62,"F10-79, Print.eml",0,0,TN
@@ -83,7 +83,7 @@ ID,Email,Actual Label,Predicted Label,Evaluation
 79,"F5 - 1001. =?UTF-8?Q?=5BA=DC=BFl=DC=BFe=DC=BFrt=5D_Co=DC=BFnf?=
  =?UTF-8?Q?=DC=BFi=DC=BFrm_yo=DC=BFur_i=DC=BFnfo_is?=
  =?UTF-8?Q?_r=DC=BFeq=DC=BFuired=DC=BF_=5BC=DC=BFa?=
- =?UTF-8?Q?=DC=BFse_ID_153465=5D?=",1,0,FN
+ =?UTF-8?Q?=DC=BFse_ID_153465=5D?=",0,0,TN
 80,F6 - phishing2 - 1163.eml,1,1,TP
 81,"F7-67, Living the Good Life",0,0,TN
 82,F5 - 1187. *** Proton Account Shutdown ***,1,0,FN
@@ -109,7 +109,7 @@ ID,Email,Actual Label,Predicted Label,Evaluation
 102,F8 - 34. Looking for the perfect getaway_,0,0,TN
 103,"F5 - No Drama, Just Dreams (1)",0,0,TN
 104,F6 - phishing2 - 1162.eml,1,1,TP
-105,F5 - 1007. Good news and rewards for the XRP Community,1,0,FN
+105,F5 - 1007. Good news and rewards for the XRP Community,0,0,TN
 106,F6 - phishing2 - 1147.eml,1,1,TP
 107,"F9 -82, phishing0 - 178.eml",1,1,TP
 108,F5 - 1151. iuytdfgh,1,1,TP
@@ -171,7 +171,7 @@ ID,Email,Actual Label,Predicted Label,Evaluation
 161,"F9 -41, phishing0 - 137.eml",1,1,TP
 162,"F5 - 1300. Congratulations! Your wallet's hash value qualifies you for a claim of 34,900
  $ARB tokens in Block 18108002!",1,1,TP
-163,F5 - 1045. Nehmen Sie an unserer Umfrage teil und gewinnen Sie ein Gutschein von Decathlon im Wert von 1.000 Euro.,1,0,FN
+163,F5 - 1045. Nehmen Sie an unserer Umfrage teil und gewinnen Sie ein Gutschein von Decathlon im Wert von 1.000 Euro.,0,0,TN
 164,"F10-98, 📄 _HOTEL MANAGEMENT INFORMATION SYSTEM PROJECT FINAL_ by Gideon Babatunde.eml",1,1,TP
 165,F6 - phishing2 - 1017.eml,1,1,TP
 166,F6 - phishing2 - 1104.eml,1,1,TP
@@ -198,7 +198,7 @@ ID,Email,Actual Label,Predicted Label,Evaluation
 185,F5 - Lets conquer the world,0,0,TN
 186,"F12 - 78 - New jobs from your October 24, 2023 feed",0,0,TN
 187,F4 - Feeling Fly Today,0,0,TN
-188,F5 - 1171. INFO ,1,0,FN
+188,F5 - 1171. INFO ,0,0,TN
 189,F6 - phishing2 - 1111.eml,1,1,TP
 190,"F12 - 38 - Psst, it's 11.11 time📣Everything on sale!🛍️",0,0,TN
 191,F6 - phishing2 - 1099.eml,1,1,TP
