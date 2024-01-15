@@ -64,7 +64,7 @@ print(f"False Negative: {fn}")
 
 
 ##################################################################
-# EXPORTING TESTING AND TRAINING DATASET
+# EXPORTING TESTING DATASET
 ##################################################################
 
 # # Create DataFrames for the training and testing sets
