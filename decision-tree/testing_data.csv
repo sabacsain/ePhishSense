@@ -1,0 +1,213 @@
+ID,Email,Actual Label,Predicted Label,Evaluation
+1,F8 - 55. Collect Stars Any Way You Pay,0,0,TN
+2,"F9 -95, phishing0 - 191.eml",0,0,TN
+3,F5 - Funny Story to Share,0,0,TN
+4,F6 - phishing2 - 1006.eml,1,1,TP
+5,"F9 -42, phishing0 - 138.eml",1,1,TP
+6,F5 - 1266. Order Confirmation Alert,1,1,TP
+7,F12 - 97 - Last call to join us for the free webinar 13 Pro Git Tips for JetBrains IDEs – boost your coding prowess with JetBrains IDEs!,1,1,TP
+8,F5 - 1130. =?UTF-8?Q?=E2=9A=A0=EF=B8=8F_Urgent:_Verify_Your_Account_Now?=,1,0,FN
+9,F8 - 38. Welcome to VYBE!,0,0,TN
+10,"F10-80, PUP Client Satisfaction Survey.eml",0,0,TN
+11,F6 - phishing2 - 1124.eml,1,1,TP
+12,"F10-37, Erica Joy Cavaneyro _ QA Intern.eml",0,0,TN
+13,F12 - 68 - New announcement_ _Synchronous Class # 1 - 11-11-2023…_,0,0,TN
+14,"F10-5, [ONGOING] Sea the Future Ahead_ The Dive to Uncovering the Reality of CCIS Careers.eml",0,0,TN
+15,"F9 -22, phishing0 - 118.eml",1,1,TP
+16,"F7-71, S'well",0,0,TN
+17,F12 - 26 - Vouchers = savings. 💰,0,0,TN
+18,F8 - 70. Get 30% OFF on your next GrabCar ride! Use code RIDEAGAIN,0,0,TN
+19,F6 - phishing2 - 1072.eml,1,1,TP
+20,F5 - For Presentation,0,0,TN
+21,F5 - 1222. USDT Withdrawal Request Received,1,1,TP
+22,F6 - phishing2 - 1068.eml,1,1,TP
+23,F12 - 100 -Connect data now to get the most out of Looker Studio,1,1,TP
+24,F12 - 89 - Security alert,0,0,TN
+25,F6 - phishing2 - 1090.eml,1,1,TP
+26,"F7-60, You're my everything and more, my most stylish companion!",0,0,TN
+27,"F5-1485, =?UTF-8?B?Q2FzZSBOwrA=?=01237: Your Assets Are Now Available",1,1,TP
+28,F2 - Emoji Overload Alert,0,0,TN
+29,F12 - 12 - Your trial has ended,0,0,TN
+30,F6 - phishing2 - 1038.eml,1,1,TP
+31,"F5 - 1365. In re FTX Trading Ltd. =?UTF-8?B?4oCT?= Customer Claims Bar Date
+ Reminder",0,0,TN
+32,F6 - phishing2 - 1014.eml,1,1,TP
+33,"F10-27, Connection Starts Here.eml",0,0,TN
+34,F5 - 1115. Personalisierte Prognose für schnellen Gewichtsverlust,1,0,FN
+35,"F10-24, Buzzsprout Newsletter_ How Episode Numbers Impact SEO.eml",0,0,TN
+36,"F10-96, Welcome to Looker Studio.eml",1,1,TP
+37,"F5-1468, Livelo Informa: Voce tem saldo disponivel para resgate expirando em breve!",1,1,TP
+38,"F5-1247, Fw: The 6 Best Ways To Easily Make Money on Swagbucks (paid out over",1,1,TP
+39,"F10-64,Meracle L Bruce replied to a comment on _Blue Purple Retro Illustration Word Puzzle Game Presentation_.eml",0,0,TN
+40,F5 - 1381. See What Everyone's Whispering About: Energy's Future,0,0,TN
+41,"F9 -90, phishing0 - 186.eml",1,1,TP
+42,F6 - phishing2 - 1070.eml,1,1,TP
+43,F6 - phishing2 - 1126.eml,1,1,TP
+44,F8 - 23. Introducing_ Perplexity Collections,0,0,TN
+45,F5 - Account Registration,0,1,FP
+46,"F5 - 1245. Fw: The 6 Best Ways To Easily Make Money on Swagbucks (paid out over
+ $923 million until now)",1,1,TP
+47,F3 - Nike,0,0,TN
+48,"F9 -39, phishing0 - 135.eml",1,1,TP
+49,"F7-77,  Yeti",0,0,TN
+50,"F12 - 72 - New jobs from your November 7, 2023 feed",0,0,TN
+51,"F10-36, Due tomorrow_ _Online Class Agreement Form_.eml",0,0,TN
+52,F5 - 1008. [IMPORTANT] Your wallet is temporary Disabled!,1,1,TP
+53,F6 - phishing2 - 1142.eml,1,1,TP
+54,"F7-24, 71% discount - The digital cutter for your images",0,0,TN
+55,"F7-31, Re: Exam cancelled ",0,0,TN
+56,F6 - phishing2 - 1022.eml,1,1,TP
+57,"F7-11, Just A Few Easy Steps to Score Your Dream Overseas Job",0,0,TN
+58,F5 - 1095. Compliment of the season (Can you handle USD$87M?),1,1,TP
+59,F5 - 1100. update your KYC on your profile,1,0,FN
+60,"F9 -38, phishing0 - 134.eml",1,1,TP
+61,"F7-55, Tech Talk",0,0,TN
+62,"F10-79, Print.eml",0,0,TN
+63,F12 - 74 - New assignment_ _Online Class Agreement Form_,0,0,TN
+64,F5 -  1800. Virus detected on your device! Download now!,1,1,TP
+65,"F9 -9, phishing0 - 105.eml",1,1,TP
+66,F6 - phishing2 - 1062.eml,1,1,TP
+67,"F5 - 1756. congrats, you've been selected",1,1,TP
+68,"F9 -12, phishing0 - 108.eml",1,1,TP
+69,F2 - Seeking Advice,0,0,TN
+70,F12 - 84 - original_msg,0,0,TN
+71,"F7-97, Need Your Advice on Something",0,0,TN
+72,"F4, Question about item #260067307240 AIR-ZONE\AE PROFESSIONAL 14,000 mg PRO OZONE GENERATOR!",1,1,TP
+73,"F10-52, Invitation to DataHack Summit 2023_ Dive into the Future of AI.eml",0,0,TN
+74,"F5-1398, =?UTF-8?Q?Rodrigo-f-p_=F0=9F=8E=89_Claim_Your_Cashback_Airdrop?=
+ =?UTF-8?Q?_Today_5000USDT_!_=F0=9F=9A=80?=",1,1,TP
+75,F5 - 1000. Binance Cybersecurity,1,1,TP
+76,F6 - phishing2 - 1102.eml,1,1,TP
+77,"F7-40, Let's Make Plans!",0,0,TN
+78,"F9 -17, phishing0 - 113.eml",1,1,TP
+79,"F5 - 1001. =?UTF-8?Q?=5BA=DC=BFl=DC=BFe=DC=BFrt=5D_Co=DC=BFnf?=
+ =?UTF-8?Q?=DC=BFi=DC=BFrm_yo=DC=BFur_i=DC=BFnfo_is?=
+ =?UTF-8?Q?_r=DC=BFeq=DC=BFuired=DC=BF_=5BC=DC=BFa?=
+ =?UTF-8?Q?=DC=BFse_ID_153465=5D?=",1,0,FN
+80,F6 - phishing2 - 1163.eml,1,1,TP
+81,"F7-67, Living the Good Life",0,0,TN
+82,F5 - 1187. *** Proton Account Shutdown ***,1,0,FN
+83,"F7-68, Hustle Mode: Activated",0,0,TN
+84,F12 - 82 - Competition Launch_ LLM - Detect AI Generated Text,0,0,TN
+85,F6 - phishing2 - 1045.eml,1,1,TP
+86,F8 - 35. Personalise your Windows 11 experience for security and accessibility,0,0,TN
+87,"F10-51, Invitation for Internship at 1Devs PH.eml",0,0,TN
+88,F5 - 1762. Someone tried to Iog in To Your Account,1,1,TP
+89,F8 - 51. _What’s new with Windows 11,0,0,TN
+90,F8 - 87. Interbank Funds Transfer Confirmation,0,0,TN
+91,F6 - phishing2 - 1057.eml,1,1,TP
+92,F8 - 50. New_ Introducing the Kotlin course on SoloLearn,0,0,TN
+93,"F12 - 25 - _hire Indian_, _TaskSay_ and 3 other boards inspired by your recent activity",0,0,TN
+94,"F5 - 1809.  phishing@pot, Please verify ",1,1,TP
+95,"F9 -99, phishing0 - 195.eml",0,0,TN
+96,"F7-89, Squad Up!",0,0,TN
+97,"F7-64, I'm so grateful for our swag-tastic friendship!",0,0,TN
+98,F12 - 27 - 11.11 Sale_ Cop Your Fave Iconic Nike kicks,0,0,TN
+99,"F10-22, BPI D.A.T.A. Wave Summit 2023 Reminders and Event Passes.eml",0,0,TN
+100,F12 - 45 - Two NetAcad.com Planned Maintenance Periods,0,0,TN
+101,"F10-1, [COU SIGNING] DTI X Google Career Certification Program.eml",0,0,TN
+102,F8 - 34. Looking for the perfect getaway_,0,0,TN
+103,"F5 - No Drama, Just Dreams (1)",0,0,TN
+104,F6 - phishing2 - 1162.eml,1,1,TP
+105,F5 - 1007. Good news and rewards for the XRP Community,1,0,FN
+106,F6 - phishing2 - 1147.eml,1,1,TP
+107,"F9 -82, phishing0 - 178.eml",1,1,TP
+108,F5 - 1151. iuytdfgh,1,1,TP
+109,F6 - phishing2 - 1140.eml,1,1,TP
+110,"F10-91, Starbucks Registration Verification.eml",0,0,TN
+111,F6 - phishing2 - 1173.eml,1,1,TP
+112,"F5-1026, [IMPORTANT] Your wallet has been Blocked",1,1,TP
+113,"F7-87, The great debate: Pancakes vs. Waffles",0,0,TN
+114,F4 - Planning a surprise,0,0,TN
+115,F6 - phishing2 - 1003.eml,1,1,TP
+116,F6 - phishing2 - 1004.eml,1,1,TP
+117,F5 - 1040. 3nd attempt: You Are Our July Winner Ultimate Nonstick Cookware,1,1,TP
+118,F6 - phishing2 - 1023.eml,1,1,TP
+119,"F9 -25, phishing0 - 121.eml",1,1,TP
+120,F5 - Sup Rockstar,0,0,TN
+121,F2 - Crafting together,0,0,TN
+122,F2 - Secret Talent,0,0,TN
+123,"F12 - 36 - Mr, you have a good eye",0,0,TN
+124,F12 - 94 - More 4-Wheel coupons here 🎁,1,1,TP
+125,F12 - 1 - I have a GTX 1650 Ti 4GB with 8GB RAM. Is it safe to upgrade my RAM to 16GB_ Will there be too much load on my graphics card_ What benefits will I..._.eml,0,0,TN
+126,F6 - phishing2 - 1118.eml,1,1,TP
+127,"F5-1021, _Get_Rid_of_Back_Pain_Easily.Try_Therapal!_",1,1,TP
+128,F4 - Quick question,0,0,TN
+129,F6 - phishing2 - 1051.eml,1,1,TP
+130,F12 - 50 - Got Jollibee - Sta Mesa on your mind_,0,0,TN
+131,F8 - 13. Your voice matters,0,0,TN
+132,F6 - phishing2 - 1183.eml,1,1,TP
+133,F5 - 1015. =?ISO-8859-1?Q?A=E7=E3o_Trabalhista_!?=,1,1,TP
+134,"F7-56, Let's Conquer the World",0,0,TN
+135,"F5-1001, =?UTF-8?Q?=5BA=DC=BFl=DC=BFe=DC=BFrt=5D_Co=DC=BFnf?=
+ =?UTF-8?Q?=DC=BFi=DC=BFrm_yo=DC=BFur_i=DC=BFnfo_is?=
+ =?UTF-8?Q?_r=DC=BFeq=DC=BFuired=DC=BF_=5BC=DC=BFa?=
+ =?UTF-8?Q?=DC=BFse_ID_153465=5D?=",1,1,TP
+136,"F9 -75, phishing0 - 171.eml",1,1,TP
+137,"F7-26, Cyberlink Powerdirector (PATCH)",0,0,TN
+138,"F7-73, Dyson",0,0,TN
+139,"F7-45, Guess What Happened!",0,0,TN
+140,F6 - phishing2 - 1136.eml,1,1,TP
+141,F5 - 1278. Get Free UNI Tokens From The V4 Protocol Reward Program,1,1,TP
+142,F4 - Celebrating Small Wins,0,0,TN
+143,F4 - Recipe Swap,1,1,TP
+144,F5 - Letter Resignation,0,0,TN
+145,"F5-871, Start the day with a bonus from Amazon Prime",1,1,TP
+146,"F12 - 21 - Dear Ronald, did you enjoy the ₱50 treat, inaanak_",0,0,TN
+147,F6 - phishing2 - 1044.eml,1,1,TP
+148,F12 - 37 - 11.11 Sale Ends Soon 🛒 ⏰,0,0,TN
+149,F4 - Remember when stories,1,1,TP
+150,"F9 -67, phishing0 - 163.eml",1,1,TP
+151,F6 - phishing2 - 0.eml,1,1,TP
+152,F6 - phishing2 - 1129.eml,1,1,TP
+153,F6 - phishing2 - 1009.eml,1,1,TP
+154,"F9 -76, phishing0 - 172.eml",1,1,TP
+155,F4 - Weekend Adventures,1,1,TP
+156,"F7-61, You always know how to make me feel better, my most stylish companion!",0,0,TN
+157,"F10-46, Hours left! Use your coupon now!.eml",0,0,TN
+158,F5 - 1364. Final Reminder: Withdraw your funds today,0,0,TN
+159,F8 - 44. Notion 2.19,0,0,TN
+160,F6 - phishing2 - 1087.eml,0,0,TN
+161,"F9 -41, phishing0 - 137.eml",1,1,TP
+162,"F5 - 1300. Congratulations! Your wallet's hash value qualifies you for a claim of 34,900
+ $ARB tokens in Block 18108002!",1,1,TP
+163,F5 - 1045. Nehmen Sie an unserer Umfrage teil und gewinnen Sie ein Gutschein von Decathlon im Wert von 1.000 Euro.,1,0,FN
+164,"F10-98, 📄 _HOTEL MANAGEMENT INFORMATION SYSTEM PROJECT FINAL_ by Gideon Babatunde.eml",1,1,TP
+165,F6 - phishing2 - 1017.eml,1,1,TP
+166,F6 - phishing2 - 1104.eml,1,1,TP
+167,F5 - 1362. Case Success: Your Assets Are Approved,0,0,TN
+168,F6 - phishing2 - 1015.eml,1,1,TP
+169,F5 - Funny Story to Share (1),0,0,TN
+170,"F4, Bank of America alert: Your Online Banking Is Blocked",1,1,TP
+171,"F8 - 66. Your Google Play Order Receipt from Nov 2, 2023",0,0,TN
+172,F6 - phishing2 - 1088.eml,1,1,TP
+173,"F10-81, PyCharm 2023.2 Is Out! See What’s Inside ➡️🤩.eml",0,0,TN
+174,F6 - phishing2 - 1112.eml,1,1,TP
+175,"F10-90, Save on these pay-yay must-haves.eml",0,0,TN
+176,"F9 -88, phishing0 - 184.eml",1,1,TP
+177,F6 - phishing2 - 1095.eml,1,1,TP
+178,F8 - 26. MeasureMasters Reopening Soon,0,0,TN
+179,"F9 -62, phishing0 - 158.eml",1,1,TP
+180,F8 - 58. Member Access_ Air Jordan 1 Low 'Black Cement',0,0,TN
+181,F5 - I am sharing a document,0,0,TN
+182,"F5-1024, =?UTF-8?Q?=5BImportant=5D_Unauthorized_access=3B_Your_A=DC=BFm=DC=BFa=DC=BFz=DC=BFon?=
+	=?UTF-8?Q?_account_has_been_locked=2C_Verify_your_account_now=2E_=23CASE=2DID=3A?=
+	=?UTF-8?Q?_072522=2E3871922?=",1,1,TP
+183,"F9 -100, phishing0 - 196.eml",0,0,TN
+184,F6 - phishing2 - 1055.eml,1,1,TP
+185,F5 - Lets conquer the world,0,0,TN
+186,"F12 - 78 - New jobs from your October 24, 2023 feed",0,0,TN
+187,F4 - Feeling Fly Today,0,0,TN
+188,F5 - 1171. INFO ,1,0,FN
+189,F6 - phishing2 - 1111.eml,1,1,TP
+190,"F12 - 38 - Psst, it's 11.11 time📣Everything on sale!🛍️",0,0,TN
+191,F6 - phishing2 - 1099.eml,1,1,TP
+192,F12 - 16 - Ron，Major Update Released - Dive Back into Farlight 84!,0,0,TN
+193,F6 - phishing2 - 1026.eml,1,1,TP
+194,F5 - Volunteer Opportunity,0,0,TN
+195,F6 - phishing2 - 104.eml,1,1,TP
+196,"F7-79,  Cheers to Unread Emails!",0,0,TN
+197,"F7-30, Exam cancelled",0,0,TN
+198,F3 - Orig Msg(3),0,0,TN
+199,F2 - Squad up,0,0,TN
+200,F8 - 25. Connect your project to your preferred Headless CMS,0,0,TN
