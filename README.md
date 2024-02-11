@@ -1,4 +1,7 @@
-# ePhishSense
+# ePhishSense: A Browser Extension in Detecting Phishing Emails in Gmail using Decision Tree Algorithm
+
+# SUMMARY:
+	- ePhishSense is a phishing detection system that detects malicious emails in gmail platform using Decision Tree Algorithm. It can be run on multiple web browser such as Google Chrome, Mozilla Firefox, Microsoft Edge and etc.
 
 # REQUIREMENTS
     # Install Flask
@@ -14,20 +17,4 @@
     # Enter the email credentials then click Login
     # Enter email subject
 
-# ISSUES
-    # DATASET
-        #
-                
-    # BACK-END
-        # Subject as input for searching the email.
-        # Multiple Subjects with similar names will cause an error.
-            # Quick Fix: Automatically uses the latest email.
-        # Persistent Login 
-            # Quick Fix: In-memory encryption and saved in a session object.
-        # Tested on:
-	    # Chrome [WORKING]
-	    # Edge [WORKING]
-	    # Firefoz [NOT YET TESTED]
 
-    # FRONT-END
-        # Connecting HTML files to the back-end
